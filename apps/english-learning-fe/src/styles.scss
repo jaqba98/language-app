@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@use '../../../libs/fe/ui/src/lib/style/abstracts/color';
 
 * {
     margin: 0;
@@ -7,5 +7,5 @@
 }
 
 body {
-    background-color: #f3f3f3;
+    background-color: color.$primary;
 }

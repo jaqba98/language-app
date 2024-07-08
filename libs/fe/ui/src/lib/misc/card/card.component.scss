@@ -1,7 +1,7 @@
+@use '../../style/abstracts/color';
+
 .card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 8px #ddd;
+    background-color: color.$secondary;
     padding: 1em;
     margin: 1em;
     border-radius: 5px;
