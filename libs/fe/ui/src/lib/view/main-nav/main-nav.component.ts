@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-fe-ui',
+  selector: 'lib-main-nav',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './fe-ui.component.html',
-  styleUrl: './fe-ui.component.css',
+  templateUrl: './main-nav.component.html',
+  styleUrl: './main-nav.component.css'
 })
-export class FeUiComponent {}
+export class MainNavComponent {}

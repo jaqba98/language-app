@@ -1,1 +1,1 @@
-export * from './lib/fe-ui/fe-ui.component';
+export * from './lib/view/index';
