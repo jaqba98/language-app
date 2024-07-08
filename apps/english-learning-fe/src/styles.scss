@@ -1,11 +1,11 @@
-@use '../../../libs/fe/ui/src/lib/style/abstracts/color';
+@use '../../../libs/fe/ui/src/lib/scss/abstract/mixin';
+@use '../../../libs/fe/ui/src/lib/scss/abstract/function';
 
 * {
-    margin: 0;
-    padding: 0;
+    @include mixin.set-box-model(0, 0);
     box-sizing: border-box;
 }
 
 body {
-    background-color: color.$primary;
+    background-color: function.get-color('primary');
 }

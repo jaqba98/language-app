@@ -1,0 +1,17 @@
+@use './color';
+
+@function get-color($color-key) {
+    @if $color-key == 'primary' {
+        @return color.$primary;
+    }
+
+    @if $color-key == 'secondary' {
+        @return color.$secondary;
+    }
+
+    @if $color-key == 'text' {
+        @return color.$text;
+    }
+
+    @error 'Not supported color!';
+}

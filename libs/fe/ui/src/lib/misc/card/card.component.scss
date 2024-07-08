@@ -1,8 +1,5 @@
-@use '../../style/abstracts/color';
+@use '../../scss/component/card';
 
 .card {
-    background-color: color.$secondary;
-    padding: 1em;
-    margin: 1em;
-    border-radius: 5px;
+    @include card.get-style;
 }

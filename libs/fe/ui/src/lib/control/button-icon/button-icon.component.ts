@@ -1,12 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
-import { IconComponent } from '../../misc';
+import { IconComponent } from '../../misc/icon/icon.component';
 
 @Component({
   selector: 'lib-button-icon',
   standalone: true,
-  imports: [CommonModule, IconComponent],
+  imports: [IconComponent],
   templateUrl: './button-icon.component.html',
   styleUrl: './button-icon.component.scss'
 })

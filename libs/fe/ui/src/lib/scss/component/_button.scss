@@ -1,0 +1,12 @@
+@use '../abstract/mixin';
+@use '../abstract/function';
+@use '../abstract/variable';
+
+@mixin get-style {
+    @include mixin.set-box-model($padding: 1em);
+
+    background-color: function.get-color('primary');
+    border-radius: variable.$border-radius;
+    border: none;
+    cursor: pointer;
+}

@@ -1,12 +1,5 @@
-@use '../../style/abstracts/color';
+@use '../../scss/component/button';
 
-.button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: color.$primary;
-    border: none;
-    padding: 1em;
-    border-radius: 5px;
-    cursor: pointer;
+.button-icon {
+    @include button.get-style;
 }
