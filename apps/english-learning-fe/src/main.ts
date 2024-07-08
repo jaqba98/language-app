@@ -1,7 +1,7 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
 
-bootstrapApplication(AppComponent, appConfig).catch((err) =>
+import { FeMainComponent, feMainConfig } from '@english-learning/fe-main';
+
+bootstrapApplication(FeMainComponent, feMainConfig).catch((err) =>
   console.error(err)
 );

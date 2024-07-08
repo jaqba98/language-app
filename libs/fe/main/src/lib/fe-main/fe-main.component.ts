@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
   selector: 'lib-fe-main',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './fe-main.component.html',
-  styleUrl: './fe-main.component.css',
+  templateUrl: './fe-main.component.html'
 })
 export class FeMainComponent {}

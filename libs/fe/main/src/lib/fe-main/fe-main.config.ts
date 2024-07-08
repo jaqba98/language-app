@@ -1,10 +1,11 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { appRoutes } from './app.routes';
 
-export const appConfig: ApplicationConfig = {
+import { feMainRoutes } from './fe-main.routes';
+
+export const feMainConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(appRoutes),
-  ],
+    provideRouter(feMainRoutes)
+  ]
 };
