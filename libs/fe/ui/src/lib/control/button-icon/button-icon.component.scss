@@ -1,0 +1,12 @@
+@use '../../style/abstracts/color';
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: color.$primary;
+    border: none;
+    padding: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}

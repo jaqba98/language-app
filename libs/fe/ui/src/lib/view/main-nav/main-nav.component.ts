@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CardComponent, TextComponent } from '../../misc';
+import { CardComponent } from '../../misc';
+import { ButtonIconComponent } from '../../control';
 
 @Component({
   selector: 'lib-main-nav',
@@ -9,7 +10,7 @@ import { CardComponent, TextComponent } from '../../misc';
   imports: [
     CommonModule,
     CardComponent,
-    TextComponent
+    ButtonIconComponent
   ],
   templateUrl: './main-nav.component.html',
   styleUrl: './main-nav.component.scss'
