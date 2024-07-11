@@ -27,7 +27,6 @@ export class MainNavComponent {
 
   onHamburgerClick() {
     this.menuVisible = !this.menuVisible;
-    console.log("onHamburgerClick");
   }
 
   onHamburgerBlur() {
