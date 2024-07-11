@@ -1,0 +1,8 @@
+@use "../../scss/abstract/function";
+
+.text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: function.get-color("text");
+}

@@ -1,0 +1,5 @@
+@use '../../scss/component/button';
+
+.button-text {
+    @include button.get-style;
+}

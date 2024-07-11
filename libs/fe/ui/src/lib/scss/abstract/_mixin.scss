@@ -1,7 +1,8 @@
-@mixin set-flex($align, $justify) {
+@mixin set-flex($align, $justify, $gap: 0) {
     display: flex;
     align-items: $align;
     justify-content: $justify;
+    gap: $gap;
 }
 
 @mixin set-box-model($margin: null, $padding: null) {
