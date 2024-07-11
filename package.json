@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "nx build english-learning-fe --prod --output-path docs --base-href /english-learning"
+    "build": "nx build english-learning-fe --prod --output-path docs --base-href /english-learning --skip-nx-cache"
   },
   "private": true,
   "dependencies": {
