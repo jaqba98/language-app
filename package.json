@@ -2,7 +2,9 @@
   "name": "@english-learning/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "nx build english-learning-fe --prod --output-path docs --base-href /english-learning"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~18.0.0",
