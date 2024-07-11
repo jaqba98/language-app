@@ -19,20 +19,20 @@ import { CommonModule } from '@angular/common';
   templateUrl: './main-nav.component.html'
 })
 export class MainNavComponent {
-  @ViewChild(ButtonIconComponent) buttonIconChild!: ButtonIconComponent;
+  @ViewChild('hamburger') hamburger!: ButtonIconComponent;
 
   menuVisible = false;
 
-  onClick() {
+  onHamburgerClick() {
     this.menuVisible = !this.menuVisible;
   }
 
-  onBlur() {
+  onHamburgerBlur() {
     this.menuVisible = false;
   }
 
-  onMainNavClick() {
+  onMenuClick() {
     this.menuVisible = true;
-    this.buttonIconChild.buttonIcon.nativeElement.focus();
+    this.hamburger.button.setFocus();
   }
 }

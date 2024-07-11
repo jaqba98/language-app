@@ -1,5 +1,5 @@
-@use '../../scss/component/button';
+@use '../../scss/component/host';
 
-.button-icon {
-    @include button.get-style;
+:host {
+    @include host.get-style;
 }

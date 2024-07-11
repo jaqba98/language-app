@@ -1,0 +1,14 @@
+@use '../../scss/component/button';
+@use '../../scss/component/host';
+
+:host {
+    @include host.get-style;
+}
+
+.button {
+    @include button.get-style;
+
+    &__full-width {
+        width: 100%;
+    }
+}
