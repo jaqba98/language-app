@@ -2,4 +2,8 @@
 
 .button-text {
     @include button.get-style;
+
+    &__full-size {
+        width: 100%;
+    }
 }
