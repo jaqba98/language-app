@@ -9,6 +9,10 @@
         @return color.$secondary;
     }
 
+    @if $color-key == 'shadow' {
+        @return color.$shadow;
+    }
+
     @if $color-key == 'text' {
         @return color.$text;
     }

@@ -17,7 +17,7 @@ export class PositionComponent {
 
   @Input() left: Properties['left'] = "auto";
 
-  buildPosition() {
+  buildPosition(): Properties {
     return {
       position: this.position,
       top: this.top,

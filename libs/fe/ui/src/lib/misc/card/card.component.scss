@@ -2,9 +2,4 @@
 
 .card {
     @include card.get-style;
-
-    &__vertical {
-        align-items: stretch;
-        flex-direction: column;
-    }
 }

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Properties } from 'csstype';
 
 @Component({
   selector: 'lib-card',
@@ -7,5 +8,11 @@ import { Component, Input } from '@angular/core';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  @Input() vertical: boolean = false;
+  @Input() flexDirection: Properties['flexDirection'] = "row";
+
+  buildCard(): Properties {
+    return {
+      flexDirection: this.flexDirection
+    }
+  }
 }
