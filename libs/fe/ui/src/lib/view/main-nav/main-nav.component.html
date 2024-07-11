@@ -1,13 +1,12 @@
 <lib-position position="relative">
     <lib-card>
-        <lib-button-icon src="icon/menu.svg" alt="menu"></lib-button-icon>
-        <lib-position position="absolute" top="100%" left="0">
-            <lib-card flexDirection="column">
-                <lib-button-text value="Test 1" [fullWidth]="true"></lib-button-text>
-                <lib-button-text value="Test 2" [fullWidth]="true"></lib-button-text>
-                <lib-button-text value="Test 3" [fullWidth]="true"></lib-button-text>
-                <lib-button-text value="Test 4" [fullWidth]="true"></lib-button-text>
-            </lib-card>
-        </lib-position>
+        <lib-button-icon src="icon/menu.svg" alt="menu" (eventClick)="onClick()" (eventBlur)="onBlur()"></lib-button-icon>
+        <ng-container *ngIf="menuVisible">
+            <lib-position position="absolute" top="100%" left="0">
+                <lib-card flexDirection="column" (eventClick)="onMainNavClick()">
+                    <lib-button-text value="Test 1" [fullWidth]="true" (eventClick)="onMainNavClick()"></lib-button-text>
+                </lib-card>
+            </lib-position>
+        </ng-container>
     </lib-card>
 </lib-position>

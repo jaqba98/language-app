@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 import { IconComponent } from '../../misc/icon/icon.component';
 
@@ -10,7 +10,21 @@ import { IconComponent } from '../../misc/icon/icon.component';
   styleUrl: './button-icon.component.scss'
 })
 export class ButtonIconComponent {
+  @ViewChild('buttonIcon') buttonIcon!: ElementRef;  
+
   @Input({ required: true }) src!: string;
 
   @Input({ required: true }) alt!: string;
+
+  @Output() eventClick = new EventEmitter();
+
+  @Output() eventBlur = new EventEmitter();
+
+  onClick() {
+    this.eventClick.emit();
+  }
+
+  onBlur() {
+    this.eventBlur.emit();
+  }
 }

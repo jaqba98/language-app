@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Properties } from 'csstype';
 
 @Component({
@@ -10,9 +10,15 @@ import { Properties } from 'csstype';
 export class CardComponent {
   @Input() flexDirection: Properties['flexDirection'] = "row";
 
+  @Output() eventClick = new EventEmitter();
+
   buildCard(): Properties {
     return {
       flexDirection: this.flexDirection
     }
+  }
+
+  onClick() {
+    this.eventClick.emit();
   }
 }
