@@ -12,5 +12,5 @@ import { TextComponent } from '../../misc/text/text.component';
 export class ButtonTextComponent {
   @Input({ required: true }) value!: string;
 
-  @Input() fullSize: boolean = false;
+  @Input() fullWidth = false;
 }

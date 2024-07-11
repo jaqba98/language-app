@@ -1,9 +1,14 @@
 @use '../../scss/component/button';
 
+:host {
+    display: block;
+    width: 100%;
+}
+
 .button-text {
     @include button.get-style;
 
-    &__full-size {
+    &__full-width {
         width: 100%;
     }
 }
