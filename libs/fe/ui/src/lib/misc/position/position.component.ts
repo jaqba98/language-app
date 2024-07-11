@@ -1,19 +1,29 @@
 import { Component, Input } from '@angular/core';
+import { Properties } from 'csstype';
 
 @Component({
   selector: 'lib-position',
   standalone: true,
-  templateUrl: './position.component.html',
-  styleUrl: './position.component.scss'
+  templateUrl: './position.component.html'
 })
 export class PositionComponent {
-  @Input() position = 'static';
+  @Input() position: Properties['position'] = "static";
 
-  @Input() top = "auto";
+  @Input() top: Properties['top'] = "auto";
 
-  @Input() right = "auto";
+  @Input() right: Properties['right'] = "auto";
 
-  @Input() bottom = "auto";
+  @Input() bottom: Properties['bottom'] = "auto";
 
-  @Input() left = "auto";
+  @Input() left: Properties['left'] = "auto";
+
+  buildPosition() {
+    return {
+      position: this.position,
+      top: this.top,
+      right: this.right,
+      bottom: this.bottom,
+      left: this.left,
+    }
+  }
 }
