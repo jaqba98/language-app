@@ -12,6 +12,8 @@ export class CardComponent {
 
   @Output() eventClick = new EventEmitter();
 
+  selectedItem = false;
+
   buildCard(): Properties {
     return {
       flexDirection: this.flexDirection
@@ -20,5 +22,13 @@ export class CardComponent {
 
   onClick() {
     this.eventClick.emit();
+  }
+
+  onMouseEnter() {
+    this.selectedItem = true;
+  }
+
+  onMouseLeave() {
+    this.selectedItem = false;
   }
 }
