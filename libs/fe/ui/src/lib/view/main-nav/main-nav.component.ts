@@ -25,13 +25,14 @@ export class MainNavComponent {
 
   menuVisible = false;
 
-  onHamburgerClick() {
-    this.menuVisible = !this.menuVisible;
-  }
-
-  onHamburgerBlur() {
-    if (this.menuCard.selectedItem) {
-      this.hamburger.button.setFocus();
+  @HostListener('document:click', ['$event'])
+  onClick(event: MouseEvent) {
+    if (this.hamburger && this.hamburger.button.button.nativeElement.contains(event.target)) {
+      this.menuVisible = !this.menuVisible;
+      return;
+    }
+    if (this.menuCard && this.menuCard.card.nativeElement.contains(event.target)) {
+      this.menuVisible = true;
       return;
     }
     this.menuVisible = false;

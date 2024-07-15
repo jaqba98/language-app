@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { Properties } from 'csstype';
 
 @Component({
@@ -8,6 +8,8 @@ import { Properties } from 'csstype';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
+  @ViewChild('card') card!: ElementRef;
+
   @Input() flexDirection: Properties['flexDirection'] = "row";
 
   @Output() eventClick = new EventEmitter();
