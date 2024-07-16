@@ -12,13 +12,16 @@ export class CardComponent {
 
   @Input() flexDirection: Properties['flexDirection'] = "row";
 
+  @Input() height: Properties["height"] = "auto";
+
   @Output() eventClick = new EventEmitter();
 
   selectedItem = false;
 
   buildCard(): Properties {
     return {
-      flexDirection: this.flexDirection
+      flexDirection: this.flexDirection,
+      height: this.height
     }
   }
 

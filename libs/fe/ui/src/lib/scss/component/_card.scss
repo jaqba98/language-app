@@ -2,11 +2,12 @@
 @use '../abstract/function';
 @use '../abstract/variable';
 
-@mixin get-style {
+@mixin get-default-style {
     @include mixin.set-flex(center, flex-start, 10px);
     @include mixin.set-box-model(1em, 1em);
 
     background-color: function.get-color('secondary');
     box-shadow: 0 5px 10px function.get-color('shadow');
     border-radius: variable.$border-radius;
+    overflow-y: auto;
 }

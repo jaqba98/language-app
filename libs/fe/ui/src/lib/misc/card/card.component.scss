@@ -1,5 +1,5 @@
 @use '../../scss/component/card';
 
 .card {
-    @include card.get-style;
+    @include card.get-default-style;
 }
