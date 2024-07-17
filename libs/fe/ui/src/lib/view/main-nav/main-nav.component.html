@@ -1,10 +1,12 @@
 <lib-position position="relative">
   <lib-card>
-    <lib-flex flexDirection="column" gap="5px">
-      <lib-text value="English" type="h2"></lib-text>
-      <lib-text value="Learning"></lib-text>
+    <lib-flex justifyContent="space-between" gap="1em">
+      <lib-flex flexDirection="column">
+        <lib-text value="English" type="h2"></lib-text>
+        <lib-text value="Learning"></lib-text>
+      </lib-flex>
+      <lib-button-icon #hamburger src="icon/menu.svg" alt="menu"></lib-button-icon>
     </lib-flex>
-    <!-- <lib-button-icon #hamburger src="icon/menu.svg" alt="menu"></lib-button-icon> -->
     <!--<ng-container *ngIf="menuVisible">
     <lib-position position="absolute" top="100%" left="0" right="0">
     <lib-card #menuCard flexDirection="column" (eventClick)="true">

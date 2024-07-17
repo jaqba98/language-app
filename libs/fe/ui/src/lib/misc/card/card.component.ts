@@ -10,8 +10,6 @@ import { Properties } from 'csstype';
 export class CardComponent {
   @ViewChild('card') card!: ElementRef;
 
-  @Input() flexDirection: Properties['flexDirection'] = "row";
-
   @Input() height: Properties["height"] = "auto";
 
   @Output() eventClick = new EventEmitter();
@@ -20,7 +18,6 @@ export class CardComponent {
 
   buildCard(): Properties {
     return {
-      flexDirection: this.flexDirection,
       height: this.height
     }
   }

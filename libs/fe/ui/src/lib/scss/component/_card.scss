@@ -3,7 +3,6 @@
 @use '../abstract/variable';
 
 @mixin get-default-style {
-    @include mixin.set-flex(center, flex-start, 10px);
     @include mixin.set-box-model(1em, 1em);
 
     background-color: function.get-color('secondary');
