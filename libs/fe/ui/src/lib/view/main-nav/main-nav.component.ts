@@ -1,11 +1,13 @@
 import { Component, HostListener, Input, ViewChild } from '@angular/core';
+import { CommonModule, NgFor } from '@angular/common';
 
 import { CardComponent } from '../../misc/card/card.component';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
 import { PositionComponent } from '../../misc/position/position.component';
-import { CommonModule, NgFor } from '@angular/common';
 import { MainNavOptionsType } from './main-nav.model';
+import { TextComponent } from "../../misc/text/text.component";
+import { FlexComponent } from '../../misc/flex/flex.component';
 
 @Component({
   selector: 'lib-main-nav',
@@ -16,8 +18,10 @@ import { MainNavOptionsType } from './main-nav.model';
     CardComponent,
     ButtonIconComponent,
     ButtonTextComponent,
-    PositionComponent
-  ],
+    PositionComponent,
+    TextComponent,
+    FlexComponent
+],
   templateUrl: './main-nav.component.html'
 })
 export class MainNavComponent {
