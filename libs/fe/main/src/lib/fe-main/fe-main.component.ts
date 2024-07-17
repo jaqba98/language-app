@@ -2,16 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { MainNavComponent, MainNavOptionsType } from '@english-learning/fe-ui';
-import { CardComponent } from 'libs/fe/ui/src/lib/misc/card/card.component';
-import { TextComponent } from 'libs/fe/ui/src/lib/misc/text/text.component';
 
 @Component({
   selector: 'lib-fe-main',
   standalone: true,
   imports: [
     MainNavComponent,
-    CardComponent,
-    TextComponent,
     RouterOutlet
   ],
   templateUrl: './fe-main.component.html'

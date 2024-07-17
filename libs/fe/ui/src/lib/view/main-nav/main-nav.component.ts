@@ -1,5 +1,5 @@
 import { Component, HostListener, Input, ViewChild } from '@angular/core';
-import { CommonModule, NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 import { CardComponent } from '../../misc/card/card.component';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
@@ -13,7 +13,6 @@ import { FlexComponent } from '../../misc/flex/flex.component';
   selector: 'lib-main-nav',
   standalone: true,
   imports: [
-    NgFor,
     CommonModule,
     CardComponent,
     ButtonIconComponent,
@@ -21,7 +20,7 @@ import { FlexComponent } from '../../misc/flex/flex.component';
     PositionComponent,
     TextComponent,
     FlexComponent
-],
+  ],
   templateUrl: './main-nav.component.html'
 })
 export class MainNavComponent {
