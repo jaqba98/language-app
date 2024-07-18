@@ -1,24 +1,33 @@
 <lib-position position="relative">
   <lib-card>
-    <lib-flex justifyContent="space-between" gap="1em">
-      <lib-flex flexDirection="column">
-        <lib-text value="English" type="h2"></lib-text>
-        <lib-text value="Learning"></lib-text>
+    <lib-flex alignItems="center" justifyContent="space-between">
+      <lib-flex justifyContent="space-between" gap="1em">
+        <lib-flex flexDirection="column">
+          <lib-text value="English" type="h2"></lib-text>
+          <lib-text value="Learning"></lib-text>
+        </lib-flex>
       </lib-flex>
       <ng-container *ngIf="isMobile">
         <lib-button-icon #hamburger src="icon/menu.svg" alt="menu"></lib-button-icon>
       </ng-container>
+      <ng-container *ngIf="!isMobile">
+        <lib-flex gap="0.5em">
+          <ng-container *ngFor="let option of options">
+            <lib-button-text [value]="option.value" [fullWidth]="true"></lib-button-text>    
+          </ng-container>
+        </lib-flex>
+      </ng-container>
     </lib-flex>
-    <ng-container *ngIf="menuVisible && isMobile">
-      <lib-position position="absolute" top="100%" left="0" right="0">
-        <lib-card #menuCard (eventClick)="true">
-          <lib-flex flexDirection="column" gap="0.5em">
-            <ng-container *ngFor="let option of options">
-              <lib-button-text [value]="option.value" [fullWidth]="true"></lib-button-text>    
-            </ng-container>
-          </lib-flex>
-        </lib-card>
-      </lib-position>
-    </ng-container>
   </lib-card>
+  <ng-container *ngIf="menuVisible && isMobile">
+    <lib-position position="absolute" top="100%" left="0" right="0">
+      <lib-card #menuCard (eventClick)="true">
+        <lib-flex flexDirection="column" gap="0.5em">
+          <ng-container *ngFor="let option of options">
+            <lib-button-text [value]="option.value" [fullWidth]="true"></lib-button-text>    
+          </ng-container>
+        </lib-flex>
+      </lib-card>
+    </lib-position>
+  </ng-container>
 </lib-position>
