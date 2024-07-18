@@ -1,5 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { Properties } from 'csstype';
+import { Component, ViewChild, ElementRef } from "@angular/core";
 
 @Component({
   selector: 'lib-card',
@@ -8,29 +7,5 @@ import { Properties } from 'csstype';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  @ViewChild('card') card!: ElementRef;
-
-  @Input() height: Properties["height"] = "auto";
-
-  @Output() eventClick = new EventEmitter();
-
-  selectedItem = false;
-
-  buildCard(): Properties {
-    return {
-      height: this.height
-    }
-  }
-
-  onClick() {
-    this.eventClick.emit();
-  }
-
-  onMouseEnter() {
-    this.selectedItem = true;
-  }
-
-  onMouseLeave() {
-    this.selectedItem = false;
-  }
+  @ViewChild('self') self!: ElementRef;
 }

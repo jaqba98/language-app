@@ -62,7 +62,7 @@ export class MainNavComponent implements OnDestroy {
       this.menuVisible = !this.menuVisible;
       return;
     }
-    if (this.menuCard && this.menuCard.card.nativeElement.contains(event.target)) {
+    if (this.menuCard && this.menuCard.self.nativeElement.contains(event.target)) {
       this.menuVisible = true;
       return;
     }

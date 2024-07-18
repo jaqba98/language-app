@@ -1,5 +1,5 @@
 @use '@english-learning/fe-styles/src/lib/component/card';
 
 .card {
-    @include card.get-default-style;
+    @include card.get-default-styles;
 }
