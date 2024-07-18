@@ -1,4 +1,4 @@
-@use '../../scss/component/card';
+@use '@english-learning/fe-styles/src/lib/component/card';
 
 .card {
     @include card.get-default-style;

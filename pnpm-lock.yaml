@@ -78,6 +78,9 @@ importers:
       '@angular/language-service':
         specifier: ~18.0.0
         version: 18.0.6
+      '@english-learning/fe-styles':
+        specifier: link:libs\fe\styles
+        version: link:libs/fe/styles
       '@nx/eslint':
         specifier: 19.4.2
         version: 19.4.2(@babel/traverse@7.24.7)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.11))(@swc/types@0.1.9)(typescript@5.4.5))(@swc/core@1.5.29(@swc/helpers@0.5.11))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(nx@19.4.2(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.11))(@swc/types@0.1.9)(typescript@5.4.5))(@swc/core@1.5.29(@swc/helpers@0.5.11)))

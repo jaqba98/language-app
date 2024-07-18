@@ -1,4 +1,4 @@
-@use '../../scss/component/host';
+@use '@english-learning/fe-styles/src/lib/component/host';
 
 :host {
     @include host.get-style;
