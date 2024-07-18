@@ -13,7 +13,7 @@
       <ng-container *ngIf="!isMobile">
         <lib-flex gap="0.5em">
           <ng-container *ngFor="let option of options">
-            <lib-button-text [value]="option.value" [fullWidth]="true"></lib-button-text>    
+            <lib-button-text [value]="option.title" [fullWidth]="true"></lib-button-text>    
           </ng-container>
         </lib-flex>
       </ng-container>
@@ -24,7 +24,7 @@
       <lib-card #menuCard (eventClick)="true">
         <lib-flex flexDirection="column" gap="0.5em">
           <ng-container *ngFor="let option of options">
-            <lib-button-text [value]="option.value" [fullWidth]="true"></lib-button-text>    
+            <lib-button-text [value]="option.title" [fullWidth]="true"></lib-button-text>    
           </ng-container>
         </lib-flex>
       </lib-card>

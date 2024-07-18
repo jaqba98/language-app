@@ -6,11 +6,11 @@ import { CardComponent } from '../../misc/card/card.component';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
 import { PositionComponent } from '../../misc/position/position.component';
-import { MainNavOptionsType } from './main-nav.model';
 import { TextComponent } from "../../misc/text/text.component";
 import { FlexComponent } from '../../misc/flex/flex.component';
 import { Subscription } from 'rxjs';
 import { Breakpoints } from '@angular/cdk/layout';
+import { RoutesMenuModel } from '@english-learning/fe-route';
 
 @Component({
   selector: 'lib-main-nav',
@@ -33,7 +33,7 @@ export class MainNavComponent implements OnDestroy {
   @ViewChild('hamburger') hamburger!: ButtonIconComponent;
   @ViewChild('menuCard') menuCard!: CardComponent;
 
-  @Input({ required: true }) options!: MainNavOptionsType;
+  @Input({ required: true }) options!: RoutesMenuModel[];
 
   menuVisible = false;
 
