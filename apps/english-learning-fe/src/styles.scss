@@ -1,12 +1,13 @@
-@use '../../../libs/fe/ui/src/lib/scss/abstract/mixin';
-@use '../../../libs/fe/ui/src/lib/scss/abstract/function';
+@use '../../../libs/fe/ui/src/lib/scss/abstract/color';
+@use '../../../libs/fe/ui/src/lib/scss/abstract/variable';
 
 * {
-    @include mixin.set-box-model(0, 0);
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-color: function.get-color('primary');
-    min-width: 300px;
+    background-color: color.$primary;
+    min-width: variable.$body-min-width;
 }
