@@ -5,6 +5,12 @@ import { TextComponent } from "./text.component";
 const meta: Meta<TextComponent> = {
   component: TextComponent,
   title: 'Misc/Text',
+  argTypes: {
+    type: {
+      options: ['paragraph', 'header1', 'header2'],
+      control: { type: 'select' },
+    },
+  },
 };
 export default meta;
 type Story = StoryObj<TextComponent>;
