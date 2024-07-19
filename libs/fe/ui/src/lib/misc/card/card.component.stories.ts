@@ -4,7 +4,7 @@ import { CardComponent } from './card.component';
 
 const meta: Meta<CardComponent> = {
   component: CardComponent,
-  title: 'misc/card',
+  title: 'Misc/Card',
 };
 export default meta;
 type Story = StoryObj<CardComponent>;

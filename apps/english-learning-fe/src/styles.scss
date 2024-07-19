@@ -1,13 +1,13 @@
-@use '@english-learning/fe-styles/src/lib/abstract/color';
+@use '@english-learning/fe-styles/src/lib/abstract/mixin';
+@use '@english-learning/fe-styles/src/lib/abstract/function';
 @use '@english-learning/fe-styles/src/lib/abstract/variable';
 
 * {
-    margin: 0;
-    padding: 0;
+    @include mixin.set-box-model(0, 0);
     box-sizing: border-box;
 }
 
 body {
-    background-color: color.$primary;
+    background-color: function.get-color('primary');
     min-width: variable.$body-min-width;
 }
