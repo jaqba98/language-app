@@ -1,1 +1,1 @@
-export type TextType = 'p' | 'h1' | 'h2';
+export type TextType = 'paragraph' | 'header1' | 'header2';

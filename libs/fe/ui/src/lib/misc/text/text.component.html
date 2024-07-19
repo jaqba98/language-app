@@ -1,3 +1,11 @@
-<p class="text" *ngIf="type === 'p'">{{value}}</p>
-<h1 class="text" *ngIf="type === 'h1'">{{value}}</h1>
-<h2 class="text" *ngIf="type === 'h2'">{{value}}</h2>
+<ng-container [ngSwitch]="type">
+  <ng-container *ngSwitchCase="'paragraph'">
+    <p class="text paragraph">{{value}}</p>
+  </ng-container>
+  <ng-container *ngSwitchCase="'header1'">
+    <h1 class="text header1">{{value}}</h1>
+  </ng-container>
+  <ng-container *ngSwitchCase="'header2'">
+    <h2 class="text header2">{{value}}</h2>
+  </ng-container>
+</ng-container>
