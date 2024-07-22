@@ -58,7 +58,7 @@ export class MainNavComponent implements OnDestroy {
 
   @HostListener('document:click', ['$event'])
   onClick(event: MouseEvent) {
-    if (this.hamburger && this.hamburger.button.button.nativeElement.contains(event.target)) {
+    if (this.hamburger && this.hamburger.button.self.nativeElement.contains(event.target)) {
       this.menuVisible = !this.menuVisible;
       return;
     }

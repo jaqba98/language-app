@@ -1,14 +1,12 @@
-@use '@english-learning/fe-styles/src/lib/component/button';
 @use '@english-learning/fe-styles/src/lib/component/host';
+@use '@english-learning/fe-styles/src/lib/component/button';
 
 :host {
-    @include host.get-style;
+    @include host.get-default-styles;
 }
 
 .button {
-    @include button.get-style;
-
-    &__full-width {
-        width: 100%;
-    }
+    @include button.get-default-styles;
+    @include button.get-active-styles;
+    @include button.get-full-wdith-styles;
 }

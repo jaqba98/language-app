@@ -9,6 +9,10 @@
         @return color.$secondary;
     }
 
+    @if $color-key == 'button' {
+        @return color.$button;
+    }
+
     @if $color-key == 'shadow' {
         @return color.$shadow;
     }

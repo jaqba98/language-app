@@ -1,7 +1,9 @@
+@use "@english-learning/fe-styles/src/lib/abstract/mixin";
 @use "@english-learning/fe-styles/src/lib/abstract/function";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 .text {
+    @include mixin.set-box-model(0, 0);
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;

@@ -1,5 +1,5 @@
 @use '@english-learning/fe-styles/src/lib/component/host';
 
 :host {
-    @include host.get-style;
+    @include host.get-default-styles;
 }

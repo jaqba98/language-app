@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, ViewChild, ElementRef, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: 'lib-button',
@@ -7,7 +7,7 @@ import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@
   styleUrl: './button.component.scss'
 })
 export class ButtonComponent {
-  @ViewChild('button') button!: ElementRef;
+  @ViewChild('self') self!: ElementRef;
 
   @Input() fullWidth = false;
 
@@ -24,6 +24,6 @@ export class ButtonComponent {
   }
 
   setFocus() {
-    this.button.nativeElement.focus();
+    this.self.nativeElement.focus();
   }
 }
