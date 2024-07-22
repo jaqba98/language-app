@@ -1,5 +1,5 @@
-$primary: #113f67;
-$secondary: #38598b;
-$button: #577ba8;
-$shadow: #0d304e;
-$text: #e7eaf6;
+$primary: #FFF7FC;
+$secondary: #009FBD;
+$button: darken($secondary, 5%);
+$shadow: darken($secondary, 10%);
+$text: white;

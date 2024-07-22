@@ -7,7 +7,7 @@ const preview: Preview = {
       values: [
         {
           name: 'english-learning',
-          value: '#113f67',
+          value: '#FFF7FC',
         }
       ],
     },
