@@ -1,3 +1,7 @@
-<lib-button #button (eventClick)="emitClick()" (eventBlur)="emitBlur()" [fullWidth]="fullWidth">
+<lib-button
+    #self
+    [fullWidth]="fullWidth"
+    (eventClick)="emitClick()"
+    (eventBlur)="emitBlur()">
     <lib-text [value]="value"></lib-text>
 </lib-button>

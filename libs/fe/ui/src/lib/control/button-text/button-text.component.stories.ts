@@ -1,30 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { ButtonTextComponent } from './button-text.component';
 
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { ButtonTextComponent } from './button-text.component';
 
 const meta: Meta<ButtonTextComponent> = {
   component: ButtonTextComponent,
-  title: 'ButtonTextComponent',
+  title: 'Control/ButtonText',
 };
 export default meta;
 type Story = StoryObj<ButtonTextComponent>;
 
 export const Primary: Story = {
   args: {
-    value: '',
+    value: 'Click me!',
     fullWidth: false,
-  },
-};
-
-export const Heading: Story = {
-  args: {
-    value: '',
-    fullWidth: false,
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    expect(canvas.getByText(/button-text works!/gi)).toBeTruthy();
   },
 };

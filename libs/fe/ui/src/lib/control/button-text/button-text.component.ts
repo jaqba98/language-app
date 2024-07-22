@@ -14,7 +14,7 @@ import { TextComponent } from '../../misc/text/text.component';
   styleUrl: './button-text.component.scss'
 })
 export class ButtonTextComponent {
-  @ViewChild('button') button!: ButtonComponent;
+  @ViewChild('self') self!: ButtonComponent;
 
   @Input({ required: true }) value!: string;
 
