@@ -11,6 +11,7 @@ import { FlexComponent } from '../../misc/flex/flex.component';
 import { Subscription } from 'rxjs';
 import { Breakpoints } from '@angular/cdk/layout';
 import { RoutesMenuModel } from '@english-learning/fe-route';
+import { IconComponent } from "../../misc/icon/icon.component";
 
 @Component({
   selector: 'lib-main-nav',
@@ -22,8 +23,9 @@ import { RoutesMenuModel } from '@english-learning/fe-route';
     ButtonTextComponent,
     PositionComponent,
     TextComponent,
-    FlexComponent
-  ],
+    FlexComponent,
+    IconComponent
+],
   templateUrl: './main-nav.component.html',
   providers: [
     { provide: ScreenBreakpointAppService }
