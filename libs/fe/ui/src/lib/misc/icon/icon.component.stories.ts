@@ -1,30 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { IconComponent } from './icon.component';
 
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { IconComponent } from './icon.component';
 
 const meta: Meta<IconComponent> = {
   component: IconComponent,
-  title: 'IconComponent',
+  title: 'Misc/Icon',
 };
 export default meta;
 type Story = StoryObj<IconComponent>;
 
 export const Primary: Story = {
   args: {
-    src: '',
-    alt: '',
-  },
-};
-
-export const Heading: Story = {
-  args: {
-    src: '',
-    alt: '',
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    expect(canvas.getByText(/icon works!/gi)).toBeTruthy();
+    src: 'icon/menu.svg',
+    alt: 'hamburger icon',
   },
 };
