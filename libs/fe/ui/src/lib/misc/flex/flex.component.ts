@@ -6,8 +6,7 @@ import { Properties } from "csstype";
   selector: 'lib-flex',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './flex.component.html',
-  styleUrl: './flex.component.scss'
+  templateUrl: './flex.component.html'
 })
 export class FlexComponent {
   @Input() flexDirection: Properties["flexDirection"] = "row";
@@ -20,6 +19,7 @@ export class FlexComponent {
 
   buildFlex(): Properties {
     return {
+      display: "flex",
       flexDirection: this.flexDirection,
       alignItems: this.alignItems,
       justifyContent: this.justifyContent,
