@@ -14,7 +14,7 @@ import { IconComponent } from '../../misc/icon/icon.component';
   styleUrl: './button-icon.component.scss'
 })
 export class ButtonIconComponent {
-  @ViewChild('button') button!: ButtonComponent;
+  @ViewChild('self') self!: ButtonComponent;
 
   @Input({ required: true }) src!: string;
 
