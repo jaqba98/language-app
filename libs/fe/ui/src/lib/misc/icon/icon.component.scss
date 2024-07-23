@@ -1,0 +1,5 @@
+@use '@english-learning/fe-styles/src/lib/component/icon';
+
+.icon {
+    @include icon.get-default-styles;
+}

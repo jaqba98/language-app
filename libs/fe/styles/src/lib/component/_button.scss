@@ -1,0 +1,26 @@
+@use '../abstract/mixin';
+@use '../abstract/function';
+@use '../abstract/variable';
+
+@mixin get-default-styles {
+    @include mixin.set-box-model($padding: 1em);
+
+    background-color: function.get-color('button');
+    box-shadow: variable.$box-shadow-size-big function.get-color('shadow');
+    border-radius: variable.$border-radius;
+    border: none;
+    cursor: pointer;
+}
+
+@mixin get-active-styles {
+    &:active {
+        transform: translateY(2px);
+        box-shadow: variable.$box-shadow-size-small function.get-color('shadow');
+    }
+}
+
+@mixin get-full-wdith-styles {
+    &__full-width {
+        width: 100%;
+    }
+}

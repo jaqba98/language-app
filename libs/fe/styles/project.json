@@ -1,0 +1,20 @@
+{
+  "name": "fe-styles",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/fe/styles/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/fe/styles/**/*.css",
+          "libs/fe/styles/**/*.scss"
+        ]
+      }
+    }
+  }
+}

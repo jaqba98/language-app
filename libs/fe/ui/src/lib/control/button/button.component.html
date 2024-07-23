@@ -1,0 +1,8 @@
+<button
+    #self
+    class="button"
+    [class.button__full-width]="fullWidth"
+    (click)="onClick()"
+    (blur)="onBlur()">
+    <ng-content></ng-content>
+</button>

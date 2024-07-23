@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@english-learning/fe-styles/src/lib/abstract/mixin';
+@use '@english-learning/fe-styles/src/lib/abstract/function';
+@use '@english-learning/fe-styles/src/lib/abstract/variable';
+
+* {
+    @include mixin.set-box-model(0, 0);
+    box-sizing: border-box;
+}
+
+body {
+    background-color: function.get-color('primary');
+    min-width: variable.$body-min-width;
+}
