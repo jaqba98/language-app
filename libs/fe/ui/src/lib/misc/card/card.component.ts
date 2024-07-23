@@ -1,4 +1,5 @@
-import { Component, ViewChild, ElementRef } from "@angular/core";
+import { Component, ViewChild, ElementRef, Input } from "@angular/core";
+import { Properties } from "csstype";
 
 @Component({
   selector: 'lib-card',
@@ -8,4 +9,6 @@ import { Component, ViewChild, ElementRef } from "@angular/core";
 })
 export class CardComponent {
   @ViewChild('self') self!: ElementRef;
+
+  @Input() height: Properties['height'] = 'auto';
 }

@@ -1,7 +1,7 @@
 @use 'sass:color';
 
-$primary: #FFF7FC;
-$secondary: #009FBD;
-$button: color.adjust($secondary, $lightness: -5%);
-$shadow: color.adjust($secondary, $lightness: -10%);
-$text: white;
+$primary: #19456B;
+$secondary: #11698E;
+$button: color.adjust($secondary, $lightness: -3%);
+$shadow: color.adjust($secondary, $lightness: -6%);
+$text: #F4F4F2;

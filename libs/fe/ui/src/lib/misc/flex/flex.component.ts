@@ -17,13 +17,16 @@ export class FlexComponent {
 
   @Input() gap: Properties["gap"] = "0";
 
+  @Input() height: Properties["height"] = "auto";
+
   buildFlex(): Properties {
     return {
       display: "flex",
       flexDirection: this.flexDirection,
       alignItems: this.alignItems,
       justifyContent: this.justifyContent,
-      gap: this.gap
+      gap: this.gap,
+      height: this.height
     }
   }
 }
