@@ -1,5 +1,7 @@
+@use 'sass:color';
+
 $primary: #FFF7FC;
 $secondary: #009FBD;
-$button: darken($secondary, 5%);
-$shadow: darken($secondary, 10%);
+$button: color.adjust($secondary, -5%);
+$shadow: color.adjust($secondary, -10%);
 $text: white;
