@@ -1,26 +1,14 @@
-<lib-card>
-  <lib-flex alignItems="center" justifyContent="space-between">
-    <lib-icon src="icon/school.svg" alt="School icon"></lib-icon>
-    <lib-button-icon #hamburger src="icon/menu.svg" alt="menu"></lib-button-icon>
-  </lib-flex>
-</lib-card>
-
-<!-- <lib-position position="relative">
+<lib-position position="relative">
   <lib-card>
     <lib-flex alignItems="center" justifyContent="space-between">
-      <lib-flex justifyContent="space-between" gap="1em">
-        <lib-flex flexDirection="column">
-          <lib-text value="English" type="header2"></lib-text>
-          <lib-text value="Learning"></lib-text>
-        </lib-flex>
-      </lib-flex>
+      <lib-icon src="icon/school.svg" alt="school icon"></lib-icon>
       <ng-container *ngIf="isMobile">
-        <lib-button-icon #hamburger src="icon/menu.svg" alt="menu"></lib-button-icon>
+        <lib-button-icon #hamburger src="icon/menu.svg" alt="hamburger icon"></lib-button-icon>
       </ng-container>
       <ng-container *ngIf="!isMobile">
-        <lib-flex gap="0.5em">
+        <lib-flex gap="0.25em">
           <ng-container *ngFor="let option of options">
-            <lib-button-text [value]="option.title" [fullWidth]="true"></lib-button-text>    
+            <lib-button-text [value]="option.title" [fullWidth]="true"></lib-button-text>
           </ng-container>
         </lib-flex>
       </ng-container>
@@ -28,13 +16,13 @@
   </lib-card>
   <ng-container *ngIf="menuVisible && isMobile">
     <lib-position position="absolute" top="100%" left="0" right="0">
-      <lib-card #menuCard (eventClick)="true">
+      <lib-card #menuCard>
         <lib-flex flexDirection="column" gap="0.5em">
           <ng-container *ngFor="let option of options">
-            <lib-button-text [value]="option.title" [fullWidth]="true"></lib-button-text>    
+            <lib-button-text [value]="option.title" [fullWidth]="true"></lib-button-text> 
           </ng-container>
         </lib-flex>
       </lib-card>
     </lib-position>
   </ng-container>
-</lib-position> -->
+</lib-position>
