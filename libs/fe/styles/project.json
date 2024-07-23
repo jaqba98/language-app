@@ -5,5 +5,16 @@
   "prefix": "lib",
   "projectType": "library",
   "tags": [],
-  "targets": {}
+  "targets": {
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/fe/styles/**/*.css",
+          "libs/fe/styles/**/*.scss"
+        ]
+      }
+    }
+  }
 }
