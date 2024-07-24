@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { RoutesMenuModel } from '@english-learning/fe-route';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
+import { routesGrammar } from '../../service/routes-menu.service';
 
 @Component({
   selector: 'lib-grammar-nav',
@@ -14,5 +14,5 @@ import { ButtonTextComponent } from '../../control/button-text/button-text.compo
   templateUrl: './grammar-nav.component.html'
 })
 export class GrammarNavComponent {
-  @Input({ required: true }) options!: RoutesMenuModel[];
+  options = routesGrammar;
 }
