@@ -17,11 +17,13 @@
   <ng-container *ngIf="menuVisible && isMobile">
     <lib-position position="absolute" top="100%" left="0" right="0">
       <lib-card #menuCard>
-        <lib-flex flexDirection="column" gap="0.5em">
-          <ng-container *ngFor="let option of options">
-            <lib-button-text [value]="option.title" [link]="option.link" [fullWidth]="true"></lib-button-text> 
-          </ng-container>
-        </lib-flex>
+          <lib-wrapper #menuCardOptions>
+            <lib-flex flexDirection="column" gap="0.5em">
+              <ng-container *ngFor="let option of options">
+                <lib-button-text [value]="option.title" [link]="option.link" [fullWidth]="true"></lib-button-text> 
+              </ng-container>
+            </lib-flex>
+          </lib-wrapper>
       </lib-card>
     </lib-position>
   </ng-container>

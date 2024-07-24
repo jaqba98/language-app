@@ -1,6 +1,6 @@
 <button
     #self
-    [routerLink]="link"
+    [routerLink]="link ? link : null"
     class="button"
     [class.button__full-width]="fullWidth"
     (click)="onClick()"

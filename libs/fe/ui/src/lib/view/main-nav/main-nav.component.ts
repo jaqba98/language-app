@@ -12,6 +12,7 @@ import { TextComponent } from "../../misc/text/text.component";
 import { FlexComponent } from '../../misc/flex/flex.component';
 import { IconComponent } from "../../misc/icon/icon.component";
 import { routesMainNav } from '../../service/routes-menu.service';
+import { WrapperComponent } from '../../misc/wrapper/wrapper.component';
 
 @Component({
   selector: 'lib-main-nav',
@@ -24,7 +25,8 @@ import { routesMainNav } from '../../service/routes-menu.service';
     PositionComponent,
     TextComponent,
     FlexComponent,
-    IconComponent
+    IconComponent,
+    WrapperComponent
   ],
   templateUrl: './main-nav.component.html',
   providers: [
@@ -34,6 +36,7 @@ import { routesMainNav } from '../../service/routes-menu.service';
 export class MainNavComponent implements OnDestroy {
   @ViewChild('hamburger') hamburger!: ButtonIconComponent;
   @ViewChild('menuCard') menuCard!: CardComponent;
+  @ViewChild('menuCardOptions') menuCardOptions!: CardComponent;
 
   options = routesMainNav;
 
@@ -61,6 +64,10 @@ export class MainNavComponent implements OnDestroy {
   onClick(event: MouseEvent) {
     const { target } = event;
     if (this.hamburger && this.hamburger.self.self.nativeElement.contains(target)) {
+      this.menuVisible = !this.menuVisible;
+      return;
+    }
+    if (this.menuCard && this.menuCardOptions.self.nativeElement.contains(target)) {
       this.menuVisible = !this.menuVisible;
       return;
     }
