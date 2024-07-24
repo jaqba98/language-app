@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-fe-page',
+  selector: 'lib-grammar',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './fe-page.component.html',
-  styleUrl: './fe-page.component.css',
+  templateUrl: './grammar.component.html'
 })
-export class FePageComponent {}
+export class GrammarComponent {}
