@@ -18,6 +18,8 @@ export class ButtonTextComponent {
 
   @Input({ required: true }) value!: string;
 
+  @Input() link = "";
+
   @Input() fullWidth = false;
 
   @Output() eventClick = new EventEmitter();
