@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { routesMenu } from '@english-learning/fe-route';
+import { routesMainNav } from '@english-learning/fe-route';
 import { MainNavComponent } from '@english-learning/fe-ui';
 
 @Component({
@@ -14,5 +14,5 @@ import { MainNavComponent } from '@english-learning/fe-ui';
   templateUrl: './fe-main.component.html'
 })
 export class FeMainComponent {
-  options = routesMenu;
+  options = routesMainNav;
 }
