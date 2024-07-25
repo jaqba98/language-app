@@ -9,6 +9,7 @@ import { CardComponent, TextComponent } from '@english-learning/fe-ui';
     CardComponent,
     TextComponent
   ],
-  templateUrl: './present-simple.component.html'
+  templateUrl: './present-simple.component.html',
+  styleUrl: './present-simple.component.scss'
 })
 export class PresentSimpleComponent {}

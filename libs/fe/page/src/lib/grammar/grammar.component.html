@@ -1,2 +1,10 @@
-<lib-grammar-nav></lib-grammar-nav>
-<router-outlet></router-outlet>
+<ng-container *ngIf="isMobile">
+  <lib-grammar-nav></lib-grammar-nav>
+  <router-outlet></router-outlet>
+</ng-container>
+<ng-container *ngIf="!isMobile">
+  <lib-flex>
+    <lib-grammar-nav></lib-grammar-nav>
+    <router-outlet></router-outlet>
+  </lib-flex>
+</ng-container>
