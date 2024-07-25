@@ -1,6 +1,6 @@
-@use '@english-learning/fe-styles/src/lib/abstract/mixin';
-@use '@english-learning/fe-styles/src/lib/abstract/function';
-@use '@english-learning/fe-styles/src/lib/abstract/variable';
+@use "@english-learning/fe-styles/src/lib/abstract/mixin";
+@use "@english-learning/fe-styles/src/lib/abstract/function";
+@use "@english-learning/fe-styles/src/lib/abstract/variable";
 
 * {
     @include mixin.set-box-model(0, 0);
@@ -8,6 +8,6 @@
 }
 
 body {
-    background-color: function.get-color('primary');
+    background-color: function.get-color("primary");
     min-width: variable.$body-min-width;
 }
