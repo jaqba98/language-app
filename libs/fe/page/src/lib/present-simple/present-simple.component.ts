@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { CardComponent, TextComponent } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-present-simple',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CardComponent,
+    TextComponent
+  ],
   templateUrl: './present-simple.component.html'
 })
 export class PresentSimpleComponent {}

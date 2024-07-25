@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { CardComponent, TextComponent } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CardComponent,
+    TextComponent
+  ],
   templateUrl: './home.component.html'
 })
 export class HomeComponent {}
