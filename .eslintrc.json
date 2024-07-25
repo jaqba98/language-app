@@ -24,7 +24,19 @@
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nx/typescript"],
-      "rules": {}
+      "rules": {
+        "comma-dangle": "error",
+        "eol-last": "error",
+        "max-len": [
+          "error",
+          {
+            "ignoreComments": true
+          }
+        ],
+        "max-lines": "error",
+        "quotes": ["error", "double"],
+        "indent": ["error", 2]
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
