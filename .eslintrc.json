@@ -23,20 +23,8 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
-      "rules": {
-        "comma-dangle": "error",
-        "eol-last": "error",
-        "max-len": [
-          "error",
-          {
-            "ignoreComments": true
-          }
-        ],
-        "max-lines": "error",
-        "quotes": ["error", "double"],
-        "indent": ["error", 2]
-      }
+      "extends": ["plugin:@nx/typescript", "airbnb", "airbnb-typescript"],
+      "rules": {}
     },
     {
       "files": ["*.js", "*.jsx"],
