@@ -2,4 +2,8 @@
 
 .card {
     @include card.get-default-styles;
+    
+    &__darken {
+        @include card.get-darken-styles;
+    }
 }

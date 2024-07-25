@@ -1,0 +1,10 @@
+@use '@english-learning/fe-styles/src/lib/abstract/function';
+@use '@english-learning/fe-styles/src/lib/component/host';
+
+:host {
+    @include host.get-default-styles;
+}
+
+.link {
+    text-decoration-color: function.get-color('text');
+}

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
-import { CardComponent, GrammarNavComponent } from "@english-learning/fe-ui";
+import { GrammarNavComponent } from "@english-learning/fe-ui";
 
 @Component({
   selector: 'lib-grammar',
@@ -10,8 +10,7 @@ import { CardComponent, GrammarNavComponent } from "@english-learning/fe-ui";
   imports: [
     CommonModule,
     GrammarNavComponent,
-    RouterOutlet,
-    CardComponent
+    RouterOutlet
   ],
   templateUrl: './grammar.component.html'
 })

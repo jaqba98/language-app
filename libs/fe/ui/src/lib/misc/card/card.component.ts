@@ -11,4 +11,6 @@ export class CardComponent {
   @ViewChild('self') self!: ElementRef;
 
   @Input() height: Properties['height'] = 'auto';
+
+  @Input() isDarken = false;
 }

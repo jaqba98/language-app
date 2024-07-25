@@ -6,5 +6,11 @@ export const routesMainNav: RoutesMenuModel[] = [
 ];
 
 export const routesGrammar: RoutesMenuModel[] = [
-  { title: "Present Simple", link: "/grammar/present-simple" }
+  { title: "Present Simple 1", link: "/grammar/present-simple" },
+  { title: "Present Simple 2", link: "/grammar/present-simple" },
+  { title: "Present Simple 3", link: "/grammar/present-simple" },
+  { title: "Present Simple 4", link: "/grammar/present-simple" },
+  { title: "Present Simple 5", link: "/grammar/present-simple" },
+  { title: "Present Simple 6", link: "/grammar/present-simple" },
+  { title: "Present Simple 7", link: "/grammar/present-simple" }
 ];

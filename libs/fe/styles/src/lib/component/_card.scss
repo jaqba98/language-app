@@ -9,3 +9,8 @@
     box-shadow: variable.$box-shadow-size-big function.get-color('shadow');
     border-radius: variable.$border-radius;
 }
+
+@mixin get-darken-styles {
+    background-color: function.get-color('shadow');
+    box-shadow: none;
+}
