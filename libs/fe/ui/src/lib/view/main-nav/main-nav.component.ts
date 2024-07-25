@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, Input, OnDestroy, ViewChild } from '@angular/core';
+import { Component, HostListener, OnDestroy, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Breakpoints } from '@angular/cdk/layout';
 
 import { ScreenBreakpointAppService } from '@english-learning/fe-system';
-import { RoutesMenuModel } from '@english-learning/fe-route';
 import { CardComponent } from '../../misc/card/card.component';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
@@ -12,6 +11,8 @@ import { PositionComponent } from '../../misc/position/position.component';
 import { TextComponent } from "../../misc/text/text.component";
 import { FlexComponent } from '../../misc/flex/flex.component';
 import { IconComponent } from "../../misc/icon/icon.component";
+import { routesMainNav } from '../../service/routes-menu.service';
+import { WrapperComponent } from '../../misc/wrapper/wrapper.component';
 
 @Component({
   selector: 'lib-main-nav',
@@ -24,7 +25,8 @@ import { IconComponent } from "../../misc/icon/icon.component";
     PositionComponent,
     TextComponent,
     FlexComponent,
-    IconComponent
+    IconComponent,
+    WrapperComponent
   ],
   templateUrl: './main-nav.component.html',
   providers: [
@@ -34,8 +36,9 @@ import { IconComponent } from "../../misc/icon/icon.component";
 export class MainNavComponent implements OnDestroy {
   @ViewChild('hamburger') hamburger!: ButtonIconComponent;
   @ViewChild('menuCard') menuCard!: CardComponent;
+  @ViewChild('menuCardOptions') menuCardOptions!: CardComponent;
 
-  @Input({ required: true }) options!: RoutesMenuModel[];
+  options = routesMainNav;
 
   isMobile = true;
   menuVisible = false;
@@ -61,6 +64,10 @@ export class MainNavComponent implements OnDestroy {
   onClick(event: MouseEvent) {
     const { target } = event;
     if (this.hamburger && this.hamburger.self.self.nativeElement.contains(target)) {
+      this.menuVisible = !this.menuVisible;
+      return;
+    }
+    if (this.menuCard && this.menuCardOptions.self.nativeElement.contains(target)) {
       this.menuVisible = !this.menuVisible;
       return;
     }

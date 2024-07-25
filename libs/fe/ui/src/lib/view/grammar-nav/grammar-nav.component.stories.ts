@@ -1,11 +1,11 @@
 import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
+
+import { GrammarNavComponent } from './grammar-nav.component';
 import { ActivatedRoute } from '@angular/router';
 
-import { MainNavComponent } from './main-nav.component';
-
-const meta: Meta<MainNavComponent> = {
-  component: MainNavComponent,
-  title: 'View/MainNav',
+const meta: Meta<GrammarNavComponent> = {
+  component: GrammarNavComponent,
+  title: 'View/GrammarNav',
   parameters: {
     layout: 'fullscreen'
   },
@@ -18,7 +18,7 @@ const meta: Meta<MainNavComponent> = {
   ]
 };
 export default meta;
-type Story = StoryObj<MainNavComponent>;
+type Story = StoryObj<GrammarNavComponent>;
 
 export const Primary: Story = {
   args: {
