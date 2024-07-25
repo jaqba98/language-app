@@ -18,10 +18,12 @@ export const routes: Route[] = [
   },
   {
     path: "grammar",
-    component: GrammarComponent
-  },
-  {
-    path: "present-simple",
-    component: PresentSimpleComponent
+    component: GrammarComponent,
+    children: [
+      {
+        path: "present-simple",
+        component: PresentSimpleComponent
+      }
+    ]
   }
 ];
