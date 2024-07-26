@@ -24,7 +24,9 @@
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nx/typescript", "airbnb-base", "airbnb-typescript/base"],
-      "rules": {}
+      "rules": {
+        "import/prefer-default-export": "off"
+      }
     },
     {
       "files": ["*.js", "*.jsx"],

@@ -1,1 +1,1 @@
-export * from "./lib/routes.service";
+export * from './lib/routes.service';

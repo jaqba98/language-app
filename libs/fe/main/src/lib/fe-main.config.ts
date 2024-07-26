@@ -3,11 +3,9 @@ import { provideRouter, withHashLocation } from '@angular/router';
 
 import { feRoutes } from '@english-learning/fe-route';
 
-const feMainConfig: ApplicationConfig = {
+export const feMainConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(feRoutes, withHashLocation()),
   ],
 };
-
-export default feMainConfig;
