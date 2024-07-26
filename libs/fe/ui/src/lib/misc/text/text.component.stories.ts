@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from "@storybook/angular";
+import { Meta, StoryObj } from '@storybook/angular';
 
-import { TextComponent } from "./text.component";
+import { TextComponent } from './text.component';
 
 const meta: Meta<TextComponent> = {
   component: TextComponent,

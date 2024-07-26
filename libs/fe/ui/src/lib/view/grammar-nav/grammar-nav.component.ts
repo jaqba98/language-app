@@ -15,9 +15,9 @@ import { FlexComponent } from '../../misc/flex/flex.component';
     LinkComponent,
     CardComponent,
     TextComponent,
-    FlexComponent
+    FlexComponent,
   ],
-  templateUrl: './grammar-nav.component.html'
+  templateUrl: './grammar-nav.component.html',
 })
 export class GrammarNavComponent {
   options = routesGrammar;

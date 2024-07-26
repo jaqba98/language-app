@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import {
+  Component, EventEmitter, Input, Output, ViewChild,
+} from '@angular/core';
 
 import { ButtonComponent } from '../button/button.component';
 import { IconComponent } from '../../misc/icon/icon.component';
@@ -8,10 +10,10 @@ import { IconComponent } from '../../misc/icon/icon.component';
   standalone: true,
   imports: [
     ButtonComponent,
-    IconComponent
+    IconComponent,
   ],
   templateUrl: './button-icon.component.html',
-  styleUrl: './button-icon.component.scss'
+  styleUrl: './button-icon.component.scss',
 })
 export class ButtonIconComponent {
   @ViewChild('self') self!: ButtonComponent;

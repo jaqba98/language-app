@@ -1,19 +1,21 @@
-import { Component, ViewChild, ElementRef, Input, Output, EventEmitter } from "@angular/core";
-import { RouterModule } from "@angular/router";
+import {
+  Component, ViewChild, ElementRef, Input, Output, EventEmitter,
+} from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'lib-button',
   standalone: true,
   imports: [RouterModule],
   templateUrl: './button.component.html',
-  styleUrl: './button.component.scss'
+  styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
   @ViewChild('self') self!: ElementRef;
 
   @Input() fullWidth = false;
 
-  @Input() link = "";
+  @Input() link = '';
 
   @Output() eventClick = new EventEmitter();
 

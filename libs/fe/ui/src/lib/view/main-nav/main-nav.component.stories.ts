@@ -7,15 +7,15 @@ const meta: Meta<MainNavComponent> = {
   component: MainNavComponent,
   title: 'View/MainNav',
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   decorators: [
     moduleMetadata({
       providers: [
-        { provide: ActivatedRoute, useValue: [] }
-      ]
-    })
-  ]
+        { provide: ActivatedRoute, useValue: [] },
+      ],
+    }),
+  ],
 };
 export default meta;
 type Story = StoryObj<MainNavComponent>;
@@ -23,11 +23,11 @@ type Story = StoryObj<MainNavComponent>;
 export const Primary: Story = {
   args: {
     options: [
-      { title: "Link 1", link: "/" },
-      { title: "Link 2", link: "/" },
-      { title: "Link 3", link: "/" },
-      { title: "Link 4", link: "/" },
-      { title: "Link 5", link: "/" }
-    ]
-  }
+      { title: 'Link 1', link: '/' },
+      { title: 'Link 2', link: '/' },
+      { title: 'Link 3', link: '/' },
+      { title: 'Link 4', link: '/' },
+      { title: 'Link 5', link: '/' },
+    ],
+  },
 };

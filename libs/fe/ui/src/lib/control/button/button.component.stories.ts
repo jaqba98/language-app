@@ -1,7 +1,7 @@
-import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
+import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 
-import { ButtonComponent } from "./button.component";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute } from '@angular/router';
+import { ButtonComponent } from './button.component';
 
 const meta: Meta<ButtonComponent> = {
   component: ButtonComponent,
@@ -9,10 +9,10 @@ const meta: Meta<ButtonComponent> = {
   decorators: [
     moduleMetadata({
       providers: [
-        { provide: ActivatedRoute, useValue: [] }
-      ]
-    })
-  ]
+        { provide: ActivatedRoute, useValue: [] },
+      ],
+    }),
+  ],
 };
 export default meta;
 type Story = StoryObj<ButtonComponent>;

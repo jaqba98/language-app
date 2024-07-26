@@ -1,20 +1,20 @@
 import { Component, Input } from '@angular/core';
 
-import { TextComponent } from '../../misc/text/text.component';
 import { RouterLink } from '@angular/router';
+import { TextComponent } from '../../misc/text/text.component';
 
 @Component({
   selector: 'lib-link',
   standalone: true,
   imports: [
     TextComponent,
-    RouterLink
+    RouterLink,
   ],
   templateUrl: './link.component.html',
-  styleUrl: './link.component.scss'
+  styleUrl: './link.component.scss',
 })
 export class LinkComponent {
   @Input({ required: true }) value!: string;
 
-  @Input() link = "";
+  @Input() link = '';
 }
