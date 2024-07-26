@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+
+import { RootComponent } from '@english-learning/fe-page';
 
 @Component({
   selector: 'lib-fe-main',
   standalone: true,
-  imports: [RouterOutlet],
-  template: '<router-outlet></router-outlet>',
+  imports: [RootComponent],
+  template: '<lib-root></lib-root>',
 })
 export class FeMainComponent {}
