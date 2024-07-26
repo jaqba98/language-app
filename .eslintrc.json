@@ -23,7 +23,7 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript", "airbnb", "airbnb-typescript"],
+      "extends": ["plugin:@nx/typescript", "airbnb-base", "airbnb-typescript/base"],
       "rules": {}
     },
     {
