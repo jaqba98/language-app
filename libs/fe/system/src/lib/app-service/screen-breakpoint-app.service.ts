@@ -4,7 +4,7 @@ import { BehaviorSubject } from "rxjs";
 
 import { screenBreakpoints } from "../const/screen-breakpoints.const";
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ScreenBreakpointAppService {
   currentBreakpoint$ = new BehaviorSubject<string>(Breakpoints.XSmall);
   

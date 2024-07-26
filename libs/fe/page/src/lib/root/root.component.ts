@@ -8,8 +8,8 @@ import { MainNavComponent } from '@english-learning/fe-ui';
   standalone: true,
   imports: [
     RouterOutlet,
-    MainNavComponent
+    MainNavComponent,
   ],
-  templateUrl: './root.component.html'
+  templateUrl: './root.component.html',
 })
 export class RootComponent {}

@@ -7,9 +7,8 @@ import { CardComponent, TextComponent } from '@english-learning/fe-ui';
   standalone: true,
   imports: [
     CardComponent,
-    TextComponent
+    TextComponent,
   ],
   templateUrl: './present-simple.component.html',
-  styleUrl: './present-simple.component.scss'
 })
 export class PresentSimpleComponent {}
