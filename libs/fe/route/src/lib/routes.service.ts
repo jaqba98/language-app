@@ -6,7 +6,7 @@ import {
   PresentSimpleComponent
 } from "@english-learning/fe-page";
 
-export const routes: Route[] = [
+export const feRoutes: Route[] = [
   {
     path: "",
     redirectTo: "/home",
