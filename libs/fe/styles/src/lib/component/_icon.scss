@@ -1,5 +1,0 @@
-@use '../abstract/mixin';
-
-@mixin get-default-styles {
-    @include mixin.set-flex(center, center);
-}
