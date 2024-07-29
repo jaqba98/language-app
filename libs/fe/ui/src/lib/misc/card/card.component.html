@@ -1,7 +1,8 @@
 <div
     #self
     class="card"
-    [class.card__darken]="isDarken"
-    [style.height]="height">
+    [ngClass]="cardType"
+    [ngStyle]="{ height: height }"
+>
     <ng-content></ng-content>
 </div>

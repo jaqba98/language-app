@@ -1,18 +1,22 @@
+import { CommonModule } from '@angular/common';
 import {
   Component, ViewChild, ElementRef, Input,
 } from '@angular/core';
 import { Properties } from 'csstype';
 
+import { CardEnum } from './card.enum';
+
 @Component({
   selector: 'lib-card',
   standalone: true,
+  imports: [CommonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
   @ViewChild('self') self!: ElementRef;
 
-  @Input() height: Properties['height'] = 'auto';
+  @Input() cardType = CardEnum.card__default;
 
-  @Input() isDarken = false;
+  @Input() height: Properties['height'] = 'auto';
 }
