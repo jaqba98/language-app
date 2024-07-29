@@ -1,5 +1,5 @@
-import { Preview } from '@storybook/angular';
- 
+import type { Preview } from '@storybook/angular';
+
 const preview: Preview = {
   parameters: {
     backgrounds: {
@@ -8,10 +8,10 @@ const preview: Preview = {
         {
           name: 'english-learning',
           value: '#2D3250',
-        }
+        },
       ],
     },
   },
 };
- 
+
 export default preview;
