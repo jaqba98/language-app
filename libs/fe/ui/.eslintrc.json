@@ -5,7 +5,10 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": "./tsconfig.base.json"
+        "project": [
+          "./libs/fe/ui/tsconfig.lib.json",
+          "./libs/fe/ui/.storybook/tsconfig.json"
+        ]
       },
       "extends": [
         "plugin:@nx/angular",
@@ -26,6 +29,12 @@
             "type": "element",
             "prefix": "lib",
             "style": "kebab-case"
+          }
+        ],
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": ["**/*.stories.js", "**/*.stories.ts"]
           }
         ]
       }
