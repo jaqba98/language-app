@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
-import { TextType } from './text.type';
+import { TextEnum } from './text.enum';
 
 @Component({
   selector: 'lib-text',
@@ -13,5 +13,5 @@ import { TextType } from './text.type';
 export class TextComponent {
   @Input({ required: true }) value!: string;
 
-  @Input() type: TextType = 'paragraph';
+  @Input() textType = TextEnum.paragraph;
 }
