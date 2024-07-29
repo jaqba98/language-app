@@ -6,6 +6,9 @@ import { CardEnum } from './card.enum';
 const meta: Meta<CardComponent> = {
   component: CardComponent,
   title: 'fe/ui/misc/card',
+  parameters: {
+    layout: 'fullscreen',
+  },
   argTypes: {
     cardType: {
       control: 'select',
