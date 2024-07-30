@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import {
-  Component, HostListener, OnDestroy, ViewChild,
+  Component, HostListener, ViewChild,
 } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Breakpoints } from '@angular/cdk/layout';
 import { Properties } from 'csstype';
 
-import { ScreenBreakpointAppService } from '@english-learning/fe-system';
+import {
+  BreakpointEnum, BreakpointModel, BreakpointObserverType, BreakpointService,
+} from '@english-learning/fe-system';
 import { CardComponent } from '../../misc/card/card.component';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
@@ -33,11 +33,8 @@ import { CardEnum } from '../../misc/card/card.enum';
     WrapperComponent,
   ],
   templateUrl: './main-nav.component.html',
-  providers: [
-    { provide: ScreenBreakpointAppService },
-  ],
 })
-export class MainNavComponent implements OnDestroy {
+export class MainNavComponent implements BreakpointObserverType {
   @ViewChild('hamburger') hamburger!: ButtonIconComponent;
 
   @ViewChild('menuCard') menuCard!: CardComponent;
@@ -54,27 +51,23 @@ export class MainNavComponent implements OnDestroy {
 
   mainNavMobileCardType = CardEnum.card__darken;
 
-  private sub: Subscription;
-
-  constructor(private readonly screenBreakpoint: ScreenBreakpointAppService) {
-    this.sub = this.screenBreakpoint.currentBreakpoint$.subscribe((breakpoint) => {
-      if (breakpoint === Breakpoints.XSmall) {
-        this.isMobile = true;
-      } else {
-        this.isMobile = false;
-        this.menuVisible = false;
-      }
-
-      if (breakpoint === Breakpoints.Large || breakpoint === Breakpoints.XLarge) {
-        this.mainNavJustifyContent = 'space-around';
-      } else {
-        this.mainNavJustifyContent = 'space-between';
-      }
-    });
+  constructor(private readonly breakpoint: BreakpointService) {
+    this.breakpoint.addObserver(this);
   }
 
-  ngOnDestroy() {
-    this.sub.unsubscribe();
+  update(data: BreakpointModel) {
+    if (data.breakpoint === BreakpointEnum.XSmall) {
+      this.isMobile = true;
+    } else {
+      this.isMobile = false;
+      this.menuVisible = false;
+    }
+
+    if (data.breakpoint === BreakpointEnum.Large || data.breakpoint === BreakpointEnum.XLarge) {
+      this.mainNavJustifyContent = 'space-around';
+    } else {
+      this.mainNavJustifyContent = 'space-between';
+    }
   }
 
   @HostListener('document:click', ['$event'])
