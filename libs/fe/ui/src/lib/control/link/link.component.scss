@@ -1,8 +1,8 @@
 @use '@english-learning/fe-styles/src/lib/abstract/function';
-@use '@english-learning/fe-styles/src/lib/component/host';
+@use '@english-learning/fe-styles/src/lib/abstract/mixin';
 
 :host {
-    @include host.get-default-styles;
+    @include mixin.get-host-default;
 }
 
 .link {

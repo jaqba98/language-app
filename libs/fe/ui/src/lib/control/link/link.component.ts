@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-
 import { RouterLink } from '@angular/router';
+
 import { TextComponent } from '../../misc/text/text.component';
 
 @Component({
@@ -16,5 +16,5 @@ import { TextComponent } from '../../misc/text/text.component';
 export class LinkComponent {
   @Input({ required: true }) value!: string;
 
-  @Input() link = '';
+  @Input() link: string | null = null;
 }
