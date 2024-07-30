@@ -1,6 +1,6 @@
-<lib-card>
+<lib-card [cardType]="card">
   <lib-flex flexDirection="column" gap="1em">
-    <lib-text value="Grammar" type="header2"></lib-text>
+    <lib-text value="Grammar" [textType]="header"></lib-text>
     <lib-flex flexDirection="column" gap="0.25em">
       <ng-container *ngFor="let option of options">
         <lib-link [link]="option.link" [value]="option.value"></lib-link>

@@ -1,11 +1,11 @@
 import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
-
 import { ActivatedRoute } from '@angular/router';
+
 import { GrammarNavComponent } from './grammar-nav.component';
 
 const meta: Meta<GrammarNavComponent> = {
   component: GrammarNavComponent,
-  title: 'View/GrammarNav',
+  title: 'fe/ui/view/grammar-nav',
   parameters: {
     layout: 'fullscreen',
   },
