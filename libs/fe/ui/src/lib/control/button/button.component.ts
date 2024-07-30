@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 export class ButtonComponent {
   @ViewChild('self') self!: ElementRef;
 
-  @Input({ required: true }) link!: string;
+  @Input() link: string | null = null;
 
   @Input() fullWidth = false;
 
