@@ -59,12 +59,6 @@ export class MainNavComponent {
       this.isMobile = false;
       this.isMenuVisible = false;
     }
-
-    if (data.breakpoint === BreakpointEnum.Large || data.breakpoint === BreakpointEnum.XLarge) {
-      this.mainNavJustifyContent = 'space-around';
-    } else {
-      this.mainNavJustifyContent = 'space-between';
-    }
   }
 
   @HostListener('document:click', ['$event'])
