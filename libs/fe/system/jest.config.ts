@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'fe-system',
   preset: '../../../jest.preset.js',

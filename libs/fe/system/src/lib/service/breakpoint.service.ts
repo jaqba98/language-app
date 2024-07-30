@@ -1,22 +1,17 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 import { SubjectModel } from '../model/abstract/subject.model';
-import {
-  BreakpointModel,
-  BreakpointObserverType,
-} from '../model/domain/breakpoint.model';
+import { BreakpointModel } from '../model/context/breakpoint.model';
 import { BreakpointEnum } from '../enum/breakpoint.enum';
+import { ObserverModel } from '../model/abstract/observer.model';
 
 @Injectable({ providedIn: 'root' })
 export class BreakpointService implements SubjectModel<BreakpointModel> {
-  observers: Map<BreakpointObserverType, BreakpointObserverType> = new Map();
+  observers: Map<ObserverModel<BreakpointModel>, ObserverModel<BreakpointModel>> = new Map();
 
-  currentBreakpoint$ = new BehaviorSubject<string>(Breakpoints.XSmall);
-
-  constructor(private readonly breakpoint: BreakpointObserver) {
-    this.breakpoint.observe([
+  constructor(private readonly observer: BreakpointObserver) {
+    this.observer.observe([
       Breakpoints.XSmall,
       Breakpoints.Small,
       Breakpoints.Medium,
@@ -37,19 +32,19 @@ export class BreakpointService implements SubjectModel<BreakpointModel> {
     });
   }
 
-  addObserver(obs: BreakpointObserverType): void {
+  addObserver(obs: ObserverModel<BreakpointModel>): void {
     if (this.observers.has(obs)) {
-      throw new Error('Object is not registered');
+      throw new Error('Object is already registered!');
     }
     this.observers.set(obs, obs);
   }
 
-  removeObserver(obs: BreakpointObserverType): void {
+  removeObserver(obs: ObserverModel<BreakpointModel>): void {
     if (this.observers.has(obs)) {
       this.observers.delete(obs);
       return;
     }
-    throw new Error('Object is already registered');
+    throw new Error('Object is not registered!');
   }
 
   notifyObservers(breakpoint: BreakpointModel): void {

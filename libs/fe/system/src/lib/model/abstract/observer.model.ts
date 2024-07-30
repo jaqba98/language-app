@@ -1,3 +1,3 @@
-export interface ObserverModel<TData> {
-  update(data: TData): void;
+export interface ObserverModel<TContext> {
+  update(ctx: TContext): void;
 }

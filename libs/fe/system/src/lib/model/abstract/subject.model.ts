@@ -1,11 +1,11 @@
 import { ObserverModel } from './observer.model';
 
-export interface SubjectModel<TData> {
-  observers: Map<ObserverModel<TData>, ObserverModel<TData>>;
+export interface SubjectModel<TContext> {
+  observers: Map<ObserverModel<TContext>, ObserverModel<TContext>>;
 
-  addObserver(obs: ObserverModel<TData>): void;
+  addObserver(obs: ObserverModel<TContext>): void;
 
-  removeObserver(obs: ObserverModel<TData>): void;
+  removeObserver(obs: ObserverModel<TContext>): void;
 
-  notifyObservers(data: TData): void;
+  notifyObservers(data: TContext): void;
 }
