@@ -5,11 +5,11 @@
 .card {
     @include mixin.set-box-model(1em, 1em);
 
-    border-radius: variable.$border-radius__default;
+    border-radius: variable.$border-radius-default;
 
     &__default {
         background-color: function.get-color('secondary');
-        box-shadow: variable.$box-shadow__size-big function.get-color('shadow');
+        box-shadow: variable.$box-shadow-size-big function.get-color('shadow');
     }
 
     &__darken {
