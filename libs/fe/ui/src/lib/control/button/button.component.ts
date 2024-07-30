@@ -13,9 +13,9 @@ import { RouterModule } from '@angular/router';
 export class ButtonComponent {
   @ViewChild('self') self!: ElementRef;
 
-  @Input() fullWidth = false;
+  @Input({ required: true }) link!: string;
 
-  @Input() link = '';
+  @Input() fullWidth = false;
 
   @Output() eventClick = new EventEmitter();
 

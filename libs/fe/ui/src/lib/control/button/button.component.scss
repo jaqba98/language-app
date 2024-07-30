@@ -1,12 +1,22 @@
-@use '@english-learning/fe-styles/src/lib/component/host';
-@use '@english-learning/fe-styles/src/lib/component/button';
-
-:host {
-    @include host.get-default-styles;
-}
+@use '@english-learning/fe-styles/src/lib/abstract/mixin';
+@use '@english-learning/fe-styles/src/lib/abstract/function';
+@use '@english-learning/fe-styles/src/lib/abstract/variable';
 
 .button {
-    @include button.get-default-styles;
-    @include button.get-active-styles;
-    @include button.get-full-wdith-styles;
+    @include mixin.set-box-model($padding: 1em);
+
+    background-color: function.get-color('button');
+    box-shadow: variable.$box-shadow-size-big function.get-color('shadow');
+    border-radius: variable.$border-radius;
+    border: none;
+    cursor: pointer;
+
+    &:active {
+        transform: translateY(2px);
+        box-shadow: variable.$box-shadow-size-small function.get-color('shadow');
+    }
+
+    &__full-width {
+        width: 100%;
+    }
 }
