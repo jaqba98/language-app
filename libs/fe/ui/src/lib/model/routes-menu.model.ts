@@ -1,4 +1,4 @@
 export interface RoutesMenuModel {
-  title: string;
+  value: string;
   link: string;
 }

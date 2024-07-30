@@ -4,6 +4,7 @@ import {
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Breakpoints } from '@angular/cdk/layout';
+import { Properties } from 'csstype';
 
 import { ScreenBreakpointAppService } from '@english-learning/fe-system';
 import { CardComponent } from '../../misc/card/card.component';
@@ -15,6 +16,7 @@ import { FlexComponent } from '../../misc/flex/flex.component';
 import { IconComponent } from '../../misc/icon/icon.component';
 import { routesMainNav } from '../../service/routes-menu.service';
 import { WrapperComponent } from '../../misc/wrapper/wrapper.component';
+import { CardEnum } from '../../misc/card/card.enum';
 
 @Component({
   selector: 'lib-main-nav',
@@ -48,6 +50,10 @@ export class MainNavComponent implements OnDestroy {
 
   menuVisible = false;
 
+  mainNavJustifyContent: Properties['justifyContent'] = 'space-between';
+
+  mainNavMobileCardType = CardEnum.card__darken;
+
   private sub: Subscription;
 
   constructor(private readonly screenBreakpoint: ScreenBreakpointAppService) {
@@ -57,6 +63,12 @@ export class MainNavComponent implements OnDestroy {
       } else {
         this.isMobile = false;
         this.menuVisible = false;
+      }
+
+      if (breakpoint === Breakpoints.Large || breakpoint === Breakpoints.XLarge) {
+        this.mainNavJustifyContent = 'space-around';
+      } else {
+        this.mainNavJustifyContent = 'space-between';
       }
     });
   }

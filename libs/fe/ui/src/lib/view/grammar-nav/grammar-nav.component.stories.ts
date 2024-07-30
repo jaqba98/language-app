@@ -23,11 +23,11 @@ type Story = StoryObj<GrammarNavComponent>;
 export const Primary: Story = {
   args: {
     options: [
-      { title: 'Link 1', link: '/' },
-      { title: 'Link 2', link: '/' },
-      { title: 'Link 3', link: '/' },
-      { title: 'Link 4', link: '/' },
-      { title: 'Link 5', link: '/' },
+      { value: 'Link 1', link: '/' },
+      { value: 'Link 2', link: '/' },
+      { value: 'Link 3', link: '/' },
+      { value: 'Link 4', link: '/' },
+      { value: 'Link 5', link: '/' },
     ],
   },
 };
