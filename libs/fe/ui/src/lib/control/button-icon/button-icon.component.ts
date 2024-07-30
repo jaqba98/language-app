@@ -22,6 +22,8 @@ export class ButtonIconComponent {
 
   @Input({ required: true }) alt!: string;
 
+  @Input() link: string | null = null;
+
   @Input() fullWidth = false;
 
   @Output() eventClick = new EventEmitter();

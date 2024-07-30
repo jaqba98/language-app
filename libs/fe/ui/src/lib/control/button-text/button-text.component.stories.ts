@@ -1,11 +1,11 @@
 import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
-
 import { ActivatedRoute } from '@angular/router';
+
 import { ButtonTextComponent } from './button-text.component';
 
 const meta: Meta<ButtonTextComponent> = {
   component: ButtonTextComponent,
-  title: 'Control/ButtonText',
+  title: 'fe/ui/control/button-text',
   decorators: [
     moduleMetadata({
       providers: [
@@ -19,7 +19,14 @@ type Story = StoryObj<ButtonTextComponent>;
 
 export const Primary: Story = {
   args: {
-    value: 'Click me!',
+    value: 'Hello',
     fullWidth: false,
+  },
+};
+
+export const FullWidth: Story = {
+  args: {
+    value: 'Hello',
+    fullWidth: true,
   },
 };

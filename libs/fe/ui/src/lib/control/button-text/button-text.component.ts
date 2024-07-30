@@ -20,7 +20,7 @@ export class ButtonTextComponent {
 
   @Input({ required: true }) value!: string;
 
-  @Input() link = '';
+  @Input() link: string | null = null;
 
   @Input() fullWidth = false;
 
