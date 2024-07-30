@@ -11,7 +11,33 @@ export class BreakpointService implements SubjectModel<BreakpointModel> {
   observers: Map<ObserverModel<BreakpointModel>, ObserverModel<BreakpointModel>> = new Map();
 
   constructor(private readonly observer: BreakpointObserver) {
-    this.observer.observe([
+    this.getBreakpointObserve();
+  }
+
+  addObserver(obs: ObserverModel<BreakpointModel>) {
+    if (this.observers.has(obs)) {
+      throw new Error('Object is already registered!');
+    }
+    this.observers.set(obs, obs);
+    this.getBreakpointObserve().unsubscribe();
+  }
+
+  removeObserver(obs: ObserverModel<BreakpointModel>) {
+    if (this.observers.has(obs)) {
+      this.observers.delete(obs);
+      return;
+    }
+    throw new Error('Object is not registered!');
+  }
+
+  notifyObservers(breakpoint: BreakpointModel) {
+    this.observers.forEach((obs) => {
+      obs.update(breakpoint);
+    });
+  }
+
+  private getBreakpointObserve() {
+    return this.observer.observe([
       Breakpoints.XSmall,
       Breakpoints.Small,
       Breakpoints.Medium,
@@ -29,27 +55,6 @@ export class BreakpointService implements SubjectModel<BreakpointModel> {
       } else if (currentBreakpoint.breakpoints[Breakpoints.XLarge]) {
         this.notifyObservers({ breakpoint: BreakpointEnum.XLarge });
       }
-    });
-  }
-
-  addObserver(obs: ObserverModel<BreakpointModel>): void {
-    if (this.observers.has(obs)) {
-      throw new Error('Object is already registered!');
-    }
-    this.observers.set(obs, obs);
-  }
-
-  removeObserver(obs: ObserverModel<BreakpointModel>): void {
-    if (this.observers.has(obs)) {
-      this.observers.delete(obs);
-      return;
-    }
-    throw new Error('Object is not registered!');
-  }
-
-  notifyObservers(breakpoint: BreakpointModel): void {
-    this.observers.forEach((obs) => {
-      obs.update(breakpoint);
     });
   }
 }
