@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": "./apps/english-learning-fe/tsconfig.app.json"
+        "project": "./apps/english-learning-fe/tsconfig.lint.json"
       },
       "extends": [
         "plugin:@nx/angular",
