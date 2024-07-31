@@ -11,7 +11,20 @@ export class BreakpointService implements SubjectModel<BreakpointModel> {
   observers: Map<ObserverModel<BreakpointModel>, ObserverModel<BreakpointModel>> = new Map();
 
   constructor(private readonly observer: BreakpointObserver) {
-    this.getBreakpointObserve();
+    this.getBreakpointsObserve()
+      .subscribe((currentBreakpoint) => {
+        if (currentBreakpoint.breakpoints[Breakpoints.XSmall]) {
+          this.notifyObservers({ breakpoint: BreakpointEnum.XSmall });
+        } else if (currentBreakpoint.breakpoints[Breakpoints.Small]) {
+          this.notifyObservers({ breakpoint: BreakpointEnum.Small });
+        } else if (currentBreakpoint.breakpoints[Breakpoints.Medium]) {
+          this.notifyObservers({ breakpoint: BreakpointEnum.Medium });
+        } else if (currentBreakpoint.breakpoints[Breakpoints.Large]) {
+          this.notifyObservers({ breakpoint: BreakpointEnum.Large });
+        } else if (currentBreakpoint.breakpoints[Breakpoints.XLarge]) {
+          this.notifyObservers({ breakpoint: BreakpointEnum.XLarge });
+        }
+      });
   }
 
   addObserver(obs: ObserverModel<BreakpointModel>) {
@@ -19,7 +32,21 @@ export class BreakpointService implements SubjectModel<BreakpointModel> {
       throw new Error('Object is already registered!');
     }
     this.observers.set(obs, obs);
-    this.getBreakpointObserve().unsubscribe();
+    this.getBreakpointsObserve()
+      .subscribe((currentBreakpoint) => {
+        if (currentBreakpoint.breakpoints[Breakpoints.XSmall]) {
+          obs.update({ breakpoint: BreakpointEnum.XSmall });
+        } else if (currentBreakpoint.breakpoints[Breakpoints.Small]) {
+          obs.update({ breakpoint: BreakpointEnum.Small });
+        } else if (currentBreakpoint.breakpoints[Breakpoints.Medium]) {
+          obs.update({ breakpoint: BreakpointEnum.Medium });
+        } else if (currentBreakpoint.breakpoints[Breakpoints.Large]) {
+          obs.update({ breakpoint: BreakpointEnum.Large });
+        } else if (currentBreakpoint.breakpoints[Breakpoints.XLarge]) {
+          obs.update({ breakpoint: BreakpointEnum.XLarge });
+        }
+      })
+      .unsubscribe();
   }
 
   removeObserver(obs: ObserverModel<BreakpointModel>) {
@@ -36,25 +63,13 @@ export class BreakpointService implements SubjectModel<BreakpointModel> {
     });
   }
 
-  private getBreakpointObserve() {
+  private getBreakpointsObserve() {
     return this.observer.observe([
       Breakpoints.XSmall,
       Breakpoints.Small,
       Breakpoints.Medium,
       Breakpoints.Large,
       Breakpoints.XLarge,
-    ]).subscribe((currentBreakpoint) => {
-      if (currentBreakpoint.breakpoints[Breakpoints.XSmall]) {
-        this.notifyObservers({ breakpoint: BreakpointEnum.XSmall });
-      } else if (currentBreakpoint.breakpoints[Breakpoints.Small]) {
-        this.notifyObservers({ breakpoint: BreakpointEnum.Small });
-      } else if (currentBreakpoint.breakpoints[Breakpoints.Medium]) {
-        this.notifyObservers({ breakpoint: BreakpointEnum.Medium });
-      } else if (currentBreakpoint.breakpoints[Breakpoints.Large]) {
-        this.notifyObservers({ breakpoint: BreakpointEnum.Large });
-      } else if (currentBreakpoint.breakpoints[Breakpoints.XLarge]) {
-        this.notifyObservers({ breakpoint: BreakpointEnum.XLarge });
-      }
-    });
+    ]);
   }
 }
