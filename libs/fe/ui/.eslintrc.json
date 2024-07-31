@@ -6,7 +6,7 @@
       "files": ["*.ts"],
       "parserOptions": {
         "project": [
-          "./libs/fe/ui/tsconfig.lib.json",
+          "./libs/fe/ui/tsconfig.lint.json",
           "./libs/fe/ui/.storybook/tsconfig.json"
         ]
       },

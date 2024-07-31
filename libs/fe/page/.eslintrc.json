@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": "./libs/fe/page/tsconfig.lib.json"
+        "project": "./libs/fe/page/tsconfig.lint.json"
       },
       "extends": [
         "plugin:@nx/angular",
