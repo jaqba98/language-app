@@ -1,27 +1,44 @@
-import { Route } from "@angular/router";
+import { Route } from '@angular/router';
 
 import {
-  HomeComponent,
   GrammarComponent,
-  PresentSimpleComponent
-} from "@english-learning/fe-page";
+  HomeComponent,
+  PresentContinuousComponent,
+  PresentSimpleComponent,
+} from '@english-learning/fe-page';
 
-export const routes: Route[] = [
+export const feRoutes: Route[] = [
   {
-    path: "",
-    redirectTo: "/home",
-    pathMatch: "full"
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full',
   },
   {
-    path: "home",
-    component: HomeComponent
+    path: 'home',
+    component: HomeComponent,
   },
   {
-    path: "grammar",
-    component: GrammarComponent
+    path: 'grammar',
+    component: GrammarComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/grammar/present-simple',
+        pathMatch: 'full',
+      },
+      {
+        path: 'present-simple',
+        component: PresentSimpleComponent,
+      },
+      {
+        path: 'present-continuous',
+        component: PresentContinuousComponent,
+      },
+    ],
   },
   {
-    path: "present-simple",
-    component: PresentSimpleComponent
-  }
+    path: '**',
+    redirectTo: '/home',
+    pathMatch: 'full',
+  },
 ];

@@ -14,3 +14,7 @@
         padding: $padding;
     }
 }
+
+@mixin get-host-default {
+    display: block;
+}

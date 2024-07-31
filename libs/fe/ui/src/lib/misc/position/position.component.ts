@@ -6,18 +6,18 @@ import { Properties } from 'csstype';
   selector: 'lib-position',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './position.component.html'
+  templateUrl: './position.component.html',
 })
 export class PositionComponent {
-  @Input() position: Properties['position'] = "static";
+  @Input() position: Properties['position'] = 'static';
 
-  @Input() top: Properties['top'] = "auto";
+  @Input() top: Properties['top'] = 'auto';
 
-  @Input() right: Properties['right'] = "auto";
+  @Input() right: Properties['right'] = 'auto';
 
-  @Input() bottom: Properties['bottom'] = "auto";
+  @Input() bottom: Properties['bottom'] = 'auto';
 
-  @Input() left: Properties['left'] = "auto";
+  @Input() left: Properties['left'] = 'auto';
 
   buildPosition(): Properties {
     return {
@@ -26,6 +26,6 @@ export class PositionComponent {
       right: this.right,
       bottom: this.bottom,
       left: this.left,
-    }
+    };
   }
 }

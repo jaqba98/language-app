@@ -7,7 +7,7 @@ const config: StorybookConfig = {
     name: '@storybook/angular',
     options: {},
   },
-  staticDirs: ['../../../../apps/english-learning-fe/public']
+  staticDirs: ['../../../../apps/english-learning-fe/public'],
 };
 
 export default config;

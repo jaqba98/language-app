@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import {
+  Component, EventEmitter, Input, Output, ViewChild,
+} from '@angular/core';
 
 import { ButtonComponent } from '../button/button.component';
 import { TextComponent } from '../../misc/text/text.component';
@@ -8,17 +10,17 @@ import { TextComponent } from '../../misc/text/text.component';
   standalone: true,
   imports: [
     ButtonComponent,
-    TextComponent
+    TextComponent,
   ],
   templateUrl: './button-text.component.html',
-  styleUrl: './button-text.component.scss'
+  styleUrl: './button-text.component.scss',
 })
 export class ButtonTextComponent {
   @ViewChild('self') self!: ButtonComponent;
 
   @Input({ required: true }) value!: string;
 
-  @Input() link = "";
+  @Input() link: string | null = null;
 
   @Input() fullWidth = false;
 

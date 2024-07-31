@@ -4,7 +4,7 @@ import { IconComponent } from './icon.component';
 
 const meta: Meta<IconComponent> = {
   component: IconComponent,
-  title: 'Misc/Icon',
+  title: 'fe/ui/misc/icon',
 };
 export default meta;
 type Story = StoryObj<IconComponent>;

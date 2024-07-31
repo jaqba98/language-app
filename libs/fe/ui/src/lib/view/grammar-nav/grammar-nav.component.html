@@ -1,3 +1,10 @@
-<ng-container *ngFor="let option of options">
-  <lib-button-text [value]="option.title" [link]="option.link" [fullWidth]="true"></lib-button-text>
-</ng-container>
+<lib-card [cardType]="card">
+  <lib-flex flexDirection="column" gap="1em">
+    <lib-text value="Grammar" [textType]="header"></lib-text>
+    <lib-flex flexDirection="column" gap="0.25em">
+      <ng-container *ngFor="let option of options">
+        <lib-link [link]="option.link" [value]="option.value"></lib-link>
+      </ng-container>
+    </lib-flex>
+  </lib-flex>
+</lib-card>

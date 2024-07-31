@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'english-learning-fe',
   preset: '../../jest.preset.js',

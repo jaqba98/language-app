@@ -1,29 +1,34 @@
 <lib-position position="relative">
   <lib-card>
+    <!-- main nav -->
     <lib-flex alignItems="center" justifyContent="space-between">
+      <!-- logo -->
       <lib-icon src="icon/school.svg" alt="school icon"></lib-icon>
+      <!-- hamburger for mobile -->
       <ng-container *ngIf="isMobile">
         <lib-button-icon #hamburger src="icon/menu.svg" alt="hamburger icon"></lib-button-icon>
       </ng-container>
+      <!-- main nav menu options for other devices -->
       <ng-container *ngIf="!isMobile">
-        <lib-flex gap="0.25em">
+        <lib-flex gap="0.5em">
           <ng-container *ngFor="let option of options">
-            <lib-button-text [value]="option.title" [link]="option.link" [fullWidth]="true"></lib-button-text>
+            <lib-button-text [value]="option.value" [link]="option.link"></lib-button-text>
           </ng-container>
         </lib-flex>
       </ng-container>
     </lib-flex>
   </lib-card>
-  <ng-container *ngIf="menuVisible && isMobile">
+  <!-- main nav menu options for mobile -->
+  <ng-container *ngIf="isMobile && isMenuVisible">
     <lib-position position="absolute" top="100%" left="0" right="0">
       <lib-card #menuCard>
-          <lib-wrapper #menuCardOptions>
-            <lib-flex flexDirection="column" gap="0.5em">
-              <ng-container *ngFor="let option of options">
-                <lib-button-text [value]="option.title" [link]="option.link" [fullWidth]="true"></lib-button-text> 
-              </ng-container>
-            </lib-flex>
-          </lib-wrapper>
+        <lib-wrapper #menuCardOptions>
+          <lib-flex flexDirection="column" gap="0.5em">
+            <ng-container *ngFor="let option of options">
+              <lib-button-text [value]="option.value" [link]="option.link" [fullWidth]="true"></lib-button-text>
+            </ng-container>
+          </lib-flex>
+        </lib-wrapper>
       </lib-card>
     </lib-position>
   </ng-container>

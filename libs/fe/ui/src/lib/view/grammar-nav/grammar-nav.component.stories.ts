@@ -1,21 +1,21 @@
 import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
+import { ActivatedRoute } from '@angular/router';
 
 import { GrammarNavComponent } from './grammar-nav.component';
-import { ActivatedRoute } from '@angular/router';
 
 const meta: Meta<GrammarNavComponent> = {
   component: GrammarNavComponent,
-  title: 'View/GrammarNav',
+  title: 'fe/ui/view/grammar-nav',
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   decorators: [
     moduleMetadata({
       providers: [
-        { provide: ActivatedRoute, useValue: [] }
-      ]
-    })
-  ]
+        { provide: ActivatedRoute, useValue: [] },
+      ],
+    }),
+  ],
 };
 export default meta;
 type Story = StoryObj<GrammarNavComponent>;
@@ -23,11 +23,11 @@ type Story = StoryObj<GrammarNavComponent>;
 export const Primary: Story = {
   args: {
     options: [
-      { title: "Link 1", link: "/" },
-      { title: "Link 2", link: "/" },
-      { title: "Link 3", link: "/" },
-      { title: "Link 4", link: "/" },
-      { title: "Link 5", link: "/" }
-    ]
-  }
+      { value: 'Link 1', link: '/' },
+      { value: 'Link 2', link: '/' },
+      { value: 'Link 3', link: '/' },
+      { value: 'Link 4', link: '/' },
+      { value: 'Link 5', link: '/' },
+    ],
+  },
 };

@@ -1,10 +1,11 @@
 import { RoutesMenuModel } from '../model/routes-menu.model';
 
 export const routesMainNav: RoutesMenuModel[] = [
-  { title: "Home", link: "/home" },
-  { title: "Grammar", link: "/grammar" }
+  { value: 'Home', link: '/home' },
+  { value: 'Grammar', link: '/grammar' },
 ];
 
 export const routesGrammar: RoutesMenuModel[] = [
-  { title: "Present Simple", link: "/present-simple" }
+  { value: 'Present Simple', link: '/grammar/present-simple' },
+  { value: 'Present Continuous', link: '/grammar/present-continuous' },
 ];

@@ -1,18 +1,21 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, OnDestroy, ViewChild } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Breakpoints } from '@angular/cdk/layout';
+import { Component, ViewChild, HostListener } from '@angular/core';
+import { Properties } from 'csstype';
 
-import { ScreenBreakpointAppService } from '@english-learning/fe-system';
-import { CardComponent } from '../../misc/card/card.component';
+import {
+  BreakpointService,
+  BreakpointModel,
+  BreakpointEnum,
+} from '@english-learning/fe-system';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
-import { PositionComponent } from '../../misc/position/position.component';
-import { TextComponent } from "../../misc/text/text.component";
+import { CardComponent } from '../../misc/card/card.component';
 import { FlexComponent } from '../../misc/flex/flex.component';
-import { IconComponent } from "../../misc/icon/icon.component";
-import { routesMainNav } from '../../service/routes-menu.service';
+import { IconComponent } from '../../misc/icon/icon.component';
+import { PositionComponent } from '../../misc/position/position.component';
+import { TextComponent } from '../../misc/text/text.component';
 import { WrapperComponent } from '../../misc/wrapper/wrapper.component';
+import { routesMainNav } from '../../service/routes-menu.service';
 
 @Component({
   selector: 'lib-main-nav',
@@ -26,55 +29,53 @@ import { WrapperComponent } from '../../misc/wrapper/wrapper.component';
     TextComponent,
     FlexComponent,
     IconComponent,
-    WrapperComponent
+    WrapperComponent,
   ],
   templateUrl: './main-nav.component.html',
-  providers: [
-    { provide: ScreenBreakpointAppService }
-  ]
 })
-export class MainNavComponent implements OnDestroy {
+export class MainNavComponent {
   @ViewChild('hamburger') hamburger!: ButtonIconComponent;
+
   @ViewChild('menuCard') menuCard!: CardComponent;
+
   @ViewChild('menuCardOptions') menuCardOptions!: CardComponent;
 
   options = routesMainNav;
 
   isMobile = true;
-  menuVisible = false;
 
-  private sub: Subscription;
+  isMenuVisible = false;
 
-  constructor(private readonly screenBreakpoint: ScreenBreakpointAppService) {
-    this.sub = this.screenBreakpoint.currentBreakpoint$.subscribe(breakpoint => {
-      if (breakpoint === Breakpoints.XSmall) {
-        this.isMobile = true;
-      } else {
-        this.isMobile = false;
-        this.menuVisible = false;
-      }
-    });
+  mainNavJustifyContent: Properties['justifyContent'] = 'space-between';
+
+  constructor(private readonly breakpoint: BreakpointService) {
+    this.breakpoint.addObserver(this);
   }
 
-  ngOnDestroy() {
-    this.sub.unsubscribe();
+  update(data: BreakpointModel) {
+    if (data.breakpoint === BreakpointEnum.XSmall) {
+      this.isMobile = true;
+    } else {
+      this.isMobile = false;
+      this.isMenuVisible = false;
+    }
   }
 
   @HostListener('document:click', ['$event'])
   onClick(event: MouseEvent) {
     const { target } = event;
     if (this.hamburger && this.hamburger.self.self.nativeElement.contains(target)) {
-      this.menuVisible = !this.menuVisible;
+      this.isMenuVisible = !this.isMenuVisible;
       return;
     }
     if (this.menuCard && this.menuCardOptions.self.nativeElement.contains(target)) {
-      this.menuVisible = !this.menuVisible;
+      this.isMenuVisible = !this.isMenuVisible;
       return;
     }
     if (this.menuCard && this.menuCard.self.nativeElement.contains(target)) {
-      this.menuVisible = true;
+      this.isMenuVisible = true;
       return;
     }
-    this.menuVisible = false;
+    this.isMenuVisible = false;
   }
 }

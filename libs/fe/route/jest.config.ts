@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'fe-route',
   preset: '../../../jest.preset.js',

@@ -1,9 +1,10 @@
 <button
     #self
-    [routerLink]="link ? link : null"
+    [routerLink]="link"
     class="button"
     [class.button__full-width]="fullWidth"
     (click)="onClick()"
-    (blur)="onBlur()">
+    (blur)="onBlur()"
+>
     <ng-content></ng-content>
 </button>

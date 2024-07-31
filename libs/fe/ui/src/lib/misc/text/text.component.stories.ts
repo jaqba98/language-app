@@ -1,13 +1,14 @@
-import { Meta, StoryObj } from "@storybook/angular";
+import { Meta, StoryObj } from '@storybook/angular';
 
-import { TextComponent } from "./text.component";
+import { TextComponent } from './text.component';
+import { TextEnum } from './text.enum';
 
 const meta: Meta<TextComponent> = {
   component: TextComponent,
-  title: 'Misc/Text',
+  title: 'fe/ui/misc/text',
   argTypes: {
-    type: {
-      options: ['paragraph', 'header1', 'header2'],
+    textType: {
+      options: Object.values(TextEnum),
       control: { type: 'select' },
     },
   },
@@ -18,20 +19,20 @@ type Story = StoryObj<TextComponent>;
 export const Paragraph: Story = {
   args: {
     value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis, felis sed vestibulum dignissim, quam turpis semper nisi, sit amet cursus sapien dui id nulla. Aliquam sagittis lorem et dignissim maximus. Sed dapibus magna ut augue pharetra, venenatis aliquam ex cursus. Duis tempus ipsum vel rhoncus consequat. Phasellus elementum eleifend velit sit amet dictum. Nunc dapibus in turpis ut convallis. Pellentesque pellentesque lacinia elit, ut vehicula turpis pellentesque ut. Quisque gravida lorem eleifend, vehicula ligula eu, facilisis risus.',
-    type: 'paragraph',
+    textType: TextEnum.paragraph,
   },
 };
 
 export const Header1: Story = {
   args: {
-    value: 'Lorem ipsum',
-    type: 'header1',
+    value: 'Header1',
+    textType: TextEnum.header1,
   },
 };
 
 export const Header2: Story = {
   args: {
-    value: 'Lorem ipsum',
-    type: 'header2',
+    value: 'Header2',
+    textType: TextEnum.header2,
   },
 };
