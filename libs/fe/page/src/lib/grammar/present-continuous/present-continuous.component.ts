@@ -13,8 +13,8 @@ export class PresentContinuousComponent {
     lines: [
       {
         value: 'Present Continuous',
-        type: TextEnum.header2
-      }
-    ]
+        type: TextEnum.header2,
+      },
+    ],
   };
 }

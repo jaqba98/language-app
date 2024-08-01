@@ -20,7 +20,7 @@ export const Primary: Story = {
         { type: TextEnum.header1, value: 'Hello world 1' },
         { type: TextEnum.header2, value: 'Hello world 2' },
         { type: TextEnum.paragraph, value: 'Hello world 3' },
-      ]
-    }
-  }
+      ],
+    },
+  },
 };

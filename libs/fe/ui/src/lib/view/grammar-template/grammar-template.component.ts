@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
 
+import { CommonModule } from '@angular/common';
 import { CardComponent } from '../../misc/card/card.component';
 import { TextComponent } from '../../misc/text/text.component';
 import { GrammarTemplateModel } from './grammar-template.model';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'lib-grammar-template',

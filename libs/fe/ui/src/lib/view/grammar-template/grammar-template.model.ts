@@ -1,4 +1,4 @@
-import { TextEnum } from "../../misc/text/text.enum";
+import { TextEnum } from '../../misc/text/text.enum';
 
 interface TemplateLineModel {
   value: string;

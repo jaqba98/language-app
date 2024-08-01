@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Properties } from 'csstype';
 
-import { ObserverModel, BreakpointModel, BreakpointService, BreakpointEnum } from '@english-learning/fe-system';
+import {
+  ObserverModel, BreakpointModel, BreakpointService, BreakpointEnum,
+} from '@english-learning/fe-system';
 import { FlexComponent, FlexItemComponent, GrammarNavComponent } from '@english-learning/fe-ui';
 
 @Component({
@@ -12,7 +14,7 @@ import { FlexComponent, FlexItemComponent, GrammarNavComponent } from '@english-
     RouterOutlet,
     GrammarNavComponent,
     FlexComponent,
-    FlexItemComponent
+    FlexItemComponent,
   ],
   templateUrl: './grammar.component.html',
 })

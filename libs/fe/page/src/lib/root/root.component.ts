@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { MainNavComponent } from '@english-learning/fe-ui';
-import { FlexComponent } from "../../../../ui/src/lib/misc/flex/flex.component";
+import { MainNavComponent, FlexComponent } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-root',
@@ -10,8 +9,8 @@ import { FlexComponent } from "../../../../ui/src/lib/misc/flex/flex.component";
   imports: [
     RouterOutlet,
     MainNavComponent,
-    FlexComponent
-],
+    FlexComponent,
+  ],
   templateUrl: './root.component.html',
 })
 export class RootComponent {}

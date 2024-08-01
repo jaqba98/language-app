@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import {
+  Component, HostBinding, Input, OnInit,
+} from '@angular/core';
 import { Properties } from 'csstype';
 
 @Component({
