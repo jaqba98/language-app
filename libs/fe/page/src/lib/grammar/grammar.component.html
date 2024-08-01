@@ -1,2 +1,8 @@
-<lib-grammar-nav></lib-grammar-nav>
-<router-outlet></router-outlet>
+<lib-flex [flexDirection]="grammarFlexDirection">
+    <lib-flex-item>
+        <lib-grammar-nav></lib-grammar-nav>
+    </lib-flex-item>
+    <lib-flex-item flex="1">
+        <router-outlet></router-outlet>
+    </lib-flex-item>
+</lib-flex>

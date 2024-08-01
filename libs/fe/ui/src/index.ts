@@ -6,3 +6,4 @@ export * from './lib/misc/card/card.component';
 export * from './lib/misc/text/text.component';
 export * from './lib/misc/flex/flex.component';
 export * from './lib/misc/text/text.enum';
+export * from './lib/misc/flex-item/flex-item.component';
