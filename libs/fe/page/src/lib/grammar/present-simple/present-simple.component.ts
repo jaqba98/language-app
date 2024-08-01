@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
 
-import { CardComponent, TextComponent } from '@english-learning/fe-ui';
+import { GrammarTemplateComponent, GrammarTemplateModel, TextEnum } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-present-simple',
   standalone: true,
-  imports: [
-    CardComponent,
-    TextComponent,
-  ],
+  imports: [GrammarTemplateComponent],
   templateUrl: './present-simple.component.html',
 })
-export class PresentSimpleComponent {}
+export class PresentSimpleComponent {
+  template: GrammarTemplateModel = {
+    title: {
+      value: 'Present Simple',
+      type: TextEnum.header2
+    }
+  };
+}
