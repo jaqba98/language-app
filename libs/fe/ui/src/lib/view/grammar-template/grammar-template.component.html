@@ -1,3 +1,5 @@
 <lib-card>
-  <lib-text [value]="template.title.value" [textType]="template.title.type"></lib-text>
+  <ng-container *ngFor="let line of template.lines">
+    <lib-text [value]="line.value" [textType]="line.type"></lib-text>
+  </ng-container>
 </lib-card>

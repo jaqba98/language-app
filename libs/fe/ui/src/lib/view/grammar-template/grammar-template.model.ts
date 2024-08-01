@@ -1,8 +1,10 @@
 import { TextEnum } from "../../misc/text/text.enum";
 
+interface TemplateLineModel {
+  value: string;
+  type: TextEnum;
+}
+
 export interface GrammarTemplateModel {
-  title: {
-    value: string;
-    type: TextEnum;
-  }
+  lines: TemplateLineModel[];
 }

@@ -10,9 +10,11 @@ import { GrammarTemplateComponent, GrammarTemplateModel, TextEnum } from '@engli
 })
 export class PresentContinuousComponent {
   template: GrammarTemplateModel = {
-    title: {
-      value: 'Present Continuous',
-      type: TextEnum.header2
-    }
+    lines: [
+      {
+        value: 'Present Continuous',
+        type: TextEnum.header2
+      }
+    ]
   };
 }

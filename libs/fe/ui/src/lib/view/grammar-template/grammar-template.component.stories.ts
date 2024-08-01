@@ -16,10 +16,11 @@ type Story = StoryObj<GrammarTemplateComponent>;
 export const Primary: Story = {
   args: {
     template: {
-      title: {
-        value: "Present Simple",
-        type: TextEnum.header2
-      }
+      lines: [
+        { type: TextEnum.header1, value: 'Hello world 1' },
+        { type: TextEnum.header2, value: 'Hello world 2' },
+        { type: TextEnum.paragraph, value: 'Hello world 3' },
+      ]
     }
   }
 };

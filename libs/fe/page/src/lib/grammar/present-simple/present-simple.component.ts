@@ -10,9 +10,11 @@ import { GrammarTemplateComponent, GrammarTemplateModel, TextEnum } from '@engli
 })
 export class PresentSimpleComponent {
   template: GrammarTemplateModel = {
-    title: {
-      value: 'Present Simple',
-      type: TextEnum.header2
-    }
+    lines: [
+      {
+        value: 'Present Simple',
+        type: TextEnum.header2
+      }
+    ]
   };
 }
