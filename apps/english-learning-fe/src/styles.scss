@@ -9,7 +9,7 @@
 }
 
 body {
-    @include mixin.set-box-model($padding: 0.5em);
+    @include mixin.set-box-model($padding: 0.25em);
 
     background-color: function.get-color("primary");
     min-width: variable.$body-min-width;
