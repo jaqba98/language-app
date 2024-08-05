@@ -9,7 +9,6 @@ import {
   FlexComponent,
   FlexItemComponent,
   GrammarNavComponent,
-  WrapperComponent,
 } from '@english-learning/fe-ui';
 
 @Component({
@@ -20,7 +19,6 @@ import {
     GrammarNavComponent,
     FlexComponent,
     FlexItemComponent,
-    WrapperComponent,
   ],
   templateUrl: './grammar.component.html',
 })
