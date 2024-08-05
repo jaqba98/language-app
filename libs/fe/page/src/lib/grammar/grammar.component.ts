@@ -5,7 +5,12 @@ import { Properties } from 'csstype';
 import {
   ObserverModel, BreakpointModel, BreakpointService, BreakpointEnum,
 } from '@english-learning/fe-system';
-import { FlexComponent, FlexItemComponent, GrammarNavComponent } from '@english-learning/fe-ui';
+import {
+  FlexComponent,
+  FlexItemComponent,
+  GrammarNavComponent,
+  WrapperComponent,
+} from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-grammar',
@@ -15,6 +20,7 @@ import { FlexComponent, FlexItemComponent, GrammarNavComponent } from '@english-
     GrammarNavComponent,
     FlexComponent,
     FlexItemComponent,
+    WrapperComponent,
   ],
   templateUrl: './grammar.component.html',
 })
