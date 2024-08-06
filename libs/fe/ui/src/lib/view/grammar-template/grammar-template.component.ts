@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from '../../misc/card/card.component';
 import { TextComponent } from '../../misc/text/text.component';
 import { GrammarTemplateModel } from './grammar-template.model';
+import { FlexComponent } from '../../misc/flex/flex.component';
 
 @Component({
   selector: 'lib-grammar-template',
@@ -12,6 +13,7 @@ import { GrammarTemplateModel } from './grammar-template.model';
     CommonModule,
     CardComponent,
     TextComponent,
+    FlexComponent,
   ],
   templateUrl: './grammar-template.component.html',
 })
