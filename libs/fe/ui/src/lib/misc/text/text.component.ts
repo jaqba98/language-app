@@ -20,6 +20,8 @@ export class TextComponent {
 
   @Input() textType: TextType = 'paragraph';
 
+  @Input() clickable = false;
+
   @Output() eventMouseEnter = new EventEmitter();
 
   @Output() eventMouseLeave = new EventEmitter();

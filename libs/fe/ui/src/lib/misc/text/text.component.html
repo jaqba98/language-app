@@ -1,13 +1,13 @@
 <div (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
   <ng-container [ngSwitch]="textType">
     <ng-container *ngSwitchCase="'paragraph'">
-      <p class="text text__paragraph">{{ value }}</p>
+      <p class="text text__paragraph" [ngClass]="{text__clickable: clickable}">{{ value }}</p>
     </ng-container>
     <ng-container *ngSwitchCase="'header1'">
-      <h1 class="text text__header1">{{ value }}</h1>
+      <h1 class="text text__header1" [ngClass]="{text__clickable: clickable}">{{ value }}</h1>
     </ng-container>
     <ng-container *ngSwitchCase="'header2'">
-      <h2 class="text text__header2">{{ value }}</h2>
+      <h2 class="text text__header2" [ngClass]="{text__clickable: clickable}">{{ value }}</h2>
     </ng-container>
   </ng-container>
 </div>

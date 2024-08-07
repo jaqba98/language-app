@@ -2,6 +2,7 @@
   <lib-text
     [value]="value"
     [textType]="textType"
+    [clickable]="true"
     (eventMouseEnter)="isSelected = true"
     (eventMouseLeave)="isSelected = false"></lib-text>
   <ng-container *ngIf="isSelected">
