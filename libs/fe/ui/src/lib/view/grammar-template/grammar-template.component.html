@@ -1,7 +1,9 @@
 <lib-card>
   <lib-flex flexDirection="column" gap="1em">
     <ng-container *ngFor="let line of template.lines">
-      <lib-text [value]="line.value" [textType]="line.type"></lib-text>
+      <ng-container *ngIf="line.kind === 'text'">
+        <lib-text [value]="line.value" [textType]="line.textType"></lib-text>
+      </ng-container>
     </ng-container>
   </lib-flex>
 </lib-card>

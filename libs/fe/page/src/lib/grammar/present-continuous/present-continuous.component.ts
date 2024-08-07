@@ -12,8 +12,9 @@ export class PresentContinuousComponent {
   template: GrammarTemplateModel = {
     lines: [
       {
+        kind: 'text',
         value: 'Present Continuous',
-        type: 'header2',
+        textType: 'header2',
       },
     ],
   };

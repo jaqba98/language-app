@@ -1,10 +1,13 @@
 import { TextType } from '../../misc/text/text.type';
 
-interface TemplateLineModel {
+interface TextModel {
+  kind: 'text',
   value: string;
-  type: TextType;
+  textType: TextType;
 }
 
+type TemplateLineType = TextModel;
+
 export interface GrammarTemplateModel {
-  lines: TemplateLineModel[];
+  lines: TemplateLineType[];
 }

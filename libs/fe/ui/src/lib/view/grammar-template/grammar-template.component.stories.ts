@@ -1,7 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/angular';
 
 import { GrammarTemplateComponent } from './grammar-template.component';
-import { TextEnum } from '../../misc/text/text.type';
 
 const meta: Meta<GrammarTemplateComponent> = {
   component: GrammarTemplateComponent,
@@ -17,9 +16,9 @@ export const Primary: Story = {
   args: {
     template: {
       lines: [
-        { type: TextEnum.header1, value: 'Hello world 1' },
-        { type: TextEnum.header2, value: 'Hello world 2' },
-        { type: TextEnum.paragraph, value: 'Hello world 3' },
+        { kind: 'text', textType: 'header1', value: 'Hello world 1' },
+        { kind: 'text', textType: 'header2', value: 'Hello world 2' },
+        { kind: 'text', textType: 'paragraph', value: 'Hello world 3' },
       ],
     },
   },
