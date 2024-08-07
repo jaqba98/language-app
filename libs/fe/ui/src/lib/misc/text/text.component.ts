@@ -1,5 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 
 import { TextType } from './text.type';
 
@@ -14,4 +19,16 @@ export class TextComponent {
   @Input({ required: true }) value!: string;
 
   @Input() textType: TextType = 'paragraph';
+
+  @Output() eventMouseEnter = new EventEmitter();
+
+  @Output() eventMouseLeave = new EventEmitter();
+
+  onMouseEnter() {
+    this.eventMouseEnter.emit();
+  }
+
+  onMouseLeave() {
+    this.eventMouseLeave.emit();
+  }
 }

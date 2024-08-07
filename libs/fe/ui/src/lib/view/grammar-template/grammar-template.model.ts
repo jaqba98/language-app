@@ -11,7 +11,13 @@ interface MultilineTextModel {
   lines: string[];
 }
 
-type TemplateLineType = TextModel | MultilineTextModel;
+interface HeaderModel {
+  kind: 'header',
+  value: string;
+  textType: TextType;
+}
+
+type TemplateLineType = TextModel | MultilineTextModel | HeaderModel;
 
 export interface GrammarTemplateModel {
   lines: TemplateLineType[];

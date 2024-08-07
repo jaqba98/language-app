@@ -1,0 +1,10 @@
+<lib-flex gap="0.25em">
+  <lib-text
+    [value]="value"
+    [textType]="textType"
+    (eventMouseEnter)="isSelected = true"
+    (eventMouseLeave)="isSelected = false"></lib-text>
+  <ng-container *ngIf="isSelected">
+    <lib-text value="#" [textType]="textType"></lib-text>
+  </ng-container>
+</lib-flex>
