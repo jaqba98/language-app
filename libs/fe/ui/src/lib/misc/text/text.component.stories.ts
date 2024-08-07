@@ -29,3 +29,10 @@ export const Header2: Story = {
     textType: 'header2',
   },
 };
+
+export const Header3: Story = {
+  args: {
+    value: 'Header3',
+    textType: 'header3',
+  },
+};
