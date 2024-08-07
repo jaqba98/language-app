@@ -1,8 +1,8 @@
-import { TextEnum } from '../../misc/text/text.enum';
+import { TextType } from '../../misc/text/text.type';
 
 interface TemplateLineModel {
   value: string;
-  type: TextEnum;
+  type: TextType;
 }
 
 export interface GrammarTemplateModel {

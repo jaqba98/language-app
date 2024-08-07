@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { GrammarTemplateComponent, GrammarTemplateModel, TextEnum } from '@english-learning/fe-ui';
+import { GrammarTemplateComponent, GrammarTemplateModel } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-present-simple',
@@ -13,307 +13,307 @@ export class PresentSimpleComponent {
     lines: [
       {
         value: 'Present Simple',
-        type: TextEnum.header1,
+        type: 'header1',
       },
       {
         value: '1) When to use it',
-        type: TextEnum.header2,
+        type: 'header2',
       },
       {
         value: 'a) Pernament',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'We live in New York.',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'He works at the bank.',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'b) Routines',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'I wake up at 6:00.',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'I go to sleep at 11:00.',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'c) Facts',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'The sun rises in the east.',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'd) Schedules',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'Our class starts at 9:00.',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'The flight leaves at noon.',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'e) Frequency',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'never = 0%',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'rarely = 10-20%',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'sometimes = 50%',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'often = 75%',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'always = 100%',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: '2) How to use it',
-        type: TextEnum.header2,
+        type: 'header2',
       },
       {
         value: 'a) Positive',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'I work',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'You work',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'He works',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'She works',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'It works',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'We work',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'You work',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'They work',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'b) Negative',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'I do not (don\'t) work',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'You do not (don\'t) work',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'He does not (doesn\'t) works',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'She does not (doesn\'t) works',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'It does not (doesn\'t) works',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'We do not (don\'t) work',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'You do not (don\'t) work',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'They do not (don\'t) work',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'c) Question',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'Do I work?',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'Do you work?',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'Does he works?',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'Does she works?',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'Does it works?',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'Do we work?',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'Do you work?',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'Do they work?',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'd) Question words',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'who, what, when, where, why, which, whose, how',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: '3) Spelling',
-        type: TextEnum.header2,
+        type: 'header2',
       },
       {
         value: 'a) most verbs / add s',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'dance -> dances',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'cook -> cooks',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'sleep -> sleeps',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'b) verbs ending in s, sch, ch, x / add es',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'kiss -> kisses',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'wasch -> washes',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'teach -> teaches',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'fix -> fixes',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'c) verbs ending in consontant and y / dtop y and add ies',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'study -> studies',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'try -> tries',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'd) others',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'go -> goes',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'do -> does',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'have -> has',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: '4) Short answers',
-        type: TextEnum.header2,
+        type: 'header2',
       },
       {
         value: 'a) Do they need help?',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'Yes, they do.',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'No, they don\'t.',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'b) Does he speak French?',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'Yes, he does.',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'No, he doesn\'t.',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'c) Do you like this song?',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'Yes, I do.',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
       {
         value: 'No, I don\'t.',
-        type: TextEnum.paragraph,
+        type: 'paragraph',
       },
     ],
   };

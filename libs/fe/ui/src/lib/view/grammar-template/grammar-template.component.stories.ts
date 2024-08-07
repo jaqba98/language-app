@@ -1,7 +1,7 @@
 import { type Meta, type StoryObj } from '@storybook/angular';
 
 import { GrammarTemplateComponent } from './grammar-template.component';
-import { TextEnum } from '../../misc/text/text.enum';
+import { TextEnum } from '../../misc/text/text.type';
 
 const meta: Meta<GrammarTemplateComponent> = {
   component: GrammarTemplateComponent,

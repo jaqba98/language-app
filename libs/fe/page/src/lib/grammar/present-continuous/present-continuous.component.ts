@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { GrammarTemplateComponent, GrammarTemplateModel, TextEnum } from '@english-learning/fe-ui';
+import { GrammarTemplateComponent, GrammarTemplateModel } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-present-continuous',
@@ -13,7 +13,7 @@ export class PresentContinuousComponent {
     lines: [
       {
         value: 'Present Continuous',
-        type: TextEnum.header2,
+        type: 'header2',
       },
     ],
   };
