@@ -5,7 +5,7 @@
         <lib-text [value]="line.value" [textType]="line.textType"></lib-text>
       </ng-container>
       <ng-container *ngIf="line.kind === 'header'">
-        <lib-header [value]="line.value" [textType]="line.textType"></lib-header>
+        <lib-header [value]="line.value" [textType]="line.textType" [link]="line.link"></lib-header>
       </ng-container>
       <ng-container *ngIf="line.kind === 'multiline-text'">
         <lib-multiline-text [lines]="line.lines"></lib-multiline-text>

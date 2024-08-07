@@ -26,11 +26,17 @@ export class TextComponent {
 
   @Output() eventMouseLeave = new EventEmitter();
 
+  @Output() eventOnClick = new EventEmitter();
+
   onMouseEnter() {
     this.eventMouseEnter.emit();
   }
 
   onMouseLeave() {
     this.eventMouseLeave.emit();
+  }
+
+  onClick() {
+    this.eventOnClick.emit();
   }
 }

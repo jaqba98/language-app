@@ -1,4 +1,4 @@
-<div (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+<div (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="onClick()">
   <ng-container [ngSwitch]="textType">
     <ng-container *ngSwitchCase="'paragraph'">
       <p class="text text__paragraph" [ngClass]="{text__clickable: clickable}">{{ value }}</p>

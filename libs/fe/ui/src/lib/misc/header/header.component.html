@@ -1,11 +1,13 @@
-<lib-flex gap="0.25em">
-  <lib-text
-    [value]="value"
-    [textType]="textType"
-    [clickable]="true"
-    (eventMouseEnter)="isSelected = true"
-    (eventMouseLeave)="isSelected = false"></lib-text>
-  <ng-container *ngIf="isSelected">
-    <lib-text value="#" [textType]="textType"></lib-text>
-  </ng-container>
-</lib-flex>
+<div [id]="link" routerLink="/grammar/present-simple" [fragment]="link">
+  <lib-flex gap="0.25em">
+    <lib-text
+      [value]="value"
+      [textType]="textType"
+      [clickable]="true"
+      (eventMouseEnter)="isSelected = true"
+      (eventMouseLeave)="isSelected = false"></lib-text>
+    <ng-container *ngIf="isSelected">
+      <lib-text value="#" [textType]="textType"></lib-text>
+    </ng-container>
+  </lib-flex>
+</div>

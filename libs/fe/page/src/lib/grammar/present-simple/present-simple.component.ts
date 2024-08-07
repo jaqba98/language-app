@@ -11,8 +11,12 @@ import { GrammarTemplateComponent, GrammarTemplateModel } from '@english-learnin
 export class PresentSimpleComponent {
   template: GrammarTemplateModel = {
     lines: [
-      { kind: 'header', value: 'Present Simple', textType: 'header1' },
-      { kind: 'header', value: '1) When to use it', textType: 'header2' },
+      {
+        kind: 'header', value: 'Present Simple', textType: 'header1', link: 'home',
+      },
+      {
+        kind: 'header', value: '1) When to use it', textType: 'header2', link: 'when-to-use-it',
+      },
       { kind: 'text', value: 'a) Pernament', textType: 'paragraph' },
       {
         kind: 'multiline-text',
@@ -55,7 +59,9 @@ export class PresentSimpleComponent {
           'always = 100%',
         ],
       },
-      { kind: 'header', value: '2) How to use it', textType: 'header2' },
+      {
+        kind: 'header', value: '2) How to use it', textType: 'header2', link: 'how-to-use-it',
+      },
       { kind: 'text', value: 'a) Positive', textType: 'paragraph' },
       {
         kind: 'multiline-text',
@@ -112,7 +118,9 @@ export class PresentSimpleComponent {
           'how',
         ],
       },
-      { kind: 'header', value: '3) Spelling', textType: 'header2' },
+      {
+        kind: 'header', value: '3) Spelling', textType: 'header2', link: 'spelling',
+      },
       { kind: 'text', value: 'a) most verbs / add s', textType: 'paragraph' },
       {
         kind: 'multiline-text',
@@ -149,7 +157,9 @@ export class PresentSimpleComponent {
           'have -> has',
         ],
       },
-      { kind: 'header', value: '4) Short answers', textType: 'header2' },
+      {
+        kind: 'header', value: '4) Short answers', textType: 'header2', link: 'short-answers',
+      },
       { kind: 'text', value: 'a) Do they need help?', textType: 'paragraph' },
       {
         kind: 'multiline-text',

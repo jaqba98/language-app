@@ -15,6 +15,7 @@ interface HeaderModel {
   kind: 'header',
   value: string;
   textType: TextType;
+  link: string;
 }
 
 type TemplateLineType = TextModel | MultilineTextModel | HeaderModel;
