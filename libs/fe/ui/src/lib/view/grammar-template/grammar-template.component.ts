@@ -5,6 +5,7 @@ import { CardComponent } from '../../misc/card/card.component';
 import { TextComponent } from '../../misc/text/text.component';
 import { GrammarTemplateModel } from './grammar-template.model';
 import { FlexComponent } from '../../misc/flex/flex.component';
+import { MultilineTextComponent } from '../../misc/multiline-text/multiline-text.component';
 
 @Component({
   selector: 'lib-grammar-template',
@@ -14,6 +15,7 @@ import { FlexComponent } from '../../misc/flex/flex.component';
     CardComponent,
     TextComponent,
     FlexComponent,
+    MultilineTextComponent,
   ],
   templateUrl: './grammar-template.component.html',
 })

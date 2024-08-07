@@ -6,7 +6,12 @@ interface TextModel {
   textType: TextType;
 }
 
-type TemplateLineType = TextModel;
+interface MultilineTextModel {
+  kind: 'multiline-text',
+  lines: string[];
+}
+
+type TemplateLineType = TextModel | MultilineTextModel;
 
 export interface GrammarTemplateModel {
   lines: TemplateLineType[];
