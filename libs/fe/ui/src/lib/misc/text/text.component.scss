@@ -15,6 +15,12 @@
         font-size: 1em;
     }
 
+    &__header1,
+    &__header2,
+    &__header3 {
+        font-weight: bold;
+    }
+
     &__header1 {
         font-size: 2em;
     }
@@ -24,7 +30,7 @@
     }
 
     &__header3 {
-        font-size: 1.25em;
+        font-size: 1em;
     }
 
     &__clickable {

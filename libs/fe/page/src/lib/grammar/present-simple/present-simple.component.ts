@@ -15,9 +15,11 @@ export class PresentSimpleComponent {
         kind: 'header', value: 'Present Simple', textType: 'header1', link: 'home',
       },
       {
-        kind: 'header', value: '1) When to use it', textType: 'header2', link: 'when-to-use-it',
+        kind: 'header', value: '1 When to use it', textType: 'header2', link: 'when-to-use-it',
       },
-      { kind: 'text', value: 'a) Pernament', textType: 'paragraph' },
+      {
+        kind: 'header', value: '1.1 Pernament', textType: 'header3', link: 'pernament',
+      },
       {
         kind: 'multiline-text',
         lines: [
@@ -25,7 +27,9 @@ export class PresentSimpleComponent {
           'He works at the bank.',
         ],
       },
-      { kind: 'text', value: 'b) Routines', textType: 'paragraph' },
+      {
+        kind: 'header', value: '1.2 Routines', textType: 'header3', link: 'routines',
+      },
       {
         kind: 'multiline-text',
         lines: [
@@ -33,14 +37,18 @@ export class PresentSimpleComponent {
           'I go to sleep at 11:00.',
         ],
       },
-      { kind: 'text', value: 'c) Facts', textType: 'paragraph' },
+      {
+        kind: 'header', value: '1.3 Facts', textType: 'header3', link: 'facts',
+      },
       {
         kind: 'multiline-text',
         lines: [
           'The sun rises in the east.',
         ],
       },
-      { kind: 'text', value: 'd) Schedules', textType: 'paragraph' },
+      {
+        kind: 'header', value: '1.4 Schedules', textType: 'header3', link: 'schedules',
+      },
       {
         kind: 'multiline-text',
         lines: [
@@ -48,7 +56,9 @@ export class PresentSimpleComponent {
           'The flight leaves at noon.',
         ],
       },
-      { kind: 'text', value: 'e) Frequency', textType: 'paragraph' },
+      {
+        kind: 'header', value: '1.5 Frequency', textType: 'header3', link: 'frequency',
+      },
       {
         kind: 'multiline-text',
         lines: [
@@ -60,9 +70,11 @@ export class PresentSimpleComponent {
         ],
       },
       {
-        kind: 'header', value: '2) How to use it', textType: 'header2', link: 'how-to-use-it',
+        kind: 'header', value: '2 How to use it', textType: 'header2', link: 'how-to-use-it',
       },
-      { kind: 'text', value: 'a) Positive', textType: 'paragraph' },
+      {
+        kind: 'header', value: '2.1 Positive', textType: 'header3', link: 'positive',
+      },
       {
         kind: 'multiline-text',
         lines: [
@@ -76,7 +88,9 @@ export class PresentSimpleComponent {
           'They work',
         ],
       },
-      { kind: 'text', value: 'b) Negative', textType: 'paragraph' },
+      {
+        kind: 'header', value: '2.2 Negative', textType: 'header3', link: 'negative',
+      },
       {
         kind: 'multiline-text',
         lines: [
@@ -90,7 +104,9 @@ export class PresentSimpleComponent {
           'They do not (don\'t) work',
         ],
       },
-      { kind: 'text', value: 'c) Question', textType: 'paragraph' },
+      {
+        kind: 'header', value: '2.3 Question', textType: 'header3', link: 'question',
+      },
       {
         kind: 'multiline-text',
         lines: [
@@ -104,7 +120,9 @@ export class PresentSimpleComponent {
           'Do they work?',
         ],
       },
-      { kind: 'text', value: 'd) Question words', textType: 'paragraph' },
+      {
+        kind: 'header', value: '3 Question words', textType: 'header2', link: 'question-words',
+      },
       {
         kind: 'multiline-text',
         lines: [
@@ -119,9 +137,11 @@ export class PresentSimpleComponent {
         ],
       },
       {
-        kind: 'header', value: '3) Spelling', textType: 'header2', link: 'spelling',
+        kind: 'header', value: '4 Spelling', textType: 'header2', link: 'spelling',
       },
-      { kind: 'text', value: 'a) most verbs / add s', textType: 'paragraph' },
+      {
+        kind: 'header', value: '4.1 most verbs / add s', textType: 'header3', link: 'most-verbs',
+      },
       {
         kind: 'multiline-text',
         lines: [
@@ -130,7 +150,9 @@ export class PresentSimpleComponent {
           'sleep -> sleeps',
         ],
       },
-      { kind: 'text', value: 'b) verbs ending in s, sch, ch, x / add es', textType: 'paragraph' },
+      {
+        kind: 'header', value: '4.2 verbs ending in s, sch, ch, x / add es', textType: 'header3', link: 'verbs-ending-in-s',
+      },
       {
         kind: 'multiline-text',
         lines: [
@@ -140,7 +162,9 @@ export class PresentSimpleComponent {
           'fix -> fixes',
         ],
       },
-      { kind: 'text', value: 'c) verbs ending in consontant and y / dtop y and add ies', textType: 'paragraph' },
+      {
+        kind: 'header', value: '4.3 verbs ending in consontant and y / dtop y and add ies', textType: 'header3', link: 'verbs-ending-in-consontant-and-y',
+      },
       {
         kind: 'multiline-text',
         lines: [
@@ -148,7 +172,9 @@ export class PresentSimpleComponent {
           'try -> tries',
         ],
       },
-      { kind: 'text', value: 'd) others', textType: 'paragraph' },
+      {
+        kind: 'header', value: '4.4 others', textType: 'header3', link: 'others',
+      },
       {
         kind: 'multiline-text',
         lines: [
@@ -158,9 +184,11 @@ export class PresentSimpleComponent {
         ],
       },
       {
-        kind: 'header', value: '4) Short answers', textType: 'header2', link: 'short-answers',
+        kind: 'header', value: '5. Short answers', textType: 'header2', link: 'short-answers',
       },
-      { kind: 'text', value: 'a) Do they need help?', textType: 'paragraph' },
+      {
+        kind: 'header', value: '5.1 Do they need help?', textType: 'header3', link: 'do-they-need-help',
+      },
       {
         kind: 'multiline-text',
         lines: [
@@ -168,7 +196,9 @@ export class PresentSimpleComponent {
           'No, they don\'t.',
         ],
       },
-      { kind: 'text', value: 'b) Does he speak French?', textType: 'paragraph' },
+      {
+        kind: 'header', value: '5.2 Does he speak French?', textType: 'header3', link: 'does-he-speak-french',
+      },
       {
         kind: 'multiline-text',
         lines: [
@@ -176,7 +206,9 @@ export class PresentSimpleComponent {
           'No, he doesn\'t.',
         ],
       },
-      { kind: 'text', value: 'c) Do you like this song?', textType: 'paragraph' },
+      {
+        kind: 'header', value: '5.3 Do you like this song?', textType: 'header3', link: 'do-you-like-this-song',
+      },
       {
         kind: 'multiline-text',
         lines: [
