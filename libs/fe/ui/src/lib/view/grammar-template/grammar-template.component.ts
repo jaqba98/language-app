@@ -7,6 +7,7 @@ import { GrammarTemplateModel } from './grammar-template.model';
 import { FlexComponent } from '../../misc/flex/flex.component';
 import { MultilineTextComponent } from '../../misc/multiline-text/multiline-text.component';
 import { HeaderComponent } from '../../misc/header/header.component';
+import { ListComponent } from '../../misc/list/list.component';
 
 @Component({
   selector: 'lib-grammar-template',
@@ -18,6 +19,7 @@ import { HeaderComponent } from '../../misc/header/header.component';
     FlexComponent,
     MultilineTextComponent,
     HeaderComponent,
+    ListComponent,
   ],
   templateUrl: './grammar-template.component.html',
 })

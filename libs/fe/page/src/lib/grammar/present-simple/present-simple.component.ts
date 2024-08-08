@@ -143,44 +143,44 @@ export class PresentSimpleComponent {
         kind: 'header', value: '4.1 most verbs / add s', textType: 'header3', link: 'most-verbs',
       },
       {
-        kind: 'multiline-text',
-        lines: [
-          'dance -> dances',
-          'cook -> cooks',
-          'sleep -> sleeps',
+        kind: 'list',
+        items: [
+          'dance → dances',
+          'cook → cooks',
+          'sleep → sleeps',
         ],
       },
       {
         kind: 'header', value: '4.2 verbs ending in s, sch, ch, x / add es', textType: 'header3', link: 'verbs-ending-in-s',
       },
       {
-        kind: 'multiline-text',
-        lines: [
-          'kiss -> kisses',
-          'wasch -> washes',
-          'teach -> teaches',
-          'fix -> fixes',
+        kind: 'list',
+        items: [
+          'kiss → kisses',
+          'wasch → washes',
+          'teach → teaches',
+          'fix → fixes',
         ],
       },
       {
         kind: 'header', value: '4.3 verbs ending in consontant and y / dtop y and add ies', textType: 'header3', link: 'verbs-ending-in-consontant-and-y',
       },
       {
-        kind: 'multiline-text',
-        lines: [
-          'study -> studies',
-          'try -> tries',
+        kind: 'list',
+        items: [
+          'study → studies',
+          'try → tries',
         ],
       },
       {
         kind: 'header', value: '4.4 others', textType: 'header3', link: 'others',
       },
       {
-        kind: 'multiline-text',
-        lines: [
-          'go -> goes',
-          'do -> does',
-          'have -> has',
+        kind: 'list',
+        items: [
+          'go → goes',
+          'do → does',
+          'have → has',
         ],
       },
       {

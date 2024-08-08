@@ -18,7 +18,12 @@ interface HeaderModel {
   link: string;
 }
 
-type TemplateLineType = TextModel | MultilineTextModel | HeaderModel;
+interface ListModel {
+  kind: 'list',
+  items: string[];
+}
+
+type TemplateLineType = TextModel | MultilineTextModel | HeaderModel | ListModel;
 
 export interface GrammarTemplateModel {
   lines: TemplateLineType[];

@@ -10,6 +10,9 @@
       <ng-container *ngIf="line.kind === 'multiline-text'">
         <lib-multiline-text [lines]="line.lines"></lib-multiline-text>
       </ng-container>
+      <ng-container *ngIf="line.kind === 'list'">
+        <lib-list [items]="line.items"></lib-list>
+      </ng-container>
     </ng-container>
   </lib-flex>
 </lib-card>
