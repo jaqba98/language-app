@@ -24,6 +24,7 @@ export class FlexComponent {
       alignItems: this.alignItems,
       justifyContent: this.justifyContent,
       gap: this.gap,
+      flexWrap: 'wrap',
     };
   }
 }

@@ -13,6 +13,9 @@
       <ng-container *ngIf="line.kind === 'list'">
         <lib-list [items]="line.items"></lib-list>
       </ng-container>
+      <ng-container *ngIf="line.kind === 'sentence-structure'">
+        <lib-sentence-structure [items]="line.items"></lib-sentence-structure>
+      </ng-container>
     </ng-container>
   </lib-flex>
 </lib-card>

@@ -6,7 +6,6 @@ import { LinkComponent } from '../../control/link/link.component';
 import { CardComponent } from '../../misc/card/card.component';
 import { TextComponent } from '../../misc/text/text.component';
 import { FlexComponent } from '../../misc/flex/flex.component';
-import { CardEnum } from '../../misc/card/card.enum';
 
 @Component({
   selector: 'lib-grammar-nav',
@@ -22,6 +21,4 @@ import { CardEnum } from '../../misc/card/card.enum';
 })
 export class GrammarNavComponent {
   options = routesGrammar;
-
-  card: CardEnum = CardEnum.card__darken;
 }

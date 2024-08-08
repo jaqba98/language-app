@@ -76,6 +76,14 @@ export class PresentSimpleComponent {
         kind: 'header', value: '2.1 Positive', textType: 'header3', link: 'positive',
       },
       {
+        kind: 'sentence-structure',
+        items: [
+          'Subject',
+          'Verb I',
+          'Object',
+        ],
+      },
+      {
         kind: 'multiline-text',
         lines: [
           'I work',
@@ -92,6 +100,16 @@ export class PresentSimpleComponent {
         kind: 'header', value: '2.2 Negative', textType: 'header3', link: 'negative',
       },
       {
+        kind: 'sentence-structure',
+        items: [
+          'Subject',
+          'Do / Does',
+          'Not',
+          'Verb I',
+          'Object',
+        ],
+      },
+      {
         kind: 'multiline-text',
         lines: [
           'I do not (don\'t) work',
@@ -106,6 +124,15 @@ export class PresentSimpleComponent {
       },
       {
         kind: 'header', value: '2.3 Question', textType: 'header3', link: 'question',
+      },
+      {
+        kind: 'sentence-structure',
+        items: [
+          'Do / Does',
+          'Subject',
+          'Verb I',
+          'Object',
+        ],
       },
       {
         kind: 'multiline-text',

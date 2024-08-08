@@ -23,7 +23,17 @@ interface ListModel {
   items: string[];
 }
 
-type TemplateLineType = TextModel | MultilineTextModel | HeaderModel | ListModel;
+interface SentenceStructureModel {
+  kind: 'sentence-structure',
+  items: string[];
+}
+
+type TemplateLineType =
+  | TextModel
+  | MultilineTextModel
+  | HeaderModel
+  | ListModel
+  | SentenceStructureModel;
 
 export interface GrammarTemplateModel {
   lines: TemplateLineType[];
