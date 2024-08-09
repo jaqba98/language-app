@@ -2,7 +2,9 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Properties } from 'csstype';
 
-import { ObserverModel, BreakpointModel, BreakpointEnum, BreakpointService } from '@english-learning/fe-system';
+import {
+  ObserverModel, BreakpointModel, BreakpointEnum, BreakpointService,
+} from '@english-learning/fe-system';
 import { TextComponent } from '../../misc/text/text.component';
 import { CardComponent } from '../../misc/card/card.component';
 import { FlexComponent } from '../../misc/flex/flex.component';
