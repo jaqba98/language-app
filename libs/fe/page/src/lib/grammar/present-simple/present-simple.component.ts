@@ -60,13 +60,13 @@ export class PresentSimpleComponent {
         kind: 'header', value: '1.5 Frequency', textType: 'header3', link: 'frequency',
       },
       {
-        kind: 'multiline-text',
-        lines: [
-          'never = 0%',
-          'rarely = 10-20%',
-          'sometimes = 50%',
-          'often = 75%',
-          'always = 100%',
+        kind: 'list',
+        items: [
+          'never → 0%',
+          'rarely → 10-20%',
+          'sometimes → 50%',
+          'often → 75%',
+          'always → 100%',
         ],
       },
       {
@@ -151,8 +151,8 @@ export class PresentSimpleComponent {
         kind: 'header', value: '3 Question words', textType: 'header2', link: 'question-words',
       },
       {
-        kind: 'multiline-text',
-        lines: [
+        kind: 'list',
+        items: [
           'who',
           'what',
           'when',
