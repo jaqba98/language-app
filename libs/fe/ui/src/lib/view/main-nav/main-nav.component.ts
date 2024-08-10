@@ -6,6 +6,7 @@ import {
   BreakpointService,
   BreakpointModel,
   BreakpointEnum,
+  ObserverModel,
 } from '@english-learning/fe-system';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
@@ -33,7 +34,7 @@ import { routesMainNav } from '../../service/routes-menu.service';
   ],
   templateUrl: './main-nav.component.html',
 })
-export class MainNavComponent {
+export class MainNavComponent implements ObserverModel<BreakpointModel> {
   @ViewChild('hamburger') hamburger!: ButtonIconComponent;
 
   @ViewChild('menuCard') menuCard!: CardComponent;

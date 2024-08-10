@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { MainNavComponent } from '@english-learning/fe-ui';
+import { MainNavComponent, FlexComponent, WrapperComponent } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-root',
@@ -9,6 +9,8 @@ import { MainNavComponent } from '@english-learning/fe-ui';
   imports: [
     RouterOutlet,
     MainNavComponent,
+    FlexComponent,
+    WrapperComponent,
   ],
   templateUrl: './root.component.html',
 })

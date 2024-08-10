@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import { Properties } from 'csstype';
 
-import { CardEnum } from './card.enum';
+import { CardType } from './card.type';
 
 @Component({
   selector: 'lib-card',
@@ -16,7 +16,7 @@ import { CardEnum } from './card.enum';
 export class CardComponent {
   @ViewChild('self') self!: ElementRef;
 
-  @Input() cardType = CardEnum.card__default;
+  @Input() cardType: CardType = 'card__default';
 
   @Input() height: Properties['height'] = 'auto';
 }

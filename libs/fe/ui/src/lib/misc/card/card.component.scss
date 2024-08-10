@@ -3,13 +3,12 @@
 @use '@english-learning/fe-styles/src/lib/abstract/variable';
 
 .card {
-    @include mixin.set-box-model(1em, 1em);
+    @include mixin.set-box-model($padding: 1em);
 
     border-radius: variable.$border-radius-default;
 
     &__default {
         background-color: function.get-color('secondary');
-        box-shadow: variable.$box-shadow-size-big function.get-color('shadow');
     }
 
     &__darken {

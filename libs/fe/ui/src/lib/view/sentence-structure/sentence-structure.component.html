@@ -1,0 +1,15 @@
+<lib-card cardType="card__darken">
+  <lib-flex
+    [flexDirection]="flexDirection"
+    alignItems="center"
+    justifyContent="center"
+    [gap]="gap"
+  >
+    <ng-container *ngFor="let item of items; let last = last">
+      <lib-text [value]="item"></lib-text>
+      <ng-container *ngIf="!last">
+        <lib-text value="+"></lib-text>
+      </ng-container>
+    </ng-container>
+  </lib-flex>
+</lib-card>

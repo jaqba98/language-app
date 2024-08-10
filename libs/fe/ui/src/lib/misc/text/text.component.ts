@@ -1,7 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 
-import { TextEnum } from './text.enum';
+import { TextType } from './text.type';
 
 @Component({
   selector: 'lib-text',
@@ -13,5 +18,25 @@ import { TextEnum } from './text.enum';
 export class TextComponent {
   @Input({ required: true }) value!: string;
 
-  @Input() textType = TextEnum.paragraph;
+  @Input() textType: TextType = 'paragraph';
+
+  @Input() clickable = false;
+
+  @Output() eventMouseEnter = new EventEmitter();
+
+  @Output() eventMouseLeave = new EventEmitter();
+
+  @Output() eventOnClick = new EventEmitter();
+
+  onMouseEnter() {
+    this.eventMouseEnter.emit();
+  }
+
+  onMouseLeave() {
+    this.eventMouseLeave.emit();
+  }
+
+  onClick() {
+    this.eventOnClick.emit();
+  }
 }
