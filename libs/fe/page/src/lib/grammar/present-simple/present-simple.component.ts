@@ -235,7 +235,7 @@ export class PresentSimpleComponent {
         kind: 'list',
         items: [
           'kiss → kisses',
-          'wasch → washes',
+          'wash → washes',
           'teach → teaches',
           'fix → fixes',
         ],
