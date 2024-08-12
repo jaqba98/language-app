@@ -12,23 +12,35 @@ export class PresentSimpleComponent {
   template: GrammarTemplateModel = {
     lines: [
       {
-        kind: 'header', value: 'Present Simple', textType: 'header1', link: 'home',
+        kind: 'header',
+        value: 'Present Simple',
+        textType: 'header1',
+        link: 'home',
       },
       {
-        kind: 'header', value: '1 When to use it', textType: 'header2', link: 'when-to-use-it',
+        kind: 'header',
+        value: '1 When to use it',
+        textType: 'header2',
+        link: 'when-to-use-it',
       },
       {
-        kind: 'header', value: '1.1 Pernament', textType: 'header3', link: 'pernament',
+        kind: 'header',
+        value: '1.1 Pernament',
+        textType: 'header3',
+        link: 'pernament',
       },
       {
         kind: 'multiline-text',
         lines: [
           'We live in New York.',
-          'He works at the bank.',
+          'He works at a bank.',
         ],
       },
       {
-        kind: 'header', value: '1.2 Routines', textType: 'header3', link: 'routines',
+        kind: 'header',
+        value: '1.2 Routines',
+        textType: 'header3',
+        link: 'routines',
       },
       {
         kind: 'multiline-text',
@@ -38,7 +50,10 @@ export class PresentSimpleComponent {
         ],
       },
       {
-        kind: 'header', value: '1.3 Facts', textType: 'header3', link: 'facts',
+        kind: 'header',
+        value: '1.3 Facts',
+        textType: 'header3',
+        link: 'facts',
       },
       {
         kind: 'multiline-text',
@@ -47,7 +62,10 @@ export class PresentSimpleComponent {
         ],
       },
       {
-        kind: 'header', value: '1.4 Schedules', textType: 'header3', link: 'schedules',
+        kind: 'header',
+        value: '1.4 Schedules',
+        textType: 'header3',
+        link: 'schedules',
       },
       {
         kind: 'multiline-text',
@@ -57,7 +75,16 @@ export class PresentSimpleComponent {
         ],
       },
       {
-        kind: 'header', value: '1.5 Frequency', textType: 'header3', link: 'frequency',
+        kind: 'header',
+        value: '1.5 Frequency',
+        textType: 'header3',
+        link: 'frequency',
+      },
+      {
+        kind: 'multiline-text',
+        lines: [
+          'She always takes the bus.',
+        ],
       },
       {
         kind: 'list',
@@ -70,17 +97,23 @@ export class PresentSimpleComponent {
         ],
       },
       {
-        kind: 'header', value: '2 How to use it', textType: 'header2', link: 'how-to-use-it',
+        kind: 'header',
+        value: '2 How to use it',
+        textType: 'header2',
+        link: 'how-to-use-it',
       },
       {
-        kind: 'header', value: '2.1 Positive', textType: 'header3', link: 'positive',
+        kind: 'header',
+        value: '2.1 Positive',
+        textType: 'header3',
+        link: 'positive',
       },
       {
         kind: 'sentence-structure',
         items: [
           'Subject',
           'Verb I',
-          'Object',
+          'Object.',
         ],
       },
       {
@@ -97,7 +130,10 @@ export class PresentSimpleComponent {
         ],
       },
       {
-        kind: 'header', value: '2.2 Negative', textType: 'header3', link: 'negative',
+        kind: 'header',
+        value: '2.2 Negative',
+        textType: 'header3',
+        link: 'negative',
       },
       {
         kind: 'sentence-structure',
@@ -106,24 +142,27 @@ export class PresentSimpleComponent {
           'Do / Does',
           'Not',
           'Verb I',
-          'Object',
+          'Object.',
         ],
       },
       {
         kind: 'multiline-text',
         lines: [
-          'I do not (don\'t) work.',
-          'You do not (don\'t) work.',
-          'He does not (doesn\'t) works.',
-          'She does not (doesn\'t) works.',
-          'It does not (doesn\'t) works.',
-          'We do not (don\'t) work.',
-          'You do not (don\'t) work.',
-          'They do not (don\'t) work.',
+          "I don't work.",
+          "You don't work.",
+          "He doesn't work.",
+          "She doesn't work.",
+          "It doesn't work.",
+          "We don't work.",
+          "You don't work.",
+          "They don't work.",
         ],
       },
       {
-        kind: 'header', value: '2.3 Question', textType: 'header3', link: 'question',
+        kind: 'header',
+        value: '2.3 Question',
+        textType: 'header3',
+        link: 'question',
       },
       {
         kind: 'sentence-structure',
@@ -131,7 +170,7 @@ export class PresentSimpleComponent {
           'Do / Does',
           'Subject',
           'Verb I',
-          'Object',
+          'Object?',
         ],
       },
       {
@@ -139,35 +178,44 @@ export class PresentSimpleComponent {
         lines: [
           'Do I work?',
           'Do you work?',
-          'Does he works?',
-          'Does she works?',
-          'Does it works?',
+          'Does he work?',
+          'Does she work?',
+          'Does it work?',
           'Do we work?',
           'Do you work?',
           'Do they work?',
         ],
       },
       {
-        kind: 'header', value: '3 Question words', textType: 'header2', link: 'question-words',
+        kind: 'header',
+        value: '3 Question words',
+        textType: 'header2',
+        link: 'question-words',
       },
       {
         kind: 'list',
         items: [
-          'who',
-          'what',
-          'when',
-          'where',
-          'why',
-          'which',
-          'whose',
-          'how',
+          'what → What do you do?',
+          'who → Who lives in this house?',
+          'when → When does the train arrive?',
+          'where → Where do you work?',
+          'why → Why do you study English?',
+          'how → How do you get to work?',
+          'which → Which book do you prefer?',
+          'how often → How often do you exercise?',
         ],
       },
       {
-        kind: 'header', value: '4 Spelling', textType: 'header2', link: 'spelling',
+        kind: 'header',
+        value: '4 Spelling',
+        textType: 'header2',
+        link: 'spelling',
       },
       {
-        kind: 'header', value: '4.1 most verbs / add s', textType: 'header3', link: 'most-verbs',
+        kind: 'header',
+        value: '4.1 most verbs / add s',
+        textType: 'header3',
+        link: 'most-verbs',
       },
       {
         kind: 'list',
@@ -178,7 +226,10 @@ export class PresentSimpleComponent {
         ],
       },
       {
-        kind: 'header', value: '4.2 verbs ending in s, sch, ch, x / add es', textType: 'header3', link: 'verbs-ending-in-s',
+        kind: 'header',
+        value: '4.2 verbs ending in s,sch,ch,x / add es',
+        textType: 'header3',
+        link: 'verbs-ending-in-s-sch-ch-x',
       },
       {
         kind: 'list',
@@ -190,7 +241,10 @@ export class PresentSimpleComponent {
         ],
       },
       {
-        kind: 'header', value: '4.3 verbs ending in consontant and y / dtop y and add ies', textType: 'header3', link: 'verbs-ending-in-consontant-and-y',
+        kind: 'header',
+        value: '4.3 verbs ending in consontant and y / drop y and add ies',
+        textType: 'header3',
+        link: 'verbs-ending-in-consontant-and-y',
       },
       {
         kind: 'list',
@@ -200,7 +254,10 @@ export class PresentSimpleComponent {
         ],
       },
       {
-        kind: 'header', value: '4.4 others', textType: 'header3', link: 'others',
+        kind: 'header',
+        value: '4.4 others',
+        textType: 'header3',
+        link: 'others',
       },
       {
         kind: 'list',
@@ -211,36 +268,48 @@ export class PresentSimpleComponent {
         ],
       },
       {
-        kind: 'header', value: '5. Short answers', textType: 'header2', link: 'short-answers',
+        kind: 'header',
+        value: '5. Short answers',
+        textType: 'header2',
+        link: 'short-answers',
       },
       {
-        kind: 'header', value: '5.1 Do they need help?', textType: 'header3', link: 'do-they-need-help',
+        kind: 'header',
+        value: '5.1 Do they need help?',
+        textType: 'header3',
+        link: 'do-they-need-help',
       },
       {
         kind: 'multiline-text',
         lines: [
           'Yes, they do.',
-          'No, they don\'t.',
+          "No, they don't.",
         ],
       },
       {
-        kind: 'header', value: '5.2 Does he speak French?', textType: 'header3', link: 'does-he-speak-french',
+        kind: 'header',
+        value: '5.2 Does he speak French?',
+        textType: 'header3',
+        link: 'does-he-speak-french',
       },
       {
         kind: 'multiline-text',
         lines: [
           'Yes, he does.',
-          'No, he doesn\'t.',
+          "No, he doesn't.",
         ],
       },
       {
-        kind: 'header', value: '5.3 Do you like this song?', textType: 'header3', link: 'do-you-like-this-song',
+        kind: 'header',
+        value: '5.3 Do you like this song?',
+        textType: 'header3',
+        link: 'do-you-like-this-song',
       },
       {
         kind: 'multiline-text',
         lines: [
           'Yes, I do.',
-          'No, I don\'t.',
+          "No, I don't.",
         ],
       },
     ],
