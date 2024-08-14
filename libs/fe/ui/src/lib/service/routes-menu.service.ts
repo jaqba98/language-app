@@ -10,3 +10,8 @@ export const routesGrammar: RoutesMenuModel[] = [
   { value: 'Present Simple', link: '/grammar/present-simple' },
   { value: 'Present Continuous', link: '/grammar/present-continuous' },
 ];
+
+export const routesVocabulary: RoutesMenuModel[] = [
+  { value: 'Test1', link: '/vocabulary/test1' },
+  { value: 'Test2', link: '/vocabulary/test2' },
+];

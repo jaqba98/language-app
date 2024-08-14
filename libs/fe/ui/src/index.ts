@@ -8,3 +8,4 @@ export * from './lib/misc/flex/flex.component';
 export * from './lib/misc/text/text.type';
 export * from './lib/misc/flex-item/flex-item.component';
 export * from './lib/misc/wrapper/wrapper.component';
+export * from './lib/view/vocabulary-nav/vocabulary-nav.component';

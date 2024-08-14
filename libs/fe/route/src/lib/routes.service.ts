@@ -5,6 +5,8 @@ import {
   HomeComponent,
   PresentContinuousComponent,
   PresentSimpleComponent,
+  Test1Component,
+  Test2Component,
   VocabularyComponent,
 } from '@english-learning/fe-page';
 
@@ -40,6 +42,21 @@ export const feRoutes: Route[] = [
   {
     path: 'vocabulary',
     component: VocabularyComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/vocabulary/test1',
+        pathMatch: 'full',
+      },
+      {
+        path: 'test1',
+        component: Test1Component,
+      },
+      {
+        path: 'test2',
+        component: Test2Component,
+      },
+    ],
   },
   {
     path: '**',

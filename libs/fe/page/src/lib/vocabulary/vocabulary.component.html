@@ -1,3 +1,8 @@
-<lib-card>
-    <lib-text value="Vocabulary"></lib-text>
-</lib-card>
+<lib-flex [flexDirection]="vocabularyFlexDirection" gap="0.25em">
+  <lib-flex-item>
+    <lib-vocabulary-nav></lib-vocabulary-nav>
+  </lib-flex-item>
+  <lib-flex-item flex="1">
+    <router-outlet></router-outlet>
+  </lib-flex-item>
+</lib-flex>

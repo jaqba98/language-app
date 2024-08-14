@@ -4,3 +4,5 @@ export * from './lib/grammar/grammar.component';
 export * from './lib/grammar/present-simple/present-simple.component';
 export * from './lib/grammar/present-continuous/present-continuous.component';
 export * from './lib/vocabulary/vocabulary.component';
+export * from './lib/vocabulary/test1/test1.component';
+export * from './lib/vocabulary/test2/test2.component';
