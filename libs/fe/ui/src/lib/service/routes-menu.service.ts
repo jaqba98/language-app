@@ -2,6 +2,7 @@ import { RoutesMenuModel } from '../model/routes-menu.model';
 
 export const routesMainNav: RoutesMenuModel[] = [
   { value: 'Home', link: '/home' },
+  { value: 'Vocabulary', link: '/vocabulary' },
   { value: 'Grammar', link: '/grammar' },
 ];
 

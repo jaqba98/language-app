@@ -5,6 +5,7 @@ import {
   HomeComponent,
   PresentContinuousComponent,
   PresentSimpleComponent,
+  VocabularyComponent,
 } from '@english-learning/fe-page';
 
 export const feRoutes: Route[] = [
@@ -35,6 +36,10 @@ export const feRoutes: Route[] = [
         component: PresentContinuousComponent,
       },
     ],
+  },
+  {
+    path: 'vocabulary',
+    component: VocabularyComponent,
   },
   {
     path: '**',
