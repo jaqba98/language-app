@@ -62,7 +62,7 @@ export const feRoutes: Route[] = [
             path: 'bank',
             component: Test1BankComponent,
           },
-        ]
+        ],
       },
       {
         path: 'test2',
