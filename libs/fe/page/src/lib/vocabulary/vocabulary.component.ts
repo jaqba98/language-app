@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import {
-  routesVocabulary,
+  RoutesMenuModel,
   SectionComponent,
 } from '@english-learning/fe-ui';
 
@@ -12,5 +12,7 @@ import {
   templateUrl: './vocabulary.component.html',
 })
 export class VocabularyComponent {
-  options = routesVocabulary;
+  options: RoutesMenuModel[] = [
+    { value: 'Test1', link: '/vocabulary/test1' },
+  ];
 }
