@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Properties } from 'csstype';
 
@@ -21,7 +21,7 @@ import { RoutesMenuModel } from '../../model/routes-menu.model';
   ],
   templateUrl: './section.component.html',
 })
-export class SectionComponent implements ObserverModel<BreakpointModel> {
+export class SectionComponent implements ObserverModel<BreakpointModel>, OnInit {
   @Input({ required: true }) header!: string;
 
   @Input({ required: true }) options!: RoutesMenuModel[];
@@ -31,14 +31,14 @@ export class SectionComponent implements ObserverModel<BreakpointModel> {
   flexDirection: Properties['flexDirection'] = 'column';
 
   constructor(private readonly breakpoint: BreakpointService) {
+  }
+
+  ngOnInit(): void {
+    if (!this.isFlex) return;
     this.breakpoint.addObserver(this);
   }
 
   update(data: BreakpointModel) {
-    if (!this.isFlex) {
-      this.flexDirection = 'column';
-      return;
-    }
     if (data.breakpoint === BreakpointEnum.XSmall) {
       this.flexDirection = 'column';
     } else {
