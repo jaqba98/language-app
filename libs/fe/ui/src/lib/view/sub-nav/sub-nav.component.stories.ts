@@ -22,6 +22,7 @@ type Story = StoryObj<SubNavComponent>;
 
 export const Primary: Story = {
   args: {
+    header: 'Header',
     options: [
       { value: 'Link 1', link: '/' },
       { value: 'Link 2', link: '/' },

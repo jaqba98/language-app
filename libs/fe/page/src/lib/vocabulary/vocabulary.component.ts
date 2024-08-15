@@ -5,7 +5,8 @@ import { Properties } from 'csstype';
 import {
   FlexComponent,
   FlexItemComponent,
-  VocabularyNavComponent,
+  routesVocabulary,
+  SubNavComponent,
 } from '@english-learning/fe-ui';
 import {
   ObserverModel,
@@ -19,14 +20,16 @@ import {
   standalone: true,
   imports: [
     RouterOutlet,
-    VocabularyNavComponent,
     FlexComponent,
     FlexItemComponent,
+    SubNavComponent,
   ],
   templateUrl: './vocabulary.component.html',
 })
 export class VocabularyComponent implements ObserverModel<BreakpointModel> {
   vocabularyFlexDirection: Properties['flexDirection'] = 'column';
+
+  options = routesVocabulary;
 
   constructor(private readonly breakpoint: BreakpointService) {
     this.breakpoint.addObserver(this);

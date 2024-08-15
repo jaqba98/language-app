@@ -8,7 +8,8 @@ import {
 import {
   FlexComponent,
   FlexItemComponent,
-  GrammarNavComponent,
+  routesGrammar,
+  SubNavComponent,
 } from '@english-learning/fe-ui';
 
 @Component({
@@ -16,14 +17,16 @@ import {
   standalone: true,
   imports: [
     RouterOutlet,
-    GrammarNavComponent,
     FlexComponent,
     FlexItemComponent,
+    SubNavComponent,
   ],
   templateUrl: './grammar.component.html',
 })
 export class GrammarComponent implements ObserverModel<BreakpointModel> {
   grammarFlexDirection: Properties['flexDirection'] = 'column';
+
+  options = routesGrammar;
 
   constructor(private readonly breakpoint: BreakpointService) {
     this.breakpoint.addObserver(this);

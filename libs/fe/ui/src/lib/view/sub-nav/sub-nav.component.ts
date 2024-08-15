@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import { routesVocabulary } from '../../service/routes-menu.service';
 import { LinkComponent } from '../../control/link/link.component';
 import { CardComponent } from '../../misc/card/card.component';
 import { TextComponent } from '../../misc/text/text.component';
 import { FlexComponent } from '../../misc/flex/flex.component';
+import { RoutesMenuModel } from '../../model/routes-menu.model';
 
 @Component({
-  selector: 'lib-vocabulary-nav',
+  selector: 'lib-sub-nav',
   standalone: true,
   imports: [
     CommonModule,
@@ -20,5 +20,7 @@ import { FlexComponent } from '../../misc/flex/flex.component';
   templateUrl: './sub-nav.component.html',
 })
 export class SubNavComponent {
-  options = routesVocabulary;
+  @Input({ required: true }) header!: string;
+
+  @Input({ required: true }) options!: RoutesMenuModel[];
 }
