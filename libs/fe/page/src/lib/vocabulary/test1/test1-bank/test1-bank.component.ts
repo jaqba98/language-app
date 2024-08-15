@@ -5,7 +5,7 @@ import {
   CardComponent,
   FlexComponent,
   FlexItemComponent,
-  TextComponent
+  TextComponent,
 } from '@english-learning/fe-ui';
 
 @Component({

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 import {
   CardComponent,
-  TextComponent
+  TextComponent,
 } from '@english-learning/fe-ui';
 
 @Component({
