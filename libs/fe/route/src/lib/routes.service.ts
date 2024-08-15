@@ -7,7 +7,6 @@ import {
   PresentSimpleComponent,
   Test1BankComponent,
   Test1Component,
-  Test2Component,
   VocabularyComponent,
 } from '@english-learning/fe-page';
 
@@ -63,10 +62,6 @@ export const feRoutes: Route[] = [
             component: Test1BankComponent,
           },
         ],
-      },
-      {
-        path: 'test2',
-        component: Test2Component,
       },
     ],
   },

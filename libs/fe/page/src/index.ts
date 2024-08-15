@@ -6,4 +6,3 @@ export * from './lib/grammar/present-continuous/present-continuous.component';
 export * from './lib/vocabulary/vocabulary.component';
 export * from './lib/vocabulary/test1/test1.component';
 export * from './lib/vocabulary/test1/test1-bank/test1-bank.component';
-export * from './lib/vocabulary/test2/test2.component';
