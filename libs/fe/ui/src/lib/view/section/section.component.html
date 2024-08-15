@@ -1,0 +1,8 @@
+<lib-flex [flexDirection]="flexDirection" gap="0.25em">
+  <lib-flex-item>
+    <lib-sub-nav [header]="header" [options]="options"></lib-sub-nav>
+  </lib-flex-item>
+  <lib-flex-item flex="1">
+    <router-outlet></router-outlet>
+  </lib-flex-item>
+</lib-flex>
