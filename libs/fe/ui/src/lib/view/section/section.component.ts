@@ -26,6 +26,8 @@ export class SectionComponent implements ObserverModel<BreakpointModel> {
 
   @Input({ required: true }) options!: RoutesMenuModel[];
 
+  @Input() isFlex = true;
+
   flexDirection: Properties['flexDirection'] = 'column';
 
   constructor(private readonly breakpoint: BreakpointService) {
@@ -33,6 +35,10 @@ export class SectionComponent implements ObserverModel<BreakpointModel> {
   }
 
   update(data: BreakpointModel) {
+    if (!this.isFlex) {
+      this.flexDirection = 'column';
+      return;
+    }
     if (data.breakpoint === BreakpointEnum.XSmall) {
       this.flexDirection = 'column';
     } else {

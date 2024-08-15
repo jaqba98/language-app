@@ -15,3 +15,7 @@ export const routesVocabulary: RoutesMenuModel[] = [
   { value: 'Test1', link: '/vocabulary/test1' },
   { value: 'Test2', link: '/vocabulary/test2' },
 ];
+
+export const routesVocabularyTest1: RoutesMenuModel[] = [
+  { value: 'Bank', link: '/vocabulary/test1/bank' },
+];

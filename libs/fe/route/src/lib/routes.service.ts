@@ -5,6 +5,7 @@ import {
   HomeComponent,
   PresentContinuousComponent,
   PresentSimpleComponent,
+  Test1BankComponent,
   Test1Component,
   Test2Component,
   VocabularyComponent,
@@ -51,6 +52,17 @@ export const feRoutes: Route[] = [
       {
         path: 'test1',
         component: Test1Component,
+        children: [
+          {
+            path: '',
+            redirectTo: '/vocabulary/test1/bank',
+            pathMatch: 'full',
+          },
+          {
+            path: 'bank',
+            component: Test1BankComponent,
+          },
+        ]
       },
       {
         path: 'test2',
