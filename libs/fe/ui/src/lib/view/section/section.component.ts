@@ -5,11 +5,9 @@ import { Properties } from 'csstype';
 import {
   ObserverModel, BreakpointModel, BreakpointService, BreakpointEnum,
 } from '@english-learning/fe-system';
-import {
-  FlexComponent,
-  FlexItemComponent,
-  SubNavComponent,
-} from '@english-learning/fe-ui';
+import { FlexComponent } from '../../misc/flex/flex.component';
+import { FlexItemComponent } from '../../misc/flex-item/flex-item.component';
+import { SubNavComponent } from '../sub-nav/sub-nav.component';
 import { RoutesMenuModel } from '../../model/routes-menu.model';
 
 @Component({
