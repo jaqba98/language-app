@@ -14,7 +14,3 @@ export const routesGrammar: RoutesMenuModel[] = [
 export const routesVocabulary: RoutesMenuModel[] = [
   { value: 'Test1', link: '/vocabulary/test1' },
 ];
-
-export const routesVocabularyTest1: RoutesMenuModel[] = [
-  { value: 'Bank', link: '/vocabulary/test1/bank' },
-];

@@ -10,3 +10,4 @@ export * from './lib/misc/wrapper/wrapper.component';
 export * from './lib/view/sub-nav/sub-nav.component';
 export * from './lib/service/routes-menu.service';
 export * from './lib/view/section/section.component';
+export * from './lib/model/routes-menu.model';
