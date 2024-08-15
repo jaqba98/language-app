@@ -1,0 +1,7 @@
+<lib-card>
+  <lib-flex alignItems="center" gap="0.5em">
+    <ng-container *ngFor="let option of options">
+      <lib-button-text [value]="option.value" [link]="option.link"></lib-button-text>
+    </ng-container>
+  </lib-flex>
+</lib-card>
