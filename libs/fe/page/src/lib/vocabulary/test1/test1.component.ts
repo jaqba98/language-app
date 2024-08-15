@@ -17,5 +17,6 @@ import { VocabularyComponent } from "../vocabulary.component";
 export class Test1Component {
   options: RoutesMenuModel[] = [
     { value: 'Bank', link: '/vocabulary/test1/bank' },
+    { value: 'Quiz', link: '/vocabulary/test1/quiz' },
   ];
 }
