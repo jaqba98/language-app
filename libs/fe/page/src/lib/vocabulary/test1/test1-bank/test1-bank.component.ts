@@ -1,7 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
-import { CardComponent, FlexComponent, FlexItemComponent, TextComponent } from '@english-learning/fe-ui';
+import {
+  CardComponent,
+  FlexComponent,
+  FlexItemComponent,
+  TextComponent
+} from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-test1-bank',
@@ -16,7 +21,7 @@ import { CardComponent, FlexComponent, FlexItemComponent, TextComponent } from '
   templateUrl: './test1-bank.component.html',
 })
 export class Test1BankComponent {
-  aaa = [
+  bank = [
     { a: 'lorem ipsun', b: 'polski lorem ipsum' },
     { a: 'lorem ipsun', b: 'polski lorem ipsum' },
     { a: 'lorem ipsun', b: 'polski lorem ipsum' },

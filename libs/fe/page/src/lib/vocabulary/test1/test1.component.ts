@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
-import { RoutesMenuModel, SectionComponent } from '@english-learning/fe-ui';
+import { RoutesMenuModel } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-test1',
   standalone: true,
-  imports: [SectionComponent],
+  imports: [RouterOutlet],
   templateUrl: './test1.component.html',
 })
 export class Test1Component {
