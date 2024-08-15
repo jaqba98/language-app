@@ -1,3 +1,16 @@
 <lib-card>
-    <lib-text value="Test1 bank"></lib-text>
+    <lib-flex flexDirection="column" justifyContent="space-between" gap="0.5em">
+        <ng-container *ngFor="let a of aaa">
+            <lib-card [cardType]="'card__darken'">
+                <lib-flex>
+                    <lib-flex-item flex="1">
+                        <lib-text [value]="a.a"></lib-text>
+                    </lib-flex-item>
+                    <lib-flex-item flex="2">
+                        <lib-text [value]="a.b"></lib-text>
+                    </lib-flex-item>
+                </lib-flex>
+            </lib-card>
+        </ng-container>
+    </lib-flex>
 </lib-card>
