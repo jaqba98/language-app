@@ -22,6 +22,6 @@ type Story = StoryObj<VocabularyComponent>;
 
 export const Primary: Story = {
   args: {
-    route: 'test1'
+    route: 'test1',
   },
 };
