@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 import {
   CardComponent,
   FlexComponent,
-  FlexItemComponent,
   TextComponent,
 } from '@english-learning/fe-ui';
 
@@ -14,7 +13,6 @@ import {
   imports: [
     CommonModule,
     FlexComponent,
-    FlexItemComponent,
     CardComponent,
     TextComponent,
   ],
