@@ -1,22 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
-import { RoutesMenuModel, VocabularyNavComponent } from '@english-learning/fe-ui';
-import { VocabularyComponent } from '../vocabulary.component';
+import { VocabularyComponent } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-test1',
   standalone: true,
-  imports: [
-    RouterOutlet,
-    VocabularyNavComponent,
-    VocabularyComponent,
-  ],
+  imports: [VocabularyComponent],
   templateUrl: './test1.component.html',
 })
-export class Test1Component {
-  options: RoutesMenuModel[] = [
-    { value: 'Bank', link: '/vocabulary/test1/bank' },
-    { value: 'Quiz', link: '/vocabulary/test1/quiz' },
-  ];
-}
+export class Test1Component {}
