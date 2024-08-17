@@ -1,1 +1,13 @@
-<p>quiz!</p>
+<lib-card>
+    <lib-card cardType="card__darken">
+        <lib-flex gap="0.5em" flexDirection="column">
+            @if (currentWords.length > 0) {
+                <lib-text [value]="currentWords.length.toString()"></lib-text>
+                <lib-text [value]="currentWord.polish"></lib-text>
+                <lib-button-text value="Submit" (eventClick)="onSubmit()"></lib-button-text>
+            } @else {
+                <lib-text value="Finish!"></lib-text>
+            }
+        </lib-flex>
+    </lib-card>
+</lib-card>
