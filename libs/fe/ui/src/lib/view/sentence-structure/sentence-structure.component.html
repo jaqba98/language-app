@@ -5,11 +5,11 @@
     justifyContent="center"
     [gap]="gap"
   >
-    <ng-container *ngFor="let item of items; let last = last">
+    @for (item of items; track item) {
       <lib-text [value]="item"></lib-text>
-      @if (!last) {
+      @if (!$last) {
         <lib-text value="+"></lib-text>
       }
-    </ng-container>
+    }
   </lib-flex>
 </lib-card>

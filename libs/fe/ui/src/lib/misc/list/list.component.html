@@ -1,7 +1,7 @@
 <ul>
-  <ng-container *ngFor="let item of items">
+  @for (item of items; track item) {
     <li class="list__item">
       <lib-text [value]="item"></lib-text>
     </li>
-  </ng-container>
+  }
 </ul>

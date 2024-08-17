@@ -1,16 +1,16 @@
 <div (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="onClick()">
-  <ng-container [ngSwitch]="textType">
-    <ng-container *ngSwitchCase="'paragraph'">
+  @switch (textType) {
+    @case ('paragraph') {
       <p class="text text__paragraph" [ngClass]="{text__clickable: clickable}">{{ value }}</p>
-    </ng-container>
-    <ng-container *ngSwitchCase="'header1'">
+    }
+    @case ('header1') {
       <h1 class="text text__header1" [ngClass]="{text__clickable: clickable}">{{ value }}</h1>
-    </ng-container>
-    <ng-container *ngSwitchCase="'header2'">
+    }
+    @case ('header2') {
       <h2 class="text text__header2" [ngClass]="{text__clickable: clickable}">{{ value }}</h2>
-    </ng-container>
-    <ng-container *ngSwitchCase="'header3'">
+    }
+    @case ('header3') {
       <h2 class="text text__header3" [ngClass]="{text__clickable: clickable}">{{ value }}</h2>
-    </ng-container>
-  </ng-container>
+    }
+  }
 </div>
