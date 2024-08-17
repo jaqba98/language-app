@@ -1,4 +1,4 @@
-import { BankModel } from "@english-learning/fe-ui";
+import { BankModel } from '@english-learning/fe-ui';
 
 export const test1Words: BankModel[] = [
   { english: 'lorem ipsun', polish: 'polski lorem ipsum' },

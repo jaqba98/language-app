@@ -1,3 +1,10 @@
-<lib-card>
-    <lib-text value="Test1 Quiz"></lib-text>
-</lib-card>
+@if (this.words.length > 0) {
+    <lib-card>
+        <lib-text [value]="this.words.length.toString()"></lib-text>
+        <lib-button-text value="Accept" (eventClick)="onClick()"></lib-button-text>
+    </lib-card>
+} @else {
+    <lib-card>
+        <lib-text value="Koniec"></lib-text>
+    </lib-card>
+}
