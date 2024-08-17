@@ -7,6 +7,7 @@ import { CardComponent } from '../../misc/card/card.component';
 import { FlexComponent } from '../../misc/flex/flex.component';
 import { TextComponent } from '../../misc/text/text.component';
 import { InputComponent } from '../../control/input/input.component';
+import { PositionComponent } from '../../misc/position/position.component';
 
 @Component({
   selector: 'lib-quiz',
@@ -17,6 +18,7 @@ import { InputComponent } from '../../control/input/input.component';
     TextComponent,
     InputComponent,
     ButtonTextComponent,
+    PositionComponent,
   ],
   templateUrl: './quiz.component.html',
 })
@@ -27,11 +29,16 @@ export class QuizComponent implements OnInit {
 
   currentWord!: BankModel;
 
+  successes = 0;
+
+  errors = 0;
+
   ngOnInit() {
     this.initQuiz();
   }
 
   onSubmit() {
+    this.checkWord();
     this.nextWord();
   }
 
@@ -44,5 +51,9 @@ export class QuizComponent implements OnInit {
     const word = this.currentWords.pop();
     if (!word) return;
     this.currentWord = word;
+  }
+
+  checkWord() {
+    this.successes += 1;
   }
 }
