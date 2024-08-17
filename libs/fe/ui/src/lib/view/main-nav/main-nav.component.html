@@ -5,29 +5,29 @@
       <!-- logo -->
       <lib-icon src="icon/school.svg" alt="school icon"></lib-icon>
       <!-- hamburger for mobile -->
-      <ng-container *ngIf="isMobile">
+      @if (isMobile) {
         <lib-button-icon #hamburger src="icon/menu.svg" alt="hamburger icon"></lib-button-icon>
-      </ng-container>
+      }
       <!-- main nav menu options for other devices -->
-      <ng-container *ngIf="!isMobile">
+      @if (!isMobile) {
         <lib-flex gap="0.5em">
-          <ng-container *ngFor="let option of options">
+          @for (option of options; track option.link) {
             <lib-button-text [value]="option.value" [link]="option.link"></lib-button-text>
-          </ng-container>
+          }
         </lib-flex>
-      </ng-container>
+      }
     </lib-flex>
   </lib-card>
   <!-- main nav menu options for mobile -->
-  <ng-container *ngIf="isMobile && isMenuVisible">
-      <lib-card #menuCard>
-        <lib-wrapper #menuCardOptions>
-          <lib-flex flexDirection="column" gap="0.5em">
-            <ng-container *ngFor="let option of options">
-              <lib-button-text [value]="option.value" [link]="option.link" [fullWidth]="true"></lib-button-text>
-            </ng-container>
-          </lib-flex>
-        </lib-wrapper>
-      </lib-card>
-  </ng-container>
+  @if (isMobile && isMenuVisible) {
+    <lib-card #menuCard>
+      <lib-wrapper #menuCardOptions>
+        <lib-flex flexDirection="column" gap="0.5em">
+          @for (option of options; track option.link) {
+            <lib-button-text [value]="option.value" [link]="option.link" [fullWidth]="true"></lib-button-text>
+          }
+        </lib-flex>
+      </lib-wrapper>
+    </lib-card>
+  }
 </lib-flex>

@@ -6,8 +6,8 @@
       [clickable]="true"
       (eventMouseEnter)="isSelected = true"
       (eventMouseLeave)="isSelected = false"></lib-text>
-    <ng-container *ngIf="isSelected">
+    @if (isSelected) {
       <lib-text value="#" [textType]="textType"></lib-text>
-    </ng-container>
+    }
   </lib-flex>
 </div>

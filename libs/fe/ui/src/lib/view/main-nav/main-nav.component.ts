@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, ViewChild, HostListener } from '@angular/core';
 import { Properties } from 'csstype';
 
@@ -22,7 +21,6 @@ import { RoutesMenuModel } from '../../model/routes-menu.model';
   selector: 'lib-main-nav',
   standalone: true,
   imports: [
-    CommonModule,
     CardComponent,
     ButtonIconComponent,
     ButtonTextComponent,

@@ -1,21 +1,17 @@
 <lib-card>
   <lib-flex flexDirection="column" gap="1em">
-    <ng-container *ngFor="let line of template.lines">
-      <ng-container *ngIf="line.kind === 'text'">
+    @for (line of template.lines; track line.kind) {
+      @if (line.kind === 'text') {
         <lib-text [value]="line.value" [textType]="line.textType"></lib-text>
-      </ng-container>
-      <ng-container *ngIf="line.kind === 'header'">
+      } @else if (line.kind === 'header') {
         <lib-header [value]="line.value" [textType]="line.textType" [link]="line.link"></lib-header>
-      </ng-container>
-      <ng-container *ngIf="line.kind === 'multiline-text'">
+      } @else if (line.kind === 'multiline-text') {
         <lib-multiline-text [lines]="line.lines"></lib-multiline-text>
-      </ng-container>
-      <ng-container *ngIf="line.kind === 'list'">
+      } @else if (line.kind === 'list') {
         <lib-list [items]="line.items"></lib-list>
-      </ng-container>
-      <ng-container *ngIf="line.kind === 'sentence-structure'">
+      } @else if (line.kind === 'sentence-structure') {
         <lib-sentence-structure [items]="line.items"></lib-sentence-structure>
-      </ng-container>
-    </ng-container>
+      }
+    }
   </lib-flex>
 </lib-card>
