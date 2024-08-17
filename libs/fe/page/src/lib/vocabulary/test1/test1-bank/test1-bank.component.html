@@ -1,13 +1,1 @@
-<lib-card>
-    <lib-flex gap="0.5em" flexDirection="column">
-        @for (item of bank; track item) {
-            <lib-card [cardType]="$odd ? 'card__default' : 'card__darken'">
-                <lib-flex alignItems="center" justifyContent="space-between">
-                    <lib-text [value]="($index+1).toString()"></lib-text>
-                    <lib-text [value]="item.a"></lib-text>
-                    <lib-text [value]="item.b"></lib-text>
-                </lib-flex>
-            </lib-card>
-        }
-    </lib-flex>
-</lib-card>
+<lib-bank [words]="words"></lib-bank>

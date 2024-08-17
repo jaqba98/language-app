@@ -11,3 +11,5 @@ export * from './lib/view/sub-nav/sub-nav.component';
 export * from './lib/view/section/section.component';
 export * from './lib/model/routes-menu.model';
 export * from './lib/view/vocabulary/vocabulary.component';
+export * from './lib/view/bank/bank.component';
+export * from './lib/view/bank/bank.model';
