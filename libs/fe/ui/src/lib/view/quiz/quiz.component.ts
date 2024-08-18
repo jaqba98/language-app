@@ -46,7 +46,13 @@ export class QuizComponent implements OnInit {
     this.nextWord();
   }
 
+  onRestart() {
+    this.initQuiz();
+  }
+
   initQuiz() {
+    this.successes = 0;
+    this.errors = 0;
     this.currentWords = cloneDeep(this.words);
     this.nextWord();
   }

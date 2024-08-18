@@ -18,7 +18,18 @@
                         <lib-input [value]="input" (eventInput)="input = $event"></lib-input>
                         <lib-button-text value="Submit" (eventClick)="onSubmit()"></lib-button-text>
                     } @else {
-                        <lib-text value="Finish!"></lib-text>
+                        <lib-flex alignItems="center">
+                            <lib-text value="Finish!" textType="header2"></lib-text>
+                        </lib-flex>
+                        <lib-flex alignItems="center" justifyContent="center" gap="0.5em">
+                            <lib-text value="Correct answers"></lib-text>
+                            <lib-counter [value]="successes" type="success"></lib-counter>
+                        </lib-flex>
+                        <lib-flex alignItems="center" justifyContent="center" gap="0.5em">
+                            <lib-text value="Incorrect answers"></lib-text>
+                            <lib-counter [value]="errors" type="error"></lib-counter>
+                        </lib-flex>
+                        <lib-button-text value="Restart" (eventClick)="onRestart()"></lib-button-text>
                     }
                 </lib-flex>
         </lib-card>
