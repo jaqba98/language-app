@@ -1,0 +1,13 @@
+@if (type === 'info') {
+    <div class="counter">
+        <lib-text [value]="value.toString()"></lib-text>
+    </div>
+} @else if (type === 'error') {
+    <div class="counter counter__error">
+        <lib-text [value]="value.toString()"></lib-text>
+    </div>
+} @else {
+    <div class="counter counter__success">
+        <lib-text [value]="value.toString()"></lib-text>
+    </div>
+}

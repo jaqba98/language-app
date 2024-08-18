@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {
+  Component, EventEmitter, Input, Output,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -9,5 +11,11 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './input.component.scss',
 })
 export class InputComponent {
-  value = '';
+  @Input() value = '';
+
+  @Output() eventInput = new EventEmitter<string>();
+
+  onInput() {
+    this.eventInput.emit(this.value);
+  }
 }

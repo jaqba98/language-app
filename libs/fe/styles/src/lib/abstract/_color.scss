@@ -6,3 +6,5 @@ $tertiary: color.adjust($secondary, $lightness: 2%);
 $button: color.adjust($tertiary, $lightness: 4%);
 $shadow: color.adjust($primary, $lightness: 2%);
 $text: color.adjust($primary, $lightness: 65%);
+$success: #006400;
+$error: #8b0000;

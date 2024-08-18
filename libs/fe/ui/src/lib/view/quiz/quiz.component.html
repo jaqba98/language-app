@@ -4,16 +4,18 @@
                 <lib-flex gap="1em" flexDirection="column">
                     @if (currentWords.length > 0) {
                         <lib-position position="absolute" top="0" left="10px">
-                            <lib-text [value]="currentWords.length.toString()"></lib-text>
+                            <lib-counter [value]="currentWords.length"></lib-counter>
                         </lib-position>
                         <lib-position position="absolute" top="0" right="10px">
-                            <lib-flex gap="1em">
-                                <lib-text [value]="successes.toString()"></lib-text>
-                                <lib-text [value]="errors.toString()"></lib-text>
+                            <lib-flex gap="0.25em">
+                                <lib-counter [value]="successes" type="success"></lib-counter>
+                                <lib-counter [value]="errors" type="error"></lib-counter>
                             </lib-flex>
                         </lib-position>
-                        <lib-text [value]="currentWord.polish"></lib-text>
-                        <lib-input></lib-input>
+                        <lib-flex alignItems="center" justifyContent="center">
+                            <lib-text textType="header3" [value]="currentWord.polish"></lib-text>
+                        </lib-flex>
+                        <lib-input [value]="input" (eventInput)="input = $event"></lib-input>
                         <lib-button-text value="Submit" (eventClick)="onSubmit()"></lib-button-text>
                     } @else {
                         <lib-text value="Finish!"></lib-text>

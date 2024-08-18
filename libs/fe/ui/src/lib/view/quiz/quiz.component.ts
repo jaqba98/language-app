@@ -8,6 +8,7 @@ import { FlexComponent } from '../../misc/flex/flex.component';
 import { TextComponent } from '../../misc/text/text.component';
 import { InputComponent } from '../../control/input/input.component';
 import { PositionComponent } from '../../misc/position/position.component';
+import { CounterComponent } from '../../misc/counter/counter.component';
 
 @Component({
   selector: 'lib-quiz',
@@ -19,6 +20,7 @@ import { PositionComponent } from '../../misc/position/position.component';
     InputComponent,
     ButtonTextComponent,
     PositionComponent,
+    CounterComponent,
   ],
   templateUrl: './quiz.component.html',
 })
@@ -32,6 +34,8 @@ export class QuizComponent implements OnInit {
   successes = 0;
 
   errors = 0;
+
+  input!: string;
 
   ngOnInit() {
     this.initQuiz();
@@ -51,9 +55,14 @@ export class QuizComponent implements OnInit {
     const word = this.currentWords.pop();
     if (!word) return;
     this.currentWord = word;
+    this.input = '';
   }
 
   checkWord() {
-    this.successes += 1;
+    if (this.input === this.currentWord.english) {
+      this.successes += 1;
+      return;
+    }
+    this.errors += 1;
   }
 }

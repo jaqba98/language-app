@@ -25,5 +25,13 @@
         @return color.$text;
     }
 
+    @if $color-key == 'success' {
+        @return color.$success;
+    }
+
+    @if $color-key == 'error' {
+        @return color.$error;
+    }
+
     @error 'Not supported color!';
 }
