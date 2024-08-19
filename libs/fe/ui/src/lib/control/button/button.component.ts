@@ -1,13 +1,35 @@
-import { Component, Input } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import {
+  Component, ViewChild, ElementRef, Input, Output, EventEmitter,
+} from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'lib-button',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [RouterModule],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
-  @Input({ required: true }) control!: FormControl;
+  @ViewChild('self') self!: ElementRef;
+
+  @Input() link: string | null = null;
+
+  @Input() fullWidth = false;
+
+  @Output() eventClick = new EventEmitter();
+
+  @Output() eventBlur = new EventEmitter();
+
+  onClick() {
+    this.eventClick.emit();
+  }
+
+  onBlur() {
+    this.eventBlur.emit();
+  }
+
+  setFocus() {
+    this.self.nativeElement.focus();
+  }
 }

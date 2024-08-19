@@ -3,8 +3,6 @@ import {
 } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
-import { ButtonTextComponent } from '../../control/button-text/button-text.component';
-import { InputComponent } from '../../control/input/input.component';
 import { FlexComponent } from '../../misc/flex/flex.component';
 import { BaseFormModel, ControlKindEnum } from './base-form.model';
 
@@ -14,8 +12,6 @@ import { BaseFormModel, ControlKindEnum } from './base-form.model';
   imports: [
     ReactiveFormsModule,
     FlexComponent,
-    InputComponent,
-    ButtonTextComponent,
   ],
   templateUrl: './base-form.component.html',
 })

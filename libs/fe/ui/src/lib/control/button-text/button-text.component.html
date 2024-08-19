@@ -1,3 +1,9 @@
-<lib-button #self [control]="control">
+<lib-button
+    #self
+    [link]="link"
+    [fullWidth]="fullWidth"
+    (eventClick)="emitClick()"
+    (eventBlur)="emitBlur()"
+>
     <lib-text [value]="value"></lib-text>
 </lib-button>

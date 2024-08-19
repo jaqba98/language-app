@@ -3,10 +3,10 @@
     @for (control of baseForm.controls; track control.name) {
       @switch (control.kind) {
         @case ('input') {
-          <lib-input [control]="getControl(control.name)"></lib-input>
+          <p>{{control.name}}</p>
         }
         @case ('buttonText') {
-          <lib-button-text [control]="getControl(control.name)" [value]="control.value"></lib-button-text>
+          <p>{{control.name}} {{control.value}}</p>
         }
       }
     }
