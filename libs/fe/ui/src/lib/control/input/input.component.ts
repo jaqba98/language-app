@@ -1,21 +1,13 @@
-import {
-  Component, EventEmitter, Input, Output,
-} from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'lib-input',
   standalone: true,
-  imports: [FormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })
 export class InputComponent {
-  @Input() value = '';
-
-  @Output() eventInput = new EventEmitter<string>();
-
-  onInput() {
-    this.eventInput.emit(this.value);
-  }
+  @Input({ required: true }) formGroupName!: string;
 }

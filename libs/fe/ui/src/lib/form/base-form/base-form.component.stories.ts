@@ -9,4 +9,11 @@ const meta: Meta<BaseFormComponent> = {
 export default meta;
 type Story = StoryObj<BaseFormComponent>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    controls: [
+      { name: 'login' },
+      { name: 'password' },
+    ],
+  },
+};

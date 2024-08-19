@@ -1,1 +1,5 @@
-<p>base-form!</p>
+<lib-flex flexDirection="column" gap="0.5em">
+  @for (control of controls; track control.name) {
+    <lib-input></lib-input>
+  }
+</lib-flex>
