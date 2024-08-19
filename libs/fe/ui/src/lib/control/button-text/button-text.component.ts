@@ -1,6 +1,7 @@
 import {
-  Component, EventEmitter, Input, Output, ViewChild,
+  Component, Input,
 } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 import { ButtonComponent } from '../button/button.component';
 import { TextComponent } from '../../misc/text/text.component';
@@ -16,23 +17,7 @@ import { TextComponent } from '../../misc/text/text.component';
   styleUrl: './button-text.component.scss',
 })
 export class ButtonTextComponent {
-  @ViewChild('self') self!: ButtonComponent;
+  @Input({ required: true }) control!: FormControl;
 
   @Input({ required: true }) value!: string;
-
-  @Input() link: string | null = null;
-
-  @Input() fullWidth = false;
-
-  @Output() eventClick = new EventEmitter();
-
-  @Output() eventBlur = new EventEmitter();
-
-  emitClick() {
-    this.eventClick.emit();
-  }
-
-  emitBlur() {
-    this.eventBlur.emit();
-  }
 }

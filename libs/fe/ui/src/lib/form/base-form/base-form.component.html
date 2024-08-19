@@ -6,7 +6,7 @@
           <lib-input [control]="getControl(control.name)"></lib-input>
         }
         @case ('buttonText') {
-          <lib-button-text [value]="control.value"></lib-button-text>
+          <lib-button-text [control]="getControl(control.name)" [value]="control.value"></lib-button-text>
         }
       }
     }

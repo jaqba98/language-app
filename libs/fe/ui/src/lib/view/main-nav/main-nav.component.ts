@@ -67,10 +67,10 @@ export class MainNavComponent implements ObserverModel<BreakpointModel> {
   @HostListener('document:click', ['$event'])
   onClick(event: MouseEvent) {
     const { target } = event;
-    if (this.hamburger && this.hamburger.self.self.nativeElement.contains(target)) {
-      this.isMenuVisible = !this.isMenuVisible;
-      return;
-    }
+    // if (this.hamburger && this.hamburger.self.self.nativeElement.contains(target)) {
+    //   this.isMenuVisible = !this.isMenuVisible;
+    //   return;
+    // }
     if (this.menuCard && this.menuCardOptions.self.nativeElement.contains(target)) {
       this.isMenuVisible = !this.isMenuVisible;
       return;
