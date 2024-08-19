@@ -1,5 +1,14 @@
-<lib-flex flexDirection="column" gap="0.5em">
-  @for (control of controls; track control.name) {
-    <lib-input></lib-input>
-  }
-</lib-flex>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <lib-flex flexDirection="column" gap="0.5em">
+    @for (control of baseForm.controls; track control.name) {
+      @switch (control.kind) {
+        @case ('input') {
+          <lib-input [control]="getControl(control.name)"></lib-input>
+        }
+        @case ('buttonText') {
+          <lib-button-text [value]="control.value"></lib-button-text>
+        }
+      }
+    }
+  </lib-flex>
+</form>
