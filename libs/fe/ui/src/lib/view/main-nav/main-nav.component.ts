@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, ViewChild, HostListener } from '@angular/core';
 import { Properties } from 'csstype';
 
@@ -16,13 +15,12 @@ import { IconComponent } from '../../misc/icon/icon.component';
 import { PositionComponent } from '../../misc/position/position.component';
 import { TextComponent } from '../../misc/text/text.component';
 import { WrapperComponent } from '../../misc/wrapper/wrapper.component';
-import { routesMainNav } from '../../service/routes-menu.service';
+import { RoutesMenuModel } from '../../model/routes-menu.model';
 
 @Component({
   selector: 'lib-main-nav',
   standalone: true,
   imports: [
-    CommonModule,
     CardComponent,
     ButtonIconComponent,
     ButtonTextComponent,
@@ -41,7 +39,11 @@ export class MainNavComponent implements ObserverModel<BreakpointModel> {
 
   @ViewChild('menuCardOptions') menuCardOptions!: CardComponent;
 
-  options = routesMainNav;
+  options: RoutesMenuModel[] = [
+    { value: 'Home', link: '/home' },
+    { value: 'Vocabulary', link: '/vocabulary' },
+    { value: 'Grammar', link: '/grammar' },
+  ];
 
   isMobile = true;
 

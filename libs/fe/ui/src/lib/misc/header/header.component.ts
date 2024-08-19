@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { TextComponent } from '../text/text.component';
@@ -10,7 +9,6 @@ import { FlexComponent } from '../flex/flex.component';
   selector: 'lib-header',
   standalone: true,
   imports: [
-    CommonModule,
     TextComponent,
     FlexComponent,
     RouterModule,

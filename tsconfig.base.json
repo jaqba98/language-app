@@ -14,6 +14,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@english-learning/fe-main": ["libs/fe/main/src/index.ts"],
       "@english-learning/fe-page": ["libs/fe/page/src/index.ts"],

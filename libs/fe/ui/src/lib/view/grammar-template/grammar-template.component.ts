@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 
-import { CommonModule } from '@angular/common';
 import { CardComponent } from '../../misc/card/card.component';
 import { TextComponent } from '../../misc/text/text.component';
 import { GrammarTemplateModel } from './grammar-template.model';
@@ -14,7 +13,6 @@ import { SentenceStructureComponent } from '../sentence-structure/sentence-struc
   selector: 'lib-grammar-template',
   standalone: true,
   imports: [
-    CommonModule,
     CardComponent,
     TextComponent,
     FlexComponent,
