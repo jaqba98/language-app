@@ -29,15 +29,15 @@ export class BaseControlService<TValue> implements ControlValueAccessor {
     this.onTouched = fn;
   }
 
-  onInput(event: Event): void {
+  onInput(event: Event) {
     const target = event.target as HTMLInputElement;
-    switch (target.type) {
-      case 'input':
-        this.value = <TValue> target.value;
-        break;
-      default:
-        throw new Error(`The ${target.type} is an unsupported control type!`);
-    }
+    this.value = target.value as TValue;
+    this.onChange(this.value);
+    this.onTouched();
+  }
+
+  onButton() {
+    this.value = true as TValue;
     this.onChange(this.value);
     this.onTouched();
   }

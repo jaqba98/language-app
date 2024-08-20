@@ -9,8 +9,4 @@ const meta: Meta<ButtonTextComponent> = {
 export default meta;
 type Story = StoryObj<ButtonTextComponent>;
 
-export const Primary: Story = {
-  args: {
-    label: 'Hello',
-  },
-};
+export const Primary: Story = {};

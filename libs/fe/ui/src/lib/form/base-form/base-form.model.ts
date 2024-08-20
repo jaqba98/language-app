@@ -16,6 +16,7 @@ export interface ControlInputModel extends ControlBaseModel {
 export interface ControlButtonTextModel extends ControlBaseModel {
   kind: ControlKindEnum.buttonText;
   label: string;
+  defaultValue: boolean;
 }
 
 export type ControlType =

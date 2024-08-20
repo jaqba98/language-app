@@ -33,6 +33,7 @@ export const Default: Story = {
           kind: ControlKindEnum.buttonText,
           name: 'submit',
           label: 'Click!',
+          defaultValue: false,
         },
       ],
     },

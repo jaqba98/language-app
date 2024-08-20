@@ -42,6 +42,7 @@ export class BaseFormComponent implements OnInit {
 
   onSubmit() {
     this.baseFormEvent.emit(this.formGroup.value);
+    this.resetFormControls();
   }
 
   getFormControl(name: string) {
@@ -65,5 +66,12 @@ export class BaseFormComponent implements OnInit {
       default:
         throw new Error('Unsupported control type!');
     }
+  }
+
+  private resetFormControls() {
+    this.baseForm.controls.forEach((control) => {
+      const { name } = control;
+      this.formGroup.setControl(name, this.buildFormControl(control));
+    });
   }
 }
