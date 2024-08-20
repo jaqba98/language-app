@@ -15,7 +15,7 @@
                         <lib-flex alignItems="center" justifyContent="center">
                             <lib-text textType="header3" [value]="currentWord.polish"></lib-text>
                         </lib-flex>
-                        <lib-input [value]="input" (eventInput)="input = $event"></lib-input>
+                        <lib-input-old [value]="input" (eventInput)="input = $event"></lib-input-old>
                         <lib-button-text value="Submit" (eventClick)="onSubmit()"></lib-button-text>
                     } @else {
                         <lib-flex alignItems="center">

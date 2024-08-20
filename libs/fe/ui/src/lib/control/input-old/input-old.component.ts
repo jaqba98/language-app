@@ -4,7 +4,7 @@ import {
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'lib-input',
+  selector: 'lib-input-old',
   standalone: true,
   imports: [FormsModule],
   templateUrl: './input-old.component.html',
