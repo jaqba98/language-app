@@ -2,21 +2,21 @@ import {
   Component, EventEmitter, Input, Output, ViewChild,
 } from '@angular/core';
 
-import { ButtonComponent } from '../button/button.component';
+import { ButtonOldComponent } from '../button-old/button-old.component';
 import { IconComponent } from '../../misc/icon/icon.component';
 
 @Component({
   selector: 'lib-button-icon',
   standalone: true,
   imports: [
-    ButtonComponent,
+    ButtonOldComponent,
     IconComponent,
   ],
   templateUrl: './button-icon.component.html',
   styleUrl: './button-icon.component.scss',
 })
 export class ButtonIconComponent {
-  @ViewChild('self') self!: ButtonComponent;
+  @ViewChild('self') self!: ButtonOldComponent;
 
   @Input({ required: true }) src!: string;
 

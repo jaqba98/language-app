@@ -4,13 +4,13 @@ import {
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'lib-button',
+  selector: 'lib-button-old',
   standalone: true,
   imports: [RouterModule],
-  templateUrl: './button.component.html',
-  styleUrl: './button.component.scss',
+  templateUrl: './button-old.component.html',
+  styleUrl: './button-old.component.scss',
 })
-export class ButtonComponent {
+export class ButtonOldComponent {
   @ViewChild('self') self!: ElementRef;
 
   @Input() link: string | null = null;

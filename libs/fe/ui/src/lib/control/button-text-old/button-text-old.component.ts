@@ -2,21 +2,21 @@ import {
   Component, EventEmitter, Input, Output, ViewChild,
 } from '@angular/core';
 
-import { ButtonComponent } from '../button/button.component';
+import { ButtonOldComponent } from '../button-old/button-old.component';
 import { TextComponent } from '../../misc/text/text.component';
 
 @Component({
   selector: 'lib-button-text-old',
   standalone: true,
   imports: [
-    ButtonComponent,
+    ButtonOldComponent,
     TextComponent,
   ],
   templateUrl: './button-text-old.component.html',
   styleUrl: './button-text-old.component.scss',
 })
 export class ButtonTextOldComponent {
-  @ViewChild('self') self!: ButtonComponent;
+  @ViewChild('self') self!: ButtonOldComponent;
 
   @Input({ required: true }) value!: string;
 
