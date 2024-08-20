@@ -3,7 +3,7 @@
     @for (control of baseForm.controls; track control.name) {
       @switch (control.kind) {
         @case ('input') {
-          <input type="text" [formControl]="getFormControl(control.name)">
+          <lib-input [formControl]="getFormControl(control.name)"></lib-input>
         }
         @case ('buttonText') {
           <input type="submit" [formControl]="getFormControl(control.name)">

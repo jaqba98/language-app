@@ -7,6 +7,7 @@ import {
 
 import { BaseFormModel, ControlKindEnum, ControlType } from './base-form.model';
 import { FlexComponent } from '../../misc/flex/flex.component';
+import { InputComponent } from '../../control/input/input.component';
 
 @Component({
   selector: 'lib-base-form',
@@ -14,6 +15,7 @@ import { FlexComponent } from '../../misc/flex/flex.component';
   imports: [
     ReactiveFormsModule,
     FlexComponent,
+    InputComponent,
   ],
   templateUrl: './base-form.component.html',
 })
