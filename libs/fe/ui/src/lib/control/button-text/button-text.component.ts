@@ -13,4 +13,6 @@ import { BaseControlService } from '../../form/base-form/base-control.service';
 })
 export class ButtonTextComponent extends BaseControlService<boolean> {
   @Input({ required: true }) formControl!: FormControl;
+
+  @Input({ required: true }) label!: string;
 }

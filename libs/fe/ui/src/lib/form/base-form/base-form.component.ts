@@ -62,7 +62,7 @@ export class BaseFormComponent implements OnInit {
       case ControlKindEnum.input:
         return new FormControl(control.defaultValue);
       case ControlKindEnum.buttonText:
-        return new FormControl(control.label);
+        return new FormControl(control.defaultValue);
       default:
         throw new Error('Unsupported control type!');
     }
