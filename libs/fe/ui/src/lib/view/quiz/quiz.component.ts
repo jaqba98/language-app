@@ -6,7 +6,7 @@ import { ButtonTextComponent } from '../../control/button-text/button-text.compo
 import { CardComponent } from '../../misc/card/card.component';
 import { FlexComponent } from '../../misc/flex/flex.component';
 import { TextComponent } from '../../misc/text/text.component';
-import { InputComponent } from '../../control/input/input.component';
+import { InputOldComponent } from '../../control/input-old/input-old.component';
 import { PositionComponent } from '../../misc/position/position.component';
 import { CounterComponent } from '../../misc/counter/counter.component';
 
@@ -17,7 +17,7 @@ import { CounterComponent } from '../../misc/counter/counter.component';
     CardComponent,
     FlexComponent,
     TextComponent,
-    InputComponent,
+    InputOldComponent,
     ButtonTextComponent,
     PositionComponent,
     CounterComponent,

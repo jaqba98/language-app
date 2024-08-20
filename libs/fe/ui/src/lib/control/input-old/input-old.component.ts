@@ -7,10 +7,10 @@ import { FormsModule } from '@angular/forms';
   selector: 'lib-input',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './input.component.html',
-  styleUrl: './input.component.scss',
+  templateUrl: './input-old.component.html',
+  styleUrl: './input-old.component.scss',
 })
-export class InputComponent {
+export class InputOldComponent {
   @Input() value = '';
 
   @Output() eventInput = new EventEmitter<string>();
