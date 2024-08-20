@@ -8,7 +8,7 @@ import {
   ObserverModel,
 } from '@english-learning/fe-system';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
-import { ButtonTextComponent } from '../../control/button-text/button-text.component';
+import { ButtonTextOldComponent } from '../../control/button-text-old/button-text-old.component';
 import { CardComponent } from '../../misc/card/card.component';
 import { FlexComponent } from '../../misc/flex/flex.component';
 import { IconComponent } from '../../misc/icon/icon.component';
@@ -23,7 +23,7 @@ import { RoutesMenuModel } from '../../model/routes-menu.model';
   imports: [
     CardComponent,
     ButtonIconComponent,
-    ButtonTextComponent,
+    ButtonTextOldComponent,
     PositionComponent,
     TextComponent,
     FlexComponent,

@@ -13,5 +13,5 @@ export * from './lib/model/routes-menu.model';
 export * from './lib/view/vocabulary/vocabulary.component';
 export * from './lib/view/bank/bank.component';
 export * from './lib/view/bank/bank.model';
-export * from './lib/control/button-text/button-text.component';
+export * from './lib/control/button-text-old/button-text-old.component';
 export * from './lib/view/quiz/quiz.component';

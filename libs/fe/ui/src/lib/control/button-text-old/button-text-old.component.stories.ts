@@ -1,11 +1,11 @@
 import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
 import { ActivatedRoute } from '@angular/router';
 
-import { ButtonTextComponent } from './button-text.component';
+import { ButtonTextOldComponent } from './button-text-old.component';
 
-const meta: Meta<ButtonTextComponent> = {
-  component: ButtonTextComponent,
-  title: 'fe/ui/control/button-text',
+const meta: Meta<ButtonTextOldComponent> = {
+  component: ButtonTextOldComponent,
+  title: 'fe/ui/control/button-text-old',
   decorators: [
     moduleMetadata({
       providers: [
@@ -15,7 +15,7 @@ const meta: Meta<ButtonTextComponent> = {
   ],
 };
 export default meta;
-type Story = StoryObj<ButtonTextComponent>;
+type Story = StoryObj<ButtonTextOldComponent>;
 
 export const Primary: Story = {
   args: {

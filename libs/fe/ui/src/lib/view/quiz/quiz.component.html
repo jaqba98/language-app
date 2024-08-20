@@ -16,7 +16,7 @@
                             <lib-text textType="header3" [value]="currentWord.polish"></lib-text>
                         </lib-flex>
                         <lib-input-old [value]="input" (eventInput)="input = $event"></lib-input-old>
-                        <lib-button-text value="Submit" (eventClick)="onSubmit()"></lib-button-text>
+                        <lib-button-text-old value="Submit" (eventClick)="onSubmit()"></lib-button-text-old>
                     } @else {
                         <lib-flex alignItems="center">
                             <lib-text value="Finish!" textType="header2"></lib-text>
@@ -29,7 +29,7 @@
                             <lib-text value="Incorrect answers"></lib-text>
                             <lib-counter [value]="errors" type="error"></lib-counter>
                         </lib-flex>
-                        <lib-button-text value="Restart" (eventClick)="onRestart()"></lib-button-text>
+                        <lib-button-text-old value="Restart" (eventClick)="onRestart()"></lib-button-text-old>
                     }
                 </lib-flex>
         </lib-card>

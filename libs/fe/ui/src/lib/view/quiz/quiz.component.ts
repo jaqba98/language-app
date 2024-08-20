@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import cloneDeep from 'clone-deep';
 
 import { BankModel } from '../bank/bank.model';
-import { ButtonTextComponent } from '../../control/button-text/button-text.component';
+import { ButtonTextOldComponent } from '../../control/button-text-old/button-text-old.component';
 import { CardComponent } from '../../misc/card/card.component';
 import { FlexComponent } from '../../misc/flex/flex.component';
 import { TextComponent } from '../../misc/text/text.component';
@@ -18,7 +18,7 @@ import { CounterComponent } from '../../misc/counter/counter.component';
     FlexComponent,
     TextComponent,
     InputOldComponent,
-    ButtonTextComponent,
+    ButtonTextOldComponent,
     PositionComponent,
     CounterComponent,
   ],

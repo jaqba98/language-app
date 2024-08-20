@@ -12,7 +12,7 @@
       @if (!isMobile) {
         <lib-flex gap="0.5em">
           @for (option of options; track option.link) {
-            <lib-button-text [value]="option.value" [link]="option.link"></lib-button-text>
+            <lib-button-text-old [value]="option.value" [link]="option.link"></lib-button-text-old>
           }
         </lib-flex>
       }
@@ -24,7 +24,7 @@
       <lib-wrapper #menuCardOptions>
         <lib-flex flexDirection="column" gap="0.5em">
           @for (option of options; track option.link) {
-            <lib-button-text [value]="option.value" [link]="option.link" [fullWidth]="true"></lib-button-text>
+            <lib-button-text-old [value]="option.value" [link]="option.link" [fullWidth]="true"></lib-button-text-old>
           }
         </lib-flex>
       </lib-wrapper>
