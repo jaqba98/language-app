@@ -8,6 +8,7 @@ import {
 import { BaseFormModel, ControlKindEnum, ControlType } from './base-form.model';
 import { FlexComponent } from '../../misc/flex/flex.component';
 import { InputComponent } from '../../control/input/input.component';
+import { ButtonTextComponent } from '../../control/button-text/button-text.component';
 
 @Component({
   selector: 'lib-base-form',
@@ -16,6 +17,7 @@ import { InputComponent } from '../../control/input/input.component';
     ReactiveFormsModule,
     FlexComponent,
     InputComponent,
+    ButtonTextComponent,
   ],
   templateUrl: './base-form.component.html',
 })
