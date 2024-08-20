@@ -1,10 +1,12 @@
 import {
-  Component, EventEmitter, Input, OnInit, Output,
+  Component, OnInit, Input, Output, EventEmitter,
 } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  ReactiveFormsModule, FormGroup, FormControl, FormBuilder,
+} from '@angular/forms';
 
+import { BaseFormModel, ControlKindEnum, ControlType } from './base-form.model';
 import { FlexComponent } from '../../misc/flex/flex.component';
-import { BaseFormModel, ControlKindEnum } from './base-form.model';
 
 @Component({
   selector: 'lib-base-form',
@@ -16,38 +18,48 @@ import { BaseFormModel, ControlKindEnum } from './base-form.model';
   templateUrl: './base-form.component.html',
 })
 export class BaseFormComponent implements OnInit {
-  @Input() baseForm!: BaseFormModel;
+  @Input({ required: true }) baseForm!: BaseFormModel;
 
-  @Output() event = new EventEmitter();
+  @Output() baseFormEvent = new EventEmitter();
 
-  formGroup!: FormGroup;
+  formGroup: FormGroup;
+
+  constructor(private readonly fb: FormBuilder) {
+    this.formGroup = this.fb.group({});
+  }
 
   ngOnInit() {
-    const formControls = this.baseForm.controls
-      .reduce((acc: Record<string, FormControl>, curr) => {
-        if (acc[curr.name]) {
-          throw new Error('The control name must be unique!');
-        }
-        switch (curr.kind) {
-          case ControlKindEnum.input:
-            acc[curr.name] = new FormControl(curr.defaultValue);
-            break;
-          case ControlKindEnum.buttonText:
-            acc[curr.name] = new FormControl(curr.value);
-            break;
-          default:
-            throw new Error('Unsupported control!');
-        }
-        return acc;
-      }, {});
-    this.formGroup = new FormGroup(formControls);
+    this.baseForm.controls.forEach((control) => {
+      const { name } = control;
+      this.checkFormControlExist(name);
+      this.formGroup.addControl(name, this.buildFormControl(control));
+    });
   }
 
   onSubmit() {
-    this.event.emit(this.formGroup.value);
+    this.baseFormEvent.emit(this.formGroup.value);
   }
 
-  getControl(name: string) {
-    return this.formGroup.get(name) as FormControl;
+  getFormControl(name: string) {
+    const formControl = this.formGroup.get(name);
+    if (formControl) return formControl as FormControl;
+    throw new Error(`Form control ${name} does not exists!`);
+  }
+
+  private checkFormControlExist(name: string) {
+    if (this.formGroup.get(name)) {
+      throw new Error(`Form control ${name} already exists!`);
+    }
+  }
+
+  private buildFormControl(control: ControlType) {
+    switch (control.kind) {
+      case ControlKindEnum.input:
+        return new FormControl(control.defaultValue);
+      case ControlKindEnum.buttonText:
+        return new FormControl(control.label);
+      default:
+        throw new Error('Unsupported control type!');
+    }
   }
 }

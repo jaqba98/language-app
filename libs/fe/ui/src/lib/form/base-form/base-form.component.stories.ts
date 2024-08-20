@@ -7,8 +7,8 @@ const meta: Meta<BaseFormComponent> = {
   component: BaseFormComponent,
   title: 'fe/ui/form/base-form',
   argTypes: {
-    event: {
-      action: 'event',
+    baseFormEvent: {
+      action: 'baseFormEvent',
     },
   },
 };
@@ -19,9 +19,21 @@ export const Default: Story = {
   args: {
     baseForm: {
       controls: [
-        { kind: ControlKindEnum.input, name: 'field1', defaultValue: '' },
-        { kind: ControlKindEnum.input, name: 'field2', defaultValue: '' },
-        { kind: ControlKindEnum.buttonText, name: 'submit', value: 'Click!' },
+        {
+          kind: ControlKindEnum.input,
+          name: 'field1',
+          defaultValue: '',
+        },
+        {
+          kind: ControlKindEnum.input,
+          name: 'field2',
+          defaultValue: '',
+        },
+        {
+          kind: ControlKindEnum.buttonText,
+          name: 'submit',
+          label: 'Click!',
+        },
       ],
     },
   },

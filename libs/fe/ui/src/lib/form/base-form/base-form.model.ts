@@ -13,14 +13,14 @@ export interface ControlInputModel extends ControlBaseModel {
   defaultValue: string;
 }
 
-export interface ControlButtonModel extends ControlBaseModel {
+export interface ControlButtonTextModel extends ControlBaseModel {
   kind: ControlKindEnum.buttonText;
-  value: string;
+  label: string;
 }
 
 export type ControlType =
   | ControlInputModel
-  | ControlButtonModel;
+  | ControlButtonTextModel;
 
 export interface BaseFormModel {
   controls: ControlType[];

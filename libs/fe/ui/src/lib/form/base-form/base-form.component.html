@@ -3,10 +3,10 @@
     @for (control of baseForm.controls; track control.name) {
       @switch (control.kind) {
         @case ('input') {
-          <input type="text" [formControl]="getControl(control.name)">
+          <input type="text" [formControl]="getFormControl(control.name)">
         }
         @case ('buttonText') {
-          <input type="submit" [formControl]="getControl(control.name)" [value]="control.value">
+          <input type="submit" [formControl]="getFormControl(control.name)">
         }
       }
     }
