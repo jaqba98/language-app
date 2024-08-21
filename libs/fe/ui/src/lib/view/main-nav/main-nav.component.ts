@@ -7,7 +7,7 @@ import {
   BreakpointEnum,
   ObserverModel,
 } from '@english-learning/fe-system';
-import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
+import { ButtonIconOldComponent } from '../../control/button-icon-old/button-icon-old.component';
 import { ButtonTextOldComponent } from '../../control/button-text-old/button-text-old.component';
 import { CardComponent } from '../../misc/card/card.component';
 import { FlexComponent } from '../../misc/flex/flex.component';
@@ -22,7 +22,7 @@ import { RoutesMenuModel } from '../../model/routes-menu.model';
   standalone: true,
   imports: [
     CardComponent,
-    ButtonIconComponent,
+    ButtonIconOldComponent,
     ButtonTextOldComponent,
     PositionComponent,
     TextComponent,
@@ -33,7 +33,7 @@ import { RoutesMenuModel } from '../../model/routes-menu.model';
   templateUrl: './main-nav.component.html',
 })
 export class MainNavComponent implements ObserverModel<BreakpointModel> {
-  @ViewChild('hamburger') hamburger!: ButtonIconComponent;
+  @ViewChild('hamburger') hamburger!: ButtonIconOldComponent;
 
   @ViewChild('menuCard') menuCard!: CardComponent;
 
@@ -67,10 +67,10 @@ export class MainNavComponent implements ObserverModel<BreakpointModel> {
   @HostListener('document:click', ['$event'])
   onClick(event: MouseEvent) {
     const { target } = event;
-    // if (this.hamburger && this.hamburger.self.self.nativeElement.contains(target)) {
-    //   this.isMenuVisible = !this.isMenuVisible;
-    //   return;
-    // }
+    if (this.hamburger && this.hamburger.self.self.nativeElement.contains(target)) {
+      this.isMenuVisible = !this.isMenuVisible;
+      return;
+    }
     if (this.menuCard && this.menuCardOptions.self.nativeElement.contains(target)) {
       this.isMenuVisible = !this.isMenuVisible;
       return;

@@ -6,16 +6,16 @@ import { ButtonOldComponent } from '../button-old/button-old.component';
 import { IconComponent } from '../../misc/icon/icon.component';
 
 @Component({
-  selector: 'lib-button-icon',
+  selector: 'lib-button-icon-old',
   standalone: true,
   imports: [
     ButtonOldComponent,
     IconComponent,
   ],
-  templateUrl: './button-icon.component.html',
-  styleUrl: './button-icon.component.scss',
+  templateUrl: './button-icon-old.component.html',
+  styleUrl: './button-icon-old.component.scss',
 })
-export class ButtonIconComponent {
+export class ButtonIconOldComponent {
   @ViewChild('self') self!: ButtonOldComponent;
 
   @Input({ required: true }) src!: string;
