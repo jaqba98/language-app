@@ -7,7 +7,6 @@ import {
   BreakpointEnum,
   ObserverModel,
 } from '@english-learning/fe-system';
-import { ButtonIconOldComponent } from '../../control/button-icon-old/button-icon-old.component';
 import { CardComponent } from '../../misc/card/card.component';
 import { FlexComponent } from '../../misc/flex/flex.component';
 import { IconComponent } from '../../misc/icon/icon.component';
@@ -23,7 +22,6 @@ import { MainNavFormComponent } from '../../form/main-nav-form/main-nav-form.com
   standalone: true,
   imports: [
     CardComponent,
-    ButtonIconOldComponent,
     PositionComponent,
     TextComponent,
     FlexComponent,
@@ -35,8 +33,6 @@ import { MainNavFormComponent } from '../../form/main-nav-form/main-nav-form.com
   templateUrl: './main-nav.component.html',
 })
 export class MainNavComponent implements ObserverModel<BreakpointModel> {
-  @ViewChild('hamburger') hamburger!: ButtonIconOldComponent;
-
   @ViewChild('menuCard') menuCard!: CardComponent;
 
   @ViewChild('menuCardOptions') menuCardOptions!: CardComponent;
