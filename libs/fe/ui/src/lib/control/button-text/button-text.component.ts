@@ -1,17 +1,20 @@
 import { Component, Input } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
-import { BaseControlService } from '../../form/base-form/base-control.service';
+import { ButtonComponent } from '../button/button.component';
+import { TextComponent } from '../../misc/text/text.component';
 
 @Component({
   selector: 'lib-button-text',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [
+    ButtonComponent,
+    TextComponent,
+  ],
   templateUrl: './button-text.component.html',
   styleUrl: './button-text.component.scss',
-  providers: [BaseControlService.getProvider(ButtonTextComponent)],
 })
-export class ButtonTextComponent extends BaseControlService<boolean> {
+export class ButtonTextComponent {
   @Input({ required: true }) formControl!: FormControl;
 
   @Input({ required: true }) label!: string;

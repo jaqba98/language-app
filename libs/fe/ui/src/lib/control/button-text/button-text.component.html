@@ -1,2 +1,3 @@
-{{label}}
-<input type="submit" [formControl]="formControl" (click)="onButton()">
+<lib-button [formControl]="formControl">
+  <lib-text [value]="label"></lib-text>
+</lib-button>
