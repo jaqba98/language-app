@@ -1,9 +1,9 @@
 import { type Meta, type StoryObj } from '@storybook/angular';
 
-import { RestartNavFormComponent } from './restart-form.component';
+import { RestartFormComponent } from './restart-form.component';
 
-const meta: Meta<RestartNavFormComponent> = {
-  component: RestartNavFormComponent,
+const meta: Meta<RestartFormComponent> = {
+  component: RestartFormComponent,
   title: 'fe/ui/form/restart-form',
   argTypes: {
     restartFormEvent: {
@@ -12,6 +12,6 @@ const meta: Meta<RestartNavFormComponent> = {
   },
 };
 export default meta;
-type Story = StoryObj<RestartNavFormComponent>;
+type Story = StoryObj<RestartFormComponent>;
 
 export const Default: Story = {};
