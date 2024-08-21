@@ -71,7 +71,12 @@ export class BaseFormComponent implements OnInit {
   private resetFormControls() {
     this.baseForm.controls.forEach((control) => {
       const { name } = control;
-      this.formGroup.setControl(name, this.buildFormControl(control));
+      const formControl = this.formGroup.get(name);
+      if (formControl) {
+        formControl.setValue(control.defaultValue);
+      } else {
+        throw new Error(`Form control ${name} does not exists!`);
+      }
     });
   }
 }
