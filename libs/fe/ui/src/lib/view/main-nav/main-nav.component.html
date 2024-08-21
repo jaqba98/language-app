@@ -10,11 +10,7 @@
       }
       <!-- main nav menu options for other devices -->
       @if (!isMobile) {
-        <lib-flex gap="0.5em">
-          @for (option of options; track option.link) {
-            <lib-button-text-old [value]="option.value" [link]="option.link"></lib-button-text-old>
-          }
-        </lib-flex>
+        <lib-main-nav-form></lib-main-nav-form>
       }
     </lib-flex>
   </lib-card>
@@ -22,11 +18,7 @@
   @if (isMobile && isMenuVisible) {
     <lib-card #menuCard>
       <lib-wrapper #menuCardOptions>
-        <lib-flex flexDirection="column" gap="0.5em">
-          @for (option of options; track option.link) {
-            <lib-button-text-old [value]="option.value" [link]="option.link" [fullWidth]="true"></lib-button-text-old>
-          }
-        </lib-flex>
+        <lib-main-nav-form></lib-main-nav-form>
       </lib-wrapper>
     </lib-card>
   }

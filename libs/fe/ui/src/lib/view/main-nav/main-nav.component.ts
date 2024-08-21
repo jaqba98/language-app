@@ -8,7 +8,6 @@ import {
   ObserverModel,
 } from '@english-learning/fe-system';
 import { ButtonIconOldComponent } from '../../control/button-icon-old/button-icon-old.component';
-import { ButtonTextOldComponent } from '../../control/button-text-old/button-text-old.component';
 import { CardComponent } from '../../misc/card/card.component';
 import { FlexComponent } from '../../misc/flex/flex.component';
 import { IconComponent } from '../../misc/icon/icon.component';
@@ -17,6 +16,7 @@ import { TextComponent } from '../../misc/text/text.component';
 import { WrapperComponent } from '../../misc/wrapper/wrapper.component';
 import { RoutesMenuModel } from '../../model/routes-menu.model';
 import { HamburgerFormComponent } from '../../form/hamburger-form/hamburger-form.component';
+import { MainNavFormComponent } from '../../form/main-nav-form/main-nav-form.component';
 
 @Component({
   selector: 'lib-main-nav',
@@ -24,13 +24,13 @@ import { HamburgerFormComponent } from '../../form/hamburger-form/hamburger-form
   imports: [
     CardComponent,
     ButtonIconOldComponent,
-    ButtonTextOldComponent,
     PositionComponent,
     TextComponent,
     FlexComponent,
     IconComponent,
     WrapperComponent,
     HamburgerFormComponent,
+    MainNavFormComponent,
   ],
   templateUrl: './main-nav.component.html',
 })
