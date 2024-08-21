@@ -15,8 +15,7 @@
                         <lib-flex alignItems="center" justifyContent="center">
                             <lib-text textType="header3" [value]="currentWord.polish"></lib-text>
                         </lib-flex>
-                        <lib-input-old [value]="input" (eventInput)="input = $event"></lib-input-old>
-                        <lib-button-text-old value="Submit" (eventClick)="onSubmit()"></lib-button-text-old>
+                        <lib-quiz-form (quizFormEvent)="onSubmit($event)"></lib-quiz-form>
                     } @else {
                         <lib-flex alignItems="center">
                             <lib-text value="Finish!" textType="header2"></lib-text>

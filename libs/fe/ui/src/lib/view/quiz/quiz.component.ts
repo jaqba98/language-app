@@ -6,9 +6,10 @@ import { ButtonTextOldComponent } from '../../control/button-text-old/button-tex
 import { CardComponent } from '../../misc/card/card.component';
 import { FlexComponent } from '../../misc/flex/flex.component';
 import { TextComponent } from '../../misc/text/text.component';
-import { InputOldComponent } from '../../control/input-old/input-old.component';
 import { PositionComponent } from '../../misc/position/position.component';
 import { CounterComponent } from '../../misc/counter/counter.component';
+import { QuizFormComponent } from '../../form/quiz-form/quiz-form.component';
+import { QuizFormModel } from '../../form/quiz-form/quiz-form.model';
 
 @Component({
   selector: 'lib-quiz',
@@ -17,10 +18,10 @@ import { CounterComponent } from '../../misc/counter/counter.component';
     CardComponent,
     FlexComponent,
     TextComponent,
-    InputOldComponent,
     ButtonTextOldComponent,
     PositionComponent,
     CounterComponent,
+    QuizFormComponent,
   ],
   templateUrl: './quiz.component.html',
 })
@@ -41,7 +42,8 @@ export class QuizComponent implements OnInit {
     this.initQuiz();
   }
 
-  onSubmit() {
+  onSubmit(event: QuizFormModel) {
+    this.input = event.answer;
     this.checkWord();
     this.nextWord();
   }
