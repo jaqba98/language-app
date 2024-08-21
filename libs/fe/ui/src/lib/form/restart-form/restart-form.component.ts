@@ -10,7 +10,7 @@ import { RestartFormModel } from './restart-form.model';
   imports: [BaseFormComponent],
   templateUrl: './restart-form.component.html',
 })
-export class RestartNavFormComponent {
+export class RestartFormComponent {
   @Output() restartFormEvent = new EventEmitter<RestartFormModel>();
 
   restartForm: BaseFormModel = {

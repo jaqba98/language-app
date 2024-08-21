@@ -28,7 +28,7 @@
                             <lib-text value="Incorrect answers"></lib-text>
                             <lib-counter [value]="errors" type="error"></lib-counter>
                         </lib-flex>
-                        <lib-button-text-old value="Restart" (eventClick)="onRestart()"></lib-button-text-old>
+                        <lib-restart-form (restartFormEvent)="onRestart()"></lib-restart-form>
                     }
                 </lib-flex>
         </lib-card>
