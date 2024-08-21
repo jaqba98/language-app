@@ -16,10 +16,10 @@ export class QuizFormComponent {
     controls: [
       { kind: ControlKindEnum.input, name: 'answer', defaultValue: '' },
       {
-        kind: ControlKindEnum.buttonText, name: 'showAnswer', label: 'Show Answer', defaultValue: false,
+        kind: ControlKindEnum.buttonText, name: 'showAnswer', label: 'Show Answer', isPrimary: false,
       },
       {
-        kind: ControlKindEnum.buttonText, name: 'submit', label: 'Submit', defaultValue: false,
+        kind: ControlKindEnum.buttonText, name: 'submit', label: 'Submit', isPrimary: true,
       },
     ],
   };

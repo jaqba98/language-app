@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component, EventEmitter, Input, Output,
+} from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 import { ButtonComponent } from '../button/button.component';
@@ -15,7 +17,15 @@ import { TextComponent } from '../../misc/text/text.component';
   styleUrl: './button-text.component.scss',
 })
 export class ButtonTextComponent {
-  @Input({ required: true }) formControl!: FormControl;
+  @Input({ required: true }) control!: FormControl;
 
   @Input({ required: true }) label!: string;
+
+  @Input() isPrimary = false;
+
+  @Output() buttonTextEvent = new EventEmitter();
+
+  onEvent() {
+    this.buttonTextEvent.emit();
+  }
 }

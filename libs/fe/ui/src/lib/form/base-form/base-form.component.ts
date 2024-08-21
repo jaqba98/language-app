@@ -41,6 +41,7 @@ export class BaseFormComponent implements OnInit {
   }
 
   onSubmit() {
+    this.formGroup.get('form')?.setValue(true);
     this.baseFormEvent.emit(this.formGroup.value);
     this.resetFormControls();
   }
@@ -62,7 +63,7 @@ export class BaseFormComponent implements OnInit {
       case ControlKindEnum.input:
         return new FormControl(control.defaultValue);
       case ControlKindEnum.buttonText:
-        return new FormControl(control.defaultValue);
+        return new FormControl(false);
       default:
         throw new Error('Unsupported control type!');
     }
@@ -71,12 +72,7 @@ export class BaseFormComponent implements OnInit {
   private resetFormControls() {
     this.baseForm.controls.forEach((control) => {
       const { name } = control;
-      const formControl = this.formGroup.get(name);
-      if (formControl) {
-        formControl.setValue(control.defaultValue);
-      } else {
-        throw new Error(`Form control ${name} does not exists!`);
-      }
+      this.formGroup.setControl(name, this.buildFormControl(control));
     });
   }
 }

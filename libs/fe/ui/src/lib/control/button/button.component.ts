@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component, EventEmitter, Input, Output,
+} from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -8,9 +10,22 @@ import { FormControl } from '@angular/forms';
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
-  @Input({ required: true }) formControl!: FormControl;
+  @Input({ required: true }) control!: FormControl;
+
+  @Input() isPrimary = false;
+
+  @Input() label = '';
+
+  @Output() buttonEvent = new EventEmitter();
 
   onClick() {
-    this.formControl.setValue(true);
+    this.control.setValue(true);
+    if (!this.isPrimary) {
+      this.buttonEvent.emit();
+    }
+  }
+
+  getButtonType() {
+    return this.isPrimary ? 'submit' : 'button';
   }
 }
