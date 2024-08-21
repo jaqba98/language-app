@@ -43,7 +43,6 @@ export class BaseFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.formGroup.get('form')?.setValue(true);
     this.baseFormEvent.emit(this.formGroup.value);
     this.resetFormControls();
   }

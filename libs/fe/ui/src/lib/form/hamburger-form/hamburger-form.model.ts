@@ -1,3 +1,3 @@
 export interface HamburgerFormModel {
-  submit: string;
+  submit: boolean;
 }
