@@ -1,6 +1,7 @@
 export enum ControlKindEnum {
   input = 'input',
   buttonText = 'buttonText',
+  buttonIcon = 'buttonIcon',
 }
 
 export interface ControlBaseModel {
@@ -19,9 +20,17 @@ export interface ControlButtonTextModel extends ControlBaseModel {
   isPrimary: boolean;
 }
 
+export interface ControlButtonIconModel extends ControlBaseModel {
+  kind: ControlKindEnum.buttonIcon;
+  icon: string;
+  alt: string;
+  isPrimary: boolean;
+}
+
 export type ControlType =
   | ControlInputModel
-  | ControlButtonTextModel;
+  | ControlButtonTextModel
+  | ControlButtonIconModel;
 
 export interface BaseFormModel {
   controls: ControlType[];

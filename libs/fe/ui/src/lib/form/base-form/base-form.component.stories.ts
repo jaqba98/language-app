@@ -35,6 +35,13 @@ export const Default: Story = {
           label: 'Click!',
           isPrimary: true,
         },
+        {
+          kind: ControlKindEnum.buttonIcon,
+          name: 'home',
+          icon: 'icon/menu.svg',
+          alt: 'hamburger icon',
+          isPrimary: true,
+        },
       ],
     },
   },

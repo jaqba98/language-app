@@ -9,6 +9,7 @@ import { BaseFormModel, ControlKindEnum, ControlType } from './base-form.model';
 import { FlexComponent } from '../../misc/flex/flex.component';
 import { InputComponent } from '../../control/input/input.component';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
+import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
 
 @Component({
   selector: 'lib-base-form',
@@ -18,6 +19,7 @@ import { ButtonTextComponent } from '../../control/button-text/button-text.compo
     FlexComponent,
     InputComponent,
     ButtonTextComponent,
+    ButtonIconComponent,
   ],
   templateUrl: './base-form.component.html',
 })
@@ -63,6 +65,8 @@ export class BaseFormComponent implements OnInit {
       case ControlKindEnum.input:
         return new FormControl(control.defaultValue);
       case ControlKindEnum.buttonText:
+        return new FormControl(false);
+      case ControlKindEnum.buttonIcon:
         return new FormControl(false);
       default:
         throw new Error('Unsupported control type!');

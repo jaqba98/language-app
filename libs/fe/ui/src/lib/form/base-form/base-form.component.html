@@ -13,6 +13,15 @@
             (buttonTextEvent)="onSubmit()">
           </lib-button-text>
         }
+        @case ('buttonIcon') {
+          <lib-button-icon
+            [control]="getFormControl(control.name)"
+            [icon]="control.icon"
+            [alt]="control.alt"
+            [isPrimary]="control.isPrimary"
+            (buttonIconEvent)="onSubmit()">
+          </lib-button-icon>
+        }
       }
     }
   </lib-flex>
