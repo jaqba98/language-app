@@ -4,16 +4,16 @@ import { RouterLink } from '@angular/router';
 import { TextComponent } from '../../misc/text/text.component';
 
 @Component({
-  selector: 'lib-link',
+  selector: 'lib-link-old',
   standalone: true,
   imports: [
     TextComponent,
     RouterLink,
   ],
-  templateUrl: './link.component.html',
-  styleUrl: './link.component.scss',
+  templateUrl: './link-old.component.html',
+  styleUrl: './link-old.component.scss',
 })
-export class LinkComponent {
+export class LinkOldComponent {
   @Input({ required: true }) value!: string;
 
   @Input() link: string | null = null;

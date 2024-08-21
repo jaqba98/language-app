@@ -3,7 +3,7 @@
     <lib-text [value]="header" textType="header2"></lib-text>
     <lib-flex flexDirection="column" gap="0.25em">
       @for (option of options; track option.link) {
-        <lib-link [link]="option.link" [value]="option.value"></lib-link>
+        <lib-link-old [link]="option.link" [value]="option.value"></lib-link-old>
       }
     </lib-flex>
   </lib-flex>
