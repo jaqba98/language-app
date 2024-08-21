@@ -1,5 +1,5 @@
 export interface MainNavFormModel {
-  link1: string;
-  link2: string;
-  link3: string;
+  link1: boolean;
+  link2: boolean;
+  link3: boolean;
 }
