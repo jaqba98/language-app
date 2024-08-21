@@ -16,6 +16,7 @@ import { PositionComponent } from '../../misc/position/position.component';
 import { TextComponent } from '../../misc/text/text.component';
 import { WrapperComponent } from '../../misc/wrapper/wrapper.component';
 import { RoutesMenuModel } from '../../model/routes-menu.model';
+import { HamburgerFormComponent } from '../../form/hamburger-form/hamburger-form.component';
 
 @Component({
   selector: 'lib-main-nav',
@@ -29,6 +30,7 @@ import { RoutesMenuModel } from '../../model/routes-menu.model';
     FlexComponent,
     IconComponent,
     WrapperComponent,
+    HamburgerFormComponent,
   ],
   templateUrl: './main-nav.component.html',
 })
@@ -64,8 +66,13 @@ export class MainNavComponent implements ObserverModel<BreakpointModel> {
     }
   }
 
+  onClick() {
+    this.isMenuVisible = !this.isMenuVisible;
+  }
+
   @HostListener('document:click', ['$event'])
-  onClick(event: MouseEvent) {
+  onClick2(event: MouseEvent) {
+    return;
     const { target } = event;
     if (this.hamburger && this.hamburger.self.self.nativeElement.contains(target)) {
       this.isMenuVisible = !this.isMenuVisible;

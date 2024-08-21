@@ -35,7 +35,7 @@ export class QuizFormComponent {
     ],
   };
 
-  onEvent(quizForm: QuizFormModel) {
-    this.quizFormEvent.emit(quizForm);
+  onEvent(baseForm: QuizFormModel) {
+    this.quizFormEvent.emit(baseForm);
   }
 }
