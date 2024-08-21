@@ -1,4 +1,4 @@
-import { Component, ViewChild, HostListener } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Properties } from 'csstype';
 
 import {
@@ -68,24 +68,5 @@ export class MainNavComponent implements ObserverModel<BreakpointModel> {
 
   onClick() {
     this.isMenuVisible = !this.isMenuVisible;
-  }
-
-  @HostListener('document:click', ['$event'])
-  onClick2(event: MouseEvent) {
-    return;
-    const { target } = event;
-    if (this.hamburger && this.hamburger.self.self.nativeElement.contains(target)) {
-      this.isMenuVisible = !this.isMenuVisible;
-      return;
-    }
-    if (this.menuCard && this.menuCardOptions.self.nativeElement.contains(target)) {
-      this.isMenuVisible = !this.isMenuVisible;
-      return;
-    }
-    if (this.menuCard && this.menuCard.self.nativeElement.contains(target)) {
-      this.isMenuVisible = true;
-      return;
-    }
-    this.isMenuVisible = false;
   }
 }
