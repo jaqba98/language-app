@@ -38,9 +38,9 @@ export class MainNavFormComponent {
   };
 
   onEvent(model: MainNavFormModel) {
-    if (model.home) this.route.navigate('/home');
-    else if (model.vocabulary) this.route.navigate('/vocabulary');
-    else if (model.grammar) this.route.navigate('/grammar');
-    throw new Error('No route is set to true!');
+    if (model.homeButton) this.route.navigate('/home');
+    else if (model.vocabularyButton) this.route.navigate('/vocabulary');
+    else if (model.grammarButton) this.route.navigate('/grammar');
+    else throw new Error('No route is set to true!');
   }
 }

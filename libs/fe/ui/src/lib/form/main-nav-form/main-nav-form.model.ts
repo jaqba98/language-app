@@ -1,5 +1,5 @@
 export interface MainNavFormModel {
-  home: boolean;
-  vocabulary: boolean;
-  grammar: boolean;
+  homeButton: boolean;
+  vocabularyButton: boolean;
+  grammarButton: boolean;
 }
