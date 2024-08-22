@@ -3,4 +3,7 @@
     [type]="getButtonType()"
     (click)="onClick()">
     <div class="button__slider"></div>
+    <div class="button__content">
+        <ng-content></ng-content>
+    </div>
 </button>
