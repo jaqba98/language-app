@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { BaseFormModel, ControlKindEnum } from '../base-form/base-form.model';
 import { MainNavFormModel } from './main-nav-form.model';
+import { RouteNavigationService } from '../../infrastructure/route-navigation.service';
 
 @Component({
   selector: 'lib-main-nav-form',
@@ -11,32 +12,35 @@ import { MainNavFormModel } from './main-nav-form.model';
   templateUrl: './main-nav-form.component.html',
 })
 export class MainNavFormComponent {
-  @Output() mainNavFormEvent = new EventEmitter<MainNavFormModel>();
+  constructor(private readonly route: RouteNavigationService) {}
 
-  mainNavForm: BaseFormModel = {
+  form: BaseFormModel = {
     controls: [
       {
         kind: ControlKindEnum.buttonText,
-        name: 'home',
+        name: 'homeButton',
         label: 'Home',
         isPrimary: false,
       },
       {
         kind: ControlKindEnum.buttonText,
-        name: 'vocabulary',
+        name: 'vocabularyButton',
         label: 'Vocabulary',
         isPrimary: false,
       },
       {
         kind: ControlKindEnum.buttonText,
-        name: 'grammar',
+        name: 'grammarButton',
         label: 'Grammar',
         isPrimary: false,
       },
     ],
   };
 
-  onEvent(baseForm: MainNavFormModel) {
-    this.mainNavFormEvent.emit(baseForm);
+  onEvent(model: MainNavFormModel) {
+    if (model.home) this.route.navigate('/home');
+    else if (model.vocabulary) this.route.navigate('/vocabulary');
+    else if (model.grammar) this.route.navigate('/grammar');
+    throw new Error('No route is set to true!');
   }
 }
