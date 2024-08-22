@@ -1,0 +1,22 @@
+@use '../../variables/general';
+
+@mixin slider-parent {
+  position: relative;
+}
+
+@mixin slider-self($speed: general.$animation-speed) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: right $speed ease-in-out;
+}
+
+@mixin slider-left-to-right-hide {
+  right: 100%;
+}
+
+@mixin slider-left-to-right-show {
+  right: 0;
+}
