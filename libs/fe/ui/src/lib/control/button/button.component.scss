@@ -1,12 +1,11 @@
 @use '@english-learning/fe-styles/src/lib/abstract';
-@use '@english-learning/fe-styles/src/lib/abstract/function';
 
 .button {
     @include abstract.slider-parent;
     
-    background-color: function.get-color('transparent');
-    padding: 1rem 1.25rem;
-    border: 2px solid function.get-color('button');
+    background-color: abstract.$transparent;
+    border: abstract.$control-border abstract.$button;
+    padding: abstract.$control-padding;
     cursor: pointer;
 
     &__slider {
@@ -14,13 +13,12 @@
         @include abstract.slider-left-to-right-hide;
         
         z-index: abstract.$z-index-high;
-
-        background-color: function.get-color('button');
+        background-color: abstract.$button;
     }
 
     &__content {
-        position: relative;
         z-index: abstract.$z-index-higher;
+        position: relative;
     }
 
     &:hover > &__slider {
