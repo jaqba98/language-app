@@ -4,6 +4,7 @@ import {
 import {
   ReactiveFormsModule, FormGroup, FormControl, FormBuilder,
 } from '@angular/forms';
+import { Properties } from 'csstype';
 
 import { BaseFormModel, ControlKindEnum, ControlType } from './base-form.model';
 import { FlexComponent } from '../../misc/flex/flex.component';
@@ -25,6 +26,8 @@ import { ButtonIconComponent } from '../../control/button-icon/button-icon.compo
 })
 export class BaseFormComponent implements OnInit {
   @Input({ required: true }) baseForm!: BaseFormModel;
+
+  @Input() direction: Properties['flexDirection'] = 'column';
 
   @Output() baseFormEvent = new EventEmitter();
 

@@ -1,5 +1,5 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-  <lib-flex flexDirection="column" gap="0.5em">
+  <lib-flex [flexDirection]="direction" gap="0.5em">
     @for (control of baseForm.controls; track control.name) {
       @switch (control.kind) {
         @case ('input') {
