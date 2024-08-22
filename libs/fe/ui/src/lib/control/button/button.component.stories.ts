@@ -1,4 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/angular';
+import { FormControl } from '@angular/forms';
 
 import { ButtonComponent } from './button.component';
 
@@ -9,4 +10,8 @@ const meta: Meta<ButtonComponent> = {
 export default meta;
 type Story = StoryObj<ButtonComponent>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+  args: {
+    control: new FormControl(false),
+  },
+};

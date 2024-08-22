@@ -1,6 +1,14 @@
 @use './color';
 
 @function get-color($color-key) {
+    @if $color-key == 'transparent' {
+        @return color.$transparent;
+    }
+
+    @if $color-key == 'button' {
+        @return color.$button;
+    }
+
     @if $color-key == 'primary' {
         @return color.$primary;
     }
