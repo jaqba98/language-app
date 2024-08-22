@@ -4,14 +4,13 @@
 .button {
     @include abstract.slider-parent;
     
-    padding: 1rem 1.25rem;
     background-color: function.get-color('transparent');
+    padding: 1rem 1.25rem;
     border: 2px solid function.get-color('button');
-    overflow: hidden;
     cursor: pointer;
 
     &__slider {
-        @include abstract.slider-self();
+        @include abstract.slider-self;
         @include abstract.slider-left-to-right-hide;
 
         background-color: function.get-color('button');
