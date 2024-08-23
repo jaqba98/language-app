@@ -25,11 +25,6 @@ export const Default: Story = {
           defaultValue: '',
         },
         {
-          kind: ControlKindEnum.input,
-          name: 'field2',
-          defaultValue: '',
-        },
-        {
           kind: ControlKindEnum.buttonText,
           name: 'submit',
           label: 'Click!',
@@ -41,7 +36,7 @@ export const Default: Story = {
           iconEnter: 'icon/hamburger-open.svg',
           iconLeave: 'icon/hamburger-close.svg',
           alt: 'hamburger icon',
-          isPrimary: true,
+          isPrimary: false,
         },
       ],
     },
