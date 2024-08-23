@@ -4,6 +4,7 @@
     @include abstract.slider-parent;
 
     display: inline-block;
+    background-color:  abstract.$buttonTextOpen;
     border: abstract.$control-border abstract.$button;
 
     &__slider {
@@ -12,6 +13,23 @@
 
         z-index: abstract.$z-index-high;
         background-color: abstract.$button;
+    }
+
+    &__label {
+        @include abstract.label-hide-animation;
+
+        z-index: abstract.$z-index-high;
+        padding: abstract.$label-padding;
+
+        &-back {
+            z-index: abstract.$z-index-low;
+        }
+    }
+
+    &__focused {
+        .input__label {
+            @include abstract.label-show-animation;
+        }
     }
 
     &__content {

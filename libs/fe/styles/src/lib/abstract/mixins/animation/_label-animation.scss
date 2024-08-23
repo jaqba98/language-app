@@ -1,0 +1,12 @@
+@use '../../variables/general';
+
+@mixin label-hide-animation($speed: general.$animation-speed) {
+  position: absolute;
+  z-index: general.$z-index-low;
+  transition: transform $speed ease-in-out;
+}
+
+@mixin label-show-animation($speed: general.$animation-speed) {
+  transform: translateY(-2rem);
+  transition: transform $speed ease-in-out;
+}

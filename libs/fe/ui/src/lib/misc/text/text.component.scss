@@ -21,6 +21,10 @@
 
   &__paragraph {
     font-size: 1em;
+
+    &-tiny {
+      font-size: 0.9em;
+    }
   }
 
   &__header {
