@@ -22,7 +22,8 @@ export interface ControlButtonTextModel extends ControlBaseModel {
 
 export interface ControlButtonIconModel extends ControlBaseModel {
   kind: ControlKindEnum.buttonIcon;
-  icon: string;
+  iconEnter: string;
+  iconLeave: string;
   alt: string;
   isPrimary: boolean;
 }

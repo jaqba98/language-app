@@ -16,7 +16,8 @@
         @case ('buttonIcon') {
           <lib-button-icon
             [control]="getFormControl(control.name)"
-            [icon]="control.icon"
+            [iconEnter]="control.iconEnter"
+            [iconLeave]="control.iconLeave"
             [alt]="control.alt"
             [isPrimary]="control.isPrimary"
             (buttonIconEvent)="onSubmit()">

@@ -1,10 +1,10 @@
 import {
-  Component, EventEmitter, Input, Output,
+  Component, EventEmitter, Input, OnInit, Output,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { ButtonComponent } from '../button/button.component';
 import { IconComponent } from '../../misc/icon/icon.component';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'lib-button-icon',
@@ -14,20 +14,35 @@ import { IconComponent } from '../../misc/icon/icon.component';
     IconComponent,
   ],
   templateUrl: './button-icon.component.html',
-  styleUrl: './button-icon.component.scss',
 })
-export class ButtonIconComponent {
+export class ButtonIconComponent implements OnInit {
   @Input({ required: true }) control!: FormControl;
 
-  @Input({ required: true }) icon!: string;
+  @Input({ required: true }) iconEnter!: string;
+
+  @Input({ required: true }) iconLeave!: string;
 
   @Input({ required: true }) alt!: string;
 
   @Input() isPrimary = false;
 
-  @Output() buttonIconEvent = new EventEmitter();
+  @Output() clickEvent = new EventEmitter();
 
-  onEvent() {
-    this.buttonIconEvent.emit();
+  icon!: string;
+
+  ngOnInit() {
+    this.icon = this.iconLeave;
+  }
+
+  onClickEvent() {
+    this.clickEvent.emit();
+  }
+
+  onMouseEnterEvent() {
+    this.icon = this.iconEnter;
+  }
+
+  onMouseLeaveEvent() {
+    this.icon = this.iconLeave;
   }
 }

@@ -18,7 +18,8 @@ export class HamburgerFormComponent {
       {
         kind: ControlKindEnum.buttonIcon,
         name: 'submit',
-        icon: 'icon/menu.svg',
+        iconEnter: 'icon/hamburger-open.svg',
+        iconLeave: 'icon/hamburger-close.svg',
         alt: 'hamburger icon',
         isPrimary: true,
       },
