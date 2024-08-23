@@ -2,12 +2,12 @@
   <lib-flex gap="0.75em">
     <lib-text
       [value]="value"
-      [textType]="textType"
+      [type]="textType"
       [clickable]="true"
       (eventMouseEnter)="isSelected = true"
       (eventMouseLeave)="isSelected = false"></lib-text>
     @if (isSelected) {
-      <lib-text value="#" [textType]="textType"></lib-text>
+      <lib-text value="#" [type]="textType"></lib-text>
     }
   </lib-flex>
 </div>

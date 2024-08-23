@@ -1,43 +1,27 @@
-@use "@english-learning/fe-styles/src/lib/abstract/mixin";
-@use "@english-learning/fe-styles/src/lib/abstract/function";
-
-:host {
-    display: contents;
-}
+@use "@english-learning/fe-styles/src/lib/abstract";
 
 .text {
-    @include mixin.set-box-model(0, 0);
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  color: abstract.$text;
 
-    font-family: Nunito, sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    color: function.get-color("text");
+  &__paragraph {
+    font-size: 1em;
+  }
 
-    &__paragraph {
-        line-height: 2em;
-        font-size: 1em;
+  &__header {
+    &1 {
+      font-size: 2em;
     }
 
-    &__header1,
-    &__header2,
-    &__header3 {
-        font-weight: bold;
+    &2 {
+      font-size: 1.5em;
     }
 
-    &__header1 {
-        font-size: 2em;
+    &3 {
+      font-size: 1em;
     }
-
-    &__header2 {
-        font-size: 1.5em;
-    }
-
-    &__header3 {
-        font-size: 1em;
-    }
-
-    &__clickable {
-        cursor: pointer;
-    }
+  }
 }
