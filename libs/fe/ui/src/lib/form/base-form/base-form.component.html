@@ -10,7 +10,7 @@
             [control]="getFormControl(control.name)"
             [label]="control.label"
             [isPrimary]="control.isPrimary"
-            (buttonTextEvent)="onSubmit()">
+            (clickEvent)="onSubmit()">
           </lib-button-text>
         }
         @case ('buttonIcon') {
