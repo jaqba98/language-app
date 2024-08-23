@@ -1,0 +1,5 @@
+@use '../../variables/general';
+
+@mixin text-animation($speed: general.$animation-speed) {
+  transition: color $speed ease-in-out;
+}

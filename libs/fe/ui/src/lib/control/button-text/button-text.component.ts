@@ -3,8 +3,9 @@ import {
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { ButtonComponent } from '../button/button.component';
 import { TextComponent } from '../../misc/text/text.component';
+import { TextColorType } from '../../misc/text/text.type';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'lib-button-text',
@@ -14,7 +15,6 @@ import { TextComponent } from '../../misc/text/text.component';
     TextComponent,
   ],
   templateUrl: './button-text.component.html',
-  styleUrl: './button-text.component.scss',
 })
 export class ButtonTextComponent {
   @Input({ required: true }) control!: FormControl;
@@ -23,9 +23,19 @@ export class ButtonTextComponent {
 
   @Input() isPrimary = false;
 
-  @Output() buttonTextEvent = new EventEmitter();
+  @Output() clickEvent = new EventEmitter();
 
-  onEvent() {
-    this.buttonTextEvent.emit();
+  textColor: TextColorType = 'buttonTextClose';
+
+  onClickEvent() {
+    this.clickEvent.emit();
+  }
+
+  onMouseEnterEvent() {
+    this.textColor = 'buttonTextOpen';
+  }
+
+  onMouseLeaveEvent() {
+    this.textColor = 'buttonTextClose';
   }
 }

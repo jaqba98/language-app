@@ -3,3 +3,8 @@ export type TextType =
   | 'header1'
   | 'header2'
   | 'header3';
+
+export type TextColorType =
+  | 'normal'
+  | 'buttonTextOpen'
+  | 'buttonTextClose';

@@ -14,15 +14,24 @@ export class ButtonComponent {
 
   @Input() isPrimary = false;
 
-  @Input() label = '';
+  @Output() clickEvent = new EventEmitter();
 
-  @Output() buttonEvent = new EventEmitter();
+  @Output() mouseEnterEvent = new EventEmitter();
+
+  @Output() mouseLeaveEvent = new EventEmitter();
 
   onClick() {
     this.control.setValue(true);
-    if (!this.isPrimary) {
-      this.buttonEvent.emit();
-    }
+    if (this.isPrimary) return;
+    this.clickEvent.emit();
+  }
+
+  onMouseEnter() {
+    this.mouseEnterEvent.emit();
+  }
+
+  onMouseLeave() {
+    this.mouseLeaveEvent.emit();
   }
 
   getButtonType() {

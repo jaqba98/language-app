@@ -1,3 +1,9 @@
-<lib-button [control]="control" [isPrimary]="isPrimary" (buttonEvent)="onEvent()">
-  <lib-text [value]="label"></lib-text>
+<lib-button
+  [control]="control"
+  [isPrimary]="isPrimary"
+  (clickEvent)="onClickEvent()"
+  (mouseEnterEvent)="onMouseEnterEvent()"
+  (mouseLeaveEvent)="onMouseLeaveEvent()"
+>
+  <lib-text [value]="label" [textColor]="textColor"></lib-text>
 </lib-button>

@@ -1,5 +1,0 @@
-@use '@english-learning/fe-styles/src/lib/abstract/mixin';
-
-:host {
-    @include mixin.get-host-default;
-}

@@ -7,6 +7,18 @@
   margin: 0;
   color: abstract.$text;
 
+  &__button-text-open {
+    @include abstract.text-animation;
+
+    color: abstract.$buttonTextOpen;
+  }
+
+  &__button-text-close {
+    @include abstract.text-animation;
+
+    color: abstract.$buttonTextClose;
+  }
+
   &__paragraph {
     font-size: 1em;
   }
