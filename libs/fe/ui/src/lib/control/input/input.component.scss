@@ -1,15 +1,42 @@
-@use '@english-learning/fe-styles/src/lib/abstract/mixin';
-@use '@english-learning/fe-styles/src/lib/abstract/function';
-@use '@english-learning/fe-styles/src/lib/abstract/variable';
+@use '@english-learning/fe-styles/src/lib/abstract';
 
 .input {
-    @include mixin.set-box-model($padding: 1em);
+    @include abstract.slider-parent;
 
-    color: function.get-color('text');
-    background-color: function.get-color('button');
-    box-shadow: variable.$box-shadow-size-big function.get-color('shadow');
-    border-radius: variable.$border-radius;
-    border: none;
-    outline: none;
-    width: calc(100% - 2em);
+    display: inline-block;
+    border: abstract.$control-border abstract.$button;
+
+    &__slider {
+        @include abstract.slider-self;
+        @include abstract.slider-left-to-right-hide;
+
+        z-index: abstract.$z-index-high;
+        background-color: abstract.$button;
+    }
+
+    &__content {
+        z-index: abstract.$z-index-higher;
+        position: relative;
+
+        .input__control {
+            padding: abstract.$control-padding;
+            background-color: abstract.$transparent;
+            border: none;
+            outline: none;
+            color: abstract.$buttonTextClose;
+        }
+    }
+
+    &__focused {
+        outline: abstract.$control-border abstract.$button;
+        outline-offset: 1px;
+
+        .input__slider {
+            @include abstract.slider-left-to-right-show;
+        }
+
+        .input__control {
+            color: abstract.$buttonTextOpen;
+        }
+    }
 }

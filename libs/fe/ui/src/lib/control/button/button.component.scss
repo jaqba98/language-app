@@ -24,4 +24,9 @@
     &:hover > &__slider {
         @include abstract.slider-left-to-right-show;
     }
+
+    &:focus {
+        outline: abstract.$control-border abstract.$button;
+        outline-offset: 1px;
+    }
 }

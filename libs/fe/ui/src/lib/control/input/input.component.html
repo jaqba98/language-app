@@ -1,1 +1,10 @@
-<input type="text" class="input" [formControl]="formControl" (input)="onInput($event)">
+<div class="input" [ngClass]="{'input__focused': isFocused}">
+    <div class="input__slider"></div>
+    <div class="input__content">
+        <input
+            type="text"
+            class="input__control"
+            (focus)="onFocus()"
+            (blur)="onBlur()">
+    </div>
+</div>
