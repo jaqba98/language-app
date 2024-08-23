@@ -29,6 +29,7 @@ export const Default: Story = {
           name: 'submit',
           label: 'Click!',
           isPrimary: true,
+          fullWidth: false,
         },
         {
           kind: ControlKindEnum.buttonIcon,

@@ -18,6 +18,7 @@ export interface ControlButtonTextModel extends ControlBaseModel {
   kind: ControlKindEnum.buttonText;
   label: string;
   isPrimary: boolean;
+  fullWidth: boolean;
 }
 
 export interface ControlButtonIconModel extends ControlBaseModel {

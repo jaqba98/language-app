@@ -23,6 +23,8 @@ export class ButtonTextComponent {
 
   @Input() isPrimary = false;
 
+  @Input() fullWidth = false;
+
   @Output() clickEvent = new EventEmitter();
 
   textColor: TextColorType = 'buttonTextClose';

@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
+import { Properties } from 'csstype';
 
+import {
+  BreakpointEnum, BreakpointModel, BreakpointService, ObserverModel,
+} from '@english-learning/fe-system';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { BaseFormModel, ControlKindEnum } from '../base-form/base-form.model';
 import { MainNavFormModel } from './main-nav-form.model';
@@ -11,8 +15,23 @@ import { RouteNavigationService } from '../../infrastructure/route-navigation.se
   imports: [BaseFormComponent],
   templateUrl: './main-nav-form.component.html',
 })
-export class MainNavFormComponent {
-  constructor(private readonly route: RouteNavigationService) {}
+export class MainNavFormComponent implements ObserverModel<BreakpointModel> {
+  direction: Properties['flexDirection'] = 'row';
+
+  constructor(
+    private readonly route: RouteNavigationService,
+    private readonly breakpoint: BreakpointService,
+  ) {
+    this.breakpoint.addObserver(this);
+  }
+
+  update(data: BreakpointModel) {
+    if (data.breakpoint === BreakpointEnum.XSmall) {
+      this.direction = 'column';
+    } else {
+      this.direction = 'row';
+    }
+  }
 
   form: BaseFormModel = {
     controls: [
@@ -21,18 +40,21 @@ export class MainNavFormComponent {
         name: 'homeButton',
         label: 'Home',
         isPrimary: false,
+        fullWidth: true,
       },
       {
         kind: ControlKindEnum.buttonText,
         name: 'vocabularyButton',
         label: 'Vocabulary',
         isPrimary: false,
+        fullWidth: true,
       },
       {
         kind: ControlKindEnum.buttonText,
         name: 'grammarButton',
         label: 'Grammar',
         isPrimary: false,
+        fullWidth: true,
       },
     ],
   };

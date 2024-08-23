@@ -20,6 +20,7 @@ export class RestartFormComponent {
         name: 'restart',
         label: 'Restart',
         isPrimary: false,
+        fullWidth: true,
       },
     ],
   };

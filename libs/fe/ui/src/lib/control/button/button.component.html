@@ -1,6 +1,7 @@
 <button
     class="button"
     [type]="getButtonType()"
+    [ngClass]="{ 'button__full-width': fullWidth }"
     (click)="onClick()"
     (mouseenter)="onMouseEnter()"
     (mouseleave)="onMouseLeave()"

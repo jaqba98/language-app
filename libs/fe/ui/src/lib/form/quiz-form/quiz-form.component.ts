@@ -25,12 +25,14 @@ export class QuizFormComponent {
         name: 'showAnswer',
         label: 'Show Answer',
         isPrimary: false,
+        fullWidth: true,
       },
       {
         kind: ControlKindEnum.buttonText,
         name: 'submitAnswer',
         label: 'Submit',
         isPrimary: true,
+        fullWidth: true,
       },
     ],
   };
