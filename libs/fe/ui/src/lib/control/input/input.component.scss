@@ -6,6 +6,7 @@
     display: inline-block;
     background-color:  abstract.$buttonTextOpen;
     border: abstract.$control-border abstract.$button;
+    overflow: hidden;
 
     &__slider {
         @include abstract.slider-self;
@@ -20,6 +21,7 @@
 
         z-index: abstract.$z-index-high;
         padding: abstract.$label-padding;
+        opacity: 0.5;
 
         &-back {
             z-index: abstract.$z-index-low;
