@@ -1,9 +1,11 @@
-@mixin component-builder__default {
-    padding: 1rem;
-    border-radius: 0.2rem;
-    background-color: #fff;
+@use '../../variables';
+
+@mixin component-builder__shape {
+    padding: variables.$component__padding;
+    border-radius: variables.$component__radius;
 }
 
-@mixin component-builder__shadow {
-    box-shadow: 0 0.3rem 0.3em hsl(228, 56%, 80%);
+@mixin component-builder__bright {
+    background-color: variables.$component__bright-background;
+    box-shadow: variables.$component__shadow-size variables.$component__bright-shadow;
 }
