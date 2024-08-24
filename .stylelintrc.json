@@ -12,5 +12,12 @@
       "rules": {}
     }
   ],
-  "rules": {}
+  "rules": {
+    "selector-class-pattern": [
+      "^[a-z0-9]+(?:__[a-z0-9]+)?(?:--[a-z0-9]+)?$",
+      {
+        "message": "Selector should be written in BEM format (e.g., block, block__element, block__element--modifier)."
+      }
+    ]
+  }
 }

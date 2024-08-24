@@ -28,12 +28,6 @@
         }
     }
 
-    &__focused {
-        .input__label {
-            @include abstract.label-show-animation;
-        }
-    }
-
     &__content {
         z-index: abstract.$z-index-higher;
         position: relative;
@@ -50,6 +44,10 @@
     &__focused {
         outline: abstract.$control-border abstract.$button;
         outline-offset: 1px;
+
+        .input__label {
+            @include abstract.label-show-animation;
+        }
 
         .input__slider {
             @include abstract.slider-left-to-right-show;
