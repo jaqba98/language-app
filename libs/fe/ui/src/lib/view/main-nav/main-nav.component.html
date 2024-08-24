@@ -1,19 +1,25 @@
 <lib-flex flexDirection="column" gap="1rem">
-  <lib-card></lib-card>
+  <lib-card>
+    @if (isMobile) {
+      <lib-hamburger-form></lib-hamburger-form>
+    } @else {
+      <lib-main-nav-form></lib-main-nav-form>
+    }
+  </lib-card>
   <lib-card></lib-card>
 </lib-flex>
 
 <!-- <lib-flex flexDirection="column" gap="0.25em"> !!!
   <lib-card> !!!
-    <lib-flex alignItems="center" justifyContent="space-between">
+    <lib-flex alignItems="center" justifyContent="space-between"> !!!
       <lib-icon src="icon/school.svg" alt="school icon"></lib-icon>
-      @if (isMobile) {
-        <lib-hamburger-form (hamburgerFormEvent)="onClick()"></lib-hamburger-form>
-      }
-      @if (!isMobile) {
-        <lib-main-nav-form></lib-main-nav-form>
-      }
-    </lib-flex>
+      @if (isMobile) {!!!
+        <lib-hamburger-form (hamburgerFormEvent)="onClick()"></lib-hamburger-form>!!!
+      }!!!
+      @if (!isMobile) { !!!
+        <lib-main-nav-form></lib-main-nav-form>  !!!
+      } !!!
+    </lib-flex> !!!
   </lib-card> !!!
   @if (isMobile && isMenuVisible) {
     <lib-card #menuCard> !!!

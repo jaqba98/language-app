@@ -1,6 +1,6 @@
+@use '@english-learning/fe-styles/src/lib/abstract';
+
 .card {
-    padding: 1rem;
-    border-radius: 0.2rem;
-    background-color: #fff;
-    box-shadow: 0 0.3rem 0.3em hsl(228, 56%, 80%);
+    @include abstract.control-builder-default;
+    @include abstract.control-builder-shadow;
 }
