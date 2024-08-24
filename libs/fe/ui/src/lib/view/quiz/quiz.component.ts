@@ -3,7 +3,7 @@ import cloneDeep from 'clone-deep';
 
 import { BankModel } from '../bank/bank.model';
 import { CardComponent } from '../../misc/card/card.component';
-import { FlexComponent } from '../../misc/flex/flex.component';
+import { FlexComponent } from '../../layout/flex/flex.component';
 import { TextComponent } from '../../misc/text/text.component';
 import { PositionComponent } from '../../misc/position/position.component';
 import { CounterComponent } from '../../misc/counter/counter.component';

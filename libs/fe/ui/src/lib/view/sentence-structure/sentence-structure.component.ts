@@ -7,7 +7,7 @@ import {
 } from '@english-learning/fe-system';
 import { TextComponent } from '../../misc/text/text.component';
 import { CardComponent } from '../../misc/card/card.component';
-import { FlexComponent } from '../../misc/flex/flex.component';
+import { FlexComponent } from '../../layout/flex/flex.component';
 
 @Component({
   selector: 'lib-sentence-structure',

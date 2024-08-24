@@ -8,7 +8,7 @@ import {
   ObserverModel,
 } from '@english-learning/fe-system';
 import { CardComponent } from '../../misc/card/card.component';
-import { FlexComponent } from '../../misc/flex/flex.component';
+import { FlexComponent } from '../../layout/flex/flex.component';
 import { IconComponent } from '../../misc/icon/icon.component';
 import { PositionComponent } from '../../misc/position/position.component';
 import { TextComponent } from '../../misc/text/text.component';
@@ -21,10 +21,10 @@ import { MainNavFormComponent } from '../../form/main-nav-form/main-nav-form.com
   selector: 'lib-main-nav',
   standalone: true,
   imports: [
+    FlexComponent,
     CardComponent,
     PositionComponent,
     TextComponent,
-    FlexComponent,
     IconComponent,
     WrapperComponent,
     HamburgerFormComponent,

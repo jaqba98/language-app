@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { CardComponent } from '../../misc/card/card.component';
-import { FlexComponent } from '../../misc/flex/flex.component';
+import { FlexComponent } from '../../layout/flex/flex.component';
 import { RoutesMenuModel } from '../../model/routes-menu.model';
 
 @Component({

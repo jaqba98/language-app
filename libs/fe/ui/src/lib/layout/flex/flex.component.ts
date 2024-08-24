@@ -7,24 +7,26 @@ import { Properties } from 'csstype';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './flex.component.html',
+  styleUrl: './flex.component.scss',
 })
 export class FlexComponent {
   @Input() flexDirection: Properties['flexDirection'] = 'row';
 
-  @Input() alignItems: Properties['alignItems'] = 'stretch';
+  @Input() alignItems: Properties['alignItems'] = 'flex-start';
 
-  @Input() justifyContent: Properties['justifyContent'] = 'stretch';
+  @Input() justifyContent: Properties['justifyContent'] = 'flex-start';
 
   @Input() gap: Properties['gap'] = '0';
 
-  buildFlex(): Properties {
+  @Input() flexWrap: Properties['flexWrap'] = 'wrap';
+
+  buildFlexStyles(): Properties {
     return {
-      display: 'flex',
       flexDirection: this.flexDirection,
       alignItems: this.alignItems,
       justifyContent: this.justifyContent,
       gap: this.gap,
-      flexWrap: 'wrap',
+      flexWrap: this.flexWrap,
     };
   }
 }

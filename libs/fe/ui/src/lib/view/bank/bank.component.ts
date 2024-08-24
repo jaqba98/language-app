@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { CardComponent } from '../../misc/card/card.component';
-import { FlexComponent } from '../../misc/flex/flex.component';
+import { FlexComponent } from '../../layout/flex/flex.component';
 import { BankModel } from './bank.model';
 import { TextComponent } from '../../misc/text/text.component';
 

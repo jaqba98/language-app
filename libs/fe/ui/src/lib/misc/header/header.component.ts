@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { TextComponent } from '../text/text.component';
 import { TextType } from '../text/text.type';
-import { FlexComponent } from '../flex/flex.component';
+import { FlexComponent } from '../../layout/flex/flex.component';
 
 @Component({
   selector: 'lib-header',

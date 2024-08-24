@@ -7,7 +7,7 @@ import {
 import { Properties } from 'csstype';
 
 import { BaseFormModel, ControlKindEnum, ControlType } from './base-form.model';
-import { FlexComponent } from '../../misc/flex/flex.component';
+import { FlexComponent } from '../../layout/flex/flex.component';
 import { InputComponent } from '../../control/input/input.component';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
