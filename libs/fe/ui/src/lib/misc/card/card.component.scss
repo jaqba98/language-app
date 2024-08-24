@@ -1,6 +1,6 @@
 @use '@english-learning/fe-styles/src/lib/abstract';
 
 .card {
-    @include abstract.control-builder-default;
-    @include abstract.control-builder-shadow;
+    @include abstract.component-builder__default;
+    @include abstract.component-builder__shadow;
 }

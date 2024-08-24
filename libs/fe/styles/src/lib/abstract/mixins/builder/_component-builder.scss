@@ -1,9 +1,9 @@
-@mixin control-builder-default {
+@mixin component-builder__default {
     padding: 1rem;
     border-radius: 0.2rem;
     background-color: #fff;
 }
 
-@mixin control-builder-shadow {
+@mixin component-builder__shadow {
     box-shadow: 0 0.3rem 0.3em hsl(228, 56%, 80%);
 }
