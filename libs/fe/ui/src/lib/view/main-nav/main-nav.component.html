@@ -1,27 +1,25 @@
-<lib-flex flexDirection="column" gap="0.25rem"></lib-flex>
+<lib-flex flexDirection="column" gap="1rem">
+  <lib-card></lib-card>
+  <lib-card></lib-card>
+</lib-flex>
 
-<lib-flex flexDirection="column" gap="0.25em">
-  <lib-card>
-    <!-- main nav -->
+<!-- <lib-flex flexDirection="column" gap="0.25em"> !!!
+  <lib-card> !!!
     <lib-flex alignItems="center" justifyContent="space-between">
-      <!-- logo -->
       <lib-icon src="icon/school.svg" alt="school icon"></lib-icon>
-      <!-- hamburger for mobile -->
       @if (isMobile) {
         <lib-hamburger-form (hamburgerFormEvent)="onClick()"></lib-hamburger-form>
       }
-      <!-- main nav menu options for other devices -->
       @if (!isMobile) {
         <lib-main-nav-form></lib-main-nav-form>
       }
     </lib-flex>
-  </lib-card>
-  <!-- main nav menu options for mobile -->
+  </lib-card> !!!
   @if (isMobile && isMenuVisible) {
-    <lib-card #menuCard>
+    <lib-card #menuCard> !!!
       <lib-wrapper #menuCardOptions>
         <lib-main-nav-form></lib-main-nav-form>
       </lib-wrapper>
-    </lib-card>
+    </lib-card> !!!
   }
-</lib-flex>
+</lib-flex> !!!-->

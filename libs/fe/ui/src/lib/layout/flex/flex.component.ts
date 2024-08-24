@@ -12,9 +12,9 @@ import { Properties } from 'csstype';
 export class FlexComponent {
   @Input() flexDirection: Properties['flexDirection'] = 'row';
 
-  @Input() alignItems: Properties['alignItems'] = 'flex-start';
+  @Input() alignItems: Properties['alignItems'] = 'stretch';
 
-  @Input() justifyContent: Properties['justifyContent'] = 'flex-start';
+  @Input() justifyContent: Properties['justifyContent'] = 'stretch';
 
   @Input() gap: Properties['gap'] = '0';
 

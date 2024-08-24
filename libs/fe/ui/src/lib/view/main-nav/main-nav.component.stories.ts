@@ -6,9 +6,6 @@ import { MainNavComponent } from './main-nav.component';
 const meta: Meta<MainNavComponent> = {
   component: MainNavComponent,
   title: 'fe/ui/view/main-nav',
-  parameters: {
-    layout: 'fullscreen',
-  },
   decorators: [
     moduleMetadata({
       providers: [

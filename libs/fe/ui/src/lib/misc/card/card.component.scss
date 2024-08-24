@@ -1,17 +1,6 @@
-@use '@english-learning/fe-styles/src/lib/abstract/mixin';
-@use '@english-learning/fe-styles/src/lib/abstract/function';
-@use '@english-learning/fe-styles/src/lib/abstract/variable';
-
 .card {
-    @include mixin.set-box-model($padding: 1em);
-
-    border-radius: variable.$border-radius-default;
-
-    &__default {
-        background-color: function.get-color('secondary');
-    }
-
-    &__darken {
-        background-color: function.get-color('tertiary');
-    }
+    padding: 1rem;
+    border-radius: 0.2rem;
+    background-color: #fff;
+    box-shadow: 0 0.3rem 0.3em hsl(228, 56%, 80%);
 }
