@@ -19,9 +19,9 @@ export class TextComponent {
 
   getTextClasses() {
     return {
-      'text__primary': this.textColor === 'primary',
-      'text__secondary': this.textColor === 'secondary',
-      'text__tertiary': this.textColor === 'tertiary',
+      text__primary: this.textColor === 'primary',
+      text__secondary: this.textColor === 'secondary',
+      text__tertiary: this.textColor === 'tertiary',
     };
   }
 }
