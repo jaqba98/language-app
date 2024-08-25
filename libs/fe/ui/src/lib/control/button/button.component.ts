@@ -20,9 +20,9 @@ export class ButtonComponent {
 
   @Output() clickEvent = new EventEmitter();
 
-  @Output() mouseEnterEvent = new EventEmitter();
+  @Output() focusEvent = new EventEmitter();
 
-  @Output() mouseLeaveEvent = new EventEmitter();
+  @Output() blurEvent = new EventEmitter();
 
   onClick() {
     this.control.setValue(true);
@@ -30,12 +30,12 @@ export class ButtonComponent {
     this.clickEvent.emit();
   }
 
-  onMouseEnter() {
-    this.mouseEnterEvent.emit();
+  onFocus() {
+    this.focusEvent.emit();
   }
 
-  onMouseLeave() {
-    this.mouseLeaveEvent.emit();
+  onBlur() {
+    this.blurEvent.emit();
   }
 
   getButtonType() {

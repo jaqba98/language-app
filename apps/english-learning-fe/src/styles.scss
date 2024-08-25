@@ -1,6 +1,7 @@
 @use "@english-learning/fe-styles/src/lib/abstract/mixin";
 @use "@english-learning/fe-styles/src/lib/abstract/function";
 @use "@english-learning/fe-styles/src/lib/abstract/variable";
+@use "@english-learning/fe-styles/src/lib/abstract";
 
 * {
     @include mixin.set-box-model(0, 0);
@@ -11,6 +12,7 @@
 body {
     @include mixin.set-box-model($padding: 0.25em);
 
-    background-color: function.get-color("primary");
+    background-color: abstract.$body__background;
+
     min-width: variable.$body-min-width;
 }

@@ -3,8 +3,8 @@
   [isPrimary]="isPrimary"
   [fullWidth]="fullWidth"
   (clickEvent)="onClickEvent()"
-  (mouseEnterEvent)="onMouseEnterEvent()"
-  (mouseLeaveEvent)="onMouseLeaveEvent()"
+  (focusEvent)="onFocusEvent()"
+  (blurEvent)="onBlurEvent()"
 >
   <lib-text [value]="label" [textColor]="textColor"></lib-text>
 </lib-button>
