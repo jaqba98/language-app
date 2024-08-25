@@ -1,36 +1,32 @@
 @use '@english-learning/fe-styles/src/lib/abstract';
 
 .button {
+    @include abstract.component-builder__shape;
+    @include abstract.component-builder__bright;
+    @include abstract.component-builder__bright-border;
     @include abstract.slider-parent;
-    
-    background-color: abstract.$transparent;
-    border: abstract.$control-border abstract.$button;
-    padding: abstract.$control-padding;
-    cursor: pointer;
+    @include abstract.control-builder__button;    
 
     &__slider {
         @include abstract.slider-self;
         @include abstract.slider-left-to-right-hide;
-        
-        z-index: abstract.$z-index-high;
-        background-color: abstract.$button;
+        @include abstract.control-builder__slider;
     }
 
     &__full-width {
-        width: 100%;
+        @include abstract.component-builder__full-width;
     }
 
     &__content {
-        z-index: abstract.$z-index-higher;
-        position: relative;
-    }
-
-    &:hover > &__slider {
-        @include abstract.slider-left-to-right-show;
+        @include abstract.control-builder__slider-content;
     }
 
     &:focus {
-        outline: abstract.$control-border abstract.$button;
-        outline-offset: 1px;
+        @include abstract.component-builder__bright-focus-outline;
+
+        .button__slider {
+            @include abstract.component-builder__bright-focus-background;
+            @include abstract.slider-left-to-right-show;
+        }
     }
 }

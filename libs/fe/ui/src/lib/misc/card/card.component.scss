@@ -3,4 +3,5 @@
 .card {
     @include abstract.component-builder__shape;
     @include abstract.component-builder__bright;
+    @include abstract.component-builder__bright-shadow;
 }
