@@ -15,12 +15,13 @@ export class TextComponent {
 
   @Input() type: TextType = 'paragraph';
 
-  @Input() textColor: TextColorType = 'normal';
+  @Input() textColor: TextColorType = 'tertiary';
 
   getTextClasses() {
     return {
-      'text__button-text-open': this.textColor === 'buttonTextOpen',
-      'text__button-text-close': this.textColor === 'buttonTextClose',
+      'text__primary': this.textColor === 'primary',
+      'text__secondary': this.textColor === 'secondary',
+      'text__tertiary': this.textColor === 'tertiary',
     };
   }
 }

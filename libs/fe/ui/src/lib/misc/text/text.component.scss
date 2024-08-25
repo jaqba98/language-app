@@ -5,26 +5,21 @@
   font-weight: 400;
   font-style: normal;
   margin: 0;
-  color: abstract.$text;
 
-  &__button-text-open {
-    @include abstract.text-animation;
-
-    color: abstract.$buttonTextOpen;
+  &__primary {
+    color: abstract.$component__bright-primary;
   }
 
-  &__button-text-close {
-    @include abstract.text-animation;
+  &__secondary {
+    color: abstract.$component__bright-secondary;
+  }
 
-    color: abstract.$buttonTextClose;
+  &__tertiary {
+    color: abstract.$component__bright-tertiary;
   }
 
   &__paragraph {
     font-size: 1em;
-
-    &-tiny {
-      font-size: 0.9em;
-    }
   }
 
   &__header {

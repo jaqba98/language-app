@@ -27,17 +27,17 @@ export class ButtonTextComponent {
 
   @Output() clickEvent = new EventEmitter();
 
-  textColor: TextColorType = 'buttonTextClose';
+  textColor: TextColorType = 'tertiary';
 
   onClickEvent() {
     this.clickEvent.emit();
   }
 
   onFocusEvent() {
-    this.textColor = 'buttonTextOpen';
+    this.textColor = 'primary';
   }
 
   onBlurEvent() {
-    this.textColor = 'buttonTextClose';
+    this.textColor = 'tertiary';
   }
 }
