@@ -1,7 +1,16 @@
 import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
-import { ActivatedRoute } from '@angular/router';
+import { Injectable } from '@angular/core';
 
 import { MainNavComponent } from './main-nav.component';
+import { RouteNavigationService } from '../../infrastructure/route-navigation.service';
+
+@Injectable()
+export class MockRouteNavigationService {
+  navigate(link: string) {
+    // eslint-disable-next-line no-console
+    console.log(link);
+  }
+}
 
 const meta: Meta<MainNavComponent> = {
   component: MainNavComponent,
@@ -9,7 +18,7 @@ const meta: Meta<MainNavComponent> = {
   decorators: [
     moduleMetadata({
       providers: [
-        { provide: ActivatedRoute, useValue: [] },
+        { provide: RouteNavigationService, useClass: MockRouteNavigationService },
       ],
     }),
   ],
