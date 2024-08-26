@@ -1,9 +1,7 @@
 <lib-button
   [control]="control"
   [isPrimary]="isPrimary"
-  (clickEvent)="onClickEvent()"
-  (focusEvent)="onFocusEvent()"
-  (blurEvent)="onBlurEvent()"
+  (clickEvent)="onClickEvent($event)"
 >
     <lib-icon [src]="icon" [alt]="alt"></lib-icon>
 </lib-button>

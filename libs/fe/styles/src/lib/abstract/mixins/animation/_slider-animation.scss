@@ -10,7 +10,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  transition: right $speed ease-in-out;
+  transition: all $speed ease-in-out;
 }
 
 @mixin slider-left-to-right-hide {

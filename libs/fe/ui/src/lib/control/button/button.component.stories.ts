@@ -10,12 +10,6 @@ const meta: Meta<ButtonComponent> = {
     clickEvent: {
       action: 'clickEvent',
     },
-    focusEvent: {
-      action: 'focusEvent',
-    },
-    blurEvent: {
-      action: 'blurEvent',
-    },
   },
 };
 export default meta;

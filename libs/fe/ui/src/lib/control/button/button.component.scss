@@ -21,7 +21,7 @@
         @include abstract.control-builder__slider-content;
     }
 
-    &:focus {
+    &__is-focused {
         @include abstract.component-builder__bright-focus-outline;
 
         .button__slider {

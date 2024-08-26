@@ -1,8 +1,11 @@
 import { CommonModule } from '@angular/common';
 import {
-  Component, EventEmitter, Input, Output,
+  Component, ElementRef, EventEmitter, Input, Output,
+  ViewChild,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
+
+import { ButtonOutputModel } from './button-output.model';
 
 @Component({
   selector: 'lib-button',
@@ -12,30 +15,23 @@ import { FormControl } from '@angular/forms';
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
+  @ViewChild('self') self!: ElementRef;
+
   @Input({ required: true }) control!: FormControl;
 
   @Input() isPrimary = false;
 
   @Input() fullWidth = false;
 
-  @Output() clickEvent = new EventEmitter();
+  @Output() clickEvent = new EventEmitter<ButtonOutputModel>();
 
-  @Output() focusEvent = new EventEmitter();
-
-  @Output() blurEvent = new EventEmitter();
+  isFocused = false;
 
   onClick() {
+    this.isFocused = !this.isFocused;
     this.control.setValue(true);
     if (this.isPrimary) return;
-    this.clickEvent.emit();
-  }
-
-  onFocus() {
-    this.focusEvent.emit();
-  }
-
-  onBlur() {
-    this.blurEvent.emit();
+    this.clickEvent.emit({ isFocused: this.isFocused });
   }
 
   getButtonType() {

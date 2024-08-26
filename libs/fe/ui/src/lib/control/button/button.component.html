@@ -1,10 +1,12 @@
 <button
+    #self
     class="button"
     [type]="getButtonType()"
-    [ngClass]="{ 'button__full-width': fullWidth }"
+    [ngClass]="{ 
+        'button__full-width': fullWidth,
+        'button__is-focused': isFocused
+    }"
     (click)="onClick()"
-    (focus)="onFocus()"
-    (blur)="onBlur()"
 >
     <div class="button__slider"></div>
     <div class="button__content">

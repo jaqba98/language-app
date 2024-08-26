@@ -5,6 +5,7 @@ import { FormControl } from '@angular/forms';
 
 import { IconComponent } from '../../misc/icon/icon.component';
 import { ButtonComponent } from '../button/button.component';
+import { ButtonOutputModel } from '../button/button-output.model';
 
 @Component({
   selector: 'lib-button-icon',
@@ -34,15 +35,8 @@ export class ButtonIconComponent implements OnInit {
     this.icon = this.iconLeave;
   }
 
-  onClickEvent() {
+  onClickEvent(output: ButtonOutputModel) {
+    this.icon = output.isFocused ? this.iconEnter : this.iconLeave;
     this.clickEvent.emit();
-  }
-
-  onFocusEvent() {
-    this.icon = this.iconEnter;
-  }
-
-  onBlurEvent() {
-    this.icon = this.iconLeave;
   }
 }

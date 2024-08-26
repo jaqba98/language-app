@@ -6,6 +6,7 @@ import { FormControl } from '@angular/forms';
 import { TextComponent } from '../../misc/text/text.component';
 import { TextColorType } from '../../misc/text/text.type';
 import { ButtonComponent } from '../button/button.component';
+import { ButtonOutputModel } from '../button/button-output.model';
 
 @Component({
   selector: 'lib-button-text',
@@ -29,15 +30,8 @@ export class ButtonTextComponent {
 
   textColor: TextColorType = 'tertiary';
 
-  onClickEvent() {
+  onClickEvent(output: ButtonOutputModel) {
     this.clickEvent.emit();
-  }
-
-  onFocusEvent() {
-    this.textColor = 'primary';
-  }
-
-  onBlurEvent() {
-    this.textColor = 'tertiary';
+    this.textColor = output.isFocused ? 'primary' : 'tertiary';
   }
 }

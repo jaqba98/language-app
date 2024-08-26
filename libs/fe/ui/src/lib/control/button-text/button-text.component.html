@@ -2,9 +2,7 @@
   [control]="control"
   [isPrimary]="isPrimary"
   [fullWidth]="fullWidth"
-  (clickEvent)="onClickEvent()"
-  (focusEvent)="onFocusEvent()"
-  (blurEvent)="onBlurEvent()"
+  (clickEvent)="onClickEvent($event)"
 >
   <lib-text [value]="label" [textColor]="textColor"></lib-text>
 </lib-button>
