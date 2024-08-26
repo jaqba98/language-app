@@ -1,38 +1,35 @@
 @use "@english-learning/fe-styles/src/lib/abstract";
 
 .text {
-  font-family: Lato, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  margin: 0;
+  @include abstract.text-builder__font;
 
   &__primary {
-    color: abstract.$component__bright-primary;
+    @include abstract.text-builder__color(abstract.$component__bright-primary);
   }
 
   &__secondary {
-    color: abstract.$component__bright-secondary;
+    @include abstract.text-builder__color(abstract.$component__bright-secondary);
   }
 
   &__tertiary {
-    color: abstract.$component__bright-tertiary;
+    @include abstract.text-builder__color(abstract.$component__bright-tertiary);
   }
 
   &__paragraph {
-    font-size: 1em;
+    @include abstract.text-builder__small;
   }
 
   &__header {
     &1 {
-      font-size: 2em;
+      @include abstract.text-builder__large;
     }
 
     &2 {
-      font-size: 1.5em;
+      @include abstract.text-builder__medium;
     }
 
     &3 {
-      font-size: 1em;
+      @include abstract.text-builder__small;
     }
   }
 }
