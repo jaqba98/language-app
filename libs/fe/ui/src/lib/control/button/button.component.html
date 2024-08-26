@@ -1,12 +1,7 @@
 <button
-    #self
     class="button"
     [type]="getButtonType()"
-    [ngClass]="{ 
-        'button__full-width': fullWidth,
-        'button__is-focused': isFocused
-    }"
-    (click)="onClick()"
+    [ngClass]="buildStyles()"
     (focus)="onFocus()"
     (blur)="onBlur()"
 >

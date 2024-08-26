@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Properties } from 'csstype';
 
 import {
@@ -33,9 +33,9 @@ import { MainNavFormComponent } from '../../form/main-nav-form/main-nav-form.com
   templateUrl: './main-nav.component.html',
 })
 export class MainNavComponent implements ObserverModel<BreakpointModel> {
-  @ViewChild('menuCard') menuCard!: CardComponent;
+  @ViewChild('hamburger') hamburger!: ElementRef;
 
-  @ViewChild('menuCardOptions') menuCardOptions!: CardComponent;
+  @ViewChild('menuCardOptions') menuCardOptions!: ElementRef;
 
   options: RoutesMenuModel[] = [
     { value: 'Home', link: '/home' },
@@ -62,7 +62,23 @@ export class MainNavComponent implements ObserverModel<BreakpointModel> {
     }
   }
 
-  onClick() {
-    this.isMenuVisible = !this.isMenuVisible;
+  // onClick() {
+  //   this.isMenuVisible = !this.isMenuVisible;
+  // }
+
+  @HostListener('document:click', ['$event'])
+  onClick(event: MouseEvent) {
+    const { target } = event;
+    if (this.hamburger && this.hamburger.nativeElement.contains(target)) {
+      this.isMenuVisible = !this.isMenuVisible;
+      return;
+    }
+    if (this.isMobile) {
+      if (this.menuCardOptions && this.menuCardOptions.nativeElement.contains(target)) {
+        this.isMenuVisible = true;
+        return;
+      }
+    }
+    this.isMenuVisible = false;
   }
 }

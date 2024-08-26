@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
-  Component, ElementRef, EventEmitter, Input, Output,
-  ViewChild,
+  Component, EventEmitter, Input, Output,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
@@ -15,8 +14,6 @@ import { ButtonOutputModel } from './button-output.model';
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
-  @ViewChild('self') self!: ElementRef;
-
   @Input({ required: true }) control!: FormControl;
 
   @Input() isPrimary = false;
@@ -26,12 +23,6 @@ export class ButtonComponent {
   @Output() clickEvent = new EventEmitter<ButtonOutputModel>();
 
   isFocused = false;
-
-  onClick() {
-    this.control.setValue(true);
-    if (this.isPrimary) return;
-    this.clickEvent.emit({ isFocused: this.isFocused });
-  }
 
   onFocus() {
     this.isFocused = true;
@@ -45,5 +36,18 @@ export class ButtonComponent {
 
   getButtonType() {
     return this.isPrimary ? 'submit' : 'button';
+  }
+
+  buildStyles() {
+    return {
+      'button__full-width': this.fullWidth,
+      'button__is-focused': this.isFocused,
+    };
+  }
+
+  private onClick() {
+    this.control.setValue(true);
+    if (this.isPrimary) return;
+    this.clickEvent.emit({ isFocused: this.isFocused });
   }
 }

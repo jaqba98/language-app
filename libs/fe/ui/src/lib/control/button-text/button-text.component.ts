@@ -31,7 +31,7 @@ export class ButtonTextComponent {
   textColor: TextColorType = 'tertiary';
 
   onClickEvent(output: ButtonOutputModel) {
-    this.clickEvent.emit();
     this.textColor = output.isFocused ? 'primary' : 'tertiary';
+    this.clickEvent.emit();
   }
 }
