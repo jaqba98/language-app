@@ -2,6 +2,7 @@
     class="button"
     [type]="getButtonType()"
     [ngClass]="buildStyles()"
+    (click)="onClick()"
     (focus)="onFocus()"
     (blur)="onBlur()"
 >

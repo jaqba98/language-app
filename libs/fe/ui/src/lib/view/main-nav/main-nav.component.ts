@@ -1,4 +1,6 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import {
+  Component, ElementRef, HostListener, ViewChild,
+} from '@angular/core';
 import { Properties } from 'csstype';
 
 import {

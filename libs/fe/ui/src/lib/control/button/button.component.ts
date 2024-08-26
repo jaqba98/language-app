@@ -4,8 +4,6 @@ import {
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { ButtonOutputModel } from './button-output.model';
-
 @Component({
   selector: 'lib-button',
   standalone: true,
@@ -20,18 +18,32 @@ export class ButtonComponent {
 
   @Input() fullWidth = false;
 
-  @Output() clickEvent = new EventEmitter<ButtonOutputModel>();
+  @Output() clickEvent = new EventEmitter();
+
+  @Output() focusEvent = new EventEmitter();
+
+  @Output() blurEvent = new EventEmitter();
 
   isFocused = false;
 
+  onClick() {
+    this.control.setValue(true);
+    if (this.isPrimary) return;
+    this.clickEvent.emit();
+  }
+
   onFocus() {
     this.isFocused = true;
-    this.onClick();
+    this.control.setValue(true);
+    if (this.isPrimary) return;
+    this.focusEvent.emit();
   }
 
   onBlur() {
     this.isFocused = false;
-    this.onClick();
+    this.control.setValue(false);
+    if (this.isPrimary) return;
+    this.blurEvent.emit();
   }
 
   getButtonType() {
@@ -43,11 +55,5 @@ export class ButtonComponent {
       'button__full-width': this.fullWidth,
       'button__is-focused': this.isFocused,
     };
-  }
-
-  private onClick() {
-    this.control.setValue(true);
-    if (this.isPrimary) return;
-    this.clickEvent.emit({ isFocused: this.isFocused });
   }
 }
