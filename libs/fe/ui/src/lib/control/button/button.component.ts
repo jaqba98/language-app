@@ -28,10 +28,19 @@ export class ButtonComponent {
   isFocused = false;
 
   onClick() {
-    this.isFocused = !this.isFocused;
     this.control.setValue(true);
     if (this.isPrimary) return;
     this.clickEvent.emit({ isFocused: this.isFocused });
+  }
+
+  onFocus() {
+    this.isFocused = true;
+    this.onClick();
+  }
+
+  onBlur() {
+    this.isFocused = false;
+    this.onClick();
   }
 
   getButtonType() {
