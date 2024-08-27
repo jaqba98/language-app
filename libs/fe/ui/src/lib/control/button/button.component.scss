@@ -11,7 +11,7 @@
 
     &__slider {
         @include abstract.slider-self;
-        @include abstract.slider-left-to-right-hide;
+        @include abstract.slider-right-to-left-hide;
 
         background-color: abstract.$tertiary-color;
     }
@@ -37,7 +37,6 @@
     }
 
     &:active {
-        transform: scale(0.9);
-        transition: transform 0.1s ease-in-out;
+        @include abstract.click-animation;
     }
 }

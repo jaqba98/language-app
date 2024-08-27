@@ -10,7 +10,7 @@
 
     &__slider {
         @include abstract.slider-self;
-        @include abstract.slider-left-to-right-hide;
+        // @include abstract.slider-left-to-right-hide;
 
         z-index: abstract.$z-index-high;
         background-color: abstract.$button;

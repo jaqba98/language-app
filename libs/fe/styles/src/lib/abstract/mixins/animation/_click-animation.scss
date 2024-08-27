@@ -1,0 +1,6 @@
+@use '../../variables';
+
+@mixin click-animation {
+  transform: scale(0.9);
+  transition: transform variables.$animation-speed-fast ease-in-out;
+}
