@@ -1,11 +1,14 @@
 {
   "extends": ["../../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*"],
+  "ignorePatterns": ["!**/*", "storybook-static"],
   "overrides": [
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": "./libs/fe/page/tsconfig.lint.json"
+        "project": [
+          "./libs/fe/page/tsconfig.lint.json",
+          "libs\\fe\\page\\.storybook\\tsconfig.json"
+        ]
       },
       "extends": [
         "plugin:@nx/angular",
