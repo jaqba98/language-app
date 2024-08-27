@@ -1,14 +1,14 @@
 <lib-flex flexDirection="column">
-  <lib-card cardType="card__bare">
+  <lib-card cardType="card__main-nav">
     <lib-flex alignItems="center" [justifyContent]="mainNavJustifyContent">
-        <lib-icon src="icon/school.svg" alt="Logo School Icon"></lib-icon>
-        @if (isMobile) {
-          <lib-wrapper #hamburgerForm>
-            <lib-hamburger-form></lib-hamburger-form>
-          </lib-wrapper>
-        } @else {
-          <lib-main-nav-form></lib-main-nav-form>
-        }
+      <lib-icon src="icon/school.svg" alt="Logo School Icon"></lib-icon>
+      @if (isMobile) {
+        <lib-wrapper #hamburgerForm>
+          <lib-hamburger-form></lib-hamburger-form>
+        </lib-wrapper>
+      } @else {
+        <lib-main-nav-form></lib-main-nav-form>
+      }
     </lib-flex>
   </lib-card>
   @if (isMobile && isMenuVisible) {

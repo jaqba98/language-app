@@ -4,8 +4,9 @@
     background-color: abstract.$primary-color;
     box-shadow: abstract.$shadow-size abstract.$secondary-color;
 
-    &__bare {
-        padding: abstract.$component-padding-tiny;
+    &__main-nav {
+        padding: abstract.$component-padding-small;
+        height: abstract.$main-nav-height;
     }
 
     &__default {

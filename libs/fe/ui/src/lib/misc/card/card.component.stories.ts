@@ -15,4 +15,10 @@ export const Bare: Story = {
   },
 };
 
+export const MainNav: Story = {
+  args: {
+    cardType: 'card__main-nav',
+  },
+};
+
 export const Default: Story = {};
