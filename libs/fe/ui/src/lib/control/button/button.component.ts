@@ -20,9 +20,9 @@ export class ButtonComponent {
 
   @Output() clickEvent = new EventEmitter();
 
-  @Output() focusEvent = new EventEmitter();
+  @Output() mouseEnterEvent = new EventEmitter();
 
-  @Output() blurEvent = new EventEmitter();
+  @Output() mouseLeaveEvent = new EventEmitter();
 
   isFocused = false;
 
@@ -32,18 +32,12 @@ export class ButtonComponent {
     this.clickEvent.emit();
   }
 
-  onFocus() {
-    this.isFocused = true;
-    this.control.setValue(true);
-    if (this.isPrimary) return;
-    this.focusEvent.emit();
+  onMouseEnter() {
+    this.mouseEnterEvent.emit();
   }
 
-  onBlur() {
-    this.isFocused = false;
-    this.control.setValue(false);
-    if (this.isPrimary) return;
-    this.blurEvent.emit();
+  onMouseLeave() {
+    this.mouseLeaveEvent.emit();
   }
 
   getButtonType() {
@@ -53,7 +47,6 @@ export class ButtonComponent {
   buildStyles() {
     return {
       'button__full-width': this.fullWidth,
-      'button__is-focused': this.isFocused,
     };
   }
 }

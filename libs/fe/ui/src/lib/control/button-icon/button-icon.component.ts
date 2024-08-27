@@ -38,11 +38,11 @@ export class ButtonIconComponent implements OnInit {
     this.clickEvent.emit();
   }
 
-  onFocusEvent() {
+  onMouseEnterEvent() {
     this.icon = this.iconEnter;
   }
 
-  onBlurEvent() {
+  onMouseLeaveEvent() {
     this.icon = this.iconLeave;
   }
 }

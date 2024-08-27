@@ -10,11 +10,11 @@ const meta: Meta<ButtonComponent> = {
     clickEvent: {
       action: 'clickEvent',
     },
-    focusEvent: {
-      action: 'focusEvent',
+    onMouseEnter: {
+      action: 'onMouseEnter',
     },
-    blurEvent: {
-      action: 'blurEvent',
+    onMouseLeave: {
+      action: 'onMouseLeave',
     },
   },
 };

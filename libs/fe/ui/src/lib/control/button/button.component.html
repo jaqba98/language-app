@@ -3,8 +3,8 @@
     [type]="getButtonType()"
     [ngClass]="buildStyles()"
     (click)="onClick()"
-    (focus)="onFocus()"
-    (blur)="onBlur()"
+    (mouseenter)="onMouseEnter()"
+    (mouseleave)="onMouseLeave()"
 >
     <div class="button__slider"></div>
     <div class="button__content">

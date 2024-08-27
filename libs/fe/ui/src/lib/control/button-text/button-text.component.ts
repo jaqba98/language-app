@@ -33,11 +33,11 @@ export class ButtonTextComponent {
     this.clickEvent.emit();
   }
 
-  onFocusEvent() {
+  onMouseEnterEvent() {
     this.textColor = 'primary';
   }
 
-  onBlurEvent() {
+  onMouseLeaveEvent() {
     this.textColor = 'tertiary';
   }
 }
