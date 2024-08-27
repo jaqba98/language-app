@@ -3,6 +3,7 @@
 $transparent: transparent;
 $button: #5585b5;
 
+// old
 $primary: #2C2E43;
 $secondary: color.adjust($primary, $lightness: 4%);
 $tertiary: color.adjust($secondary, $lightness: 2%);
