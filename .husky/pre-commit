@@ -1,2 +1,6 @@
 nx run-many --target=lint
 nx run-many --target=stylelint
+nx run-many --target=test
+nx run-many --target=build
+nx run-many --target=build-storybook
+pnpm run english-learning:build
