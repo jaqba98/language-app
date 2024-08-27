@@ -3,19 +3,19 @@
     <lib-flex alignItems="center" justifyContent="space-between">
       <lib-icon src="icon/school.svg" alt="Logo School Icon"></lib-icon>
       @if (isMobile) {
-        <div #hamburger>
+        <lib-wrapper #hamburgerForm>
           <lib-hamburger-form></lib-hamburger-form>
-        </div>
+        </lib-wrapper>
       } @else {
         <lib-main-nav-form></lib-main-nav-form>
       }
     </lib-flex>
   </lib-card>
   @if (isMobile && isMenuVisible) {
-    <div #menuCardOptions>
+    <lib-wrapper #mainNavForm>
       <lib-card>
         <lib-main-nav-form></lib-main-nav-form>
       </lib-card>
-    </div>
+    </lib-wrapper>
   }
 </lib-flex>

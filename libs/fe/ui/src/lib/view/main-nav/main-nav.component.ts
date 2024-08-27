@@ -1,21 +1,12 @@
-import {
-  Component, ElementRef, HostListener, ViewChild,
-} from '@angular/core';
-import { Properties } from 'csstype';
+import { Component, ViewChild, HostListener } from '@angular/core';
 
 import {
-  BreakpointService,
-  BreakpointModel,
-  BreakpointEnum,
-  ObserverModel,
+  ObserverModel, BreakpointModel, BreakpointService, BreakpointEnum,
 } from '@english-learning/fe-system';
-import { CardComponent } from '../../misc/card/card.component';
-import { FlexComponent } from '../../layout/flex/flex.component';
-import { IconComponent } from '../../misc/icon/icon.component';
-import { PositionComponent } from '../../misc/position/position.component';
-import { TextComponent } from '../../misc/text/text.component';
 import { WrapperComponent } from '../../misc/wrapper/wrapper.component';
-import { RoutesMenuModel } from '../../model/routes-menu.model';
+import { FlexComponent } from '../../layout/flex/flex.component';
+import { CardComponent } from '../../misc/card/card.component';
+import { IconComponent } from '../../misc/icon/icon.component';
 import { HamburgerFormComponent } from '../../form/hamburger-form/hamburger-form.component';
 import { MainNavFormComponent } from '../../form/main-nav-form/main-nav-form.component';
 
@@ -25,8 +16,6 @@ import { MainNavFormComponent } from '../../form/main-nav-form/main-nav-form.com
   imports: [
     FlexComponent,
     CardComponent,
-    PositionComponent,
-    TextComponent,
     IconComponent,
     WrapperComponent,
     HamburgerFormComponent,
@@ -35,21 +24,13 @@ import { MainNavFormComponent } from '../../form/main-nav-form/main-nav-form.com
   templateUrl: './main-nav.component.html',
 })
 export class MainNavComponent implements ObserverModel<BreakpointModel> {
-  @ViewChild('hamburger') hamburger!: ElementRef;
+  @ViewChild('hamburgerForm') hamburgerForm!: WrapperComponent;
 
-  @ViewChild('menuCardOptions') menuCardOptions!: ElementRef;
-
-  options: RoutesMenuModel[] = [
-    { value: 'Home', link: '/home' },
-    { value: 'Vocabulary', link: '/vocabulary' },
-    { value: 'Grammar', link: '/grammar' },
-  ];
+  @ViewChild('mainNavForm') mainNavForm!: WrapperComponent;
 
   isMobile = true;
 
   isMenuVisible = false;
-
-  mainNavJustifyContent: Properties['justifyContent'] = 'space-between';
 
   constructor(private readonly breakpoint: BreakpointService) {
     this.breakpoint.addObserver(this);
@@ -64,22 +45,16 @@ export class MainNavComponent implements ObserverModel<BreakpointModel> {
     }
   }
 
-  // onClick() {
-  //   this.isMenuVisible = !this.isMenuVisible;
-  // }
-
   @HostListener('document:click', ['$event'])
   onClick(event: MouseEvent) {
     const { target } = event;
-    if (this.hamburger && this.hamburger.nativeElement.contains(target)) {
+    if (this.hamburgerForm && this.hamburgerForm.self.nativeElement.contains(target)) {
       this.isMenuVisible = !this.isMenuVisible;
       return;
     }
-    if (this.isMobile) {
-      if (this.menuCardOptions && this.menuCardOptions.nativeElement.contains(target)) {
-        this.isMenuVisible = true;
-        return;
-      }
+    if (this.mainNavForm && this.mainNavForm.self.nativeElement.contains(target)) {
+      this.isMenuVisible = true;
+      return;
     }
     this.isMenuVisible = false;
   }
