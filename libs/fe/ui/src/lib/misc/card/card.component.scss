@@ -5,8 +5,12 @@
     box-shadow: abstract.$shadow-size abstract.$secondary-color;
 
     &__main-nav {
-        padding: abstract.$component-padding-small;
-        height: abstract.$main-nav-height;
+        padding: abstract.$component-padding;
+    }
+
+    &__main-nav-options-mobile {
+        padding: abstract.$component-padding;
+        border-top: abstract.$component-border abstract.$secondary-color;
     }
 
     &__default {

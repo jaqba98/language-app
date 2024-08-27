@@ -21,4 +21,10 @@ export const MainNav: Story = {
   },
 };
 
+export const MainNavOptionsMobile: Story = {
+  args: {
+    cardType: 'card__main-nav-options-mobile',
+  },
+};
+
 export const Default: Story = {};

@@ -30,6 +30,12 @@
             "prefix": "lib",
             "style": "kebab-case"
           }
+        ],
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": ["**/*.stories.js", "**/*.stories.ts"]
+          }
         ]
       }
     },
