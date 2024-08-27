@@ -11,6 +11,9 @@ const meta: Meta<MainNavComponent> = {
       providers: [MockRouteNavigationService.getProvider()],
     }),
   ],
+  parameters: {
+    layout: 'fullscreen',
+  },
 };
 export default meta;
 type Story = StoryObj<MainNavComponent>;

@@ -20,7 +20,7 @@
 }
 
 @mixin component-builder__bright-border {
-    border: variables.$component__border-size variables.$component__bright-secondary;
+    border: variables.$component__border-size variables.$component__bright-tertiary;
 }
 
 @mixin component-builder__bright-focus-outline {

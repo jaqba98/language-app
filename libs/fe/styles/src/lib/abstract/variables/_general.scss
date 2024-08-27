@@ -1,8 +1,12 @@
-$component__padding: 1rem;
-$component__radius: 0.2rem;
+$component__padding: 0.25rem 0.5rem;
+$component__radius: 0.25rem;
 $component__shadow-size: 0 0.25rem 0.25em;
 $component__border-size: 1px solid;
-$component__offset: 1px;
+$component__offset: 2px;
+
+$control__padding: 1rem;
+
+$main-nav-form__padding: 0.25rem;
 
 $animation-speed: 0.25s;
 
@@ -15,5 +19,4 @@ $z-index-lower: -2;
 $z-index-lowest: -3;
 
 $control-border: 2px solid;
-$control-padding: 0.5rem;
 $label-padding: 0.45rem;

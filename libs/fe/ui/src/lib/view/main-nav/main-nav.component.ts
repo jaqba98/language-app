@@ -9,6 +9,7 @@ import { CardComponent } from '../../misc/card/card.component';
 import { IconComponent } from '../../misc/icon/icon.component';
 import { HamburgerFormComponent } from '../../form/hamburger-form/hamburger-form.component';
 import { MainNavFormComponent } from '../../form/main-nav-form/main-nav-form.component';
+import { Properties } from 'csstype';
 
 @Component({
   selector: 'lib-main-nav',
@@ -32,16 +33,24 @@ export class MainNavComponent implements ObserverModel<BreakpointModel> {
 
   isMenuVisible = false;
 
+  mainNavJustifyContent: Properties['justifyContent'] = 'space-between';
+
   constructor(private readonly breakpoint: BreakpointService) {
     this.breakpoint.addObserver(this);
   }
 
   update(data: BreakpointModel) {
-    if (data.breakpoint === BreakpointEnum.XSmall) {
+    const { breakpoint } = data;
+    if (breakpoint === BreakpointEnum.XSmall) {
       this.isMobile = true;
     } else {
       this.isMobile = false;
       this.isMenuVisible = false;
+    }
+    if (breakpoint === BreakpointEnum.Large || breakpoint === BreakpointEnum.XLarge) {
+      this.mainNavJustifyContent = 'space-around';
+    } else {
+      this.mainNavJustifyContent = 'space-between';
     }
   }
 

@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'lib-card',
@@ -7,5 +7,4 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
-  @ViewChild('self') self!: ElementRef;
 }

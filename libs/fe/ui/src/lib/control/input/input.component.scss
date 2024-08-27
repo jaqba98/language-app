@@ -4,7 +4,7 @@
     @include abstract.slider-parent;
 
     display: inline-block;
-    background-color:  abstract.$buttonTextOpen;
+    background-color: abstract.$buttonTextOpen;
     border: abstract.$control-border abstract.$button;
     overflow: hidden;
 
@@ -33,7 +33,6 @@
         position: relative;
 
         .input__control {
-            padding: abstract.$control-padding;
             background-color: abstract.$transparent;
             border: none;
             outline: none;

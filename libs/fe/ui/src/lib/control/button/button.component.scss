@@ -5,7 +5,7 @@
     @include abstract.component-builder__bright;
     @include abstract.component-builder__bright-border;
     @include abstract.slider-parent;
-    @include abstract.control-builder__button;    
+    @include abstract.control-builder__button;
 
     &__slider {
         @include abstract.slider-self;
@@ -22,11 +22,13 @@
     }
 
     &__is-focused {
-        @include abstract.component-builder__bright-focus-outline;
-
         .button__slider {
             @include abstract.component-builder__bright-focus-background;
             @include abstract.slider-left-to-right-show;
         }
+    }
+
+    &:active {
+        @include abstract.component-builder__bright-focus-outline;
     }
 }
