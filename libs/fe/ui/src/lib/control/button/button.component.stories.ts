@@ -1,30 +1,28 @@
-import { ActivatedRoute } from '@angular/router';
-import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
+import { type Meta, type StoryObj } from '@storybook/angular';
+import { FormControl } from '@angular/forms';
 
 import { ButtonComponent } from './button.component';
 
 const meta: Meta<ButtonComponent> = {
   component: ButtonComponent,
   title: 'fe/ui/control/button',
-  decorators: [
-    moduleMetadata({
-      providers: [
-        { provide: ActivatedRoute, useValue: [] },
-      ],
-    }),
-  ],
+  argTypes: {
+    clickEvent: {
+      action: 'clickEvent',
+    },
+    onMouseEnter: {
+      action: 'onMouseEnter',
+    },
+    onMouseLeave: {
+      action: 'onMouseLeave',
+    },
+  },
 };
 export default meta;
 type Story = StoryObj<ButtonComponent>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
-    fullWidth: false,
-  },
-};
-
-export const FullWidth: Story = {
-  args: {
-    fullWidth: true,
+    control: new FormControl(false),
   },
 };

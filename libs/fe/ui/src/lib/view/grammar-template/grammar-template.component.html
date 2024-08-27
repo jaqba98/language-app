@@ -2,7 +2,7 @@
   <lib-flex flexDirection="column" gap="1em">
     @for (line of template.lines; track line.kind) {
       @if (line.kind === 'text') {
-        <lib-text [value]="line.value" [textType]="line.textType"></lib-text>
+        <lib-text [value]="line.value" [type]="line.textType"></lib-text>
       } @else if (line.kind === 'header') {
         <lib-header [value]="line.value" [textType]="line.textType" [link]="line.link"></lib-header>
       } @else if (line.kind === 'multiline-text') {

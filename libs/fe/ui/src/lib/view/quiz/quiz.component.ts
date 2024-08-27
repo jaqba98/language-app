@@ -2,13 +2,14 @@ import { Component, Input, OnInit } from '@angular/core';
 import cloneDeep from 'clone-deep';
 
 import { BankModel } from '../bank/bank.model';
-import { ButtonTextComponent } from '../../control/button-text/button-text.component';
 import { CardComponent } from '../../misc/card/card.component';
-import { FlexComponent } from '../../misc/flex/flex.component';
+import { FlexComponent } from '../../layout/flex/flex.component';
 import { TextComponent } from '../../misc/text/text.component';
-import { InputComponent } from '../../control/input/input.component';
 import { PositionComponent } from '../../misc/position/position.component';
 import { CounterComponent } from '../../misc/counter/counter.component';
+import { QuizFormComponent } from '../../form/quiz-form/quiz-form.component';
+import { QuizFormModel } from '../../form/quiz-form/quiz-form.model';
+import { RestartFormComponent } from '../../form/restart-form/restart-form.component';
 
 @Component({
   selector: 'lib-quiz',
@@ -17,10 +18,10 @@ import { CounterComponent } from '../../misc/counter/counter.component';
     CardComponent,
     FlexComponent,
     TextComponent,
-    InputComponent,
-    ButtonTextComponent,
     PositionComponent,
     CounterComponent,
+    QuizFormComponent,
+    RestartFormComponent,
   ],
   templateUrl: './quiz.component.html',
 })
@@ -41,7 +42,8 @@ export class QuizComponent implements OnInit {
     this.initQuiz();
   }
 
-  onSubmit() {
+  onSubmit(event: QuizFormModel) {
+    this.input = event.answer;
     this.checkWord();
     this.nextWord();
   }

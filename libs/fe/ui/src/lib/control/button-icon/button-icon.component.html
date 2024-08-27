@@ -1,9 +1,9 @@
 <lib-button
-    #self
-    [link]="link"
-    [fullWidth]="fullWidth"
-    (eventClick)="emitClick()"
-    (eventBlur)="emitBlur()"
+  [control]="control"
+  [isPrimary]="isPrimary"
+  (clickEvent)="onClickEvent()"
+  (mouseEnterEvent)="onMouseEnterEvent()"
+  (mouseLeaveEvent)="onMouseLeaveEvent()"
 >
-    <lib-icon [src]="src" alt="alt"></lib-icon>
+    <lib-icon [src]="icon" [alt]="alt"></lib-icon>
 </lib-button>

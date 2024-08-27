@@ -1,12 +1,7 @@
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-} from '@angular/core';
 
-import { TextType } from './text.type';
+import { TextColorType, TextType } from './text.type';
 
 @Component({
   selector: 'lib-text',
@@ -18,25 +13,15 @@ import { TextType } from './text.type';
 export class TextComponent {
   @Input({ required: true }) value!: string;
 
-  @Input() textType: TextType = 'paragraph';
+  @Input() type: TextType = 'paragraph';
 
-  @Input() clickable = false;
+  @Input() textColor: TextColorType = 'tertiary';
 
-  @Output() eventMouseEnter = new EventEmitter();
-
-  @Output() eventMouseLeave = new EventEmitter();
-
-  @Output() eventOnClick = new EventEmitter();
-
-  onMouseEnter() {
-    this.eventMouseEnter.emit();
-  }
-
-  onMouseLeave() {
-    this.eventMouseLeave.emit();
-  }
-
-  onClick() {
-    this.eventOnClick.emit();
+  getTextClasses() {
+    return {
+      text__primary: this.textColor === 'primary',
+      text__secondary: this.textColor === 'secondary',
+      text__tertiary: this.textColor === 'tertiary',
+    };
   }
 }

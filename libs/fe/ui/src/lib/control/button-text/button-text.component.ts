@@ -1,9 +1,11 @@
 import {
-  Component, EventEmitter, Input, Output, ViewChild,
+  Component, EventEmitter, Input, Output,
 } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
-import { ButtonComponent } from '../button/button.component';
 import { TextComponent } from '../../misc/text/text.component';
+import { TextColorType } from '../../misc/text/text.type';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'lib-button-text',
@@ -13,26 +15,29 @@ import { TextComponent } from '../../misc/text/text.component';
     TextComponent,
   ],
   templateUrl: './button-text.component.html',
-  styleUrl: './button-text.component.scss',
 })
 export class ButtonTextComponent {
-  @ViewChild('self') self!: ButtonComponent;
+  @Input({ required: true }) control!: FormControl;
 
-  @Input({ required: true }) value!: string;
+  @Input({ required: true }) label!: string;
 
-  @Input() link: string | null = null;
+  @Input() isPrimary = false;
 
   @Input() fullWidth = false;
 
-  @Output() eventClick = new EventEmitter();
+  @Output() clickEvent = new EventEmitter();
 
-  @Output() eventBlur = new EventEmitter();
+  textColor: TextColorType = 'tertiary';
 
-  emitClick() {
-    this.eventClick.emit();
+  onClickEvent() {
+    this.clickEvent.emit();
   }
 
-  emitBlur() {
-    this.eventBlur.emit();
+  onMouseEnterEvent() {
+    this.textColor = 'primary';
+  }
+
+  onMouseLeaveEvent() {
+    this.textColor = 'tertiary';
   }
 }

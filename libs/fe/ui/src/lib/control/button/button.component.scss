@@ -1,23 +1,42 @@
-@use '@english-learning/fe-styles/src/lib/abstract/mixin';
-@use '@english-learning/fe-styles/src/lib/abstract/function';
-@use '@english-learning/fe-styles/src/lib/abstract/variable';
+@use '@english-learning/fe-styles/src/lib/abstract';
 
 .button {
-    @include mixin.set-box-model($padding: 1em);
+    @include abstract.slider-parent;
 
-    background-color: function.get-color('button');
-    box-shadow: variable.$box-shadow-size-big function.get-color('shadow');
-    border-radius: variable.$border-radius;
-    border: none;
+    padding: abstract.$component-padding;
+    background-color: abstract.$primary-color;
+    border: abstract.$component-border abstract.$tertiary-color;
+    border-radius: abstract.$component-radius;
     cursor: pointer;
-    height: 50px;
 
-    &:active {
-        transform: translateY(2px);
-        box-shadow: variable.$box-shadow-size-small function.get-color('shadow');
+    &__slider {
+        @include abstract.slider-self;
+        @include abstract.slider-right-to-left-hide;
+
+        background-color: abstract.$tertiary-color;
     }
 
     &__full-width {
         width: 100%;
+    }
+
+    &__content {
+        position: relative;
+        z-index: abstract.$z-index-higher;
+    }
+
+    &:hover {
+        .button__slider {
+            @include abstract.slider-left-to-right-show;
+        }
+    }
+
+    &:focus {
+        outline: abstract.$component-border abstract.$tertiary-color;
+        outline-offset: 2px;
+    }
+
+    &:active {
+        @include abstract.click-animation;
     }
 }

@@ -1,9 +1,10 @@
 <lib-button
-    #self
-    [link]="link"
-    [fullWidth]="fullWidth"
-    (eventClick)="emitClick()"
-    (eventBlur)="emitBlur()"
+  [control]="control"
+  [isPrimary]="isPrimary"
+  [fullWidth]="fullWidth"
+  (clickEvent)="onClickEvent()"
+  (mouseEnterEvent)="onMouseEnterEvent()"
+  (mouseLeaveEvent)="onMouseLeaveEvent()"
 >
-    <lib-text [value]="value"></lib-text>
+  <lib-text [value]="label" [textColor]="textColor"></lib-text>
 </lib-button>

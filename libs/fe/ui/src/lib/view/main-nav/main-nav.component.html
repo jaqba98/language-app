@@ -1,33 +1,21 @@
-<lib-flex flexDirection="column" gap="0.25em">
-  <lib-card>
-    <!-- main nav -->
-    <lib-flex alignItems="center" justifyContent="space-between">
-      <!-- logo -->
-      <lib-icon src="icon/school.svg" alt="school icon"></lib-icon>
-      <!-- hamburger for mobile -->
+<lib-flex flexDirection="column">
+  <lib-card cardType="card__main-nav">
+    <lib-flex alignItems="center" [justifyContent]="mainNavJustifyContent">
+      <lib-icon src="icon/school.svg" alt="Logo School Icon"></lib-icon>
       @if (isMobile) {
-        <lib-button-icon #hamburger src="icon/menu.svg" alt="hamburger icon"></lib-button-icon>
-      }
-      <!-- main nav menu options for other devices -->
-      @if (!isMobile) {
-        <lib-flex gap="0.5em">
-          @for (option of options; track option.link) {
-            <lib-button-text [value]="option.value" [link]="option.link"></lib-button-text>
-          }
-        </lib-flex>
+        <lib-wrapper #hamburgerForm>
+          <lib-hamburger-form (hamburgerFormEvent)="onEvent()"></lib-hamburger-form>
+        </lib-wrapper>
+      } @else {
+        <lib-main-nav-form></lib-main-nav-form>
       }
     </lib-flex>
   </lib-card>
-  <!-- main nav menu options for mobile -->
   @if (isMobile && isMenuVisible) {
-    <lib-card #menuCard>
-      <lib-wrapper #menuCardOptions>
-        <lib-flex flexDirection="column" gap="0.5em">
-          @for (option of options; track option.link) {
-            <lib-button-text [value]="option.value" [link]="option.link" [fullWidth]="true"></lib-button-text>
-          }
-        </lib-flex>
-      </lib-wrapper>
-    </lib-card>
+    <lib-wrapper #mainNavForm>
+      <lib-card cardType="card__main-nav-options-mobile">
+        <lib-main-nav-form (mainNavFormEvent)="onEvent()"></lib-main-nav-form>
+      </lib-card>
+    </lib-wrapper>
   }
 </lib-flex>

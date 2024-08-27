@@ -1,17 +1,20 @@
-@use '@english-learning/fe-styles/src/lib/abstract/mixin';
-@use '@english-learning/fe-styles/src/lib/abstract/function';
-@use '@english-learning/fe-styles/src/lib/abstract/variable';
+@use '@english-learning/fe-styles/src/lib/abstract';
 
 .card {
-    @include mixin.set-box-model($padding: 1em);
+    background-color: abstract.$primary-color;
+    box-shadow: abstract.$shadow-size abstract.$secondary-color;
 
-    border-radius: variable.$border-radius-default;
-
-    &__default {
-        background-color: function.get-color('secondary');
+    &__main-nav {
+        padding: abstract.$component-padding;
     }
 
-    &__darken {
-        background-color: function.get-color('tertiary');
+    &__main-nav-options-mobile {
+        padding: abstract.$component-padding;
+        border-top: abstract.$component-border abstract.$secondary-color;
+    }
+
+    &__default {
+        padding: abstract.$component-padding;
+        border-radius: abstract.$component-radius;
     }
 }

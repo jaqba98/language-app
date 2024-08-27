@@ -1,5 +1,8 @@
-@use '@english-learning/fe-styles/src/lib/abstract/mixin';
+:host {
+  display: contents;
+}
 
 .icon {
-    display: block;
+  display: block;
+  height: 100%;
 }

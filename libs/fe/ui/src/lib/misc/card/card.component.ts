@@ -1,8 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  Component, ViewChild, ElementRef, Input,
-} from '@angular/core';
-import { Properties } from 'csstype';
+import { Component, Input } from '@angular/core';
 
 import { CardType } from './card.type';
 
@@ -14,9 +11,5 @@ import { CardType } from './card.type';
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
-  @ViewChild('self') self!: ElementRef;
-
   @Input() cardType: CardType = 'card__default';
-
-  @Input() height: Properties['height'] = 'auto';
 }

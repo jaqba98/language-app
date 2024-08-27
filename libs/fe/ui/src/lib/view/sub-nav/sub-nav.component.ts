@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
-import { LinkComponent } from '../../control/link/link.component';
 import { CardComponent } from '../../misc/card/card.component';
 import { TextComponent } from '../../misc/text/text.component';
-import { FlexComponent } from '../../misc/flex/flex.component';
+import { FlexComponent } from '../../layout/flex/flex.component';
 import { RoutesMenuModel } from '../../model/routes-menu.model';
 
 @Component({
@@ -12,7 +11,6 @@ import { RoutesMenuModel } from '../../model/routes-menu.model';
   standalone: true,
   imports: [
     CommonModule,
-    LinkComponent,
     CardComponent,
     TextComponent,
     FlexComponent,

@@ -1,6 +1,6 @@
 <lib-position position="relative">
     <lib-card>
-        <lib-card cardType="card__darken">
+        <lib-card>
                 <lib-flex gap="1em" flexDirection="column">
                     @if (currentWords.length > 0) {
                         <lib-position position="absolute" top="0" left="10px">
@@ -15,8 +15,7 @@
                         <lib-flex alignItems="center" justifyContent="center">
                             <lib-text textType="header3" [value]="currentWord.polish"></lib-text>
                         </lib-flex>
-                        <lib-input [value]="input" (eventInput)="input = $event"></lib-input>
-                        <lib-button-text value="Submit" (eventClick)="onSubmit()"></lib-button-text>
+                        <lib-quiz-form (quizFormEvent)="onSubmit($event)"></lib-quiz-form>
                     } @else {
                         <lib-flex alignItems="center">
                             <lib-text value="Finish!" textType="header2"></lib-text>
@@ -29,7 +28,7 @@
                             <lib-text value="Incorrect answers"></lib-text>
                             <lib-counter [value]="errors" type="error"></lib-counter>
                         </lib-flex>
-                        <lib-button-text value="Restart" (eventClick)="onRestart()"></lib-button-text>
+                        <lib-restart-form (restartFormEvent)="onRestart()"></lib-restart-form>
                     }
                 </lib-flex>
         </lib-card>

@@ -1,16 +1,14 @@
-<div (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="onClick()">
-  @switch (textType) {
-    @case ('paragraph') {
-      <p class="text text__paragraph" [ngClass]="{text__clickable: clickable}">{{ value }}</p>
-    }
-    @case ('header1') {
-      <h1 class="text text__header1" [ngClass]="{text__clickable: clickable}">{{ value }}</h1>
-    }
-    @case ('header2') {
-      <h2 class="text text__header2" [ngClass]="{text__clickable: clickable}">{{ value }}</h2>
-    }
-    @case ('header3') {
-      <h2 class="text text__header3" [ngClass]="{text__clickable: clickable}">{{ value }}</h2>
-    }
+@switch (type) {
+  @case ('paragraph') {
+    <p class="text text__paragraph" [ngClass]="getTextClasses()">{{ value }}</p>
   }
-</div>
+  @case ('header1') {
+    <h1 class="text text__header1" [ngClass]="getTextClasses()">{{ value }}</h1>
+  }
+  @case ('header2') {
+    <h2 class="text text__header2" [ngClass]="getTextClasses()">{{ value }}</h2>
+  }
+  @case ('header3') {
+    <h3 class="text text__header3" [ngClass]="getTextClasses()">{{ value }}</h3>
+  }
+}

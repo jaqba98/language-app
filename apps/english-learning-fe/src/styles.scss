@@ -1,16 +1,12 @@
-@use "@english-learning/fe-styles/src/lib/abstract/mixin";
-@use "@english-learning/fe-styles/src/lib/abstract/function";
-@use "@english-learning/fe-styles/src/lib/abstract/variable";
+@use "@english-learning/fe-styles/src/lib/abstract/variables";
 
 * {
-    @include mixin.set-box-model(0, 0);
-
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
 body {
-    @include mixin.set-box-model($padding: 0.25em);
-
-    background-color: function.get-color("primary");
-    min-width: variable.$body-min-width;
+    background-color: variables.$body-color;
+    min-width: variables.$body-min-width;
 }

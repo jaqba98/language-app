@@ -1,35 +1,52 @@
+import { CommonModule } from '@angular/common';
 import {
-  Component, ViewChild, ElementRef, Input, Output, EventEmitter,
+  Component, EventEmitter, Input, Output,
 } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'lib-button',
   standalone: true,
-  imports: [RouterModule],
+  imports: [CommonModule],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
-  @ViewChild('self') self!: ElementRef;
+  @Input({ required: true }) control!: FormControl;
 
-  @Input() link: string | null = null;
+  @Input() isPrimary = false;
 
   @Input() fullWidth = false;
 
-  @Output() eventClick = new EventEmitter();
+  @Output() clickEvent = new EventEmitter();
 
-  @Output() eventBlur = new EventEmitter();
+  @Output() mouseEnterEvent = new EventEmitter();
+
+  @Output() mouseLeaveEvent = new EventEmitter();
+
+  isFocused = false;
 
   onClick() {
-    this.eventClick.emit();
+    this.control.setValue(true);
+    if (this.isPrimary) return;
+    this.clickEvent.emit();
   }
 
-  onBlur() {
-    this.eventBlur.emit();
+  onMouseEnter() {
+    this.mouseEnterEvent.emit();
   }
 
-  setFocus() {
-    this.self.nativeElement.focus();
+  onMouseLeave() {
+    this.mouseLeaveEvent.emit();
+  }
+
+  getButtonType() {
+    return this.isPrimary ? 'submit' : 'button';
+  }
+
+  buildStyles() {
+    return {
+      'button__full-width': this.fullWidth,
+    };
   }
 }
