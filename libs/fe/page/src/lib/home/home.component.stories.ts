@@ -4,7 +4,7 @@ import { HomeComponent } from './home.component';
 
 const meta: Meta<HomeComponent> = {
   component: HomeComponent,
-  title: 'HomeComponent',
+  title: 'fe/page/home',
 };
 export default meta;
 type Story = StoryObj<HomeComponent>;
