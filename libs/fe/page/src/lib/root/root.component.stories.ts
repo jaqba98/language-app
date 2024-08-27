@@ -4,7 +4,7 @@ import { RootComponent } from './root.component';
 
 const meta: Meta<RootComponent> = {
   component: RootComponent,
-  title: 'RootComponent',
+  title: 'fe/page/root',
   parameters: {
     layout: 'fullscreen',
   },
