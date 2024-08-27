@@ -1,7 +1,15 @@
 @use '@english-learning/fe-styles/src/lib/abstract';
 
 .card {
-    @include abstract.component-builder__shape;
-    @include abstract.component-builder__bright;
-    @include abstract.component-builder__bright-shadow;
+    background-color: abstract.$primary-color;
+    box-shadow: abstract.$shadow-size abstract.$secondary-color;
+
+    &__bare {
+        padding: abstract.$component-padding-tiny;
+    }
+
+    &__default {
+        padding: abstract.$component-padding;
+        border-radius: abstract.$component-radius;
+    }
 }

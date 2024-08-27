@@ -1,4 +1,4 @@
-@use "@english-learning/fe-styles/src/lib/abstract";
+@use "@english-learning/fe-styles/src/lib/abstract/variables";
 
 * {
     padding: 0;
@@ -7,6 +7,6 @@
 }
 
 body {
-    background-color: abstract.$body__background;
-    min-width: abstract.$body__min-width;
+    background-color: variables.$body-color;
+    min-width: variables.$body-min-width;
 }

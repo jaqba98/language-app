@@ -3,7 +3,7 @@
 @mixin control-builder__button {
     cursor: pointer;
     outline: none;
-    padding: variables.$control__padding;
+    padding: variables.$component-padding;
 }
 
 @mixin control-builder__slider {

@@ -1,4 +1,5 @@
 import { Component, ViewChild, HostListener } from '@angular/core';
+import { Properties } from 'csstype';
 
 import {
   ObserverModel, BreakpointModel, BreakpointService, BreakpointEnum,
@@ -9,7 +10,6 @@ import { CardComponent } from '../../misc/card/card.component';
 import { IconComponent } from '../../misc/icon/icon.component';
 import { HamburgerFormComponent } from '../../form/hamburger-form/hamburger-form.component';
 import { MainNavFormComponent } from '../../form/main-nav-form/main-nav-form.component';
-import { Properties } from 'csstype';
 
 @Component({
   selector: 'lib-main-nav',

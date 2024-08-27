@@ -1,17 +1,15 @@
-$body__min-width: 300px;
+$body-min-width: 300px;
+$shadow-size: 0 5px 5px;
+$component-padding-tiny: 0.25rem;
+$component-padding: 1rem;
+$component-radius: 0.25rem;
 
-$component__padding: 0.25rem 0.5rem;
-$component__radius: 0.25rem;
 $component__shadow-size: 0 0.25rem 0.25em;
 $component__border-size: 1px solid;
 $component__offset: 2px;
-
 $control__padding: 1rem;
-
 $main-nav-form__padding: 0.25rem;
-
 $animation-speed: 0.25s;
-
 $z-index-normal: 0;
 $z-index-high: 1;
 $z-index-higher: 2;
@@ -19,6 +17,5 @@ $z-index-highest: 3;
 $z-index-low: -1;
 $z-index-lower: -2;
 $z-index-lowest: -3;
-
 $control-border: 2px solid;
 $label-padding: 0.45rem;
