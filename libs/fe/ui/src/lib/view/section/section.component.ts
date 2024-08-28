@@ -6,9 +6,10 @@ import {
   ObserverModel, BreakpointModel, BreakpointService, BreakpointEnum,
 } from '@english-learning/fe-system';
 import { FlexComponent } from '../../layout/flex/flex.component';
-import { FlexItemComponent } from '../../misc/flex-item/flex-item.component';
-import { SubNavComponent } from '../sub-nav/sub-nav.component';
+import { FlexItemComponent } from '../../layout/flex-item/flex-item.component';
 import { RoutesMenuModel } from '../../model/routes-menu.model';
+import { CardComponent } from '../../misc/card/card.component';
+import { TextComponent } from '../../misc/text/text.component';
 
 @Component({
   selector: 'lib-section',
@@ -17,7 +18,8 @@ import { RoutesMenuModel } from '../../model/routes-menu.model';
     RouterOutlet,
     FlexComponent,
     FlexItemComponent,
-    SubNavComponent,
+    CardComponent,
+    TextComponent,
   ],
   templateUrl: './section.component.html',
 })

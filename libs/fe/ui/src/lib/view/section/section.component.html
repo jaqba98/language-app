@@ -1,6 +1,12 @@
-<lib-flex [flexDirection]="flexDirection" gap="0.25em">
+<lib-flex [flexDirection]="flexDirection" gap="1rem">
   <lib-flex-item>
-    <lib-sub-nav [header]="header" [options]="options"></lib-sub-nav>
+    <lib-card cardType="card__secondary">
+      <lib-text
+        [value]="header"
+        textColor="text__secondary"
+        type="header3">
+      </lib-text>
+    </lib-card>
   </lib-flex-item>
   <lib-flex-item flex="1">
     <router-outlet></router-outlet>

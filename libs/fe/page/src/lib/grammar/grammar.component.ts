@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 
-import {
-  RoutesMenuModel,
-  SectionComponent,
-} from '@english-learning/fe-ui';
+import { SectionComponent, RoutesMenuModel } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-grammar',
@@ -13,7 +10,13 @@ import {
 })
 export class GrammarComponent {
   options: RoutesMenuModel[] = [
-    { value: 'Present Simple', link: '/grammar/present-simple' },
-    { value: 'Present Continuous', link: '/grammar/present-continuous' },
+    {
+      value: 'Present Simple',
+      link: '/grammar/present-simple',
+    },
+    {
+      value: 'Present Continuous',
+      link: '/grammar/present-continuous',
+    },
   ];
 }
