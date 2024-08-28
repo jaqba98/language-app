@@ -9,9 +9,9 @@ const meta: Meta<CardComponent> = {
 export default meta;
 type Story = StoryObj<CardComponent>;
 
-export const Bare: Story = {
+export const Default: Story = {
   args: {
-    cardType: 'card__bare',
+    cardType: 'card__default',
   },
 };
 
@@ -21,10 +21,8 @@ export const MainNav: Story = {
   },
 };
 
-export const MainNavOptionsMobile: Story = {
+export const MainNavMenuOptions: Story = {
   args: {
-    cardType: 'card__main-nav-options-mobile',
+    cardType: 'card__main-nav-menu-options',
   },
 };
-
-export const Default: Story = {};

@@ -15,13 +15,5 @@ export class TextComponent {
 
   @Input() type: TextType = 'paragraph';
 
-  @Input() textColor: TextColorType = 'tertiary';
-
-  getTextClasses() {
-    return {
-      text__primary: this.textColor === 'primary',
-      text__secondary: this.textColor === 'secondary',
-      text__tertiary: this.textColor === 'tertiary',
-    };
-  }
+  @Input() textColor: TextColorType = 'text__leave';
 }

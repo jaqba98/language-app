@@ -1,20 +1,17 @@
 @use '@english-learning/fe-styles/src/lib/abstract';
 
 .card {
-    background-color: abstract.$primary-color;
-    box-shadow: abstract.$shadow-size abstract.$secondary-color;
-
-    &__main-nav {
-        padding: abstract.$component-padding;
-    }
-
-    &__main-nav-options-mobile {
-        padding: abstract.$component-padding;
-        border-top: abstract.$component-border abstract.$secondary-color;
-    }
+    background-color: abstract.$component-leave-color;
+    padding: abstract.$component-padding;
 
     &__default {
-        padding: abstract.$component-padding;
         border-radius: abstract.$component-radius;
+    }
+
+    &__main-nav {
+        &-menu-options {
+            border-top: abstract.$component-border-size abstract.$component-border-color;
+            padding: 2rem abstract.$component-padding;
+        }
     }
 }

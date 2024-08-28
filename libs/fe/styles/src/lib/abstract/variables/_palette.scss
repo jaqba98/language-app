@@ -1,9 +1,19 @@
-$body-color: #f1f3fb;
-$primary-color: #fff;
-$secondary-color: #c3ccef;
-$tertiary-color: #778bda;
+@use 'sass:color';
+
+// Base palette
+$primary-color: #494ca2;
+$accent-color: #eee;
+
+// Specialist palette
+$body-color: $accent-color;
+$component-enter-color: $accent-color;
+$component-leave-color: $primary-color;
+$component-border-color: color.adjust($primary-color, $lightness: -10%);
 
 // old
+$card-default-color: $primary-color;
+$secondary-color: #1B262C;
+$tertiary-color: #18122B;
 $component__bright-primary: #fff;
 $component__bright-secondary: #c3ccef;
 $component__bright-tertiary: #778bda;

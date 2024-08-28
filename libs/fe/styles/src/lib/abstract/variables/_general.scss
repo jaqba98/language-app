@@ -1,8 +1,7 @@
-$body-min-width: 300px;
-$shadow-size: 0 5px 5px;
+$body__min-width: 300px;
 $component-padding: 1rem;
 $component-radius: 0.25rem;
-$component-border: 2px solid;
+$component-border-size: 1px solid;
 $z-index-normal: 0;
 $z-index-high: 1;
 $z-index-higher: 2;
@@ -10,16 +9,21 @@ $z-index-highest: 3;
 $z-index-low: -1;
 $z-index-lower: -2;
 $z-index-lowest: -3;
+$font-size-small: 1em;
+$font-size-medium: 1.5em;
+$font-size-large: 2em;
+
+// old
+$shadow-size: 0 5px 5px;
+$component-border: 1px solid;
 $animation-speed-fast: 0.1s;
 $animation-speed-normal: 0.25s;
 $root-width: 960px;
-
-// old
 $component__shadow-size: 0 0.25rem 0.25em;
 $component__border-size: 1px solid;
 $component__offset: 2px;
 $control__padding: 1rem;
 $main-nav-form__padding: 0.25rem;
-$animation-speed: 0.25s;
+$animation-speed: 0.5s;
 $control-border: 2px solid;
 $label-padding: 0.45rem;

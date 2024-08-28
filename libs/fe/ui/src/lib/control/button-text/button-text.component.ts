@@ -27,17 +27,17 @@ export class ButtonTextComponent {
 
   @Output() clickEvent = new EventEmitter();
 
-  textColor: TextColorType = 'tertiary';
+  textColor: TextColorType = 'text__leave';
 
   onClickEvent() {
     this.clickEvent.emit();
   }
 
   onMouseEnterEvent() {
-    this.textColor = 'primary';
+    this.textColor = 'text__enter';
   }
 
   onMouseLeaveEvent() {
-    this.textColor = 'tertiary';
+    this.textColor = 'text__leave';
   }
 }

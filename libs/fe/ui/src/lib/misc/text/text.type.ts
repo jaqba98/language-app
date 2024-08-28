@@ -5,6 +5,5 @@ export type TextType =
   | 'header3';
 
 export type TextColorType =
-  | 'primary'
-  | 'secondary'
-  | 'tertiary';
+  | 'text__enter'
+  | 'text__leave';

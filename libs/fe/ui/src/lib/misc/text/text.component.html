@@ -1,14 +1,14 @@
 @switch (type) {
   @case ('paragraph') {
-    <p class="text text__paragraph" [ngClass]="getTextClasses()">{{ value }}</p>
+    <p class="text text__paragraph" [ngClass]="textColor">{{ value }}</p>
   }
   @case ('header1') {
-    <h1 class="text text__header1" [ngClass]="getTextClasses()">{{ value }}</h1>
+    <h1 class="text text__header1" [ngClass]="textColor">{{ value }}</h1>
   }
   @case ('header2') {
-    <h2 class="text text__header2" [ngClass]="getTextClasses()">{{ value }}</h2>
+    <h2 class="text text__header2" [ngClass]="textColor">{{ value }}</h2>
   }
   @case ('header3') {
-    <h3 class="text text__header3" [ngClass]="getTextClasses()">{{ value }}</h3>
+    <h3 class="text text__header3" [ngClass]="textColor">{{ value }}</h3>
   }
 }

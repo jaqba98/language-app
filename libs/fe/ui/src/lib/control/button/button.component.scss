@@ -4,8 +4,8 @@
     @include abstract.slider-parent;
 
     padding: abstract.$component-padding;
-    background-color: abstract.$primary-color;
-    border: abstract.$component-border abstract.$tertiary-color;
+    background-color: abstract.$component-leave-color;
+    border: abstract.$component-border abstract.$component-enter-color;
     border-radius: abstract.$component-radius;
     cursor: pointer;
 
@@ -13,7 +13,7 @@
         @include abstract.slider-self;
         @include abstract.slider-right-to-left-hide;
 
-        background-color: abstract.$tertiary-color;
+        background-color: abstract.$component-enter-color;
     }
 
     &__full-width {
@@ -29,11 +29,6 @@
         .button__slider {
             @include abstract.slider-left-to-right-show;
         }
-    }
-
-    &:focus {
-        outline: abstract.$component-border abstract.$tertiary-color;
-        outline-offset: 2px;
     }
 
     &:active {

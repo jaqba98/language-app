@@ -7,7 +7,7 @@ const preview: Preview = {
       values: [
         {
           name: 'default',
-          value: '#f1f3fb',
+          value: '#eee',
         },
       ],
     },
