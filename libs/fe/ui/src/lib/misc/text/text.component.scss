@@ -14,6 +14,10 @@
     color: abstract.$component-enter-color;
   }
 
+  &__secondary {
+    color: abstract.$text-secondary-color;
+  }
+
   &__paragraph {
     font-size: abstract.$font-size-small;
   }

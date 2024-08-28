@@ -3,12 +3,15 @@
 // Base palette
 $primary-color: #494ca2;
 $accent-color: #eee;
+$text-secondary-color: #666;
 
 // Specialist palette
 $body-color: $accent-color;
 $component-enter-color: $accent-color;
 $component-leave-color: $primary-color;
+$component-secondary-color: color.adjust($accent-color, $lightness: -5%);
 $component-border-color: color.adjust($primary-color, $lightness: -10%);
+$component-secondary-border-color: color.adjust($component-secondary-color, $lightness: -10%);
 
 // old
 $card-default-color: $primary-color;

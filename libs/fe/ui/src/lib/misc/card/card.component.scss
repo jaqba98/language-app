@@ -14,4 +14,10 @@
             padding: 2rem abstract.$component-padding;
         }
     }
+
+    &__secondary {
+        border-radius: abstract.$component-radius;
+        background-color: abstract.$component-secondary-color;
+        border: abstract.$component-border-size abstract.$component-secondary-border-color;
+    }
 }

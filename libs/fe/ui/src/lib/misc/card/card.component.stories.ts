@@ -26,3 +26,9 @@ export const MainNavMenuOptions: Story = {
     cardType: 'card__main-nav-menu-options',
   },
 };
+
+export const Secondary: Story = {
+  args: {
+    cardType: 'card__secondary',
+  },
+};

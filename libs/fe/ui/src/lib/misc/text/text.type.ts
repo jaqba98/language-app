@@ -6,4 +6,5 @@ export type TextType =
 
 export type TextColorType =
   | 'text__enter'
-  | 'text__leave';
+  | 'text__leave'
+  | 'text__secondary';
