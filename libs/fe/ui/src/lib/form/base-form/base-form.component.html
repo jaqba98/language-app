@@ -26,9 +26,8 @@
         }
         @case ('link') {
           <lib-link
-            [control]="getFormControl(control.name)"
             [label]="control.label"
-            (clickEvent)="onSubmit()">
+            [path]="control.path">
           </lib-link>
         }
       }

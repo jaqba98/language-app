@@ -6,16 +6,18 @@ import { SectionStoreModel } from '../model/section-store.model';
 export const initialGrammarState: SectionStoreModel = {
   tabs: [
     {
-      name: 'presentSimple',
+      name: 'present-simple',
       label: 'Present Simple',
       path: '/grammar/present-simple',
       isDefault: true,
+      content: '# Present Simple',
     },
     {
-      name: 'presentContinuous',
+      name: 'present-continuous',
       label: 'Present Continuous',
       path: '/grammar/present-continuous',
       isDefault: false,
+      content: '# Present Continuous',
     },
   ],
 };

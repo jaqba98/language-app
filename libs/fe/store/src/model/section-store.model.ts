@@ -3,6 +3,7 @@ export interface SectionTabModel {
   label: string;
   path: string;
   isDefault: boolean;
+  content: string;
 }
 
 export interface SectionStoreModel {

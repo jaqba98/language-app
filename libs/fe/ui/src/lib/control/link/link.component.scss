@@ -4,11 +4,11 @@
   background-color: transparent;
   border: none;
   user-select: none;
+  text-decoration: none;
   cursor: pointer;
 
   &:hover {
     background-color: transparent;
-    text-decoration: underline;
   }
 
   &:active {

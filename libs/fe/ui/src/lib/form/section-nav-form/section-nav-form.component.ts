@@ -5,9 +5,9 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
 import { StoreModel } from '@english-learning/fe-store';
+import { ActivatedRoute } from '@angular/router';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { BaseFormModel, ControlKindEnum, ControlType } from '../base-form/base-form.model';
-import { SectionNavFormModel } from './section-nav-form.model';
 import { RouteNavigationService } from '../../infrastructure/route-navigation.service';
 
 @Component({
@@ -26,6 +26,7 @@ export class SectionNavFormComponent implements OnInit, OnDestroy {
   private sub!: Subscription;
 
   constructor(
+    private readonly activated: ActivatedRoute,
     private readonly store: Store<StoreModel>,
     private readonly route: RouteNavigationService,
   ) {}
@@ -45,21 +46,16 @@ export class SectionNavFormComponent implements OnInit, OnDestroy {
         }, { controls: [] });
       const defaultTab = section.tabs.find((tab) => tab.isDefault);
       if (!defaultTab) throw new Error('Not found default tab!');
-      this.route.navigate(defaultTab.path);
+      this.activated.paramMap
+        .subscribe((params) => {
+          const name = params.get('name');
+          if (!name) this.route.navigate(defaultTab.path);
+        })
+        .unsubscribe();
     });
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
-  }
-
-  onEvent(model: SectionNavFormModel) {
-    const kind = Object.keys(model).find((key) => model[key]);
-    if (!kind) throw new Error('Not found any active route!');
-    const path = this.form.controls
-      .filter((control) => control.kind === ControlKindEnum.link)
-      .find((control) => control.name === kind)?.path;
-    if (!path) throw new Error('Path not exist!');
-    this.route.navigate(path);
   }
 }
