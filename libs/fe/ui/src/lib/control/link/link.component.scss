@@ -4,14 +4,10 @@
   background-color: transparent;
   border: none;
   user-select: none;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 
   &:hover {
     background-color: transparent;
-  }
-
-  &:active {
-    @include abstract.click-animation;
   }
 }
