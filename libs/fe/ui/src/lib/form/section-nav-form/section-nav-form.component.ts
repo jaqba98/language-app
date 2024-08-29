@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import {
+  Component, Input, OnDestroy, OnInit,
+} from '@angular/core';
 import { Properties } from 'csstype';
 import { Store } from '@ngrx/store';
+import { Subscription } from 'rxjs';
 
 import {
   BreakpointEnum, BreakpointModel, BreakpointService, ObserverModel,
 } from '@english-learning/fe-system';
-import { SectionStoreModel } from '@english-learning/fe-store';
+import { StoreModel } from '@english-learning/fe-store';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { BaseFormModel, ControlKindEnum, ControlType } from '../base-form/base-form.model';
 
@@ -15,30 +18,22 @@ import { BaseFormModel, ControlKindEnum, ControlType } from '../base-form/base-f
   imports: [BaseFormComponent],
   templateUrl: './section-nav-form.component.html',
 })
-export class SectionNavFormComponent implements ObserverModel<BreakpointModel> {
+export class SectionNavFormComponent implements ObserverModel<BreakpointModel>, OnInit, OnDestroy {
+  @Input({ required: true }) storeName!: keyof StoreModel;
+
   direction: Properties['flexDirection'] = 'row';
 
   form: BaseFormModel = {
     controls: [],
   };
 
+  private sub!: Subscription;
+
   constructor(
     private readonly breakpoint: BreakpointService,
-    private store: Store<{ grammar: SectionStoreModel }>,
+    private store: Store<StoreModel>,
   ) {
     this.breakpoint.addObserver(this);
-    this.store.select('grammar').subscribe((data) => {
-      this.form.controls = [];
-      data.tabs
-        .map((tab): ControlType => ({
-          kind: ControlKindEnum.buttonText,
-          name: tab.label,
-          label: tab.label,
-          isPrimary: false,
-          fullWidth: true,
-        }))
-        .forEach((tab) => this.form.controls.push(tab));
-    });
   }
 
   update(data: BreakpointModel) {
@@ -47,5 +42,26 @@ export class SectionNavFormComponent implements ObserverModel<BreakpointModel> {
     } else {
       this.direction = 'row';
     }
+  }
+
+  ngOnInit() {
+    this.sub = this.store.select(this.storeName).subscribe((section) => {
+      this.form = section.tabs
+        .map((tab): ControlType => ({
+          kind: ControlKindEnum.buttonText,
+          name: tab.label,
+          label: tab.label,
+          isPrimary: false,
+          fullWidth: true,
+        }))
+        .reduce((acc: BaseFormModel, curr: ControlType) => {
+          acc.controls.push(curr);
+          return acc;
+        }, { controls: [] });
+    });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 }

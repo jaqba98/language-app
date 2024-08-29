@@ -5,9 +5,16 @@ import { SectionStoreModel } from '../model/section-store.model';
 
 export const initialGrammarState: SectionStoreModel = {
   tabs: [
-    { label: 'Link 1', path: 'link1' },
-    { label: 'Link 2', path: 'link2' },
-    { label: 'Link 3', path: 'link3' },
+    {
+      label: 'Present Simple',
+      path: '/grammar/present-simple',
+      isDefault: true,
+    },
+    {
+      label: 'Present Continuous',
+      path: '/grammar/present-continuous',
+      isDefault: false,
+    },
   ],
 };
 
