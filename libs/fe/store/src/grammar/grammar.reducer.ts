@@ -1,12 +1,17 @@
 import { createReducer, on } from '@ngrx/store';
 
-import { incrementGrammar, decrementGrammar, resetGrammar } from './grammar.actions';
+import { getGrammar } from './grammar.actions';
+import { SectionStoreModel } from '../model/section-store.model';
 
-export const initialGrammarState = 0;
+export const initialGrammarState: SectionStoreModel = {
+  tabs: [
+    { label: 'Link 1', path: 'link1' },
+    { label: 'Link 2', path: 'link2' },
+    { label: 'Link 3', path: 'link3' },
+  ],
+};
 
 export const grammarReducer = createReducer(
   initialGrammarState,
-  on(incrementGrammar, (state) => state + 1),
-  on(decrementGrammar, (state) => state - 1),
-  on(resetGrammar, () => 0),
+  on(getGrammar, (state) => state),
 );

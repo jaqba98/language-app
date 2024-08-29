@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { Properties } from 'csstype';
+import { Store } from '@ngrx/store';
 
 import {
   BreakpointEnum, BreakpointModel, BreakpointService, ObserverModel,
 } from '@english-learning/fe-system';
+import { SectionStoreModel } from '@english-learning/fe-store';
 import { BaseFormComponent } from '../base-form/base-form.component';
-import { BaseFormModel, ControlKindEnum } from '../base-form/base-form.model';
+import { BaseFormModel, ControlKindEnum, ControlType } from '../base-form/base-form.model';
 
 @Component({
   selector: 'lib-section-nav-form',
@@ -16,8 +18,27 @@ import { BaseFormModel, ControlKindEnum } from '../base-form/base-form.model';
 export class SectionNavFormComponent implements ObserverModel<BreakpointModel> {
   direction: Properties['flexDirection'] = 'row';
 
-  constructor(private readonly breakpoint: BreakpointService) {
+  form: BaseFormModel = {
+    controls: [],
+  };
+
+  constructor(
+    private readonly breakpoint: BreakpointService,
+    private store: Store<{ grammar: SectionStoreModel }>,
+  ) {
     this.breakpoint.addObserver(this);
+    this.store.select('grammar').subscribe((data) => {
+      this.form.controls = [];
+      data.tabs
+        .map((tab): ControlType => ({
+          kind: ControlKindEnum.buttonText,
+          name: tab.label,
+          label: tab.label,
+          isPrimary: false,
+          fullWidth: true,
+        }))
+        .forEach((tab) => this.form.controls.push(tab));
+    });
   }
 
   update(data: BreakpointModel) {
@@ -27,37 +48,4 @@ export class SectionNavFormComponent implements ObserverModel<BreakpointModel> {
       this.direction = 'row';
     }
   }
-
-  form: BaseFormModel = {
-    controls: [
-      {
-        kind: ControlKindEnum.buttonText,
-        name: 'link1',
-        label: 'Link1',
-        isPrimary: false,
-        fullWidth: true,
-      },
-      {
-        kind: ControlKindEnum.buttonText,
-        name: 'link2',
-        label: 'Link2',
-        isPrimary: false,
-        fullWidth: true,
-      },
-      {
-        kind: ControlKindEnum.buttonText,
-        name: 'link3',
-        label: 'Link3',
-        isPrimary: false,
-        fullWidth: true,
-      },
-      {
-        kind: ControlKindEnum.buttonText,
-        name: 'link4',
-        label: 'Link4',
-        isPrimary: false,
-        fullWidth: true,
-      },
-    ],
-  };
 }
