@@ -1,0 +1,17 @@
+@use '@english-learning/fe-styles/src/lib/abstract';
+
+.link {
+  background-color: transparent;
+  border: none;
+  user-select: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  &:active {
+    @include abstract.click-animation;
+  }
+}

@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
 
-import { GrammarTemplateComponent, GrammarTemplateModel } from '@english-learning/fe-ui';
+import {
+  CardComponent, GrammarTemplateComponent, GrammarTemplateModel, TextComponent,
+} from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-present-continuous',
   standalone: true,
-  imports: [GrammarTemplateComponent],
+  imports: [
+    GrammarTemplateComponent,
+    CardComponent,
+    TextComponent,
+  ],
   templateUrl: './present-continuous.component.html',
 })
 export class PresentContinuousComponent {

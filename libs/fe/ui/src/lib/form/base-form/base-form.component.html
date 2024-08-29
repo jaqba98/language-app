@@ -24,6 +24,13 @@
             (clickEvent)="onSubmit()">
           </lib-button-icon>
         }
+        @case ('link') {
+          <lib-link
+            [control]="getFormControl(control.name)"
+            [label]="control.label"
+            (clickEvent)="onSubmit()">
+          </lib-link>
+        }
       }
     }
   </lib-flex>

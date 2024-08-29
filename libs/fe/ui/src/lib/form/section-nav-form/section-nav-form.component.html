@@ -1,4 +1,5 @@
 <lib-base-form
-  [direction]="direction"
-  [baseForm]="form">
+  direction="column"
+  [baseForm]="form"
+  (baseFormEvent)="onEvent($event)">
 </lib-base-form>

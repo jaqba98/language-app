@@ -2,6 +2,7 @@ export enum ControlKindEnum {
   input = 'input',
   buttonText = 'buttonText',
   buttonIcon = 'buttonIcon',
+  link = 'link',
 }
 
 export interface ControlBaseModel {
@@ -29,10 +30,17 @@ export interface ControlButtonIconModel extends ControlBaseModel {
   isPrimary: boolean;
 }
 
+export interface ControlLinkModel extends ControlBaseModel {
+  kind: ControlKindEnum.link;
+  label: string;
+  path: string;
+}
+
 export type ControlType =
   | ControlInputModel
   | ControlButtonTextModel
-  | ControlButtonIconModel;
+  | ControlButtonIconModel
+  | ControlLinkModel;
 
 export interface BaseFormModel {
   controls: ControlType[];
