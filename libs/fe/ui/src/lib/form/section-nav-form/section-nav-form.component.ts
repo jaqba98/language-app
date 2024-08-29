@@ -43,6 +43,9 @@ export class SectionNavFormComponent implements OnInit, OnDestroy {
           acc.controls.push(curr);
           return acc;
         }, { controls: [] });
+      const defaultTab = section.tabs.find((tab) => tab.isDefault);
+      if (!defaultTab) throw new Error('Not found default tab!');
+      this.route.navigate(defaultTab.path);
     });
   }
 
@@ -52,6 +55,7 @@ export class SectionNavFormComponent implements OnInit, OnDestroy {
 
   onEvent(model: SectionNavFormModel) {
     const kind = Object.keys(model).find((key) => model[key]);
+    if (!kind) throw new Error('Not found any active route!');
     const path = this.form.controls
       .filter((control) => control.kind === ControlKindEnum.link)
       .find((control) => control.name === kind)?.path;

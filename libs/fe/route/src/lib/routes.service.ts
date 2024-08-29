@@ -3,8 +3,6 @@ import { Route } from '@angular/router';
 import {
   GrammarComponent,
   HomeComponent,
-  PresentContinuousComponent,
-  PresentSimpleComponent,
   Test1BankComponent,
   Test1Component,
   Test1QuizComponent,
@@ -24,21 +22,10 @@ export const feRoutes: Route[] = [
   {
     path: 'grammar',
     component: GrammarComponent,
-    children: [
-      {
-        path: '',
-        redirectTo: '/grammar/present-simple',
-        pathMatch: 'full',
-      },
-      {
-        path: 'present-simple',
-        component: PresentSimpleComponent,
-      },
-      {
-        path: 'present-continuous',
-        component: PresentContinuousComponent,
-      },
-    ],
+  },
+  {
+    path: 'grammar/:name',
+    component: GrammarComponent,
   },
   {
     path: 'vocabulary',

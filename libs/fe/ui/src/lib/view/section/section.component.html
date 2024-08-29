@@ -7,11 +7,11 @@
           textColor="text__secondary"
           type="header3">
         </lib-text>
-        <ng-content></ng-content>
+        <ng-content select="[nav]"></ng-content>
       </lib-flex>
     </lib-card>
   </lib-flex-item>
   <lib-flex-item flex="1">
-    <router-outlet></router-outlet>
+    <ng-content select="[content]"></ng-content>
   </lib-flex-item>
 </lib-flex>
