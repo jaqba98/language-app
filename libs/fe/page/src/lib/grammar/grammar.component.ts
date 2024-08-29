@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 
-import { SectionComponent, RoutesMenuModel } from '@english-learning/fe-ui';
+import { SectionComponent, RoutesMenuModel, SectionNavFormComponent } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-grammar',
   standalone: true,
-  imports: [SectionComponent],
+  imports: [
+    SectionComponent,
+    SectionNavFormComponent,
+  ],
   templateUrl: './grammar.component.html',
 })
 export class GrammarComponent {

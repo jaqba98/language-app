@@ -1,12 +1,14 @@
 <lib-flex [flexDirection]="flexDirection" gap="1rem">
   <lib-flex-item>
     <lib-card cardType="card__secondary">
-      <lib-text
-        [value]="header"
-        textColor="text__secondary"
-        type="header3">
-      </lib-text>
-      <!-- TODO: add menu list -->
+      <lib-flex flexDirection="column" gap="1rem">
+        <lib-text
+          [value]="header"
+          textColor="text__secondary"
+          type="header3">
+        </lib-text>
+        <ng-content></ng-content>
+      </lib-flex>
     </lib-card>
   </lib-flex-item>
   <lib-flex-item flex="1">

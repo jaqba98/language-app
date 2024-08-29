@@ -1,13 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Properties } from 'csstype';
 
 import {
   ObserverModel, BreakpointModel, BreakpointService, BreakpointEnum,
 } from '@english-learning/fe-system';
-import { FlexComponent } from '../../layout/flex/flex.component';
 import { FlexItemComponent } from '../../layout/flex-item/flex-item.component';
-import { RoutesMenuModel } from '../../model/routes-menu.model';
+import { FlexComponent } from '../../layout/flex/flex.component';
 import { CardComponent } from '../../misc/card/card.component';
 import { TextComponent } from '../../misc/text/text.component';
 
@@ -15,28 +14,20 @@ import { TextComponent } from '../../misc/text/text.component';
   selector: 'lib-section',
   standalone: true,
   imports: [
-    RouterOutlet,
     FlexComponent,
     FlexItemComponent,
     CardComponent,
     TextComponent,
+    RouterOutlet,
   ],
   templateUrl: './section.component.html',
 })
-export class SectionComponent implements ObserverModel<BreakpointModel>, OnInit {
+export class SectionComponent implements ObserverModel<BreakpointModel> {
   @Input({ required: true }) header!: string;
-
-  @Input({ required: true }) options!: RoutesMenuModel[];
-
-  @Input() isFlex = true;
 
   flexDirection: Properties['flexDirection'] = 'column';
 
   constructor(private readonly breakpoint: BreakpointService) {
-  }
-
-  ngOnInit(): void {
-    if (!this.isFlex) return;
     this.breakpoint.addObserver(this);
   }
 
