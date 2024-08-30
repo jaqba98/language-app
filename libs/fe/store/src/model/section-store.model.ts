@@ -1,11 +1,11 @@
 export interface SectionTabModel {
-  name: string;
+  id: string;
   label: string;
   path: string;
-  isDefault: boolean;
   content: string;
 }
 
 export interface SectionStoreModel {
+  defaultTabId: string;
   tabs: SectionTabModel[];
 }

@@ -24,7 +24,7 @@ export const feRoutes: Route[] = [
     component: GrammarComponent,
   },
   {
-    path: 'grammar/:name',
+    path: 'grammar/:tabId',
     component: GrammarComponent,
   },
   {
