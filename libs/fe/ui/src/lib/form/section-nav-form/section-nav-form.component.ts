@@ -1,7 +1,8 @@
 import {
-  Component, Input, OnInit,
+  Component, Input, OnDestroy, OnInit,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Subscription } from 'rxjs';
 
 import { SectionTabModel, StoreModel } from '@english-learning/fe-store';
 import { BaseFormComponent } from '../base-form/base-form.component';
@@ -15,17 +16,19 @@ import {
   imports: [BaseFormComponent],
   templateUrl: './section-nav-form.component.html',
 })
-export class SectionNavFormComponent implements OnInit {
+export class SectionNavFormComponent implements OnInit, OnDestroy {
   @Input({ required: true }) storeName!: keyof StoreModel;
 
   form: BaseFormModel = {
     controls: [],
   };
 
+  private sub!: Subscription;
+
   constructor(private readonly store: Store<StoreModel>) {}
 
   ngOnInit() {
-    this.store.select(this.storeName)
+    this.sub = this.store.select(this.storeName)
       .subscribe((section) => {
         this.form = section.tabs
           .map((tab) => this.convertTabToLink(tab))
@@ -33,8 +36,11 @@ export class SectionNavFormComponent implements OnInit {
             acc.controls.push(curr);
             return acc;
           }, { controls: [] });
-      })
-      .unsubscribe();
+      });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
   private convertTabToLink(tab: SectionTabModel): ControlLinkModel {
