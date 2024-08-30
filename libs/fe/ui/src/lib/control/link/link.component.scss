@@ -1,13 +1,6 @@
 @use '@english-learning/fe-styles/src/lib/abstract';
 
 .link {
-  background-color: transparent;
-  border: none;
-  user-select: none;
-  text-decoration: underline;
-  cursor: pointer;
-
-  &:hover {
-    background-color: transparent;
-  }
+  text-decoration-style: solid;
+  text-decoration-color: abstract.$text-secondary-color;;
 }
