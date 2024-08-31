@@ -6,6 +6,6 @@ import { RootComponent } from '@english-learning/fe-page';
   selector: 'lib-fe-main',
   standalone: true,
   imports: [RootComponent],
-  template: '<lib-root></lib-root>',
+  templateUrl: './fe-main.component.html',
 })
 export class FeMainComponent {}
