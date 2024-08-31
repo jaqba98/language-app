@@ -79,16 +79,6 @@
       "options": {
         "jestConfig": "apps/english-learning-fe/jest.config.ts"
       }
-    },
-    "stylelint": {
-      "executor": "nx-stylelint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "apps/english-learning-fe/**/*.css",
-          "apps/english-learning-fe/**/*.scss"
-        ]
-      }
     }
   }
 }
