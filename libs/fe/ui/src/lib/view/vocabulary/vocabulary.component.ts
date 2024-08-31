@@ -9,12 +9,7 @@ import { RoutesMenuModel } from '../../model/routes-menu.model';
 @Component({
   selector: 'lib-vocabulary',
   standalone: true,
-  imports: [
-    CommonModule,
-    FlexComponent,
-    CardComponent,
-    RouterOutlet,
-  ],
+  imports: [CommonModule, FlexComponent, CardComponent, RouterOutlet],
   templateUrl: './vocabulary.component.html',
 })
 export class VocabularyComponent implements OnInit {

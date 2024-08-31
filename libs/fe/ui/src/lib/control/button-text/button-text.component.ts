@@ -1,5 +1,8 @@
 import {
-  Component, EventEmitter, Input, Output,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
@@ -10,10 +13,7 @@ import { ButtonComponent } from '../button/button.component';
 @Component({
   selector: 'lib-button-text',
   standalone: true,
-  imports: [
-    ButtonComponent,
-    TextComponent,
-  ],
+  imports: [ButtonComponent, TextComponent],
   templateUrl: './button-text.component.html',
 })
 export class ButtonTextComponent {

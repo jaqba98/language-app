@@ -6,10 +6,7 @@ import { TextComponent } from '../text/text.component';
 @Component({
   selector: 'lib-multiline-text',
   standalone: true,
-  imports: [
-    CommonModule,
-    TextComponent,
-  ],
+  imports: [CommonModule, TextComponent],
   templateUrl: './multiline-text.component.html',
 })
 export class MultilineTextComponent {

@@ -1,5 +1,9 @@
 import {
-  Component, EventEmitter, Input, OnInit, Output,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
@@ -9,10 +13,7 @@ import { ButtonComponent } from '../button/button.component';
 @Component({
   selector: 'lib-button-icon',
   standalone: true,
-  imports: [
-    ButtonComponent,
-    IconComponent,
-  ],
+  imports: [ButtonComponent, IconComponent],
   templateUrl: './button-icon.component.html',
 })
 export class ButtonIconComponent implements OnInit {

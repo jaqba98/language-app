@@ -1,45 +1,45 @@
 @use './color';
 
 @function get-color($color-key) {
-    @if $color-key == 'transparent' {
-        @return color.$transparent;
-    }
+  @if $color-key == 'transparent' {
+    @return color.$transparent;
+  }
 
-    @if $color-key == 'button' {
-        @return color.$button;
-    }
+  @if $color-key == 'button' {
+    @return color.$button;
+  }
 
-    @if $color-key == 'primary' {
-        @return color.$primary;
-    }
+  @if $color-key == 'primary' {
+    @return color.$primary;
+  }
 
-    @if $color-key == 'secondary' {
-        @return color.$secondary;
-    }
+  @if $color-key == 'secondary' {
+    @return color.$secondary;
+  }
 
-    @if $color-key == 'tertiary' {
-        @return color.$tertiary;
-    }
+  @if $color-key == 'tertiary' {
+    @return color.$tertiary;
+  }
 
-    @if $color-key == 'button' {
-        @return color.$button;
-    }
+  @if $color-key == 'button' {
+    @return color.$button;
+  }
 
-    @if $color-key == 'shadow' {
-        @return color.$shadow;
-    }
+  @if $color-key == 'shadow' {
+    @return color.$shadow;
+  }
 
-    @if $color-key == 'text' {
-        @return color.$text;
-    }
+  @if $color-key == 'text' {
+    @return color.$text;
+  }
 
-    @if $color-key == 'success' {
-        @return color.$success;
-    }
+  @if $color-key == 'success' {
+    @return color.$success;
+  }
 
-    @if $color-key == 'error' {
-        @return color.$error;
-    }
+  @if $color-key == 'error' {
+    @return color.$error;
+  }
 
-    @error 'Not supported color!';
+  @error 'Not supported color!';
 }

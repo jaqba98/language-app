@@ -8,11 +8,7 @@ import { TextComponent } from '../../misc/text/text.component';
 @Component({
   selector: 'lib-input',
   standalone: true,
-  imports: [
-    CommonModule,
-    TextComponent,
-    ReactiveFormsModule,
-  ],
+  imports: [CommonModule, TextComponent, ReactiveFormsModule],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
   providers: [BaseControlService.getProvider(InputComponent)],

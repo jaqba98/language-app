@@ -1,30 +1,30 @@
 import { TextType } from '../../misc/text/text.type';
 
 interface TextModel {
-  kind: 'text',
+  kind: 'text';
   value: string;
   textType: TextType;
 }
 
 interface MultilineTextModel {
-  kind: 'multiline-text',
+  kind: 'multiline-text';
   lines: string[];
 }
 
 interface HeaderModel {
-  kind: 'header',
+  kind: 'header';
   value: string;
   textType: TextType;
   link: string;
 }
 
 interface ListModel {
-  kind: 'list',
+  kind: 'list';
   items: string[];
 }
 
 interface SentenceStructureModel {
-  kind: 'sentence-structure',
+  kind: 'sentence-structure';
   items: string[];
 }
 

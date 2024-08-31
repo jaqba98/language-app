@@ -1,4 +1,8 @@
-import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
+import {
+  moduleMetadata,
+  type Meta,
+  type StoryObj,
+} from '@storybook/angular';
 
 import { MainNavComponent } from './main-nav.component';
 import { MockRouteNavigationService } from '../../mock/mock-router-navigation.service';

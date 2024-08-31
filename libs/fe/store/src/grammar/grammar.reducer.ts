@@ -23,5 +23,5 @@ export const initialGrammarState: SectionStoreModel = {
 
 export const grammarReducer = createReducer(
   initialGrammarState,
-  on(getGrammar, (state) => state),
+  on(getGrammar, state => state),
 );

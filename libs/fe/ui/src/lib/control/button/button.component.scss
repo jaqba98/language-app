@@ -1,37 +1,37 @@
 @use '@english-learning/fe-styles/src/lib/abstract';
 
 .button {
-    @include abstract.slider-parent;
+  @include abstract.slider-parent;
 
-    padding: abstract.$component-padding;
-    background-color: abstract.$component-leave-color;
-    border: abstract.$component-border abstract.$component-enter-color;
-    border-radius: abstract.$component-radius;
-    cursor: pointer;
+  padding: abstract.$component-padding;
+  background-color: abstract.$component-leave-color;
+  border: abstract.$component-border abstract.$component-enter-color;
+  border-radius: abstract.$component-radius;
+  cursor: pointer;
 
-    &__slider {
-        @include abstract.slider-self;
-        @include abstract.slider-right-to-left-hide;
+  &__slider {
+    @include abstract.slider-self;
+    @include abstract.slider-right-to-left-hide;
 
-        background-color: abstract.$component-enter-color;
+    background-color: abstract.$component-enter-color;
+  }
+
+  &__full-width {
+    width: 100%;
+  }
+
+  &__content {
+    position: relative;
+    z-index: abstract.$z-index-higher;
+  }
+
+  &:hover {
+    .button__slider {
+      @include abstract.slider-left-to-right-show;
     }
+  }
 
-    &__full-width {
-        width: 100%;
-    }
-
-    &__content {
-        position: relative;
-        z-index: abstract.$z-index-higher;
-    }
-
-    &:hover {
-        .button__slider {
-            @include abstract.slider-left-to-right-show;
-        }
-    }
-
-    &:active {
-        @include abstract.click-animation;
-    }
+  &:active {
+    @include abstract.click-animation;
+  }
 }

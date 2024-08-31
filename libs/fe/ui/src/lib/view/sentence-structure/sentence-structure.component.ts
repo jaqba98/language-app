@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 import { Properties } from 'csstype';
 
 import {
-  ObserverModel, BreakpointModel, BreakpointEnum, BreakpointService,
+  ObserverModel,
+  BreakpointModel,
+  BreakpointEnum,
+  BreakpointService,
 } from '@english-learning/fe-system';
 import { TextComponent } from '../../misc/text/text.component';
 import { CardComponent } from '../../misc/card/card.component';
@@ -20,7 +23,9 @@ import { FlexComponent } from '../../layout/flex/flex.component';
   ],
   templateUrl: './sentence-structure.component.html',
 })
-export class SentenceStructureComponent implements ObserverModel<BreakpointModel> {
+export class SentenceStructureComponent
+  implements ObserverModel<BreakpointModel>
+{
   @Input() items: string[] = [];
 
   flexDirection: Properties['flexDirection'] = 'row';

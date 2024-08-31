@@ -1,12 +1,23 @@
 import {
-  Component, OnInit, Input, Output, EventEmitter,
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
 } from '@angular/core';
 import {
-  ReactiveFormsModule, FormGroup, FormControl, FormBuilder,
+  ReactiveFormsModule,
+  FormGroup,
+  FormControl,
+  FormBuilder,
 } from '@angular/forms';
 import { Properties } from 'csstype';
 
-import { BaseFormModel, ControlKindEnum, ControlType } from './base-form.model';
+import {
+  BaseFormModel,
+  ControlKindEnum,
+  ControlType,
+} from './base-form.model';
 import { FlexComponent } from '../../layout/flex/flex.component';
 import { InputComponent } from '../../control/input/input.component';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
@@ -40,7 +51,7 @@ export class BaseFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.baseForm.controls.forEach((control) => {
+    this.baseForm.controls.forEach(control => {
       const { name } = control;
       this.checkFormControlExist(name);
       this.formGroup.addControl(name, this.buildFormControl(control));
@@ -80,7 +91,7 @@ export class BaseFormComponent implements OnInit {
   }
 
   private resetFormControls() {
-    this.baseForm.controls.forEach((control) => {
+    this.baseForm.controls.forEach(control => {
       const { name } = control;
       this.formGroup.setControl(name, this.buildFormControl(control));
     });

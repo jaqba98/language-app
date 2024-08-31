@@ -5,7 +5,10 @@ import { RouteNavigationService } from '../infrastructure/route-navigation.servi
 @Injectable()
 export class MockRouteNavigationService {
   static getProvider() {
-    return { provide: RouteNavigationService, useClass: MockRouteNavigationService };
+    return {
+      provide: RouteNavigationService,
+      useClass: MockRouteNavigationService,
+    };
   }
 
   navigate(link: string) {

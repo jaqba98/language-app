@@ -3,7 +3,10 @@ import { RouterOutlet } from '@angular/router';
 import { Properties } from 'csstype';
 
 import {
-  ObserverModel, BreakpointModel, BreakpointService, BreakpointEnum,
+  ObserverModel,
+  BreakpointModel,
+  BreakpointService,
+  BreakpointEnum,
 } from '@english-learning/fe-system';
 import { FlexItemComponent } from '../../layout/flex-item/flex-item.component';
 import { FlexComponent } from '../../layout/flex/flex.component';
@@ -22,7 +25,9 @@ import { TextComponent } from '../../misc/text/text.component';
   ],
   templateUrl: './section.component.html',
 })
-export class SectionComponent implements ObserverModel<BreakpointModel> {
+export class SectionComponent
+  implements ObserverModel<BreakpointModel>
+{
   @Input({ required: true }) header!: string;
 
   flexDirection: Properties['flexDirection'] = 'column';

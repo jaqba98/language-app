@@ -1,7 +1,10 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 import { BaseFormComponent } from '../base-form/base-form.component';
-import { BaseFormModel, ControlKindEnum } from '../base-form/base-form.model';
+import {
+  BaseFormModel,
+  ControlKindEnum,
+} from '../base-form/base-form.model';
 import { RestartFormModel } from './restart-form.model';
 
 @Component({

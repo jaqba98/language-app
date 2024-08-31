@@ -8,11 +8,7 @@ import { TextComponent } from '../../misc/text/text.component';
 @Component({
   selector: 'lib-bank',
   standalone: true,
-  imports: [
-    CardComponent,
-    FlexComponent,
-    TextComponent,
-  ],
+  imports: [CardComponent, FlexComponent, TextComponent],
   templateUrl: './bank.component.html',
 })
 export class BankComponent {

@@ -1,36 +1,28 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
   <lib-flex [flexDirection]="direction" gap="0.5em">
-    @for (control of baseForm.controls; track control.name) {
-      @switch (control.kind) {
-        @case ('input') {
-          <lib-input [formControl]="getFormControl(control.name)"></lib-input>
-        }
-        @case ('buttonText') {
-          <lib-button-text
-            [control]="getFormControl(control.name)"
-            [label]="control.label"
-            [isPrimary]="control.isPrimary"
-            [fullWidth]="control.fullWidth"
-            (clickEvent)="onSubmit()">
-          </lib-button-text>
-        }
-        @case ('buttonIcon') {
-          <lib-button-icon
-            [control]="getFormControl(control.name)"
-            [iconEnter]="control.iconEnter"
-            [iconLeave]="control.iconLeave"
-            [alt]="control.alt"
-            [isPrimary]="control.isPrimary"
-            (clickEvent)="onSubmit()">
-          </lib-button-icon>
-        }
-        @case ('link') {
-          <lib-link
-            [label]="control.label"
-            [path]="control.path">
-          </lib-link>
-        }
-      }
-    }
+    @for (control of baseForm.controls; track control.name) { @switch
+    (control.kind) { @case ('input') {
+    <lib-input
+      [formControl]="getFormControl(control.name)"></lib-input>
+    } @case ('buttonText') {
+    <lib-button-text
+      [control]="getFormControl(control.name)"
+      [label]="control.label"
+      [isPrimary]="control.isPrimary"
+      [fullWidth]="control.fullWidth"
+      (clickEvent)="onSubmit()"></lib-button-text>
+    } @case ('buttonIcon') {
+    <lib-button-icon
+      [control]="getFormControl(control.name)"
+      [iconEnter]="control.iconEnter"
+      [iconLeave]="control.iconLeave"
+      [alt]="control.alt"
+      [isPrimary]="control.isPrimary"
+      (clickEvent)="onSubmit()"></lib-button-icon>
+    } @case ('link') {
+    <lib-link
+      [label]="control.label"
+      [path]="control.path"></lib-link>
+    } } }
   </lib-flex>
 </form>

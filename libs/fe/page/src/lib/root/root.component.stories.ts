@@ -1,4 +1,8 @@
-import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
+import {
+  moduleMetadata,
+  type Meta,
+  type StoryObj,
+} from '@storybook/angular';
 
 import { MockRouteNavigationService } from '@english-learning/fe-ui';
 import { RootComponent } from './root.component';

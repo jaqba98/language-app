@@ -1,8 +1,13 @@
 import { Injectable, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 
 @Injectable({ providedIn: 'root' })
-export class BaseControlService<TValue> implements ControlValueAccessor {
+export class BaseControlService<TValue>
+  implements ControlValueAccessor
+{
   static getProvider<TComponent>(component: TComponent) {
     return {
       provide: NG_VALUE_ACCESSOR,

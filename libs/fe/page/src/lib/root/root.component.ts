@@ -6,10 +6,7 @@ import { MainNavComponent } from '@english-learning/fe-ui';
 @Component({
   selector: 'lib-root',
   standalone: true,
-  imports: [
-    MainNavComponent,
-    RouterOutlet,
-  ],
+  imports: [MainNavComponent, RouterOutlet],
   templateUrl: './root.component.html',
   styleUrl: './root.component.scss',
 })

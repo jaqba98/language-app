@@ -11,11 +11,6 @@ type Story = StoryObj<SentenceStructureComponent>;
 
 export const Primary: Story = {
   args: {
-    items: [
-      'aaa',
-      'bbb',
-      'ccc',
-      'ddd',
-    ],
+    items: ['aaa', 'bbb', 'ccc', 'ddd'],
   },
 };

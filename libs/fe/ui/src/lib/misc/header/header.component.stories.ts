@@ -8,9 +8,7 @@ const meta: Meta<HeaderComponent> = {
   title: 'fe/ui/misc/header',
   decorators: [
     moduleMetadata({
-      providers: [
-        { provide: ActivatedRoute, useValue: [] },
-      ],
+      providers: [{ provide: ActivatedRoute, useValue: [] }],
     }),
   ],
 };

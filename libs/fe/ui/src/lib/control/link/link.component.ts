@@ -6,10 +6,7 @@ import { TextComponent } from '../../misc/text/text.component';
 @Component({
   selector: 'lib-link',
   standalone: true,
-  imports: [
-    TextComponent,
-    RouterLink,
-  ],
+  imports: [TextComponent, RouterLink],
   templateUrl: './link.component.html',
   styleUrl: './link.component.scss',
 })

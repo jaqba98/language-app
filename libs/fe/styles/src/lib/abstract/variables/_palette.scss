@@ -9,14 +9,23 @@ $text-secondary-color: #666;
 $body-color: $accent-color;
 $component-enter-color: $accent-color;
 $component-leave-color: $primary-color;
-$component-secondary-color: color.adjust($accent-color, $lightness: -5%);
-$component-border-color: color.adjust($primary-color, $lightness: -10%);
-$component-secondary-border-color: color.adjust($component-secondary-color, $lightness: -10%);
+$component-secondary-color: color.adjust(
+  $accent-color,
+  $lightness: -5%
+);
+$component-border-color: color.adjust(
+  $primary-color,
+  $lightness: -10%
+);
+$component-secondary-border-color: color.adjust(
+  $component-secondary-color,
+  $lightness: -10%
+);
 
 // old
 $card-default-color: $primary-color;
-$secondary-color: #1B262C;
-$tertiary-color: #18122B;
+$secondary-color: #1b262c;
+$tertiary-color: #18122b;
 $component__bright-primary: #fff;
 $component__bright-secondary: #c3ccef;
 $component__bright-tertiary: #778bda;

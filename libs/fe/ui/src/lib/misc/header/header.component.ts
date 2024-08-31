@@ -8,11 +8,7 @@ import { FlexComponent } from '../../layout/flex/flex.component';
 @Component({
   selector: 'lib-header',
   standalone: true,
-  imports: [
-    TextComponent,
-    FlexComponent,
-    RouterModule,
-  ],
+  imports: [TextComponent, FlexComponent, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

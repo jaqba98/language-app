@@ -1,13 +1,16 @@
-import {
-  Component, Input, OnDestroy, OnInit,
-} from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
-import { SectionTabModel, StoreModel } from '@english-learning/fe-store';
+import {
+  SectionTabModel,
+  StoreModel,
+} from '@english-learning/fe-store';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import {
-  BaseFormModel, ControlKindEnum, ControlLinkModel,
+  BaseFormModel,
+  ControlKindEnum,
+  ControlLinkModel,
 } from '../base-form/base-form.model';
 
 @Component({
@@ -28,14 +31,18 @@ export class SectionNavFormComponent implements OnInit, OnDestroy {
   constructor(private readonly store: Store<StoreModel>) {}
 
   ngOnInit() {
-    this.sub = this.store.select(this.storeName)
-      .subscribe((section) => {
+    this.sub = this.store
+      .select(this.storeName)
+      .subscribe(section => {
         this.form = section.tabs
-          .map((tab) => this.convertTabToLink(tab))
-          .reduce((acc: BaseFormModel, curr: ControlLinkModel) => {
-            acc.controls.push(curr);
-            return acc;
-          }, { controls: [] });
+          .map(tab => this.convertTabToLink(tab))
+          .reduce(
+            (acc: BaseFormModel, curr: ControlLinkModel) => {
+              acc.controls.push(curr);
+              return acc;
+            },
+            { controls: [] },
+          );
       });
   }
 

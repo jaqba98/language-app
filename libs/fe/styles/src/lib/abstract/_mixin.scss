@@ -1,20 +1,20 @@
 @mixin set-flex($align, $justify, $gap: 0) {
-    display: flex;
-    align-items: $align;
-    justify-content: $justify;
-    gap: $gap;
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
 }
 
 @mixin set-box-model($margin: null, $padding: null) {
-    @if is not null $margin {
-        margin: $margin;
-    }
+  @if is not null $margin {
+    margin: $margin;
+  }
 
-    @if is not null $padding {
-        padding: $padding;
-    }
+  @if is not null $padding {
+    padding: $padding;
+  }
 }
 
 @mixin get-host-default {
-    display: block;
+  display: block;
 }

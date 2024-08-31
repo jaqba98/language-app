@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx"],
+  "plugins": ["@nx", "@typescript-eslint", "prettier"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -23,7 +23,13 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript", "airbnb-base", "airbnb-typescript/base"],
+      "extends": [
+        "plugin:@nx/typescript",
+        "plugin:@angular-eslint/recommended",
+        "airbnb-base",
+        "airbnb-typescript/base",
+        "prettier"
+      ],
       "rules": {
         "import/prefer-default-export": "off",
         "class-methods-use-this": "off"

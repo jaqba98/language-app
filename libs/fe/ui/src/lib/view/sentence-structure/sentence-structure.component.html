@@ -3,13 +3,11 @@
     [flexDirection]="flexDirection"
     alignItems="center"
     justifyContent="center"
-    [gap]="gap"
-  >
+    [gap]="gap">
     @for (item of items; track item) {
-      <lib-text [value]="item"></lib-text>
-      @if (!$last) {
-        <lib-text value="+"></lib-text>
-      }
-    }
+    <lib-text [value]="item"></lib-text>
+    @if (!$last) {
+    <lib-text value="+"></lib-text>
+    } }
   </lib-flex>
 </lib-card>

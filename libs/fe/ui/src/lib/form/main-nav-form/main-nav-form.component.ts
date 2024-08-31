@@ -2,10 +2,16 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Properties } from 'csstype';
 
 import {
-  BreakpointEnum, BreakpointModel, BreakpointService, ObserverModel,
+  BreakpointEnum,
+  BreakpointModel,
+  BreakpointService,
+  ObserverModel,
 } from '@english-learning/fe-system';
 import { BaseFormComponent } from '../base-form/base-form.component';
-import { BaseFormModel, ControlKindEnum } from '../base-form/base-form.model';
+import {
+  BaseFormModel,
+  ControlKindEnum,
+} from '../base-form/base-form.model';
 import { MainNavFormModel } from './main-nav-form.model';
 import { RouteNavigationService } from '../../infrastructure/route-navigation.service';
 import { HamburgerFormModel } from '../hamburger-form/hamburger-form.model';
@@ -16,7 +22,9 @@ import { HamburgerFormModel } from '../hamburger-form/hamburger-form.model';
   imports: [BaseFormComponent],
   templateUrl: './main-nav-form.component.html',
 })
-export class MainNavFormComponent implements ObserverModel<BreakpointModel> {
+export class MainNavFormComponent
+  implements ObserverModel<BreakpointModel>
+{
   @Output() mainNavFormEvent = new EventEmitter<HamburgerFormModel>();
 
   direction: Properties['flexDirection'] = 'row';
@@ -64,7 +72,8 @@ export class MainNavFormComponent implements ObserverModel<BreakpointModel> {
 
   onEvent(model: MainNavFormModel) {
     if (model.homeButton) this.route.navigate('/home');
-    else if (model.vocabularyButton) this.route.navigate('/vocabulary');
+    else if (model.vocabularyButton)
+      this.route.navigate('/vocabulary');
     else if (model.grammarButton) this.route.navigate('/grammar');
     else throw new Error('No route is set to true!');
     this.mainNavFormEvent.emit();

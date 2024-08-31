@@ -1,4 +1,8 @@
-import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
+import {
+  moduleMetadata,
+  type Meta,
+  type StoryObj,
+} from '@storybook/angular';
 import { ActivatedRoute } from '@angular/router';
 
 import { BankComponent } from './bank.component';
@@ -11,9 +15,7 @@ const meta: Meta<BankComponent> = {
   },
   decorators: [
     moduleMetadata({
-      providers: [
-        { provide: ActivatedRoute, useValue: [] },
-      ],
+      providers: [{ provide: ActivatedRoute, useValue: [] }],
     }),
   ],
 };

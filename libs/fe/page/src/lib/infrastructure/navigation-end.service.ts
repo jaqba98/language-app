@@ -1,7 +1,5 @@
 import { NavigationEnd, Router } from '@angular/router';
-import {
-  filter, switchMap, combineLatest, of,
-} from 'rxjs';
+import { filter, switchMap, combineLatest, of } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
 
@@ -18,16 +16,20 @@ export class NavigationEndService {
 
   getEvent(storeName: keyof StoreModel) {
     return this.router.events.pipe(
-      filter((event) => event instanceof NavigationEnd),
-      switchMap((params) => combineLatest([
-        of(params.url),
-        this.store.select(storeName),
-      ])),
+      filter(event => event instanceof NavigationEnd),
+      switchMap(params =>
+        combineLatest([of(params.url), this.store.select(storeName)]),
+      ),
       switchMap(([url, data]) => {
-        const tab = data.tabs.find((currTab) => currTab.path === url);
+        const tab = data.tabs.find(currTab => currTab.path === url);
         if (tab) return of(tab);
-        const defaultTab = data.tabs.find((currTab) => currTab.id === data.defaultTabId);
-        if (!defaultTab) throw new Error(`Not found path to the default tab: ${data.defaultTabId}`);
+        const defaultTab = data.tabs.find(
+          currTab => currTab.id === data.defaultTabId,
+        );
+        if (!defaultTab)
+          throw new Error(
+            `Not found path to the default tab: ${data.defaultTabId}`,
+          );
         this.routeNavigation.navigate(defaultTab.path);
         return of(undefined);
       }),

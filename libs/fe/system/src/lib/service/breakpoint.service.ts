@@ -7,24 +7,28 @@ import { BreakpointEnum } from '../enum/breakpoint.enum';
 import { ObserverModel } from '../model/abstract/observer.model';
 
 @Injectable({ providedIn: 'root' })
-export class BreakpointService implements SubjectModel<BreakpointModel> {
-  observers: Map<ObserverModel<BreakpointModel>, ObserverModel<BreakpointModel>> = new Map();
+export class BreakpointService
+  implements SubjectModel<BreakpointModel>
+{
+  observers: Map<
+    ObserverModel<BreakpointModel>,
+    ObserverModel<BreakpointModel>
+  > = new Map();
 
   constructor(private readonly observer: BreakpointObserver) {
-    this.getBreakpointsObserve()
-      .subscribe((currentBreakpoint) => {
-        if (currentBreakpoint.breakpoints[Breakpoints.XSmall]) {
-          this.notifyObservers({ breakpoint: BreakpointEnum.XSmall });
-        } else if (currentBreakpoint.breakpoints[Breakpoints.Small]) {
-          this.notifyObservers({ breakpoint: BreakpointEnum.Small });
-        } else if (currentBreakpoint.breakpoints[Breakpoints.Medium]) {
-          this.notifyObservers({ breakpoint: BreakpointEnum.Medium });
-        } else if (currentBreakpoint.breakpoints[Breakpoints.Large]) {
-          this.notifyObservers({ breakpoint: BreakpointEnum.Large });
-        } else if (currentBreakpoint.breakpoints[Breakpoints.XLarge]) {
-          this.notifyObservers({ breakpoint: BreakpointEnum.XLarge });
-        }
-      });
+    this.getBreakpointsObserve().subscribe(currentBreakpoint => {
+      if (currentBreakpoint.breakpoints[Breakpoints.XSmall]) {
+        this.notifyObservers({ breakpoint: BreakpointEnum.XSmall });
+      } else if (currentBreakpoint.breakpoints[Breakpoints.Small]) {
+        this.notifyObservers({ breakpoint: BreakpointEnum.Small });
+      } else if (currentBreakpoint.breakpoints[Breakpoints.Medium]) {
+        this.notifyObservers({ breakpoint: BreakpointEnum.Medium });
+      } else if (currentBreakpoint.breakpoints[Breakpoints.Large]) {
+        this.notifyObservers({ breakpoint: BreakpointEnum.Large });
+      } else if (currentBreakpoint.breakpoints[Breakpoints.XLarge]) {
+        this.notifyObservers({ breakpoint: BreakpointEnum.XLarge });
+      }
+    });
   }
 
   addObserver(obs: ObserverModel<BreakpointModel>) {
@@ -33,16 +37,20 @@ export class BreakpointService implements SubjectModel<BreakpointModel> {
     }
     this.observers.set(obs, obs);
     this.getBreakpointsObserve()
-      .subscribe((currentBreakpoint) => {
+      .subscribe(currentBreakpoint => {
         if (currentBreakpoint.breakpoints[Breakpoints.XSmall]) {
           obs.update({ breakpoint: BreakpointEnum.XSmall });
         } else if (currentBreakpoint.breakpoints[Breakpoints.Small]) {
           obs.update({ breakpoint: BreakpointEnum.Small });
-        } else if (currentBreakpoint.breakpoints[Breakpoints.Medium]) {
+        } else if (
+          currentBreakpoint.breakpoints[Breakpoints.Medium]
+        ) {
           obs.update({ breakpoint: BreakpointEnum.Medium });
         } else if (currentBreakpoint.breakpoints[Breakpoints.Large]) {
           obs.update({ breakpoint: BreakpointEnum.Large });
-        } else if (currentBreakpoint.breakpoints[Breakpoints.XLarge]) {
+        } else if (
+          currentBreakpoint.breakpoints[Breakpoints.XLarge]
+        ) {
           obs.update({ breakpoint: BreakpointEnum.XLarge });
         }
       })
@@ -58,7 +66,7 @@ export class BreakpointService implements SubjectModel<BreakpointModel> {
   }
 
   notifyObservers(breakpoint: BreakpointModel) {
-    this.observers.forEach((obs) => {
+    this.observers.forEach(obs => {
       obs.update(breakpoint);
     });
   }

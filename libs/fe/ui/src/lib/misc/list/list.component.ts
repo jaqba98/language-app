@@ -6,10 +6,7 @@ import { TextComponent } from '../text/text.component';
 @Component({
   selector: 'lib-list',
   standalone: true,
-  imports: [
-    CommonModule,
-    TextComponent,
-  ],
+  imports: [CommonModule, TextComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss',
 })

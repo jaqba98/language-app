@@ -2,7 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 import { Properties } from 'csstype';
 
 import {
-  ObserverModel, BreakpointModel, BreakpointService, BreakpointEnum,
+  ObserverModel,
+  BreakpointModel,
+  BreakpointService,
+  BreakpointEnum,
 } from '@english-learning/fe-system';
 import { WrapperComponent } from '../../misc/wrapper/wrapper.component';
 import { FlexComponent } from '../../layout/flex/flex.component';
@@ -24,7 +27,9 @@ import { MainNavFormComponent } from '../../form/main-nav-form/main-nav-form.com
   ],
   templateUrl: './main-nav.component.html',
 })
-export class MainNavComponent implements ObserverModel<BreakpointModel> {
+export class MainNavComponent
+  implements ObserverModel<BreakpointModel>
+{
   @ViewChild('hamburgerForm') hamburgerForm!: WrapperComponent;
 
   @ViewChild('mainNavForm') mainNavForm!: WrapperComponent;
@@ -33,7 +38,8 @@ export class MainNavComponent implements ObserverModel<BreakpointModel> {
 
   isMenuVisible = false;
 
-  mainNavJustifyContent: Properties['justifyContent'] = 'space-between';
+  mainNavJustifyContent: Properties['justifyContent'] =
+    'space-between';
 
   constructor(private readonly breakpoint: BreakpointService) {
     this.breakpoint.addObserver(this);
@@ -47,7 +53,10 @@ export class MainNavComponent implements ObserverModel<BreakpointModel> {
       this.isMobile = false;
       this.isMenuVisible = false;
     }
-    if (breakpoint === BreakpointEnum.Large || breakpoint === BreakpointEnum.XLarge) {
+    if (
+      breakpoint === BreakpointEnum.Large ||
+      breakpoint === BreakpointEnum.XLarge
+    ) {
       this.mainNavJustifyContent = 'space-around';
     } else {
       this.mainNavJustifyContent = 'space-between';
