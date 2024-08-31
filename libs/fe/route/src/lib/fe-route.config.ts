@@ -4,12 +4,13 @@ import {
   withHashLocation,
   withInMemoryScrolling,
 } from '@angular/router';
-import { feRoutes } from './routes.service';
+
+import { routes } from './routes.service';
 
 export const feRouteConfig: ApplicationConfig = {
   providers: [
     provideRouter(
-      feRoutes,
+      routes,
       withHashLocation(),
       withInMemoryScrolling({
         anchorScrolling: 'enabled',
