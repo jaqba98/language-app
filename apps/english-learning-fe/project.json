@@ -22,7 +22,7 @@
             "input": "apps/english-learning-fe/public"
           }
         ],
-        "styles": ["apps/english-learning-fe/src/styles.scss"],
+        "styles": ["libs/fe/styles/src/lib/main.scss"],
         "scripts": []
       },
       "configurations": {
