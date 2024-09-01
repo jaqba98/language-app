@@ -1,1 +1,1 @@
-export * from './lib/fe-route.config';
+export * from './lib/route.config';

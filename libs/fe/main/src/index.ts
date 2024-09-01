@@ -1,2 +1,2 @@
-export * from './lib/fe-main.component';
-export * from './lib/fe-main.config';
+export * from './lib/main.config';
+export * from './lib/main/main.component';

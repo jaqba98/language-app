@@ -3,6 +3,6 @@ import { provideStore } from '@ngrx/store';
 
 import { grammarReducer } from './grammar/grammar.reducer';
 
-export const feStoreConfig: ApplicationConfig = {
+export const storeConfig: ApplicationConfig = {
   providers: [provideStore({ grammar: grammarReducer })],
 };

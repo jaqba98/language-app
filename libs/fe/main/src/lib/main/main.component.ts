@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 import { RootComponent } from '@english-learning/fe-page';
 
 @Component({
-  selector: 'lib-fe-main',
+  selector: 'lib-main',
   standalone: true,
   imports: [RootComponent],
-  templateUrl: './fe-main.component.html',
+  templateUrl: './main.component.html',
 })
-export class FeMainComponent {}
+export class MainComponent {}
