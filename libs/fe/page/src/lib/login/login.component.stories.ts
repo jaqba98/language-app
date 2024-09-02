@@ -8,6 +8,11 @@ const meta: Meta<LoginComponent> = {
   parameters: {
     layout: 'fullscreen',
   },
+  argTypes: {
+    event: {
+      action: 'event',
+    },
+  },
 };
 export default meta;
 type Story = StoryObj<LoginComponent>;

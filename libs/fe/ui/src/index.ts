@@ -1,4 +1,5 @@
 export * from './lib/form/login-form/login-form.component';
+export * from './lib/form/login-form/login-form.model';
 export * from './lib/layout/flex/flex.component';
 export * from './lib/misc/card/card.component';
 export * from './lib/misc/wrapper/wrapper.component';

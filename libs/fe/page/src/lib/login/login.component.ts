@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 import {
   AuthComponent,
   LoginFormComponent,
+  LoginFormModel,
 } from '@english-learning/fe-ui';
 
 @Component({
@@ -11,4 +12,10 @@ import {
   imports: [AuthComponent, LoginFormComponent],
   templateUrl: './login.component.html',
 })
-export class LoginComponent {}
+export class LoginComponent {
+  @Output() event = new EventEmitter<LoginFormModel>();
+
+  onEvent(event: LoginFormModel) {
+    this.event.emit(event);
+  }
+}
