@@ -8,8 +8,13 @@ import {
 
 import { authRoutes } from './routes/auth.routes';
 import { dashboardRoutes } from './routes/dashboard.routes';
+import { errorRoutes } from './routes/error.routes';
 
-const routes: Routes = [...authRoutes, ...dashboardRoutes];
+const routes: Routes = [
+  ...authRoutes,
+  ...dashboardRoutes,
+  ...errorRoutes,
+];
 
 export const routeConfig: ApplicationConfig = {
   providers: [
