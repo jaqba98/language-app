@@ -10,15 +10,13 @@ import { Properties } from 'csstype';
   styleUrl: './flex.component.scss',
 })
 export class FlexComponent {
-  @Input() flexDirection: Properties['flexDirection'] = 'row';
+  @Input() flexDirection: Properties['flexDirection'];
 
-  @Input() alignItems: Properties['alignItems'] = 'stretch';
+  @Input() alignItems: Properties['alignItems'];
 
-  @Input() justifyContent: Properties['justifyContent'] = 'stretch';
+  @Input() justifyContent: Properties['justifyContent'];
 
-  @Input() gap: Properties['gap'] = '0';
-
-  @Input() flexWrap: Properties['flexWrap'] = 'wrap';
+  @Input() gap: Properties['gap'];
 
   buildFlexStyles(): Properties {
     return {
@@ -26,7 +24,6 @@ export class FlexComponent {
       alignItems: this.alignItems,
       justifyContent: this.justifyContent,
       gap: this.gap,
-      flexWrap: this.flexWrap,
     };
   }
 }
