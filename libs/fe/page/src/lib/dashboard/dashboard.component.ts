@@ -3,6 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'lib-dashboard',
   standalone: true,
-  template: '<p>Dashboard</p>',
+  templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent {}

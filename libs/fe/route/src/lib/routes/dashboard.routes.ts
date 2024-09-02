@@ -1,9 +1,14 @@
 import { Routes } from '@angular/router';
 
+import { DashboardComponent } from '@english-learning/fe-page';
+
 export const dashboardRoutes: Routes = [
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [],
+  },
   // {
-  //   path: 'dashboard',
-  //   component: DashboardComponent,
   //   children: [
   //     {
   //       path: 'courses',
