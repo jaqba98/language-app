@@ -1,8 +1,7 @@
 export * from './lib/form/login-form/login-form.component';
 export * from './lib/layout/flex/flex.component';
-export * from './lib/misc/wrapper/wrapper.component';
-
 export * from './lib/misc/card/card.component';
+export * from './lib/misc/wrapper/wrapper.component';
 
 export * from './lib/view/main-nav/main-nav.component';
 export * from './lib/view/grammar-template/grammar-template.component';

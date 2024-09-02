@@ -10,9 +10,3 @@ export default meta;
 type Story = StoryObj<CardComponent>;
 
 export const Default: Story = {};
-
-export const Form: Story = {
-  args: {
-    cardType: 'card__form',
-  },
-};

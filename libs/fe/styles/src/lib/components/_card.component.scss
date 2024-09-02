@@ -4,6 +4,5 @@
 @mixin card {
   padding: general.$component-padding;
   border-radius: general.$component-radius;
-  background-color: palette.$card-default__background;
-  border: general.$component-border palette.$card-default__border;
+  background-color: palette.$card;
 }

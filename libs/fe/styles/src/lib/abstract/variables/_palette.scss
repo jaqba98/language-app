@@ -2,11 +2,11 @@
 
 // Basic palette
 $primary: #f1f1f1;
-$border: #d3d3d3;
+$accent: #4e31aa;
 
 // Specialized pallet
-$card-default__background: $primary;
-$card-default__border: $border;
+$body: $accent;
+$card: $primary;
 
 // Base palette
 $primary-color: #494ca2;
@@ -14,7 +14,6 @@ $accent-color: #eee;
 $text-secondary-color: #666;
 
 // Specialist palette
-$body-color: $accent-color;
 $component-enter-color: $accent-color;
 $component-leave-color: $primary-color;
 $component-secondary-color: color.adjust(
@@ -29,6 +28,7 @@ $component-secondary-border-color: color.adjust(
   $component-secondary-color,
   $lightness: -10%
 );
+$card-default__border: red;
 
 // old
 $card-default-color: $primary-color;
