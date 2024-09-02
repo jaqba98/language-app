@@ -6,9 +6,9 @@ import {
   withInMemoryScrolling,
 } from '@angular/router';
 
-import { authRoutes } from './routes/auth.routes';
-import { dashboardRoutes } from './routes/dashboard.routes';
-import { errorRoutes } from './routes/error.routes';
+import { authRoutes } from './route/auth.route';
+import { dashboardRoutes } from './route/dashboard.route';
+import { errorRoutes } from './route/error.route';
 
 const routes: Routes = [
   ...authRoutes,

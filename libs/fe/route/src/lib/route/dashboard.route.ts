@@ -1,13 +1,14 @@
 import { Routes } from '@angular/router';
 
 import {
+  DashboardComponent,
+  CoursesComponent,
   AccountComponent,
   CourseComponent,
-  CoursesComponent,
-  DashboardComponent,
   GrammarComponent,
-  VocabularyComponent,
+  StatisticsComponent,
 } from '@english-learning/fe-page';
+import { VocabularyComponent } from '@english-learning/fe-ui';
 
 export const dashboardRoutes: Routes = [
   {
@@ -19,6 +20,7 @@ export const dashboardRoutes: Routes = [
         redirectTo: '/dashboard/courses',
         pathMatch: 'full',
       },
+      { path: 'statistics', component: StatisticsComponent },
       { path: 'courses', component: CoursesComponent },
       { path: 'account', component: AccountComponent },
       {
