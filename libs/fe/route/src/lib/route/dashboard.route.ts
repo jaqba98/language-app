@@ -7,6 +7,9 @@ import {
   CourseComponent,
   GrammarComponent,
   StatisticsComponent,
+  WritingComponent,
+  ReadingComponent,
+  RoadmapComponent,
 } from '@english-learning/fe-page';
 import { VocabularyComponent } from '@english-learning/fe-ui';
 
@@ -27,8 +30,11 @@ export const dashboardRoutes: Routes = [
         path: 'course/:courseId',
         component: CourseComponent,
         children: [
-          { path: 'grammar', component: GrammarComponent },
+          { path: 'roadmap', component: RoadmapComponent },
+          { path: 'writing', component: WritingComponent },
+          { path: 'reading', component: ReadingComponent },
           { path: 'vocabulary', component: VocabularyComponent },
+          { path: 'grammar', component: GrammarComponent },
         ],
       },
     ],
