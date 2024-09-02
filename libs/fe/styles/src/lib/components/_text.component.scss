@@ -14,14 +14,14 @@
     color: palette.$text-focus;
   }
 
-  &__paragraph {
-    font-weight: 400;
-    font-size: general.$font-size-small;
-  }
-
   &__tiny {
     font-weight: 400;
     font-size: general.$font-size-tiny;
+  }
+
+  &__paragraph {
+    font-weight: 400;
+    font-size: general.$font-size-small;
   }
 
   &__header {

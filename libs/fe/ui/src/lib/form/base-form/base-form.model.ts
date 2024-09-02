@@ -1,3 +1,5 @@
+import { InputType } from '../../control/input/input.type';
+
 export enum ControlKindEnum {
   input = 'input',
   buttonText = 'buttonText',
@@ -14,6 +16,7 @@ export interface ControlInputModel extends ControlBaseModel {
   kind: ControlKindEnum.input;
   defaultValue: string;
   placeholder: string;
+  type: InputType;
 }
 
 export interface ControlButtonTextModel extends ControlBaseModel {

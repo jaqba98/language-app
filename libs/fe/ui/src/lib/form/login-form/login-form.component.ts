@@ -23,12 +23,14 @@ export class LoginFormComponent {
         name: 'email',
         defaultValue: '',
         placeholder: 'Email',
+        type: 'text',
       },
       {
         kind: ControlKindEnum.input,
         name: 'password',
         defaultValue: '',
         placeholder: 'Password',
+        type: 'password',
       },
       {
         kind: ControlKindEnum.buttonText,

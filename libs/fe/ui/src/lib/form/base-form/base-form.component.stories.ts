@@ -24,6 +24,7 @@ export const Default: Story = {
           name: 'field1',
           defaultValue: '',
           placeholder: '',
+          type: 'text',
         },
         {
           kind: ControlKindEnum.buttonText,

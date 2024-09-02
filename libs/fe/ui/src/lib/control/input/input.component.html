@@ -1,6 +1,11 @@
-<lib-text [value]="placeholder" type="tiny"></lib-text>
+<lib-text
+  [value]="placeholder"
+  type="tiny"
+  [textColor]="textColor"></lib-text>
 <input
-  type="text"
+  [type]="type"
   class="input"
   [placeholder]="placeholder"
-  [formControl]="formControl" />
+  [formControl]="formControl"
+  (focus)="onFocus()"
+  (blur)="onBlur()" />

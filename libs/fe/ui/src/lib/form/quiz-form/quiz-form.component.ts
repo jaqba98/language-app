@@ -23,6 +23,7 @@ export class QuizFormComponent {
         name: 'answer',
         defaultValue: '',
         placeholder: '',
+        type: 'text',
       },
       {
         kind: ControlKindEnum.buttonText,

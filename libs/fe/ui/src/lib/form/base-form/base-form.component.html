@@ -4,6 +4,7 @@
     (control.kind) { @case ('input') {
     <lib-input
       [formControl]="getFormControl(control.name)"
+      [type]="control.type"
       [placeholder]="control.placeholder"></lib-input>
     } @case ('buttonText') {
     <lib-button-text

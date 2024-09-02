@@ -3,6 +3,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 import { BaseControlService } from '../../form/base-form/base-control.service';
 import { TextComponent } from '../../misc/text/text.component';
+import { TextColorType } from '../../misc/text/text.type';
+import { InputType } from './input.type';
 
 @Component({
   selector: 'lib-input',
@@ -16,4 +18,16 @@ export class InputComponent extends BaseControlService<string> {
   @Input({ required: true }) formControl!: FormControl;
 
   @Input() placeholder = '';
+
+  @Input() type: InputType = 'text';
+
+  textColor: TextColorType = 'text__normal';
+
+  onFocus() {
+    this.textColor = 'text__focus';
+  }
+
+  onBlur() {
+    this.textColor = 'text__normal';
+  }
 }
