@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'lib-dashboard',
   standalone: true,
-  templateUrl: './dashboard.component.html',
+  imports: [RouterOutlet],
+  template: '<router-outlet></router-outlet>',
 })
 export class DashboardComponent {}
