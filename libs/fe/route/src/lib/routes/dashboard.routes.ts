@@ -2,8 +2,11 @@ import { Routes } from '@angular/router';
 
 import {
   AccountComponent,
+  CourseComponent,
   CoursesComponent,
   DashboardComponent,
+  GrammarComponent,
+  VocabularyComponent,
 } from '@english-learning/fe-page';
 
 export const dashboardRoutes: Routes = [
@@ -18,6 +21,14 @@ export const dashboardRoutes: Routes = [
       },
       { path: 'courses', component: CoursesComponent },
       { path: 'account', component: AccountComponent },
+      {
+        path: 'course/:courseId',
+        component: CourseComponent,
+        children: [
+          { path: 'grammar', component: GrammarComponent },
+          { path: 'vocabulary', component: VocabularyComponent },
+        ],
+      },
     ],
   },
 ];
