@@ -5,13 +5,9 @@ import {
   CoursesComponent,
   AccountComponent,
   CourseComponent,
-  GrammarComponent,
   StatisticsComponent,
-  WritingComponent,
-  ReadingComponent,
-  RoadmapComponent,
 } from '@english-learning/fe-page';
-import { VocabularyComponent } from '@english-learning/fe-ui';
+import { courseRoutes } from './course.route';
 
 export const dashboardRoutes: Routes = [
   {
@@ -20,7 +16,7 @@ export const dashboardRoutes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/dashboard/courses',
+        redirectTo: 'dashboard/statistics',
         pathMatch: 'full',
       },
       { path: 'statistics', component: StatisticsComponent },
@@ -29,13 +25,7 @@ export const dashboardRoutes: Routes = [
       {
         path: 'course/:courseId',
         component: CourseComponent,
-        children: [
-          { path: 'roadmap', component: RoadmapComponent },
-          { path: 'writing', component: WritingComponent },
-          { path: 'reading', component: ReadingComponent },
-          { path: 'vocabulary', component: VocabularyComponent },
-          { path: 'grammar', component: GrammarComponent },
-        ],
+        children: courseRoutes,
       },
     ],
   },
