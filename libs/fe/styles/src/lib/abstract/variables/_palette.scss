@@ -2,11 +2,17 @@
 
 // Basic palette
 $primary: #f1f1f1;
+$secondary: #d3d3d3;
 $accent: #4e31aa;
+$text: #454545;
 
 // Specialized pallet
 $body: $accent;
 $card: $primary;
+$focus: $accent;
+$border: $secondary;
+$text-normal: $text;
+$text-focus: $accent;
 
 // Base palette
 $primary-color: #494ca2;
