@@ -13,6 +13,7 @@ export interface ControlBaseModel {
 export interface ControlInputModel extends ControlBaseModel {
   kind: ControlKindEnum.input;
   defaultValue: string;
+  placeholder: string;
 }
 
 export interface ControlButtonTextModel extends ControlBaseModel {

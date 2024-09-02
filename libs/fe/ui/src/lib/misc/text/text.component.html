@@ -1,9 +1,25 @@
-@switch (type) { @case ('paragraph') {
-<p class="text text__paragraph" [ngClass]="textColor">{{ value }}</p>
-} @case ('header1') {
-<h1 class="text text__header1" [ngClass]="textColor">{{ value }}</h1>
-} @case ('header2') {
-<h2 class="text text__header2" [ngClass]="textColor">{{ value }}</h2>
-} @case ('header3') {
-<h3 class="text text__header3" [ngClass]="textColor">{{ value }}</h3>
-} }
+<ng-container [ngSwitch]="type">
+  <ng-container *ngSwitchCase="'tiny'">
+    <p class="text text__tiny" [ngClass]="textColor">{{ value }}</p>
+  </ng-container>
+  <ng-container *ngSwitchCase="'paragraph'">
+    <p class="text text__paragraph" [ngClass]="textColor">
+      {{ value }}
+    </p>
+  </ng-container>
+  <ng-container *ngSwitchCase="'header1'">
+    <h1 class="text text__header1" [ngClass]="textColor">
+      {{ value }}
+    </h1>
+  </ng-container>
+  <ng-container *ngSwitchCase="'header2'">
+    <h2 class="text text__header2" [ngClass]="textColor">
+      {{ value }}
+    </h2>
+  </ng-container>
+  <ng-container *ngSwitchCase="'header3'">
+    <h3 class="text text__header3" [ngClass]="textColor">
+      {{ value }}
+    </h3>
+  </ng-container>
+</ng-container>

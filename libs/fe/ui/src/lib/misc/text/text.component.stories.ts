@@ -1,4 +1,4 @@
-import { type Meta, type StoryObj } from '@storybook/angular';
+import type { Meta, StoryObj } from '@storybook/angular';
 
 import { TextComponent } from './text.component';
 
@@ -8,6 +8,13 @@ const meta: Meta<TextComponent> = {
 };
 export default meta;
 type Story = StoryObj<TextComponent>;
+
+export const Tiny: Story = {
+  args: {
+    value: 'Tiny',
+    type: 'tiny',
+  },
+};
 
 export const Paragraph: Story = {
   args: {

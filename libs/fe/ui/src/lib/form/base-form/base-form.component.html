@@ -1,9 +1,10 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-  <lib-flex [flexDirection]="direction" gap="0.5em">
+  <lib-flex [flexDirection]="direction" gap="1em">
     @for (control of baseForm.controls; track control.name) { @switch
     (control.kind) { @case ('input') {
     <lib-input
-      [formControl]="getFormControl(control.name)"></lib-input>
+      [formControl]="getFormControl(control.name)"
+      [placeholder]="control.placeholder"></lib-input>
     } @case ('buttonText') {
     <lib-button-text
       [control]="getFormControl(control.name)"

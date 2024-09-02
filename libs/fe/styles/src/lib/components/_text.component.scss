@@ -1,0 +1,42 @@
+@use '../abstract/variables/general';
+@use '../abstract/variables/palette';
+
+@mixin text {
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  margin: 0;
+
+  &__normal {
+    color: palette.$text-normal;
+  }
+
+  &__focus {
+    color: palette.$text-focus;
+  }
+
+  &__paragraph {
+    font-weight: 400;
+    font-size: general.$font-size-small;
+  }
+
+  &__tiny {
+    font-weight: 400;
+    font-size: general.$font-size-tiny;
+  }
+
+  &__header {
+    font-weight: 600;
+
+    &1 {
+      font-size: general.$font-size-large;
+    }
+
+    &2 {
+      font-size: general.$font-size-medium;
+    }
+
+    &3 {
+      font-size: general.$font-size-small;
+    }
+  }
+}

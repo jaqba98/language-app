@@ -6,9 +6,10 @@
   border-radius: general.$component-radius;
   border: general.$component-border palette.$border;
   color: palette.$text-normal;
-  font-size: general.$font-size-paragraph;
+  font-size: general.$font-size-small;
   background-color: transparent;
   outline: none;
+  margin-top: 2px;
 
   &:focus {
     border: general.$component-border palette.$focus;

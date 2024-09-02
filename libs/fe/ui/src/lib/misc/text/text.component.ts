@@ -15,5 +15,5 @@ export class TextComponent {
 
   @Input() type: TextType = 'paragraph';
 
-  @Input() textColor: TextColorType = 'text__leave';
+  @Input() textColor: TextColorType = 'text__normal';
 }

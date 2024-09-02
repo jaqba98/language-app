@@ -23,6 +23,7 @@ export const Default: Story = {
           kind: ControlKindEnum.input,
           name: 'field1',
           defaultValue: '',
+          placeholder: '',
         },
         {
           kind: ControlKindEnum.buttonText,

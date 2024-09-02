@@ -1,10 +1,8 @@
 export type TextType =
+  | 'tiny'
   | 'paragraph'
   | 'header1'
   | 'header2'
   | 'header3';
 
-export type TextColorType =
-  | 'text__enter'
-  | 'text__leave'
-  | 'text__secondary';
+export type TextColorType = 'text__normal' | 'text__focus';
