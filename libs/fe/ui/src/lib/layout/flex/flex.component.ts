@@ -1,3 +1,4 @@
+// Done
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Properties } from 'csstype';
@@ -20,7 +21,7 @@ export class FlexComponent {
 
   @Input() minHeight: Properties['minHeight'];
 
-  buildFlexStyles(): Properties {
+  buildStyles(): Properties {
     return {
       flexDirection: this.flexDirection,
       alignItems: this.alignItems,
