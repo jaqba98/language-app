@@ -1,5 +1,13 @@
 @use 'sass:color';
 
+// Basic palette
+$primary: #f1f1f1;
+$border: #d3d3d3;
+
+// Specialized pallet
+$card-default__background: $primary;
+$card-default__border: $border;
+
 // Base palette
 $primary-color: #494ca2;
 $accent-color: #eee;

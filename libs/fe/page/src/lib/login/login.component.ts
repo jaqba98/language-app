@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import {
+  CardComponent,
   FlexComponent,
   LoginFormComponent,
   WrapperComponent,
@@ -9,7 +10,12 @@ import {
 @Component({
   selector: 'lib-login',
   standalone: true,
-  imports: [WrapperComponent, FlexComponent, LoginFormComponent],
+  imports: [
+    WrapperComponent,
+    FlexComponent,
+    CardComponent,
+    LoginFormComponent,
+  ],
   templateUrl: './login.component.html',
 })
 export class LoginComponent {}

@@ -1,25 +1,5 @@
-@use '@english-learning/fe-styles/src/lib/abstract';
+@use '@english-learning/fe-styles/src/lib/components';
 
 .card {
-  background-color: abstract.$component-leave-color;
-  padding: abstract.$component-padding;
-
-  &__default {
-    border-radius: abstract.$component-radius;
-  }
-
-  &__main-nav {
-    &-menu-options {
-      border-top: abstract.$component-border-size
-        abstract.$component-border-color;
-      padding: 2rem abstract.$component-padding;
-    }
-  }
-
-  &__secondary {
-    border-radius: abstract.$component-radius;
-    background-color: abstract.$component-secondary-color;
-    border: abstract.$component-border-size
-      abstract.$component-secondary-border-color;
-  }
+  @include components.card;
 }

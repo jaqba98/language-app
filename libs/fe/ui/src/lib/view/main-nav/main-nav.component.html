@@ -1,5 +1,5 @@
 <lib-flex flexDirection="column">
-  <lib-card cardType="card__main-nav">
+  <lib-card cardType="card__default">
     <lib-flex
       alignItems="center"
       [justifyContent]="mainNavJustifyContent">
@@ -18,7 +18,7 @@
   </lib-card>
   @if (isMobile && isMenuVisible) {
   <lib-wrapper #mainNavForm>
-    <lib-card cardType="card__main-nav-menu-options">
+    <lib-card cardType="card__default">
       <lib-main-nav-form
         (mainNavFormEvent)="onEvent()"></lib-main-nav-form>
     </lib-card>

@@ -18,12 +18,15 @@ export class FlexComponent {
 
   @Input() gap: Properties['gap'];
 
+  @Input() minHeight: Properties['minHeight'];
+
   buildFlexStyles(): Properties {
     return {
       flexDirection: this.flexDirection,
       alignItems: this.alignItems,
       justifyContent: this.justifyContent,
       gap: this.gap,
+      minHeight: this.minHeight,
     };
   }
 }
