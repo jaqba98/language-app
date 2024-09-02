@@ -6,17 +6,10 @@ import {
   withInMemoryScrolling,
 } from '@angular/router';
 
-import { homeRoute } from './routes/home.route';
-import { vocabularyRoute } from './routes/vocabulary.route';
-import { grammarRoute } from './routes/grammar.route';
-import { errorRoute } from './routes/error.route';
+import { authRoutes } from './routes/auth.routes';
+import { dashboardRoutes } from './routes/dashboard.routes';
 
-const routes: Routes = [
-  ...homeRoute,
-  ...vocabularyRoute,
-  ...grammarRoute,
-  ...errorRoute,
-];
+const routes: Routes = [...authRoutes, ...dashboardRoutes];
 
 export const routeConfig: ApplicationConfig = {
   providers: [
