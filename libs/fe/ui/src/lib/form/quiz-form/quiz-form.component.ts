@@ -21,6 +21,7 @@ export class QuizFormComponent {
       {
         kind: ControlKindEnum.input,
         name: 'answer',
+        label: '',
         defaultValue: '',
         placeholder: '',
         type: 'text',

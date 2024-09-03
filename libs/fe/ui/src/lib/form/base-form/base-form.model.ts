@@ -15,6 +15,7 @@ export interface ControlBaseModel {
 export interface ControlInputModel extends ControlBaseModel {
   kind: ControlKindEnum.input;
   defaultValue: string;
+  label: string;
   placeholder: string;
   type: InputType;
 }
