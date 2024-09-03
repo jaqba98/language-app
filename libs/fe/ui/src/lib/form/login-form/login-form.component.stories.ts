@@ -6,8 +6,13 @@ const meta: Meta<LoginFormComponent> = {
   component: LoginFormComponent,
   title: 'fe/ui/form/login-form',
   argTypes: {
-    event: {
-      action: 'event',
+    loginFormEvent: {
+      action: 'loginFormEvent',
+    },
+  },
+  parameters: {
+    backgrounds: {
+      default: 'primary',
     },
   },
 };

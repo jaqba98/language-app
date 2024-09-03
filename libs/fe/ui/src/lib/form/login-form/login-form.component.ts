@@ -1,11 +1,12 @@
+// Done
 import { Component, EventEmitter, Output } from '@angular/core';
 
 import { BaseFormComponent } from '../base-form/base-form.component';
-import { LoginFormModel } from './login-form.model';
 import {
   BaseFormModel,
   ControlKindEnum,
 } from '../base-form/base-form.model';
+import { LoginFormModel } from './login-form.model';
 
 @Component({
   selector: 'lib-login-form',
@@ -14,9 +15,9 @@ import {
   templateUrl: './login-form.component.html',
 })
 export class LoginFormComponent {
-  @Output() event = new EventEmitter<LoginFormModel>();
+  @Output() loginFormEvent = new EventEmitter<LoginFormModel>();
 
-  form: BaseFormModel = {
+  loginForm: BaseFormModel = {
     controls: [
       {
         kind: ControlKindEnum.input,
@@ -42,7 +43,7 @@ export class LoginFormComponent {
     ],
   };
 
-  onEvent(baseForm: LoginFormModel) {
-    this.event.emit(baseForm);
+  onBaseFormEvent(model: LoginFormModel) {
+    this.loginFormEvent.emit(model);
   }
 }

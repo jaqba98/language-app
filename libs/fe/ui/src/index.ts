@@ -1,9 +1,9 @@
+export * from './lib/form/login-form/login-form.component';
+export * from './lib/form/login-form/login-form.model';
 export * from './lib/layout/flex/flex.component';
 export * from './lib/misc/card/card.component';
 export * from './lib/view/auth/auth.component';
 
-export * from './lib/form/login-form/login-form.component';
-export * from './lib/form/login-form/login-form.model';
 export * from './lib/misc/text/text.component';
 export * from './lib/misc/wrapper/wrapper.component';
 export * from './lib/control/input/input.component';
