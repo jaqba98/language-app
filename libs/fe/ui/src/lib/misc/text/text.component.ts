@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+// Done
 import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
-import { TextColorType, TextType } from './text.type';
+import { TextType, TextColorType } from './text.type';
 
 @Component({
   selector: 'lib-text',
@@ -15,5 +16,5 @@ export class TextComponent {
 
   @Input() type: TextType = 'paragraph';
 
-  @Input() textColor: TextColorType = 'text__normal';
+  @Input() textColor: TextColorType = 'text__default';
 }

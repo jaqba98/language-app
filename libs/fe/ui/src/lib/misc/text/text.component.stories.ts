@@ -5,6 +5,11 @@ import { TextComponent } from './text.component';
 const meta: Meta<TextComponent> = {
   component: TextComponent,
   title: 'fe/ui/misc/text',
+  parameters: {
+    backgrounds: {
+      default: 'primary',
+    },
+  },
 };
 export default meta;
 type Story = StoryObj<TextComponent>;

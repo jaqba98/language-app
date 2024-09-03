@@ -1,32 +1,37 @@
-@use '../abstract/variables/general';
-@use '../abstract/variables/palette';
+@use '../../abstract/variables/general';
+@use '../../abstract/variables/palette';
+@import 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap';
 
 @mixin text {
   font-family: Lato, sans-serif;
   font-style: normal;
   margin: 0;
 
-  &__normal {
+  &__default {
     color: palette.$text-normal;
   }
 
-  &__focus {
+  &__primary {
+    color: palette.$primary;
+  }
+
+  &__secondary {
+    color: palette.$secondary;
+  }
+
+  &__accent {
     color: palette.$text-focus;
   }
 
   &__tiny {
-    font-weight: 400;
     font-size: general.$font-size-tiny;
   }
 
   &__paragraph {
-    font-weight: 400;
     font-size: general.$font-size-small;
   }
 
   &__header {
-    font-weight: 600;
-
     &1 {
       font-size: general.$font-size-large;
     }

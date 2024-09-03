@@ -1,5 +1,5 @@
-@use '@english-learning/fe-styles/src/lib/components';
+@use '@english-learning/fe-styles/src/lib/main';
 
 .text {
-  @include components.text;
+  @include main.text;
 }

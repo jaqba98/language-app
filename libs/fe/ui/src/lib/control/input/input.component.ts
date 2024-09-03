@@ -1,3 +1,4 @@
+// Done
 import { Component, Input } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
@@ -17,17 +18,19 @@ import { InputType } from './input.type';
 export class InputComponent extends BaseControlService<string> {
   @Input({ required: true }) formControl!: FormControl;
 
+  @Input() label = '';
+
   @Input() placeholder = '';
 
   @Input() type: InputType = 'text';
 
-  textColor: TextColorType = 'text__normal';
+  textColor: TextColorType = 'text__secondary';
 
   onFocus() {
-    this.textColor = 'text__focus';
+    this.textColor = 'text__accent';
   }
 
   onBlur() {
-    this.textColor = 'text__normal';
+    this.textColor = 'text__secondary';
   }
 }

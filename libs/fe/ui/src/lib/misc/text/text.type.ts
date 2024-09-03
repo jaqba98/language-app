@@ -5,4 +5,8 @@ export type TextType =
   | 'header2'
   | 'header3';
 
-export type TextColorType = 'text__normal' | 'text__focus';
+export type TextColorType =
+  | 'text__default'
+  | 'text__primary'
+  | 'text__secondary'
+  | 'text__accent';
