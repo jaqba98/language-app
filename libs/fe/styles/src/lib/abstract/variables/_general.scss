@@ -1,6 +1,6 @@
 $component-padding-small: 0.75rem;
-$component-padding-big: 2rem;
-$component-radius: 0.25rem;
+$component-padding-large: 2rem;
+$component-radius-small: 0.25rem;
 $component-border: 1px solid;
 $font-size-tiny: 0.8em;
 $font-size-small: 1em;
@@ -19,6 +19,7 @@ $z-index-lower: -2;
 $z-index-lowest: -3;
 $main-width: 960px;
 $component-padding: 0.5rem;
+$component-radius: 0.25rem;
 
 // old
 $shadow-size: 0 5px 5px;
