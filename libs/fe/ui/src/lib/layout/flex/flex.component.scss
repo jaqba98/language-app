@@ -1,4 +1,5 @@
+@use '@english-learning/fe-styles/src/lib/main';
+
 .flex {
-  display: flex;
-  flex-wrap: wrap;
+  @include main.flex;
 }

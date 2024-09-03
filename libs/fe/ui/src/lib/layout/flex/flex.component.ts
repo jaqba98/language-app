@@ -1,12 +1,12 @@
 // Done
-import { CommonModule } from '@angular/common';
+import { NgStyle } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Properties } from 'csstype';
 
 @Component({
   selector: 'lib-flex',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgStyle],
   templateUrl: './flex.component.html',
   styleUrl: './flex.component.scss',
 })
