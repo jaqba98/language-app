@@ -1,0 +1,20 @@
+@use '../../abstract/variables/general';
+@use '../../abstract/variables/palette';
+
+@mixin button {
+  padding: general.$component-padding-small;
+  border-radius: general.$component-radius-small;
+  border: general.$component-border palette.$button;
+  background-color: palette.$button;
+  cursor: pointer;
+  outline: none;
+
+  &:focus {
+    outline-offset: 1px;
+    outline: general.$component-border palette.$button;
+  }
+
+  &:active {
+    transform: general.$component-scale-small;
+  }
+}

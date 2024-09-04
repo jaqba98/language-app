@@ -1,4 +1,4 @@
-import { type Meta, type StoryObj } from '@storybook/angular';
+import type { Meta, StoryObj } from '@storybook/angular';
 import { FormControl } from '@angular/forms';
 
 import { ButtonComponent } from './button.component';
@@ -15,6 +15,11 @@ const meta: Meta<ButtonComponent> = {
     },
     onMouseLeave: {
       action: 'onMouseLeave',
+    },
+  },
+  parameters: {
+    backgrounds: {
+      default: 'primary',
     },
   },
 };

@@ -1,12 +1,8 @@
 <button
   class="button"
-  [type]="getButtonType()"
-  [ngClass]="buildStyles()"
+  [type]="type"
   (click)="onClick()"
   (mouseenter)="onMouseEnter()"
   (mouseleave)="onMouseLeave()">
-  <div class="button__slider"></div>
-  <div class="button__content">
-    <ng-content></ng-content>
-  </div>
+  <ng-content></ng-content>
 </button>

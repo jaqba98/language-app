@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+// Done
 import {
   Component,
   EventEmitter,
@@ -6,28 +6,26 @@ import {
   Output,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ButtonType } from './button.type';
 
 @Component({
   selector: 'lib-button',
   standalone: true,
-  imports: [CommonModule],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
   @Input({ required: true }) control!: FormControl;
 
-  @Input() isPrimary = false;
+  @Input() type: ButtonType = 'submit';
 
-  @Input() fullWidth = false;
+  @Input() isPrimary = false;
 
   @Output() clickEvent = new EventEmitter();
 
   @Output() mouseEnterEvent = new EventEmitter();
 
   @Output() mouseLeaveEvent = new EventEmitter();
-
-  isFocused = false;
 
   onClick() {
     this.control.setValue(true);
@@ -41,15 +39,5 @@ export class ButtonComponent {
 
   onMouseLeave() {
     this.mouseLeaveEvent.emit();
-  }
-
-  getButtonType() {
-    return this.isPrimary ? 'submit' : 'button';
-  }
-
-  buildStyles() {
-    return {
-      'button__full-width': this.fullWidth,
-    };
   }
 }
