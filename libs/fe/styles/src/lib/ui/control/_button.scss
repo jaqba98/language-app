@@ -10,7 +10,7 @@
   outline: none;
 
   &:focus {
-    outline-offset: 1px;
+    outline-offset: 3px;
     outline: general.$component-border palette.$button;
   }
 
