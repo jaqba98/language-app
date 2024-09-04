@@ -1,3 +1,4 @@
+// Done
 import {
   Component,
   EventEmitter,
@@ -7,7 +8,6 @@ import {
 import { FormControl } from '@angular/forms';
 
 import { TextComponent } from '../../misc/text/text.component';
-import { TextColorType } from '../../misc/text/text.type';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
@@ -23,21 +23,9 @@ export class ButtonTextComponent {
 
   @Input() isPrimary = false;
 
-  @Input() fullWidth = false;
-
   @Output() clickEvent = new EventEmitter();
-
-  textColor: TextColorType = 'text__default';
 
   onClickEvent() {
     this.clickEvent.emit();
-  }
-
-  onMouseEnterEvent() {
-    this.textColor = 'text__default';
-  }
-
-  onMouseLeaveEvent() {
-    this.textColor = 'text__default';
   }
 }

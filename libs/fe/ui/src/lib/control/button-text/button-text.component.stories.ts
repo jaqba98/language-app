@@ -1,4 +1,4 @@
-import { type Meta, type StoryObj } from '@storybook/angular';
+import type { Meta, StoryObj } from '@storybook/angular';
 import { FormControl } from '@angular/forms';
 
 import { ButtonTextComponent } from './button-text.component';
@@ -9,6 +9,11 @@ const meta: Meta<ButtonTextComponent> = {
   argTypes: {
     clickEvent: {
       action: 'clickEvent',
+    },
+  },
+  parameters: {
+    backgrounds: {
+      default: 'primary',
     },
   },
 };
