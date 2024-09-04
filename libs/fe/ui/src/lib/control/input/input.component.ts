@@ -1,5 +1,10 @@
 // Done
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+} from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 import { BaseControlService } from '../../form/base-form/base-control.service';
@@ -16,6 +21,8 @@ import { InputType } from './input.type';
   providers: [BaseControlService.getProvider(InputComponent)],
 })
 export class InputComponent extends BaseControlService<string> {
+  @ViewChild('input') input!: ElementRef;
+
   @Input({ required: true }) formControl!: FormControl;
 
   @Input() label = '';
@@ -32,5 +39,9 @@ export class InputComponent extends BaseControlService<string> {
 
   onBlur() {
     this.textColor = 'text__secondary';
+  }
+
+  onClick() {
+    this.input.nativeElement.focus();
   }
 }

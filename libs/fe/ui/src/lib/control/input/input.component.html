@@ -1,8 +1,10 @@
 <lib-text
   type="tiny"
+  (clickEvent)="onClick()"
   [value]="label"
   [textColor]="textColor"></lib-text>
 <input
+  #input
   class="input"
   [type]="type"
   [placeholder]="placeholder"

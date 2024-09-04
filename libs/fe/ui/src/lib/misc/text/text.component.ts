@@ -1,6 +1,11 @@
 // Done
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 
 import { TextType, TextColorType } from './text.type';
 
@@ -17,4 +22,10 @@ export class TextComponent {
   @Input() type: TextType = 'paragraph';
 
   @Input() textColor: TextColorType = 'text__default';
+
+  @Output() clickEvent = new EventEmitter();
+
+  onClick() {
+    this.clickEvent.emit();
+  }
 }
