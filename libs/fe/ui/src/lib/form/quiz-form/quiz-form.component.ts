@@ -25,6 +25,7 @@ export class QuizFormComponent {
         defaultValue: '',
         placeholder: '',
         type: 'text',
+        validators: [],
       },
       {
         kind: ControlKindEnum.buttonText,
@@ -32,6 +33,7 @@ export class QuizFormComponent {
         label: 'Show Answer',
         isPrimary: false,
         fullWidth: false,
+        validators: [],
       },
       {
         kind: ControlKindEnum.buttonText,
@@ -39,6 +41,7 @@ export class QuizFormComponent {
         label: 'Submit',
         isPrimary: true,
         fullWidth: false,
+        validators: [],
       },
     ],
   };

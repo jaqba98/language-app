@@ -26,6 +26,7 @@ export const Default: Story = {
           label: '',
           placeholder: '',
           type: 'text',
+          validators: [],
         },
         {
           kind: ControlKindEnum.buttonText,
@@ -33,6 +34,7 @@ export const Default: Story = {
           label: 'Click!',
           isPrimary: true,
           fullWidth: false,
+          validators: [],
         },
         {
           kind: ControlKindEnum.buttonIcon,
@@ -41,6 +43,7 @@ export const Default: Story = {
           iconLeave: 'icon/hamburger-close.svg',
           alt: 'hamburger icon',
           isPrimary: false,
+          validators: [],
         },
       ],
     },

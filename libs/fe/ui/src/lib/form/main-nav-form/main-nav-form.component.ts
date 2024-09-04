@@ -52,6 +52,7 @@ export class MainNavFormComponent
         label: 'Home',
         isPrimary: false,
         fullWidth: true,
+        validators: [],
       },
       {
         kind: ControlKindEnum.buttonText,
@@ -59,6 +60,7 @@ export class MainNavFormComponent
         label: 'Vocabulary',
         isPrimary: false,
         fullWidth: true,
+        validators: [],
       },
       {
         kind: ControlKindEnum.buttonText,
@@ -66,6 +68,7 @@ export class MainNavFormComponent
         label: 'Grammar',
         isPrimary: false,
         fullWidth: true,
+        validators: [],
       },
     ],
   };

@@ -56,6 +56,7 @@ export class SectionNavFormComponent implements OnInit, OnDestroy {
       name: tab.id,
       label: tab.label,
       path: tab.path,
+      validators: [],
     };
   }
 }

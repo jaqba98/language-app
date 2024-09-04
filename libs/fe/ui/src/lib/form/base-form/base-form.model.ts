@@ -1,3 +1,5 @@
+import { ValidatorFn } from '@angular/forms';
+
 import { InputType } from '../../control/input/input.type';
 
 export enum ControlKindEnum {
@@ -7,7 +9,11 @@ export enum ControlKindEnum {
   link = 'link',
 }
 
-export interface ControlBaseModel {
+export interface ControlValidationModel {
+  validators: ValidatorFn[];
+}
+
+export interface ControlBaseModel extends ControlValidationModel {
   kind: ControlKindEnum;
   name: string;
 }

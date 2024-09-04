@@ -26,6 +26,7 @@ export class HamburgerFormComponent {
         iconLeave: 'icon/hamburger-close.svg',
         alt: 'hamburger icon',
         isPrimary: false,
+        validators: [],
       },
     ],
   };

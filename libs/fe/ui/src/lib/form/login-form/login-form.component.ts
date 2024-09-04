@@ -1,5 +1,6 @@
 // Done
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Validators } from '@angular/forms';
 
 import { BaseFormComponent } from '../base-form/base-form.component';
 import {
@@ -26,6 +27,7 @@ export class LoginFormComponent {
         label: 'Email',
         placeholder: 'Email',
         type: 'text',
+        validators: [Validators.required, Validators.email],
       },
       {
         kind: ControlKindEnum.input,
@@ -34,6 +36,7 @@ export class LoginFormComponent {
         label: 'Password',
         placeholder: 'Password',
         type: 'password',
+        validators: [Validators.required],
       },
       {
         kind: ControlKindEnum.buttonText,
@@ -41,6 +44,7 @@ export class LoginFormComponent {
         label: 'Log in',
         fullWidth: false,
         isPrimary: true,
+        validators: [],
       },
     ],
   };

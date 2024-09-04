@@ -12,6 +12,7 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import { Properties } from 'csstype';
+import { CommonModule } from '@angular/common';
 
 import {
   BaseFormModel,
@@ -28,6 +29,7 @@ import { LinkComponent } from '../../control/link/link.component';
   selector: 'lib-base-form',
   standalone: true,
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     FlexComponent,
     InputComponent,
@@ -78,7 +80,10 @@ export class BaseFormComponent implements OnInit {
   private buildFormControl(control: ControlType) {
     switch (control.kind) {
       case ControlKindEnum.input:
-        return new FormControl(control.defaultValue);
+        return new FormControl(
+          control.defaultValue,
+          control.validators,
+        );
       case ControlKindEnum.buttonText:
         return new FormControl(false);
       case ControlKindEnum.buttonIcon:
