@@ -51,6 +51,8 @@ export class BaseFormComponent implements OnInit {
 
   formGroup: FormGroup;
 
+  formInvalid = false;
+
   constructor(private readonly fb: FormBuilder) {
     this.formGroup = this.fb.group({});
   }
@@ -67,9 +69,13 @@ export class BaseFormComponent implements OnInit {
 
   onSubmit() {
     this.formGroup.markAllAsTouched();
-    if (this.formGroupInvalid()) return;
+    if (this.formGroupInvalid()) {
+      this.formInvalid = true;
+      return;
+    }
     this.baseFormEvent.emit(this.formGroup.value);
     this.resetFormGroup();
+    this.formInvalid = false;
   }
 
   getFormControl(name: string) {

@@ -43,5 +43,9 @@
         </ng-container>
       </lib-flex>
     </ng-container>
+    <!-- form validation -->
+    <ng-container *ngIf="formInvalid">
+      <lib-error value="Error"></lib-error>
+    </ng-container>
   </lib-flex>
 </form>
