@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Properties } from 'csstype';
-import { FormControl } from '@angular/forms';
 
 import {
   BreakpointEnum,
@@ -53,7 +52,6 @@ export class MainNavFormComponent
         label: 'Home',
         isPrimary: false,
         validators: [],
-        control: new FormControl(),
       },
       {
         kind: ControlKindEnum.buttonText,
@@ -61,7 +59,6 @@ export class MainNavFormComponent
         label: 'Vocabulary',
         isPrimary: false,
         validators: [],
-        control: new FormControl(),
       },
       {
         kind: ControlKindEnum.buttonText,
@@ -69,7 +66,6 @@ export class MainNavFormComponent
         label: 'Grammar',
         isPrimary: false,
         validators: [],
-        control: new FormControl(),
       },
     ],
   };

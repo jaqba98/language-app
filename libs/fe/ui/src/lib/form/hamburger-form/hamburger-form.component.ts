@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
 
 import { BaseFormComponent } from '../base-form/base-form.component';
 import {
@@ -28,7 +27,6 @@ export class HamburgerFormComponent {
         alt: 'hamburger icon',
         isPrimary: false,
         validators: [],
-        control: new FormControl(),
       },
     ],
   };

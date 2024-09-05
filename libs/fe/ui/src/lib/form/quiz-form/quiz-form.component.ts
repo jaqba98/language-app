@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
 
 import { BaseFormComponent } from '../base-form/base-form.component';
 import {
@@ -27,7 +26,6 @@ export class QuizFormComponent {
         placeholder: '',
         type: 'text',
         validators: [],
-        control: new FormControl(''),
       },
       {
         kind: ControlKindEnum.buttonText,
@@ -35,7 +33,6 @@ export class QuizFormComponent {
         label: 'Show Answer',
         isPrimary: false,
         validators: [],
-        control: new FormControl(''),
       },
       {
         kind: ControlKindEnum.buttonText,
@@ -43,7 +40,6 @@ export class QuizFormComponent {
         label: 'Submit',
         isPrimary: true,
         validators: [],
-        control: new FormControl(''),
       },
     ],
   };

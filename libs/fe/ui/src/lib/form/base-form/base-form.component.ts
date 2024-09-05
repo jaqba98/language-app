@@ -13,22 +13,30 @@ import {
   FormControl,
 } from '@angular/forms';
 import { Properties } from 'csstype';
+import { CommonModule } from '@angular/common';
 
 import { FlexComponent } from '../../layout/flex/flex.component';
-import { BaseFormControlComponent } from '../base-form-control/base-form-control.component';
 import {
   BaseFormModel,
   ControlType,
   ControlKindEnum,
 } from './base-form.model';
+import { InputComponent } from '../../control/input/input.component';
+import { ButtonTextComponent } from '../../control/button-text/button-text.component';
+import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
+import { LinkComponent } from '../../control/link/link.component';
 
 @Component({
   selector: 'lib-base-form',
   standalone: true,
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     FlexComponent,
-    BaseFormControlComponent,
+    InputComponent,
+    ButtonTextComponent,
+    ButtonIconComponent,
+    LinkComponent,
   ],
   templateUrl: './base-form.component.html',
 })
@@ -64,6 +72,13 @@ export class BaseFormComponent implements OnInit {
     const formControl = this.formGroup.get(name);
     if (formControl) return formControl as FormControl;
     throw new Error(`Form control ${name} does not exists!`);
+  }
+
+  checkFormControlValidation(name: string) {
+    return (
+      this.getFormControl(name).invalid &&
+      this.getFormControl(name).touched
+    );
   }
 
   private buildFormControl(control: ControlType) {

@@ -10,7 +10,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TextComponent } from '../../misc/text/text.component';
 import { TextColorType } from '../../misc/text/text.type';
 import { InputType } from './input.type';
-import { BaseControlService } from '../../form/base-form-control/base-control.service';
+import { BaseControlService } from '../../form/base-form/base-control.service';
 
 @Component({
   selector: 'lib-input',

@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { FormControl } from '@angular/forms';
 
 import { BaseFormComponent } from './base-form.component';
 import { ControlKindEnum } from './base-form.model';
@@ -18,7 +17,6 @@ export const Default: Story = {
         {
           kind: ControlKindEnum.input,
           name: 'input',
-          control: new FormControl(''),
           validators: [],
           defaultValue: '',
           label: 'Input',
@@ -28,7 +26,6 @@ export const Default: Story = {
         {
           kind: ControlKindEnum.buttonText,
           name: 'buttonText',
-          control: new FormControl(false),
           validators: [],
           label: 'ButtonText',
           isPrimary: false,
@@ -36,7 +33,6 @@ export const Default: Story = {
         {
           kind: ControlKindEnum.buttonIcon,
           name: 'buttonIcon',
-          control: new FormControl(false),
           validators: [],
           iconEnter: 'icon/hamburger-open.svg',
           iconLeave: 'icon/hamburger-close.svg',
@@ -46,7 +42,6 @@ export const Default: Story = {
         {
           kind: ControlKindEnum.link,
           name: 'link',
-          control: new FormControl(false),
           validators: [],
           label: 'Link',
           path: '/',

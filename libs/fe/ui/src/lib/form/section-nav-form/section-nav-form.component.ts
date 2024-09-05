@@ -1,7 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { FormControl } from '@angular/forms';
 
 import {
   SectionTabModel,
@@ -58,7 +57,6 @@ export class SectionNavFormComponent implements OnInit, OnDestroy {
       label: tab.label,
       path: tab.path,
       validators: [],
-      control: new FormControl(false),
     };
   }
 }
