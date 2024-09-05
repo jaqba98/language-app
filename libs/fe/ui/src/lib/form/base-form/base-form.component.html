@@ -35,14 +35,13 @@
             [path]="control.path"></lib-link>
         </ng-container>
         <!-- control validation -->
-        <ng-container *ngIf="formControlInvalid(control.name)">
+        <ng-container
+          *ngIf="
+            formControlInvalid(control.name) && control.showValidation
+          ">
           <lib-error value="Error"></lib-error>
         </ng-container>
       </lib-flex>
-    </ng-container>
-    <!-- form validation -->
-    <ng-container *ngIf="formGroupInvalid()">
-      <lib-error value="Error"></lib-error>
     </ng-container>
   </lib-flex>
 </form>

@@ -27,6 +27,7 @@ export class HamburgerFormComponent {
         alt: 'hamburger icon',
         isPrimary: false,
         validators: [],
+        showValidation: false,
       },
     ],
   };

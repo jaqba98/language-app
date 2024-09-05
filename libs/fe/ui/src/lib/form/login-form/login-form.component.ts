@@ -28,6 +28,7 @@ export class LoginFormComponent {
         placeholder: 'Email',
         type: 'text',
         validators: [Validators.required, Validators.email],
+        showValidation: true,
       },
       {
         kind: ControlKindEnum.input,
@@ -37,6 +38,7 @@ export class LoginFormComponent {
         placeholder: 'Password',
         type: 'password',
         validators: [Validators.required],
+        showValidation: true,
       },
       {
         kind: ControlKindEnum.buttonText,
@@ -44,6 +46,7 @@ export class LoginFormComponent {
         label: 'Log in',
         isPrimary: true,
         validators: [],
+        showValidation: false,
       },
     ],
   };

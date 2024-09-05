@@ -24,6 +24,7 @@ export class RestartFormComponent {
         label: 'Restart',
         isPrimary: false,
         validators: [],
+        showValidation: true,
       },
     ],
   };

@@ -22,6 +22,7 @@ export const Default: Story = {
           label: 'Input',
           placeholder: 'input',
           type: 'text',
+          showValidation: false,
         },
         {
           kind: ControlKindEnum.buttonText,
@@ -29,6 +30,7 @@ export const Default: Story = {
           validators: [],
           label: 'ButtonText',
           isPrimary: false,
+          showValidation: false,
         },
         {
           kind: ControlKindEnum.buttonIcon,
@@ -38,6 +40,7 @@ export const Default: Story = {
           iconLeave: 'icon/hamburger-close.svg',
           alt: 'hamburger icon',
           isPrimary: false,
+          showValidation: false,
         },
         {
           kind: ControlKindEnum.link,
@@ -45,6 +48,7 @@ export const Default: Story = {
           validators: [],
           label: 'Link',
           path: '/',
+          showValidation: false,
         },
       ],
     },

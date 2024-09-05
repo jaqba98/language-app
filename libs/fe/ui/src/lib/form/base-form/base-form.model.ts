@@ -13,6 +13,7 @@ export interface ControlBaseModel {
   kind: ControlKindEnum;
   name: string;
   validators: ValidatorFn[];
+  showValidation: boolean;
 }
 
 export interface ControlInputModel extends ControlBaseModel {
