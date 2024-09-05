@@ -16,7 +16,7 @@ import { LoginFormModel } from './login-form.model';
   templateUrl: './login-form.component.html',
 })
 export class LoginFormComponent {
-  @Output() loginFormEvent = new EventEmitter<LoginFormModel>();
+  @Output() event = new EventEmitter<LoginFormModel>();
 
   loginForm: BaseFormModel = {
     controls: [
@@ -52,6 +52,6 @@ export class LoginFormComponent {
   };
 
   onBaseFormEvent(model: LoginFormModel) {
-    this.loginFormEvent.emit(model);
+    this.event.emit(model);
   }
 }
