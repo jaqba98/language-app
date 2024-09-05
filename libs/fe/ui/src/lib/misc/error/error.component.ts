@@ -8,6 +8,7 @@ import { TextComponent } from '../text/text.component';
   standalone: true,
   imports: [TextComponent],
   templateUrl: './error.component.html',
+  styleUrl: './error.component.scss',
 })
 export class ErrorComponent {
   @Input({ required: true }) value!: string;

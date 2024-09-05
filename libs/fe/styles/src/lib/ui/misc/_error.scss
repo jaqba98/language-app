@@ -1,0 +1,9 @@
+@use '../../abstract/variables/general';
+@use '../../abstract/variables/palette';
+
+@mixin error {
+  padding: general.$component-padding-tiny;
+  border-radius: general.$component-radius-small;
+  border: general.$component-border palette.$error-background;
+  background-color: palette.$error-background;
+}

@@ -1,7 +1,7 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
   <lib-flex [flexDirection]="flexDirection" gap="1rem">
     <ng-container *ngFor="let control of baseForm.controls">
-      <div>
+      <lib-flex flexDirection="column" gap="0.25rem">
         <!-- input -->
         <ng-container *ngIf="control.kind === 'input'">
           <lib-input
@@ -38,7 +38,7 @@
         <ng-container *ngIf="formControlInvalid(control.name)">
           <lib-error value="Error"></lib-error>
         </ng-container>
-      </div>
+      </lib-flex>
     </ng-container>
     <!-- form validation -->
     <ng-container *ngIf="formGroupInvalid()">
