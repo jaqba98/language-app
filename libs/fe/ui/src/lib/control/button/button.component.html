@@ -1,6 +1,6 @@
 <button
   class="button"
-  [type]="type"
+  [type]="isPrimary ? 'submit' : 'button'"
   (click)="onClick()"
   (mouseenter)="onMouseEnter()"
   (mouseleave)="onMouseLeave()">

@@ -64,6 +64,8 @@ export class BaseFormComponent implements OnInit {
   }
 
   onSubmit() {
+    this.formGroup.markAllAsTouched();
+    if (this.formGroupInvalid()) return;
     this.baseFormEvent.emit(this.formGroup.value);
     this.resetFormGroup();
   }
@@ -74,7 +76,11 @@ export class BaseFormComponent implements OnInit {
     throw new Error(`Form control ${name} does not exists!`);
   }
 
-  checkFormControlValidation(name: string) {
+  formGroupInvalid() {
+    return this.formGroup.invalid && this.formGroup.touched;
+  }
+
+  formControlInvalid(name: string) {
     return (
       this.getFormControl(name).invalid &&
       this.getFormControl(name).touched
@@ -102,5 +108,6 @@ export class BaseFormComponent implements OnInit {
       const { name } = control;
       this.formGroup.setControl(name, this.buildFormControl(control));
     });
+    this.formGroup.markAsUntouched();
   }
 }
