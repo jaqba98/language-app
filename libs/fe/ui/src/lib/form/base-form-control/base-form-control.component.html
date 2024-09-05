@@ -1,0 +1,34 @@
+<ng-container *ngFor="let control of controls">
+  <!-- input -->
+  <ng-container *ngIf="control.kind === 'input'">
+    <lib-input
+      [control]="control.control"
+      [label]="control.label"
+      [placeholder]="control.placeholder"
+      [type]="control.type"></lib-input>
+  </ng-container>
+  <!-- button text -->
+  <ng-container *ngIf="control.kind === 'buttonText'">
+    <lib-button-text
+      [control]="control.control"
+      [label]="control.label"
+      [isPrimary]="control.isPrimary"
+      (clickEvent)="onClick()"></lib-button-text>
+  </ng-container>
+  <!-- button icon -->
+  <ng-container *ngIf="control.kind === 'buttonIcon'">
+    <lib-button-icon
+      [control]="control.control"
+      [iconEnter]="control.iconEnter"
+      [iconLeave]="control.iconLeave"
+      [alt]="control.alt"
+      [isPrimary]="control.isPrimary"
+      (clickEvent)="onClick()"></lib-button-icon>
+  </ng-container>
+  <!-- link -->
+  <ng-container *ngIf="control.kind === 'link'">
+    <lib-link
+      [label]="control.label"
+      [path]="control.path"></lib-link>
+  </ng-container>
+</ng-container>

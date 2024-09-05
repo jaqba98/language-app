@@ -22,15 +22,15 @@ export class BaseControlService<TValue>
 
   onTouched: () => void = () => {};
 
-  writeValue(value: TValue): void {
+  writeValue(value: TValue) {
     this.value = value;
   }
 
-  registerOnChange(fn: (value: TValue) => void): void {
+  registerOnChange(fn: (value: TValue) => void) {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: () => void): void {
+  registerOnTouched(fn: () => void) {
     this.onTouched = fn;
   }
 

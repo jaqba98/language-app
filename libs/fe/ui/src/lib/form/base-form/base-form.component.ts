@@ -1,3 +1,4 @@
+// Done
 import {
   Component,
   OnInit,
@@ -8,41 +9,33 @@ import {
 import {
   ReactiveFormsModule,
   FormGroup,
-  FormControl,
   FormBuilder,
+  FormControl,
 } from '@angular/forms';
 import { Properties } from 'csstype';
-import { CommonModule } from '@angular/common';
 
+import { FlexComponent } from '../../layout/flex/flex.component';
+import { BaseFormControlComponent } from '../base-form-control/base-form-control.component';
 import {
   BaseFormModel,
-  ControlKindEnum,
   ControlType,
+  ControlKindEnum,
 } from './base-form.model';
-import { FlexComponent } from '../../layout/flex/flex.component';
-import { InputComponent } from '../../control/input/input.component';
-import { ButtonTextComponent } from '../../control/button-text/button-text.component';
-import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
-import { LinkComponent } from '../../control/link/link.component';
 
 @Component({
   selector: 'lib-base-form',
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     FlexComponent,
-    InputComponent,
-    ButtonTextComponent,
-    ButtonIconComponent,
-    LinkComponent,
+    BaseFormControlComponent,
   ],
   templateUrl: './base-form.component.html',
 })
 export class BaseFormComponent implements OnInit {
   @Input({ required: true }) baseForm!: BaseFormModel;
 
-  @Input() direction: Properties['flexDirection'] = 'column';
+  @Input() flexDirection: Properties['flexDirection'];
 
   @Output() baseFormEvent = new EventEmitter();
 
@@ -55,26 +48,25 @@ export class BaseFormComponent implements OnInit {
   ngOnInit() {
     this.baseForm.controls.forEach(control => {
       const { name } = control;
-      this.checkFormControlExist(name);
-      this.formGroup.addControl(name, this.buildFormControl(control));
+      if (!this.formGroup.get(name)) {
+        this.formGroup.addControl(
+          name,
+          this.buildFormControl(control),
+        );
+      }
+      throw new Error(`Form control ${name} already exists!`);
     });
   }
 
   onSubmit() {
     this.baseFormEvent.emit(this.formGroup.value);
-    this.resetFormControls();
+    this.resetFormGroup();
   }
 
   getFormControl(name: string) {
     const formControl = this.formGroup.get(name);
     if (formControl) return formControl as FormControl;
     throw new Error(`Form control ${name} does not exists!`);
-  }
-
-  private checkFormControlExist(name: string) {
-    if (this.formGroup.get(name)) {
-      throw new Error(`Form control ${name} already exists!`);
-    }
   }
 
   private buildFormControl(control: ControlType) {
@@ -85,17 +77,15 @@ export class BaseFormComponent implements OnInit {
           control.validators,
         );
       case ControlKindEnum.buttonText:
-        return new FormControl(false);
       case ControlKindEnum.buttonIcon:
-        return new FormControl(false);
       case ControlKindEnum.link:
-        return new FormControl(false);
+        return new FormControl(false, control.validators);
       default:
         throw new Error('Unsupported control type!');
     }
   }
 
-  private resetFormControls() {
+  private resetFormGroup() {
     this.baseForm.controls.forEach(control => {
       const { name } = control;
       this.formGroup.setControl(name, this.buildFormControl(control));

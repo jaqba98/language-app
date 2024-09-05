@@ -17,7 +17,7 @@ type Story = StoryObj<InputComponent>;
 
 export const Default: Story = {
   args: {
-    formControl: new FormControl(''),
+    control: new FormControl(''),
     label: 'Login',
     placeholder: 'admin',
   },

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Properties } from 'csstype';
+import { FormControl } from '@angular/forms';
 
 import {
   BreakpointEnum,
@@ -27,7 +28,7 @@ export class MainNavFormComponent
 {
   @Output() mainNavFormEvent = new EventEmitter<HamburgerFormModel>();
 
-  direction: Properties['flexDirection'] = 'row';
+  flexDirection: Properties['flexDirection'] = 'row';
 
   constructor(
     private readonly route: RouteNavigationService,
@@ -38,9 +39,9 @@ export class MainNavFormComponent
 
   update(data: BreakpointModel) {
     if (data.breakpoint === BreakpointEnum.XSmall) {
-      this.direction = 'column';
+      this.flexDirection = 'column';
     } else {
-      this.direction = 'row';
+      this.flexDirection = 'row';
     }
   }
 
@@ -51,24 +52,24 @@ export class MainNavFormComponent
         name: 'homeButton',
         label: 'Home',
         isPrimary: false,
-        fullWidth: true,
         validators: [],
+        control: new FormControl(),
       },
       {
         kind: ControlKindEnum.buttonText,
         name: 'vocabularyButton',
         label: 'Vocabulary',
         isPrimary: false,
-        fullWidth: true,
         validators: [],
+        control: new FormControl(),
       },
       {
         kind: ControlKindEnum.buttonText,
         name: 'grammarButton',
         label: 'Grammar',
         isPrimary: false,
-        fullWidth: true,
         validators: [],
+        control: new FormControl(),
       },
     ],
   };

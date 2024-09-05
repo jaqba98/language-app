@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 import { BaseFormComponent } from '../base-form/base-form.component';
 import {
@@ -23,8 +24,8 @@ export class RestartFormComponent {
         name: 'restart',
         label: 'Restart',
         isPrimary: false,
-        fullWidth: true,
         validators: [],
+        control: new FormControl(),
       },
     ],
   };

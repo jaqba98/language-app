@@ -1,4 +1,4 @@
-import { ValidatorFn } from '@angular/forms';
+import { FormControl, ValidatorFn } from '@angular/forms';
 
 import { InputType } from '../../control/input/input.type';
 
@@ -9,13 +9,11 @@ export enum ControlKindEnum {
   link = 'link',
 }
 
-export interface ControlValidationModel {
-  validators: ValidatorFn[];
-}
-
-export interface ControlBaseModel extends ControlValidationModel {
+export interface ControlBaseModel {
   kind: ControlKindEnum;
   name: string;
+  control: FormControl;
+  validators: ValidatorFn[];
 }
 
 export interface ControlInputModel extends ControlBaseModel {
@@ -30,7 +28,6 @@ export interface ControlButtonTextModel extends ControlBaseModel {
   kind: ControlKindEnum.buttonText;
   label: string;
   isPrimary: boolean;
-  fullWidth: boolean;
 }
 
 export interface ControlButtonIconModel extends ControlBaseModel {

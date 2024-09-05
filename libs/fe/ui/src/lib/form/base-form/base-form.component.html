@@ -1,46 +1,7 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-  <lib-flex [flexDirection]="direction" gap="1rem">
-    <ng-container *ngFor="let control of baseForm.controls">
-      <!-- input -->
-      <ng-container *ngIf="control.kind === 'input'">
-        <lib-input
-          [formControl]="getFormControl(control.name)"
-          [label]="control.label"
-          [placeholder]="control.placeholder"
-          [type]="control.type"></lib-input>
-      </ng-container>
-      <!-- button text -->
-      <ng-container *ngIf="control.kind === 'buttonText'">
-        <lib-button-text
-          [control]="getFormControl(control.name)"
-          [label]="control.label"
-          [isPrimary]="control.isPrimary"
-          (clickEvent)="onSubmit()"></lib-button-text>
-      </ng-container>
-      <!-- button icon -->
-      <ng-container *ngIf="control.kind === 'buttonIcon'">
-        <lib-button-icon
-          [control]="getFormControl(control.name)"
-          [iconEnter]="control.iconEnter"
-          [iconLeave]="control.iconLeave"
-          [alt]="control.alt"
-          [isPrimary]="control.isPrimary"
-          (clickEvent)="onSubmit()"></lib-button-icon>
-      </ng-container>
-      <!-- link -->
-      <ng-container *ngIf="control.kind === 'link'">
-        <lib-link
-          [label]="control.label"
-          [path]="control.path"></lib-link>
-      </ng-container>
-      <!-- validation -->
-      <ng-container
-        *ngIf="
-          getFormControl(control.name).invalid &&
-          getFormControl(control.name).touched
-        ">
-        <p>Nie poprawny!</p>
-      </ng-container>
-    </ng-container>
+  <lib-flex [flexDirection]="flexDirection" gap="1rem">
+    <lib-base-form-control
+      [controls]="baseForm.controls"
+      (clickEvent)="onSubmit()"></lib-base-form-control>
   </lib-flex>
 </form>
