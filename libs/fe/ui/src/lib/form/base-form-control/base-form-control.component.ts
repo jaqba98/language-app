@@ -23,6 +23,7 @@ import { LinkComponent } from '../../control/link/link.component';
     LinkComponent,
   ],
   templateUrl: './base-form-control.component.html',
+  styleUrl: './base-form-control.component.scss',
 })
 export class BaseFormControlComponent {
   @Input({ required: true }) controls!: BaseFormModel['controls'];

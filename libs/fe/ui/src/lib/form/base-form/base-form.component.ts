@@ -35,7 +35,7 @@ import {
 export class BaseFormComponent implements OnInit {
   @Input({ required: true }) baseForm!: BaseFormModel;
 
-  @Input() flexDirection: Properties['flexDirection'];
+  @Input() flexDirection: Properties['flexDirection'] = 'column';
 
   @Output() baseFormEvent = new EventEmitter();
 
@@ -48,13 +48,10 @@ export class BaseFormComponent implements OnInit {
   ngOnInit() {
     this.baseForm.controls.forEach(control => {
       const { name } = control;
-      if (!this.formGroup.get(name)) {
-        this.formGroup.addControl(
-          name,
-          this.buildFormControl(control),
-        );
+      if (this.formGroup.get(name)) {
+        throw new Error(`Form control ${name} already exists!`);
       }
-      throw new Error(`Form control ${name} already exists!`);
+      this.formGroup.addControl(name, this.buildFormControl(control));
     });
   }
 
