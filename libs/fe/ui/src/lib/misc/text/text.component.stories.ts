@@ -48,3 +48,35 @@ export const Header3: Story = {
     type: 'header3',
   },
 };
+
+export const Error: Story = {
+  args: {
+    value: 'Error',
+    type: 'paragraph',
+    textColor: 'text__error',
+  },
+};
+
+export const Warning: Story = {
+  args: {
+    value: 'Warning',
+    type: 'paragraph',
+    textColor: 'text__warning',
+  },
+};
+
+export const Success: Story = {
+  args: {
+    value: 'Success',
+    type: 'paragraph',
+    textColor: 'text__success',
+  },
+};
+
+export const Info: Story = {
+  args: {
+    value: 'Info',
+    type: 'paragraph',
+    textColor: 'text__info',
+  },
+};

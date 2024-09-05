@@ -23,6 +23,22 @@
     color: palette.$text-focus;
   }
 
+  &__error {
+    color: palette.$error;
+  }
+
+  &__warning {
+    color: palette.$warning;
+  }
+
+  &__success {
+    color: palette.$success;
+  }
+
+  &__info {
+    color: palette.$info;
+  }
+
   &__tiny {
     font-size: general.$font-size-tiny;
   }

@@ -2,9 +2,14 @@
 
 // Basic palette
 $primary: #f1f1f1;
-$secondary: #888;
+$secondary: #ccc;
+$tertiary: #888;
 $accent: #4e31aa;
 $text: #454545;
+$error: #e23636;
+$warning: #edb95e;
+$success: #82dd55;
+$info: #415058;
 
 // Specialized pallet
 $body: $accent;

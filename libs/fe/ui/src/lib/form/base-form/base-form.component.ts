@@ -25,6 +25,7 @@ import { InputComponent } from '../../control/input/input.component';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
 import { LinkComponent } from '../../control/link/link.component';
+import { ErrorComponent } from '../../misc/error/error.component';
 
 @Component({
   selector: 'lib-base-form',
@@ -37,6 +38,7 @@ import { LinkComponent } from '../../control/link/link.component';
     ButtonTextComponent,
     ButtonIconComponent,
     LinkComponent,
+    ErrorComponent,
   ],
   templateUrl: './base-form.component.html',
 })
