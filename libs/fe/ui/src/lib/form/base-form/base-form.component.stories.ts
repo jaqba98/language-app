@@ -22,12 +22,12 @@ export const Default: Story = {
             isVisible: false,
           },
           label: {
-            value: '',
-            isVisible: false,
+            value: 'Input',
+            isVisible: true,
           },
           input: {
             defaultValue: '',
-            placeholder: 'input',
+            placeholder: 'input...',
             type: 'text',
           },
         },
@@ -39,7 +39,7 @@ export const Default: Story = {
             isVisible: false,
           },
           label: 'ButtonText',
-          isSubmit: false,
+          isSubmit: true,
         },
         {
           kind: ControlKindEnum.buttonIcon,
@@ -48,9 +48,9 @@ export const Default: Story = {
             validators: [],
             isVisible: false,
           },
-          icon: 'icon/hamburger-close.svg',
-          alt: 'hamburger icon',
-          isSubmit: false,
+          icon: 'icon/school.svg',
+          alt: 'School',
+          isSubmit: true,
         },
         {
           kind: ControlKindEnum.link,
