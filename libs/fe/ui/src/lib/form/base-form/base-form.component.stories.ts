@@ -6,6 +6,11 @@ import { ControlKindEnum } from '../../enum/control-kind.enum';
 const meta: Meta<BaseFormComponent> = {
   component: BaseFormComponent,
   title: 'fe/ui/form/base-form',
+  parameters: {
+    backgrounds: {
+      default: 'primary',
+    },
+  },
 };
 export default meta;
 type Story = StoryObj<BaseFormComponent>;
