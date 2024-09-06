@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { FormControl } from '@angular/forms';
 
 import { InputComponent } from './input.component';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
 
 const meta: Meta<InputComponent> = {
   component: InputComponent,
@@ -17,8 +18,23 @@ type Story = StoryObj<InputComponent>;
 
 export const Default: Story = {
   args: {
-    control: new FormControl(''),
-    label: 'Login',
-    placeholder: 'admin',
+    form: new FormControl(''),
+    control: {
+      kind: ControlKindEnum.input,
+      id: '',
+      validation: {
+        validators: [],
+        isVisible: false,
+      },
+      label: {
+        value: 'Login',
+        isVisible: true,
+      },
+      input: {
+        defaultValue: '',
+        placeholder: '',
+        type: 'text',
+      },
+    },
   },
 };

@@ -1,4 +1,5 @@
 // Done
+import { CommonModule } from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -9,25 +10,21 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 import { TextComponent } from '../../misc/text/text.component';
 import { TextColorType } from '../../misc/text/text.type';
-import { InputType } from './input.type';
+import { ControlInputModel } from '../../model/control/control-input.model';
 
 @Component({
   selector: 'lib-input',
   standalone: true,
-  imports: [ReactiveFormsModule, TextComponent],
+  imports: [CommonModule, ReactiveFormsModule, TextComponent],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })
 export class InputComponent {
-  @ViewChild('input') input!: ElementRef;
+  @ViewChild('self') self!: ElementRef;
 
-  @Input({ required: true }) control!: FormControl;
+  @Input({ required: true }) form!: FormControl;
 
-  @Input() label = '';
-
-  @Input() placeholder = '';
-
-  @Input() type: InputType = 'text';
+  @Input({ required: true }) control!: ControlInputModel;
 
   textColor: TextColorType = 'text__secondary';
 
@@ -40,6 +37,6 @@ export class InputComponent {
   }
 
   onClick() {
-    this.input.nativeElement.focus();
+    this.self.nativeElement.focus();
   }
 }
