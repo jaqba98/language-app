@@ -51,7 +51,7 @@ export class BaseFormComponent implements OnInit {
 
   formGroup: FormGroup;
 
-  formInvalid = false;
+  formGroupInvalid = false;
 
   constructor(private readonly fb: FormBuilder) {
     this.formGroup = this.fb.group({});
@@ -69,23 +69,20 @@ export class BaseFormComponent implements OnInit {
 
   onSubmit() {
     this.formGroup.markAllAsTouched();
-    if (this.formGroupInvalid()) {
-      this.formInvalid = true;
+    if (this.formGroup.invalid && this.formGroup.touched) {
+      this.formGroupInvalid = true;
+      this.resetFormGroup();
       return;
     }
     this.baseFormEvent.emit(this.formGroup.value);
     this.resetFormGroup();
-    this.formInvalid = false;
+    this.formGroupInvalid = false;
   }
 
   getFormControl(name: string) {
     const formControl = this.formGroup.get(name);
     if (formControl) return formControl as FormControl;
     throw new Error(`Form control ${name} does not exists!`);
-  }
-
-  formGroupInvalid() {
-    return this.formGroup.invalid && this.formGroup.touched;
   }
 
   formControlInvalid(name: string) {
