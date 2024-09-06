@@ -3,11 +3,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Validators } from '@angular/forms';
 
 import { BaseFormComponent } from '../base-form/base-form.component';
-import {
-  BaseFormModel,
-  ControlKindEnum,
-} from '../base-form/base-form.model';
+import { BaseFormModel } from '../../model/form/base-form.model';
 import { LoginFormModel } from './login-form.model';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
 
 @Component({
   selector: 'lib-login-form',
@@ -22,31 +20,47 @@ export class LoginFormComponent {
     controls: [
       {
         kind: ControlKindEnum.input,
-        name: 'email',
-        validators: [Validators.required, Validators.email],
-        showValidation: false,
-        defaultValue: '',
-        label: 'Email',
-        placeholder: '',
-        type: 'text',
+        id: 'email',
+        validation: {
+          validators: [Validators.required, Validators.email],
+          isVisible: true,
+        },
+        label: {
+          value: 'Email',
+          isVisible: true,
+        },
+        input: {
+          defaultValue: '',
+          placeholder: '',
+          type: 'text',
+        },
       },
       {
         kind: ControlKindEnum.input,
-        name: 'password',
-        validators: [Validators.required],
-        showValidation: false,
-        defaultValue: '',
-        label: 'Password',
-        placeholder: '',
-        type: 'password',
+        id: 'password',
+        validation: {
+          validators: [Validators.required],
+          isVisible: true,
+        },
+        label: {
+          value: 'Password',
+          isVisible: true,
+        },
+        input: {
+          defaultValue: '',
+          placeholder: '',
+          type: 'password',
+        },
       },
       {
         kind: ControlKindEnum.buttonText,
-        name: 'submit',
-        validators: [],
-        showValidation: false,
+        id: 'submit',
+        validation: {
+          validators: [],
+          isVisible: false,
+        },
         label: 'Log in',
-        isPrimary: true,
+        isSubmit: true,
       },
     ],
   };

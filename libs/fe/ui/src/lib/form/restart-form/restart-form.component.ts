@@ -1,11 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 import { BaseFormComponent } from '../base-form/base-form.component';
-import {
-  BaseFormModel,
-  ControlKindEnum,
-} from '../base-form/base-form.model';
+import { BaseFormModel } from '../../model/form/base-form.model';
 import { RestartFormModel } from './restart-form.model';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
 
 @Component({
   selector: 'lib-restart-form',
@@ -20,11 +18,13 @@ export class RestartFormComponent {
     controls: [
       {
         kind: ControlKindEnum.buttonText,
-        name: 'restart',
+        id: 'restart',
         label: 'Restart',
-        isPrimary: false,
-        validators: [],
-        showValidation: true,
+        isSubmit: false,
+        validation: {
+          validators: [],
+          isVisible: true,
+        },
       },
     ],
   };

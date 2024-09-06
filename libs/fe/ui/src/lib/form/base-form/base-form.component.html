@@ -5,27 +5,27 @@
         <!-- input -->
         <ng-container *ngIf="control.kind === 'input'">
           <lib-input
-            [control]="getFormControl(control.name)"
-            [label]="control.label"
-            [placeholder]="control.placeholder"
-            [type]="control.type"></lib-input>
+            [control]="getFormControl(control.id)"
+            [label]="control.label.value"
+            [placeholder]="control.input.placeholder"
+            [type]="control.input.type"></lib-input>
         </ng-container>
         <!-- button text -->
         <ng-container *ngIf="control.kind === 'buttonText'">
           <lib-button-text
-            [control]="getFormControl(control.name)"
+            [control]="getFormControl(control.id)"
             [label]="control.label"
-            [isPrimary]="control.isPrimary"
+            [isPrimary]="control.isSubmit"
             (clickEvent)="onSubmit()"></lib-button-text>
         </ng-container>
         <!-- button icon -->
         <ng-container *ngIf="control.kind === 'buttonIcon'">
           <lib-button-icon
-            [control]="getFormControl(control.name)"
-            [iconEnter]="control.iconEnter"
-            [iconLeave]="control.iconLeave"
+            [control]="getFormControl(control.id)"
+            [iconEnter]="control.icon"
+            [iconLeave]="control.icon"
             [alt]="control.alt"
-            [isPrimary]="control.isPrimary"
+            [isPrimary]="control.isSubmit"
             (clickEvent)="onSubmit()"></lib-button-icon>
         </ng-container>
         <!-- link -->
@@ -37,7 +37,8 @@
         <!-- control validation -->
         <ng-container
           *ngIf="
-            formControlInvalid(control.name) && control.showValidation
+            formControlInvalid(control.id) &&
+            control.validation.isVisible
           ">
           <lib-error value="Error"></lib-error>
         </ng-container>

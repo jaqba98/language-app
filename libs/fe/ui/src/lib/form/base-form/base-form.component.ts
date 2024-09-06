@@ -19,13 +19,13 @@ import { FlexComponent } from '../../layout/flex/flex.component';
 import {
   BaseFormModel,
   ControlType,
-  ControlKindEnum,
-} from './base-form.model';
+} from '../../model/form/base-form.model';
 import { InputComponent } from '../../control/input/input.component';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
 import { LinkComponent } from '../../control/link/link.component';
 import { ErrorComponent } from '../../misc/error/error.component';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
 
 @Component({
   selector: 'lib-base-form',
@@ -59,11 +59,11 @@ export class BaseFormComponent implements OnInit {
 
   ngOnInit() {
     this.baseForm.controls.forEach(control => {
-      const { name } = control;
-      if (this.formGroup.get(name)) {
-        throw new Error(`Form control ${name} already exists!`);
+      const { id } = control;
+      if (this.formGroup.get(id)) {
+        throw new Error(`Form control ${id} already exists!`);
       }
-      this.formGroup.addControl(name, this.buildFormControl(control));
+      this.formGroup.addControl(id, this.buildFormControl(control));
     });
   }
 
@@ -99,13 +99,13 @@ export class BaseFormComponent implements OnInit {
     switch (control.kind) {
       case ControlKindEnum.input:
         return new FormControl(
-          control.defaultValue,
-          control.validators,
+          control.input.defaultValue,
+          control.validation.validators,
         );
       case ControlKindEnum.buttonText:
       case ControlKindEnum.buttonIcon:
       case ControlKindEnum.link:
-        return new FormControl(false, control.validators);
+        return new FormControl(false, control.validation.validators);
       default:
         throw new Error('Unsupported control type!');
     }
@@ -113,8 +113,8 @@ export class BaseFormComponent implements OnInit {
 
   private resetFormGroup() {
     this.baseForm.controls.forEach(control => {
-      const { name } = control;
-      this.formGroup.setControl(name, this.buildFormControl(control));
+      const { id } = control;
+      this.formGroup.setControl(id, this.buildFormControl(control));
     });
     this.formGroup.markAsUntouched();
   }

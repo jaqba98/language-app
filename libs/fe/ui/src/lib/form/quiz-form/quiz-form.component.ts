@@ -1,11 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 import { BaseFormComponent } from '../base-form/base-form.component';
-import {
-  BaseFormModel,
-  ControlKindEnum,
-} from '../base-form/base-form.model';
+import { BaseFormModel } from '../../model/form/base-form.model';
 import { QuizFormModel } from './quiz-form.model';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
 
 @Component({
   selector: 'lib-quiz-form',
@@ -20,29 +18,40 @@ export class QuizFormComponent {
     controls: [
       {
         kind: ControlKindEnum.input,
-        name: 'answer',
-        label: '',
-        defaultValue: '',
-        placeholder: '',
-        type: 'text',
-        validators: [],
-        showValidation: true,
+        id: 'answer',
+        label: {
+          value: '',
+          isVisible: false,
+        },
+        input: {
+          defaultValue: '',
+          placeholder: '',
+          type: 'text',
+        },
+        validation: {
+          validators: [],
+          isVisible: true,
+        },
       },
       {
         kind: ControlKindEnum.buttonText,
-        name: 'showAnswer',
+        id: 'showAnswer',
         label: 'Show Answer',
-        isPrimary: false,
-        validators: [],
-        showValidation: true,
+        isSubmit: false,
+        validation: {
+          validators: [],
+          isVisible: true,
+        },
       },
       {
         kind: ControlKindEnum.buttonText,
-        name: 'submitAnswer',
+        id: 'submitAnswer',
         label: 'Submit',
-        isPrimary: true,
-        validators: [],
-        showValidation: true,
+        isSubmit: true,
+        validation: {
+          validators: [],
+          isVisible: true,
+        },
       },
     ],
   };

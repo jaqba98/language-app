@@ -7,11 +7,9 @@ import {
   StoreModel,
 } from '@english-learning/fe-store';
 import { BaseFormComponent } from '../base-form/base-form.component';
-import {
-  BaseFormModel,
-  ControlKindEnum,
-  ControlLinkModel,
-} from '../base-form/base-form.model';
+import { BaseFormModel } from '../../model/form/base-form.model';
+import { ControlLinkModel } from '../../model/control/control-link.model';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
 
 @Component({
   selector: 'lib-section-nav-form',
@@ -53,11 +51,13 @@ export class SectionNavFormComponent implements OnInit, OnDestroy {
   private convertTabToLink(tab: SectionTabModel): ControlLinkModel {
     return {
       kind: ControlKindEnum.link,
-      name: tab.id,
+      id: tab.id,
       label: tab.label,
       path: tab.path,
-      validators: [],
-      showValidation: true,
+      validation: {
+        validators: [],
+        isVisible: true,
+      },
     };
   }
 }

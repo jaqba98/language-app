@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 
 import { BaseFormComponent } from './base-form.component';
-import { ControlKindEnum } from './base-form.model';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
 
 const meta: Meta<BaseFormComponent> = {
   component: BaseFormComponent,
@@ -16,39 +16,51 @@ export const Default: Story = {
       controls: [
         {
           kind: ControlKindEnum.input,
-          name: 'input',
-          validators: [],
-          defaultValue: '',
-          label: 'Input',
-          placeholder: 'input',
-          type: 'text',
-          showValidation: false,
+          id: 'input',
+          validation: {
+            validators: [],
+            isVisible: false,
+          },
+          label: {
+            value: '',
+            isVisible: false,
+          },
+          input: {
+            defaultValue: '',
+            placeholder: 'input',
+            type: 'text',
+          },
         },
         {
           kind: ControlKindEnum.buttonText,
-          name: 'buttonText',
-          validators: [],
+          id: 'buttonText',
+          validation: {
+            validators: [],
+            isVisible: false,
+          },
           label: 'ButtonText',
-          isPrimary: false,
-          showValidation: false,
+          isSubmit: false,
         },
         {
           kind: ControlKindEnum.buttonIcon,
-          name: 'buttonIcon',
-          validators: [],
-          iconEnter: 'icon/hamburger-open.svg',
-          iconLeave: 'icon/hamburger-close.svg',
+          id: 'buttonIcon',
+          validation: {
+            validators: [],
+            isVisible: false,
+          },
+          icon: 'icon/hamburger-close.svg',
           alt: 'hamburger icon',
-          isPrimary: false,
-          showValidation: false,
+          isSubmit: false,
         },
         {
           kind: ControlKindEnum.link,
-          name: 'link',
-          validators: [],
+          id: 'link',
+          validation: {
+            validators: [],
+            isVisible: false,
+          },
           label: 'Link',
           path: '/',
-          showValidation: false,
         },
       ],
     },

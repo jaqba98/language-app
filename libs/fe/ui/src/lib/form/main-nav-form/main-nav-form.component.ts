@@ -8,13 +8,11 @@ import {
   ObserverModel,
 } from '@english-learning/fe-system';
 import { BaseFormComponent } from '../base-form/base-form.component';
-import {
-  BaseFormModel,
-  ControlKindEnum,
-} from '../base-form/base-form.model';
+import { BaseFormModel } from '../../model/form/base-form.model';
 import { MainNavFormModel } from './main-nav-form.model';
 import { RouteNavigationService } from '../../infrastructure/route-navigation.service';
 import { HamburgerFormModel } from '../hamburger-form/hamburger-form.model';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
 
 @Component({
   selector: 'lib-main-nav-form',
@@ -48,27 +46,33 @@ export class MainNavFormComponent
     controls: [
       {
         kind: ControlKindEnum.buttonText,
-        name: 'homeButton',
+        id: 'homeButton',
         label: 'Home',
-        isPrimary: false,
-        validators: [],
-        showValidation: true,
+        isSubmit: false,
+        validation: {
+          validators: [],
+          isVisible: true,
+        },
       },
       {
         kind: ControlKindEnum.buttonText,
-        name: 'vocabularyButton',
+        id: 'vocabularyButton',
         label: 'Vocabulary',
-        isPrimary: false,
-        validators: [],
-        showValidation: true,
+        isSubmit: false,
+        validation: {
+          validators: [],
+          isVisible: true,
+        },
       },
       {
         kind: ControlKindEnum.buttonText,
-        name: 'grammarButton',
+        id: 'grammarButton',
         label: 'Grammar',
-        isPrimary: false,
-        validators: [],
-        showValidation: true,
+        isSubmit: false,
+        validation: {
+          validators: [],
+          isVisible: true,
+        },
       },
     ],
   };

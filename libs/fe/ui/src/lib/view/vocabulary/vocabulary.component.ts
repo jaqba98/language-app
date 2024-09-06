@@ -4,7 +4,6 @@ import { RouterOutlet } from '@angular/router';
 
 import { CardComponent } from '../../misc/card/card.component';
 import { FlexComponent } from '../../layout/flex/flex.component';
-import { RoutesMenuModel } from '../../model/routes-menu.model';
 
 @Component({
   selector: 'lib-vocabulary',
@@ -15,12 +14,13 @@ import { RoutesMenuModel } from '../../model/routes-menu.model';
 export class VocabularyComponent implements OnInit {
   @Input({ required: true }) route!: string;
 
-  options: RoutesMenuModel[] = [];
+  // options: RoutesMenuModel[] = [];
 
+  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit() {
-    this.options = [
-      { value: 'Bank', link: `/vocabulary/${this.route}/bank` },
-      { value: 'Quiz', link: `/vocabulary/${this.route}/quiz` },
-    ];
+    // this.options = [
+    //   { value: 'Bank', link: `/vocabulary/${this.route}/bank` },
+    //   { value: 'Quiz', link: `/vocabulary/${this.route}/quiz` },
+    // ];
   }
 }

@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 
-import {
-  RoutesMenuModel,
-  SectionComponent,
-} from '@english-learning/fe-ui';
+import { SectionComponent } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-vocabulary',
@@ -12,7 +9,7 @@ import {
   templateUrl: './vocabulary.component.html',
 })
 export class VocabularyComponent {
-  options: RoutesMenuModel[] = [
-    { value: 'Test1', link: '/vocabulary/test1' },
-  ];
+  // options: RoutesMenuModel[] = [
+  //   { value: 'Test1', link: '/vocabulary/test1' },
+  // ];
 }

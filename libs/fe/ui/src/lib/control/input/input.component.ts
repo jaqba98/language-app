@@ -10,7 +10,6 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TextComponent } from '../../misc/text/text.component';
 import { TextColorType } from '../../misc/text/text.type';
 import { InputType } from './input.type';
-import { BaseControlService } from '../../form/base-form/base-control.service';
 
 @Component({
   selector: 'lib-input',
@@ -18,9 +17,8 @@ import { BaseControlService } from '../../form/base-form/base-control.service';
   imports: [ReactiveFormsModule, TextComponent],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
-  providers: [BaseControlService.getProvider(InputComponent)],
 })
-export class InputComponent extends BaseControlService<string> {
+export class InputComponent {
   @ViewChild('input') input!: ElementRef;
 
   @Input({ required: true }) control!: FormControl;
