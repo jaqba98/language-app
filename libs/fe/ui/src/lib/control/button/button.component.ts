@@ -16,7 +16,7 @@ import { FormControl } from '@angular/forms';
 export class ButtonComponent {
   @Input({ required: true }) control!: FormControl;
 
-  @Input() isPrimary = false;
+  @Input() isSubmit = false;
 
   @Output() clickEvent = new EventEmitter();
 
@@ -26,7 +26,7 @@ export class ButtonComponent {
 
   onClick() {
     this.control.setValue(true);
-    if (this.isPrimary) return;
+    if (this.isSubmit) return;
     this.clickEvent.emit();
   }
 

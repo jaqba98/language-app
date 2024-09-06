@@ -9,8 +9,12 @@
           [control]="control"></lib-input>
       </ng-container>
       <!-- button text -->
-      <ng-container
-        *ngIf="control.kind === 'buttonText'"></ng-container>
+      <ng-container *ngIf="control.kind === 'buttonText'">
+        <lib-button-text
+          [form]="getFormControl(control.id)"
+          [control]="control"
+          (clickEvent)="onSubmit()"></lib-button-text>
+      </ng-container>
       <!-- button icon -->
       <ng-container
         *ngIf="control.kind === 'buttonIcon'"></ng-container>

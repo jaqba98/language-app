@@ -1,9 +1,9 @@
 <lib-button
-  [control]="control"
-  [isPrimary]="isPrimary"
+  [control]="form"
+  [isSubmit]="control.isSubmit"
   (clickEvent)="onClickEvent()">
   <lib-text
-    [value]="label"
+    [value]="control.label"
     textColor="text__primary"
     type="header3"></lib-text>
 </lib-button>

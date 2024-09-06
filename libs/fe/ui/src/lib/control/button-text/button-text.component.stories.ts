@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { FormControl } from '@angular/forms';
 
 import { ButtonTextComponent } from './button-text.component';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
 
 const meta: Meta<ButtonTextComponent> = {
   component: ButtonTextComponent,
@@ -22,7 +23,16 @@ type Story = StoryObj<ButtonTextComponent>;
 
 export const Primary: Story = {
   args: {
-    control: new FormControl(false),
-    label: 'Click me!',
+    form: new FormControl(false),
+    control: {
+      kind: ControlKindEnum.buttonText,
+      id: 'submit',
+      validation: {
+        validators: [],
+        isVisible: false,
+      },
+      label: 'Submit',
+      isSubmit: true,
+    },
   },
 };
