@@ -23,7 +23,11 @@
           (clickEvent)="onSubmit()"></lib-button-icon>
       </ng-container>
       <!-- link -->
-      <ng-container *ngIf="control.kind === 'link'"></ng-container>
+      <ng-container *ngIf="control.kind === 'link'">
+        <lib-link
+          [form]="getFormControl(control.id)"
+          [control]="control"></lib-link>
+      </ng-container>
     </ng-container>
     <!-- form validation -->
   </lib-flex>
