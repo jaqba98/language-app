@@ -9,6 +9,7 @@ import { FormControl } from '@angular/forms';
 
 import { IconComponent } from '../../misc/icon/icon.component';
 import { ButtonComponent } from '../button/button.component';
+import { ControlButtonIconModel } from '../../model/control/control-button-icon.model';
 
 @Component({
   selector: 'lib-button-icon',
@@ -17,22 +18,16 @@ import { ButtonComponent } from '../button/button.component';
   templateUrl: './button-icon.component.html',
 })
 export class ButtonIconComponent implements OnInit {
-  @Input({ required: true }) control!: FormControl;
+  @Input({ required: true }) form!: FormControl;
 
-  @Input({ required: true }) iconEnter!: string;
-
-  @Input({ required: true }) iconLeave!: string;
-
-  @Input({ required: true }) alt!: string;
-
-  @Input() isPrimary = false;
+  @Input({ required: true }) control!: ControlButtonIconModel;
 
   @Output() clickEvent = new EventEmitter();
 
   icon!: string;
 
   ngOnInit() {
-    this.icon = this.iconLeave;
+    this.icon = this.control.icon;
   }
 
   onClickEvent() {
@@ -40,10 +35,10 @@ export class ButtonIconComponent implements OnInit {
   }
 
   onMouseEnterEvent() {
-    this.icon = this.iconEnter;
+    this.icon = this.control.icon;
   }
 
   onMouseLeaveEvent() {
-    this.icon = this.iconLeave;
+    this.icon = this.control.icon;
   }
 }

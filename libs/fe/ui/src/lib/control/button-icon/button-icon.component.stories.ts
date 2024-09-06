@@ -2,6 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/angular';
 import { FormControl } from '@angular/forms';
 
 import { ButtonIconComponent } from './button-icon.component';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
 
 const meta: Meta<ButtonIconComponent> = {
   component: ButtonIconComponent,
@@ -17,9 +18,17 @@ type Story = StoryObj<ButtonIconComponent>;
 
 export const Primary: Story = {
   args: {
-    control: new FormControl(false),
-    iconEnter: 'icon/hamburger-open.svg',
-    iconLeave: 'icon/hamburger-close.svg',
-    alt: 'hamburger icon',
+    form: new FormControl(false),
+    control: {
+      kind: ControlKindEnum.buttonIcon,
+      id: 'icon',
+      validation: {
+        validators: [],
+        isVisible: false,
+      },
+      icon: 'icon/menu.svg',
+      alt: '',
+      isSubmit: true,
+    },
   },
 };
