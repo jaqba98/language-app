@@ -32,14 +32,15 @@
         <!-- control validation -->
         <ng-container *ngIf="control.validation.isVisible">
           <ng-container *ngIf="formControlInvalid(control.id)">
-            <lib-error value="Error: Form Control"></lib-error>
+            <lib-error
+              [value]="getFormControlError(control.id)"></lib-error>
           </ng-container>
         </ng-container>
       </lib-flex>
     </ng-container>
     <!-- form validation -->
     <ng-container *ngIf="formGroupInvalid">
-      <lib-error value="Error: Form Group"></lib-error>
+      <lib-error [value]="formErrorMessage"></lib-error>
     </ng-container>
   </lib-flex>
 </form>

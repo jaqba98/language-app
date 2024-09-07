@@ -49,6 +49,8 @@ export class BaseFormComponent implements OnInit {
 
   @Input() resetIfError = false;
 
+  @Input() formErrorMessage = 'The form was not completed correctly.';
+
   @Output() baseFormEvent = new EventEmitter();
 
   formGroup: FormGroup;
@@ -91,6 +93,17 @@ export class BaseFormComponent implements OnInit {
   formControlInvalid(id: string) {
     const formControl = this.getFormControl(id);
     return formControl.invalid && formControl.touched;
+  }
+
+  getFormControlError(id: string) {
+    const formControl = this.getFormControl(id);
+    if (formControl.errors && formControl.errors['required']) {
+      return 'This field is required.';
+    }
+    if (formControl.errors && formControl.errors['email']) {
+      return 'Please enter a valid email address.';
+    }
+    return 'Invalid input.';
   }
 
   private formControlNotExist(id: string) {
