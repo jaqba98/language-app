@@ -26,14 +26,14 @@ export class InputComponent {
 
   @Input({ required: true }) control!: ControlInputModel;
 
-  textColor: TextColorType = 'text__secondary';
+  textColor: TextColorType = 'text__tertiary';
 
   onFocus() {
     this.textColor = 'text__accent';
   }
 
   onBlur() {
-    this.textColor = 'text__secondary';
+    this.textColor = 'text__tertiary';
   }
 
   onClick() {

@@ -9,6 +9,7 @@ export type TextColorType =
   | 'text__default'
   | 'text__primary'
   | 'text__secondary'
+  | 'text__tertiary'
   | 'text__accent'
   | 'text__error'
   | 'text__warning'

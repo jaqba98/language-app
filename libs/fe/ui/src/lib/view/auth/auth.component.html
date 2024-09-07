@@ -3,6 +3,12 @@
   justifyContent="center"
   minHeight="100svh">
   <lib-card>
-    <ng-content></ng-content>
+    <lib-flex alignItems="center" flexDirection="column" gap="1rem">
+      <lib-text
+        value="Logo"
+        type="header2"
+        textColor="text__accent"></lib-text>
+      <ng-content></ng-content>
+    </lib-flex>
   </lib-card>
 </lib-flex>
