@@ -23,7 +23,7 @@ export class LoginFormComponent {
         id: 'email',
         validation: {
           validators: [Validators.required, Validators.email],
-          isVisible: true,
+          isVisible: false,
         },
         label: {
           value: 'Email',
@@ -40,7 +40,7 @@ export class LoginFormComponent {
         id: 'password',
         validation: {
           validators: [Validators.required],
-          isVisible: true,
+          isVisible: false,
         },
         label: {
           value: 'Password',

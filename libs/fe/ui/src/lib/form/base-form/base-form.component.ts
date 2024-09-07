@@ -1,4 +1,5 @@
 // Done
+import { CommonModule } from '@angular/common';
 import {
   Component,
   OnInit,
@@ -13,7 +14,6 @@ import {
   FormControl,
 } from '@angular/forms';
 import { Properties } from 'csstype';
-import { CommonModule } from '@angular/common';
 
 import { FlexComponent } from '../../layout/flex/flex.component';
 import {
@@ -47,6 +47,8 @@ export class BaseFormComponent implements OnInit {
 
   @Input() flexDirection: Properties['flexDirection'] = 'column';
 
+  @Input() resetIfError = false;
+
   @Output() baseFormEvent = new EventEmitter();
 
   formGroup: FormGroup;
@@ -60,36 +62,41 @@ export class BaseFormComponent implements OnInit {
   ngOnInit() {
     this.baseForm.controls.forEach(control => {
       const { id } = control;
-      if (this.formGroup.get(id)) {
-        throw new Error(`Form control ${id} already exists!`);
-      }
+      this.formControlNotExist(id);
       this.formGroup.addControl(id, this.buildFormControl(control));
     });
   }
 
   onSubmit() {
     this.formGroup.markAllAsTouched();
-    if (this.formGroup.invalid && this.formGroup.touched) {
+    const { invalid, touched } = this.formGroup;
+    if (invalid && touched) {
       this.formGroupInvalid = true;
-      this.resetFormGroup();
+      if (this.resetIfError) {
+        this.resetFormGroup();
+      }
       return;
     }
-    this.baseFormEvent.emit(this.formGroup.value);
+    this.baseFormEvent.emit(this.formGroup.valid);
     this.resetFormGroup();
     this.formGroupInvalid = false;
   }
 
-  getFormControl(name: string) {
-    const formControl = this.formGroup.get(name);
+  getFormControl(id: string) {
+    const formControl = this.formGroup.get(id);
     if (formControl) return formControl as FormControl;
-    throw new Error(`Form control ${name} does not exists!`);
+    throw new Error(`Form control: ${id} does not exists!`);
   }
 
-  formControlInvalid(name: string) {
-    return (
-      this.getFormControl(name).invalid &&
-      this.getFormControl(name).touched
-    );
+  formControlInvalid(id: string) {
+    const formControl = this.getFormControl(id);
+    return formControl.invalid && formControl.touched;
+  }
+
+  private formControlNotExist(id: string) {
+    if (this.formGroup.get(id)) {
+      throw new Error(`Form control: ${id} already exists!`);
+    }
   }
 
   private buildFormControl(control: ControlType) {
