@@ -1,5 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import {
+  moduleMetadata,
+  type Meta,
+  type StoryObj,
+} from '@storybook/angular';
 
+import { MockRouteNavigationService } from '@english-learning/fe-ui';
 import { LoginComponent } from './login.component';
 
 const meta: Meta<LoginComponent> = {
@@ -13,6 +18,11 @@ const meta: Meta<LoginComponent> = {
       action: 'event',
     },
   },
+  decorators: [
+    moduleMetadata({
+      providers: [MockRouteNavigationService.getProvider()],
+    }),
+  ],
 };
 export default meta;
 type Story = StoryObj<LoginComponent>;

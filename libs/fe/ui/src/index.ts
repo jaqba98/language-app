@@ -17,6 +17,6 @@ export * from './lib/view/vocabulary/vocabulary.component';
 export * from './lib/view/bank/bank.component';
 export * from './lib/view/bank/bank.model';
 export * from './lib/view/quiz/quiz.component';
-export * from './lib/mock/mock-router-navigation.service';
 export * from './lib/form/section-nav-form/section-nav-form.component';
 export * from './lib/infrastructure/route-navigation.service';
+export * from './lib/mock/mock-router-navigation.service';
