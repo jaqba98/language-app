@@ -1,0 +1,5 @@
+@use '../../abstract/variables/general';
+
+@mixin auth {
+  padding: general.$component-padding-medium;
+}

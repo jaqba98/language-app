@@ -10,5 +10,6 @@ import { TextComponent } from '../../misc/text/text.component';
   standalone: true,
   imports: [FlexComponent, TextComponent, CardComponent],
   templateUrl: './auth.component.html',
+  styleUrl: './auth.component.scss',
 })
 export class AuthComponent {}
