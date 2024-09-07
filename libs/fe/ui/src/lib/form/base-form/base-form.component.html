@@ -33,6 +33,13 @@
               [form]="getFormControl(control.id)"
               [control]="control"></lib-link>
           </ng-container>
+          <!-- text -->
+          <ng-container *ngIf="control.kind === 'text'">
+            <lib-text
+              textColor="text__tertiary"
+              [value]="control.value"
+              [margin]="control.margin"></lib-text>
+          </ng-container>
           <!-- control validation -->
           <ng-container *ngIf="control.validation.isVisible">
             <ng-container *ngIf="formControlInvalid(control.id)">

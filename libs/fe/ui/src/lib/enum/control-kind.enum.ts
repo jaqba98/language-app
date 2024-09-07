@@ -3,4 +3,5 @@ export enum ControlKindEnum {
   buttonText = 'buttonText',
   buttonIcon = 'buttonIcon',
   link = 'link',
+  text = 'text',
 }

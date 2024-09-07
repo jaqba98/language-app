@@ -6,6 +6,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
+import { Properties } from 'csstype';
 
 import { TextType, TextColorType } from './text.type';
 
@@ -22,6 +23,8 @@ export class TextComponent {
   @Input() type: TextType = 'paragraph';
 
   @Input() textColor: TextColorType = 'text__default';
+
+  @Input() margin: Properties['margin'];
 
   @Output() clickEvent = new EventEmitter();
 

@@ -1,5 +1,6 @@
 // Done
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Properties } from 'csstype';
 
 @Component({
   selector: 'lib-card',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
-export class CardComponent {}
+export class CardComponent {
+  @Input() width: Properties['width'];
+}

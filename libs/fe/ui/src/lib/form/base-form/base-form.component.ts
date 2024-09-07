@@ -27,6 +27,7 @@ import { LinkComponent } from '../../control/link/link.component';
 import { ErrorComponent } from '../../misc/error/error.component';
 import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { SuccessComponent } from '../../misc/success/success.component';
+import { TextComponent } from '../../misc/text/text.component';
 
 @Component({
   selector: 'lib-base-form',
@@ -41,6 +42,7 @@ import { SuccessComponent } from '../../misc/success/success.component';
     LinkComponent,
     ErrorComponent,
     SuccessComponent,
+    TextComponent,
   ],
   templateUrl: './base-form.component.html',
 })
@@ -132,6 +134,8 @@ export class BaseFormComponent implements OnInit {
       case ControlKindEnum.buttonIcon:
       case ControlKindEnum.link:
         return new FormControl(false, control.validation.validators);
+      case ControlKindEnum.text:
+        return new FormControl('', control.validation.validators);
       default:
         throw new Error('Unsupported control type!');
     }

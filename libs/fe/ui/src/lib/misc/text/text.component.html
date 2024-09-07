@@ -2,6 +2,7 @@
   <ng-container *ngSwitchCase="'tiny'">
     <p
       class="text text__tiny"
+      [style.margin]="margin"
       [ngClass]="textColor"
       (click)="onClick()">
       {{ value }}
@@ -11,6 +12,7 @@
     <p
       class="text text__paragraph"
       [ngClass]="textColor"
+      [style.margin]="margin"
       (click)="onClick()">
       {{ value }}
     </p>
@@ -19,6 +21,7 @@
     <h1
       class="text text__header1"
       [ngClass]="textColor"
+      [style.margin]="margin"
       (click)="onClick()">
       {{ value }}
     </h1>
@@ -27,6 +30,7 @@
     <h2
       class="text text__header2"
       [ngClass]="textColor"
+      [style.margin]="margin"
       (click)="onClick()">
       {{ value }}
     </h2>
@@ -35,6 +39,7 @@
     <h3
       class="text text__header3"
       [ngClass]="textColor"
+      [style.margin]="margin"
       (click)="onClick()">
       {{ value }}
     </h3>
