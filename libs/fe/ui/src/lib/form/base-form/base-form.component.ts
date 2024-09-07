@@ -26,6 +26,7 @@ import { ButtonIconComponent } from '../../control/button-icon/button-icon.compo
 import { LinkComponent } from '../../control/link/link.component';
 import { ErrorComponent } from '../../misc/error/error.component';
 import { ControlKindEnum } from '../../enum/control-kind.enum';
+import { SuccessComponent } from '../../misc/success/success.component';
 
 @Component({
   selector: 'lib-base-form',
@@ -39,6 +40,7 @@ import { ControlKindEnum } from '../../enum/control-kind.enum';
     ButtonIconComponent,
     LinkComponent,
     ErrorComponent,
+    SuccessComponent,
   ],
   templateUrl: './base-form.component.html',
 })
@@ -51,11 +53,15 @@ export class BaseFormComponent implements OnInit {
 
   @Input() formErrorMessage = 'The form was not completed correctly.';
 
+  @Input() formSuccessMessage = 'The form was completed correctly.';
+
   @Output() baseFormEvent = new EventEmitter();
 
   formGroup: FormGroup;
 
   formGroupInvalid = false;
+
+  formGroupValid = false;
 
   constructor(private readonly fb: FormBuilder) {
     this.formGroup = this.fb.group({});
@@ -70,6 +76,8 @@ export class BaseFormComponent implements OnInit {
   }
 
   onSubmit() {
+    this.formGroupInvalid = false;
+    this.formGroupValid = false;
     this.formGroup.markAllAsTouched();
     const { invalid, touched } = this.formGroup;
     if (invalid && touched) {
@@ -79,6 +87,7 @@ export class BaseFormComponent implements OnInit {
       }
       return;
     }
+    this.formGroupValid = true;
     this.baseFormEvent.emit(this.formGroup.valid);
     this.resetFormGroup();
     this.formGroupInvalid = false;

@@ -22,6 +22,7 @@ export const Primary: Story = {
     control: {
       kind: ControlKindEnum.buttonIcon,
       id: 'icon',
+      alignItems: 'flex-start',
       validation: {
         validators: [],
         isVisible: false,

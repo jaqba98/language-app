@@ -19,6 +19,7 @@ export class QuizFormComponent {
       {
         kind: ControlKindEnum.input,
         id: 'answer',
+        alignItems: 'flex-start',
         label: {
           value: '',
           isVisible: false,
@@ -36,6 +37,7 @@ export class QuizFormComponent {
       {
         kind: ControlKindEnum.buttonText,
         id: 'showAnswer',
+        alignItems: 'flex-start',
         label: 'Show Answer',
         isSubmit: false,
         validation: {
@@ -46,6 +48,7 @@ export class QuizFormComponent {
       {
         kind: ControlKindEnum.buttonText,
         id: 'submitAnswer',
+        alignItems: 'flex-start',
         label: 'Submit',
         isSubmit: true,
         validation: {

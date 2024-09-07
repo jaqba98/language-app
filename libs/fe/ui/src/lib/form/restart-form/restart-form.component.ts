@@ -19,6 +19,7 @@ export class RestartFormComponent {
       {
         kind: ControlKindEnum.buttonText,
         id: 'restart',
+        alignItems: 'flex-start',
         label: 'Restart',
         isSubmit: false,
         validation: {

@@ -3,8 +3,8 @@ import {
   type Meta,
   type StoryObj,
 } from '@storybook/angular';
+import { ActivatedRoute } from '@angular/router';
 
-import { MockRouteNavigationService } from '@english-learning/fe-ui';
 import { LoginComponent } from './login.component';
 
 const meta: Meta<LoginComponent> = {
@@ -20,7 +20,7 @@ const meta: Meta<LoginComponent> = {
   },
   decorators: [
     moduleMetadata({
-      providers: [MockRouteNavigationService.getProvider()],
+      providers: [{ provide: ActivatedRoute, useValue: [] }],
     }),
   ],
 };

@@ -1,4 +1,4 @@
-import { type Meta, type StoryObj } from '@storybook/angular';
+import type { Meta, StoryObj } from '@storybook/angular';
 import { FormControl } from '@angular/forms';
 
 import { LinkComponent } from './link.component';
@@ -17,12 +17,14 @@ export const Primary: Story = {
     control: {
       kind: ControlKindEnum.link,
       id: 'link',
+      alignItems: 'flex-start',
       validation: {
         validators: [],
         isVisible: false,
       },
       label: '',
       path: '',
+      tip: '',
     },
   },
 };

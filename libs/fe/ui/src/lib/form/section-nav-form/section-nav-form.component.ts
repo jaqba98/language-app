@@ -52,8 +52,10 @@ export class SectionNavFormComponent implements OnInit, OnDestroy {
     return {
       kind: ControlKindEnum.link,
       id: tab.id,
+      alignItems: 'flex-start',
       label: tab.label,
       path: tab.path,
+      tip: '',
       validation: {
         validators: [],
         isVisible: true,

@@ -22,6 +22,7 @@ export const Default: Story = {
     control: {
       kind: ControlKindEnum.input,
       id: '',
+      alignItems: 'flex-start',
       validation: {
         validators: [],
         isVisible: false,

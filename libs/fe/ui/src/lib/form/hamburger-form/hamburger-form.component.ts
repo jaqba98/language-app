@@ -20,6 +20,7 @@ export class HamburgerFormComponent {
       {
         kind: ControlKindEnum.buttonIcon,
         id: 'submit',
+        alignItems: 'flex-start',
         validation: {
           validators: [],
           isVisible: false,

@@ -27,6 +27,7 @@ export const Primary: Story = {
     control: {
       kind: ControlKindEnum.buttonText,
       id: 'submit',
+      alignItems: 'flex-start',
       validation: {
         validators: [],
         isVisible: false,

@@ -22,6 +22,7 @@ export const Default: Story = {
         {
           kind: ControlKindEnum.input,
           id: 'input',
+          alignItems: 'flex-start',
           validation: {
             validators: [],
             isVisible: false,
@@ -39,6 +40,7 @@ export const Default: Story = {
         {
           kind: ControlKindEnum.buttonText,
           id: 'buttonText',
+          alignItems: 'flex-start',
           validation: {
             validators: [],
             isVisible: false,
@@ -49,6 +51,7 @@ export const Default: Story = {
         {
           kind: ControlKindEnum.buttonIcon,
           id: 'buttonIcon',
+          alignItems: 'flex-start',
           validation: {
             validators: [],
             isVisible: false,
@@ -60,12 +63,14 @@ export const Default: Story = {
         {
           kind: ControlKindEnum.link,
           id: 'link',
+          alignItems: 'flex-start',
           validation: {
             validators: [],
             isVisible: false,
           },
           label: 'Link',
           path: '/',
+          tip: 'Hello',
         },
       ],
     },

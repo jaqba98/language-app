@@ -21,6 +21,7 @@ export class LoginFormComponent {
       {
         kind: ControlKindEnum.input,
         id: 'email',
+        alignItems: 'flex-start',
         validation: {
           validators: [Validators.required, Validators.email],
           isVisible: false,
@@ -38,6 +39,7 @@ export class LoginFormComponent {
       {
         kind: ControlKindEnum.input,
         id: 'password',
+        alignItems: 'flex-start',
         validation: {
           validators: [Validators.required],
           isVisible: false,
@@ -53,14 +55,39 @@ export class LoginFormComponent {
         },
       },
       {
+        kind: ControlKindEnum.link,
+        id: 'forgotPassword',
+        alignItems: 'flex-end',
+        validation: {
+          validators: [],
+          isVisible: false,
+        },
+        label: 'Forgot password?',
+        path: '/forgot-password',
+        tip: '',
+      },
+      {
         kind: ControlKindEnum.buttonText,
         id: 'submit',
+        alignItems: 'flex-start',
         validation: {
           validators: [],
           isVisible: false,
         },
         label: 'Log in',
         isSubmit: true,
+      },
+      {
+        kind: ControlKindEnum.link,
+        id: 'registration',
+        alignItems: 'flex-start',
+        validation: {
+          validators: [],
+          isVisible: false,
+        },
+        label: 'Registration',
+        path: '/registration',
+        tip: "Don't have an account?",
       },
     ],
   };

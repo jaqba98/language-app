@@ -47,6 +47,7 @@ export class MainNavFormComponent
       {
         kind: ControlKindEnum.buttonText,
         id: 'homeButton',
+        alignItems: 'flex-start',
         label: 'Home',
         isSubmit: false,
         validation: {
@@ -57,6 +58,7 @@ export class MainNavFormComponent
       {
         kind: ControlKindEnum.buttonText,
         id: 'vocabularyButton',
+        alignItems: 'flex-start',
         label: 'Vocabulary',
         isSubmit: false,
         validation: {
@@ -67,6 +69,7 @@ export class MainNavFormComponent
       {
         kind: ControlKindEnum.buttonText,
         id: 'grammarButton',
+        alignItems: 'flex-start',
         label: 'Grammar',
         isSubmit: false,
         validation: {

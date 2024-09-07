@@ -4,7 +4,6 @@ import {
   AuthComponent,
   LoginFormComponent,
   LoginFormModel,
-  RouteNavigationService,
 } from '@english-learning/fe-ui';
 
 @Component({
@@ -16,10 +15,7 @@ import {
 export class LoginComponent {
   @Output() event = new EventEmitter<LoginFormModel>();
 
-  constructor(private readonly route: RouteNavigationService) {}
-
   onEvent(event: LoginFormModel) {
-    this.route.navigate('/dashboard');
     this.event.emit(event);
   }
 }
