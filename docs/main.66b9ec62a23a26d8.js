@@ -17710,7 +17710,7 @@
                   void (this.resetIfError && this.resetFormGroup())
                 );
               (this.formGroupValid = !0),
-                this.baseFormEvent.emit(this.formGroup.valid),
+                this.baseFormEvent.emit(this.formGroup.value),
                 this.resetFormGroup(),
                 (this.formGroupInvalid = !1);
             }
@@ -17977,7 +17977,7 @@
                       kind: Pt.text,
                       id: 'tip',
                       alignItems: 'stretch',
-                      validation: { validators: [], isVisible: !1 },
+                      validation: { validators: [], isVisible: !0 },
                       value:
                         'Lost your password? Please enter your email address. You will receive a link to create a new password via email.',
                       margin: '1rem 0',
@@ -17988,7 +17988,7 @@
                       alignItems: 'stretch',
                       validation: {
                         validators: [Ia.required, Ia.email],
-                        isVisible: !1,
+                        isVisible: !0,
                       },
                       label: { value: 'Email', isVisible: !0 },
                       input: {
@@ -18023,7 +18023,14 @@
               decls: 1,
               vars: 2,
               consts: [
-                [3, 'baseFormEvent', 'baseForm', 'resetIfError'],
+                [
+                  'formSuccessMessage',
+                  'A message has been sent to your email',
+                  3,
+                  'baseFormEvent',
+                  'baseForm',
+                  'resetIfError',
+                ],
               ],
               template: function (r, o) {
                 1 & r &&
@@ -18035,7 +18042,7 @@
                   2 & r &&
                     x('baseForm', o.forgotPasswordForm)(
                       'resetIfError',
-                      !0,
+                      !1,
                     );
               },
               dependencies: [B0],

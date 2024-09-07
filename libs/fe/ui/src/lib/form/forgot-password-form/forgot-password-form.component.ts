@@ -24,7 +24,7 @@ export class ForgotPasswordFormComponent {
         alignItems: 'stretch',
         validation: {
           validators: [],
-          isVisible: false,
+          isVisible: true,
         },
         value:
           'Lost your password? Please enter your email address. You will receive a link to create a new password via email.',
@@ -36,7 +36,7 @@ export class ForgotPasswordFormComponent {
         alignItems: 'stretch',
         validation: {
           validators: [Validators.required, Validators.email],
-          isVisible: false,
+          isVisible: true,
         },
         label: {
           value: 'Email',

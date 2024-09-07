@@ -90,7 +90,7 @@ export class BaseFormComponent implements OnInit {
       return;
     }
     this.formGroupValid = true;
-    this.baseFormEvent.emit(this.formGroup.valid);
+    this.baseFormEvent.emit(this.formGroup.value);
     this.resetFormGroup();
     this.formGroupInvalid = false;
   }
