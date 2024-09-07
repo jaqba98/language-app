@@ -36,7 +36,7 @@ export class ForgotPasswordFormComponent {
         alignItems: 'stretch',
         validation: {
           validators: [Validators.required, Validators.email],
-          isVisible: true,
+          isVisible: false,
         },
         label: {
           value: 'Email',

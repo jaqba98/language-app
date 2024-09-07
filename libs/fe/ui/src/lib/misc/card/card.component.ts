@@ -9,5 +9,5 @@ import { Properties } from 'csstype';
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
-  @Input() width: Properties['width'];
+  @Input() maxWidth: Properties['maxWidth'];
 }
