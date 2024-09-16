@@ -1,14 +1,14 @@
-<a class="link" [routerLink]="control.path">
-  <lib-flex flexDirection="row" gap="0.25rem">
-    <ng-container *ngIf="control.tip !== ''">
-      <lib-text
-        [value]="control.tip"
-        type="tiny"
-        textColor="text__info"></lib-text>
-    </ng-container>
+<lib-flex flexDirection="row" gap="0.25rem">
+  <ng-container *ngIf="control.tip !== ''">
+    <lib-text
+      [value]="control.tip"
+      type="tiny"
+      textColor="text__info"></lib-text>
+  </ng-container>
+  <a class="link" [routerLink]="control.path">
     <lib-text
       [value]="control.label"
       type="tiny"
       textColor="text__accent"></lib-text>
-  </lib-flex>
-</a>
+  </a>
+</lib-flex>

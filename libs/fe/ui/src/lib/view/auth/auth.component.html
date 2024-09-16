@@ -3,12 +3,17 @@
     alignItems="center"
     justifyContent="center"
     minHeight="calc(100svh - 2rem)">
-    <lib-card maxWidth="400px">
-      <lib-flex alignItems="center" flexDirection="column" gap="1rem">
-        <lib-text
-          value="English Learning"
-          type="header2"
-          textColor="text__accent"></lib-text>
+    <lib-card width="350px">
+      <lib-flex
+        alignItems="stretch"
+        flexDirection="column"
+        gap="1rem">
+        <lib-flex justifyContent="center">
+          <lib-text
+            value="English Learning"
+            type="header2"
+            textColor="text__accent"></lib-text>
+        </lib-flex>
         <ng-content></ng-content>
       </lib-flex>
     </lib-card>
