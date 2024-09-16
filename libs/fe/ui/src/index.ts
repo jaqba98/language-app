@@ -2,6 +2,8 @@ export * from './lib/form/login-form/login-form.component';
 export * from './lib/form/login-form/login-form.model';
 export * from './lib/form/forgot-password-form/forgot-password-form.component';
 export * from './lib/form/forgot-password-form/forgot-password-form.model';
+export * from './lib/form/registration-form/registration-form.component';
+export * from './lib/form/registration-form/registration-form.model';
 export * from './lib/layout/flex/flex.component';
 export * from './lib/misc/card/card.component';
 export * from './lib/misc/text/text.type';
