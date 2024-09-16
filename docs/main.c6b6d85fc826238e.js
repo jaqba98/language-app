@@ -2,7 +2,7 @@
   self.webpackChunkenglish_learning_fe || []).push([
   [792],
   {
-    376: (Lt, ar, rt) => {
+    896: (Lt, cr, rt) => {
       'use strict';
       function Vt(e, t) {
         return Object.is(e, t);
@@ -1096,7 +1096,7 @@
         cN = /\n/gm,
         Sv = '__source';
       let Io;
-      function lr(e) {
+      function dr(e) {
         const t = Io;
         return (Io = e), t;
       }
@@ -1106,11 +1106,11 @@
           ? Iv(e, void 0, t)
           : Io.get(e, t & Y.Optional ? null : void 0, t);
       }
-      function x(e, t = Y.Default) {
+      function A(e, t = Y.Default) {
         return (wv() || dN)(k(e), t);
       }
       function _(e, t = Y.Default) {
-        return x(e, Ja(t));
+        return A(e, Ja(t));
       }
       function Ja(e) {
         return typeof e > 'u' || 'number' == typeof e
@@ -1137,8 +1137,8 @@
                   : (i |= c)
                 : (o = a);
             }
-            t.push(x(o, i));
-          } else t.push(x(r));
+            t.push(A(o, i));
+          } else t.push(A(r));
         }
         return t;
       }
@@ -1233,7 +1233,7 @@
             e
           );
         })(sn || {}),
-        dr = (function (e) {
+        fr = (function (e) {
           return (
             (e[(e.None = 0)] = 'None'),
             (e[(e.SignalBased = 1)] = 'SignalBased'),
@@ -1241,7 +1241,7 @@
               'HasDecoratorInputTransform'),
             e
           );
-        })(dr || {});
+        })(fr || {});
       function yN(e, t, n) {
         let r = e.length;
         for (;;) {
@@ -1579,12 +1579,12 @@
             const o = e[r];
             let i,
               s,
-              a = dr.None;
+              a = fr.None;
             Array.isArray(o)
               ? ((a = o[0]), (i = o[1]), (s = o[2] ?? i))
               : ((i = o), (s = o)),
               t
-                ? ((n[i] = a !== dr.None ? [r, a] : r), (t[i] = s))
+                ? ((n[i] = a !== fr.None ? [r, a] : r), (t[i] = s))
                 : (n[i] = r);
           }
         return n;
@@ -1722,7 +1722,7 @@
               t({ provide: o, useFactory: u, deps: ee }, o),
                 t({ provide: xd, useValue: o, multi: !0 }, o),
                 t(
-                  { provide: $t, useValue: () => x(o), multi: !0 },
+                  { provide: $t, useValue: () => A(o), multi: !0 },
                   o,
                 );
             }
@@ -1806,19 +1806,19 @@
         }
         runInContext(t) {
           this.assertNotDestroyed();
-          const n = lr(this),
+          const n = dr(this),
             r = At(void 0);
           try {
             return t();
           } finally {
-            lr(n), At(r);
+            dr(n), At(r);
           }
         }
         get(t, n = Hi, r = Y.Default) {
           if ((this.assertNotDestroyed(), t.hasOwnProperty(bv)))
             return t[bv](this);
           r = Ja(r);
-          const i = lr(this),
+          const i = dr(this),
             s = At(void 0);
           try {
             if (!(r & Y.SkipSelf)) {
@@ -1886,18 +1886,18 @@
             }
             throw a;
           } finally {
-            At(s), lr(i);
+            At(s), dr(i);
           }
         }
         resolveInjectorInitializers() {
           const t = F(null),
-            n = lr(this),
+            n = dr(this),
             r = At(void 0);
           try {
             const i = this.get($t, ee, Y.Self);
             for (const s of i) s();
           } finally {
-            lr(n), At(r), F(t);
+            dr(n), At(r), F(t);
           }
         }
         toString() {
@@ -1992,7 +1992,7 @@
             return !(!e || !e.useExisting);
           })(e)
         )
-          r = () => x(k(e.useExisting));
+          r = () => A(k(e.useExisting));
         else {
           const o = k(e && (e.useClass || e.provide));
           if (
@@ -2018,12 +2018,12 @@
       }
       function Gn(e, t) {
         e instanceof Ao && e.assertNotDestroyed();
-        const r = lr(e),
+        const r = dr(e),
           o = At(void 0);
         try {
           return t();
         } finally {
-          lr(r), At(o);
+          dr(r), At(o);
         }
       }
       function qv() {
@@ -2037,7 +2037,7 @@
       }
       const Se = 0,
         w = 1,
-        A = 2,
+        N = 2,
         Be = 3,
         cn = 4,
         it = 5,
@@ -2056,7 +2056,7 @@
         qn = 18,
         ko = 19,
         Qv = 20,
-        hr = 21,
+        pr = 21,
         uc = 22,
         Yt = 23,
         T = 25,
@@ -2090,7 +2090,7 @@
         return !!e.template;
       }
       function Ki(e) {
-        return !!(512 & e[A]);
+        return !!(512 & e[N]);
       }
       class tR {
         constructor(t, n, r) {
@@ -2158,7 +2158,7 @@
         return nt(n) ? n : n[Se];
       }
       function Qd(e) {
-        return !(128 & ~e[A]);
+        return !(128 & ~e[N]);
       }
       function Xt(e, t) {
         return null == t ? null : e[t];
@@ -2167,14 +2167,14 @@
         e[Fo] = 0;
       }
       function sy(e) {
-        1024 & e[A] || ((e[A] |= 1024), Qd(e) && hc(e));
+        1024 & e[N] || ((e[N] |= 1024), Qd(e) && hc(e));
       }
       function es(e) {
-        return !!(9216 & e[A] || e[Yt]?.dirty);
+        return !!(9216 & e[N] || e[Yt]?.dirty);
       }
       function Yd(e) {
         e[In].changeDetectionScheduler?.notify(7),
-          64 & e[A] && (e[A] |= 1024),
+          64 & e[N] && (e[N] |= 1024),
           es(e) && hc(e);
       }
       function hc(e) {
@@ -2182,14 +2182,14 @@
         let t = Wn(e);
         for (
           ;
-          null !== t && !(8192 & t[A]) && ((t[A] |= 8192), Qd(t));
+          null !== t && !(8192 & t[N]) && ((t[N] |= 8192), Qd(t));
 
         )
           t = Wn(t);
       }
       function pc(e, t) {
-        if (!(256 & ~e[A])) throw new E(911, !1);
-        null === e[hr] && (e[hr] = []), e[hr].push(t);
+        if (!(256 & ~e[N])) throw new E(911, !1);
+        null === e[pr] && (e[pr] = []), e[pr].push(t);
       }
       function Wn(e) {
         const t = e[Be];
@@ -2391,11 +2391,11 @@
         wy(e, t, 3, n);
       }
       function _c(e, t, n, r) {
-        (3 & e[A]) === n && wy(e, t, n, r);
+        (3 & e[N]) === n && wy(e, t, n, r);
       }
       function cf(e, t) {
-        let n = e[A];
-        (3 & n) === t && ((n &= 16383), (n += 1), (e[A] = n));
+        let n = e[N];
+        (3 & n) === t && ((n &= 16383), (n += 1), (e[N] = n));
       }
       function wy(e, t, n, r) {
         const i = r ?? -1,
@@ -2425,9 +2425,9 @@
           i = n[r + 1],
           a = e[o ? -n[r] : n[r]];
         o
-          ? e[A] >> 14 < e[Fo] >> 16 &&
-            (3 & e[A]) === t &&
-            ((e[A] += 16384), Iy(a, i))
+          ? e[N] >> 14 < e[Fo] >> 16 &&
+            (3 & e[N]) === t &&
+            ((e[N] += 16384), Iy(a, i))
           : Iy(a, i);
       }
       const Lo = -1;
@@ -2551,7 +2551,7 @@
       }
       function xy(e, t, n, r = Y.Default, o) {
         if (null !== e) {
-          if (2048 & t[A] && !(r & Y.Self)) {
+          if (2048 & t[N] && !(r & Y.Self)) {
             const s = (function jR(e, t, n, r, o) {
               let i = e,
                 s = t;
@@ -2559,8 +2559,8 @@
                 ;
                 null !== i &&
                 null !== s &&
-                2048 & s[A] &&
-                !(512 & s[A]);
+                2048 & s[N] &&
+                !(512 & s[N]);
 
               ) {
                 const a = Oy(i, s, n, r | Y.Self, An);
@@ -2779,7 +2779,7 @@
         static #n = (this.ɵprov = S({
           token: He,
           providedIn: 'any',
-          factory: () => x(xv),
+          factory: () => A(xv),
         }));
         static #r = (this.__NG_ELEMENT_ID__ = -1);
       }
@@ -2809,9 +2809,9 @@
             pc(this._lView, t),
             () =>
               (function Kd(e, t) {
-                if (null === e[hr]) return;
-                const n = e[hr].indexOf(t);
-                -1 !== n && e[hr].splice(n, 1);
+                if (null === e[pr]) return;
+                const n = e[pr].indexOf(t);
+                -1 !== n && e[pr].splice(n, 1);
               })(this._lView, t)
           );
         }
@@ -3287,7 +3287,7 @@
         v_ = new D('', {
           providedIn: 'root',
           factory: () =>
-            (function pr() {
+            (function gr() {
               if (void 0 !== wf) return wf;
               if (typeof document < 'u') return document;
               throw new E(210, !1);
@@ -3327,7 +3327,7 @@
           return `SafeValue must use [property]=binding: ${this.changingThisBreaksApplicationSecurity} (see ${gv})`;
         }
       }
-      function gr(e) {
+      function mr(e) {
         return e instanceof x_
           ? e.changingThisBreaksApplicationSecurity
           : e;
@@ -3362,7 +3362,7 @@
         return t
           ? t.sanitize(Go.URL, e) || ''
           : gs(e, 'URL')
-          ? gr(e)
+          ? mr(e)
           : (function Vf(e) {
               return (e = String(e)).match(Yx) ? e : 'unsafe:' + e;
             })(U(e));
@@ -3370,7 +3370,7 @@
       function B_(e) {
         const t = vs();
         if (t) return R_(t.sanitize(Go.RESOURCE_URL, e) || '');
-        if (gs(e, 'ResourceURL')) return R_(gr(e));
+        if (gs(e, 'ResourceURL')) return R_(mr(e));
         throw new E(904, !1);
       }
       function vs() {
@@ -3383,13 +3383,13 @@
       function qt(e) {
         return e instanceof Function ? e() : e;
       }
-      var mr = (function (e) {
+      var vr = (function (e) {
         return (
           (e[(e.Important = 1)] = 'Important'),
           (e[(e.DashCase = 2)] = 'DashCase'),
           e
         );
-      })(mr || {});
+      })(vr || {});
       let Gf;
       function qf(e, t) {
         return Gf(e, t);
@@ -3440,7 +3440,7 @@
         const n = e[Po],
           r = t[Be];
         (nt(r) || t[Me] !== r[Be][Me]) &&
-          (e[A] |= dc.HasTransplantedViews),
+          (e[N] |= dc.HasTransplantedViews),
           null === n ? (e[Po] = [t]) : n.push(t);
       }
       function Qf(e, t) {
@@ -3464,12 +3464,12 @@
           null !== s && s.detachView(i[w]),
             (r[Be] = null),
             (r[cn] = null),
-            (r[A] &= -129);
+            (r[N] &= -129);
         }
         return r;
       }
       function Hc(e, t) {
-        if (!(256 & t[A])) {
+        if (!(256 & t[N])) {
           const n = t[P];
           n.destroyNode && Gc(e, t, n, 3, null, null),
             (function TO(e) {
@@ -3495,11 +3495,11 @@
         }
       }
       function Yf(e, t) {
-        if (256 & t[A]) return;
+        if (256 & t[N]) return;
         const n = F(null);
         try {
-          (t[A] &= -129),
-            (t[A] |= 256),
+          (t[N] &= -129),
+            (t[N] |= 256),
             t[Yt] && Yl(t[Yt]),
             (function RO(e, t) {
               let n;
@@ -3540,9 +3540,9 @@
                     s >= 0 ? r[s]() : r[-s].unsubscribe(), (i += 2);
                   } else n[i].call(r[n[i + 1]]);
               null !== r && (t[xo] = null);
-              const o = t[hr];
+              const o = t[pr];
               if (null !== o) {
-                t[hr] = null;
+                t[pr] = null;
                 for (let i = 0; i < o.length; i++) (0, o[i])();
               }
             })(e, t),
@@ -3700,7 +3700,7 @@
       }
       function fC(e, t, n, r) {
         if (!r)
-          if (3 & ~t[A]) {
+          if (3 & ~t[N]) {
             const i = e.preOrderHooks;
             null !== i && _c(t, i, 0, n);
           } else {
@@ -3711,17 +3711,17 @@
       }
       function b(e, t = Y.Default) {
         const n = v();
-        return null === n ? x(e, t) : xy(fe(), n, k(e), t);
+        return null === n ? A(e, t) : xy(fe(), n, k(e), t);
       }
       function pC(e, t, n, r, o, i) {
         const s = F(null);
         try {
           let a = null;
-          o & dr.SignalBased && (a = t[r][xe]),
+          o & fr.SignalBased && (a = t[r][xe]),
             null !== a &&
               void 0 !== a.transformFn &&
               (i = a.transformFn(i)),
-            o & dr.HasDecoratorInputTransform &&
+            o & fr.HasDecoratorInputTransform &&
               (i = e.inputTransforms[r].call(t, i)),
             null !== e.setInput
               ? e.setInput(t, a, i, n, r)
@@ -3734,8 +3734,8 @@
         const d = t.blueprint.slice();
         return (
           (d[Se] = o),
-          (d[A] = 204 | r),
-          (null !== u || (e && 2048 & e[A])) && (d[A] |= 2048),
+          (d[N] = 204 | r),
+          (null !== u || (e && 2048 & e[N])) && (d[N] |= 2048),
           iy(d),
           (d[Be] = d[Oo] = e),
           (d[_e] = n),
@@ -3980,7 +3980,7 @@
           if (void 0 === s) continue;
           r ??= {};
           let a,
-            c = dr.None;
+            c = fr.None;
           Array.isArray(s) ? ((a = s[0]), (c = s[1])) : (a = s);
           let u = i;
           if (null !== o) {
@@ -4285,7 +4285,7 @@
             r)
           );
         } finally {
-          (t[A] &= -5), af();
+          (t[N] &= -5), af();
         }
       }
       function Zo(e, t, n, r) {
@@ -4296,7 +4296,7 @@
               e,
               i,
               n,
-              4096 & e[A] ? 4096 : 16,
+              4096 & e[N] ? 4096 : 16,
               null,
               t,
               null,
@@ -4333,7 +4333,7 @@
             const s = t[jr];
             null !== s && n !== s && J_(s, t);
             const a = t[qn];
-            null !== a && a.insertView(e), Yd(t), (t[A] |= 128);
+            null !== a && a.insertView(e), Yd(t), (t[N] |= 128);
           })(o, t, e, n),
           r)
         ) {
@@ -4434,7 +4434,7 @@
         }
       }
       function yF(e, t, n, r) {
-        const o = t[A];
+        const o = t[N];
         if (!(256 & ~o)) return;
         t[In].inlineEffectRunner?.flush(), sf(t);
         let a = !0,
@@ -4479,7 +4479,7 @@
           if (
             ((function _F(e) {
               for (let t = s_(e); null !== t; t = a_(t)) {
-                if (!(t[A] & dc.HasTransplantedViews)) continue;
+                if (!(t[N] & dc.HasTransplantedViews)) continue;
                 const n = t[Po];
                 for (let r = 0; r < n.length; r++) sy(n[r]);
               }
@@ -4529,7 +4529,7 @@
             for (const h of t[uc]) h();
             t[uc] = null;
           }
-          t[A] &= -73;
+          t[N] &= -73;
         } catch (l) {
           throw (hc(t), l);
         } finally {
@@ -4554,7 +4554,7 @@
       }
       function ph(e, t) {
         const r = e[w],
-          o = e[A],
+          o = e[N],
           i = e[Yt];
         let s = !!(0 === t && 16 & o);
         if (
@@ -4563,7 +4563,7 @@
           (s ||= !(!i?.dirty || !Ql(i))),
           (s ||= !1),
           i && (i.dirty = !1),
-          (e[A] &= -9217),
+          (e[N] &= -9217),
           s)
         )
           yF(r, e, r.template, e[_e]);
@@ -4579,7 +4579,7 @@
       function Ds(e, t) {
         const n = hy() ? 64 : 1088;
         for (e[In].changeDetectionScheduler?.notify(t); e; ) {
-          e[A] |= n;
+          e[N] |= n;
           const r = Wn(e);
           if (Ki(e) && !r) return e;
           e = r;
@@ -4606,7 +4606,7 @@
           this._lView[_e] = t;
         }
         get destroyed() {
-          return !(256 & ~this._lView[A]);
+          return !(256 & ~this._lView[N]);
         }
         destroy() {
           if (this._appRef) this._appRef.detachView(this);
@@ -4628,13 +4628,13 @@
           Ds(this._cdRefInjectingView || this._lView, 4);
         }
         detach() {
-          this._lView[A] &= -129;
+          this._lView[N] &= -129;
         }
         reattach() {
-          Yd(this._lView), (this._lView[A] |= 128);
+          Yd(this._lView), (this._lView[N] |= 128);
         }
         detectChanges() {
-          (this._lView[A] |= 1024),
+          (this._lView[N] |= 1024),
             Qc(this._lView, this.notifyErrorHandler);
         }
         checkNoChanges() {}
@@ -4812,7 +4812,7 @@
               ? {
                   propName: s,
                   templateName: r,
-                  isSignal: !!((i ? o[1] : dr.None) & dr.SignalBased),
+                  isSignal: !!((i ? o[1] : fr.None) & fr.SignalBased),
                 }
               : { propName: s, templateName: r },
           );
@@ -4929,7 +4929,7 @@
                     r = T;
                   return (e[r] = t), Kr(n, r, 2, '#host', null);
                 })(M, g),
-                Q4 = (function Nk(e, t, n, r, o, i, s) {
+                Y4 = (function Nk(e, t, n, r, o, i, s) {
                   const a = o[w];
                   !(function Rk(e, t, n, r) {
                     for (const o of e)
@@ -5017,7 +5017,7 @@
                   if (((e[_e] = o[_e] = u), null !== i))
                     for (const l of i) l(u, t);
                   return rh(a, s, o), u;
-                })(Q4, Ae, Pt, Vi, M, [kk])),
+                })(Y4, Ae, Pt, Vi, M, [kk])),
                 fh(y, M, null);
             } finally {
               af();
@@ -5514,7 +5514,7 @@
           r = Lh(n, t);
         return r.crossesNgTemplate ? kh(n, e, t, []) : _E(n, e, r, t);
       }
-      function _r(e, t) {
+      function Cr(e, t) {
         Ct('NgSignals');
         const n = (function RT(e) {
             const t = Object.create(OT);
@@ -5820,7 +5820,7 @@
       function gu(e, t) {
         return (e << 17) | (t << 2);
       }
-      function Er(e) {
+      function Dr(e) {
         return (e >> 17) & 32767;
       }
       function Jh(e) {
@@ -5838,12 +5838,12 @@
       function bD(e, t, n, r) {
         const o = e[n + 1],
           i = null === t;
-        let s = r ? Er(o) : oo(o),
+        let s = r ? Dr(o) : oo(o),
           a = !1;
         for (; 0 !== s && (!1 === a || i); ) {
           const u = e[s + 1];
           iP(e[s], t) && ((a = !0), (e[s + 1] = r ? tp(u) : Jh(u))),
-            (s = r ? Er(u) : oo(u));
+            (s = r ? Dr(u) : oo(u));
         }
         a && (e[n + 1] = r ? Jh(o) : tp(o));
       }
@@ -5856,7 +5856,7 @@
             Mo(e, t) >= 0)
         );
       }
-      function N(e, t, n) {
+      function R(e, t, n) {
         const r = v();
         return (
           ke(r, hn(), t) &&
@@ -5869,7 +5869,7 @@
                   Ur(t) &&
                     (function WO(e, t) {
                       const n = zt(t, e);
-                      16 & n[A] || (n[A] |= 64);
+                      16 & n[N] || (n[N] |= 64);
                     })(n, t.index))
                 : 3 & t.type &&
                   ((r = (function qO(e) {
@@ -5890,15 +5890,15 @@
                   (o = null != s ? s(o, t.value || '', r) : o),
                   i.setProperty(c, r, o));
             })(G(), Ce(), r, e, t, r[P], n, !1),
-          N
+          R
         );
       }
       function np(e, t, n, r, o) {
         const s = o ? 'class' : 'style';
         dh(e, n, t.inputs[s], s, r);
       }
-      function Dr(e, t, n) {
-        return mn(e, t, n, !1), Dr;
+      function br(e, t, n) {
+        return mn(e, t, n, !1), br;
       }
       function mu(e, t) {
         return mn(e, t, null, !0), mu;
@@ -5947,7 +5947,7 @@
                           const r = n
                             ? t.classBindings
                             : t.styleBindings;
-                          if (0 !== oo(r)) return e[Er(r)];
+                          if (0 !== oo(r)) return e[Dr(r)];
                         })(e, t, r);
                         void 0 !== c &&
                           Array.isArray(c) &&
@@ -5955,7 +5955,7 @@
                           (c = Bs(c, t.attrs, r)),
                           (function mP(e, t, n, r) {
                             e[
-                              Er(
+                              Dr(
                                 n ? t.classBindings : t.styleBindings,
                               )
                             ] = r;
@@ -5983,7 +5983,7 @@
                 })(o, i, t, r)),
                 (function rP(e, t, n, r, o, i) {
                   let s = i ? t.classBindings : t.styleBindings,
-                    a = Er(s),
+                    a = Dr(s),
                     c = oo(s);
                   e[r] = n;
                   let l,
@@ -5996,7 +5996,7 @@
                     o)
                   )
                     if (0 !== c) {
-                      const f = Er(e[a + 1]);
+                      const f = Dr(e[a + 1]);
                       (e[r + 1] = gu(f, a)),
                         0 !== f && (e[f + 1] = ep(e[f + 1], r)),
                         (e[a + 1] = (function tP(e, t) {
@@ -6050,13 +6050,13 @@
                   if (t) o ? e.addClass(n, r) : e.removeClass(n, r);
                   else {
                     let i =
-                      -1 === r.indexOf('-') ? void 0 : mr.DashCase;
+                      -1 === r.indexOf('-') ? void 0 : vr.DashCase;
                     null == o
                       ? e.removeStyle(n, r, i)
                       : ('string' == typeof o &&
                           o.endsWith('!important') &&
                           ((o = o.slice(0, -10)),
-                          (i |= mr.Important)),
+                          (i |= vr.Important)),
                         e.setStyle(n, r, o, i));
                   }
                 })(r, s, Xi(st(), n), o, i));
@@ -6072,7 +6072,7 @@
                     '' === e ||
                     ('string' == typeof t
                       ? (e += t)
-                      : 'object' == typeof e && (e = Ze(gr(e)))),
+                      : 'object' == typeof e && (e = Ze(mr(e)))),
                   e
                 );
               })(t, n)),
@@ -6121,7 +6121,7 @@
           if ((u && !vu(h) && (h = Rd(c, r)), vu(h) && ((a = h), s)))
             return a;
           const p = e[o + 1];
-          o = s ? Er(p) : oo(p);
+          o = s ? Dr(p) : oo(p);
         }
         if (null !== t) {
           let c = i ? t.residualClasses : t.residualStyles;
@@ -6444,7 +6444,7 @@
           return e.createText(t);
         })(t[P], r)
       );
-      function br(e, t, n) {
+      function wr(e, t, n) {
         const r = v(),
           o = (function ai(e, t, n, r) {
             return ke(e, hn(), n) ? t + U(n) + r : B;
@@ -6457,7 +6457,7 @@
                 e.setValue(t, n);
               })(e[P], r, n);
             })(r, st(), o),
-          br
+          wr
         );
       }
       function pp(e, t, n, r, o) {
@@ -6601,7 +6601,7 @@
           static #e = (this.ɵprov = S({
             token: e,
             providedIn: 'environment',
-            factory: () => new e(x(Ht)),
+            factory: () => new e(A(Ht)),
           }));
         }
         return e;
@@ -6721,7 +6721,7 @@
             if (!this._injector.get(Sp).done)
               throw (
                 (!o &&
-                  (function fr(e) {
+                  (function hr(e) {
                     const t = W(e) || Qe(e) || ot(e);
                     return null !== t && t.standalone;
                   })(n),
@@ -7140,7 +7140,7 @@
             })(),
         }),
         Np = new D('');
-      let wr = null;
+      let Ir = null;
       let na = (() => {
         class e {
           static #e = (this.__NG_ELEMENT_ID__ = z2);
@@ -7855,7 +7855,7 @@
               platformProviders: r,
             } = e,
             o = (function $2(e = []) {
-              if (wr) return wr;
+              if (Ir) return Ir;
               const t = (function kw(e = [], t) {
                 return He.create({
                   name: t,
@@ -7863,14 +7863,14 @@
                     { provide: Vd, useValue: 'platform' },
                     {
                       provide: Np,
-                      useValue: new Set([() => (wr = null)]),
+                      useValue: new Set([() => (Ir = null)]),
                     },
                     ...e,
                   ],
                 });
               })(e);
               return (
-                (wr = t),
+                (Ir = t),
                 (function Sw() {
                   !(function NT(e) {
                     jm = e;
@@ -7978,7 +7978,7 @@
         }
       }
       let _I = null;
-      function Ir() {
+      function Sr() {
         return _I;
       }
       class Gj {}
@@ -8008,10 +8008,10 @@
                 (this._history = window.history);
             }
             getBaseHrefFromDOM() {
-              return Ir().getBaseHref(this._doc);
+              return Sr().getBaseHref(this._doc);
             }
             onPopState(n) {
-              const r = Ir().getGlobalEventTarget(
+              const r = Sr().getGlobalEventTarget(
                 this._doc,
                 'window',
               );
@@ -8021,7 +8021,7 @@
               );
             }
             onHashChange(n) {
-              const r = Ir().getGlobalEventTarget(
+              const r = Sr().getGlobalEventTarget(
                 this._doc,
                 'window',
               );
@@ -8176,7 +8176,7 @@
               this._platformLocation.historyGo?.(n);
             }
             static #e = (this.ɵfac = function (r) {
-              return new (r || e)(x(Up), x(EI, 8));
+              return new (r || e)(A(Up), A(EI, 8));
             });
             static #t = (this.ɵprov = S({
               token: e,
@@ -8239,7 +8239,7 @@
               this._platformLocation.historyGo?.(n);
             }
             static #e = (this.ɵfac = function (r) {
-              return new (r || e)(x(Up), x(EI, 8));
+              return new (r || e)(A(Up), A(EI, 8));
             });
             static #t = (this.ɵprov = S({
               token: e,
@@ -8355,13 +8355,13 @@
             static #t = (this.joinWithSlash = Bp);
             static #n = (this.stripTrailingSlash = CI);
             static #r = (this.ɵfac = function (r) {
-              return new (r || e)(x(Ei));
+              return new (r || e)(A(Ei));
             });
             static #o = (this.ɵprov = S({
               token: e,
               factory: () =>
                 (function Qj() {
-                  return new sa(x(Ei));
+                  return new sa(A(Ei));
                 })(),
               providedIn: 'root',
             }));
@@ -8754,7 +8754,7 @@
             }
             _setStyle(n, r) {
               const [o, i] = n.split('.'),
-                s = -1 === o.indexOf('-') ? void 0 : mr.DashCase;
+                s = -1 === o.indexOf('-') ? void 0 : vr.DashCase;
               null != r
                 ? this._renderer.setStyle(
                     this._ngEl.nativeElement,
@@ -9009,7 +9009,7 @@
             return this._eventNameToPlugin.set(n, r), r;
           }
           static #e = (this.ɵfac = function (r) {
-            return new (r || e)(x(tl), x(ae));
+            return new (r || e)(A(tl), A(ae));
           });
           static #t = (this.ɵprov = S({ token: e, factory: e.ɵfac }));
         }
@@ -9121,7 +9121,7 @@
             n.clear(), n.add(this.doc.head);
           }
           static #e = (this.ɵfac = function (r) {
-            return new (r || e)(x(tn), x(cs), x(v_, 8), x(Zr));
+            return new (r || e)(A(tn), A(cs), A(v_, 8), A(Zr));
           });
           static #t = (this.ɵprov = S({ token: e, factory: e.ɵfac }));
         }
@@ -9201,14 +9201,14 @@
           }
           static #e = (this.ɵfac = function (r) {
             return new (r || e)(
-              x(XI),
-              x(JI),
-              x(cs),
-              x(KB),
-              x(tn),
-              x(Zr),
-              x(ae),
-              x(v_),
+              A(XI),
+              A(JI),
+              A(cs),
+              A(KB),
+              A(tn),
+              A(Zr),
+              A(ae),
+              A(v_),
             );
           });
           static #t = (this.ɵprov = S({ token: e, factory: e.ɵfac }));
@@ -9280,16 +9280,16 @@
           t.classList.remove(n);
         }
         setStyle(t, n, r, o) {
-          o & (mr.DashCase | mr.Important)
+          o & (vr.DashCase | vr.Important)
             ? t.style.setProperty(
                 n,
                 r,
-                o & mr.Important ? 'important' : '',
+                o & vr.Important ? 'important' : '',
               )
             : (t.style[n] = r);
         }
         removeStyle(t, n, r) {
-          r & mr.DashCase
+          r & vr.DashCase
             ? t.style.removeProperty(n)
             : (t.style[n] = '');
         }
@@ -9302,7 +9302,7 @@
         listen(t, n, r) {
           if (
             'string' == typeof t &&
-            !(t = Ir().getGlobalEventTarget(this.doc, t))
+            !(t = Sr().getGlobalEventTarget(this.doc, t))
           )
             throw new Error(
               `Unsupported event target ${t} for event ${n}`,
@@ -9414,7 +9414,7 @@
               return n.removeEventListener(r, o);
             }
             static #e = (this.ɵfac = function (r) {
-              return new (r || e)(x(tn));
+              return new (r || e)(A(tn));
             });
             static #t = (this.ɵprov = S({
               token: e,
@@ -9438,7 +9438,7 @@
               return this.delegate.removeEventListener(n, r, o);
             }
             static #e = (this.ɵfac = function (r) {
-              return new (r || e)(x(tn));
+              return new (r || e)(A(tn));
             });
             static #t = (this.ɵprov = S({
               token: e,
@@ -9532,7 +9532,7 @@
                   return this.manager
                     .getZone()
                     .runOutsideAngular(() =>
-                      Ir().onAndCancel(n, i.domEventName, s),
+                      Sr().onAndCancel(n, i.domEventName, s),
                     );
                 }
                 static parseEventName(n) {
@@ -9587,7 +9587,7 @@
                   return 'esc' === n ? 'escape' : n;
                 }
                 static #e = (this.ɵfac = function (r) {
-                  return new (r || e)(x(tn));
+                  return new (r || e)(A(tn));
                 });
                 static #t = (this.ɵprov = S({
                   token: e,
@@ -9619,7 +9619,7 @@
             this._doc.title = n || '';
           }
           static #e = (this.ɵfac = function (r) {
-            return new (r || e)(x(tn));
+            return new (r || e)(A(tn));
           });
           static #t = (this.ɵprov = S({
             token: e,
@@ -9629,8 +9629,8 @@
         }
         return e;
       })();
-      function Sr(e) {
-        return this instanceof Sr ? ((this.v = e), this) : new Sr(e);
+      function Mr(e) {
+        return this instanceof Mr ? ((this.v = e), this) : new Mr(e);
       }
       function fS(e) {
         if (!Symbol.asyncIterator)
@@ -9745,7 +9745,7 @@
           function c(h, p) {
             try {
               !(function u(h) {
-                h.value instanceof Sr
+                h.value instanceof Mr
                   ? Promise.resolve(h.value.v).then(l, d)
                   : f(i[0][2], h);
               })(r[h](p));
@@ -9766,9 +9766,9 @@
           const n = e.getReader();
           try {
             for (;;) {
-              const { value: r, done: o } = yield Sr(n.read());
-              if (o) return yield Sr(void 0);
-              yield yield Sr(r);
+              const { value: r, done: o } = yield Mr(n.read());
+              if (o) return yield Mr(void 0);
+              yield yield Mr(r);
             }
           } finally {
             n.releaseLock();
@@ -10511,7 +10511,7 @@
       function kS(e) {
         return e.length > 0 ? e[e.length - 1] : null;
       }
-      function Mr(e) {
+      function Tr(e) {
         return (function y$(e) {
           return (
             !!e &&
@@ -11223,7 +11223,7 @@
           return `NavigationStart(id: ${this.id}, url: '${this.url}')`;
         }
       }
-      class Tr extends jn {
+      class Ar extends jn {
         constructor(t, n, r) {
           super(t, n),
             (this.urlAfterRedirects = r),
@@ -11482,7 +11482,7 @@
             return this.contexts.get(n) || null;
           }
           static #e = (this.ɵfac = function (r) {
-            return new (r || e)(x(Ht));
+            return new (r || e)(A(Ht));
           });
           static #t = (this.ɵprov = S({
             token: e,
@@ -12412,7 +12412,7 @@
                 ? H(
                     o.map(s => {
                       const a = Ri(s, e);
-                      return Mr(
+                      return Tr(
                         (function w3(e) {
                           return e && ba(e.canMatch);
                         })(a)
@@ -12829,7 +12829,7 @@
                     : H(
                         o.map(s => {
                           const a = Ri(s, e);
-                          return Mr(
+                          return Tr(
                             (function C3(e) {
                               return e && ba(e.canLoad);
                             })(a)
@@ -12930,7 +12930,7 @@
               void 0 !== r && this.title.setTitle(r);
             }
             static #e = (this.ɵfac = function (r) {
-              return new (r || e)(x(p$));
+              return new (r || e)(A(p$));
             });
             static #t = (this.ɵprov = S({
               token: e,
@@ -12991,7 +12991,7 @@
               return this.componentLoaders.get(n);
             if (n._loadedComponent) return H(n._loadedComponent);
             this.onLoadStartListener && this.onLoadStartListener(n);
-            const r = Mr(n.loadComponent()).pipe(
+            const r = Tr(n.loadComponent()).pipe(
                 re(DM),
                 St(i => {
                   this.onLoadEndListener && this.onLoadEndListener(n),
@@ -13014,7 +13014,7 @@
               });
             this.onLoadStartListener && this.onLoadStartListener(r);
             const i = (function iz(e, t, n, r) {
-                return Mr(e.loadChildren()).pipe(
+                return Tr(e.loadChildren()).pipe(
                   re(DM),
                   It(o =>
                     o instanceof HE || Array.isArray(o)
@@ -13432,7 +13432,7 @@
                                           i.map(a => {
                                             const c = va(t) ?? o,
                                               u = Ri(a, c);
-                                            return Mr(
+                                            return Tr(
                                               (function b3(e) {
                                                 return (
                                                   e &&
@@ -13525,7 +13525,7 @@
                                                                 c,
                                                                 u,
                                                               );
-                                                            return Mr(
+                                                            return Tr(
                                                               (function D3(
                                                                 e,
                                                               ) {
@@ -13573,7 +13573,7 @@
                                                   const s =
                                                       va(t) ?? n,
                                                     a = Ri(i, s);
-                                                  return Mr(
+                                                  return Tr(
                                                     (function E3(e) {
                                                       return (
                                                         e &&
@@ -13700,7 +13700,7 @@
                                                       const o =
                                                           va(t) ?? r,
                                                         i = Ri(e, o);
-                                                      return Mr(
+                                                      return Tr(
                                                         i.resolve
                                                           ? i.resolve(
                                                               t,
@@ -13894,7 +13894,7 @@
                           (this.lastSuccessfulNavigation =
                             this.currentNavigation),
                           this.events.next(
-                            new Tr(
+                            new Ar(
                               c.id,
                               this.urlSerializer.serialize(
                                 c.extractedUrl,
@@ -14197,7 +14197,7 @@
                   ? this.restoreHistory(r)
                   : n instanceof Ag
                   ? this.restoreHistory(r, !0)
-                  : n instanceof Tr &&
+                  : n instanceof Ar &&
                     ((this.lastSuccessfulId = n.id),
                     (this.currentPageId = this.browserPageId));
             }
@@ -14302,7 +14302,7 @@
           matrixParams: 'ignored',
           queryParams: 'subset',
         };
-      let Ar = (() => {
+      let ar = (() => {
           class e {
             get currentUrlTree() {
               return this.stateManager.getCurrentUrlTree();
@@ -14369,7 +14369,7 @@
                           r.code !== Qt.SupersededByNewNavigation)
                       )
                         this.navigated = !0;
-                      else if (r instanceof Tr) this.navigated = !0;
+                      else if (r instanceof Ar) this.navigated = !0;
                       else if (r instanceof vl) {
                         const s = r.navigationBehaviorOptions,
                           a = this.urlHandlingStrategy.merge(
@@ -14561,13 +14561,13 @@
                     .pipe(
                       uo(
                         n =>
-                          n instanceof Tr ||
+                          n instanceof Ar ||
                           n instanceof go ||
                           n instanceof Ag ||
                           n instanceof Ti,
                       ),
                       re(n =>
-                        n instanceof Tr || n instanceof Ti
+                        n instanceof Ar || n instanceof Ti
                           ? Ia.COMPLETE
                           : n instanceof go &&
                             (n.code === Qt.Redirect ||
@@ -14630,7 +14630,7 @@
               (this.isAnchorElement = 'a' === c || 'area' === c),
                 this.isAnchorElement
                   ? (this.subscription = n.events.subscribe(u => {
-                      u instanceof Tr && this.updateHref();
+                      u instanceof Ar && this.updateHref();
                     }))
                   : this.setTabIndexIfNotOnNativeEl('0');
             }
@@ -14736,7 +14736,7 @@
             }
             static #e = (this.ɵfac = function (r) {
               return new (r || e)(
-                b(Ar),
+                b(ar),
                 b(Ni),
                 (function ss(e) {
                   return (function kR(e, t) {
@@ -14852,7 +14852,7 @@
                   (this.restoredId = n.restoredState
                     ? n.restoredState.navigationId
                     : 0))
-                : n instanceof Tr
+                : n instanceof Ar
                 ? ((this.lastId = n.id),
                   this.scheduleScrollEvent(
                     n,
@@ -14929,7 +14929,7 @@
         return t => {
           const n = e.get(yn);
           if (t !== n.components[0]) return;
-          const r = e.get(Ar),
+          const r = e.get(ar),
             o = e.get(RM);
           1 === e.get(Gg) && r.initialNavigation(),
             e.get(xM, null, Y.Optional)?.setUpPreloading(),
@@ -14958,6 +14958,25 @@
               },
               dependencies: [_a],
               encapsulation: 2,
+            }));
+          }
+          return e;
+        })(),
+        Rz = (() => {
+          class e {
+            constructor(n) {
+              this.router = n;
+            }
+            navigate(n) {
+              this.router.navigate([n]);
+            }
+            static #e = (this.ɵfac = function (r) {
+              return new (r || e)(A(ar));
+            });
+            static #t = (this.ɵprov = S({
+              token: e,
+              factory: e.ɵfac,
+              providedIn: 'root',
             }));
           }
           return e;
@@ -15006,8 +15025,8 @@
           return e;
         })();
       const Bn = new D(''),
-        Oz = { provide: Bn, useExisting: ye(() => Al), multi: !0 },
-        kz = new D('');
+        kz = { provide: Bn, useExisting: ye(() => Al), multi: !0 },
+        Lz = new D('');
       let Al = (() => {
         class e extends FM {
           constructor(n, r, o) {
@@ -15015,8 +15034,8 @@
               (this._compositionMode = o),
               (this._composing = !1),
               null == this._compositionMode &&
-                (this._compositionMode = !(function Fz() {
-                  const e = Ir() ? Ir().getUserAgent() : '';
+                (this._compositionMode = !(function Pz() {
+                  const e = Sr() ? Sr().getUserAgent() : '';
                   return /android (\d+)/.test(e.toLowerCase());
                 })());
           }
@@ -15036,7 +15055,7 @@
               this._compositionMode && this.onChange(n);
           }
           static #e = (this.ɵfac = function (r) {
-            return new (r || e)(b(Jn), b(Gt), b(kz, 8));
+            return new (r || e)(b(Jn), b(Gt), b(Lz, 8));
           });
           static #t = (this.ɵdir = V({
             type: e,
@@ -15061,7 +15080,7 @@
                   return o._compositionEnd(s.target.value);
                 });
             },
-            features: [Te([Oz]), he],
+            features: [Te([kz]), he],
           }));
         }
         return e;
@@ -15078,7 +15097,7 @@
       }
       const ft = new D(''),
         Rr = new D(''),
-        Pz =
+        Vz =
           /^(?=.{1,254}$)(?=.{1,64}@)[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
       class on {
         static min(t) {
@@ -15115,7 +15134,7 @@
         }
         static email(t) {
           return (function BM(e) {
-            return Nr(e.value) || Pz.test(e.value)
+            return Nr(e.value) || Vz.test(e.value)
               ? null
               : { email: !0 };
           })(t);
@@ -15205,7 +15224,7 @@
       }
       function QM(e) {
         return e.map(t =>
-          (function Lz(e) {
+          (function jz(e) {
             return !e.validate;
           })(t)
             ? t
@@ -15230,7 +15249,7 @@
         return 0 == t.length
           ? null
           : function (n) {
-              return (function Rz(...e) {
+              return (function Oz(...e) {
                 const t = yg(e),
                   { args: n, keys: r } = IS(e),
                   o = new Oe(i => {
@@ -15529,12 +15548,12 @@
           super(), (this.status = t), (this.source = n);
         }
       }
-      class $z extends ki {
+      class zz extends ki {
         constructor(t) {
           super(), (this.source = t);
         }
       }
-      class Hz extends ki {
+      class Gz extends ki {
         constructor(t) {
           super(), (this.source = t);
         }
@@ -15566,11 +15585,11 @@
             (this._onCollectionChange = () => {}),
             (this._parent = null),
             (this._status = ao(() => this.statusReactive())),
-            (this.statusReactive = _r(void 0)),
+            (this.statusReactive = Cr(void 0)),
             (this._pristine = ao(() => this.pristineReactive())),
-            (this.pristineReactive = _r(!0)),
+            (this.pristineReactive = Cr(!0)),
             (this._touched = ao(() => this.touchedReactive())),
-            (this.touchedReactive = _r(!1)),
+            (this.touchedReactive = Cr(!1)),
             (this._events = new Tt()),
             (this.events = this._events.asObservable()),
             (this._onDisabledChange = []),
@@ -15952,7 +15971,7 @@
         }
         _assignValidators(t) {
           (this._rawValidators = Array.isArray(t) ? t.slice() : t),
-            (this._composedValidatorFn = (function zz(e) {
+            (this._composedValidatorFn = (function qz(e) {
               return Array.isArray(e) ? qg(e) : e || null;
             })(this._rawValidators));
         }
@@ -15960,7 +15979,7 @@
           (this._rawAsyncValidators = Array.isArray(t)
             ? t.slice()
             : t),
-            (this._composedAsyncValidatorFn = (function Gz(e) {
+            (this._composedAsyncValidatorFn = (function Wz(e) {
               return Array.isArray(e) ? Wg(e) : e || null;
             })(this._rawAsyncValidators));
         }
@@ -16121,7 +16140,7 @@
           t.valueAccessor.writeValue(e.value),
           (e.disabled || 'always' === n) &&
             t.valueAccessor.setDisabledState?.(e.disabled),
-          (function Wz(e, t) {
+          (function Qz(e, t) {
             t.valueAccessor.registerOnChange(n => {
               (e._pendingValue = n),
                 (e._pendingChange = !0),
@@ -16129,7 +16148,7 @@
                 'change' === e.updateOn && h0(e, t);
             });
           })(e, t),
-          (function Qz(e, t) {
+          (function Kz(e, t) {
             const n = (r, o) => {
               t.valueAccessor.writeValue(r),
                 o && t.viewToModelUpdate(r);
@@ -16139,14 +16158,14 @@
                 e._unregisterOnChange(n);
               });
           })(e, t),
-          (function Zz(e, t) {
+          (function Yz(e, t) {
             t.valueAccessor.registerOnTouched(() => {
               (e._pendingTouched = !0),
                 'blur' === e.updateOn && e._pendingChange && h0(e, t),
                 'submit' !== e.updateOn && e.markAsTouched();
             });
           })(e, t),
-          (function qz(e, t) {
+          (function Zz(e, t) {
             if (t.valueAccessor.setDisabledState) {
               const n = r => {
                 t.valueAccessor.setDisabledState(r);
@@ -16325,7 +16344,7 @@
         return e;
       })();
       const sm = new D(''),
-        cG = { provide: xr, useExisting: ye(() => am) };
+        lG = { provide: xr, useExisting: ye(() => am) };
       let am = (() => {
         class e extends xr {
           set isDisabled(n) {}
@@ -16346,7 +16365,7 @@
                   t.forEach(i => {
                     i.constructor === Al
                       ? (n = i)
-                      : (function Xz(e) {
+                      : (function eG(e) {
                           return (
                             Object.getPrototypeOf(e.constructor) ===
                             mo
@@ -16410,12 +16429,12 @@
             },
             outputs: { update: 'ngModelChange' },
             exportAs: ['ngForm'],
-            features: [Te([cG]), he, Kt],
+            features: [Te([lG]), he, Kt],
           }));
         }
         return e;
       })();
-      const uG = { provide: Mt, useExisting: ye(() => $l) };
+      const dG = { provide: Mt, useExisting: ye(() => $l) };
       let $l = (() => {
           class e extends Mt {
             get submitted() {
@@ -16430,7 +16449,7 @@
                 (this._submitted = ao(() =>
                   this._submittedReactive(),
                 )),
-                (this._submittedReactive = _r(!1)),
+                (this._submittedReactive = Cr(!1)),
                 (this._onCollectionChange = () =>
                   this._updateDomValue()),
                 (this.directives = []),
@@ -16477,7 +16496,7 @@
             }
             removeControl(n) {
               jl(n.control || null, n, !1),
-                (function Jz(e, t) {
+                (function tG(e, t) {
                   const n = e.indexOf(t);
                   n > -1 && e.splice(n, 1);
                 })(this.directives, n);
@@ -16517,7 +16536,7 @@
                     });
                 })(this.form, this.directives),
                 this.ngSubmit.emit(n),
-                this.form._events.next(new $z(this.control)),
+                this.form._events.next(new zz(this.control)),
                 'dialog' === n?.target?.method
               );
             }
@@ -16527,7 +16546,7 @@
             resetForm(n = void 0) {
               this.form.reset(n),
                 this._submittedReactive.set(!1),
-                this.form._events.next(new Hz(this.form));
+                this.form._events.next(new Gz(this.form));
             }
             _updateDomValue() {
               this.directives.forEach(n => {
@@ -16552,7 +16571,7 @@
               if (this.form) {
                 const r = this.form.get(n.path);
                 r &&
-                  (function Yz(e, t) {
+                  (function Xz(e, t) {
                     return Bl(e, t);
                   })(r, n) &&
                   r.updateValueAndValidity({ emitEvent: !1 });
@@ -16587,12 +16606,12 @@
               inputs: { form: [0, 'formGroup', 'form'] },
               outputs: { ngSubmit: 'ngSubmit' },
               exportAs: ['ngForm'],
-              features: [Te([uG]), he, Kt],
+              features: [Te([dG]), he, Kt],
             }));
           }
           return e;
         })(),
-        MG = (() => {
+        AG = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
@@ -16740,7 +16759,7 @@
             void 0 !== e.updateOn)
         );
       }
-      let TG = (() => {
+      let NG = (() => {
           class e {
             constructor() {
               this.useNonNullable = !1;
@@ -16831,11 +16850,11 @@
               return new (r || e)();
             });
             static #t = (this.ɵmod = qi({ type: e }));
-            static #n = (this.ɵinj = wo({ imports: [MG] }));
+            static #n = (this.ɵinj = wo({ imports: [AG] }));
           }
           return e;
         })();
-      const AG = ['*'];
+      const RG = ['*'];
       let hm = (() => {
         class e {
           buildStyles() {
@@ -16862,13 +16881,13 @@
             },
             standalone: !0,
             features: [ie],
-            ngContentSelectors: AG,
+            ngContentSelectors: RG,
             decls: 2,
             vars: 1,
             consts: [[1, 'flex', 3, 'ngStyle']],
             template: function (r, o) {
               1 & r && (Ws(), Z(0, 'div', 0), Zs(1), Q()),
-                2 & r && N('ngStyle', o.buildStyles());
+                2 & r && R('ngStyle', o.buildStyles());
             },
             dependencies: [jI],
             styles: [
@@ -16878,7 +16897,7 @@
         }
         return e;
       })();
-      function NG(e, t) {
+      function xG(e, t) {
         if (1 & e) {
           const n = kn();
           Ve(0),
@@ -16893,13 +16912,13 @@
         if (2 & e) {
           const n = ce();
           j(),
-            Dr('margin', n.margin),
-            N('ngClass', n.textColor),
+            br('margin', n.margin),
+            R('ngClass', n.textColor),
             j(),
-            br(' ', n.value, ' ');
+            wr(' ', n.value, ' ');
         }
       }
-      function RG(e, t) {
+      function OG(e, t) {
         if (1 & e) {
           const n = kn();
           Ve(0),
@@ -16914,13 +16933,13 @@
         if (2 & e) {
           const n = ce();
           j(),
-            Dr('margin', n.margin),
-            N('ngClass', n.textColor),
+            br('margin', n.margin),
+            R('ngClass', n.textColor),
             j(),
-            br(' ', n.value, ' ');
+            wr(' ', n.value, ' ');
         }
       }
-      function xG(e, t) {
+      function FG(e, t) {
         if (1 & e) {
           const n = kn();
           Ve(0),
@@ -16935,13 +16954,13 @@
         if (2 & e) {
           const n = ce();
           j(),
-            Dr('margin', n.margin),
-            N('ngClass', n.textColor),
+            br('margin', n.margin),
+            R('ngClass', n.textColor),
             j(),
-            br(' ', n.value, ' ');
+            wr(' ', n.value, ' ');
         }
       }
-      function OG(e, t) {
+      function kG(e, t) {
         if (1 & e) {
           const n = kn();
           Ve(0),
@@ -16956,13 +16975,13 @@
         if (2 & e) {
           const n = ce();
           j(),
-            Dr('margin', n.margin),
-            N('ngClass', n.textColor),
+            br('margin', n.margin),
+            R('ngClass', n.textColor),
             j(),
-            br(' ', n.value, ' ');
+            wr(' ', n.value, ' ');
         }
       }
-      function FG(e, t) {
+      function PG(e, t) {
         if (1 & e) {
           const n = kn();
           Ve(0),
@@ -16977,10 +16996,10 @@
         if (2 & e) {
           const n = ce();
           j(),
-            Dr('margin', n.margin),
-            N('ngClass', n.textColor),
+            br('margin', n.margin),
+            R('ngClass', n.textColor),
             j(),
-            br(' ', n.value, ' ');
+            wr(' ', n.value, ' ');
         }
       }
       let yo = (() => {
@@ -17022,34 +17041,34 @@
             template: function (r, o) {
               1 & r &&
                 (Ve(0, 0),
-                er(1, NG, 3, 4, 'ng-container', 1)(
+                er(1, xG, 3, 4, 'ng-container', 1)(
                   2,
-                  RG,
-                  3,
-                  4,
-                  'ng-container',
-                  1,
-                )(3, xG, 3, 4, 'ng-container', 1)(
-                  4,
                   OG,
                   3,
                   4,
                   'ng-container',
                   1,
-                )(5, FG, 3, 4, 'ng-container', 1),
+                )(3, FG, 3, 4, 'ng-container', 1)(
+                  4,
+                  kG,
+                  3,
+                  4,
+                  'ng-container',
+                  1,
+                )(5, PG, 3, 4, 'ng-container', 1),
                 je()),
                 2 & r &&
-                  (N('ngSwitch', o.type),
+                  (R('ngSwitch', o.type),
                   j(),
-                  N('ngSwitchCase', 'tiny'),
+                  R('ngSwitchCase', 'tiny'),
                   j(),
-                  N('ngSwitchCase', 'paragraph'),
+                  R('ngSwitchCase', 'paragraph'),
                   j(),
-                  N('ngSwitchCase', 'header1'),
+                  R('ngSwitchCase', 'header1'),
                   j(),
-                  N('ngSwitchCase', 'header2'),
+                  R('ngSwitchCase', 'header2'),
                   j(),
-                  N('ngSwitchCase', 'header3'));
+                  R('ngSwitchCase', 'header3'));
             },
             dependencies: [tg, xI, Ku, LI],
             styles: [
@@ -17059,8 +17078,8 @@
         }
         return e;
       })();
-      const kG = ['self'];
-      function PG(e, t) {
+      const LG = ['self'];
+      function VG(e, t) {
         if (1 & e) {
           const n = kn();
           Ve(0),
@@ -17074,13 +17093,13 @@
         if (2 & e) {
           const n = ce();
           j(),
-            N('value', n.control.label.value)(
+            R('value', n.control.label.value)(
               'textColor',
               n.textColor,
             );
         }
       }
-      let LG = (() => {
+      let jG = (() => {
         class e {
           constructor() {
             this.textColor = 'text__tertiary';
@@ -17105,7 +17124,7 @@
                 (1 & r &&
                   (function Sb(e, t, n) {
                     EE(e, t, n);
-                  })(kG, 5),
+                  })(LG, 5),
                 2 & r)
               ) {
                 let i;
@@ -17118,7 +17137,7 @@
                   if (
                     e.dirty &&
                     (function aR(e) {
-                      return !(4 & ~e[A]);
+                      return !(4 & ~e[N]);
                     })(t) === !(2 & ~o.metadata.flags)
                   ) {
                     if (null === o.matches) e.reset([]);
@@ -17156,7 +17175,7 @@
             template: function (r, o) {
               if (1 & r) {
                 const i = kn();
-                er(0, PG, 2, 2, 'ng-container', 1),
+                er(0, VG, 2, 2, 'ng-container', 1),
                   Z(1, 'input', 2, 0),
                   ne('focus', function () {
                     return ln(i), dn(o.onFocus());
@@ -17166,9 +17185,9 @@
                   Q();
               }
               2 & r &&
-                (N('ngIf', o.control.label.isVisible),
+                (R('ngIf', o.control.label.isVisible),
                 j(),
-                N('value', o.control.input.defaultValue)(
+                R('value', o.control.input.defaultValue)(
                   'type',
                   o.control.input.type,
                 )('placeholder', o.control.input.placeholder)(
@@ -17184,7 +17203,7 @@
         }
         return e;
       })();
-      const VG = ['*'];
+      const UG = ['*'];
       let $0 = (() => {
           class e {
             constructor() {
@@ -17217,7 +17236,7 @@
               },
               standalone: !0,
               features: [ie],
-              ngContentSelectors: VG,
+              ngContentSelectors: UG,
               decls: 2,
               vars: 1,
               consts: [
@@ -17245,7 +17264,7 @@
                   Zs(1),
                   Q()),
                   2 & r &&
-                    N('type', o.isSubmit ? 'submit' : 'button');
+                    R('type', o.isSubmit ? 'submit' : 'button');
               },
               styles: [
                 '@import"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap";*[_ngcontent-%COMP%]{padding:0;margin:0;box-sizing:border-box}body[_ngcontent-%COMP%]{background-color:#4e31aa;min-width:300px}.button[_ngcontent-%COMP%]{padding:.75rem;border-radius:.25rem;border:1px solid #4e31aa;background-color:#4e31aa;cursor:pointer;outline:none}.button[_ngcontent-%COMP%]:focus{outline-offset:3px;outline:1px solid #4e31aa}.button[_ngcontent-%COMP%]:active{transform:scale(.95)}',
@@ -17254,7 +17273,7 @@
           }
           return e;
         })(),
-        jG = (() => {
+        BG = (() => {
           class e {
             constructor() {
               this.clickEvent = new K();
@@ -17294,12 +17313,12 @@
                   ze(1, 'lib-text', 1),
                   Q()),
                   2 & r &&
-                    (N('control', o.form)(
+                    (R('control', o.form)(
                       'isSubmit',
                       o.control.isSubmit,
                     ),
                     j(),
-                    N('value', o.control.label));
+                    R('value', o.control.label));
               },
               dependencies: [$0, yo],
               encapsulation: 2,
@@ -17307,7 +17326,7 @@
           }
           return e;
         })(),
-        UG = (() => {
+        $G = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
@@ -17323,7 +17342,7 @@
               consts: [[1, 'icon', 3, 'src', 'alt']],
               template: function (r, o) {
                 1 & r && ze(0, 'img', 0),
-                  2 & r && N('src', o.src, $f)('alt', o.alt);
+                  2 & r && R('src', o.src, $f)('alt', o.alt);
               },
               styles: [
                 '[_nghost-%COMP%]{display:contents}.icon[_ngcontent-%COMP%]{display:block;height:100%}',
@@ -17332,7 +17351,7 @@
           }
           return e;
         })(),
-        BG = (() => {
+        HG = (() => {
           class e {
             constructor() {
               this.clickEvent = new K();
@@ -17385,26 +17404,26 @@
                   ze(1, 'lib-icon', 1),
                   Q()),
                   2 & r &&
-                    (N('control', o.form)(
+                    (R('control', o.form)(
                       'isSubmit',
                       o.control.isSubmit,
                     ),
                     j(),
-                    N('src', o.control.icon)('alt', o.control.alt));
+                    R('src', o.control.icon)('alt', o.control.alt));
               },
-              dependencies: [$0, UG],
+              dependencies: [$0, $G],
               encapsulation: 2,
             }));
           }
           return e;
         })();
-      function $G(e, t) {
+      function zG(e, t) {
         if ((1 & e && (Ve(0), ze(1, 'lib-text', 4), je()), 2 & e)) {
           const n = ce();
-          j(), N('value', n.control.tip);
+          j(), R('value', n.control.tip);
         }
       }
-      let HG = (() => {
+      let GG = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
@@ -17441,17 +17460,17 @@
               template: function (r, o) {
                 1 & r &&
                   (Z(0, 'lib-flex', 0),
-                  er(1, $G, 2, 1, 'ng-container', 1),
+                  er(1, zG, 2, 1, 'ng-container', 1),
                   Z(2, 'a', 2),
                   ze(3, 'lib-text', 3),
                   Q()()),
                   2 & r &&
                     (j(),
-                    N('ngIf', '' !== o.control.tip),
+                    R('ngIf', '' !== o.control.tip),
                     j(),
-                    N('routerLink', o.control.path),
+                    R('routerLink', o.control.path),
                     j(),
-                    N('value', o.control.label));
+                    R('value', o.control.label));
               },
               dependencies: [Yu, yo, Tl, hm],
               styles: [
@@ -17461,7 +17480,7 @@
           }
           return e;
         })(),
-        zG = (() => {
+        qG = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
@@ -17487,7 +17506,7 @@
               ],
               template: function (r, o) {
                 1 & r && (Z(0, 'div', 0), ze(1, 'lib-text', 1), Q()),
-                  2 & r && (j(), N('value', o.value));
+                  2 & r && (j(), R('value', o.value));
               },
               dependencies: [yo],
               styles: [
@@ -17507,7 +17526,7 @@
           e
         );
       })(Re || {});
-      let GG = (() => {
+      let WG = (() => {
         class e {
           static #e = (this.ɵfac = function (r) {
             return new (r || e)();
@@ -17533,7 +17552,7 @@
             ],
             template: function (r, o) {
               1 & r && (Z(0, 'div', 0), ze(1, 'lib-text', 1), Q()),
-                2 & r && (j(), N('value', o.value));
+                2 & r && (j(), R('value', o.value));
             },
             dependencies: [yo],
             styles: [
@@ -17543,14 +17562,14 @@
         }
         return e;
       })();
-      function qG(e, t) {
+      function ZG(e, t) {
         if ((1 & e && (Ve(0), ze(1, 'lib-input', 6), je()), 2 & e)) {
           const n = ce().$implicit,
             r = ce();
-          j(), N('form', r.getFormControl(n.id))('control', n);
+          j(), R('form', r.getFormControl(n.id))('control', n);
         }
       }
-      function WG(e, t) {
+      function QG(e, t) {
         if (1 & e) {
           const n = kn();
           Ve(0),
@@ -17564,10 +17583,10 @@
         if (2 & e) {
           const n = ce().$implicit,
             r = ce();
-          j(), N('form', r.getFormControl(n.id))('control', n);
+          j(), R('form', r.getFormControl(n.id))('control', n);
         }
       }
-      function ZG(e, t) {
+      function YG(e, t) {
         if (1 & e) {
           const n = kn();
           Ve(0),
@@ -17581,61 +17600,61 @@
         if (2 & e) {
           const n = ce().$implicit,
             r = ce();
-          j(), N('form', r.getFormControl(n.id))('control', n);
-        }
-      }
-      function QG(e, t) {
-        if ((1 & e && (Ve(0), ze(1, 'lib-link', 6), je()), 2 & e)) {
-          const n = ce().$implicit,
-            r = ce();
-          j(), N('form', r.getFormControl(n.id))('control', n);
-        }
-      }
-      function YG(e, t) {
-        if ((1 & e && (Ve(0), ze(1, 'lib-text', 8), je()), 2 & e)) {
-          const n = ce().$implicit;
-          j(), N('value', n.value)('margin', n.margin);
+          j(), R('form', r.getFormControl(n.id))('control', n);
         }
       }
       function KG(e, t) {
-        if ((1 & e && (Ve(0), ze(1, 'lib-error', 9), je()), 2 & e)) {
-          const n = ce(2).$implicit,
+        if ((1 & e && (Ve(0), ze(1, 'lib-link', 6), je()), 2 & e)) {
+          const n = ce().$implicit,
             r = ce();
-          j(), N('value', r.getFormControlError(n.id));
+          j(), R('form', r.getFormControl(n.id))('control', n);
         }
       }
       function XG(e, t) {
+        if ((1 & e && (Ve(0), ze(1, 'lib-text', 8), je()), 2 & e)) {
+          const n = ce().$implicit;
+          j(), R('value', n.value)('margin', n.margin);
+        }
+      }
+      function JG(e, t) {
+        if ((1 & e && (Ve(0), ze(1, 'lib-error', 9), je()), 2 & e)) {
+          const n = ce(2).$implicit,
+            r = ce();
+          j(), R('value', r.getFormControlError(n.id));
+        }
+      }
+      function e8(e, t) {
         if (
-          (1 & e && (Ve(0), er(1, KG, 2, 1, 'ng-container', 4), je()),
+          (1 & e && (Ve(0), er(1, JG, 2, 1, 'ng-container', 4), je()),
           2 & e)
         ) {
           const n = ce().$implicit,
             r = ce();
-          j(), N('ngIf', r.formControlInvalid(n.id));
+          j(), R('ngIf', r.formControlInvalid(n.id));
         }
       }
-      function JG(e, t) {
+      function t8(e, t) {
         if (
           (1 & e &&
             (Ve(0),
             Z(1, 'lib-flex', 5),
-            er(2, qG, 2, 2, 'ng-container', 4)(
+            er(2, ZG, 2, 2, 'ng-container', 4)(
               3,
-              WG,
-              2,
-              2,
-              'ng-container',
-              4,
-            )(4, ZG, 2, 2, 'ng-container', 4)(
-              5,
               QG,
               2,
               2,
               'ng-container',
               4,
-            )(6, YG, 2, 2, 'ng-container', 4)(
+            )(4, YG, 2, 2, 'ng-container', 4)(
+              5,
+              KG,
+              2,
+              2,
+              'ng-container',
+              4,
+            )(6, XG, 2, 2, 'ng-container', 4)(
               7,
-              XG,
+              e8,
               2,
               1,
               'ng-container',
@@ -17647,33 +17666,33 @@
         ) {
           const n = t.$implicit;
           j(),
-            N('alignItems', n.alignItems),
+            R('alignItems', n.alignItems),
             j(),
-            N('ngIf', 'input' === n.kind),
+            R('ngIf', 'input' === n.kind),
             j(),
-            N('ngIf', 'buttonText' === n.kind),
+            R('ngIf', 'buttonText' === n.kind),
             j(),
-            N('ngIf', 'buttonIcon' === n.kind),
+            R('ngIf', 'buttonIcon' === n.kind),
             j(),
-            N('ngIf', 'link' === n.kind),
+            R('ngIf', 'link' === n.kind),
             j(),
-            N('ngIf', 'text' === n.kind),
+            R('ngIf', 'text' === n.kind),
             j(),
-            N('ngIf', n.validation.isVisible);
+            R('ngIf', n.validation.isVisible);
         }
       }
-      function e8(e, t) {
+      function n8(e, t) {
         if (
           (1 & e && (Ve(0), ze(1, 'lib-success', 9), je()), 2 & e)
         ) {
           const n = ce();
-          j(), N('value', n.formSuccessMessage);
+          j(), R('value', n.formSuccessMessage);
         }
       }
-      function t8(e, t) {
+      function r8(e, t) {
         if ((1 & e && (Ve(0), ze(1, 'lib-error', 9), je()), 2 & e)) {
           const n = ce();
-          j(), N('value', n.formErrorMessage);
+          j(), R('value', n.formErrorMessage);
         }
       }
       let Hl = (() => {
@@ -17765,7 +17784,7 @@
                 this.formGroup.markAsUntouched();
             }
             static #e = (this.ɵfac = function (r) {
-              return new (r || e)(b(TG));
+              return new (r || e)(b(NG));
             });
             static #t = (this.ɵcmp = oe({
               type: e,
@@ -17816,11 +17835,11 @@
                     return o.onSubmit();
                   }),
                   Z(1, 'lib-flex', 1)(2, 'lib-flex', 2),
-                  er(3, JG, 8, 7, 'ng-container', 3),
+                  er(3, t8, 8, 7, 'ng-container', 3),
                   Q(),
-                  er(4, e8, 2, 1, 'ng-container', 4)(
+                  er(4, n8, 2, 1, 'ng-container', 4)(
                     5,
-                    t8,
+                    r8,
                     2,
                     1,
                     'ng-container',
@@ -17828,17 +17847,17 @@
                   ),
                   Q()()),
                   2 & r &&
-                    (N('formGroup', o.formGroup),
+                    (R('formGroup', o.formGroup),
                     j(),
-                    N('flexDirection', o.flexDirection),
+                    R('flexDirection', o.flexDirection),
                     j(),
-                    N('flexDirection', o.flexDirection),
+                    R('flexDirection', o.flexDirection),
                     j(),
-                    N('ngForOf', o.baseForm.controls),
+                    R('ngForOf', o.baseForm.controls),
                     j(),
-                    N('ngIf', o.formGroupValid),
+                    R('ngIf', o.formGroupValid),
                     j(),
-                    N('ngIf', o.formGroupInvalid));
+                    R('ngIf', o.formGroupInvalid));
               },
               dependencies: [
                 tg,
@@ -17849,12 +17868,12 @@
                 a0,
                 $l,
                 hm,
-                LG,
                 jG,
                 BG,
                 HG,
-                zG,
                 GG,
+                qG,
+                WG,
                 yo,
               ],
               encapsulation: 2,
@@ -17862,7 +17881,7 @@
           }
           return e;
         })(),
-        n8 = (() => {
+        o8 = (() => {
           class e {
             constructor() {
               (this.event = new K()),
@@ -17961,7 +17980,7 @@
                   }),
                   Q()),
                   2 & r &&
-                    N('baseForm', o.loginForm)('resetIfError', !0);
+                    R('baseForm', o.loginForm)('resetIfError', !0);
               },
               dependencies: [Hl],
               encapsulation: 2,
@@ -17969,7 +17988,7 @@
           }
           return e;
         })(),
-        r8 = (() => {
+        i8 = (() => {
           class e {
             constructor() {
               (this.event = new K()),
@@ -18042,7 +18061,7 @@
                   }),
                   Q()),
                   2 & r &&
-                    N('baseForm', o.forgotPasswordForm)(
+                    R('baseForm', o.forgotPasswordForm)(
                       'resetIfError',
                       !1,
                     );
@@ -18053,7 +18072,7 @@
           }
           return e;
         })(),
-        o8 = (() => {
+        s8 = (() => {
           class e {
             constructor() {
               (this.event = new K()),
@@ -18167,7 +18186,7 @@
                   }),
                   Q()),
                   2 & r &&
-                    N('baseForm', o.registrationForm)(
+                    R('baseForm', o.registrationForm)(
                       'resetIfError',
                       !0,
                     );
@@ -18178,7 +18197,7 @@
           }
           return e;
         })(),
-        i8 = (() => {
+        a8 = (() => {
           class e {
             constructor() {
               (this.event = new K()),
@@ -18260,7 +18279,7 @@
                   }),
                   Q()),
                   2 & r &&
-                    N('baseForm', o.changePasswordForm)(
+                    R('baseForm', o.changePasswordForm)(
                       'resetIfError',
                       !0,
                     );
@@ -18271,8 +18290,8 @@
           }
           return e;
         })();
-      const s8 = ['*'];
-      let a8 = (() => {
+      const c8 = ['*'];
+      let u8 = (() => {
         class e {
           static #e = (this.ɵfac = function (r) {
             return new (r || e)();
@@ -18283,13 +18302,13 @@
             inputs: { width: 'width' },
             standalone: !0,
             features: [ie],
-            ngContentSelectors: s8,
+            ngContentSelectors: c8,
             decls: 2,
             vars: 2,
             consts: [[1, 'card']],
             template: function (r, o) {
               1 & r && (Ws(), Z(0, 'div', 0), Zs(1), Q()),
-                2 & r && Dr('width', o.width);
+                2 & r && br('width', o.width);
             },
             styles: [
               '@import"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap";*[_ngcontent-%COMP%]{padding:0;margin:0;box-sizing:border-box}body[_ngcontent-%COMP%]{background-color:#4e31aa;min-width:300px}[_nghost-%COMP%]{display:contents}.card[_ngcontent-%COMP%]{padding:2rem;border-radius:.25rem;background-color:#f1f1f1}',
@@ -18298,7 +18317,7 @@
         }
         return e;
       })();
-      const c8 = ['*'];
+      const l8 = ['*'];
       let zl = (() => {
         class e {
           static #e = (this.ɵfac = function (r) {
@@ -18309,7 +18328,7 @@
             selectors: [['lib-auth']],
             standalone: !0,
             features: [ie],
-            ngContentSelectors: c8,
+            ngContentSelectors: l8,
             decls: 7,
             vars: 0,
             consts: [
@@ -18354,7 +18373,7 @@
                 Zs(6),
                 Q()()()());
             },
-            dependencies: [hm, yo, a8],
+            dependencies: [hm, yo, u8],
             styles: [
               '@import"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap";*[_ngcontent-%COMP%]{padding:0;margin:0;box-sizing:border-box}body[_ngcontent-%COMP%]{background-color:#4e31aa;min-width:300px}.auth[_ngcontent-%COMP%]{padding:1rem}',
             ],
@@ -18363,16 +18382,16 @@
         return e;
       })();
       rt(206);
-      let m8 = (() => {
+      let v8 = (() => {
           class e {
-            constructor() {
-              this.event = new K();
+            constructor(n) {
+              (this.route = n), (this.event = new K());
             }
             onEvent(n) {
-              this.event.emit(n);
+              this.route.navigate('/dashboard'), this.event.emit(n);
             }
             static #e = (this.ɵfac = function (r) {
-              return new (r || e)();
+              return new (r || e)(b(Rz));
             });
             static #t = (this.ɵcmp = oe({
               type: e,
@@ -18391,13 +18410,13 @@
                   }),
                   Q()());
               },
-              dependencies: [zl, n8],
+              dependencies: [zl, o8],
               encapsulation: 2,
             }));
           }
           return e;
         })(),
-        v8 = (() => {
+        y8 = (() => {
           class e {
             constructor() {
               this.event = new K();
@@ -18425,13 +18444,13 @@
                   }),
                   Q()());
               },
-              dependencies: [zl, r8],
+              dependencies: [zl, i8],
               encapsulation: 2,
             }));
           }
           return e;
         })(),
-        y8 = (() => {
+        _8 = (() => {
           class e {
             constructor() {
               this.event = new K();
@@ -18459,13 +18478,13 @@
                   }),
                   Q()());
               },
-              dependencies: [zl, o8],
+              dependencies: [zl, s8],
               encapsulation: 2,
             }));
           }
           return e;
         })(),
-        _8 = (() => {
+        C8 = (() => {
           class e {
             constructor() {
               this.event = new K();
@@ -18493,13 +18512,13 @@
                   }),
                   Q()());
               },
-              dependencies: [zl, i8],
+              dependencies: [zl, a8],
               encapsulation: 2,
             }));
           }
           return e;
         })(),
-        C8 = (() => {
+        E8 = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
@@ -18520,7 +18539,7 @@
           }
           return e;
         })(),
-        E8 = (() => {
+        D8 = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
@@ -18540,7 +18559,7 @@
           }
           return e;
         })(),
-        D8 = (() => {
+        b8 = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
@@ -18560,7 +18579,7 @@
           }
           return e;
         })(),
-        b8 = (() => {
+        w8 = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
@@ -18581,7 +18600,7 @@
           }
           return e;
         })(),
-        w8 = (() => {
+        I8 = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
@@ -18601,7 +18620,7 @@
           }
           return e;
         })(),
-        I8 = (() => {
+        S8 = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
@@ -18621,7 +18640,7 @@
           }
           return e;
         })(),
-        S8 = (() => {
+        M8 = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
@@ -18641,40 +18660,40 @@
           }
           return e;
         })();
-      const x8 = {
+      const O8 = {
         providers: [
           (function wz(e, ...t) {
             return To([
               { provide: Sl, multi: !0, useValue: e },
               [],
-              { provide: Ni, useFactory: AM, deps: [Ar] },
+              { provide: Ni, useFactory: AM, deps: [ar] },
               { provide: Mu, multi: !0, useFactory: NM },
               t.map(n => n.ɵproviders),
             ]);
           })(
             [
               { path: '', redirectTo: '/login', pathMatch: 'full' },
-              { path: 'login', component: m8 },
-              { path: 'registration', component: y8 },
-              { path: 'forgot-password', component: v8 },
-              { path: 'change-password', component: _8 },
+              { path: 'login', component: v8 },
+              { path: 'registration', component: _8 },
+              { path: 'forgot-password', component: y8 },
+              { path: 'change-password', component: C8 },
               {
                 path: 'dashboard',
-                component: C8,
+                component: E8,
                 children: [
                   {
                     path: '',
                     redirectTo: 'dashboard/statistics',
                     pathMatch: 'full',
                   },
-                  { path: 'statistics', component: D8 },
-                  { path: 'courses', component: E8 },
-                  { path: 'account', component: I8 },
+                  { path: 'statistics', component: b8 },
+                  { path: 'courses', component: D8 },
+                  { path: 'account', component: S8 },
                   {
                     path: 'course/:courseId',
-                    component: b8,
+                    component: w8,
                     children: [
-                      { path: 'roadmap', component: w8 },
+                      { path: 'roadmap', component: I8 },
                       {
                         path: 'quiz',
                         component: (() => {
@@ -18703,7 +18722,7 @@
                   },
                 ],
               },
-              { path: '**', component: S8 },
+              { path: '**', component: M8 },
             ],
             (function Az() {
               return Un(6, [{ provide: Ei, useClass: Zj }]);
@@ -18728,7 +18747,7 @@
           ),
         ],
       };
-      class O8 extends at {
+      class F8 extends at {
         constructor(t, n) {
           super();
         }
@@ -18749,7 +18768,7 @@
         },
         delegate: void 0,
       };
-      class F8 extends O8 {
+      class k8 extends F8 {
         constructor(t, n) {
           super(t, n),
             (this.scheduler = t),
@@ -18834,7 +18853,7 @@
         }
       }
       Ra.now = H0.now;
-      class P8 extends Ra {
+      class L8 extends Ra {
         constructor(t, n = Ra.now) {
           super(t, n), (this.actions = []), (this._active = !1);
         }
@@ -18852,8 +18871,8 @@
           }
         }
       }
-      const V8 = new (class L8 extends P8 {})(
-        class k8 extends F8 {
+      const j8 = new (class V8 extends L8 {})(
+        class P8 extends k8 {
           constructor(t, n) {
             super(t, n), (this.scheduler = t), (this.work = n);
           }
@@ -18878,7 +18897,7 @@
           }
         },
       );
-      function $8(e, t) {
+      function H8(e, t) {
         return e === t;
       }
       function G0(e, t) {
@@ -18889,12 +18908,12 @@
             if (!qv()) throw new E(-203, !1);
           })();
         const r = n ? t?.injector?.get(qr) ?? _(qr) : null,
-          o = (function G8(e = Object.is) {
+          o = (function q8(e = Object.is) {
             return (t, n) =>
               1 === t.kind && 1 === n.kind && e(t.value, n.value);
           })(t?.equal);
         let i;
-        i = _r(
+        i = Cr(
           t?.requireSync
             ? { kind: 0 }
             : { kind: 1, value: t?.initialValue },
@@ -18963,7 +18982,7 @@
         }
         return e;
       })();
-      const Y8 = [Li],
+      const K8 = [Li],
         Z0 = new D('@ngrx/store Internal Root Guard'),
         Q0 = new D('@ngrx/store Internal Initial State'),
         mm = new D('@ngrx/store Initial State'),
@@ -19059,7 +19078,7 @@
               ) => {
                 const l =
                   'function' == typeof i
-                    ? (function X8(e) {
+                    ? (function J8(e) {
                         const t =
                           Array.isArray(e) && e.length > 0
                             ? lT(...e)
@@ -19094,7 +19113,7 @@
           }
           removeReducers(n) {
             n.forEach(r => {
-              this.reducers = (function K8(e, t) {
+              this.reducers = (function X8(e, t) {
                 return Object.keys(e)
                   .filter(n => n !== t)
                   .reduce(
@@ -19118,13 +19137,13 @@
             this.complete();
           }
           static #e = (this.ɵfac = function (r) {
-            return new (r || e)(x(fT), x(mm), x(X0), x(Y0));
+            return new (r || e)(A(fT), A(mm), A(X0), A(Y0));
           });
           static #t = (this.ɵprov = S({ token: e, factory: e.ɵfac }));
         }
         return e;
       })();
-      const e4 = [
+      const t4 = [
         Wl,
         { provide: Dm, useExisting: Wl },
         { provide: fT, useExisting: Li },
@@ -19144,15 +19163,15 @@
         }
         return e;
       })();
-      const t4 = [bm];
+      const n4 = [bm];
       class hT extends Oe {}
       let pT = (() => {
         class e extends mt {
           static #e = (this.INIT = W0);
           constructor(n, r, o, i) {
             super(i);
-            const a = n.pipe(mg(V8)).pipe(
-                (function j8(...e) {
+            const a = n.pipe(mg(j8)).pipe(
+                (function U8(...e) {
                   const t = yg(e);
                   return We((n, r) => {
                     const o = e.length,
@@ -19184,7 +19203,7 @@
                   });
                 })(r),
               ),
-              u = a.pipe(OS(n4, { state: i }));
+              u = a.pipe(OS(r4, { state: i }));
             (this.stateSubscription = u.subscribe(
               ({ state: l, action: d }) => {
                 this.next(l), o.next(d);
@@ -19199,17 +19218,17 @@
             this.stateSubscription.unsubscribe(), this.complete();
           }
           static #t = (this.ɵfac = function (r) {
-            return new (r || e)(x(Li), x(Dm), x(bm), x(mm));
+            return new (r || e)(A(Li), A(Dm), A(bm), A(mm));
           });
           static #n = (this.ɵprov = S({ token: e, factory: e.ɵfac }));
         }
         return e;
       })();
-      function n4(e = { state: void 0 }, [t, n]) {
+      function r4(e = { state: void 0 }, [t, n]) {
         const { state: r } = e;
         return { state: n(r, t), action: t };
       }
-      const r4 = [pT, { provide: hT, useExisting: pT }];
+      const o4 = [pT, { provide: hT, useExisting: pT }];
       let wm = (() => {
         class e extends Oe {
           constructor(n, r, o) {
@@ -19220,7 +19239,7 @@
               (this.state = n.state);
           }
           select(n, ...r) {
-            return i4.call(null, n, ...r)(this);
+            return s4.call(null, n, ...r)(this);
           }
           selectSignal(n, r) {
             return ao(() => n(this.state()), r);
@@ -19252,20 +19271,20 @@
             this.reducerManager.removeReducer(n);
           }
           static #e = (this.ɵfac = function (r) {
-            return new (r || e)(x(hT), x(Li), x(Wl));
+            return new (r || e)(A(hT), A(Li), A(Wl));
           });
           static #t = (this.ɵprov = S({ token: e, factory: e.ɵfac }));
         }
         return e;
       })();
-      const o4 = [wm];
-      function i4(e, t, ...n) {
+      const i4 = [wm];
+      function s4(e, t, ...n) {
         return function (o) {
           let i;
           if ('string' == typeof e) {
             const s = [t, ...n].filter(Boolean);
             i = o.pipe(
-              (function U8(...e) {
+              (function B8(...e) {
                 const t = e.length;
                 if (0 === t)
                   throw new Error(
@@ -19290,9 +19309,9 @@
             i = o.pipe(re(s => e(s, t)));
           }
           return i.pipe(
-            (function B8(e, t = $n) {
+            (function $8(e, t = $n) {
               return (
-                (e = e ?? $8),
+                (e = e ?? H8),
                 We((n, r) => {
                   let o,
                     i = !0;
@@ -19326,16 +19345,16 @@
       function Sm(e) {
         return 'function' == typeof e;
       }
-      function E4(e) {
+      function D4(e) {
         return e instanceof D ? _(e) : e;
       }
       function DT(e) {
         return 'function' == typeof e ? e() : e;
       }
-      function w4(e, t) {
+      function I4(e, t) {
         return e.concat(t);
       }
-      function I4() {
+      function S4() {
         if (_(wm, { optional: !0, skipSelf: !0 }))
           throw new TypeError(
             'The root Store has been provided more than once. Feature modules should provide feature states instead.',
@@ -19349,7 +19368,7 @@
           Object.getOwnPropertyNames(e).forEach(n => {
             if (
               !n.startsWith('\u0275') &&
-              (function d4(e, t) {
+              (function f4(e, t) {
                 return Object.prototype.hasOwnProperty.call(e, t);
               })(e, n) &&
               (!t ||
@@ -19370,27 +19389,27 @@
           : Object.keys(e).reduce((r, o) => {
               if (r) return r;
               const i = e[o];
-              return (function l4(e) {
+              return (function d4(e) {
                 return Sm(e) && e.hasOwnProperty('\u0275cmp');
               })(i)
                 ? r
                 : !(
                     gT(i) ||
                     mT(i) ||
-                    (function c4(e) {
+                    (function u4(e) {
                       return 'number' == typeof e;
                     })(i) ||
-                    (function a4(e) {
+                    (function c4(e) {
                       return 'boolean' == typeof e;
                     })(i) ||
-                    (function s4(e) {
+                    (function a4(e) {
                       return 'string' == typeof e;
                     })(i) ||
                     vT(i)
                   ) &&
                     ((function _T(e) {
                       if (
-                        !(function u4(e) {
+                        !(function l4(e) {
                           return yT(e) && !vT(e);
                         })(e)
                       )
@@ -19410,7 +19429,7 @@
           );
         throw ((r.value = e.value), (r.unserializablePath = n), r);
       }
-      function A4(e) {
+      function N4(e) {
         return {
           strictStateSerializability: !1,
           strictActionSerializability: !1,
@@ -19420,13 +19439,13 @@
           strictActionTypeUniqueness: !1,
         };
       }
-      function N4({
+      function R4({
         strictActionSerializability: e,
         strictStateSerializability: t,
       }) {
         return n =>
           e || t
-            ? (function M4(e, t) {
+            ? (function T4(e, t) {
                 return function (n, r) {
                   t.action(r) && bT(Nm(r), 'action');
                   const o = e(n, r);
@@ -19435,13 +19454,13 @@
               })(n, { action: r => e && !Rm(r), state: () => t })
             : n;
       }
-      function R4({
+      function x4({
         strictActionImmutability: e,
         strictStateImmutability: t,
       }) {
         return n =>
           e || t
-            ? (function S4(e, t) {
+            ? (function M4(e, t) {
                 return function (n, r) {
                   const o = t.action(r) ? Am(r) : r,
                     i = e(n, o);
@@ -19453,10 +19472,10 @@
       function Rm(e) {
         return e.type.startsWith('@ngrx');
       }
-      function x4({ strictActionWithinNgZone: e }) {
+      function O4({ strictActionWithinNgZone: e }) {
         return t =>
           e
-            ? (function T4(e, t) {
+            ? (function A4(e, t) {
                 return function (n, r) {
                   if (t.action(r) && !ae.isInAngularZone())
                     throw new Error(
@@ -19467,20 +19486,20 @@
               })(t, { action: n => e && !Rm(n) })
             : t;
       }
-      function O4(e) {
+      function F4(e) {
         return [
           { provide: cT, useValue: e },
-          { provide: aT, useFactory: F4, deps: [cT] },
-          { provide: Oa, deps: [aT], useFactory: A4 },
-          { provide: ql, multi: !0, deps: [Oa], useFactory: R4 },
-          { provide: ql, multi: !0, deps: [Oa], useFactory: N4 },
+          { provide: aT, useFactory: k4, deps: [cT] },
+          { provide: Oa, deps: [aT], useFactory: N4 },
           { provide: ql, multi: !0, deps: [Oa], useFactory: x4 },
+          { provide: ql, multi: !0, deps: [Oa], useFactory: R4 },
+          { provide: ql, multi: !0, deps: [Oa], useFactory: O4 },
         ];
       }
-      function F4(e) {
+      function k4(e) {
         return e;
       }
-      function k4(e) {
+      function P4(e) {
         if (!e.strictActionTypeUniqueness) return;
         const t = Object.entries(xa)
           .filter(([, n]) => n > 1)
@@ -19492,37 +19511,37 @@
               .join(', ')}. ${Im}#strictactiontypeuniqueness`,
           );
       }
-      function P4(e = {}, t = {}) {
+      function L4(e = {}, t = {}) {
         return [
-          { provide: Z0, useFactory: I4 },
+          { provide: Z0, useFactory: S4 },
           { provide: Q0, useValue: t.initialState },
           { provide: mm, useFactory: DT, deps: [Q0] },
           { provide: vm, useValue: e },
           { provide: eT, useExisting: e instanceof D ? e : vm },
-          { provide: X0, deps: [vm, [new Tv(eT)]], useFactory: E4 },
+          { provide: X0, deps: [vm, [new Tv(eT)]], useFactory: D4 },
           {
             provide: iT,
             useValue: t.metaReducers ? t.metaReducers : [],
           },
-          { provide: sT, deps: [ql, iT], useFactory: w4 },
+          { provide: sT, deps: [ql, iT], useFactory: I4 },
           {
             provide: K0,
             useValue: t.reducerFactory ? t.reducerFactory : Em,
           },
           { provide: Y0, deps: [K0, sT], useFactory: dT },
-          Y8,
-          e4,
+          K8,
           t4,
-          r4,
+          n4,
           o4,
-          O4(t.runtimeChecks),
-          [{ provide: _m, multi: !0, deps: [Oa], useFactory: k4 }],
+          i4,
+          F4(t.runtimeChecks),
+          [{ provide: _m, multi: !0, deps: [Oa], useFactory: P4 }],
         ];
       }
-      const V4 = [
+      const j4 = [
           {
             provide: Cm,
-            useFactory: function L4() {
+            useFactory: function V4() {
               _(Li),
                 _(Dm),
                 _(bm),
@@ -19533,12 +19552,12 @@
           },
           { provide: $t, multi: !0, useFactory: () => () => _(Cm) },
         ],
-        W4 = {
+        Z4 = {
           providers: [
-            (function j4(e, t) {
-              return To([...P4(e, t), V4]);
+            (function U4(e, t) {
+              return To([...L4(e, t), j4]);
             })({
-              grammar: (function z4(e, ...t) {
+              grammar: (function G4(e, ...t) {
                 const n = new Map();
                 for (const r of t)
                   for (const o of r.types) {
@@ -19570,7 +19589,7 @@
                     },
                   ],
                 },
-                (function H4(...e) {
+                (function z4(...e) {
                   return {
                     reducer: e.pop(),
                     types: e.map(r => r.type),
@@ -19602,13 +19621,13 @@
         };
       (function a$(e, t) {
         return vj({ rootComponent: e, ...sS(t) });
-      })(Nz, { providers: [...x8.providers, ...W4.providers] }).catch(
+      })(Nz, { providers: [...O8.providers, ...Z4.providers] }).catch(
         e => {
           throw new Error(e);
         },
       );
     },
-    206: (Lt, ar, rt) => {
+    206: (Lt, cr, rt) => {
       'use strict';
       const Vt = rt(739),
         pe = rt(200),
@@ -19637,7 +19656,7 @@
         }
       };
     },
-    897: (Lt, ar, rt) => {
+    897: (Lt, cr, rt) => {
       'use strict';
       var Vt = rt(907);
       function pe(ht) {
@@ -19667,7 +19686,7 @@
       };
     },
     200: Lt => {
-      var ar = Object.prototype.toString;
+      var cr = Object.prototype.toString;
       function rt(I) {
         return 'function' == typeof I.constructor
           ? I.constructor.name
@@ -19797,7 +19816,7 @@
           })(q)
         )
           return 'generator';
-        switch ((tt = ar.call(q))) {
+        switch ((tt = cr.call(q))) {
           case '[object Object]':
             return 'object';
           case '[object Map Iterator]':
@@ -19812,7 +19831,7 @@
         return tt.slice(8, -1).toLowerCase().replace(/\s/g, '');
       };
     },
-    739: (Lt, ar, rt) => {
+    739: (Lt, cr, rt) => {
       'use strict';
       const Vt = Symbol.prototype.valueOf,
         pe = rt(200);
@@ -19879,6 +19898,6 @@
     },
   },
   Lt => {
-    Lt((Lt.s = 376));
+    Lt((Lt.s = 896));
   },
 ]);

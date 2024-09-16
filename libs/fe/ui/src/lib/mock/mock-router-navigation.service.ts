@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { RouteNavigationService } from '../infrastructure/route-navigation.service';
+import { RouteNavigationService } from '@english-learning/fe-system';
 
 @Injectable()
 export class MockRouteNavigationService {

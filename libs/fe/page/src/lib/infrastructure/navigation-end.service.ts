@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
 
 import { StoreModel } from '@english-learning/fe-store';
-import { RouteNavigationService } from '@english-learning/fe-ui';
+import { RouteNavigationService } from '@english-learning/fe-system';
 
 @Injectable({ providedIn: 'root' })
 export class NavigationEndService {

@@ -6,11 +6,11 @@ import {
   BreakpointModel,
   BreakpointService,
   ObserverModel,
+  RouteNavigationService,
 } from '@english-learning/fe-system';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { BaseFormModel } from '../../model/form/base-form.model';
 import { MainNavFormModel } from './main-nav-form.model';
-import { RouteNavigationService } from '../../infrastructure/route-navigation.service';
 import { HamburgerFormModel } from '../hamburger-form/hamburger-form.model';
 import { ControlKindEnum } from '../../enum/control-kind.enum';
 
