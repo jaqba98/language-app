@@ -27,6 +27,12 @@
               [control]="control"
               (clickEvent)="onSubmit()"></lib-button-icon>
           </ng-container>
+          <!-- button link -->
+          <ng-container *ngIf="control.kind === 'buttonLink'">
+            <lib-button-link
+              [form]="getFormControl(control.id)"
+              [control]="control"></lib-button-link>
+          </ng-container>
           <!-- link -->
           <ng-container *ngIf="control.kind === 'link'">
             <lib-link

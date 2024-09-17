@@ -28,6 +28,7 @@ import { ErrorComponent } from '../../misc/error/error.component';
 import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { SuccessComponent } from '../../misc/success/success.component';
 import { TextComponent } from '../../misc/text/text.component';
+import { ButtonLinkComponent } from '../../control/button-link/button-link.component';
 
 @Component({
   selector: 'lib-base-form',
@@ -43,6 +44,7 @@ import { TextComponent } from '../../misc/text/text.component';
     ErrorComponent,
     SuccessComponent,
     TextComponent,
+    ButtonLinkComponent,
   ],
   templateUrl: './base-form.component.html',
 })
@@ -132,6 +134,7 @@ export class BaseFormComponent implements OnInit {
         );
       case ControlKindEnum.buttonText:
       case ControlKindEnum.buttonIcon:
+      case ControlKindEnum.buttonLink:
       case ControlKindEnum.link:
         return new FormControl(false, control.validation.validators);
       case ControlKindEnum.text:
