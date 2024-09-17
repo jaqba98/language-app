@@ -17,6 +17,11 @@ const meta: Meta<ButtonLinkComponent> = {
       providers: [{ provide: ActivatedRoute, useValue: [] }],
     }),
   ],
+  parameters: {
+    backgrounds: {
+      default: 'primary',
+    },
+  },
 };
 export default meta;
 type Story = StoryObj<ButtonLinkComponent>;
