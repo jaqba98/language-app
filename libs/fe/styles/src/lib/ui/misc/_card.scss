@@ -2,7 +2,14 @@
 @use '../../abstract/variables/palette';
 
 @mixin card {
-  padding: general.$component-padding-large;
-  border-radius: general.$component-radius-small;
   background-color: palette.$card;
+
+  &--default {
+    padding: general.$component-padding-large;
+    border-radius: general.$component-radius-small;
+  }
+
+  &--main-nav {
+    padding: general.$component-padding-medium;
+  }
 }

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { MainNavComponent } from '@english-learning/fe-ui';
+
 @Component({
   selector: 'lib-dashboard',
   standalone: true,
-  imports: [RouterOutlet],
-  template: '<router-outlet></router-outlet>',
+  imports: [MainNavComponent, RouterOutlet],
+  templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent {}

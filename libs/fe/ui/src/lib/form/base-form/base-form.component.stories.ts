@@ -56,7 +56,7 @@ export const Default: Story = {
             validators: [],
             isVisible: false,
           },
-          icon: 'icon/school.svg',
+          icon: 'icon/main-nav-logo.svg',
           alt: 'School',
           isSubmit: true,
         },

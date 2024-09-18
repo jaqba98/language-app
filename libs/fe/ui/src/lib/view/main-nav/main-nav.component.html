@@ -1,27 +1,28 @@
 <lib-flex flexDirection="column">
-  <lib-card cardType="card__default">
+  <lib-card type="main-nav">
     <lib-flex
       alignItems="center"
       [justifyContent]="mainNavJustifyContent">
       <lib-icon
-        src="icon/school.svg"
+        src="icon/main-nav-logo.svg"
         alt="Logo School Icon"></lib-icon>
-      @if (isMobile) {
-      <lib-wrapper #hamburgerForm>
-        <lib-hamburger-form
-          (hamburgerFormEvent)="onEvent()"></lib-hamburger-form>
-      </lib-wrapper>
-      } @else {
-      <lib-main-nav-form></lib-main-nav-form>
-      }
+      <ng-container *ngIf="isMobile; else pc">
+        <lib-wrapper #hamburgerForm>
+          <lib-hamburger-form
+            (hamburgerFormEvent)="onEvent()"></lib-hamburger-form>
+        </lib-wrapper>
+      </ng-container>
+      <ng-template #pc>
+        <lib-main-nav-form></lib-main-nav-form>
+      </ng-template>
     </lib-flex>
   </lib-card>
-  @if (isMobile && isMenuVisible) {
-  <lib-wrapper #mainNavForm>
-    <lib-card cardType="card__default">
-      <lib-main-nav-form
-        (mainNavFormEvent)="onEvent()"></lib-main-nav-form>
-    </lib-card>
-  </lib-wrapper>
-  }
+  <ng-container *ngIf="isMobile && isMenuVisible">
+    <lib-wrapper #mainNavForm>
+      <lib-card type="main-nav">
+        <lib-main-nav-form
+          (mainNavFormEvent)="onEvent()"></lib-main-nav-form>
+      </lib-card>
+    </lib-wrapper>
+  </ng-container>
 </lib-flex>

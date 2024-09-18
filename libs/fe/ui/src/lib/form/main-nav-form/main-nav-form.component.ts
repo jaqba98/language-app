@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+// done
+import { Component } from '@angular/core';
 import { Properties } from 'csstype';
 
 import {
@@ -6,12 +7,9 @@ import {
   BreakpointModel,
   BreakpointService,
   ObserverModel,
-  RouteNavigationService,
 } from '@english-learning/fe-system';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { BaseFormModel } from '../../model/form/base-form.model';
-import { MainNavFormModel } from './main-nav-form.model';
-import { HamburgerFormModel } from '../hamburger-form/hamburger-form.model';
 import { ControlKindEnum } from '../../enum/control-kind.enum';
 
 @Component({
@@ -23,14 +21,9 @@ import { ControlKindEnum } from '../../enum/control-kind.enum';
 export class MainNavFormComponent
   implements ObserverModel<BreakpointModel>
 {
-  @Output() mainNavFormEvent = new EventEmitter<HamburgerFormModel>();
-
   flexDirection: Properties['flexDirection'] = 'row';
 
-  constructor(
-    private readonly route: RouteNavigationService,
-    private readonly breakpoint: BreakpointService,
-  ) {
+  constructor(private readonly breakpoint: BreakpointService) {
     this.breakpoint.addObserver(this);
   }
 
@@ -42,50 +35,52 @@ export class MainNavFormComponent
     }
   }
 
-  form: BaseFormModel = {
+  mainNavForm: BaseFormModel = {
     controls: [
       {
-        kind: ControlKindEnum.buttonText,
-        id: 'homeButton',
-        alignItems: 'flex-start',
-        label: 'Home',
-        isSubmit: false,
+        kind: ControlKindEnum.buttonLink,
+        id: 'statistics',
+        alignItems: 'stretch',
         validation: {
           validators: [],
-          isVisible: true,
+          isVisible: false,
         },
+        label: 'Statistics',
+        path: '/dashboard/statistics',
       },
       {
-        kind: ControlKindEnum.buttonText,
-        id: 'vocabularyButton',
-        alignItems: 'flex-start',
-        label: 'Vocabulary',
-        isSubmit: false,
+        kind: ControlKindEnum.buttonLink,
+        id: 'courses',
+        alignItems: 'stretch',
         validation: {
           validators: [],
-          isVisible: true,
+          isVisible: false,
         },
+        label: 'Courses',
+        path: '/dashboard/courses',
       },
       {
-        kind: ControlKindEnum.buttonText,
-        id: 'grammarButton',
-        alignItems: 'flex-start',
-        label: 'Grammar',
-        isSubmit: false,
+        kind: ControlKindEnum.buttonLink,
+        id: 'account',
+        alignItems: 'stretch',
         validation: {
           validators: [],
-          isVisible: true,
+          isVisible: false,
         },
+        label: 'Account',
+        path: '/dashboard/account',
+      },
+      {
+        kind: ControlKindEnum.buttonLink,
+        id: 'logout',
+        alignItems: 'stretch',
+        validation: {
+          validators: [],
+          isVisible: false,
+        },
+        label: 'Logout',
+        path: '/dashboard/logout',
       },
     ],
   };
-
-  onEvent(model: MainNavFormModel) {
-    if (model.homeButton) this.route.navigate('/home');
-    else if (model.vocabularyButton)
-      this.route.navigate('/vocabulary');
-    else if (model.grammarButton) this.route.navigate('/grammar');
-    else throw new Error('No route is set to true!');
-    this.mainNavFormEvent.emit();
-  }
 }

@@ -6,6 +6,7 @@ import {
   AccountComponent,
   CourseComponent,
   StatisticsComponent,
+  LogoutComponent,
 } from '@english-learning/fe-page';
 import { courseRoutes } from './course.route';
 
@@ -27,6 +28,7 @@ export const dashboardRoutes: Routes = [
         component: CourseComponent,
         children: courseRoutes,
       },
+      { path: 'logout', component: LogoutComponent },
     ],
   },
 ];

@@ -59,6 +59,8 @@ export class BaseFormComponent implements OnInit {
 
   @Input() formSuccessMessage = 'The form was completed correctly.';
 
+  @Input() formValidation = true;
+
   @Output() baseFormEvent = new EventEmitter();
 
   formGroup: FormGroup;

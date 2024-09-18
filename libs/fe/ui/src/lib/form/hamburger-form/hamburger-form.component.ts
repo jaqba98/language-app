@@ -25,7 +25,7 @@ export class HamburgerFormComponent {
           validators: [],
           isVisible: false,
         },
-        icon: 'icon/hamburger-open.svg',
+        icon: 'icon/menu.svg',
         alt: 'hamburger icon',
         isSubmit: false,
       },

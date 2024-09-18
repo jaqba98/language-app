@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Properties } from 'csstype';
+import { CommonModule } from '@angular/common';
 
 import {
   ObserverModel,
@@ -18,6 +19,7 @@ import { MainNavFormComponent } from '../../form/main-nav-form/main-nav-form.com
   selector: 'lib-main-nav',
   standalone: true,
   imports: [
+    CommonModule,
     FlexComponent,
     CardComponent,
     IconComponent,

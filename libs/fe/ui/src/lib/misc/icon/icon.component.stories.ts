@@ -11,7 +11,7 @@ type Story = StoryObj<IconComponent>;
 
 export const Primary: Story = {
   args: {
-    src: 'icon/school.svg',
+    src: 'icon/main-nav-logo.svg',
     alt: 'school icon',
   },
 };
