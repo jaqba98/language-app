@@ -18823,6 +18823,8 @@
                 return 'card--default';
               case 'main-nav':
                 return 'card--main-nav';
+              case 'main-nav-options':
+                return 'card--main-nav-options';
               default:
                 throw new Error('Not supported card type!');
             }
@@ -18848,7 +18850,7 @@
             },
             dependencies: [dg],
             styles: [
-              '@import"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap";*[_ngcontent-%COMP%]{padding:0;margin:0;box-sizing:border-box}body[_ngcontent-%COMP%]{background-color:#4e31aa;min-width:300px}[_nghost-%COMP%]{display:contents}.card[_ngcontent-%COMP%]{background-color:#f1f1f1}.card--default[_ngcontent-%COMP%]{padding:2rem;border-radius:.25rem}.card--main-nav[_ngcontent-%COMP%]{padding:1rem}',
+              '@import"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap";*[_ngcontent-%COMP%]{padding:0;margin:0;box-sizing:border-box}body[_ngcontent-%COMP%]{background-color:#4e31aa;min-width:300px}[_nghost-%COMP%]{display:contents}.card[_ngcontent-%COMP%]{background-color:#f1f1f1}.card--default[_ngcontent-%COMP%]{padding:2rem;border-radius:.25rem}.card--main-nav[_ngcontent-%COMP%]{padding:1rem}.card--main-nav-options[_ngcontent-%COMP%]{border-top:1px solid #ccc;padding:1rem}',
             ],
           }));
         }
@@ -19095,10 +19097,10 @@
         if (1 & e) {
           const n = sn();
           Me(0),
-            H(1, 'lib-wrapper', null, 2)(3, 'lib-card', 4)(
+            H(1, 'lib-wrapper', null, 2)(3, 'lib-card', 10)(
               4,
               'lib-main-nav-form',
-              10,
+              11,
             ),
             ee('mainNavFormEvent', function () {
               return Wt(n), Zt(te().onEvent());
@@ -19162,6 +19164,7 @@
               [4, 'ngIf', 'ngIfElse'],
               [4, 'ngIf'],
               [3, 'hamburgerFormEvent'],
+              ['type', 'main-nav-options'],
               [3, 'mainNavFormEvent'],
             ],
             template: function (r, o) {

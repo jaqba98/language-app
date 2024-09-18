@@ -23,6 +23,8 @@ export class CardComponent {
         return 'card--default';
       case 'main-nav':
         return 'card--main-nav';
+      case 'main-nav-options':
+        return 'card--main-nav-options';
       default:
         throw new Error('Not supported card type!');
     }
