@@ -1,4 +1,3 @@
-// Done
 import { Component, Input } from '@angular/core';
 
 import { TextComponent } from '../text/text.component';

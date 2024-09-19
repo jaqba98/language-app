@@ -1,9 +1,0 @@
-@use '@english-learning/fe-styles/src/lib/abstract/mixin';
-@use '@english-learning/fe-styles/src/lib/abstract/function';
-
-.list {
-  &__item {
-    color: function.get-color('text');
-    margin-left: 1.5em;
-  }
-}

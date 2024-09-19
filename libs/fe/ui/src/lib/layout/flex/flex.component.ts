@@ -1,4 +1,3 @@
-// Done
 import { NgStyle } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Properties } from 'csstype';

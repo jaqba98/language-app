@@ -1,3 +1,4 @@
+// todo: refactor it
 import { Component, Input } from '@angular/core';
 
 @Component({

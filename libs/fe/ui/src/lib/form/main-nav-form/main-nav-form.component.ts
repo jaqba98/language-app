@@ -1,4 +1,3 @@
-// done
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Properties } from 'csstype';
 
