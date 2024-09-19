@@ -4,9 +4,9 @@ export * from './lib/registration/registration.component';
 export * from './lib/change-password/change-password.component';
 export * from './lib/dashboard/dashboard.component';
 export * from './lib/dashboard/statistics/statistics.component';
+export * from './lib/dashboard/courses/courses.component';
 export * from './lib/dashboard/logout/logout.component';
 
-export * from './lib/dashboard/courses/courses.component';
 export * from './lib/dashboard/course/course.component';
 export * from './lib/dashboard/course/roadmap/roadmap.component';
 export * from './lib/dashboard/course/writing/writing.component';
