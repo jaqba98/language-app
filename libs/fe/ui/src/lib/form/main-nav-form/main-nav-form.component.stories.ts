@@ -1,14 +1,23 @@
-import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
+import {
+  moduleMetadata,
+  type Meta,
+  type StoryObj,
+} from '@storybook/angular';
+import { ActivatedRoute } from '@angular/router';
 
 import { MainNavFormComponent } from './main-nav-form.component';
-import { MockRouteNavigationService } from '../../mock/mock-router-navigation.service';
 
 const meta: Meta<MainNavFormComponent> = {
   component: MainNavFormComponent,
   title: 'fe/ui/form/main-nav-form',
+  parameters: {
+    backgrounds: {
+      default: 'primary',
+    },
+  },
   decorators: [
     moduleMetadata({
-      providers: [MockRouteNavigationService.getProvider()],
+      providers: [{ provide: ActivatedRoute, useValue: [] }],
     }),
   ],
 };

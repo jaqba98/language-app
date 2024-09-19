@@ -1,36 +1,41 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+} from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
-import { BaseControlService } from '../../form/base-form/base-control.service';
 import { TextComponent } from '../../misc/text/text.component';
+import { TextColorType } from '../../misc/text/text.type';
+import { ControlInputModel } from '../../model/control/control-input.model';
 
 @Component({
   selector: 'lib-input',
   standalone: true,
-  imports: [
-    CommonModule,
-    TextComponent,
-    ReactiveFormsModule,
-  ],
+  imports: [CommonModule, ReactiveFormsModule, TextComponent],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
-  providers: [BaseControlService.getProvider(InputComponent)],
 })
-export class InputComponent extends BaseControlService<string> {
-  @Input({ required: true }) formControl!: FormControl;
+export class InputComponent {
+  @ViewChild('self') self!: ElementRef;
 
-  isFocused = false;
+  @Input({ required: true }) form!: FormControl;
+
+  @Input({ required: true }) control!: ControlInputModel;
+
+  textColor: TextColorType = 'text__tertiary';
 
   onFocus() {
-    this.isFocused = true;
+    this.textColor = 'text__accent';
   }
 
   onBlur() {
-    this.isFocused = false;
+    this.textColor = 'text__tertiary';
   }
 
-  controlIsNotEmpty() {
-    return this.formControl.value !== '';
+  onClick() {
+    this.self.nativeElement.focus();
   }
 }

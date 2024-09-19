@@ -1,0 +1,15 @@
+{
+  "extends": ["../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": [
+          "./apps/english-learning-storybook/tsconfig.lint.json",
+          "./apps/english-learning-storybook/.storybook/tsconfig.json"
+        ]
+      }
+    }
+  ]
+}

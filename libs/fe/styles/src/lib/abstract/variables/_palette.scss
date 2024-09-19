@@ -1,13 +1,57 @@
-$body-color: #f1f3fb;
-$primary-color: #ffffff;
-$secondary-color: #c3ccef;
-$tertiary-color: #778bda;
+@use 'sass:color';
 
-$component__bright-primary: #ffffff;
+// Basic palette
+$primary: #f1f1f1;
+$secondary: #ccc;
+$tertiary: #7a7a7a;
+$accent: #4e31aa;
+$text: #454545;
+$error: #e23636;
+$error-background: #e2363640;
+$warning: #edb95e;
+$success: #448623;
+$success-background: #44862340;
+$info: #415058;
+
+// Specialized pallet
+$body: $accent;
+$card: $primary;
+$focus: $accent;
+$border: $secondary;
+$text-normal: $text;
+$text-focus: $accent;
+$button: $accent;
+
+// Base palette
+$primary-color: #494ca2;
+$accent-color: #eee;
+$text-secondary-color: #666;
+
+// Specialist palette
+$component-enter-color: $accent-color;
+$component-leave-color: $primary-color;
+$component-secondary-color: color.adjust(
+  $accent-color,
+  $lightness: -5%
+);
+$component-border-color: color.adjust(
+  $primary-color,
+  $lightness: -10%
+);
+$component-secondary-border-color: color.adjust(
+  $component-secondary-color,
+  $lightness: -10%
+);
+$card-default__border: red;
+
+// old
+$card-default-color: $primary-color;
+$secondary-color: #1b262c;
+$tertiary-color: #18122b;
+$component__bright-primary: #fff;
 $component__bright-secondary: #c3ccef;
 $component__bright-tertiary: #778bda;
 $transparent: transparent;
-$button: #5585b5;
-$buttonTextOpen: #ffffff;
-$buttonTextClose: $button;
+$button-text-open: #fff;
+$button-text-close: $button;
 $text: #2e2e2e;

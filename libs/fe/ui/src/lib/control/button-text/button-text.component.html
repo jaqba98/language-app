@@ -1,10 +1,9 @@
 <lib-button
-  [control]="control"
-  [isPrimary]="isPrimary"
-  [fullWidth]="fullWidth"
-  (clickEvent)="onClickEvent()"
-  (mouseEnterEvent)="onMouseEnterEvent()"
-  (mouseLeaveEvent)="onMouseLeaveEvent()"
->
-  <lib-text [value]="label" [textColor]="textColor"></lib-text>
+  [control]="form"
+  [isSubmit]="control.isSubmit"
+  (clickEvent)="onClickEvent()">
+  <lib-text
+    [value]="control.label"
+    textColor="text__primary"
+    type="header3"></lib-text>
 </lib-button>

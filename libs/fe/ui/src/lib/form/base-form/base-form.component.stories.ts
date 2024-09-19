@@ -1,14 +1,14 @@
-import { type Meta, type StoryObj } from '@storybook/angular';
+import type { Meta, StoryObj } from '@storybook/angular';
 
 import { BaseFormComponent } from './base-form.component';
-import { ControlKindEnum } from './base-form.model';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
 
 const meta: Meta<BaseFormComponent> = {
   component: BaseFormComponent,
   title: 'fe/ui/form/base-form',
-  argTypes: {
-    baseFormEvent: {
-      action: 'baseFormEvent',
+  parameters: {
+    backgrounds: {
+      default: 'primary',
     },
   },
 };
@@ -21,23 +21,56 @@ export const Default: Story = {
       controls: [
         {
           kind: ControlKindEnum.input,
-          name: 'field1',
-          defaultValue: '',
+          id: 'input',
+          alignItems: 'flex-start',
+          validation: {
+            validators: [],
+            isVisible: false,
+          },
+          label: {
+            value: 'Input',
+            isVisible: true,
+          },
+          input: {
+            defaultValue: '',
+            placeholder: 'input...',
+            type: 'text',
+          },
         },
         {
           kind: ControlKindEnum.buttonText,
-          name: 'submit',
-          label: 'Click!',
-          isPrimary: true,
-          fullWidth: false,
+          id: 'buttonText',
+          alignItems: 'flex-start',
+          validation: {
+            validators: [],
+            isVisible: false,
+          },
+          label: 'ButtonText',
+          isSubmit: true,
         },
         {
           kind: ControlKindEnum.buttonIcon,
-          name: 'home',
-          iconEnter: 'icon/hamburger-open.svg',
-          iconLeave: 'icon/hamburger-close.svg',
-          alt: 'hamburger icon',
-          isPrimary: false,
+          id: 'buttonIcon',
+          alignItems: 'flex-start',
+          validation: {
+            validators: [],
+            isVisible: false,
+          },
+          icon: 'icon/main-nav-logo.svg',
+          alt: 'School',
+          isSubmit: true,
+        },
+        {
+          kind: ControlKindEnum.link,
+          id: 'link',
+          alignItems: 'flex-start',
+          validation: {
+            validators: [],
+            isVisible: false,
+          },
+          label: 'Link',
+          path: '/',
+          tip: 'Hello',
         },
       ],
     },

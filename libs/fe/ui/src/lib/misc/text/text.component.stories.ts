@@ -1,17 +1,30 @@
-import { type Meta, type StoryObj } from '@storybook/angular';
+import type { Meta, StoryObj } from '@storybook/angular';
 
 import { TextComponent } from './text.component';
 
 const meta: Meta<TextComponent> = {
   component: TextComponent,
   title: 'fe/ui/misc/text',
+  parameters: {
+    backgrounds: {
+      default: 'primary',
+    },
+  },
 };
 export default meta;
 type Story = StoryObj<TextComponent>;
 
+export const Tiny: Story = {
+  args: {
+    value: 'Tiny',
+    type: 'tiny',
+  },
+};
+
 export const Paragraph: Story = {
   args: {
-    value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis, felis sed vestibulum dignissim, quam turpis semper nisi, sit amet cursus sapien dui id nulla. Aliquam sagittis lorem et dignissim maximus. Sed dapibus magna ut augue pharetra, venenatis aliquam ex cursus. Duis tempus ipsum vel rhoncus consequat. Phasellus elementum eleifend velit sit amet dictum. Nunc dapibus in turpis ut convallis. Pellentesque pellentesque lacinia elit, ut vehicula turpis pellentesque ut. Quisque gravida lorem eleifend, vehicula ligula eu, facilisis risus.',
+    value:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis, felis sed vestibulum dignissim, quam turpis semper nisi, sit amet cursus sapien dui id nulla. Aliquam sagittis lorem et dignissim maximus. Sed dapibus magna ut augue pharetra, venenatis aliquam ex cursus. Duis tempus ipsum vel rhoncus consequat. Phasellus elementum eleifend velit sit amet dictum. Nunc dapibus in turpis ut convallis. Pellentesque pellentesque lacinia elit, ut vehicula turpis pellentesque ut. Quisque gravida lorem eleifend, vehicula ligula eu, facilisis risus.',
   },
 };
 
@@ -33,5 +46,37 @@ export const Header3: Story = {
   args: {
     value: 'Header3',
     type: 'header3',
+  },
+};
+
+export const Error: Story = {
+  args: {
+    value: 'Error',
+    type: 'paragraph',
+    textColor: 'text__error',
+  },
+};
+
+export const Warning: Story = {
+  args: {
+    value: 'Warning',
+    type: 'paragraph',
+    textColor: 'text__warning',
+  },
+};
+
+export const Success: Story = {
+  args: {
+    value: 'Success',
+    type: 'paragraph',
+    textColor: 'text__success',
+  },
+};
+
+export const Info: Story = {
+  args: {
+    value: 'Info',
+    type: 'paragraph',
+    textColor: 'text__info',
   },
 };

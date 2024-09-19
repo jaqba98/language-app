@@ -1,7 +1,8 @@
-import { type Meta, type StoryObj } from '@storybook/angular';
+import type { Meta, StoryObj } from '@storybook/angular';
 import { FormControl } from '@angular/forms';
 
 import { ButtonTextComponent } from './button-text.component';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
 
 const meta: Meta<ButtonTextComponent> = {
   component: ButtonTextComponent,
@@ -11,13 +12,28 @@ const meta: Meta<ButtonTextComponent> = {
       action: 'clickEvent',
     },
   },
+  parameters: {
+    backgrounds: {
+      default: 'primary',
+    },
+  },
 };
 export default meta;
 type Story = StoryObj<ButtonTextComponent>;
 
 export const Primary: Story = {
   args: {
-    control: new FormControl(false),
-    label: 'Click me!',
+    form: new FormControl(false),
+    control: {
+      kind: ControlKindEnum.buttonText,
+      id: 'submit',
+      alignItems: 'flex-start',
+      validation: {
+        validators: [],
+        isVisible: false,
+      },
+      label: 'Submit',
+      isSubmit: true,
+    },
   },
 };

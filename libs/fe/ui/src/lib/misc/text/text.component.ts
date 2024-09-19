@@ -1,7 +1,13 @@
-import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
+import { Properties } from 'csstype';
 
-import { TextColorType, TextType } from './text.type';
+import { TextType, TextColorType } from './text.type';
 
 @Component({
   selector: 'lib-text',
@@ -15,13 +21,13 @@ export class TextComponent {
 
   @Input() type: TextType = 'paragraph';
 
-  @Input() textColor: TextColorType = 'tertiary';
+  @Input() textColor: TextColorType = 'text__default';
 
-  getTextClasses() {
-    return {
-      text__primary: this.textColor === 'primary',
-      text__secondary: this.textColor === 'secondary',
-      text__tertiary: this.textColor === 'tertiary',
-    };
+  @Input() margin: Properties['margin'];
+
+  @Output() clickEvent = new EventEmitter();
+
+  onClick() {
+    this.clickEvent.emit();
   }
 }

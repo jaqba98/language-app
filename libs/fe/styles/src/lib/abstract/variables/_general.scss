@@ -1,8 +1,20 @@
-$body-min-width: 300px;
-$shadow-size: 0 5px 5px;
-$component-padding: 1rem;
-$component-radius: 0.25rem;
-$component-border: 2px solid;
+$component-padding-tiny: 0.4rem;
+$component-padding-small: 0.75rem;
+$component-padding-medium: 1rem;
+$component-padding-big: 1.5rem;
+$component-padding-large: 2rem;
+$component-radius-small: 0.25rem;
+$component-active-shadow: 0 0 3px;
+$component-border: 1px solid;
+$component-scale-small: scale(0.95);
+$font-size-tiny: 0.9em;
+$font-size-small: 1em;
+$font-size-medium: 1.5em;
+$font-size-large: 2em;
+
+// old2
+$body__min-width: 300px;
+$component-border-size: 1px solid;
 $z-index-normal: 0;
 $z-index-high: 1;
 $z-index-higher: 2;
@@ -10,14 +22,18 @@ $z-index-highest: 3;
 $z-index-low: -1;
 $z-index-lower: -2;
 $z-index-lowest: -3;
+$main-width: 960px;
+$component-padding: 0.5rem;
+$component-radius: 0.25rem;
+
+// old
+$shadow-size: 0 5px 5px;
 $animation-speed-fast: 0.1s;
 $animation-speed-normal: 0.25s;
-
 $component__shadow-size: 0 0.25rem 0.25em;
 $component__border-size: 1px solid;
 $component__offset: 2px;
-$control__padding: 1rem;
 $main-nav-form__padding: 0.25rem;
-$animation-speed: 0.25s;
+$animation-speed: 0.5s;
 $control-border: 2px solid;
 $label-padding: 0.45rem;

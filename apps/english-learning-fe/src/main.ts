@@ -1,8 +1,7 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 
-import { FeMainComponent, feMainConfig } from '@english-learning/fe-main';
+import { MainComponent, mainConfig } from '@english-learning/fe-main';
 
-bootstrapApplication(FeMainComponent, feMainConfig).catch((err) => {
-  // eslint-disable-next-line no-console
-  console.error(err);
+bootstrapApplication(MainComponent, mainConfig).catch(err => {
+  throw new Error(err);
 });

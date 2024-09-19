@@ -1,32 +1,32 @@
-import { CommonModule } from '@angular/common';
+import { NgStyle } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Properties } from 'csstype';
 
 @Component({
   selector: 'lib-flex',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgStyle],
   templateUrl: './flex.component.html',
   styleUrl: './flex.component.scss',
 })
 export class FlexComponent {
-  @Input() flexDirection: Properties['flexDirection'] = 'row';
+  @Input() flexDirection: Properties['flexDirection'];
 
-  @Input() alignItems: Properties['alignItems'] = 'stretch';
+  @Input() alignItems: Properties['alignItems'];
 
-  @Input() justifyContent: Properties['justifyContent'] = 'stretch';
+  @Input() justifyContent: Properties['justifyContent'];
 
-  @Input() gap: Properties['gap'] = '0';
+  @Input() gap: Properties['gap'];
 
-  @Input() flexWrap: Properties['flexWrap'] = 'wrap';
+  @Input() minHeight: Properties['minHeight'];
 
-  buildFlexStyles(): Properties {
+  buildStyles(): Properties {
     return {
       flexDirection: this.flexDirection,
       alignItems: this.alignItems,
       justifyContent: this.justifyContent,
       gap: this.gap,
-      flexWrap: this.flexWrap,
+      minHeight: this.minHeight,
     };
   }
 }

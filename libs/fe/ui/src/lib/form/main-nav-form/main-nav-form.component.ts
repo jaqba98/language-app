@@ -2,12 +2,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Properties } from 'csstype';
 
 import {
-  BreakpointEnum, BreakpointModel, BreakpointService, ObserverModel,
+  BreakpointEnum,
+  BreakpointModel,
+  BreakpointService,
+  ObserverModel,
 } from '@english-learning/fe-system';
 import { BaseFormComponent } from '../base-form/base-form.component';
-import { BaseFormModel, ControlKindEnum } from '../base-form/base-form.model';
-import { MainNavFormModel } from './main-nav-form.model';
-import { RouteNavigationService } from '../../infrastructure/route-navigation.service';
+import { BaseFormModel } from '../../model/form/base-form.model';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { HamburgerFormModel } from '../hamburger-form/hamburger-form.model';
 
 @Component({
@@ -16,57 +18,75 @@ import { HamburgerFormModel } from '../hamburger-form/hamburger-form.model';
   imports: [BaseFormComponent],
   templateUrl: './main-nav-form.component.html',
 })
-export class MainNavFormComponent implements ObserverModel<BreakpointModel> {
+export class MainNavFormComponent
+  implements ObserverModel<BreakpointModel>
+{
   @Output() mainNavFormEvent = new EventEmitter<HamburgerFormModel>();
 
-  direction: Properties['flexDirection'] = 'row';
+  flexDirection: Properties['flexDirection'] = 'row';
 
-  constructor(
-    private readonly route: RouteNavigationService,
-    private readonly breakpoint: BreakpointService,
-  ) {
+  constructor(private readonly breakpoint: BreakpointService) {
     this.breakpoint.addObserver(this);
   }
 
   update(data: BreakpointModel) {
     if (data.breakpoint === BreakpointEnum.XSmall) {
-      this.direction = 'column';
+      this.flexDirection = 'column';
     } else {
-      this.direction = 'row';
+      this.flexDirection = 'row';
     }
   }
 
-  form: BaseFormModel = {
+  mainNavForm: BaseFormModel = {
     controls: [
       {
-        kind: ControlKindEnum.buttonText,
-        name: 'homeButton',
-        label: 'Home',
-        isPrimary: false,
-        fullWidth: true,
+        kind: ControlKindEnum.buttonLink,
+        id: 'statistics',
+        alignItems: 'stretch',
+        validation: {
+          validators: [],
+          isVisible: false,
+        },
+        label: 'Statistics',
+        path: '/dashboard/statistics',
       },
       {
-        kind: ControlKindEnum.buttonText,
-        name: 'vocabularyButton',
-        label: 'Vocabulary',
-        isPrimary: false,
-        fullWidth: true,
+        kind: ControlKindEnum.buttonLink,
+        id: 'courses',
+        alignItems: 'stretch',
+        validation: {
+          validators: [],
+          isVisible: false,
+        },
+        label: 'Courses',
+        path: '/dashboard/courses',
       },
       {
-        kind: ControlKindEnum.buttonText,
-        name: 'grammarButton',
-        label: 'Grammar',
-        isPrimary: false,
-        fullWidth: true,
+        kind: ControlKindEnum.buttonLink,
+        id: 'account',
+        alignItems: 'stretch',
+        validation: {
+          validators: [],
+          isVisible: false,
+        },
+        label: 'Account',
+        path: '/dashboard/account',
+      },
+      {
+        kind: ControlKindEnum.buttonLink,
+        id: 'logout',
+        alignItems: 'stretch',
+        validation: {
+          validators: [],
+          isVisible: false,
+        },
+        label: 'Logout',
+        path: '/dashboard/logout',
       },
     ],
   };
 
-  onEvent(model: MainNavFormModel) {
-    if (model.homeButton) this.route.navigate('/home');
-    else if (model.vocabularyButton) this.route.navigate('/vocabulary');
-    else if (model.grammarButton) this.route.navigate('/grammar');
-    else throw new Error('No route is set to true!');
-    this.mainNavFormEvent.emit();
+  onEvent(baseForm: HamburgerFormModel) {
+    this.mainNavFormEvent.emit(baseForm);
   }
 }

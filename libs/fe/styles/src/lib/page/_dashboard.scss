@@ -1,0 +1,5 @@
+@use '../abstract/variables/general';
+
+@mixin dashboard {
+  padding: general.$component-padding-small;
+}

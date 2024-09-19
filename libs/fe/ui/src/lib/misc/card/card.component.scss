@@ -1,20 +1,9 @@
-@use '@english-learning/fe-styles/src/lib/abstract';
+@use '@english-learning/fe-styles/src/lib/main';
+
+:host {
+  display: contents;
+}
 
 .card {
-    background-color: abstract.$primary-color;
-    box-shadow: abstract.$shadow-size abstract.$secondary-color;
-
-    &__main-nav {
-        padding: abstract.$component-padding;
-    }
-
-    &__main-nav-options-mobile {
-        padding: abstract.$component-padding;
-        border-top: abstract.$component-border abstract.$secondary-color;
-    }
-
-    &__default {
-        padding: abstract.$component-padding;
-        border-radius: abstract.$component-radius;
-    }
+  @include main.card;
 }

@@ -1,17 +1,16 @@
-<div class="input" [ngClass]="{'input__focused': isFocused}">
-    <div class="input__slider"></div>
-    <div class="input__label" [ngClass]="{'input__label-back': controlIsNotEmpty()}">
-        <lib-text
-            value="Login"
-            textColor="tertiary">
-        </lib-text>
-    </div>
-    <div class="input__content">
-        <input
-            [formControl]="formControl"
-            type="text"
-            class="input__control"
-            (focus)="onFocus()"
-            (blur)="onBlur()">
-    </div>
-</div>
+<ng-container *ngIf="control.label.isVisible">
+  <lib-text
+    type="tiny"
+    (clickEvent)="onClick()"
+    [value]="control.label.value"
+    [textColor]="textColor"></lib-text>
+</ng-container>
+<input
+  #self
+  class="input"
+  [value]="control.input.defaultValue"
+  [type]="control.input.type"
+  [placeholder]="control.input.placeholder"
+  [formControl]="form"
+  (focus)="onFocus()"
+  (blur)="onBlur()" />

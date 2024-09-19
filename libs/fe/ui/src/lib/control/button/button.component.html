@@ -1,13 +1,8 @@
 <button
-    class="button"
-    [type]="getButtonType()"
-    [ngClass]="buildStyles()"
-    (click)="onClick()"
-    (mouseenter)="onMouseEnter()"
-    (mouseleave)="onMouseLeave()"
->
-    <div class="button__slider"></div>
-    <div class="button__content">
-        <ng-content></ng-content>
-    </div>
+  class="button"
+  [type]="isSubmit ? 'submit' : 'button'"
+  (click)="onClick()"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()">
+  <ng-content></ng-content>
 </button>

@@ -19,6 +19,7 @@
       "@english-learning/fe-main": ["libs/fe/main/src/index.ts"],
       "@english-learning/fe-page": ["libs/fe/page/src/index.ts"],
       "@english-learning/fe-route": ["libs/fe/route/src/index.ts"],
+      "@english-learning/fe-store": ["libs/fe/store/src/index.ts"],
       "@english-learning/fe-system": ["libs/fe/system/src/index.ts"],
       "@english-learning/fe-ui": ["libs/fe/ui/src/index.ts"]
     }

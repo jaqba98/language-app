@@ -1,5 +1,1 @@
-export type CardType =
-  | 'card__bare'
-  | 'card__default'
-  | 'card__main-nav'
-  | 'card__main-nav-options-mobile';
+export type CardType = 'default' | 'main-nav' | 'main-nav-options';
