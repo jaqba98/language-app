@@ -14,8 +14,4 @@
     outline-offset: 3px;
     outline: general.$component-border palette.$button;
   }
-
-  &:active {
-    transform: general.$component-scale-small;
-  }
 }
