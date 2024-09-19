@@ -19455,6 +19455,29 @@
         })(),
         f4 = (() => {
           class e {
+            static #e = (this.ɵfac = function (r) {
+              return new (r || e)();
+            });
+            static #t = (this.ɵcmp = J({
+              type: e,
+              selectors: [['lib-account']],
+              standalone: !0,
+              features: [ee],
+              decls: 2,
+              vars: 0,
+              consts: [['value', 'Account']],
+              template: function (r, o) {
+                1 & r &&
+                  (U(0, 'lib-card'), ve(1, 'lib-text', 0), L());
+              },
+              dependencies: [Ga, Mn],
+              encapsulation: 2,
+            }));
+          }
+          return e;
+        })(),
+        h4 = (() => {
+          class e {
             constructor(n) {
               (this.route = n), this.route.navigate('');
             }
@@ -19474,7 +19497,7 @@
           }
           return e;
         })(),
-        h4 = (() => {
+        p4 = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
@@ -19495,7 +19518,7 @@
           }
           return e;
         })(),
-        p4 = (() => {
+        g4 = (() => {
           class e {
             static #e = (this.ɵfac = function (r) {
               return new (r || e)();
@@ -19510,29 +19533,6 @@
               template: function (r, o) {
                 1 & r && (U(0, 'p'), rr(1, 'roadmap'), L());
               },
-              encapsulation: 2,
-            }));
-          }
-          return e;
-        })(),
-        g4 = (() => {
-          class e {
-            static #e = (this.ɵfac = function (r) {
-              return new (r || e)();
-            });
-            static #t = (this.ɵcmp = J({
-              type: e,
-              selectors: [['lib-account']],
-              standalone: !0,
-              features: [ee],
-              decls: 2,
-              vars: 0,
-              consts: [['value', 'Account']],
-              template: function (r, o) {
-                1 & r &&
-                  (U(0, 'lib-card'), ve(1, 'lib-text', 0), L());
-              },
-              dependencies: [Ga, Mn],
               encapsulation: 2,
             }));
           }
@@ -19586,12 +19586,12 @@
                     },
                     { path: 'statistics', component: l4 },
                     { path: 'courses', component: d4 },
-                    { path: 'account', component: g4 },
+                    { path: 'account', component: f4 },
                     {
                       path: 'course/:courseId',
-                      component: h4,
+                      component: p4,
                       children: [
-                        { path: 'roadmap', component: p4 },
+                        { path: 'roadmap', component: g4 },
                         {
                           path: 'quiz',
                           component: (() => {
@@ -19618,7 +19618,7 @@
                         },
                       ],
                     },
-                    { path: 'logout', component: f4 },
+                    { path: 'logout', component: h4 },
                   ],
                 },
                 { path: '**', component: m4 },
