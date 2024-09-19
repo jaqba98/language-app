@@ -1,5 +1,10 @@
 // Done
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
@@ -17,4 +22,10 @@ export class ButtonLinkComponent {
   @Input({ required: true }) form!: FormControl;
 
   @Input({ required: true }) control!: ControlButtonLinkModel;
+
+  @Output() clickEvent = new EventEmitter();
+
+  onClickEvent() {
+    this.clickEvent.emit();
+  }
 }

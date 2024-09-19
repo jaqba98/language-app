@@ -1,5 +1,5 @@
 // done
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Properties } from 'csstype';
 
 import {
@@ -11,6 +11,7 @@ import {
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { BaseFormModel } from '../../model/form/base-form.model';
 import { ControlKindEnum } from '../../enum/control-kind.enum';
+import { HamburgerFormModel } from '../hamburger-form/hamburger-form.model';
 
 @Component({
   selector: 'lib-main-nav-form',
@@ -21,6 +22,8 @@ import { ControlKindEnum } from '../../enum/control-kind.enum';
 export class MainNavFormComponent
   implements ObserverModel<BreakpointModel>
 {
+  @Output() mainNavFormEvent = new EventEmitter<HamburgerFormModel>();
+
   flexDirection: Properties['flexDirection'] = 'row';
 
   constructor(private readonly breakpoint: BreakpointService) {
@@ -83,4 +86,8 @@ export class MainNavFormComponent
       },
     ],
   };
+
+  onEvent(baseForm: HamburgerFormModel) {
+    this.mainNavFormEvent.emit(baseForm);
+  }
 }

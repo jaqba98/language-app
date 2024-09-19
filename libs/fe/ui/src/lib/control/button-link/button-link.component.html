@@ -1,5 +1,5 @@
 <a [routerLink]="control.path">
-  <lib-button [control]="form">
+  <lib-button [control]="form" (clickEvent)="onClickEvent()">
     <lib-text
       [value]="control.label"
       textColor="text__primary"
