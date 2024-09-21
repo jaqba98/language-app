@@ -1,0 +1,33 @@
+@use 'sass:map';
+
+// @function map__get-element($map, $key) {
+//   @if map.has-key($map, $key) {
+//     @return map.get($map, $key);
+//   }
+//   @error '';
+// }
+
+// @mixin add-elements($elements) {
+//   @each $element, $value in $elements {
+//     &__#{$element} {
+//       $styles: map.get($value, styles);
+//       $modifiers: map.get($value, modifiers);
+//       @include add-styles($styles);
+//       @include add-modifiers($modifiers);
+//     }
+//   }
+// }
+
+// @mixin add-modifiers($modifiers) {
+//   @each $modifier, $styles in $modifiers {
+//     &--#{$modifier} {
+//       @include add-styles($styles);
+//     }
+//   }
+// }
+
+// @mixin add-styles($styles) {
+//   @each $property, $value in $styles {
+//     #{$property}: $value;
+//   }
+// }
