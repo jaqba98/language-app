@@ -1,16 +1,12 @@
-@function build-bem($block: '', $element: '', $modifier: '') {
-  $bem-block: build-bem-block($block);
-  $bem-element: build-bem-element($element);
-  $bem-modifier: build-bem-modifier($modifier);
+@function build-bem-block($name: '') {
+  @if $name == '' {
+    @error 'The block must not be empty in BEM methodology!';
+  }
 
-  @return '#{$bem-block}#{$bem-element}#{$bem-modifier}';
-}
-
-@function build-bem-block($name) {
   @return $name;
 }
 
-@function build-bem-element($name) {
+@function build-bem-element($name: '') {
   @if $name == '' {
     @return '';
   }
@@ -18,7 +14,7 @@
   @return '__#{$name}';
 }
 
-@function build-bem-modifier($name) {
+@function build-bem-modifier($name: '') {
   @if $name == '' {
     @return '';
   }
