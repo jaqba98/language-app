@@ -1,0 +1,27 @@
+@use '../utils/bem';
+@use '../utils/map';
+
+// $example: (
+//   class1: (
+//     styles: (),
+//     elements: (),
+//     modifiers: (),
+//   ),
+// );
+
+@mixin build-classes($blocks) {
+  @each $block, $block-values in $blocks {
+    @include build-block($block, $block-values);
+  }
+}
+
+@mixin build-block($block, $block-values) {
+  $bem-block: bem.build-bem-block($block);
+  $styles: map.get-map-element($block-values, 'styles', ());
+  $elements: map.get-map-element($block-values, 'elements', ());
+  $modifiers: map.get-map-element($block-values, 'modifiers', ());
+
+  #{$bem-block} {
+    color: red;
+  }
+}
