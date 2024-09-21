@@ -3,7 +3,7 @@
     @error 'The block must not be empty in BEM methodology!';
   }
 
-  @return $name;
+  @return '.#{$name}';
 }
 
 @function build-bem-element($name: '') {
