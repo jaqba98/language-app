@@ -1,16 +1,16 @@
 @use '../../variables';
 
-@mixin control-builder__button {
+@mixin control-builder-button {
   cursor: pointer;
   outline: none;
   padding: variables.$component-padding;
 }
 
-@mixin control-builder__slider {
+@mixin control-builder-slider {
   z-index: variables.$z-index-high;
 }
 
-@mixin control-builder__slider-content {
+@mixin control-builder-slider-content {
   z-index: variables.$z-index-higher;
   position: relative;
 }

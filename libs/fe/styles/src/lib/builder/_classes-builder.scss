@@ -2,10 +2,10 @@
 @use '../utils/map';
 
 @mixin build-classes($blocks) {
-  @include _build-blocks($blocks);
+  @include -build-blocks($blocks);
 }
 
-@mixin _build-blocks($blocks) {
+@mixin -build-blocks($blocks) {
   @each $block, $block-values in $blocks {
     $bem-block: bem.build-bem-block($block);
     $styles: map.get-map-element($block-values, 'styles', ());
@@ -13,37 +13,37 @@
     $modifiers: map.get-map-element($block-values, 'modifiers', ());
 
     #{$bem-block} {
-      @include _build-styles($styles);
-      @include _build-elements($elements);
-      @include _build-modifiers($modifiers);
+      @include -build-styles($styles);
+      @include -build-elements($elements);
+      @include -build-modifiers($modifiers);
     }
   }
 }
 
-@mixin _build-elements($elements) {
+@mixin -build-elements($elements) {
   @each $element, $element-values in $elements {
     $bem-element: bem.build-bem-element($element);
     $styles: map.get-map-element($element-values, 'styles', ());
     $modifiers: map.get-map-element($element-values, 'modifiers', ());
 
     &#{$bem-element} {
-      @include _build-styles($styles);
-      @include _build-modifiers($modifiers);
+      @include -build-styles($styles);
+      @include -build-modifiers($modifiers);
     }
   }
 }
 
-@mixin _build-modifiers($modifiers) {
+@mixin -build-modifiers($modifiers) {
   @each $modifier, $styles in $modifiers {
     $bem-modifier: bem.build-bem-modifier($modifier);
 
     &#{$bem-modifier} {
-      @include _build-styles($styles);
+      @include -build-styles($styles);
     }
   }
 }
 
-@mixin _build-styles($styles) {
+@mixin -build-styles($styles) {
   @each $property, $value in $styles {
     #{$property}: $value;
   }
