@@ -1,27 +1,50 @@
 @use '../utils/bem';
 @use '../utils/map';
 
-// $example: (
-//   class1: (
-//     styles: (),
-//     elements: (),
-//     modifiers: (),
-//   ),
-// );
-
 @mixin build-classes($blocks) {
+  @include build-blocks($blocks);
+}
+
+@mixin build-blocks($blocks) {
   @each $block, $block-values in $blocks {
-    @include build-block($block, $block-values);
+    $bem-block: bem.build-bem-block($block);
+    $styles: map.get-map-element($block-values, 'styles', ());
+    $elements: map.get-map-element($block-values, 'elements', ());
+    $modifiers: map.get-map-element($block-values, 'modifiers', ());
+
+    #{$bem-block} {
+      @include build-styles($styles);
+      @include build-elements($elements);
+      @include build-modifiers($modifiers);
+    }
   }
 }
 
-@mixin build-block($block, $block-values) {
-  $bem-block: bem.build-bem-block($block);
-  $styles: map.get-map-element($block-values, 'styles', ());
-  $elements: map.get-map-element($block-values, 'elements', ());
-  $modifiers: map.get-map-element($block-values, 'modifiers', ());
+@mixin build-elements($elements) {
+  @each $element, $element-values in $elements {
+    $bem-element: bem.build-bem-element($element);
+    $styles: map.get-map-element($element-values, 'styles', ());
+    $modifiers: map.get-map-element($element-values, 'modifiers', ());
 
-  #{$bem-block} {
-    color: red;
+    &#{$bem-element} {
+      @include build-styles($styles);
+      @include build-modifiers($modifiers);
+    }
+  }
+}
+
+@mixin build-modifiers($modifiers) {
+  @each $modifier, $styles in $modifiers {
+    $bem-modifier: bem.build-bem-modifier($modifier);
+
+    &#{$bem-modifier} {
+      @include build-styles($styles);
+    }
+  }
+}
+
+@mixin build-styles($styles) {
+  @each $property, $value in $styles {
+    #{$property}: $value;
   }
 }

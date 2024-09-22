@@ -1,39 +1,28 @@
 @use '../../../../../../styles/src/lib/builder/classes-builder';
 
-// Roadmap marker
-
-@include classes-builder.build-classes(
-  (
-    'roadmap-marker': (
-      'styles': (),
-      'elements': (),
-      'modifiers': (),
+$classes: (
+  roadmap-marker: (
+    styles: (
+      width: 100px,
+      height: 100px,
+      border-radius: 100%,
+      transform: rotateX(25deg),
     ),
-  )
+    elements: (
+      blocked: (
+        styles: (
+          background-color: lightgrey,
+          box-shadow: 0 0.5rem gray,
+        ),
+      ),
+      done: (
+        styles: (
+          background-color: gold,
+          box-shadow: 0 0.5rem goldenrod,
+        ),
+      ),
+    ),
+  ),
 );
 
-// @use '../../../../../../styles/src/lib/builder/block-elements.builder'
-//   as block-elements;
-// $roadmap-markers: (
-//   blocked: (
-//     styles: (
-//       background-color: lightgrey,
-//       box-shadow: 0 0.5rem gray,
-//     ),
-//     modifiers: (),
-//   ),
-//   done: (
-//     styles: (
-//       background-color: gold,
-//       box-shadow: 0 0.5rem goldenrod,
-//     ),
-//     modifiers: (),
-//   ),
-// );
-// .roadmap-marker {
-//   width: 100px;
-//   height: 100px;
-//   border-radius: 100%;
-//   transform: rotateX(25deg);
-//   // @include block-elements.build-block-elements($roadmap-markers);
-// }
+@include classes-builder.build-classes($classes);
