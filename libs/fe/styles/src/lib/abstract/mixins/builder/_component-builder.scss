@@ -1,36 +1,36 @@
 @use '../../variables';
 
 // Shape
-@mixin component-builder__shape {
+@mixin component-builder-shape {
   padding: variables.$component-padding;
   border-radius: variables.$component-radius;
 }
 
-@mixin component-builder__full-width {
+@mixin component-builder-full-width {
   width: 100%;
 }
 
 // Bright
-@mixin component-builder__bright {
+@mixin component-builder-bright {
   background-color: variables.$component-bright-primary;
 }
 
-@mixin component-builder__bright-shadow {
+@mixin component-builder-bright-shadow {
   box-shadow: variables.$component-shadow-size
     variables.$component-bright-secondary;
 }
 
-@mixin component-builder__bright-border {
+@mixin component-builder-bright-border {
   border: variables.$component-border-size
     variables.$component-bright-tertiary;
 }
 
-@mixin component-builder__bright-focus-outline {
+@mixin component-builder-bright-focus-outline {
   outline: variables.$component-border-size
     variables.$component-bright-tertiary;
   outline-offset: variables.$component-offset;
 }
 
-@mixin component-builder__bright-focus-background {
+@mixin component-builder-bright-focus-background {
   background-color: variables.$component-bright-tertiary;
 }

@@ -18,7 +18,6 @@
       {
         "message": "Selector should be written in BEM format (e.g., block, block__element, block__element--modifier)."
       }
-    ],
-    "scss/at-mixin-pattern": "^_?[a-z]+(-[a-z]+)*(__[a-z]+(-[a-z]+)*)?(--[a-z]+(-[a-z]+)*)?$"
+    ]
   }
 }
