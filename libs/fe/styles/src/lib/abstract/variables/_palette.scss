@@ -42,15 +42,15 @@ $component-secondary-border-color: color.adjust(
   $component-secondary-color,
   $lightness: -10%
 );
-$card-default__border: red;
+$card-default-border: red;
 
 // old
 $card-default-color: $primary-color;
 $secondary-color: #1b262c;
 $tertiary-color: #18122b;
-$component__bright-primary: #fff;
-$component__bright-secondary: #c3ccef;
-$component__bright-tertiary: #778bda;
+$component-bright-primary: #fff;
+$component-bright-secondary: #c3ccef;
+$component-bright-tertiary: #778bda;
 $transparent: transparent;
 $button-text-open: #fff;
 $button-text-close: $button;

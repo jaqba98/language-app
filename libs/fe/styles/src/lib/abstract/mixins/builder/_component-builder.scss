@@ -12,25 +12,25 @@
 
 // Bright
 @mixin component-builder__bright {
-  background-color: variables.$component__bright-primary;
+  background-color: variables.$component-bright-primary;
 }
 
 @mixin component-builder__bright-shadow {
-  box-shadow: variables.$component__shadow-size
-    variables.$component__bright-secondary;
+  box-shadow: variables.$component-shadow-size
+    variables.$component-bright-secondary;
 }
 
 @mixin component-builder__bright-border {
-  border: variables.$component__border-size
-    variables.$component__bright-tertiary;
+  border: variables.$component-border-size
+    variables.$component-bright-tertiary;
 }
 
 @mixin component-builder__bright-focus-outline {
-  outline: variables.$component__border-size
-    variables.$component__bright-tertiary;
-  outline-offset: variables.$component__offset;
+  outline: variables.$component-border-size
+    variables.$component-bright-tertiary;
+  outline-offset: variables.$component-offset;
 }
 
 @mixin component-builder__bright-focus-background {
-  background-color: variables.$component__bright-tertiary;
+  background-color: variables.$component-bright-tertiary;
 }
