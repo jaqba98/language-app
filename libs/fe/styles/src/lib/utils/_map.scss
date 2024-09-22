@@ -1,8 +1,12 @@
 @use 'sass:map';
 
-@function get-map-element($map, $key, $default) {
+@function get-map-element($map, $key, $default, $throw: false) {
   @if map.has-key($map, $key) {
     @return map.get($map, $key);
+  }
+
+  @if $throw {
+    @error 'The map does not have element by key!';
   }
 
   @return $default;
