@@ -9,18 +9,8 @@
   @each $block, $block-values in $blocks {
     $bem-block: bem.build-bem-block($block);
     $styles: map.get-map-element($block-values, 'styles', (), false);
-    $elements: map.get-map-element(
-      $block-values,
-      'elements',
-      (),
-      false
-    );
-    $modifiers: map.get-map-element(
-      $block-values,
-      'modifiers',
-      (),
-      false
-    );
+    $elements: map.get-map-element($block-values, 'elements', (), false);
+    $modifiers: map.get-map-element($block-values, 'modifiers', (), false);
 
     #{$bem-block} {
       @include -build-styles($styles);
@@ -33,18 +23,8 @@
 @mixin -build-elements($elements) {
   @each $element, $element-values in $elements {
     $bem-element: bem.build-bem-element($element);
-    $styles: map.get-map-element(
-      $element-values,
-      'styles',
-      (),
-      false
-    );
-    $modifiers: map.get-map-element(
-      $element-values,
-      'modifiers',
-      (),
-      false
-    );
+    $styles: map.get-map-element($element-values, 'styles', (), false);
+    $modifiers: map.get-map-element($element-values, 'modifiers', (), false);
 
     &#{$bem-element} {
       @include -build-styles($styles);

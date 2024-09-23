@@ -7,13 +7,9 @@ import { BreakpointEnum } from '../enum/breakpoint.enum';
 import { ObserverModel } from '../model/abstract/observer.model';
 
 @Injectable({ providedIn: 'root' })
-export class BreakpointService
-  implements SubjectModel<BreakpointModel>
-{
-  observers: Map<
-    ObserverModel<BreakpointModel>,
-    ObserverModel<BreakpointModel>
-  > = new Map();
+export class BreakpointService implements SubjectModel<BreakpointModel> {
+  observers: Map<ObserverModel<BreakpointModel>, ObserverModel<BreakpointModel>> =
+    new Map();
 
   constructor(private readonly observer: BreakpointObserver) {
     this.getBreakpointsObserve().subscribe(currentBreakpoint => {
@@ -42,15 +38,11 @@ export class BreakpointService
           obs.update({ breakpoint: BreakpointEnum.XSmall });
         } else if (currentBreakpoint.breakpoints[Breakpoints.Small]) {
           obs.update({ breakpoint: BreakpointEnum.Small });
-        } else if (
-          currentBreakpoint.breakpoints[Breakpoints.Medium]
-        ) {
+        } else if (currentBreakpoint.breakpoints[Breakpoints.Medium]) {
           obs.update({ breakpoint: BreakpointEnum.Medium });
         } else if (currentBreakpoint.breakpoints[Breakpoints.Large]) {
           obs.update({ breakpoint: BreakpointEnum.Large });
-        } else if (
-          currentBreakpoint.breakpoints[Breakpoints.XLarge]
-        ) {
+        } else if (currentBreakpoint.breakpoints[Breakpoints.XLarge]) {
           obs.update({ breakpoint: BreakpointEnum.XLarge });
         }
       })

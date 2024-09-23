@@ -18,9 +18,7 @@ import { HamburgerFormModel } from '../hamburger-form/hamburger-form.model';
   imports: [BaseFormComponent],
   templateUrl: './main-nav-form.component.html',
 })
-export class MainNavFormComponent
-  implements ObserverModel<BreakpointModel>
-{
+export class MainNavFormComponent implements ObserverModel<BreakpointModel> {
   @Output() mainNavFormEvent = new EventEmitter<HamburgerFormModel>();
 
   flexDirection: Properties['flexDirection'] = 'row';

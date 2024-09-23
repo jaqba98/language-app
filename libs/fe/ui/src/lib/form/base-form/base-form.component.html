@@ -3,10 +3,7 @@
     <lib-flex [flexDirection]="flexDirection" gap="0.5rem">
       <!-- controls -->
       <ng-container *ngFor="let control of baseForm.controls">
-        <lib-flex
-          [alignItems]="control.alignItems"
-          flexDirection="column"
-          gap="0.25rem">
+        <lib-flex [alignItems]="control.alignItems" flexDirection="column" gap="0.25rem">
           <!-- input -->
           <ng-container *ngIf="control.kind === 'input'">
             <lib-input
@@ -36,9 +33,7 @@
           </ng-container>
           <!-- link -->
           <ng-container *ngIf="control.kind === 'link'">
-            <lib-link
-              [form]="getFormControl(control.id)"
-              [control]="control"></lib-link>
+            <lib-link [form]="getFormControl(control.id)" [control]="control"></lib-link>
           </ng-container>
           <!-- text -->
           <ng-container *ngIf="control.kind === 'text'">
@@ -51,8 +46,7 @@
           <!-- control validation -->
           <ng-container *ngIf="control.validation.isVisible">
             <ng-container *ngIf="formControlInvalid(control.id)">
-              <lib-error
-                [value]="getFormControlError(control.id)"></lib-error>
+              <lib-error [value]="getFormControlError(control.id)"></lib-error>
             </ng-container>
           </ng-container>
         </lib-flex>

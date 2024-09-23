@@ -16,18 +16,15 @@
 }
 
 @mixin component-builder-bright-shadow {
-  box-shadow: variables.$component-shadow-size
-    variables.$component-bright-secondary;
+  box-shadow: variables.$component-shadow-size variables.$component-bright-secondary;
 }
 
 @mixin component-builder-bright-border {
-  border: variables.$component-border-size
-    variables.$component-bright-tertiary;
+  border: variables.$component-border-size variables.$component-bright-tertiary;
 }
 
 @mixin component-builder-bright-focus-outline {
-  outline: variables.$component-border-size
-    variables.$component-bright-tertiary;
+  outline: variables.$component-border-size variables.$component-bright-tertiary;
   outline-offset: variables.$component-offset;
 }
 

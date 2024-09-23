@@ -1,8 +1,4 @@
-import {
-  moduleMetadata,
-  type Meta,
-  type StoryObj,
-} from '@storybook/angular';
+import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 

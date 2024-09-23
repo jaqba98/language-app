@@ -1,5 +1,8 @@
 @use '@english-learning/fe-styles/src/lib/main';
 
+$blocked: main.get-map-element(main.$roadmap-marker, blocked);
+$active: main.get-map-element(main.$roadmap-marker, active);
+$done: main.get-map-element(main.$roadmap-marker, done);
 $classes: (
   roadmap-marker: (
     styles: (
@@ -11,20 +14,23 @@ $classes: (
     elements: (
       blocked: (
         styles: (
-          background-color: main.$roadmap-marker-blocked-background,
-          box-shadow: 0 0.5rem main.$roadmap-marker-blocked-shadow,
+          background-color: main.get-map-element($blocked, background-color),
+          box-shadow: main.get-map-element($blocked, box-shadow),
+          border: main.get-map-element($blocked, border),
         ),
       ),
       active: (
         styles: (
-          background-color: main.$roadmap-marker-active-background,
-          box-shadow: 0 0.5rem main.$roadmap-marker-active-shadow,
+          background-color: main.get-map-element($active, background-color),
+          box-shadow: main.get-map-element($active, box-shadow),
+          border: main.get-map-element($active, border),
         ),
       ),
       done: (
         styles: (
-          background-color: main.$roadmap-marker-done-background,
-          box-shadow: 0 0.5rem main.$roadmap-marker-done-shadow,
+          background-color: main.get-map-element($done, background-color),
+          box-shadow: main.get-map-element($done, box-shadow),
+          border: main.get-map-element($done, border),
         ),
       ),
     ),

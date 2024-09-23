@@ -68,10 +68,7 @@
       "executor": "nx-stylelint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "libs/fe/ui/**/*.css",
-          "libs/fe/ui/**/*.scss"
-        ]
+        "lintFilePatterns": ["libs/fe/ui/**/*.css", "libs/fe/ui/**/*.scss"]
       }
     }
   }
