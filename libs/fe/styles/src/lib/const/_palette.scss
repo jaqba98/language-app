@@ -1,0 +1,27 @@
+@use 'sass:color';
+@use 'core';
+
+// ### Base palette
+
+$grey: #bbb;
+$green: #9be34a;
+$gold: #e6b800;
+
+// ### Business palette
+
+// Roadmap markers
+$roadmap-marker-blocked-background: $grey;
+$roadmap-marker-blocked-shadow: color.adjust(
+  $grey,
+  $lightness: core.$darken
+);
+$roadmap-marker-active-background: $green;
+$roadmap-marker-active-shadow: color.adjust(
+  $green,
+  $lightness: core.$darken
+);
+$roadmap-marker-done-background: $gold;
+$roadmap-marker-done-shadow: color.adjust(
+  $gold,
+  $lightness: core.$darken
+);

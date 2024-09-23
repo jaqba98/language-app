@@ -6,25 +6,25 @@ $classes: (
       width: 100px,
       height: 100px,
       border-radius: 100%,
-      transform: rotateX(30deg),
+      transform: rotateX(25deg),
     ),
     elements: (
       blocked: (
         styles: (
-          background-color: #bbb,
-          box-shadow: 0 0.5em #7f7f7f,
+          background-color: main.$roadmap-marker-blocked-background,
+          box-shadow: 0 0.5rem main.$roadmap-marker-blocked-shadow,
         ),
       ),
       active: (
         styles: (
-          background-color: #9be34a,
-          box-shadow: 0 0.5em #7fbf3f,
+          background-color: main.$roadmap-marker-active-background,
+          box-shadow: 0 0.5rem main.$roadmap-marker-active-shadow,
         ),
       ),
       done: (
         styles: (
-          background-color: #e6b800,
-          box-shadow: 0 0.5em #c90,
+          background-color: main.$roadmap-marker-done-background,
+          box-shadow: 0 0.5rem main.$roadmap-marker-done-shadow,
         ),
       ),
     ),
