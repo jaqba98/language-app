@@ -1,6 +1,6 @@
 @function build-bem-block($name: '') {
   @if $name == '' {
-    @error 'The block must not be empty in BEM methodology!';
+    @error 'The block must not be empty in BEM!';
   }
 
   @return '.#{$name}';

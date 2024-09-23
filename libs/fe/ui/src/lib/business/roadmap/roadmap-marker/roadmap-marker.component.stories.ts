@@ -5,18 +5,23 @@ import { RoadmapMarkerComponent } from './roadmap-marker.component';
 const meta: Meta<RoadmapMarkerComponent> = {
   component: RoadmapMarkerComponent,
   title: 'fe/ui/business/roadmap/roadmap-marker',
-  parameters: {
-    backgrounds: {
-      default: 'primary',
-    },
-  },
 };
 export default meta;
 type Story = StoryObj<RoadmapMarkerComponent>;
 
-export const Primary: Story = {};
+export const Blocked: Story = {
+  args: {
+    type: 'blocked',
+  },
+};
 
-export const Primary2: Story = {
+export const Active: Story = {
+  args: {
+    type: 'active',
+  },
+};
+
+export const Done: Story = {
   args: {
     type: 'done',
   },
