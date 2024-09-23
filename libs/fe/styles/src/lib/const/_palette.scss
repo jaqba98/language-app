@@ -14,16 +14,16 @@ $roadmap-marker: (
   blocked: (
     background-color: $grey,
     box-shadow: 0 0.5rem $grey,
-    border: 0.5rem solid color.adjust($grey, $lightness: core.$lightness),
+    border: color.adjust($grey, $lightness: core.$lightness),
   ),
   active: (
     background-color: $green,
     box-shadow: 0 0.5rem $green,
-    border: 0.5rem solid color.adjust($green, $lightness: core.$lightness),
+    border: color.adjust($green, $lightness: core.$lightness),
   ),
   done: (
     background-color: $gold,
     box-shadow: 0 0.5rem $gold,
-    border: 0.5rem solid color.adjust($gold, $lightness: core.$lightness),
+    border: color.adjust($gold, $lightness: core.$lightness),
   ),
 );
