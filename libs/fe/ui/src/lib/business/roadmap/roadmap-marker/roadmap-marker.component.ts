@@ -3,11 +3,12 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { RoadmapMarkerType } from './roadmap-marker.type';
 import { BemService } from '../../../service/bem.service';
+import { FontAwesomeComponent } from '../../../infrastructure/font-awesome/font-awesome.component';
 
 @Component({
   selector: 'lib-roadmap-marker',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, FontAwesomeComponent],
   templateUrl: './roadmap-marker.component.html',
   styleUrl: './roadmap-marker.component.scss',
 })
