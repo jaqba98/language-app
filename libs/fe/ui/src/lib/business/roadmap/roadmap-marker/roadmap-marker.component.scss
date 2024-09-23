@@ -2,11 +2,31 @@
 
 $classes: (
   roadmap-marker: (
-    styles: (),
+    styles: (
+      width: 100px,
+      height: 100px,
+      border-radius: 100%,
+      transform: rotateX(30deg),
+    ),
     elements: (
-      blocked: (),
-      active: (),
-      done: (),
+      blocked: (
+        styles: (
+          background-color: #bbb,
+          box-shadow: 0 0.5em #7f7f7f,
+        ),
+      ),
+      active: (
+        styles: (
+          background-color: #9be34a,
+          box-shadow: 0 0.5em #7fbf3f,
+        ),
+      ),
+      done: (
+        styles: (
+          background-color: #e6b800,
+          box-shadow: 0 0.5em #c90,
+        ),
+      ),
     ),
   ),
 );
