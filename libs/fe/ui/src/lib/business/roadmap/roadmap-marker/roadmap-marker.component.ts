@@ -1,23 +1,24 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
 
-import { IconComponent } from '../../../misc/icon/icon.component';
 import { RoadmapMarkerType } from './roadmap-marker.type';
+import { BemService } from '../../../service/bem.service';
 
 @Component({
   selector: 'lib-roadmap-marker',
   standalone: true,
-  imports: [CommonModule, IconComponent],
+  imports: [NgClass],
   templateUrl: './roadmap-marker.component.html',
   styleUrl: './roadmap-marker.component.scss',
 })
-export class RoadmapMarkerComponent {
+export class RoadmapMarkerComponent implements OnInit {
   @Input() type: RoadmapMarkerType = 'blocked';
 
-  getClasses() {
-    const roadmapMarkerType = `roadmap-marker__${this.type}`;
-    return {
-      [roadmapMarkerType]: true,
-    };
+  element = '';
+
+  constructor(private readonly bem: BemService) {}
+
+  ngOnInit() {
+    this.element = this.bem.buildBem('roadmap-marker', this.type);
   }
 }

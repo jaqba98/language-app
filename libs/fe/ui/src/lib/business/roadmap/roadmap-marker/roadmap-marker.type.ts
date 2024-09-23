@@ -1,1 +1,1 @@
-export type RoadmapMarkerType = 'blocked' | 'done';
+export type RoadmapMarkerType = 'blocked' | 'active' | 'done';

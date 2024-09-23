@@ -3,7 +3,7 @@ import type { Preview } from '@storybook/angular';
 const preview: Preview = {
   parameters: {
     backgrounds: {
-      default: 'accent',
+      default: 'primary',
       values: [
         {
           name: 'primary',
