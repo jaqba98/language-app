@@ -9,7 +9,9 @@
     {
       "files": ["**/*.scss"],
       "extends": ["stylelint-config-standard-scss"],
-      "rules": {}
+      "rules": {
+        "max-line-length": 90
+      }
     }
   ]
 }

@@ -16,8 +16,7 @@
         var i = 1 / 0;
         for (n = 0; n < e.length; n++) {
           for (var [r, o, l] = e[n], c = !0, s = 0; s < r.length; s++)
-            (!1 & l || i >= l) &&
-            Object.keys(a.O).every(p => a.O[p](r[s]))
+            (!1 & l || i >= l) && Object.keys(a.O).every(p => a.O[p](r[s]))
               ? r.splice(s--, 1)
               : ((c = !1), l < i && (i = l));
           if (c) {
@@ -29,8 +28,7 @@
         return f;
       }
       l = l || 0;
-      for (var n = e.length; n > 0 && e[n - 1][2] > l; n--)
-        e[n] = e[n - 1];
+      for (var n = e.length; n > 0 && e[n - 1][2] > l; n--) e[n] = e[n - 1];
       e[n] = [r, o, l];
     }),
     (a.o = (e, f) => Object.prototype.hasOwnProperty.call(e, f)),
@@ -52,7 +50,6 @@
         },
         r = (self.webpackChunkenglish_learning_fe =
           self.webpackChunkenglish_learning_fe || []);
-      r.forEach(f.bind(null, 0)),
-        (r.push = f.bind(null, r.push.bind(r)));
+      r.forEach(f.bind(null, 0)), (r.push = f.bind(null, r.push.bind(r)));
     })();
 })();

@@ -1,24 +1,10 @@
 import { CommonModule } from '@angular/common';
-import {
-  Component,
-  OnInit,
-  Input,
-  Output,
-  EventEmitter,
-} from '@angular/core';
-import {
-  ReactiveFormsModule,
-  FormGroup,
-  FormBuilder,
-  FormControl,
-} from '@angular/forms';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ReactiveFormsModule, FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Properties } from 'csstype';
 
 import { FlexComponent } from '../../layout/flex/flex.component';
-import {
-  BaseFormModel,
-  ControlType,
-} from '../../model/form/base-form.model';
+import { BaseFormModel, ControlType } from '../../model/form/base-form.model';
 import { InputComponent } from '../../control/input/input.component';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
@@ -129,10 +115,7 @@ export class BaseFormComponent implements OnInit {
   private buildFormControl(control: ControlType) {
     switch (control.kind) {
       case ControlKindEnum.input:
-        return new FormControl(
-          control.input.defaultValue,
-          control.validation.validators,
-        );
+        return new FormControl(control.input.defaultValue, control.validation.validators);
       case ControlKindEnum.buttonText:
       case ControlKindEnum.buttonIcon:
       case ControlKindEnum.buttonLink:

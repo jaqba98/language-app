@@ -1,6 +1,5 @@
 'use strict';
-(self.webpackChunkenglish_learning_fe =
-  self.webpackChunkenglish_learning_fe || []).push([
+(self.webpackChunkenglish_learning_fe = self.webpackChunkenglish_learning_fe || []).push([
   [461],
   {
     357: () => {
@@ -38,14 +37,10 @@
       }
       function ze(t) {
         return (
-          !t ||
-          (!1 !== t.writable &&
-            !('function' == typeof t.get && typeof t.set > 'u'))
+          !t || (!1 !== t.writable && !('function' == typeof t.get && typeof t.set > 'u'))
         );
       }
-      const qe =
-          typeof WorkerGlobalScope < 'u' &&
-          self instanceof WorkerGlobalScope,
+      const qe = typeof WorkerGlobalScope < 'u' && self instanceof WorkerGlobalScope,
         Pe =
           !('nw' in J) &&
           typeof J.process < 'u' &&
@@ -67,15 +62,7 @@
           return (
             Ge && c === de && 'error' === t.type
               ? ((i =
-                  n &&
-                  n.call(
-                    this,
-                    t.message,
-                    t.filename,
-                    t.lineno,
-                    t.colno,
-                    t.error,
-                  )),
+                  n && n.call(this, t.message, t.filename, t.lineno, t.colno, t.error)),
                 !0 === i && t.preventDefault())
               : ((i = n && n.apply(this, arguments)),
                 null != i && !i && t.preventDefault()),
@@ -85,10 +72,7 @@
       function $e(t, r, c) {
         let n = ye(t, r);
         if (
-          (!n &&
-            c &&
-            ye(c, r) &&
-            (n = { enumerable: !0, configurable: !0 }),
+          (!n && c && ye(c, r) && (n = { enumerable: !0, configurable: !0 }),
           !n || !n.configurable)
         )
           return;
@@ -104,12 +88,10 @@
             let T = this;
             !T && t === J && (T = J),
               T &&
-                ('function' == typeof T[p] &&
-                  T.removeEventListener(E, Ye),
+                ('function' == typeof T[p] && T.removeEventListener(E, Ye),
                 _ && _.call(T, null),
                 (T[p] = C),
-                'function' == typeof C &&
-                  T.addEventListener(E, Ye, !1));
+                'function' == typeof C && T.addEventListener(E, Ye, !1));
           }),
           (n.get = function () {
             let C = this;
@@ -131,8 +113,7 @@
           (t[i] = !0);
       }
       function Je(t, r, c) {
-        if (r)
-          for (let n = 0; n < r.length; n++) $e(t, 'on' + r[n], c);
+        if (r) for (let n = 0; n < r.length; n++) $e(t, 'on' + r[n], c);
         else {
           const n = [];
           for (const i in t) 'on' == i.slice(0, 2) && n.push(i);
@@ -179,8 +160,7 @@
                 : Ne(J[t].prototype, i, {
                     set: function (u) {
                       'function' == typeof u
-                        ? ((this[ne][i] = je(u, t + '.' + i)),
-                          ue(this[ne][i], u))
+                        ? ((this[ne][i] = je(u, t + '.' + i)), ue(this[ne][i], u))
                         : (this[ne][i] = u);
                     },
                     get: function () {
@@ -188,10 +168,7 @@
                     },
                   });
             })(n);
-        for (n in r)
-          'prototype' !== n &&
-            r.hasOwnProperty(n) &&
-            (J[t][n] = r[n]);
+        for (n in r) 'prototype' !== n && r.hasOwnProperty(n) && (J[t][n] = r[n]);
       }
       function le(t, r, c) {
         let n = t;
@@ -261,8 +238,7 @@
               _e = !0;
             },
           });
-          window.addEventListener('test', t, t),
-            window.removeEventListener('test', t, t);
+          window.addEventListener('test', t, t), window.removeEventListener('test', t, t);
         } catch {
           _e = !1;
         }
@@ -293,8 +269,7 @@
             let Y;
             'object' == typeof z &&
               z.handleEvent &&
-              ((b.callback = g => z.handleEvent(g)),
-              (b.originalDelegate = z));
+              ((b.callback = g => z.handleEvent(g)), (b.originalDelegate = z));
             try {
               b.invoke(b, h, [F]);
             } catch (g) {
@@ -308,9 +283,7 @@
                 h[u].call(
                   h,
                   F.type,
-                  b.originalDelegate
-                    ? b.originalDelegate
-                    : b.callback,
+                  b.originalDelegate ? b.originalDelegate : b.callback,
                   B,
                 ),
               Y
@@ -327,11 +300,7 @@
               g && B.push(g);
             } else {
               const g = Y.slice();
-              for (
-                let U = 0;
-                U < g.length && (!h || !0 !== h[tt]);
-                U++
-              ) {
+              for (let U = 0; U < g.length && (!h || !0 !== h[tt]); U++) {
                 const O = P(g[U], z, h);
                 O && B.push(O);
               }
@@ -374,20 +343,10 @@
           const $ = F
               ? function (s) {
                   if (!O.isExisting)
-                    return w.call(
-                      O.target,
-                      O.eventName,
-                      O.capture ? x : W,
-                      O.options,
-                    );
+                    return w.call(O.target, O.eventName, O.capture ? x : W, O.options);
                 }
               : function (s) {
-                  return w.call(
-                    O.target,
-                    O.eventName,
-                    s.invoke,
-                    O.options,
-                  );
+                  return w.call(O.target, O.eventName, s.invoke, O.options);
                 },
             A = F
               ? function (s) {
@@ -402,29 +361,16 @@
                           R.splice(y, 1),
                             (s.isRemoved = !0),
                             s.removeAbortListener &&
-                              (s.removeAbortListener(),
-                              (s.removeAbortListener = null)),
-                            0 === R.length &&
-                              ((s.allRemoved = !0),
-                              (s.target[k] = null));
+                              (s.removeAbortListener(), (s.removeAbortListener = null)),
+                            0 === R.length && ((s.allRemoved = !0), (s.target[k] = null));
                           break;
                         }
                   }
                   if (s.allRemoved)
-                    return v.call(
-                      s.target,
-                      s.eventName,
-                      s.capture ? x : W,
-                      s.options,
-                    );
+                    return v.call(s.target, s.eventName, s.capture ? x : W, s.options);
                 }
               : function (s) {
-                  return v.call(
-                    s.target,
-                    s.eventName,
-                    s.invoke,
-                    s.options,
-                  );
+                  return v.call(s.target, s.eventName, s.invoke, s.options);
                 },
             ke =
               h && h.diff
@@ -442,13 +388,10 @@
               return function () {
                 const L = this || t;
                 let M = arguments[0];
-                h &&
-                  h.transferEventName &&
-                  (M = h.transferEventName(M));
+                h && h.transferEventName && (M = h.transferEventName(M));
                 let G = arguments[1];
                 if (!G) return s.apply(this, arguments);
-                if (Pe && 'uncaughtException' === M)
-                  return s.apply(this, arguments);
+                if (Pe && 'uncaughtException' === M) return s.apply(this, arguments);
                 let V = !1;
                 if ('function' != typeof G) {
                   if (!G.handleEvent) return s.apply(this, arguments);
@@ -482,11 +425,8 @@
                 if (he)
                   for (let ie = 0; ie < he.length; ie++)
                     if (M === he[ie])
-                      return fe
-                        ? s.call(L, M, G, se)
-                        : s.apply(this, arguments);
-                const Be =
-                    !!se && ('boolean' == typeof se || se.capture),
+                      return fe ? s.call(L, M, G, se) : s.apply(this, arguments);
+                const Be = !!se && ('boolean' == typeof se || se.capture),
                   ct = !(!se || 'object' != typeof se) && se.once,
                   Lt = Zone.current;
                 let Ue = te[M];
@@ -497,8 +437,7 @@
                   lt = !1;
                 if (ge) {
                   if (((lt = !0), Y))
-                    for (let ie = 0; ie < ge.length; ie++)
-                      if (ke(ge[ie], G)) return;
+                    for (let ie = 0; ie < ge.length; ie++) if (ke(ge[ie], G)) return;
                 } else ge = L[at] = [];
                 const ut = L.constructor.name,
                   ft = Qe[ut];
@@ -511,22 +450,19 @@
                   (O.eventName = M),
                   (O.isExisting = lt);
                 const ve = F ? pt : void 0;
-                ve && (ve.taskData = O),
-                  Te && (O.options.signal = void 0);
+                ve && (ve.taskData = O), Te && (O.options.signal = void 0);
                 const oe = Lt.scheduleEventTask(De, G, ve, k, R);
                 if (Te) {
                   O.options.signal = Te;
                   const ie = () => oe.zone.cancelTask(oe);
                   s.call(Te, 'abort', ie, { once: !0 }),
-                    (oe.removeAbortListener = () =>
-                      Te.removeEventListener('abort', ie));
+                    (oe.removeAbortListener = () => Te.removeEventListener('abort', ie));
                 }
                 return (
                   (O.target = null),
                   ve && (ve.taskData = null),
                   ct && (O.options.once = !0),
-                  (!_e && 'boolean' == typeof oe.options) ||
-                    (oe.options = se),
+                  (!_e && 'boolean' == typeof oe.options) || (oe.options = se),
                   (oe.target = L),
                   (oe.capture = Be),
                   (oe.eventName = M),
@@ -543,12 +479,7 @@
                 q,
                 Z,
                 function (s) {
-                  return q.call(
-                    O.target,
-                    O.eventName,
-                    s.invoke,
-                    O.options,
-                  );
+                  return q.call(O.target, O.eventName, s.invoke, O.options);
                 },
                 A,
                 B,
@@ -557,9 +488,7 @@
             (g[u] = function () {
               const s = this || t;
               let l = arguments[0];
-              h &&
-                h.transferEventName &&
-                (l = h.transferEventName(l));
+              h && h.transferEventName && (l = h.transferEventName(l));
               const k = arguments[2],
                 R = !!k && ('boolean' == typeof k || k.capture),
                 y = arguments[1];
@@ -577,9 +506,7 @@
                       M.splice(G, 1),
                       (V.isRemoved = !0),
                       0 !== M.length ||
-                        ((V.allRemoved = !0),
-                        (s[L] = null),
-                        R || 'string' != typeof l) ||
+                        ((V.allRemoved = !0), (s[L] = null), R || 'string' != typeof l) ||
                         (s[pe + 'ON_PROPERTY' + l] = null),
                       V.zone.cancelTask(V),
                       B ? s : void 0
@@ -590,18 +517,12 @@
             (g[_] = function () {
               const s = this || t;
               let l = arguments[0];
-              h &&
-                h.transferEventName &&
-                (l = h.transferEventName(l));
+              h && h.transferEventName && (l = h.transferEventName(l));
               const k = [],
                 R = rt(s, U ? U(l) : l);
               for (let y = 0; y < R.length; y++) {
                 const I = R[y];
-                k.push(
-                  I.originalDelegate
-                    ? I.originalDelegate
-                    : I.callback,
-                );
+                k.push(I.originalDelegate ? I.originalDelegate : I.callback);
               }
               return k;
             }),
@@ -609,9 +530,7 @@
               const s = this || t;
               let l = arguments[0];
               if (l) {
-                h &&
-                  h.transferEventName &&
-                  (l = h.transferEventName(l));
+                h && h.transferEventName && (l = h.transferEventName(l));
                 const k = te[l];
                 if (k) {
                   const I = s[k[ae]],
@@ -623,9 +542,7 @@
                       this[u].call(
                         this,
                         l,
-                        V.originalDelegate
-                          ? V.originalDelegate
-                          : V.callback,
+                        V.originalDelegate ? V.originalDelegate : V.callback,
                         V.options,
                       );
                     }
@@ -637,9 +554,7 @@
                       this[u].call(
                         this,
                         l,
-                        V.originalDelegate
-                          ? V.originalDelegate
-                          : V.callback,
+                        V.originalDelegate ? V.originalDelegate : V.callback,
                         V.options,
                       );
                     }
@@ -650,9 +565,7 @@
                 for (let R = 0; R < k.length; R++) {
                   const I = et.exec(k[R]);
                   let L = I && I[1];
-                  L &&
-                    'removeListener' !== L &&
-                    this[E].call(this, L);
+                  L && 'removeListener' !== L && this[E].call(this, L);
                 }
                 this[E].call(this, 'removeListener');
               }
@@ -728,10 +641,7 @@
               if ('function' == typeof Z[0]) {
                 const P = {
                     isPeriodic: 'Interval' === n,
-                    delay:
-                      'Timeout' === n || 'Interval' === n
-                        ? Z[1] || 0
-                        : void 0,
+                    delay: 'Timeout' === n || 'Interval' === n ? Z[1] || 0 : void 0,
                     args: Z,
                   },
                   j = Z[0];
@@ -749,16 +659,13 @@
                 if (!W) return W;
                 const x = W.data.handleId;
                 return (
-                  'number' == typeof x
-                    ? (_[x] = W)
-                    : x && (x[Re] = W),
+                  'number' == typeof x ? (_[x] = W) : x && (x[Re] = W),
                   x &&
                     x.ref &&
                     x.unref &&
                     'function' == typeof x.ref &&
                     'function' == typeof x.unref &&
-                    ((W.ref = x.ref.bind(x)),
-                    (W.unref = x.unref.bind(x))),
+                    ((W.ref = x.ref.bind(x)), (W.unref = x.unref.bind(x))),
                   'number' == typeof x || x ? x : W
                 );
               }
@@ -772,16 +679,11 @@
               function (T, Z) {
                 const P = Z[0];
                 let j;
-                'number' == typeof P
-                  ? (j = _[P])
-                  : ((j = P && P[Re]), j || (j = P)),
+                'number' == typeof P ? (j = _[P]) : ((j = P && P[Re]), j || (j = P)),
                   j && 'string' == typeof j.type
                     ? 'notScheduled' !== j.state &&
-                      ((j.cancelFn && j.data.isPeriodic) ||
-                        0 === j.runCount) &&
-                      ('number' == typeof P
-                        ? delete _[P]
-                        : P && (P[Re] = null),
+                      ((j.cancelFn && j.data.isPeriodic) || 0 === j.runCount) &&
+                      ('number' == typeof P ? delete _[P] : P && (P[Re] = null),
                       j.zone.cancelTask(j))
                     : C.apply(t, Z);
               },
@@ -817,13 +719,9 @@
                   if (P.hasOwnProperty(T)) {
                     const j = t.ObjectGetOwnPropertyDescriptor(P, T);
                     j && j.value
-                      ? ((j.value = t.wrapWithCurrentZone(
-                          j.value,
-                          Z,
-                        )),
+                      ? ((j.value = t.wrapWithCurrentZone(j.value, Z)),
                         t._redefineProperty(p.prototype, T, j))
-                      : P[T] &&
-                        (P[T] = t.wrapWithCurrentZone(P[T], Z));
+                      : P[T] && (P[T] = t.wrapWithCurrentZone(P[T], Z));
                   } else P[T] && (P[T] = t.wrapWithCurrentZone(P[T], Z));
                 } catch {}
               }),
@@ -870,8 +768,7 @@
                 static __load_patch(e, o, m = !1) {
                   if (O.hasOwnProperty(e)) {
                     const D = !0 === ee[Q('forceDuplicateZoneCheck')];
-                    if (!m && D)
-                      throw Error('Already loaded patch: ' + e);
+                    if (!m && D) throw Error('Already loaded patch: ' + e);
                   } else if (!ee['__Zone_disable_' + e]) {
                     const D = 'Zone:' + e;
                     r(D), (O[e] = o(ee, N, w)), c(D, D);
@@ -921,13 +818,7 @@
                 run(e, o, m, D) {
                   v = { parent: v, zone: this };
                   try {
-                    return this._zoneDelegate.invoke(
-                      this,
-                      e,
-                      o,
-                      m,
-                      D,
-                    );
+                    return this._zoneDelegate.invoke(this, e, o, m, D);
                   } finally {
                     v = v.parent;
                   }
@@ -936,16 +827,9 @@
                   v = { parent: v, zone: this };
                   try {
                     try {
-                      return this._zoneDelegate.invoke(
-                        this,
-                        e,
-                        o,
-                        m,
-                        D,
-                      );
+                      return this._zoneDelegate.invoke(this, e, o, m, D);
                     } catch ($) {
-                      if (this._zoneDelegate.handleError(this, $))
-                        throw $;
+                      if (this._zoneDelegate.handleError(this, $)) throw $;
                     }
                   } finally {
                     v = v.parent;
@@ -960,27 +844,17 @@
                         this.name +
                         ')',
                     );
-                  if (e.state === X && (e.type === U || e.type === g))
-                    return;
+                  if (e.state === X && (e.type === U || e.type === g)) return;
                   const D = e.state != F;
                   D && e._transitionTo(F, h), e.runCount++;
                   const $ = S;
                   (S = e), (v = { parent: v, zone: this });
                   try {
-                    e.type == g &&
-                      e.data &&
-                      !e.data.isPeriodic &&
-                      (e.cancelFn = void 0);
+                    e.type == g && e.data && !e.data.isPeriodic && (e.cancelFn = void 0);
                     try {
-                      return this._zoneDelegate.invokeTask(
-                        this,
-                        e,
-                        o,
-                        m,
-                      );
+                      return this._zoneDelegate.invokeTask(this, e, o, m);
                     } catch (A) {
-                      if (this._zoneDelegate.handleError(this, A))
-                        throw A;
+                      if (this._zoneDelegate.handleError(this, A)) throw A;
                     }
                   } finally {
                     e.state !== X &&
@@ -1018,16 +892,13 @@
                     );
                   }
                   return (
-                    e._zoneDelegates === o &&
-                      this._updateTaskCount(e, 1),
+                    e._zoneDelegates === o && this._updateTaskCount(e, 1),
                     e.state == b && e._transitionTo(h, b),
                     e
                   );
                 }
                 scheduleMicroTask(e, o, m, D) {
-                  return this.scheduleTask(
-                    new _(B, e, o, m, D, void 0),
-                  );
+                  return this.scheduleTask(new _(B, e, o, m, D, void 0));
                 }
                 scheduleMacroTask(e, o, m, D, $) {
                   return this.scheduleTask(new _(g, e, o, m, D, $));
@@ -1066,8 +937,7 @@
                 _updateTaskCount(e, o) {
                   const m = e._zoneDelegates;
                   -1 == o && (e._zoneDelegates = null);
-                  for (let D = 0; D < m.length; D++)
-                    m[D]._updateTaskCount(e.type, o);
+                  for (let D = 0; D < m.length; D++) m[D]._updateTaskCount(e.type, o);
                 }
               }
               return N;
@@ -1076,8 +946,7 @@
               name: '',
               onHasTask: (N, d, e, o) => N.hasTask(e, o),
               onScheduleTask: (N, d, e, o) => N.scheduleTask(e, o),
-              onInvokeTask: (N, d, e, o, m, D) =>
-                N.invokeTask(e, o, m, D),
+              onInvokeTask: (N, d, e, o, m, D) => N.invokeTask(e, o, m, D),
               onCancelTask: (N, d, e, o) => N.cancelTask(e, o),
             };
             class u {
@@ -1092,65 +961,36 @@
                 }),
                   (this._zone = d),
                   (this._parentDelegate = e),
-                  (this._forkZS =
-                    o && (o && o.onFork ? o : e._forkZS)),
-                  (this._forkDlgt =
-                    o && (o.onFork ? e : e._forkDlgt)),
-                  (this._forkCurrZone =
-                    o && (o.onFork ? this._zone : e._forkCurrZone)),
-                  (this._interceptZS =
-                    o && (o.onIntercept ? o : e._interceptZS)),
-                  (this._interceptDlgt =
-                    o && (o.onIntercept ? e : e._interceptDlgt)),
+                  (this._forkZS = o && (o && o.onFork ? o : e._forkZS)),
+                  (this._forkDlgt = o && (o.onFork ? e : e._forkDlgt)),
+                  (this._forkCurrZone = o && (o.onFork ? this._zone : e._forkCurrZone)),
+                  (this._interceptZS = o && (o.onIntercept ? o : e._interceptZS)),
+                  (this._interceptDlgt = o && (o.onIntercept ? e : e._interceptDlgt)),
                   (this._interceptCurrZone =
-                    o &&
-                    (o.onIntercept
-                      ? this._zone
-                      : e._interceptCurrZone)),
-                  (this._invokeZS =
-                    o && (o.onInvoke ? o : e._invokeZS)),
-                  (this._invokeDlgt =
-                    o && (o.onInvoke ? e : e._invokeDlgt)),
+                    o && (o.onIntercept ? this._zone : e._interceptCurrZone)),
+                  (this._invokeZS = o && (o.onInvoke ? o : e._invokeZS)),
+                  (this._invokeDlgt = o && (o.onInvoke ? e : e._invokeDlgt)),
                   (this._invokeCurrZone =
-                    o &&
-                    (o.onInvoke ? this._zone : e._invokeCurrZone)),
-                  (this._handleErrorZS =
-                    o && (o.onHandleError ? o : e._handleErrorZS)),
+                    o && (o.onInvoke ? this._zone : e._invokeCurrZone)),
+                  (this._handleErrorZS = o && (o.onHandleError ? o : e._handleErrorZS)),
                   (this._handleErrorDlgt =
                     o && (o.onHandleError ? e : e._handleErrorDlgt)),
                   (this._handleErrorCurrZone =
-                    o &&
-                    (o.onHandleError
-                      ? this._zone
-                      : e._handleErrorCurrZone)),
+                    o && (o.onHandleError ? this._zone : e._handleErrorCurrZone)),
                   (this._scheduleTaskZS =
                     o && (o.onScheduleTask ? o : e._scheduleTaskZS)),
                   (this._scheduleTaskDlgt =
-                    o &&
-                    (o.onScheduleTask ? e : e._scheduleTaskDlgt)),
+                    o && (o.onScheduleTask ? e : e._scheduleTaskDlgt)),
                   (this._scheduleTaskCurrZone =
-                    o &&
-                    (o.onScheduleTask
-                      ? this._zone
-                      : e._scheduleTaskCurrZone)),
-                  (this._invokeTaskZS =
-                    o && (o.onInvokeTask ? o : e._invokeTaskZS)),
-                  (this._invokeTaskDlgt =
-                    o && (o.onInvokeTask ? e : e._invokeTaskDlgt)),
+                    o && (o.onScheduleTask ? this._zone : e._scheduleTaskCurrZone)),
+                  (this._invokeTaskZS = o && (o.onInvokeTask ? o : e._invokeTaskZS)),
+                  (this._invokeTaskDlgt = o && (o.onInvokeTask ? e : e._invokeTaskDlgt)),
                   (this._invokeTaskCurrZone =
-                    o &&
-                    (o.onInvokeTask
-                      ? this._zone
-                      : e._invokeTaskCurrZone)),
-                  (this._cancelTaskZS =
-                    o && (o.onCancelTask ? o : e._cancelTaskZS)),
-                  (this._cancelTaskDlgt =
-                    o && (o.onCancelTask ? e : e._cancelTaskDlgt)),
+                    o && (o.onInvokeTask ? this._zone : e._invokeTaskCurrZone)),
+                  (this._cancelTaskZS = o && (o.onCancelTask ? o : e._cancelTaskZS)),
+                  (this._cancelTaskDlgt = o && (o.onCancelTask ? e : e._cancelTaskDlgt)),
                   (this._cancelTaskCurrZone =
-                    o &&
-                    (o.onCancelTask
-                      ? this._zone
-                      : e._cancelTaskCurrZone)),
+                    o && (o.onCancelTask ? this._zone : e._cancelTaskCurrZone)),
                   (this._hasTaskZS = null),
                   (this._hasTaskDlgt = null),
                   (this._hasTaskDlgtOwner = null),
@@ -1176,12 +1016,7 @@
               }
               fork(d, e) {
                 return this._forkZS
-                  ? this._forkZS.onFork(
-                      this._forkDlgt,
-                      this.zone,
-                      d,
-                      e,
-                    )
+                  ? this._forkZS.onFork(this._forkDlgt, this.zone, d, e)
                   : new n(d, e);
               }
               intercept(d, e, o) {
@@ -1222,8 +1057,7 @@
               scheduleTask(d, e) {
                 let o = e;
                 if (this._scheduleTaskZS)
-                  this._hasTaskZS &&
-                    o._zoneDelegates.push(this._hasTaskDlgtOwner),
+                  this._hasTaskZS && o._zoneDelegates.push(this._hasTaskDlgtOwner),
                     (o = this._scheduleTaskZS.onScheduleTask(
                       this._scheduleTaskDlgt,
                       this._scheduleTaskCurrZone,
@@ -1233,8 +1067,7 @@
                     o || (o = e);
                 else if (e.scheduleFn) e.scheduleFn(e);
                 else {
-                  if (e.type != B)
-                    throw new Error('Task is missing scheduleFn.');
+                  if (e.type != B) throw new Error('Task is missing scheduleFn.');
                   W(e);
                 }
                 return o;
@@ -1261,8 +1094,7 @@
                     e,
                   );
                 else {
-                  if (!e.cancelFn)
-                    throw Error('Task is not cancelable');
+                  if (!e.cancelFn) throw Error('Task is not cancelable');
                   o = e.cancelFn(e);
                 }
                 return o;
@@ -1284,10 +1116,7 @@
                 const o = this._taskCounts,
                   m = o[d],
                   D = (o[d] = m + e);
-                if (D < 0)
-                  throw new Error(
-                    'More tasks executed then were scheduled.',
-                  );
+                if (D < 0) throw new Error('More tasks executed then were scheduled.');
                 (0 != m && 0 != D) ||
                   this.hasTask(this._zone, {
                     microTask: o.microTask > 0,
@@ -1318,12 +1147,7 @@
                   d === U && m && m.useG
                     ? _.invokeTask
                     : function () {
-                        return _.invokeTask.call(
-                          ee,
-                          A,
-                          this,
-                          arguments,
-                        );
+                        return _.invokeTask.call(ee, A, this, arguments);
                       };
               }
               static invokeTask(d, e, o) {
@@ -1352,8 +1176,7 @@
                       o ? " or '" + o + "'" : ''
                     }, was '${this._state}'.`,
                   );
-                (this._state = d),
-                  d == X && (this._zoneDelegates = null);
+                (this._state = d), d == X && (this._zoneDelegates = null);
               }
               toString() {
                 return this.data && typeof this.data.handleId < 'u'
@@ -1419,8 +1242,7 @@
                 onUnhandledError: q,
                 microtaskDrainDone: q,
                 scheduleMicroTask: W,
-                showUncaughtError: () =>
-                  !n[Q('ignoreConsoleErrorUncaughtError')],
+                showUncaughtError: () => !n[Q('ignoreConsoleErrorUncaughtError')],
                 patchEventTarget: () => [],
                 patchOnProperties: q,
                 patchMethod: () => q,
@@ -1458,9 +1280,7 @@
               u = Object.defineProperty,
               E = n.symbol,
               p = [],
-              C =
-                !1 !==
-                r[E('DISABLE_WRAPPING_UNCAUGHT_PROMISE_REJECTION')],
+              C = !1 !== r[E('DISABLE_WRAPPING_UNCAUGHT_PROMISE_REJECTION')],
               T = E('Promise'),
               Z = E('then'),
               P = '__creationTrace__';
@@ -1546,8 +1366,7 @@
               if (f[b] === g) {
                 let k = null;
                 try {
-                  ('object' == typeof s || 'function' == typeof s) &&
-                    (k = s && s.then);
+                  ('object' == typeof s || 'function' == typeof s) && (k = s && s.then);
                 } catch (R) {
                   return (
                     l(() => {
@@ -1577,15 +1396,11 @@
                   const R = f[h];
                   if (
                     ((f[h] = s),
-                    f[F] === F &&
-                      a === U &&
-                      ((f[b] = f[Y]), (f[h] = f[z])),
+                    f[F] === F && a === U && ((f[b] = f[Y]), (f[h] = f[z])),
                     a === O && s instanceof Error)
                   ) {
                     const y =
-                      c.currentTask &&
-                      c.currentTask.data &&
-                      c.currentTask.data[P];
+                      c.currentTask && c.currentTask.data && c.currentTask.data[P];
                     y &&
                       u(s, q, {
                         configurable: !0,
@@ -1594,8 +1409,7 @@
                         value: y,
                       });
                   }
-                  for (let y = 0; y < R.length; )
-                    o(f, R[y++], R[y++], R[y++], R[y++]);
+                  for (let y = 0; y < R.length; ) o(f, R[y++], R[y++], R[y++], R[y++]);
                   if (0 == R.length && a == O) {
                     f[b] = w;
                     let y = s;
@@ -1603,11 +1417,8 @@
                       throw new Error(
                         'Uncaught (in promise): ' +
                           (function _(f) {
-                            return f &&
-                              f.toString === Object.prototype.toString
-                              ? ((f.constructor &&
-                                  f.constructor.name) ||
-                                  '') +
+                            return f && f.toString === Object.prototype.toString
+                              ? ((f.constructor && f.constructor.name) || '') +
                                   ': ' +
                                   JSON.stringify(f)
                               : f
@@ -1641,8 +1452,7 @@
                     a.call(this, { rejection: f[h], promise: f });
                 } catch {}
                 f[b] = O;
-                for (let a = 0; a < p.length; a++)
-                  f === p[a].promise && p.splice(a, 1);
+                for (let a = 0; a < p.length; a++) f === p[a].promise && p.splice(a, 1);
               }
             }
             function o(f, a, s, l, k) {
@@ -1662,11 +1472,7 @@
                     const I = f[h],
                       L = !!s && F === s[F];
                     L && ((s[z] = I), (s[Y] = R));
-                    const M = a.run(
-                      y,
-                      void 0,
-                      L && y !== X && y !== re ? [] : [I],
-                    );
+                    const M = a.run(y, void 0, L && y !== X && y !== re ? [] : [I]);
                     N(s, !0, M);
                   } catch (I) {
                     N(s, !1, I);
@@ -1698,22 +1504,16 @@
               }
               static any(a) {
                 if (!a || 'function' != typeof a[Symbol.iterator])
-                  return Promise.reject(
-                    new $([], 'All promises were rejected'),
-                  );
+                  return Promise.reject(new $([], 'All promises were rejected'));
                 const s = [];
                 let l = 0;
                 try {
                   for (let y of a) l++, s.push(A.resolve(y));
                 } catch {
-                  return Promise.reject(
-                    new $([], 'All promises were rejected'),
-                  );
+                  return Promise.reject(new $([], 'All promises were rejected'));
                 }
                 if (0 === l)
-                  return Promise.reject(
-                    new $([], 'All promises were rejected'),
-                  );
+                  return Promise.reject(new $([], 'All promises were rejected'));
                 let k = !1;
                 const R = [];
                 return new A((y, I) => {
@@ -1726,10 +1526,7 @@
                         R.push(M),
                           l--,
                           0 === l &&
-                            ((k = !0),
-                            I(
-                              new $(R, 'All promises were rejected'),
-                            ));
+                            ((k = !0), I(new $(R, 'All promises were rejected')));
                       },
                     );
                 });
@@ -1746,26 +1543,26 @@
                 function y(I) {
                   l(I);
                 }
-                for (let I of a)
-                  x(I) || (I = this.resolve(I)), I.then(R, y);
+                for (let I of a) x(I) || (I = this.resolve(I)), I.then(R, y);
                 return k;
               }
               static all(a) {
                 return A.allWithCallback(a);
               }
               static allSettled(a) {
-                return (
-                  this && this.prototype instanceof A ? this : A
-                ).allWithCallback(a, {
-                  thenCallback: l => ({
-                    status: 'fulfilled',
-                    value: l,
-                  }),
-                  errorCallback: l => ({
-                    status: 'rejected',
-                    reason: l,
-                  }),
-                });
+                return (this && this.prototype instanceof A ? this : A).allWithCallback(
+                  a,
+                  {
+                    thenCallback: l => ({
+                      status: 'fulfilled',
+                      value: l,
+                    }),
+                    errorCallback: l => ({
+                      status: 'rejected',
+                      reason: l,
+                    }),
+                  },
+                );
               }
               static allWithCallback(a, s) {
                 let l,
@@ -1782,16 +1579,10 @@
                   try {
                     M.then(
                       V => {
-                        (L[G] = s ? s.thenCallback(V) : V),
-                          y--,
-                          0 === y && l(L);
+                        (L[G] = s ? s.thenCallback(V) : V), y--, 0 === y && l(L);
                       },
                       V => {
-                        s
-                          ? ((L[G] = s.errorCallback(V)),
-                            y--,
-                            0 === y && l(L))
-                          : k(V);
+                        s ? ((L[G] = s.errorCallback(V)), y--, 0 === y && l(L)) : k(V);
                       },
                     );
                   } catch (V) {
@@ -1803,8 +1594,7 @@
               }
               constructor(a) {
                 const s = this;
-                if (!(s instanceof A))
-                  throw new Error('Must be an instanceof Promise.');
+                if (!(s instanceof A)) throw new Error('Must be an instanceof Promise.');
                 (s[b] = g), (s[h] = []);
                 try {
                   const l = S();
@@ -1821,16 +1611,10 @@
               }
               then(a, s) {
                 let l = this.constructor?.[Symbol.species];
-                (!l || 'function' != typeof l) &&
-                  (l = this.constructor || A);
+                (!l || 'function' != typeof l) && (l = this.constructor || A);
                 const k = new l(D),
                   R = c.current;
-                return (
-                  this[b] == g
-                    ? this[h].push(R, k, a, s)
-                    : o(this, R, k, a, s),
-                  k
-                );
+                return this[b] == g ? this[h].push(R, k, a, s) : o(this, R, k, a, s), k;
               }
               catch(a) {
                 return this.then(null, a);
@@ -1841,12 +1625,7 @@
                 const l = new s(D);
                 l[F] = F;
                 const k = c.current;
-                return (
-                  this[b] == g
-                    ? this[h].push(k, l, a, a)
-                    : o(this, k, l, a, a),
-                  l
-                );
+                return this[b] == g ? this[h].push(k, l, a, a) : o(this, k, l, a, a), l;
               }
             }
             (A.resolve = A.resolve),
@@ -1915,8 +1694,7 @@
               (_[n] = c), (Function.prototype.toString = _);
               const E = Object.prototype.toString;
               Object.prototype.toString = function () {
-                return 'function' == typeof Promise &&
-                  this instanceof Promise
+                return 'function' == typeof Promise && this instanceof Promise
                   ? '[object Promise]'
                   : E.call(this);
               };
@@ -1970,19 +1748,12 @@
             t.__load_patch('timers', r => {
               const c = 'set',
                 n = 'clear';
-              Ee(r, c, n, 'Timeout'),
-                Ee(r, c, n, 'Interval'),
-                Ee(r, c, n, 'Immediate');
+              Ee(r, c, n, 'Timeout'), Ee(r, c, n, 'Interval'), Ee(r, c, n, 'Immediate');
             }),
             t.__load_patch('requestAnimationFrame', r => {
               Ee(r, 'request', 'cancel', 'AnimationFrame'),
                 Ee(r, 'mozRequest', 'mozCancel', 'AnimationFrame'),
-                Ee(
-                  r,
-                  'webkitRequest',
-                  'webkitCancel',
-                  'AnimationFrame',
-                );
+                Ee(r, 'webkitRequest', 'webkitCancel', 'AnimationFrame');
             }),
             t.__load_patch('blocking', (r, c) => {
               const n = ['alert', 'prompt', 'confirm'];
@@ -2016,14 +1787,10 @@
                     (n[C] = {}), (n[C][u] = P), (n[C][i] = j);
                   }
                   const E = t.EventTarget;
-                  E &&
-                    E.prototype &&
-                    r.patchEventTarget(t, r, [E && E.prototype]);
+                  E && E.prototype && r.patchEventTarget(t, r, [E && E.prototype]);
                 })(r, n);
               const i = r.XMLHttpRequestEventTarget;
-              i &&
-                i.prototype &&
-                n.patchEventTarget(r, n, [i.prototype]);
+              i && i.prototype && n.patchEventTarget(r, n, [i.prototype]);
             }),
             t.__load_patch('MutationObserver', (r, c, n) => {
               me('MutationObserver'), me('WebKitMutationObserver');
@@ -2036,8 +1803,7 @@
             }),
             t.__load_patch('on_property', (r, c, n) => {
               !(function Rt(t, r) {
-                if ((Pe && !Xe) || Zone[t.symbol('patchEvents')])
-                  return;
+                if ((Pe && !Xe) || Zone[t.symbol('patchEvents')]) return;
                 const c = r.__Zone_ignore_on_properties;
                 let n = [];
                 if (Ge) {
@@ -2058,10 +1824,7 @@
                   const u = (function gt() {
                     try {
                       const t = de.navigator.userAgent;
-                      if (
-                        -1 !== t.indexOf('MSIE ') ||
-                        -1 !== t.indexOf('Trident/')
-                      )
+                      if (-1 !== t.indexOf('MSIE ') || -1 !== t.indexOf('Trident/'))
                         return !0;
                     } catch {}
                     return !1;
@@ -2083,35 +1846,26 @@
                 ]);
                 for (let i = 0; i < n.length; i++) {
                   const u = r[n[i]];
-                  u &&
-                    u.prototype &&
-                    st(u.prototype, Fe(u.prototype), c);
+                  u && u.prototype && st(u.prototype, Fe(u.prototype), c);
                 }
               })(n, r);
             }),
             t.__load_patch('customElements', (r, c, n) => {
               !(function bt(t, r) {
-                const { isBrowser: c, isMix: n } =
-                  r.getGlobalObjects();
+                const { isBrowser: c, isMix: n } = r.getGlobalObjects();
                 (c || n) &&
                   t.customElements &&
                   'customElements' in t &&
-                  r.patchCallbacks(
-                    r,
-                    t.customElements,
-                    'customElements',
-                    'define',
-                    [
-                      'connectedCallback',
-                      'disconnectedCallback',
-                      'adoptedCallback',
-                      'attributeChangedCallback',
-                      'formAssociatedCallback',
-                      'formDisabledCallback',
-                      'formResetCallback',
-                      'formStateRestoreCallback',
-                    ],
-                  );
+                  r.patchCallbacks(r, t.customElements, 'customElements', 'define', [
+                    'connectedCallback',
+                    'disconnectedCallback',
+                    'adoptedCallback',
+                    'attributeChangedCallback',
+                    'formAssociatedCallback',
+                    'formDisabledCallback',
+                    'formResetCallback',
+                    'formStateRestoreCallback',
+                  ]);
               })(r, n);
             }),
             t.__load_patch('XHR', (r, c) => {
@@ -2135,8 +1889,7 @@
                     S = v.target;
                   (S[_] = !1), (S[p] = !1);
                   const K = S[u];
-                  W || ((W = S[Ze]), (x = S[Ae])),
-                    K && x.call(S, re, K);
+                  W || ((W = S[Ze]), (x = S[Ae])), K && x.call(S, re, K);
                   const q = (S[u] = () => {
                     if (S.readyState === S.DONE)
                       if (!v.aborted && S[_] && w.state === X) {
@@ -2171,11 +1924,7 @@
                     'open',
                     () =>
                       function (w, v) {
-                        return (
-                          (w[i] = 0 == v[2]),
-                          (w[E] = v[1]),
-                          z.apply(w, v)
-                        );
+                        return (w[i] = 0 == v[2]), (w[E] = v[1]), z.apply(w, v);
                       },
                   ),
                   B = H('fetchTaskAborting'),
@@ -2185,8 +1934,7 @@
                     'send',
                     () =>
                       function (w, v) {
-                        if (!0 === c.current[g] || w[i])
-                          return U.apply(w, v);
+                        if (!0 === c.current[g] || w[i]) return U.apply(w, v);
                         {
                           const S = {
                               target: w,
@@ -2196,11 +1944,7 @@
                               aborted: !1,
                             },
                             K = He('XMLHttpRequest.send', h, S, b, F);
-                          w &&
-                            !0 === w[p] &&
-                            !S.aborted &&
-                            K.state === X &&
-                            K.invoke();
+                          w && !0 === w[p] && !S.aborted && K.state === X && K.invoke();
                         }
                       },
                   ),
@@ -2213,14 +1957,9 @@
                           return w[n];
                         })(w);
                         if (S && 'string' == typeof S.type) {
-                          if (
-                            null == S.cancelFn ||
-                            (S.data && S.data.aborted)
-                          )
-                            return;
+                          if (null == S.cancelFn || (S.data && S.data.aborted)) return;
                           S.zone.cancelTask(S);
-                        } else if (!0 === c.current[B])
-                          return O.apply(w, v);
+                        } else if (!0 === c.current[B]) return O.apply(w, v);
                       },
                   );
               })(r);
@@ -2243,19 +1982,13 @@
                       if (!ze(ye(t, i))) continue;
                       t[i] = (E => {
                         const p = function () {
-                          return E.apply(
-                            this,
-                            xe(arguments, c + '.' + i),
-                          );
+                          return E.apply(this, xe(arguments, c + '.' + i));
                         };
                         return ue(p, E), p;
                       })(u);
                     }
                   }
-                })(r.navigator.geolocation, [
-                  'getCurrentPosition',
-                  'watchPosition',
-                ]);
+                })(r.navigator.geolocation, ['getCurrentPosition', 'watchPosition']);
             }),
             t.__load_patch('PromiseRejectionEvent', (r, c) => {
               function n(i) {
@@ -2273,12 +2006,8 @@
                 };
               }
               r.PromiseRejectionEvent &&
-                ((c[H('unhandledPromiseRejectionHandler')] = n(
-                  'unhandledrejection',
-                )),
-                (c[H('rejectionHandledHandler')] = n(
-                  'rejectionhandled',
-                )));
+                ((c[H('unhandledPromiseRejectionHandler')] = n('unhandledrejection')),
+                (c[H('rejectionHandledHandler')] = n('rejectionhandled')));
             }),
             t.__load_patch('queueMicrotask', (r, c, n) => {
               !(function vt(t, r) {
@@ -2287,10 +2016,7 @@
                   'queueMicrotask',
                   c =>
                     function (n, i) {
-                      Zone.current.scheduleMicroTask(
-                        'queueMicrotask',
-                        i[0],
-                      );
+                      Zone.current.scheduleMicroTask('queueMicrotask', i[0]);
                     },
                 );
               })(r, n);

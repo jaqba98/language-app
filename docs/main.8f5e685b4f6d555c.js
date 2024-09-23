@@ -1,6 +1,5 @@
 'use strict';
-(self.webpackChunkenglish_learning_fe =
-  self.webpackChunkenglish_learning_fe || []).push([
+(self.webpackChunkenglish_learning_fe = self.webpackChunkenglish_learning_fe || []).push([
   [792],
   {
     52: () => {
@@ -48,15 +47,10 @@
           (xe.producerLastReadVersion[t] = e.version);
       }
       function Wm(e) {
-        if (
-          (!$i(e) || e.dirty) &&
-          (e.dirty || e.lastCleanEpoch !== po)
-        ) {
+        if ((!$i(e) || e.dirty) && (e.dirty || e.lastCleanEpoch !== po)) {
           if (!e.producerMustRecompute(e) && !ad(e))
             return (e.dirty = !1), void (e.lastCleanEpoch = po);
-          e.producerRecomputeValue(e),
-            (e.dirty = !1),
-            (e.lastCleanEpoch = po);
+          e.producerRecomputeValue(e), (e.dirty = !1), (e.lastCleanEpoch = po);
         }
       }
       function Zm(e) {
@@ -87,11 +81,7 @@
             void 0 !== e.producerLastReadVersion)
         ) {
           if ($i(e))
-            for (
-              let n = e.nextProducerIndex;
-              n < e.producerNode.length;
-              n++
-            )
+            for (let n = e.nextProducerIndex; n < e.producerNode.length; n++)
               Ba(e.producerNode[n], e.producerIndexOfThis[n]);
           for (; e.producerNode.length > e.nextProducerIndex; )
             e.producerNode.pop(),
@@ -117,18 +107,13 @@
           e.producerIndexOfThis.length =
             0),
           e.liveConsumerNode &&
-            (e.liveConsumerNode.length =
-              e.liveConsumerIndexOfThis.length =
-                0);
+            (e.liveConsumerNode.length = e.liveConsumerIndexOfThis.length = 0);
       }
       function Km(e, t, n) {
         if ((Xm(e), 0 === e.liveConsumerNode.length && Jm(e)))
           for (let r = 0; r < e.producerNode.length; r++)
             e.producerIndexOfThis[r] = Km(e.producerNode[r], e, r);
-        return (
-          e.liveConsumerIndexOfThis.push(n),
-          e.liveConsumerNode.push(t) - 1
-        );
+        return e.liveConsumerIndexOfThis.push(n), e.liveConsumerNode.push(t) - 1;
       }
       function Ba(e, t) {
         if ((Xm(e), 1 === e.liveConsumerNode.length && Jm(e)))
@@ -137,8 +122,7 @@
         const n = e.liveConsumerNode.length - 1;
         if (
           ((e.liveConsumerNode[t] = e.liveConsumerNode[n]),
-          (e.liveConsumerIndexOfThis[t] =
-            e.liveConsumerIndexOfThis[n]),
+          (e.liveConsumerIndexOfThis[t] = e.liveConsumerIndexOfThis[n]),
           e.liveConsumerNode.length--,
           e.liveConsumerIndexOfThis.length--,
           t < e.liveConsumerNode.length)
@@ -149,10 +133,7 @@
         }
       }
       function $i(e) {
-        return (
-          e.consumerIsAlwaysLive ||
-          (e?.liveConsumerNode?.length ?? 0) > 0
-        );
+        return e.consumerIsAlwaysLive || (e?.liveConsumerNode?.length ?? 0) > 0;
       }
       function $a(e) {
         (e.producerNode ??= []),
@@ -160,8 +141,7 @@
           (e.producerLastReadVersion ??= []);
       }
       function Xm(e) {
-        (e.liveConsumerNode ??= []),
-          (e.liveConsumerIndexOfThis ??= []);
+        (e.liveConsumerNode ??= []), (e.liveConsumerIndexOfThis ??= []);
       }
       function Jm(e) {
         return void 0 !== e.producerNode;
@@ -175,11 +155,9 @@
           dirty: !0,
           error: null,
           equal: Bi,
-          producerMustRecompute: e =>
-            e.value === ud || e.value === ld,
+          producerMustRecompute: e => e.value === ud || e.value === ld,
           producerRecomputeValue(e) {
-            if (e.value === ld)
-              throw new Error('Detected cycle in computations.');
+            if (e.value === ld) throw new Error('Detected cycle in computations.');
             const t = e.value;
             e.value = ld;
             const n = Ua(e);
@@ -225,9 +203,7 @@
           Error.call(r), (r.stack = new Error().stack);
         });
         return (
-          (n.prototype = Object.create(Error.prototype)),
-          (n.prototype.constructor = n),
-          n
+          (n.prototype = Object.create(Error.prototype)), (n.prototype.constructor = n), n
         );
       }
       const fd = dd(
@@ -235,9 +211,7 @@
           function (n) {
             e(this),
               (this.message = n
-                ? `${
-                    n.length
-                  } errors occurred during unsubscription:\n${n
+                ? `${n.length} errors occurred during unsubscription:\n${n
                     .map((r, o) => `${o + 1}) ${r.toString()}`)
                     .join('\n  ')}`
                 : ''),
@@ -281,10 +255,7 @@
                 try {
                   sv(i);
                 } catch (s) {
-                  (t = t ?? []),
-                    s instanceof fd
-                      ? (t = [...t, ...s.errors])
-                      : t.push(s);
+                  (t = t ?? []), s instanceof fd ? (t = [...t, ...s.errors]) : t.push(s);
                 }
             }
             if (t) throw new fd(t);
@@ -300,9 +271,7 @@
                 t._addParent(this);
               }
               (this._finalizers =
-                null !== (n = this._finalizers) && void 0 !== n
-                  ? n
-                  : []).push(t);
+                null !== (n = this._finalizers) && void 0 !== n ? n : []).push(t);
             }
         }
         _hasParent(t) {
@@ -311,17 +280,11 @@
         }
         _addParent(t) {
           const { _parentage: n } = this;
-          this._parentage = Array.isArray(n)
-            ? (n.push(t), n)
-            : n
-            ? [n, t]
-            : t;
+          this._parentage = Array.isArray(n) ? (n.push(t), n) : n ? [n, t] : t;
         }
         _removeParent(t) {
           const { _parentage: n } = this;
-          n === t
-            ? (this._parentage = null)
-            : Array.isArray(n) && za(n, t);
+          n === t ? (this._parentage = null) : Array.isArray(n) && za(n, t);
         }
         remove(t) {
           const { _finalizers: n } = this;
@@ -336,11 +299,7 @@
       function iv(e) {
         return (
           e instanceof tt ||
-          (e &&
-            'closed' in e &&
-            Ee(e.remove) &&
-            Ee(e.add) &&
-            Ee(e.unsubscribe))
+          (e && 'closed' in e && Ee(e.remove) && Ee(e.add) && Ee(e.unsubscribe))
         );
       }
       function sv(e) {
@@ -356,9 +315,7 @@
         qa = {
           setTimeout(e, t, ...n) {
             const { delegate: r } = qa;
-            return r?.setTimeout
-              ? r.setTimeout(e, t, ...n)
-              : setTimeout(e, t, ...n);
+            return r?.setTimeout ? r.setTimeout(e, t, ...n) : setTimeout(e, t, ...n);
           },
           clearTimeout(e) {
             const { delegate: t } = qa;
@@ -382,9 +339,7 @@
       function Za(e) {
         if (Sr.useDeprecatedSynchronousErrorHandling) {
           const t = !Mr;
-          if (
-            (t && (Mr = { errorThrown: !1, error: null }), e(), t)
-          ) {
+          if ((t && (Mr = { errorThrown: !1, error: null }), e(), t)) {
             const { errorThrown: n, error: r } = Mr;
             if (((Mr = null), n)) throw r;
           }
@@ -394,9 +349,7 @@
         constructor(t) {
           super(),
             (this.isStopped = !1),
-            t
-              ? ((this.destination = t), iv(t) && t.add(this))
-              : (this.destination = _A);
+            t ? ((this.destination = t), iv(t) && t.add(this)) : (this.destination = _A);
         }
         static create(t, n, r) {
           return new md(t, n, r);
@@ -422,15 +375,11 @@
             : ((this.isStopped = !0), this._error(t));
         }
         complete() {
-          this.isStopped
-            ? vd(fA, this)
-            : ((this.isStopped = !0), this._complete());
+          this.isStopped ? vd(fA, this) : ((this.isStopped = !0), this._complete());
         }
         unsubscribe() {
           this.closed ||
-            ((this.isStopped = !0),
-            super.unsubscribe(),
-            (this.destination = null));
+            ((this.isStopped = !0), super.unsubscribe(), (this.destination = null));
         }
         _next(t) {
           this.destination.next(t);
@@ -532,9 +481,7 @@
           },
           complete: Wa,
         },
-        yd =
-          ('function' == typeof Symbol && Symbol.observable) ||
-          '@@observable';
+        yd = ('function' == typeof Symbol && Symbol.observable) || '@@observable';
       function Fn(e) {
         return e;
       }
@@ -561,9 +508,7 @@
               return (
                 (e && e instanceof pd) ||
                 ((function DA(e) {
-                  return (
-                    e && Ee(e.next) && Ee(e.error) && Ee(e.complete)
-                  );
+                  return e && Ee(e.next) && Ee(e.error) && Ee(e.complete);
                 })(e) &&
                   iv(e))
               );
@@ -573,13 +518,7 @@
             return (
               Za(() => {
                 const { operator: s, source: a } = this;
-                i.add(
-                  s
-                    ? s.call(i, a)
-                    : a
-                    ? this._subscribe(i)
-                    : this._trySubscribe(i),
-                );
+                i.add(s ? s.call(i, a) : a ? this._subscribe(i) : this._trySubscribe(i));
               }),
               i
             );
@@ -609,9 +548,7 @@
           }
           _subscribe(n) {
             var r;
-            return null === (r = this.source) || void 0 === r
-              ? void 0
-              : r.subscribe(n);
+            return null === (r = this.source) || void 0 === r ? void 0 : r.subscribe(n);
           }
           [yd]() {
             return this;
@@ -634,9 +571,7 @@
       })();
       function uv(e) {
         var t;
-        return null !== (t = e ?? Sr.Promise) && void 0 !== t
-          ? t
-          : Promise;
+        return null !== (t = e ?? Sr.Promise) && void 0 !== t ? t : Promise;
       }
       const wA = dd(
         e =>
@@ -668,9 +603,7 @@
             Za(() => {
               if ((this._throwIfClosed(), !this.isStopped)) {
                 this.currentObservers ||
-                  (this.currentObservers = Array.from(
-                    this.observers,
-                  ));
+                  (this.currentObservers = Array.from(this.observers));
                 for (const r of this.currentObservers) r.next(n);
               }
             });
@@ -678,8 +611,7 @@
           error(n) {
             Za(() => {
               if ((this._throwIfClosed(), !this.isStopped)) {
-                (this.hasError = this.isStopped = !0),
-                  (this.thrownError = n);
+                (this.hasError = this.isStopped = !0), (this.thrownError = n);
                 const { observers: r } = this;
                 for (; r.length; ) r.shift().error(n);
               }
@@ -701,9 +633,7 @@
           get observed() {
             var n;
             return (
-              (null === (n = this.observers) || void 0 === n
-                ? void 0
-                : n.length) > 0
+              (null === (n = this.observers) || void 0 === n ? void 0 : n.length) > 0
             );
           }
           _trySubscribe(n) {
@@ -727,11 +657,7 @@
                 }));
           }
           _checkFinalizedStatuses(n) {
-            const {
-              hasError: r,
-              thrownError: o,
-              isStopped: i,
-            } = this;
+            const { hasError: r, thrownError: o, isStopped: i } = this;
             r ? n.error(o) : i && n.complete();
           }
           asObservable() {
@@ -748,40 +674,29 @@
         next(t) {
           var n, r;
           null ===
-            (r =
-              null === (n = this.destination) || void 0 === n
-                ? void 0
-                : n.next) ||
+            (r = null === (n = this.destination) || void 0 === n ? void 0 : n.next) ||
             void 0 === r ||
             r.call(n, t);
         }
         error(t) {
           var n, r;
           null ===
-            (r =
-              null === (n = this.destination) || void 0 === n
-                ? void 0
-                : n.error) ||
+            (r = null === (n = this.destination) || void 0 === n ? void 0 : n.error) ||
             void 0 === r ||
             r.call(n, t);
         }
         complete() {
           var t, n;
           null ===
-            (n =
-              null === (t = this.destination) || void 0 === t
-                ? void 0
-                : t.complete) ||
+            (n = null === (t = this.destination) || void 0 === t ? void 0 : t.complete) ||
             void 0 === n ||
             n.call(t);
         }
         _subscribe(t) {
           var n, r;
           return null !==
-            (r =
-              null === (n = this.source) || void 0 === n
-                ? void 0
-                : n.subscribe(t)) && void 0 !== r
+            (r = null === (n = this.source) || void 0 === n ? void 0 : n.subscribe(t)) &&
+            void 0 !== r
             ? r
             : ov;
         }
@@ -819,9 +734,7 @@
                 this.error(r);
               }
             });
-          throw new TypeError(
-            'Unable to lift unknown Observable type',
-          );
+          throw new TypeError('Unable to lift unknown Observable type');
         };
       }
       function Ne(e, t, n, r, o) {
@@ -869,10 +782,7 @@
           if (!this.shouldUnsubscribe || this.shouldUnsubscribe()) {
             const { closed: n } = this;
             super.unsubscribe(),
-              !n &&
-                (null === (t = this.onFinalize) ||
-                  void 0 === t ||
-                  t.call(this));
+              !n && (null === (t = this.onFinalize) || void 0 === t || t.call(this));
           }
         }
       }
@@ -887,14 +797,9 @@
         });
       }
       typeof navigator < 'u' && navigator,
-        typeof navigator < 'u' &&
-          !/Opera/.test(navigator.userAgent) &&
-          navigator,
-        typeof navigator < 'u' &&
-          (/MSIE/.test(navigator.userAgent) || navigator),
-        typeof navigator < 'u' &&
-          !/Opera|WebKit/.test(navigator.userAgent) &&
-          navigator,
+        typeof navigator < 'u' && !/Opera/.test(navigator.userAgent) && navigator,
+        typeof navigator < 'u' && (/MSIE/.test(navigator.userAgent) || navigator),
+        typeof navigator < 'u' && !/Opera|WebKit/.test(navigator.userAgent) && navigator,
         typeof navigator < 'u' && navigator;
       const Rv = 'https://g.co/ng/security#xss';
       class D extends Error {
@@ -944,15 +849,10 @@
       const we = globalThis;
       function ue(e) {
         for (let t in e) if (e[t] === ue) return t;
-        throw Error(
-          'Could not find renamed property on target object.',
-        );
+        throw Error('Could not find renamed property on target object.');
       }
       function bN(e, t) {
-        for (const n in t)
-          t.hasOwnProperty(n) &&
-            !e.hasOwnProperty(n) &&
-            (e[n] = t[n]);
+        for (const n in t) t.hasOwnProperty(n) && !e.hasOwnProperty(n) && (e[n] = t[n]);
       }
       function He(e) {
         if ('string' == typeof e) return e;
@@ -988,11 +888,7 @@
         return ec(e) ? e() : e;
       }
       function ec(e) {
-        return (
-          'function' == typeof e &&
-          e.hasOwnProperty(IN) &&
-          e.__forward_ref__ === ve
-        );
+        return 'function' == typeof e && e.hasOwnProperty(IN) && e.__forward_ref__ === ve;
       }
       function I(e) {
         return {
@@ -1015,9 +911,7 @@
         return e.hasOwnProperty(t) ? e[t] : null;
       }
       function nc(e) {
-        return e && (e.hasOwnProperty(Td) || e.hasOwnProperty(RN))
-          ? e[Td]
-          : null;
+        return e && (e.hasOwnProperty(Td) || e.hasOwnProperty(RN)) ? e[Td] : null;
       }
       const rc = ue({ ɵprov: ue }),
         Td = ue({ ɵinj: ue }),
@@ -1115,10 +1009,7 @@
       function ic(e) {
         return typeof e > 'u' || 'number' == typeof e
           ? e
-          : (e.optional && 8) |
-              (e.host && 1) |
-              (e.self && 2) |
-              (e.skipSelf && 4);
+          : (e.optional && 8) | (e.host && 1) | (e.self && 2) | (e.skipSelf && 4);
       }
       function jd(e) {
         const t = [];
@@ -1131,11 +1022,7 @@
             for (let s = 0; s < r.length; s++) {
               const a = r[s],
                 c = BN(a);
-              'number' == typeof c
-                ? -1 === c
-                  ? (o = a.token)
-                  : (i |= c)
-                : (o = a);
+              'number' == typeof c ? (-1 === c ? (o = a.token) : (i |= c)) : (o = a);
             }
             t.push(M(o, i));
           } else t.push(M(r));
@@ -1177,8 +1064,7 @@
                 if (o == t) e.push(n, r);
                 else if (1 === o) e.push(r, e[0]), (e[0] = n);
                 else {
-                  for (o--, e.push(e[o - 1], e[o]); o > t; )
-                    (e[o] = e[o - 2]), o--;
+                  for (o--, e.push(e[o - 1], e[o]); o > t; ) (e[o] = e[o - 2]), o--;
                   (e[t] = n), (e[t + 1] = r);
                 }
               })(e, r, t, n)),
@@ -1210,20 +1096,14 @@
       class cc {
         get(t, n = qi) {
           if (n === qi) {
-            const r = new Error(
-              `NullInjectorError: No provider for ${He(t)}!`,
-            );
+            const r = new Error(`NullInjectorError: No provider for ${He(t)}!`);
             throw ((r.name = 'NullInjectorError'), r);
           }
           return n;
         }
       }
       var uc = (function (e) {
-          return (
-            (e[(e.OnPush = 0)] = 'OnPush'),
-            (e[(e.Default = 1)] = 'Default'),
-            e
-          );
+          return (e[(e.OnPush = 0)] = 'OnPush'), (e[(e.Default = 1)] = 'Default'), e;
         })(uc || {}),
         en = (function (e) {
           return (
@@ -1237,8 +1117,7 @@
           return (
             (e[(e.None = 0)] = 'None'),
             (e[(e.SignalBased = 1)] = 'SignalBased'),
-            (e[(e.HasDecoratorInputTransform = 2)] =
-              'HasDecoratorInputTransform'),
+            (e[(e.HasDecoratorInputTransform = 2)] = 'HasDecoratorInputTransform'),
             e
           );
         })(tr || {});
@@ -1268,8 +1147,7 @@
           } else {
             const i = o,
               s = n[++r];
-            Qv(i) ? e.setProperty(t, i, s) : e.setAttribute(t, i, s),
-              r++;
+            Qv(i) ? e.setProperty(t, i, s) : e.setAttribute(t, i, s), r++;
           }
         }
         return r;
@@ -1289,14 +1167,7 @@
               const o = t[r];
               'number' == typeof o
                 ? (n = o)
-                : 0 === n ||
-                  Kv(
-                    e,
-                    n,
-                    o,
-                    null,
-                    -1 === n || 2 === n ? t[++r] : null,
-                  );
+                : 0 === n || Kv(e, n, o, null, -1 === n || 2 === n ? t[++r] : null);
             }
           }
         return e;
@@ -1323,8 +1194,7 @@
           const a = e[i];
           if ('number' == typeof a) break;
           if (a === n) {
-            if (null === r)
-              return void (null !== o && (e[i + 1] = o));
+            if (null === r) return void (null !== o && (e[i + 1] = o));
             if (r === e[i + 1]) return void (e[i + 2] = o);
           }
           i++, null !== r && i++, null !== o && i++;
@@ -1339,11 +1209,7 @@
         let o = 0;
         if (r) {
           for (; o < t.length && 'string' == typeof t[o]; o += 2)
-            if (
-              'class' === t[o] &&
-              -1 !== WN(t[o + 1].toLowerCase(), n, 0)
-            )
-              return !0;
+            if ('class' === t[o] && -1 !== WN(t[o + 1].toLowerCase(), n, 0)) return !0;
         } else if (qd(e)) return !1;
         if (((o = t.indexOf(1, o)), o > -1)) {
           let i;
@@ -1364,8 +1230,7 @@
           i =
             null !== o
               ? (function JN(e) {
-                  for (let t = 0; t < e.length; t++)
-                    if (Yv(e[t])) return t;
+                  for (let t = 0; t < e.length; t++) if (Yv(e[t])) return t;
                   return e.length;
                 })(o)
               : 0;
@@ -1377,8 +1242,7 @@
               if (4 & r) {
                 if (
                   ((r = 2 | (1 & r)),
-                  ('' !== c && !YN(e, c, n)) ||
-                    ('' === c && 1 === t.length))
+                  ('' !== c && !YN(e, c, n)) || ('' === c && 1 === t.length))
                 ) {
                   if (tn(r)) return !1;
                   s = !0;
@@ -1398,10 +1262,7 @@
                 }
                 if ('' !== u) {
                   let d;
-                  if (
-                    ((d = l > i ? '' : o[l + 1].toLowerCase()),
-                    2 & r && u !== d)
-                  ) {
+                  if (((d = l > i ? '' : o[l + 1].toLowerCase()), 2 & r && u !== d)) {
                     if (tn(r)) return !1;
                     s = !0;
                   }
@@ -1456,16 +1317,14 @@
         })(t, e);
       }
       function Jv(e, t, n = !1) {
-        for (let r = 0; r < t.length; r++)
-          if (QN(e, t[r], n)) return !0;
+        for (let r = 0; r < t.length; r++) if (QN(e, t[r], n)) return !0;
         return !1;
       }
       function tR(e, t) {
         e: for (let n = 0; n < t.length; n++) {
           const r = t[n];
           if (e.length === r.length) {
-            for (let o = 0; o < e.length; o++)
-              if (e[o] !== r[o]) continue e;
+            for (let o = 0; o < e.length; o++) if (e[o] !== r[o]) continue e;
             return !0;
           }
         }
@@ -1485,13 +1344,10 @@
           if ('string' == typeof s)
             if (2 & r) {
               const a = e[++n];
-              o +=
-                '[' + s + (a.length > 0 ? '="' + a + '"' : '') + ']';
+              o += '[' + s + (a.length > 0 ? '="' + a + '"' : '') + ']';
             } else 8 & r ? (o += '.' + s) : 4 & r && (o += ' ' + s);
           else
-            '' !== o && !tn(s) && ((t += ey(i, o)), (o = '')),
-              (r = s),
-              (i = i || !tn(r));
+            '' !== o && !tn(s) && ((t += ey(i, o)), (o = '')), (r = s), (i = i || !tn(r));
           n++;
         }
         return '' !== o && (t += ey(i, o)), t;
@@ -1545,8 +1401,7 @@
                 !!e.contentQueries,
                 !!e.viewQuery,
               ].join('|');
-              for (const o of n)
-                t = (Math.imul(31, t) + o.charCodeAt(0)) | 0;
+              for (const o of n) t = (Math.imul(31, t) + o.charCodeAt(0)) | 0;
               return (t += 2147483648), 'c' + t;
             })(n)),
             n
@@ -1583,9 +1438,7 @@
             Array.isArray(o)
               ? ((a = o[0]), (i = o[1]), (s = o[2] ?? i))
               : ((i = o), (s = o)),
-              t
-                ? ((n[i] = a !== tr.None ? [r, a] : r), (t[i] = s))
-                : (n[i] = r);
+              t ? ((n[i] = a !== tr.None ? [r, a] : r), (t[i] = s)) : (n[i] = r);
           }
         return n;
       }
@@ -1607,9 +1460,7 @@
       function nt(e, t) {
         const n = e[Vv] || null;
         if (!n && !0 === t)
-          throw new Error(
-            `Type ${He(e)} does not have '\u0275mod' property.`,
-          );
+          throw new Error(`Type ${He(e)} does not have '\u0275mod' property.`);
         return n;
       }
       function ny(e) {
@@ -1645,10 +1496,7 @@
       function lc(e, t) {
         if (!e) return null;
         const n = t ? Xe : iR;
-        return () =>
-          ('function' == typeof e ? e() : e)
-            .map(r => n(r))
-            .filter(sR);
+        return () => ('function' == typeof e ? e() : e).map(r => n(r)).filter(sR);
       }
       function bo(e) {
         return { ɵproviders: e };
@@ -1698,9 +1546,7 @@
           if (a) return !1;
           if ((r.add(o), s.dependencies)) {
             const c =
-              'function' == typeof s.dependencies
-                ? s.dependencies()
-                : s.dependencies;
+              'function' == typeof s.dependencies ? s.dependencies() : s.dependencies;
             for (const u of c) dc(u, t, n, r);
           }
         } else {
@@ -1721,10 +1567,7 @@
               const u = Ar(o) || (() => new o());
               t({ provide: o, useFactory: u, deps: re }, o),
                 t({ provide: Gd, useValue: o, multi: !0 }, o),
-                t(
-                  { provide: Ot, useValue: () => M(o), multi: !0 },
-                  o,
-                );
+                t({ provide: Ot, useValue: () => M(o), multi: !0 }, o);
             }
             const c = i.providers;
             if (null != c && !a) {
@@ -1738,9 +1581,7 @@
         return o !== e && void 0 !== e.providers;
       }
       function Zd(e, t) {
-        for (let n of e)
-          Od(n) && (n = n.ɵproviders),
-            Array.isArray(n) ? Zd(n, t) : t(n);
+        for (let n of e) Od(n) && (n = n.ɵproviders), Array.isArray(n) ? Zd(n, t) : t(n);
       }
       const lR = ue({ provide: String, useValue: ue });
       function Yd(e) {
@@ -1772,15 +1613,10 @@
             (this._destroyed = !1),
             Jd(t, s => this.processProvider(s)),
             this.records.set(Zv, So(void 0, this)),
-            o.has('environment') &&
-              this.records.set(Ft, So(void 0, this));
+            o.has('environment') && this.records.set(Ft, So(void 0, this));
           const i = this.records.get(Qd);
-          null != i &&
-            'string' == typeof i.value &&
-            this.scopes.add(i.value),
-            (this.injectorDefTypes = new Set(
-              this.get(Gd, re, Q.Self),
-            ));
+          null != i && 'string' == typeof i.value && this.scopes.add(i.value),
+            (this.injectorDefTypes = new Set(this.get(Gd, re, Q.Self)));
         }
         destroy() {
           this.assertNotDestroyed(), (this._destroyed = !0);
@@ -1815,8 +1651,7 @@
           }
         }
         get(t, n = qi, r = Q.Default) {
-          if ((this.assertNotDestroyed(), t.hasOwnProperty(jv)))
-            return t[jv](this);
+          if ((this.assertNotDestroyed(), t.hasOwnProperty(jv))) return t[jv](this);
           r = ic(r);
           const i = er(this),
             s = Dt(void 0);
@@ -1827,14 +1662,10 @@
                 const u =
                   (function vR(e) {
                     return (
-                      'function' == typeof e ||
-                      ('object' == typeof e && e instanceof E)
+                      'function' == typeof e || ('object' == typeof e && e instanceof E)
                     );
                   })(t) && tc(t);
-                (c =
-                  u && this.injectableDefInScope(u)
-                    ? So(Xd(t), fc)
-                    : null),
+                (c = u && this.injectableDefInScope(u) ? So(Xd(t), fc) : null),
                   this.records.set(t, c);
               }
               if (null != c) return this.hydrate(t, c);
@@ -1852,9 +1683,7 @@
                   (t[$v] && o.unshift(t[$v]),
                   (e.message = (function HN(e, t, n, r = null) {
                     e =
-                      e &&
-                      '\n' === e.charAt(0) &&
-                      '\u0275' == e.charAt(1)
+                      e && '\n' === e.charAt(0) && '\u0275' == e.charAt(1)
                         ? e.slice(2)
                         : e;
                     let o = He(t);
@@ -1865,18 +1694,15 @@
                         if (t.hasOwnProperty(s)) {
                           let a = t[s];
                           i.push(
-                            s +
-                              ':' +
-                              ('string' == typeof a
-                                ? JSON.stringify(a)
-                                : He(a)),
+                            s + ':' + ('string' == typeof a ? JSON.stringify(a) : He(a)),
                           );
                         }
                       o = `{${i.join(', ')}}`;
                     }
-                    return `${n}${
-                      r ? '(' + r + ')' : ''
-                    }[${o}]: ${e.replace(LN, '\n  ')}`;
+                    return `${n}${r ? '(' + r + ')' : ''}[${o}]: ${e.replace(
+                      LN,
+                      '\n  ',
+                    )}`;
                   })('\n' + e.message, o, n, r)),
                   (e.ngTokenPath = o),
                   (e[oc] = null),
@@ -1929,8 +1755,7 @@
           const r = z(null);
           try {
             return (
-              n.value === fc &&
-                ((n.value = fR), (n.value = n.factory())),
+              n.value === fc && ((n.value = fR), (n.value = n.factory())),
               'object' == typeof n.value &&
                 n.value &&
                 (function mR(e) {
@@ -2010,11 +1835,7 @@
       }
       function Jd(e, t) {
         for (const n of e)
-          Array.isArray(n)
-            ? Jd(n, t)
-            : n && Od(n)
-            ? Jd(n.ɵproviders, t)
-            : t(n);
+          Array.isArray(n) ? Jd(n, t) : n && Od(n) ? Jd(n.ɵproviders, t) : t(n);
       }
       function rr(e, t) {
         e instanceof Io && e.assertNotDestroyed();
@@ -2094,9 +1915,7 @@
       }
       class AR {
         constructor(t, n, r) {
-          (this.previousValue = t),
-            (this.currentValue = n),
-            (this.firstChange = r);
+          (this.previousValue = t), (this.currentValue = n), (this.firstChange = r);
         }
         isFirstChange() {
           return this.firstChange;
@@ -2131,8 +1950,7 @@
           a = s.current || (s.current = {}),
           c = s.previous,
           u = c[i];
-        (a[i] = new AR(u && u.currentValue, n, c === gn)),
-          my(e, t, o, n);
+        (a[i] = new AR(u && u.currentValue, n, c === gn)), my(e, t, o, n);
       }
       zt.ngInherit = !0;
       const yy = '__ngSimpleChanges__';
@@ -2180,12 +1998,7 @@
       function Dc(e) {
         e[mn].changeDetectionScheduler?.notify(0);
         let t = Vn(e);
-        for (
-          ;
-          null !== t && !(8192 & t[N]) && ((t[N] |= 8192), uf(t));
-
-        )
-          t = Vn(t);
+        for (; null !== t && !(8192 & t[N]) && ((t[N] |= 8192), uf(t)); ) t = Vn(t);
       }
       function Ec(e, t) {
         if (!(256 & ~e[N])) throw new D(911, !1);
@@ -2261,11 +2074,7 @@
       }
       function ZR(e) {
         const t = e[b];
-        return 2 === t.type
-          ? t.declTNode
-          : 1 === t.type
-          ? e[Je]
-          : null;
+        return 2 === t.type ? t.declTNode : 1 === t.type ? e[Je] : null;
       }
       function Fy(e, t, n) {
         if (n & Q.SkipSelf) {
@@ -2276,8 +2085,7 @@
             !((o = o.parent),
             null !== o ||
               n & Q.Host ||
-              ((o = ZR(i)),
-              null === o || ((i = i[Ao]), 10 & o.type)));
+              ((o = ZR(i)), null === o || ((i = i[Ao]), 10 & o.type)));
 
           );
           if (null === o) return !1;
@@ -2324,12 +2132,7 @@
       }
       function Ly() {
         const e = k.lFrame;
-        return (
-          (k.lFrame = e.parent),
-          (e.currentTNode = null),
-          (e.lView = null),
-          e
-        );
+        return (k.lFrame = e.parent), (e.currentTNode = null), (e.lView = null), e;
       }
       const Vy = Ly;
       function _f() {
@@ -2363,11 +2166,7 @@
         Uy = e;
       }
       function Ic(e, t) {
-        for (
-          let n = t.directiveStart, r = t.directiveEnd;
-          n < r;
-          n++
-        ) {
+        for (let n = t.directiveStart, r = t.directiveEnd; n < r; n++) {
           const i = e.data[n].type.prototype,
             {
               ngAfterContentInit: s,
@@ -2381,9 +2180,7 @@
               ((e.contentHooks ??= []).push(n, a),
               (e.contentCheckHooks ??= []).push(n, a)),
             c && (e.viewHooks ??= []).push(-n, c),
-            u &&
-              ((e.viewHooks ??= []).push(n, u),
-              (e.viewCheckHooks ??= []).push(n, u)),
+            u && ((e.viewHooks ??= []).push(n, u), (e.viewCheckHooks ??= []).push(n, u)),
             null != l && (e.destroyHooks ??= []).push(n, l);
         }
       }
@@ -2407,8 +2204,7 @@
           } else
             t[c] < 0 && (e[No] += 65536),
               (a < i || -1 == i) &&
-                (tx(e, n, t, c),
-                (e[No] = (4294901760 & e[No]) + c + 2)),
+                (tx(e, n, t, c), (e[No] = (4294901760 & e[No]) + c + 2)),
               c++;
       }
       function $y(e, t) {
@@ -2425,9 +2221,7 @@
           i = n[r + 1],
           a = e[o ? -n[r] : n[r]];
         o
-          ? e[N] >> 14 < e[No] >> 16 &&
-            (3 & e[N]) === t &&
-            ((e[N] += 16384), $y(a, i))
+          ? e[N] >> 14 < e[No] >> 16 && (3 & e[N]) === t && ((e[N] += 16384), $y(a, i))
           : $y(a, i);
       }
       const Oo = -1;
@@ -2447,9 +2241,7 @@
         get(t, n, r) {
           r = ic(r);
           const o = this.injector.get(t, Ef, r);
-          return o !== Ef || n === Ef
-            ? o
-            : this.parentInjector.get(t, n, r);
+          return o !== Ef || n === Ef ? o : this.parentInjector.get(t, n, r);
         }
       }
       function wf(e) {
@@ -2505,8 +2297,7 @@
           : e.injectorIndex;
       }
       function Nc(e, t) {
-        if (e.parent && -1 !== e.parent.injectorIndex)
-          return e.parent.injectorIndex;
+        if (e.parent && -1 !== e.parent.injectorIndex) return e.parent.injectorIndex;
         let n = 0,
           r = null,
           o = t;
@@ -2533,16 +2324,11 @@
         kd();
       }
       function Zy(e, t, n, r) {
-        if (
-          (n & Q.Optional && void 0 === r && (r = null),
-          !(n & (Q.Self | Q.Host)))
-        ) {
+        if ((n & Q.Optional && void 0 === r && (r = null), !(n & (Q.Self | Q.Host)))) {
           const o = e[Ue],
             i = Dt(void 0);
           try {
-            return o
-              ? o.get(t, r, n & Q.Optional)
-              : Bv(t, r, n & Q.Optional);
+            return o ? o.get(t, r, n & Q.Optional) : Bv(t, r, n & Q.Optional);
           } finally {
             Dt(i);
           }
@@ -2555,14 +2341,7 @@
             const s = (function hx(e, t, n, r, o) {
               let i = e,
                 s = t;
-              for (
-                ;
-                null !== i &&
-                null !== s &&
-                2048 & s[N] &&
-                !(512 & s[N]);
-
-              ) {
+              for (; null !== i && null !== s && 2048 & s[N] && !(512 & s[N]); ) {
                 const a = Qy(i, s, n, r | Q.Self, Cn);
                 if (a !== Cn) return a;
                 let c = i.parent;
@@ -2592,8 +2371,7 @@
           return 'number' == typeof t ? (t >= 0 ? t & Gy : fx) : t;
         })(n);
         if ('function' == typeof i) {
-          if (!Fy(t, e, r))
-            return r & Q.Host ? Wy(o, 0, r) : Zy(t, n, r, o);
+          if (!Fy(t, e, r)) return r & Q.Host ? Wy(o, 0, r) : Zy(t, n, r, o);
           try {
             let s;
             if (((s = i(r)), null != s || r & Q.Optional)) return s;
@@ -2609,9 +2387,7 @@
           for (
             (-1 === a || r & Q.SkipSelf) &&
             ((c = -1 === a ? Nc(e, t) : t[a + 8]),
-            c !== Oo && Xy(r, !1)
-              ? ((s = t[b]), (a = is(c)), (t = ss(c, t)))
-              : (a = -1));
+            c !== Oo && Xy(r, !1) ? ((s = t[b]), (a = is(c)), (t = ss(c, t))) : (a = -1));
             -1 !== a;
 
           ) {
@@ -2649,8 +2425,7 @@
           f = o ? a + l : e.directiveEnd;
         for (let h = r ? a : a + l; h < f; h++) {
           const p = s[h];
-          if ((h < c && n === p) || (h >= c && p.type === n))
-            return h;
+          if ((h < c && n === p) || (h >= c && p.type === n)) return h;
         }
         if (o) {
           const h = s[c];
@@ -2674,9 +2449,7 @@
               (function ie(e) {
                 return 'function' == typeof e
                   ? e.name || e.toString()
-                  : 'object' == typeof e &&
-                    null != e &&
-                    'function' == typeof e.type
+                  : 'object' == typeof e && null != e && 'function' == typeof e.type
                   ? e.type.name || e.type.toString()
                   : U(e);
               })(i[n]),
@@ -2690,11 +2463,7 @@
               t.firstCreatePass &&
                 n >= r.directiveStart &&
                 (function ex(e, t, n) {
-                  const {
-                    ngOnChanges: r,
-                    ngOnInit: o,
-                    ngDoCheck: i,
-                  } = t.type.prototype;
+                  const { ngOnChanges: r, ngOnInit: o, ngDoCheck: i } = t.type.prototype;
                   if (r) {
                     const s = vy(t);
                     (n.preOrderHooks ??= []).push(e, s),
@@ -2861,8 +2630,7 @@
             (this.__isAsync = t),
             cy() &&
               ((this.destroyRef = _(Vr, { optional: !0 }) ?? void 0),
-              (this.pendingTasks =
-                _(jr, { optional: !0 }) ?? void 0));
+              (this.pendingTasks = _(jr, { optional: !0 }) ?? void 0));
         }
         emit(t) {
           const n = z(null);
@@ -2878,9 +2646,7 @@
             s = r;
           if (t && 'object' == typeof t) {
             const c = t;
-            (o = c.next?.bind(c)),
-              (i = c.error?.bind(c)),
-              (s = c.complete?.bind(c));
+            (o = c.next?.bind(c)), (i = c.error?.bind(c)), (s = c.complete?.bind(c));
           }
           this.__isAsync &&
             ((i = this.wrapInTimeout(i)),
@@ -2957,9 +2723,7 @@
           (s._nesting = 0),
             (s._outer = s._inner = Zone.current),
             Zone.TaskTrackingZoneSpec &&
-              (s._inner = s._inner.fork(
-                new Zone.TaskTrackingZoneSpec(),
-              )),
+              (s._inner = s._inner.fork(new Zone.TaskTrackingZoneSpec())),
             n &&
               Zone.longStackTraceZoneSpec &&
               (s._inner = s._inner.fork(Zone.longStackTraceZoneSpec)),
@@ -3006,8 +2770,7 @@
                   try {
                     return l_(e), r.invokeTask(i, s, a, c);
                   } finally {
-                    ((e.shouldCoalesceEventChangeDetection &&
-                      'eventTask' === s.type) ||
+                    ((e.shouldCoalesceEventChangeDetection && 'eventTask' === s.type) ||
                       e.shouldCoalesceRunChangeDetection) &&
                       t(),
                       d_(e);
@@ -3030,16 +2793,12 @@
                   r.hasTask(i, s),
                     o === i &&
                       ('microTask' == s.change
-                        ? ((e._hasPendingMicrotasks = s.microTask),
-                          xf(e),
-                          Rf(e))
+                        ? ((e._hasPendingMicrotasks = s.microTask), xf(e), Rf(e))
                         : 'macroTask' == s.change &&
                           (e.hasPendingMacrotasks = s.macroTask));
                 },
                 onHandleError: (r, o, i, s) => (
-                  r.handleError(i, s),
-                  e.runOutsideAngular(() => e.onError.emit(s)),
-                  !1
+                  r.handleError(i, s), e.runOutsideAngular(() => e.onError.emit(s)), !1
                 ),
               });
             })(s);
@@ -3058,13 +2817,7 @@
         }
         runTask(t, n, r, o) {
           const i = this._inner,
-            s = i.scheduleEventTask(
-              'NgZoneEvent: ' + o,
-              t,
-              Sx,
-              Oc,
-              Oc,
-            );
+            s = i.scheduleEventTask('NgZoneEvent: ' + o, t, Sx, Oc, Oc);
           try {
             return i.runTask(s, n, r);
           } finally {
@@ -3095,14 +2848,12 @@
       function xf(e) {
         e.hasPendingMicrotasks = !!(
           e._hasPendingMicrotasks ||
-          ((e.shouldCoalesceEventChangeDetection ||
-            e.shouldCoalesceRunChangeDetection) &&
+          ((e.shouldCoalesceEventChangeDetection || e.shouldCoalesceRunChangeDetection) &&
             !0 === e.callbackScheduled)
         );
       }
       function l_(e) {
-        e._nesting++,
-          e.isStable && ((e.isStable = !1), e.onUnstable.emit(null));
+        e._nesting++, e.isStable && ((e.isStable = !1), e.onUnstable.emit(null));
       }
       function d_(e) {
         e._nesting--, Rf(e);
@@ -3131,10 +2882,7 @@
         }
       }
       function f_(e, t) {
-        return (
-          !(!Array.isArray(e) || 1 !== e.length) &&
-          !0 === e[0]?.data?.[t]
-        );
+        return !(!Array.isArray(e) || 1 !== e.length) && !0 === e[0]?.data?.[t];
       }
       class Dn {
         constructor() {
@@ -3142,8 +2890,7 @@
         }
         handleError(t) {
           const n = this._findOriginalError(t);
-          this._console.error('ERROR', t),
-            n && this._console.error('ORIGINAL ERROR', n);
+          this._console.error('ERROR', t), n && this._console.error('ORIGINAL ERROR', n);
         }
         _findOriginalError(t) {
           let n = t && Af(t);
@@ -3246,8 +2993,7 @@
         }
         notifyOnChanges() {
           void 0 !== this._changes &&
-            (this._changesDetected ||
-              !this._emitDistinctChangesOnly) &&
+            (this._changesDetected || !this._emitDistinctChangesOnly) &&
             this._changes.emit(this);
         }
         onDirty(t) {
@@ -3318,14 +3064,11 @@
           (function Jf() {
             if (void 0 === zc && ((zc = null), we.trustedTypes))
               try {
-                zc = we.trustedTypes.createPolicy(
-                  'angular#unsafe-bypass',
-                  {
-                    createHTML: e => e,
-                    createScript: e => e,
-                    createScriptURL: e => e,
-                  },
-                );
+                zc = we.trustedTypes.createPolicy('angular#unsafe-bypass', {
+                  createHTML: e => e,
+                  createScript: e => e,
+                  createScriptURL: e => e,
+                });
               } catch {}
             return zc;
           })()?.createScriptURL(e) || e
@@ -3340,9 +3083,7 @@
         }
       }
       function sr(e) {
-        return e instanceof Y_
-          ? e.changingThisBreaksApplicationSecurity
-          : e;
+        return e instanceof Y_ ? e.changingThisBreaksApplicationSecurity : e;
       }
       function vs(e, t) {
         const n = (function CO(e) {
@@ -3350,14 +3091,11 @@
         })(e);
         if (null != n && n !== t) {
           if ('ResourceURL' === n && 'URL' === t) return !0;
-          throw new Error(
-            `Required a safe ${t}, got a ${n} (see ${Rv})`,
-          );
+          throw new Error(`Required a safe ${t}, got a ${n} (see ${Rv})`);
         }
         return n === t;
       }
-      const bO =
-        /^(?!javascript:)(?:[a-z0-9+.-]+:|[^&:\/?#]*(?:[\/?#]|$))/i;
+      const bO = /^(?!javascript:)(?:[a-z0-9+.-]+:|[^&:\/?#]*(?:[\/?#]|$))/i;
       var Bo = (function (e) {
         return (
           (e[(e.NONE = 0)] = 'NONE'),
@@ -3397,9 +3135,7 @@
       }
       var ar = (function (e) {
         return (
-          (e[(e.Important = 1)] = 'Important'),
-          (e[(e.DashCase = 2)] = 'DashCase'),
-          e
+          (e[(e.Important = 1)] = 'Important'), (e[(e.DashCase = 2)] = 'DashCase'), e
         );
       })(ar || {});
       let ah;
@@ -3445,14 +3181,12 @@
         return e.createElement(t, n);
       }
       function gC(e, t) {
-        t[mn].changeDetectionScheduler?.notify(9),
-          Xc(e, t, t[P], 2, null, null);
+        t[mn].changeDetectionScheduler?.notify(9), Xc(e, t, t[P], 2, null, null);
       }
       function mC(e, t) {
         const n = e[xo],
           r = t[je];
-        (qe(r) || t[Te] !== r[je][Te]) &&
-          (e[N] |= yc.HasTransplantedViews),
+        (qe(r) || t[Te] !== r[je][Te]) && (e[N] |= yc.HasTransplantedViews),
           null === n ? (e[xo] = [t]) : n.push(t);
       }
       function dh(e, t) {
@@ -3466,8 +3200,7 @@
           r = e[n];
         if (r) {
           const o = r[Rr];
-          null !== o && o !== e && dh(o, r),
-            t > 0 && (e[n - 1][nn] = r[nn]);
+          null !== o && o !== e && dh(o, r), t > 0 && (e[n - 1][nn] = r[nn]);
           const i = sc(e, Oe + t);
           !(function eF(e, t) {
             gC(e, t), (t[Me] = null), (t[Je] = null);
@@ -3495,11 +3228,8 @@
                   r && (n = r);
                 }
                 if (!n) {
-                  for (; t && !t[nn] && t !== e; )
-                    qe(t) && fh(t[b], t), (t = t[je]);
-                  null === t && (t = e),
-                    qe(t) && fh(t[b], t),
-                    (n = t && t[nn]);
+                  for (; t && !t[nn] && t !== e; ) qe(t) && fh(t[b], t), (t = t[je]);
+                  null === t && (t = e), qe(t) && fh(t[b], t), (n = t && t[nn]);
                 }
                 t = n;
               }
@@ -3578,8 +3308,7 @@
           {
             const { componentOffset: o } = r;
             if (o > -1) {
-              const { encapsulation: i } =
-                e.data[r.directiveStart + o];
+              const { encapsulation: i } = e.data[r.directiveStart + o];
               if (i === en.None || i === en.Emulated) return null;
             }
             return lt(r, n);
@@ -3610,8 +3339,7 @@
           i = t[P],
           a = CC(r.parent || t[Je], r, t);
         if (null != o)
-          if (Array.isArray(n))
-            for (let c = 0; c < n.length; c++) _C(i, o, n[c], a, !1);
+          if (Array.isArray(n)) for (let c = 0; c < n.length; c++) _C(i, o, n[c], a, !1);
           else _C(i, o, n, a, !1);
         void 0 !== gh && gh(i, r, t, n, o);
       }
@@ -3661,12 +3389,8 @@
           }
           const a = r[n.index],
             c = n.type;
-          if (
-            (s && 0 === t && (a && ot(oe(a), r), (n.flags |= 2)),
-            32 & ~n.flags)
-          )
-            if (8 & c)
-              vh(e, t, n.child, r, o, i, !1), Ho(t, e, o, a, i);
+          if ((s && 0 === t && (a && ot(oe(a), r), (n.flags |= 2)), 32 & ~n.flags))
+            if (8 & c) vh(e, t, n.child, r, o, i, !1), Ho(t, e, o, a, i);
             else if (32 & c) {
               const u = ch(n, r);
               let l;
@@ -3682,8 +3406,7 @@
       function SC(e, t, n, r, o, i) {
         const s = n[Te],
           c = s[Je].projection[r.projection];
-        if (Array.isArray(c))
-          for (let u = 0; u < c.length; u++) Ho(t, e, o, c[u], i);
+        if (Array.isArray(c)) for (let u = 0; u < c.length; u++) Ho(t, e, o, c[u], i);
         else {
           let u = c;
           const l = s[je];
@@ -3691,9 +3414,7 @@
         }
       }
       function MC(e, t, n) {
-        '' === n
-          ? e.removeAttribute(t, 'class')
-          : e.setAttribute(t, 'class', n);
+        '' === n ? e.removeAttribute(t, 'class') : e.setAttribute(t, 'class', n);
       }
       function TC(e, t, n) {
         const { mergedAttrs: r, classes: o, styles: i } = n;
@@ -3728,14 +3449,9 @@
         try {
           let a = null;
           o & tr.SignalBased && (a = t[r][Jt]),
-            null !== a &&
-              void 0 !== a.transformFn &&
-              (i = a.transformFn(i)),
-            o & tr.HasDecoratorInputTransform &&
-              (i = e.inputTransforms[r].call(t, i)),
-            null !== e.setInput
-              ? e.setInput(t, a, i, n, r)
-              : my(t, a, r, i);
+            null !== a && void 0 !== a.transformFn && (i = a.transformFn(i)),
+            o & tr.HasDecoratorInputTransform && (i = e.inputTransforms[r].call(t, i)),
+            null !== e.setInput ? e.setInput(t, a, i, n, r) : my(t, a, r, i);
         } finally {
           z(s);
         }
@@ -3814,9 +3530,7 @@
               null === e.firstChild && (e.firstChild = c),
               null !== i &&
                 (s
-                  ? null == i.child &&
-                    null !== c.parent &&
-                    (i.child = c)
+                  ? null == i.child && null !== c.parent && (i.child = c)
                   : null === i.next && ((i.next = c), (c.prev = i))),
               c
             );
@@ -3838,18 +3552,14 @@
       function Es(e, t, n, r) {
         if (0 === n) return -1;
         const o = t.length;
-        for (let i = 0; i < n; i++)
-          t.push(r), e.blueprint.push(r), e.data.push(null);
+        for (let i = 0; i < n; i++) t.push(r), e.blueprint.push(r), e.data.push(null);
         return o;
       }
       function xC(e, t, n, r, o) {
         const i = et(),
           s = 2 & r;
         try {
-          Pr(-1),
-            s && t.length > T && AC(e, t, T, !1),
-            yn(s ? 2 : 0, o),
-            n(r, o);
+          Pr(-1), s && t.length > T && AC(e, t, T, !1), yn(s ? 2 : 0, o), n(r, o);
         } finally {
           Pr(i), yn(s ? 3 : 1, o);
         }
@@ -4003,9 +3713,7 @@
       }
       function kC(e, t, n, r, o) {
         let i;
-        e.hasOwnProperty(n)
-          ? (i = e[n]).push(t, r)
-          : (i = e[n] = [t, r]),
+        e.hasOwnProperty(n) ? (i = e[n]).push(t, r) : (i = e[n] = [t, r]),
           void 0 !== o && i.push(o);
       }
       function wh(e, t, n, r) {
@@ -4028,9 +3736,7 @@
                           bh(e, t, a.length);
                       } else r.unshift(s), bh(e, t, 0);
                     else
-                      (o = o || new Map()),
-                        s.findHostDirectiveDefs?.(s, r, o),
-                        r.push(s);
+                      (o = o || new Map()), s.findHostDirectiveDefs?.(s, r, o), r.push(s);
                 }
               return null === r ? null : [r, o];
             })(e, n);
@@ -4072,9 +3778,7 @@
             RF(e, n, t, c, l),
             AF(c, l, o),
             null !== l.contentQueries && (n.flags |= 4),
-            (null !== l.hostBindings ||
-              null !== l.hostAttrs ||
-              0 !== l.hostVars) &&
+            (null !== l.hostBindings || null !== l.hostAttrs || 0 !== l.hostVars) &&
               (n.flags |= 64);
           const d = l.type.prototype;
           !s &&
@@ -4098,8 +3802,7 @@
               p = f ? f.outputs : null;
             (c = PC(0, d.inputs, l, c, f ? f.inputs : null)),
               (u = PC(1, d.outputs, l, u, p));
-            const g =
-              null === c || null === s || qd(t) ? null : FF(c, l, s);
+            const g = null === c || null === s || qd(t) ? null : FF(c, l, s);
             a.push(g);
           }
           null !== c &&
@@ -4123,9 +3826,7 @@
             const c = e.data[a],
               u = t[a];
             gf(a),
-              (null !== c.hostBindings ||
-                0 !== c.hostVars ||
-                null !== c.hostAttrs) &&
+              (null !== c.hostBindings || 0 !== c.hostVars || null !== c.hostAttrs) &&
                 SF(c, u);
           }
         } finally {
@@ -4141,8 +3842,7 @@
       function AF(e, t, n) {
         if (n) {
           if (t.exportAs)
-            for (let r = 0; r < t.exportAs.length; r++)
-              n[t.exportAs[r]] = e;
+            for (let r = 0; r < t.exportAs.length; r++) n[t.exportAs[r]] = e;
           rn(t) && (n[''] = e);
         }
       }
@@ -4183,8 +3883,7 @@
       function OF(e, t, n, r, o, i) {
         const s = i[t];
         if (null !== s)
-          for (let a = 0; a < s.length; )
-            RC(r, n, s[a++], s[a++], s[a++], s[a++]);
+          for (let a = 0; a < s.length; ) RC(r, n, s[a++], s[a++], s[a++], s[a++]);
       }
       function FF(e, t, n) {
         let r = null,
@@ -4264,12 +3963,10 @@
         const n = Pt(t, e),
           r = n[b];
         !(function kF(e, t) {
-          for (let n = t.length; n < e.blueprint.length; n++)
-            t.push(e.blueprint[n]);
+          for (let n = t.length; n < e.blueprint.length; n++) t.push(e.blueprint[n]);
         })(r, n);
         const o = n[Me];
-        null !== o && null === n[ut] && (n[ut] = Wf(o, n[Ue])),
-          Th(r, n, n[ye]);
+        null !== o && null === n[ut] && (n[ut] = Wf(o, n[Ue])), Th(r, n, n[ye]);
       }
       function Th(e, t, n) {
         yf(t);
@@ -4290,8 +3987,7 @@
         } catch (r) {
           throw (
             (e.firstCreatePass &&
-              ((e.incompleteFirstPass = !0),
-              (e.firstCreatePass = !1)),
+              ((e.incompleteFirstPass = !0), (e.firstCreatePass = !1)),
             r)
           );
         } finally {
@@ -4317,11 +4013,7 @@
             );
           c[Rr] = e[t.index];
           const l = e[Ln];
-          return (
-            null !== l && (c[Ln] = l.createEmbeddedView(i)),
-            Th(i, c, n),
-            c
-          );
+          return null !== l && (c[Ln] = l.createEmbeddedView(i)), Th(i, c, n), c;
         } finally {
           z(o);
         }
@@ -4532,10 +4224,7 @@
             const h = e.viewHooks;
             null !== h && Mc(t, h, 2), Cf(t, 2);
           }
-          if (
-            (!0 === e.firstUpdatePass && (e.firstUpdatePass = !1),
-            t[mc])
-          ) {
+          if ((!0 === e.firstUpdatePass && (e.firstUpdatePass = !1), t[mc])) {
             for (const h of t[mc]) h();
             t[mc] = null;
           }
@@ -4644,8 +4333,7 @@
           lf(this._lView), (this._lView[N] |= 128);
         }
         detectChanges() {
-          (this._lView[N] |= 1024),
-            nu(this._lView, this.notifyErrorHandler);
+          (this._lView[N] |= 1024), nu(this._lView, this.notifyErrorHandler);
         }
         checkNoChanges() {}
         attachToViewContainerRef() {
@@ -4656,8 +4344,7 @@
           this._appRef = null;
           const t = Ji(this._lView),
             n = this._lView[Rr];
-          null !== n && !t && dh(n, this._lView),
-            gC(this._lView[b], this._lView);
+          null !== n && !t && dh(n, this._lView), gC(this._lView[b], this._lView);
         }
         attachToAppRef(t) {
           if (this._attachedToViewContainer) throw new D(902, !1);
@@ -4688,12 +4375,10 @@
             return this.createEmbeddedViewImpl(t, n);
           }
           createEmbeddedViewImpl(t, n, r) {
-            const o = Go(
-              this._declarationLView,
-              this._declarationTContainer,
-              t,
-              { embeddedViewInjector: n, dehydratedView: r },
-            );
+            const o = Go(this._declarationLView, this._declarationTContainer, t, {
+              embeddedViewInjector: n,
+              dehydratedView: r,
+            });
             return new Is(o);
           }
         };
@@ -4716,9 +4401,7 @@
       class zP {
         resolveComponentFactory(t) {
           throw (function GP(e) {
-            const t = Error(
-              `No component factory found for ${He(e)}.`,
-            );
+            const t = Error(`No component factory found for ${He(e)}.`);
             return (t.ngComponent = e), t;
           })(t);
         }
@@ -4803,8 +4486,7 @@
             r = ID(t.inputs, !0);
           if (null !== n)
             for (const o of r)
-              n.hasOwnProperty(o.propName) &&
-                (o.transform = n[o.propName]);
+              n.hasOwnProperty(o.propName) && (o.transform = n[o.propName]);
           return r;
         }
         get outputs() {
@@ -4818,18 +4500,13 @@
             (this.selector = (function rR(e) {
               return e.map(nR).join(',');
             })(t.selectors)),
-            (this.ngContentSelectors = t.ngContentSelectors
-              ? t.ngContentSelectors
-              : []),
+            (this.ngContentSelectors = t.ngContentSelectors ? t.ngContentSelectors : []),
             (this.isBoundToModule = !!n);
         }
         create(t, n, r, o) {
           const i = z(null);
           try {
-            let s =
-              (o = o || this.ngModule) instanceof Ft
-                ? o
-                : o?.injector;
+            let s = (o = o || this.ngModule) instanceof Ft ? o : o?.injector;
             s &&
               null !== this.componentDef.getStandaloneInjector &&
               (s = this.componentDef.getStandaloneInjector(s) || s);
@@ -4860,11 +4537,7 @@
                     h,
                     (function QP(e) {
                       const t = e.toLowerCase();
-                      return 'svg' === t
-                        ? 'svg'
-                        : 'math' === t
-                        ? 'math'
-                        : null;
+                      return 'svg' === t ? 'svg' : 'math' === t ? 'math' : null;
                     })(h),
                   );
             let g = 512;
@@ -4873,19 +4546,7 @@
               : this.componentDef.onPush || (g |= 16);
             let y = null;
             null !== p && (y = Wf(p, a, !0));
-            const C = Eh(
-                0,
-                null,
-                null,
-                1,
-                0,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-              ),
+            const C = Eh(0, null, null, 1, 0, null, null, null, null, null, null),
               m = Jc(null, C, null, g, null, null, d, f, a, null, y);
             yf(m);
             let A,
@@ -4909,34 +4570,18 @@
               (te = (function JP(e, t, n, r, o, i, s) {
                 const a = o[b];
                 !(function e1(e, t, n, r) {
-                  for (const o of e)
-                    t.mergedAttrs = Zi(t.mergedAttrs, o.hostAttrs);
+                  for (const o of e) t.mergedAttrs = Zi(t.mergedAttrs, o.hostAttrs);
                   null !== t.mergedAttrs &&
-                    (du(t, t.mergedAttrs, !0),
-                    null !== n && TC(r, n, t));
+                    (du(t, t.mergedAttrs, !0), null !== n && TC(r, n, t));
                 })(r, e, t, s);
                 let c = null;
                 null !== t && (c = Wf(t, o[Ue]));
                 const u = i.rendererFactory.createRenderer(t, n);
                 let l = 16;
                 n.signals ? (l = 4096) : n.onPush && (l = 64);
-                const d = Jc(
-                  o,
-                  OC(n),
-                  null,
-                  l,
-                  o[e.index],
-                  e,
-                  i,
-                  u,
-                  null,
-                  null,
-                  c,
-                );
+                const d = Jc(o, OC(n), null, l, o[e.index], e, i, u, null, null, c);
                 return (
-                  a.firstCreatePass && bh(a, e, r.length - 1),
-                  eu(o, d),
-                  (o[e.index] = d)
+                  a.firstCreatePass && bh(a, e, r.length - 1), eu(o, d), (o[e.index] = d)
                 );
               })(eA, p, Se, At, m, d, f)),
                 ($ = ts(C, T)),
@@ -4944,9 +4589,7 @@
                   (function n1(e, t, n, r) {
                     if (r) zd(e, n, ['ng-version', '18.2.4']);
                     else {
-                      const { attrs: o, classes: i } = (function oR(
-                        e,
-                      ) {
+                      const { attrs: o, classes: i } = (function oR(e) {
                         const t = [],
                           n = [];
                         let r = 1,
@@ -4965,8 +4608,7 @@
                         }
                         return { attrs: t, classes: n };
                       })(t.selectors[0]);
-                      o && zd(e, n, o),
-                        i && i.length > 0 && MC(e, n, i.join(' '));
+                      o && zd(e, n, o), i && i.length > 0 && MC(e, n, i.join(' '));
                     }
                   })(f, Se, p, r),
                 void 0 !== n &&
@@ -4985,14 +4627,8 @@
                   for (let l = 0; l < n.length; l++)
                     ot(Lr(o, a, s.directiveStart + l, s), o);
                   VC(a, o, s), c && ot(c, o);
-                  const u = Lr(
-                    o,
-                    a,
-                    s.directiveStart + s.componentOffset,
-                    s,
-                  );
-                  if (((e[ye] = o[ye] = u), null !== i))
-                    for (const l of i) l(u, t);
+                  const u = Lr(o, a, s.directiveStart + s.componentOffset, s);
+                  if (((e[ye] = o[ye] = u), null !== i)) for (const l of i) l(u, t);
                   return _h(a, s, o), u;
                 })(te, Se, At, Ui, m, [o1])),
                 Th(C, m, null);
@@ -5015,8 +4651,7 @@
             (this._tNode = i),
             (this.previousInputValues = null),
             (this.instance = n),
-            (this.hostView = this.changeDetectorRef =
-              new Is(o, void 0, !1)),
+            (this.hostView = this.changeDetectorRef = new Is(o, void 0, !1)),
             (this.componentType = t);
         }
         setInput(t, n) {
@@ -5061,10 +4696,7 @@
       const s1 = an,
         SD = class extends s1 {
           constructor(t, n, r) {
-            super(),
-              (this._lContainer = t),
-              (this._hostTNode = n),
-              (this._hostLView = r);
+            super(), (this._lContainer = t), (this._hostTNode = n), (this._hostLView = r);
           }
           get element() {
             return ko(this._hostTNode, this._hostLView);
@@ -5124,10 +4756,7 @@
             const l = Z(c.componentType ?? {}),
               d = qr(this._lContainer, l?.id ?? null),
               h = c.create(u, o, d?.firstChild ?? null, i);
-            return (
-              this.insertImpl(h.hostView, a, Gr(this._hostTNode, d)),
-              h
-            );
+            return this.insertImpl(h.hostView, a, Gr(this._hostTNode, d)), h;
           }
           insert(t, n) {
             return this.insertImpl(t, n, !0);
@@ -5149,12 +4778,7 @@
             }
             const i = this._adjustIndex(n),
               s = this._lContainer;
-            return (
-              zo(s, o, i, r),
-              t.attachToViewContainerRef(),
-              zv(zh(s), i, t),
-              t
-            );
+            return zo(s, o, i, r), t.attachToViewContainerRef(), zv(zh(s), i, t), t;
           }
           move(t, n) {
             return this.insert(t, n);
@@ -5171,9 +4795,7 @@
           detach(t) {
             const n = this._adjustIndex(t, -1),
               r = Cs(this._lContainer, n);
-            return r && null != sc(zh(this._lContainer), n)
-              ? new Is(r)
-              : null;
+            return r && null != sc(zh(this._lContainer), n) ? new Is(r) : null;
           }
           _adjustIndex(t, n = 0) {
             return t ?? this.length + n;
@@ -5189,9 +4811,7 @@
         let n;
         const r = t[e.index];
         return (
-          rt(r)
-            ? (n = r)
-            : ((n = jC(r, t, null, e)), (t[e.index] = n), eu(t, n)),
+          rt(r) ? (n = r) : ((n = jC(r, t, null, e)), (t[e.index] = n), eu(t, n)),
           AD(n, t, e, r),
           new SD(n, e, t)
         );
@@ -5240,10 +4860,7 @@
         createEmbeddedView(t) {
           const n = t.queries;
           if (null !== n) {
-            const r =
-                null !== t.contentQueries
-                  ? t.contentQueries[0]
-                  : n.length,
+            const r = null !== t.contentQueries ? t.contentQueries[0] : n.length,
               o = [];
             for (let i = 0; i < r; i++) {
               const s = n.getByIndex(i);
@@ -5288,23 +4905,19 @@
             this.queries[r].elementStart(t, n);
         }
         elementEnd(t) {
-          for (let n = 0; n < this.queries.length; n++)
-            this.queries[n].elementEnd(t);
+          for (let n = 0; n < this.queries.length; n++) this.queries[n].elementEnd(t);
         }
         embeddedTView(t) {
           let n = null;
           for (let r = 0; r < this.length; r++) {
             const o = null !== n ? n.length : 0,
               i = this.getByIndex(r).embeddedTView(t, o);
-            i &&
-              ((i.indexInDeclarationView = r),
-              null !== n ? n.push(i) : (n = [i]));
+            i && ((i.indexInDeclarationView = r), null !== n ? n.push(i) : (n = [i]));
           }
           return null !== n ? new Yh(n) : null;
         }
         template(t, n) {
-          for (let r = 0; r < this.queries.length; r++)
-            this.queries[r].template(t, n);
+          for (let r = 0; r < this.queries.length; r++) this.queries[r].template(t, n);
         }
         getByIndex(t) {
           return this.queries[t];
@@ -5329,8 +4942,7 @@
           this.isApplyingToNode(n) && this.matchTNode(t, n);
         }
         elementEnd(t) {
-          this._declarationNodeIndex === t.index &&
-            (this._appliesToNextNode = !1);
+          this._declarationNodeIndex === t.index && (this._appliesToNextNode = !1);
         }
         template(t, n) {
           this.elementStart(t, n);
@@ -5346,8 +4958,7 @@
           if (this._appliesToNextNode && 1 & ~this.metadata.flags) {
             const n = this._declarationNodeIndex;
             let r = t.parent;
-            for (; null !== r && 8 & r.type && r.index !== n; )
-              r = r.parent;
+            for (; null !== r && 8 & r.type && r.index !== n; ) r = r.parent;
             return n === (null !== r ? r.index : -1);
           }
           return this._appliesToNextNode;
@@ -5358,20 +4969,12 @@
             for (let o = 0; o < r.length; o++) {
               const i = r[o];
               this.matchTNodeWithReadOption(t, n, d1(n, i)),
-                this.matchTNodeWithReadOption(
-                  t,
-                  n,
-                  Rc(n, t, i, !1, !1),
-                );
+                this.matchTNodeWithReadOption(t, n, Rc(n, t, i, !1, !1));
             }
           else
             r === Gn
               ? 4 & n.type && this.matchTNodeWithReadOption(t, n, -1)
-              : this.matchTNodeWithReadOption(
-                  t,
-                  n,
-                  Rc(n, t, r, !1, !1),
-                );
+              : this.matchTNodeWithReadOption(t, n, Rc(n, t, r, !1, !1));
         }
         matchTNodeWithReadOption(t, n, r) {
           if (null !== r) {
@@ -5387,26 +4990,19 @@
           }
         }
         addMatch(t, n) {
-          null === this.matches
-            ? (this.matches = [t, n])
-            : this.matches.push(t, n);
+          null === this.matches ? (this.matches = [t, n]) : this.matches.push(t, n);
         }
       }
       function d1(e, t) {
         const n = e.localNames;
         if (null !== n)
-          for (let r = 0; r < n.length; r += 2)
-            if (n[r] === t) return n[r + 1];
+          for (let r = 0; r < n.length; r += 2) if (n[r] === t) return n[r + 1];
         return null;
       }
       function h1(e, t, n, r) {
         return -1 === n
           ? (function f1(e, t) {
-              return 11 & e.type
-                ? ko(e, t)
-                : 4 & e.type
-                ? ru(e, t)
-                : null;
+              return 11 & e.type ? ko(e, t) : 4 & e.type ? ru(e, t) : null;
             })(t, e)
           : -2 === n
           ? (function p1(e, t, n) {
@@ -5428,9 +5024,7 @@
             a = [];
           for (let c = 0; null !== s && c < s.length; c += 2) {
             const u = s[c];
-            a.push(
-              u < 0 ? null : h1(t, i[u], s[c + 1], n.metadata.read),
-            );
+            a.push(u < 0 ? null : h1(t, i[u], s[c + 1], n.metadata.read));
           }
           o.matches = a;
         }
@@ -5468,8 +5062,7 @@
         return (
           r.firstCreatePass &&
             ((function LD(e, t, n) {
-              null === e.queries && (e.queries = new Yh()),
-                e.queries.track(new Qh(t, n));
+              null === e.queries && (e.queries = new Yh()), e.queries.track(new Qh(t, n));
             })(r, new xD(e, t, n), -1),
             !(2 & ~t) && (r.staticViewQueries = !0)),
           (function FD(e, t, n) {
@@ -5477,8 +5070,7 @@
             return (
               (function vF(e, t, n, r) {
                 const o = BC(t);
-                o.push(n),
-                  e.firstCreatePass && $C(e).push(r, o.length - 1);
+                o.push(n), e.firstCreatePass && $C(e).push(r, o.length - 1);
               })(e, t, r, r.destroy),
               (t[Ln] ??= new Zh()).queries.push(new Wh(r)) - 1
             );
@@ -5562,9 +5154,7 @@
                 rn(o) && o.data.animation)
               ) {
                 const l = e.data;
-                l.animation = (l.animation || []).concat(
-                  o.data.animation,
-                );
+                l.animation = (l.animation || []).concat(o.data.animation);
               }
             }
             const i = o.features;
@@ -5582,20 +5172,13 @@
           for (let r = e.length - 1; r >= 0; r--) {
             const o = e[r];
             (o.hostVars = t += o.hostVars),
-              (o.hostAttrs = Zi(
-                o.hostAttrs,
-                (n = Zi(n, o.hostAttrs)),
-              ));
+              (o.hostAttrs = Zi(o.hostAttrs, (n = Zi(n, o.hostAttrs))));
           }
         })(r);
       }
       function S1(e, t) {
         for (const n in t.inputs) {
-          if (
-            !t.inputs.hasOwnProperty(n) ||
-            e.inputs.hasOwnProperty(n)
-          )
-            continue;
+          if (!t.inputs.hasOwnProperty(n) || e.inputs.hasOwnProperty(n)) continue;
           const r = t.inputs[n];
           if (
             void 0 !== r &&
@@ -5605,8 +5188,7 @@
           ) {
             const o = Array.isArray(r) ? r[0] : r;
             if (!t.inputTransforms.hasOwnProperty(o)) continue;
-            (e.inputTransforms ??= {}),
-              (e.inputTransforms[o] = t.inputTransforms[o]);
+            (e.inputTransforms ??= {}), (e.inputTransforms[o] = t.inputTransforms[o]);
           }
         }
       }
@@ -5702,9 +5284,7 @@
       }
       class iE extends Wr {
         constructor(t) {
-          super(),
-            (this.componentFactoryResolver = new bD(this)),
-            (this.instance = null);
+          super(), (this.componentFactoryResolver = new bD(this)), (this.instance = null);
           const n = new Io(
             [
               ...t.providers,
@@ -5719,8 +5299,7 @@
             new Set(['environment']),
           );
           (this.injector = n),
-            t.runEnvironmentInitializers &&
-              n.resolveInjectorInitializers();
+            t.runEnvironmentInitializers && n.resolveInjectorInitializers();
         }
         destroy() {
           this.injector.destroy();
@@ -5739,16 +5318,11 @@
       }
       function pu(e) {
         return (
-          !!op(e) &&
-          (Array.isArray(e) ||
-            (!(e instanceof Map) && Symbol.iterator in e))
+          !!op(e) && (Array.isArray(e) || (!(e instanceof Map) && Symbol.iterator in e))
         );
       }
       function op(e) {
-        return (
-          null !== e &&
-          ('function' == typeof e || 'object' == typeof e)
-        );
+        return null !== e && ('function' == typeof e || 'object' == typeof e);
       }
       function Fe(e, t, n) {
         return !Object.is(e[t], n) && ((e[t] = n), !0);
@@ -5775,8 +5349,7 @@
                 ));
                 return (
                   null !== t.queries &&
-                    (t.queries.template(t, l),
-                    (d.queries = t.queries.embeddedTView(l))),
+                    (t.queries.template(t, l), (d.queries = t.queries.embeddedTView(l))),
                   l
                 );
               })(l, t, e, r, o, i, s, a, c)
@@ -5838,32 +5411,24 @@
             (this.deferredRegistrations = new Set()),
             (this.executing = !1);
         }
-        static #e = (this.PHASES = [
-          Ko.EarlyRead,
-          Ko.Write,
-          Ko.MixedReadWrite,
-          Ko.Read,
-        ]);
+        static #e = (this.PHASES = [Ko.EarlyRead, Ko.Write, Ko.MixedReadWrite, Ko.Read]);
         execute() {
           this.executing = !0;
           for (const t of $s.PHASES)
             for (const n of this.sequences)
               if (!n.erroredOrDestroyed && n.hooks[t])
                 try {
-                  n.pipelinedValue = this.ngZone.runOutsideAngular(
-                    () => n.hooks[t](n.pipelinedValue),
+                  n.pipelinedValue = this.ngZone.runOutsideAngular(() =>
+                    n.hooks[t](n.pipelinedValue),
                   );
                 } catch (r) {
-                  (n.erroredOrDestroyed = !0),
-                    this.errorHandler?.handleError(r);
+                  (n.erroredOrDestroyed = !0), this.errorHandler?.handleError(r);
                 }
           this.executing = !1;
           for (const t of this.sequences)
             t.afterRun(), t.once && this.sequences.delete(t);
-          for (const t of this.deferredRegistrations)
-            this.sequences.add(t);
-          this.deferredRegistrations.size > 0 &&
-            this.scheduler.notify(7),
+          for (const t of this.deferredRegistrations) this.sequences.add(t);
+          this.deferredRegistrations.size > 0 && this.scheduler.notify(7),
             this.deferredRegistrations.clear();
         }
         register(t) {
@@ -5873,11 +5438,8 @@
         }
         unregister(t) {
           this.executing && this.sequences.has(t)
-            ? ((t.erroredOrDestroyed = !0),
-              (t.pipelinedValue = void 0),
-              (t.once = !0))
-            : (this.sequences.delete(t),
-              this.deferredRegistrations.delete(t));
+            ? ((t.erroredOrDestroyed = !0), (t.pipelinedValue = void 0), (t.once = !0))
+            : (this.sequences.delete(t), this.deferredRegistrations.delete(t));
         }
         static #t = (this.ɵprov = I({
           token: $s,
@@ -5924,8 +5486,7 @@
           null === e ||
           null == t ||
           (Array.isArray(e) ? e[1] : e) === t ||
-          (!(!Array.isArray(e) || 'string' != typeof t) &&
-            wo(e, t) >= 0)
+          (!(!Array.isArray(e) || 'string' != typeof t) && wo(e, t) >= 0)
         );
       }
       function S(e, t, n) {
@@ -6005,20 +5566,13 @@
                   let i = r ? t.residualClasses : t.residualStyles;
                   if (null === o)
                     0 === (r ? t.classBindings : t.styleBindings) &&
-                      ((n = Gs(
-                        (n = Cp(null, e, t, n, r)),
-                        t.attrs,
-                        r,
-                      )),
-                      (i = null));
+                      ((n = Gs((n = Cp(null, e, t, n, r)), t.attrs, r)), (i = null));
                   else {
                     const s = t.directiveStylingLast;
                     if (-1 === s || e[s] !== o)
                       if (((n = Cp(o, e, t, n, r)), null === i)) {
                         let c = (function Uk(e, t, n) {
-                          const r = n
-                            ? t.classBindings
-                            : t.styleBindings;
+                          const r = n ? t.classBindings : t.styleBindings;
                           if (0 !== Qr(r)) return e[fr(r)];
                         })(e, t, r);
                         void 0 !== c &&
@@ -6026,30 +5580,20 @@
                           ((c = Cp(null, e, t, c[1], r)),
                           (c = Gs(c, t.attrs, r)),
                           (function Bk(e, t, n, r) {
-                            e[
-                              fr(
-                                n ? t.classBindings : t.styleBindings,
-                              )
-                            ] = r;
+                            e[fr(n ? t.classBindings : t.styleBindings)] = r;
                           })(e, t, r, c));
                       } else
                         i = (function $k(e, t, n) {
                           let r;
                           const o = t.directiveEnd;
-                          for (
-                            let i = 1 + t.directiveStylingLast;
-                            i < o;
-                            i++
-                          )
+                          for (let i = 1 + t.directiveStylingLast; i < o; i++)
                             r = Gs(r, e[i].hostAttrs, n);
                           return Gs(r, t.attrs, n);
                         })(e, t, r);
                   }
                   return (
                     void 0 !== i &&
-                      (r
-                        ? (t.residualClasses = i)
-                        : (t.residualStyles = i)),
+                      (r ? (t.residualClasses = i) : (t.residualStyles = i)),
                     n
                   );
                 })(o, i, t, r)),
@@ -6062,8 +5606,7 @@
                     u = !1;
                   if (
                     (Array.isArray(n)
-                      ? ((l = n[1]),
-                        (null === l || wo(n, l) > 0) && (u = !0))
+                      ? ((l = n[1]), (null === l || wo(n, l) > 0) && (u = !0))
                       : (l = n),
                     o)
                   )
@@ -6080,17 +5623,13 @@
                         (a = r);
                   else
                     (e[r + 1] = Du(c, 0)),
-                      0 === a
-                        ? (a = r)
-                        : (e[c + 1] = vp(e[c + 1], r)),
+                      0 === a ? (a = r) : (e[c + 1] = vp(e[c + 1], r)),
                       (c = r);
                   u && (e[r + 1] = mp(e[r + 1])),
                     BE(e, l, r, !0),
                     BE(e, l, r, !1),
                     (function Ak(e, t, n, r, o) {
-                      const i = o
-                        ? e.residualClasses
-                        : e.residualStyles;
+                      const i = o ? e.residualClasses : e.residualStyles;
                       null != i &&
                         'string' == typeof t &&
                         wo(i, t) >= 0 &&
@@ -6121,14 +5660,12 @@
                 (function uF(e, t, n, r, o) {
                   if (t) o ? e.addClass(n, r) : e.removeClass(n, r);
                   else {
-                    let i =
-                      -1 === r.indexOf('-') ? void 0 : ar.DashCase;
+                    let i = -1 === r.indexOf('-') ? void 0 : ar.DashCase;
                     null == o
                       ? e.removeStyle(n, r, i)
                       : ('string' == typeof o &&
                           o.endsWith('!important') &&
-                          ((o = o.slice(0, -10)),
-                          (i |= ar.Important)),
+                          ((o = o.slice(0, -10)), (i |= ar.Important)),
                         e.setStyle(n, r, o, i));
                   }
                 })(r, s, es(et(), n), o, i));
@@ -6173,8 +5710,7 @@
             'number' == typeof s
               ? (o = s)
               : o === r &&
-                (Array.isArray(e) ||
-                  (e = void 0 === e ? [] : ['', e]),
+                (Array.isArray(e) || (e = void 0 === e ? [] : ['', e]),
                 xt(e, s, !!n || t[++i]));
           }
         return void 0 === e ? null : e;
@@ -6190,8 +5726,7 @@
           let f = n[o + 1];
           f === B && (f = d ? re : void 0);
           let h = d ? Hd(f, r) : l === r ? f : void 0;
-          if ((u && !wu(h) && (h = Hd(c, r)), wu(h) && ((a = h), s)))
-            return a;
+          if ((u && !wu(h) && (h = Hd(c, r)), wu(h) && ((a = h), s))) return a;
           const p = e[o + 1];
           o = s ? fr(p) : Qr(p);
         }
@@ -6260,8 +5795,7 @@
           })();
         const n = q();
         return (
-          n.firstCreatePass &&
-            (Ic(n, e), nf(e) && n.queries.elementEnd(e)),
+          n.firstCreatePass && (Ic(n, e), nf(e) && n.queries.elementEnd(e)),
           null != t.classesWithoutHost &&
             (function rx(e) {
               return !!(8 & e.flags);
@@ -6321,8 +5855,7 @@
         const t = q();
         return (
           hf() ? pf() : ((e = e.parent), on(e, !1)),
-          t.firstCreatePass &&
-            (Ic(t, e), nf(e) && t.queries.elementEnd(e)),
+          t.firstCreatePass && (Ic(t, e), nf(e) && t.queries.elementEnd(e)),
           Ie
         );
       }
@@ -6369,8 +5902,7 @@
                   })(e, t, o, r.index)),
                 null !== A)
               )
-                ((A.__ngLastListenerFn__ || A).__ngNextListenerFn__ =
-                  i),
+                ((A.__ngLastListenerFn__ || A).__ngNextListenerFn__ = i),
                   (A.__ngLastListenerFn__ = i),
                   (f = !1);
               else {
@@ -6387,8 +5919,7 @@
                 for (let y = 0; y < g; y += 2) {
                   const te = t[p[y]][p[y + 1]].subscribe(i),
                     Se = d.length;
-                  d.push(i, te),
-                    u && u.push(o, r.index, Se, -(Se + 1));
+                  d.push(i, te), u && u.push(o, r.index, Se, -(Se + 1));
                 }
             }
           })(i, o, o[P], s, e, t, r),
@@ -6411,8 +5942,7 @@
           bs(e.componentOffset > -1 ? Pt(e.index, t) : t, 5);
           let a = Rw(t, n, r, i),
             c = o.__ngNextListenerFn__;
-          for (; c; )
-            (a = Rw(t, n, c, i) && a), (c = c.__ngNextListenerFn__);
+          for (; c; ) (a = Rw(t, n, c, i) && a), (c = c.__ngNextListenerFn__);
           return a;
         };
       }
@@ -6455,9 +5985,7 @@
           for (; null !== i; ) {
             if (128 !== i.type) {
               const s = e ? fV(i, e) : 0;
-              null !== s &&
-                (o[s] ? (o[s].projectionNext = i) : (r[s] = i),
-                (o[s] = i));
+              null !== s && (o[s] ? (o[s].projectionNext = i) : (r[s] = i), (o[s] = i));
             }
             i = i.next;
           }
@@ -6477,24 +6005,12 @@
                 o = t.data[r],
                 i = e[r],
                 s = qr(i, o.tView.ssrId);
-              zo(
-                i,
-                Go(e, o, void 0, { dehydratedView: s }),
-                0,
-                Gr(o, s),
-              );
+              zo(i, Go(e, o, void 0, { dehydratedView: s }), 0, Gr(o, s));
             })(s, a, c)
           : d &&
             32 & ~u.flags &&
             (function aF(e, t, n) {
-              SC(
-                t[P],
-                0,
-                t,
-                n,
-                hh(e, n, t),
-                CC(n.parent || t[Je], n, t),
-              );
+              SC(t[P], 0, t, n, hh(e, n, t), CC(n.parent || t[Je], n, t));
             })(a, s, u);
       }
       function Qs(e, t, n) {
@@ -6615,8 +6131,7 @@
                 o && (a.providerIndexes += 1048576),
                 n.push(C),
                 s.push(C);
-            } else
-              Np(i, e, h > -1 ? h : p, hb(n[o ? p : h], u, !o && r));
+            } else Np(i, e, h > -1 ? h : p, hb(n[o ? p : h], u, !o && r));
             !o && r && y && n[p].componentProviders++;
           }
         }
@@ -6669,8 +6184,7 @@
               const r = q();
               if (r.firstCreatePass) {
                 const o = rn(e);
-                Ap(n, r.data, r.blueprint, o, !0),
-                  Ap(t, r.data, r.blueprint, o, !1);
+                Ap(n, r.data, r.blueprint, o, !0), Ap(t, r.data, r.blueprint, o, !1);
               }
             })(r, o ? o(e) : e, t);
         };
@@ -6686,11 +6200,7 @@
               const r = Wd(0, n.type),
                 o =
                   r.length > 0
-                    ? rp(
-                        [r],
-                        this._injector,
-                        `Standalone[${n.type.name}]`,
-                      )
+                    ? rp([r], this._injector, `Standalone[${n.type.name}]`)
                     : null;
               this.cachedInjectors.set(n, o);
             }
@@ -6698,8 +6208,7 @@
           }
           ngOnDestroy() {
             try {
-              for (const n of this.cachedInjectors.values())
-                null !== n && n.destroy();
+              for (const n of this.cachedInjectors.values()) null !== n && n.destroy();
             } finally {
               this.cachedInjectors.clear();
             }
@@ -6714,8 +6223,7 @@
       })();
       function J(e) {
         ft('NgStandalone'),
-          (e.getStandaloneInjector = t =>
-            t.get(PV).getOrCreateStandaloneInjector(e));
+          (e.getStandaloneInjector = t => t.get(PV).getOrCreateStandaloneInjector(e));
       }
       function Db(e, t) {
         return ru(e, t);
@@ -6813,9 +6321,7 @@
               (this.afterTick = new at()),
               (this.componentTypes = []),
               (this.components = []),
-              (this.isStable = _(jr).hasPendingTasks.pipe(
-                ne(n => !n),
-              )),
+              (this.isStable = _(jr).hasPendingTasks.pipe(ne(n => !n))),
               (this._injector = _(Ft));
           }
           get allViews() {
@@ -6851,9 +6357,7 @@
                 new D(405, !1))
               );
             let s;
-            (s = o
-              ? n
-              : this._injector.get(uu).resolveComponentFactory(n)),
+            (s = o ? n : this._injector.get(uu).resolveComponentFactory(n)),
               this.componentTypes.push(s.componentType);
             const a = (function Qj(e) {
                 return e.isBoundToModule;
@@ -6875,8 +6379,7 @@
             );
           }
           tick() {
-            this.zonelessEnabled || (this.dirtyFlags |= 1),
-              this._tick();
+            this.zonelessEnabled || (this.dirtyFlags |= 1), this._tick();
           }
           _tick() {
             if (this._runningTick) throw new D(101, !1);
@@ -6896,8 +6399,7 @@
               (this.dirtyFlags |= this.deferredDirtyFlags),
               (this.deferredDirtyFlags = 0);
             let r = 0;
-            for (; 0 !== this.dirtyFlags && r++ < 10; )
-              this.synchronizeOnce(n);
+            for (; 0 !== this.dirtyFlags && r++ < 10; ) this.synchronizeOnce(n);
           }
           synchronizeOnce(n) {
             if (
@@ -6906,11 +6408,8 @@
               7 & this.dirtyFlags)
             ) {
               const r = !!(1 & this.dirtyFlags);
-              (this.dirtyFlags &= -8),
-                (this.dirtyFlags |= 8),
-                this.beforeRender.next(r);
-              for (let { _lView: o, notifyErrorHandler: i } of this
-                ._views)
+              (this.dirtyFlags &= -8), (this.dirtyFlags |= 8), this.beforeRender.next(r);
+              for (let { _lView: o, notifyErrorHandler: i } of this._views)
                 Jj(o, i, r, this.zonelessEnabled);
               if (
                 ((this.dirtyFlags &= -5),
@@ -6920,8 +6419,7 @@
                 return;
             } else n?.begin?.(), n?.end?.();
             8 & this.dirtyFlags &&
-              ((this.dirtyFlags &= -9),
-              this.afterRenderManager.execute()),
+              ((this.dirtyFlags &= -9), this.afterRenderManager.execute()),
               this.syncDirtyFlagsWithViews();
           }
           syncDirtyFlagsWithViews() {
@@ -6938,9 +6436,7 @@
             Pu(this._views, r), r.detachFromAppRef();
           }
           _loadComponent(n) {
-            this.attachView(n.hostView),
-              this.tick(),
-              this.components.push(n);
+            this.attachView(n.hostView), this.tick(), this.components.push(n);
             const r = this._injector.get(Fu, []);
             [...this._bootstrapListeners, ...r].forEach(o => o(n));
           }
@@ -6957,10 +6453,7 @@
               }
           }
           onDestroy(n) {
-            return (
-              this._destroyListeners.push(n),
-              () => Pu(this._destroyListeners, n)
-            );
+            return this._destroyListeners.push(n), () => Pu(this._destroyListeners, n);
           }
           destroy() {
             if (this._destroyed) throw new D(406, !1);
@@ -7011,9 +6504,7 @@
               return new e2(r, i);
             }
             compileModuleAndAllComponentsAsync(n) {
-              return Promise.resolve(
-                this.compileModuleAndAllComponentsSync(n),
-              );
+              return Promise.resolve(this.compileModuleAndAllComponentsSync(n));
             }
             clearCache() {}
             clearCacheFor(n) {}
@@ -7097,8 +6588,7 @@
       function $p(e) {
         return {
           enableLongStackTrace: !1,
-          shouldCoalesceEventChangeDetection:
-            e?.eventCoalescing ?? !1,
+          shouldCoalesceEventChangeDetection: e?.eventCoalescing ?? !1,
           shouldCoalesceRunChangeDetection: e?.runCoalescing ?? !1,
         };
       }
@@ -7133,8 +6623,7 @@
                 }),
                 this.subscription.add(
                   this.zone.onUnstable.subscribe(() => {
-                    se.assertInAngularZone(),
-                      (n ??= this.pendingTasks.add());
+                    se.assertInAngularZone(), (n ??= this.pendingTasks.add());
                   }),
                 );
             }
@@ -7159,13 +6648,9 @@
                 (this.taskService = _(jr)),
                 (this.ngZone = _(se)),
                 (this.zonelessEnabled = _(Os)),
-                (this.disableScheduling =
-                  _(_D, { optional: !0 }) ?? !1),
-                (this.zoneIsDefined =
-                  typeof Zone < 'u' && !!Zone.root.run),
-                (this.schedulerTickApplyArgs = [
-                  { data: { __scheduler_tick__: !0 } },
-                ]),
+                (this.disableScheduling = _(_D, { optional: !0 }) ?? !1),
+                (this.zoneIsDefined = typeof Zone < 'u' && !!Zone.root.run),
+                (this.schedulerTickApplyArgs = [{ data: { __scheduler_tick__: !0 } }]),
                 (this.subscriptions = new tt()),
                 (this.angularZoneId = this.zoneIsDefined
                   ? this.ngZone._inner?.get(Fc)
@@ -7214,12 +6699,9 @@
               if (!this.shouldScheduleTick()) return;
               const r = this.useMicrotaskScheduler ? u_ : c_;
               (this.pendingRenderTaskId = this.taskService.add()),
-                (this.cancelScheduledCallback = this
-                  .scheduleInRootZone
+                (this.cancelScheduledCallback = this.scheduleInRootZone
                   ? Zone.root.run(() => r(() => this.tick()))
-                  : this.ngZone.runOutsideAngular(() =>
-                      r(() => this.tick()),
-                    ));
+                  : this.ngZone.runOutsideAngular(() => r(() => this.tick())));
             }
             shouldScheduleTick() {
               return !(
@@ -7253,8 +6735,7 @@
               }
               (this.useMicrotaskScheduler = !0),
                 u_(() => {
-                  (this.useMicrotaskScheduler = !1),
-                    this.taskService.remove(n);
+                  (this.useMicrotaskScheduler = !1), this.taskService.remove(n);
                 });
             }
             ngOnDestroy() {
@@ -7268,8 +6749,7 @@
                 null !== this.pendingRenderTaskId)
               ) {
                 const n = this.pendingRenderTaskId;
-                (this.pendingRenderTaskId = null),
-                  this.taskService.remove(n);
+                (this.pendingRenderTaskId = null), this.taskService.remove(n);
               }
             }
             static #e = (this.ɵfac = function (r) {
@@ -7288,9 +6768,7 @@
           factory: () =>
             _(gr, Q.Optional | Q.SkipSelf) ||
             (function a2() {
-              return (
-                (typeof $localize < 'u' && $localize.locale) || Iu
-              );
+              return (typeof $localize < 'u' && $localize.locale) || Iu;
             })(),
         }),
         Gp = new E('');
@@ -7351,8 +6829,7 @@
             o = 0,
             i = null;
           for (; n || r; ) {
-            const s =
-                !r || (n && n.currentIndex < uI(r, o, i)) ? n : r,
+            const s = !r || (n && n.currentIndex < uI(r, o, i)) ? n : r,
               a = uI(s, o, i),
               c = s.currentIndex;
             if (s === r) o--, (r = r._nextRemoved);
@@ -7375,36 +6852,23 @@
         }
         forEachPreviousItem(t) {
           let n;
-          for (
-            n = this._previousItHead;
-            null !== n;
-            n = n._nextPrevious
-          )
-            t(n);
+          for (n = this._previousItHead; null !== n; n = n._nextPrevious) t(n);
         }
         forEachAddedItem(t) {
           let n;
-          for (n = this._additionsHead; null !== n; n = n._nextAdded)
-            t(n);
+          for (n = this._additionsHead; null !== n; n = n._nextAdded) t(n);
         }
         forEachMovedItem(t) {
           let n;
-          for (n = this._movesHead; null !== n; n = n._nextMoved)
-            t(n);
+          for (n = this._movesHead; null !== n; n = n._nextMoved) t(n);
         }
         forEachRemovedItem(t) {
           let n;
-          for (n = this._removalsHead; null !== n; n = n._nextRemoved)
-            t(n);
+          for (n = this._removalsHead; null !== n; n = n._nextRemoved) t(n);
         }
         forEachIdentityChange(t) {
           let n;
-          for (
-            n = this._identityChangesHead;
-            null !== n;
-            n = n._nextIdentityChange
-          )
-            t(n);
+          for (n = this._identityChangesHead; null !== n; n = n._nextIdentityChange) t(n);
         }
         diff(t) {
           if ((null == t && (t = []), !pu(t))) throw new D(900, !1);
@@ -7425,15 +6889,13 @@
                 (s = this._trackByFn(a, i)),
                 null !== n && Object.is(n.trackById, s)
                   ? (r && (n = this._verifyReinsertion(n, i, s, a)),
-                    Object.is(n.item, i) ||
-                      this._addIdentityChange(n, i))
+                    Object.is(n.item, i) || this._addIdentityChange(n, i))
                   : ((n = this._mismatch(n, i, s, a)), (r = !0)),
                 (n = n._next);
           } else
             (o = 0),
               (function U1(e, t) {
-                if (Array.isArray(e))
-                  for (let n = 0; n < e.length; n++) t(e[n]);
+                if (Array.isArray(e)) for (let n = 0; n < e.length; n++) t(e[n]);
                 else {
                   const n = e[Symbol.iterator]();
                   let r;
@@ -7443,16 +6905,13 @@
                 (s = this._trackByFn(o, a)),
                   null !== n && Object.is(n.trackById, s)
                     ? (r && (n = this._verifyReinsertion(n, a, s, o)),
-                      Object.is(n.item, a) ||
-                        this._addIdentityChange(n, a))
+                      Object.is(n.item, a) || this._addIdentityChange(n, a))
                     : ((n = this._mismatch(n, a, s, o)), (r = !0)),
                   (n = n._next),
                   o++;
               }),
               (this.length = o);
-          return (
-            this._truncate(n), (this.collection = t), this.isDirty
-          );
+          return this._truncate(n), (this.collection = t), this.isDirty;
         }
         get isDirty() {
           return (
@@ -7465,52 +6924,33 @@
         _reset() {
           if (this.isDirty) {
             let t;
-            for (
-              t = this._previousItHead = this._itHead;
-              null !== t;
-              t = t._next
-            )
+            for (t = this._previousItHead = this._itHead; null !== t; t = t._next)
               t._nextPrevious = t._next;
-            for (
-              t = this._additionsHead;
-              null !== t;
-              t = t._nextAdded
-            )
+            for (t = this._additionsHead; null !== t; t = t._nextAdded)
               t.previousIndex = t.currentIndex;
             for (
-              this._additionsHead = this._additionsTail = null,
-                t = this._movesHead;
+              this._additionsHead = this._additionsTail = null, t = this._movesHead;
               null !== t;
               t = t._nextMoved
             )
               t.previousIndex = t.currentIndex;
             (this._movesHead = this._movesTail = null),
               (this._removalsHead = this._removalsTail = null),
-              (this._identityChangesHead = this._identityChangesTail =
-                null);
+              (this._identityChangesHead = this._identityChangesTail = null);
           }
         }
         _mismatch(t, n, r, o) {
           let i;
           return (
-            null === t
-              ? (i = this._itTail)
-              : ((i = t._prev), this._remove(t)),
+            null === t ? (i = this._itTail) : ((i = t._prev), this._remove(t)),
             null !==
             (t =
-              null === this._unlinkedRecords
-                ? null
-                : this._unlinkedRecords.get(r, null))
-              ? (Object.is(t.item, n) ||
-                  this._addIdentityChange(t, n),
+              null === this._unlinkedRecords ? null : this._unlinkedRecords.get(r, null))
+              ? (Object.is(t.item, n) || this._addIdentityChange(t, n),
                 this._reinsertAfter(t, i, o))
               : null !==
-                (t =
-                  null === this._linkedRecords
-                    ? null
-                    : this._linkedRecords.get(r, o))
-              ? (Object.is(t.item, n) ||
-                  this._addIdentityChange(t, n),
+                (t = null === this._linkedRecords ? null : this._linkedRecords.get(r, o))
+              ? (Object.is(t.item, n) || this._addIdentityChange(t, n),
                 this._moveAfter(t, i, o))
               : (t = this._addAfter(new I2(n, r), i, o)),
             t
@@ -7518,14 +6958,11 @@
         }
         _verifyReinsertion(t, n, r, o) {
           let i =
-            null === this._unlinkedRecords
-              ? null
-              : this._unlinkedRecords.get(r, null);
+            null === this._unlinkedRecords ? null : this._unlinkedRecords.get(r, null);
           return (
             null !== i
               ? (t = this._reinsertAfter(i, t._prev, o))
-              : t.currentIndex != o &&
-                ((t.currentIndex = o), this._addToMoves(t, o)),
+              : t.currentIndex != o && ((t.currentIndex = o), this._addToMoves(t, o)),
             t
           );
         }
@@ -7534,42 +6971,28 @@
             const n = t._next;
             this._addToRemovals(this._unlink(t)), (t = n);
           }
-          null !== this._unlinkedRecords &&
-            this._unlinkedRecords.clear(),
-            null !== this._additionsTail &&
-              (this._additionsTail._nextAdded = null),
-            null !== this._movesTail &&
-              (this._movesTail._nextMoved = null),
+          null !== this._unlinkedRecords && this._unlinkedRecords.clear(),
+            null !== this._additionsTail && (this._additionsTail._nextAdded = null),
+            null !== this._movesTail && (this._movesTail._nextMoved = null),
             null !== this._itTail && (this._itTail._next = null),
-            null !== this._removalsTail &&
-              (this._removalsTail._nextRemoved = null),
+            null !== this._removalsTail && (this._removalsTail._nextRemoved = null),
             null !== this._identityChangesTail &&
               (this._identityChangesTail._nextIdentityChange = null);
         }
         _reinsertAfter(t, n, r) {
-          null !== this._unlinkedRecords &&
-            this._unlinkedRecords.remove(t);
+          null !== this._unlinkedRecords && this._unlinkedRecords.remove(t);
           const o = t._prevRemoved,
             i = t._nextRemoved;
           return (
-            null === o
-              ? (this._removalsHead = i)
-              : (o._nextRemoved = i),
-            null === i
-              ? (this._removalsTail = o)
-              : (i._prevRemoved = o),
+            null === o ? (this._removalsHead = i) : (o._nextRemoved = i),
+            null === i ? (this._removalsTail = o) : (i._prevRemoved = o),
             this._insertAfter(t, n, r),
             this._addToMoves(t, r),
             t
           );
         }
         _moveAfter(t, n, r) {
-          return (
-            this._unlink(t),
-            this._insertAfter(t, n, r),
-            this._addToMoves(t, r),
-            t
-          );
+          return this._unlink(t), this._insertAfter(t, n, r), this._addToMoves(t, r), t;
         }
         _addAfter(t, n, r) {
           return (
@@ -7588,8 +7011,7 @@
             (t._prev = n),
             null === o ? (this._itTail = t) : (o._prev = t),
             null === n ? (this._itHead = t) : (n._next = t),
-            null === this._linkedRecords &&
-              (this._linkedRecords = new cI()),
+            null === this._linkedRecords && (this._linkedRecords = new cI()),
             this._linkedRecords.put(t),
             (t.currentIndex = r),
             t
@@ -7599,8 +7021,7 @@
           return this._addToRemovals(this._unlink(t));
         }
         _unlink(t) {
-          null !== this._linkedRecords &&
-            this._linkedRecords.remove(t);
+          null !== this._linkedRecords && this._linkedRecords.remove(t);
           const n = t._prev,
             r = t._next;
           return (
@@ -7621,18 +7042,14 @@
         }
         _addToRemovals(t) {
           return (
-            null === this._unlinkedRecords &&
-              (this._unlinkedRecords = new cI()),
+            null === this._unlinkedRecords && (this._unlinkedRecords = new cI()),
             this._unlinkedRecords.put(t),
             (t.currentIndex = null),
             (t._nextRemoved = null),
             null === this._removalsTail
-              ? ((this._removalsTail = this._removalsHead = t),
-                (t._prevRemoved = null))
+              ? ((this._removalsTail = this._removalsHead = t), (t._prevRemoved = null))
               : ((t._prevRemoved = this._removalsTail),
-                (this._removalsTail =
-                  this._removalsTail._nextRemoved =
-                    t)),
+                (this._removalsTail = this._removalsTail._nextRemoved = t)),
             t
           );
         }
@@ -7642,8 +7059,7 @@
             (this._identityChangesTail =
               null === this._identityChangesTail
                 ? (this._identityChangesHead = t)
-                : (this._identityChangesTail._nextIdentityChange =
-                    t)),
+                : (this._identityChangesTail._nextIdentityChange = t)),
             t
           );
         }
@@ -7672,9 +7088,7 @@
         }
         add(t) {
           null === this._head
-            ? ((this._head = this._tail = t),
-              (t._nextDup = null),
-              (t._prevDup = null))
+            ? ((this._head = this._tail = t), (t._nextDup = null), (t._prevDup = null))
             : ((this._tail._nextDup = t),
               (t._prevDup = this._tail),
               (t._nextDup = null),
@@ -7683,10 +7097,7 @@
         get(t, n) {
           let r;
           for (r = this._head; null !== r; r = r._nextDup)
-            if (
-              (null === n || n <= r.currentIndex) &&
-              Object.is(r.trackById, t)
-            )
+            if ((null === n || n <= r.currentIndex) && Object.is(r.trackById, t))
               return r;
           return null;
         }
@@ -7765,27 +7176,19 @@
         }
         forEachPreviousItem(t) {
           let n;
-          for (
-            n = this._previousMapHead;
-            null !== n;
-            n = n._nextPrevious
-          )
-            t(n);
+          for (n = this._previousMapHead; null !== n; n = n._nextPrevious) t(n);
         }
         forEachChangedItem(t) {
           let n;
-          for (n = this._changesHead; null !== n; n = n._nextChanged)
-            t(n);
+          for (n = this._changesHead; null !== n; n = n._nextChanged) t(n);
         }
         forEachAddedItem(t) {
           let n;
-          for (n = this._additionsHead; null !== n; n = n._nextAdded)
-            t(n);
+          for (n = this._additionsHead; null !== n; n = n._nextAdded) t(n);
         }
         forEachRemovedItem(t) {
           let n;
-          for (n = this._removalsHead; null !== n; n = n._nextRemoved)
-            t(n);
+          for (n = this._removalsHead; null !== n; n = n._nextRemoved) t(n);
         }
         diff(t) {
           if (t) {
@@ -7801,9 +7204,7 @@
             ((this._appendAfter = null),
             this._forEach(t, (r, o) => {
               if (n && n.key === o)
-                this._maybeAddToChanges(n, r),
-                  (this._appendAfter = n),
-                  (n = n._next);
+                this._maybeAddToChanges(n, r), (this._appendAfter = n), (n = n._next);
               else {
                 const i = this._getOrCreateRecordForKey(o, r);
                 n = this._insertBeforeOrAppend(n, i);
@@ -7811,8 +7212,7 @@
             }),
             n)
           ) {
-            n._prev && (n._prev._next = null),
-              (this._removalsHead = n);
+            n._prev && (n._prev._next = null), (this._removalsHead = n);
             for (let r = n; null !== r; r = r._nextRemoved)
               r === this._mapHead && (this._mapHead = null),
                 this._records.delete(r.key),
@@ -7823,10 +7223,8 @@
                 (r._next = null);
           }
           return (
-            this._changesTail &&
-              (this._changesTail._nextChanged = null),
-            this._additionsTail &&
-              (this._additionsTail._nextAdded = null),
+            this._changesTail && (this._changesTail._nextChanged = null),
+            this._additionsTail && (this._additionsTail._nextAdded = null),
             this.isDirty
           );
         }
@@ -7845,8 +7243,7 @@
           }
           return (
             this._appendAfter
-              ? ((this._appendAfter._next = n),
-                (n._prev = this._appendAfter))
+              ? ((this._appendAfter._next = n), (n._prev = this._appendAfter))
               : (this._mapHead = n),
             (this._appendAfter = n),
             null
@@ -7868,27 +7265,19 @@
           }
           const r = new T2(t);
           return (
-            this._records.set(t, r),
-            (r.currentValue = n),
-            this._addToAdditions(r),
-            r
+            this._records.set(t, r), (r.currentValue = n), this._addToAdditions(r), r
           );
         }
         _reset() {
           if (this.isDirty) {
             let t;
             for (
-              this._previousMapHead = this._mapHead,
-                t = this._previousMapHead;
+              this._previousMapHead = this._mapHead, t = this._previousMapHead;
               null !== t;
               t = t._next
             )
               t._nextPrevious = t._next;
-            for (
-              t = this._changesHead;
-              null !== t;
-              t = t._nextChanged
-            )
+            for (t = this._changesHead; null !== t; t = t._nextChanged)
               t.previousValue = t.currentValue;
             for (t = this._additionsHead; null != t; t = t._nextAdded)
               t.previousValue = t.currentValue;
@@ -7906,19 +7295,15 @@
         _addToAdditions(t) {
           null === this._additionsHead
             ? (this._additionsHead = this._additionsTail = t)
-            : ((this._additionsTail._nextAdded = t),
-              (this._additionsTail = t));
+            : ((this._additionsTail._nextAdded = t), (this._additionsTail = t));
         }
         _addToChanges(t) {
           null === this._changesHead
             ? (this._changesHead = this._changesTail = t)
-            : ((this._changesTail._nextChanged = t),
-              (this._changesTail = t));
+            : ((this._changesTail._nextChanged = t), (this._changesTail = t));
         }
         _forEach(t, n) {
-          t instanceof Map
-            ? t.forEach(n)
-            : Object.keys(t).forEach(r => n(t[r], r));
+          t instanceof Map ? t.forEach(n) : Object.keys(t).forEach(r => n(t[r], r));
         }
       }
       class T2 {
@@ -8006,11 +7391,7 @@
       })();
       function $2(e) {
         try {
-          const {
-              rootComponent: t,
-              appProviders: n,
-              platformProviders: r,
-            } = e,
+          const { rootComponent: t, appProviders: n, platformProviders: r } = e,
             o = (function m2(e = []) {
               if (mr) return mr;
               const t = (function tI(e = [], t) {
@@ -8041,11 +7422,7 @@
                 t
               );
             })(r),
-            i = [
-              Bp({}),
-              { provide: Wo, useExisting: ra },
-              ...(n || []),
-            ];
+            i = [Bp({}), { provide: Wo, useExisting: ra }, ...(n || [])];
           return (function Xb(e) {
             const t = Lu(e) ? e.r3Injector : e.moduleRef.injector,
               n = t.get(se);
@@ -8073,26 +7450,18 @@
                   });
               } else
                 e.moduleRef.onDestroy(() => {
-                  Pu(e.allPlatformModules, e.moduleRef),
-                    o.unsubscribe();
+                  Pu(e.allPlatformModules, e.moduleRef), o.unsubscribe();
                 });
               return (function Xj(e, t, n) {
                 try {
                   const r = n();
                   return na(r)
                     ? r.catch(o => {
-                        throw (
-                          (t.runOutsideAngular(() =>
-                            e.handleError(o),
-                          ),
-                          o)
-                        );
+                        throw (t.runOutsideAngular(() => e.handleError(o)), o);
                       })
                     : r;
                 } catch (r) {
-                  throw (
-                    (t.runOutsideAngular(() => e.handleError(r)), r)
-                  );
+                  throw (t.runOutsideAngular(() => e.handleError(r)), r);
                 }
               })(r, n, () => {
                 const i = t.get(Gb);
@@ -8101,28 +7470,22 @@
                   i.donePromise.then(() => {
                     if (
                       ((function ML(e) {
-                        'string' == typeof e &&
-                          (lw = e.toLowerCase().replace(/_/g, '-'));
+                        'string' == typeof e && (lw = e.toLowerCase().replace(/_/g, '-'));
                       })(t.get(gr, Iu) || Iu),
                       Lu(e))
                     ) {
                       const a = t.get(Mn);
                       return (
-                        void 0 !== e.rootComponent &&
-                          a.bootstrap(e.rootComponent),
-                        a
+                        void 0 !== e.rootComponent && a.bootstrap(e.rootComponent), a
                       );
                     }
                     return (
                       (function h2(e, t) {
                         const n = e.injector.get(Mn);
                         if (e._bootstrapComponents.length > 0)
-                          e._bootstrapComponents.forEach(r =>
-                            n.bootstrap(r),
-                          );
+                          e._bootstrapComponents.forEach(r => n.bootstrap(r));
                         else {
-                          if (!e.instance.ngDoBootstrap)
-                            throw new D(-403, !1);
+                          if (!e.instance.ngDoBootstrap) throw new D(-403, !1);
                           e.instance.ngDoBootstrap(n);
                         }
                         t.push(e);
@@ -8206,20 +7569,14 @@
               return vr().getBaseHref(this._doc);
             }
             onPopState(n) {
-              const r = vr().getGlobalEventTarget(
-                this._doc,
-                'window',
-              );
+              const r = vr().getGlobalEventTarget(this._doc, 'window');
               return (
                 r.addEventListener('popstate', n, !1),
                 () => r.removeEventListener('popstate', n)
               );
             }
             onHashChange(n) {
-              const r = vr().getGlobalEventTarget(
-                this._doc,
-                'window',
-              );
+              const r = vr().getGlobalEventTarget(this._doc, 'window');
               return (
                 r.addEventListener('hashchange', n, !1),
                 () => r.removeEventListener('hashchange', n)
@@ -8291,9 +7648,7 @@
       function jI(e) {
         const t = e.match(/#|\?|$/),
           n = (t && t.index) || e.length;
-        return (
-          e.slice(0, n - ('/' === e[n - 1] ? 1 : 0)) + e.slice(n)
-        );
+        return e.slice(0, n - ('/' === e[n - 1] ? 1 : 0)) + e.slice(n);
       }
       function qn(e) {
         return e && '?' !== e[0] ? '?' + e : e;
@@ -8328,8 +7683,7 @@
                   '');
             }
             ngOnDestroy() {
-              for (; this._removeListenerFns.length; )
-                this._removeListenerFns.pop()();
+              for (; this._removeListenerFns.length; ) this._removeListenerFns.pop()();
             }
             onPopState(n) {
               this._removeListenerFns.push(
@@ -8345,8 +7699,7 @@
             }
             path(n = !1) {
               const r =
-                  this._platformLocation.pathname +
-                  qn(this._platformLocation.search),
+                  this._platformLocation.pathname + qn(this._platformLocation.search),
                 o = this._platformLocation.hash;
               return o && n ? `${r}${o}` : r;
             }
@@ -8391,8 +7744,7 @@
                 null != r && (this._baseHref = r);
             }
             ngOnDestroy() {
-              for (; this._removeListenerFns.length; )
-                this._removeListenerFns.pop()();
+              for (; this._removeListenerFns.length; ) this._removeListenerFns.pop()();
             }
             onPopState(n) {
               this._removeListenerFns.push(
@@ -8468,8 +7820,7 @@
                 });
             }
             ngOnDestroy() {
-              this._urlChangeSubscription?.unsubscribe(),
-                (this._urlChangeListeners = []);
+              this._urlChangeSubscription?.unsubscribe(), (this._urlChangeListeners = []);
             }
             path(n = !1) {
               return this.normalize(this._locationStrategy.path(n));
@@ -8485,10 +7836,7 @@
                 (function CU(e, t) {
                   if (!e || !t.startsWith(e)) return t;
                   const n = t.substring(e.length);
-                  return '' === n ||
-                    ['/', ';', '?', '#'].includes(n[0])
-                    ? n
-                    : t;
+                  return '' === n || ['/', ';', '?', '#'].includes(n[0]) ? n : t;
                 })(this._basePath, BI(n)),
               );
             }
@@ -8500,17 +7848,11 @@
             }
             go(n, r = '', o = null) {
               this._locationStrategy.pushState(o, '', n, r),
-                this._notifyUrlChangeListeners(
-                  this.prepareExternalUrl(n + qn(r)),
-                  o,
-                );
+                this._notifyUrlChangeListeners(this.prepareExternalUrl(n + qn(r)), o);
             }
             replaceState(n, r = '', o = null) {
               this._locationStrategy.replaceState(o, '', n, r),
-                this._notifyUrlChangeListeners(
-                  this.prepareExternalUrl(n + qn(r)),
-                  o,
-                );
+                this._notifyUrlChangeListeners(this.prepareExternalUrl(n + qn(r)), o);
             }
             forward() {
               this._locationStrategy.forward();
@@ -8580,26 +7922,21 @@
             this.initialClasses = null != n ? n.trim().split(dg) : QI;
           }
           set ngClass(n) {
-            this.rawClass =
-              'string' == typeof n ? n.trim().split(dg) : n;
+            this.rawClass = 'string' == typeof n ? n.trim().split(dg) : n;
           }
           ngDoCheck() {
-            for (const r of this.initialClasses)
-              this._updateState(r, !0);
+            for (const r of this.initialClasses) this._updateState(r, !0);
             const n = this.rawClass;
             if (Array.isArray(n) || n instanceof Set)
               for (const r of n) this._updateState(r, !0);
             else if (null != n)
-              for (const r of Object.keys(n))
-                this._updateState(r, !!n[r]);
+              for (const r of Object.keys(n)) this._updateState(r, !!n[r]);
             this._applyStateDiff();
           }
           _updateState(n, r) {
             const o = this.stateMap.get(n);
             void 0 !== o
-              ? (o.enabled !== r &&
-                  ((o.changed = !0), (o.enabled = r)),
-                (o.touched = !0))
+              ? (o.enabled !== r && ((o.changed = !0), (o.enabled = r)), (o.touched = !0))
               : this.stateMap.set(n, {
                   enabled: r,
                   changed: !0,
@@ -8613,8 +7950,7 @@
               o.changed
                 ? (this._toggleClass(r, o.enabled), (o.changed = !1))
                 : o.touched ||
-                  (o.enabled && this._toggleClass(r, !1),
-                  this.stateMap.delete(r)),
+                  (o.enabled && this._toggleClass(r, !1), this.stateMap.delete(r)),
                 (o.touched = !1);
             }
           }
@@ -8622,14 +7958,8 @@
             (n = n.trim()).length > 0 &&
               n.split(dg).forEach(o => {
                 r
-                  ? this._renderer.addClass(
-                      this._ngEl.nativeElement,
-                      o,
-                    )
-                  : this._renderer.removeClass(
-                      this._ngEl.nativeElement,
-                      o,
-                    );
+                  ? this._renderer.addClass(this._ngEl.nativeElement, o)
+                  : this._renderer.removeClass(this._ngEl.nativeElement, o);
               });
           }
           static #e = (this.ɵfac = function (r) {
@@ -8649,10 +7979,7 @@
       })();
       class aB {
         constructor(t, n, r, o) {
-          (this.$implicit = t),
-            (this.ngForOf = n),
-            (this.index = r),
-            (this.count = o);
+          (this.$implicit = t), (this.ngForOf = n), (this.index = r), (this.count = o);
         }
         get first() {
           return 0 === this.index;
@@ -8695,9 +8022,7 @@
               const n = this._ngForOf;
               !this._differ &&
                 n &&
-                (this._differ = this._differs
-                  .find(n)
-                  .create(this.ngForTrackBy));
+                (this._differ = this._differs.find(n).create(this.ngForTrackBy));
             }
             if (this._differ) {
               const n = this._differ.diff(this._ngForOf);
@@ -8721,9 +8046,7 @@
             });
             for (let o = 0, i = r.length; o < i; o++) {
               const a = r.get(o).context;
-              (a.index = o),
-                (a.count = i),
-                (a.ngForOf = this._ngForOf);
+              (a.index = o), (a.count = i), (a.ngForOf = this._ngForOf);
             }
             n.forEachIdentityChange(o => {
               JI(r.get(o.currentIndex), o);
@@ -8763,8 +8086,7 @@
               (this._thenTemplateRef = r);
           }
           set ngIf(n) {
-            (this._context.$implicit = this._context.ngIf = n),
-              this._updateView();
+            (this._context.$implicit = this._context.ngIf = n), this._updateView();
           }
           set ngIfThen(n) {
             eS('ngIfThen', n),
@@ -8784,20 +8106,18 @@
                 (this._viewContainer.clear(),
                 (this._elseViewRef = null),
                 this._thenTemplateRef &&
-                  (this._thenViewRef =
-                    this._viewContainer.createEmbeddedView(
-                      this._thenTemplateRef,
-                      this._context,
-                    )))
+                  (this._thenViewRef = this._viewContainer.createEmbeddedView(
+                    this._thenTemplateRef,
+                    this._context,
+                  )))
               : this._elseViewRef ||
                 (this._viewContainer.clear(),
                 (this._thenViewRef = null),
                 this._elseTemplateRef &&
-                  (this._elseViewRef =
-                    this._viewContainer.createEmbeddedView(
-                      this._elseTemplateRef,
-                      this._context,
-                    )));
+                  (this._elseViewRef = this._viewContainer.createEmbeddedView(
+                    this._elseTemplateRef,
+                    this._context,
+                  )));
           }
           static ngTemplateContextGuard(n, r) {
             return !0;
@@ -8825,29 +8145,21 @@
       }
       function eS(e, t) {
         if (t && !t.createEmbeddedView)
-          throw new Error(
-            `${e} must be a TemplateRef, but received '${He(t)}'.`,
-          );
+          throw new Error(`${e} must be a TemplateRef, but received '${He(t)}'.`);
       }
       class hg {
         constructor(t, n) {
-          (this._viewContainerRef = t),
-            (this._templateRef = n),
-            (this._created = !1);
+          (this._viewContainerRef = t), (this._templateRef = n), (this._created = !1);
         }
         create() {
           (this._created = !0),
-            this._viewContainerRef.createEmbeddedView(
-              this._templateRef,
-            );
+            this._viewContainerRef.createEmbeddedView(this._templateRef);
         }
         destroy() {
           (this._created = !1), this._viewContainerRef.clear();
         }
         enforceState(t) {
-          t && !this._created
-            ? this.create()
-            : !t && this._created && this.destroy();
+          t && !this._created ? this.create() : !t && this._created && this.destroy();
         }
       }
       let ol = (() => {
@@ -8860,8 +8172,7 @@
                 (this._lastCasesMatched = !1);
             }
             set ngSwitch(n) {
-              (this._ngSwitch = n),
-                0 === this._caseCount && this._updateDefaultCases(!0);
+              (this._ngSwitch = n), 0 === this._caseCount && this._updateDefaultCases(!0);
             }
             _addCase() {
               return this._caseCount++;
@@ -8882,10 +8193,7 @@
               );
             }
             _updateDefaultCases(n) {
-              if (
-                this._defaultViews.length > 0 &&
-                n !== this._defaultUsed
-              ) {
+              if (this._defaultViews.length > 0 && n !== this._defaultUsed) {
                 this._defaultUsed = n;
                 for (const r of this._defaultViews) r.enforceState(n);
               }
@@ -8905,14 +8213,10 @@
         tS = (() => {
           class e {
             constructor(n, r, o) {
-              (this.ngSwitch = o),
-                o._addCase(),
-                (this._view = new hg(n, r));
+              (this.ngSwitch = o), o._addCase(), (this._view = new hg(n, r));
             }
             ngDoCheck() {
-              this._view.enforceState(
-                this.ngSwitch._matchCase(this.ngSwitchCase),
-              );
+              this._view.enforceState(this.ngSwitch._matchCase(this.ngSwitchCase));
             }
             static #e = (this.ɵfac = function (r) {
               return new (r || e)(w(an), w(Gn), w(ol, 9));
@@ -8937,9 +8241,7 @@
             }
             set ngStyle(n) {
               (this._ngStyle = n),
-                !this._differ &&
-                  n &&
-                  (this._differ = this._differs.find(n).create());
+                !this._differ && n && (this._differ = this._differs.find(n).create());
             }
             ngDoCheck() {
               if (this._differ) {
@@ -8957,20 +8259,12 @@
                     i ? `${r}${i}` : r,
                     s,
                   )
-                : this._renderer.removeStyle(
-                    this._ngEl.nativeElement,
-                    o,
-                    s,
-                  );
+                : this._renderer.removeStyle(this._ngEl.nativeElement, o, s);
             }
             _applyChanges(n) {
               n.forEachRemovedItem(r => this._setStyle(r.key, null)),
-                n.forEachAddedItem(r =>
-                  this._setStyle(r.key, r.currentValue),
-                ),
-                n.forEachChangedItem(r =>
-                  this._setStyle(r.key, r.currentValue),
-                );
+                n.forEachAddedItem(r => this._setStyle(r.key, r.currentValue)),
+                n.forEachChangedItem(r => this._setStyle(r.key, r.currentValue));
             }
             static #e = (this.ɵfac = function (r) {
               return new (r || e)(w(kt), w(Uu), w(zn));
@@ -9006,17 +8300,14 @@
           static #e = (this.ɵprov = I({
             token: e,
             providedIn: 'root',
-            factory: () =>
-              sS(_(Bn)) ? new PB(_(Yt), window) : new LB(),
+            factory: () => (sS(_(Bn)) ? new PB(_(Yt), window) : new LB()),
           }));
         }
         return e;
       })();
       class PB {
         constructor(t, n) {
-          (this.document = t),
-            (this.window = n),
-            (this.offset = () => [0, 0]);
+          (this.document = t), (this.window = n), (this.offset = () => [0, 0]);
         }
         setOffset(t) {
           this.offset = Array.isArray(t) ? () => t : t;
@@ -9029,25 +8320,19 @@
         }
         scrollToAnchor(t) {
           const n = (function kB(e, t) {
-            const n =
-              e.getElementById(t) || e.getElementsByName(t)[0];
+            const n = e.getElementById(t) || e.getElementsByName(t)[0];
             if (n) return n;
             if (
               'function' == typeof e.createTreeWalker &&
               e.body &&
               'function' == typeof e.body.attachShadow
             ) {
-              const r = e.createTreeWalker(
-                e.body,
-                NodeFilter.SHOW_ELEMENT,
-              );
+              const r = e.createTreeWalker(e.body, NodeFilter.SHOW_ELEMENT);
               let o = r.currentNode;
               for (; o; ) {
                 const i = o.shadowRoot;
                 if (i) {
-                  const s =
-                    i.getElementById(t) ||
-                    i.querySelector(`[name="${t}"]`);
+                  const s = i.getElementById(t) || i.querySelector(`[name="${t}"]`);
                   if (s) return s;
                 }
                 o = r.nextNode();
@@ -9103,14 +8388,10 @@
           t.remove();
         }
         createElement(t, n) {
-          return (n = n || this.getDefaultDocument()).createElement(
-            t,
-          );
+          return (n = n || this.getDefaultDocument()).createElement(t);
         }
         createHtmlDocument() {
-          return document.implementation.createHTMLDocument(
-            'fakeTitle',
-          );
+          return document.implementation.createHTMLDocument('fakeTitle');
         }
         getDefaultDocument() {
           return document;
@@ -9154,8 +8435,7 @@
             t = encodeURIComponent(t);
             for (const n of e.split(';')) {
               const r = n.indexOf('='),
-                [o, i] =
-                  -1 == r ? [n, ''] : [n.slice(0, r), n.slice(r + 1)];
+                [o, i] = -1 == r ? [n, ''] : [n.slice(0, r), n.slice(r + 1)];
               if (o.trim() === t) return decodeURIComponent(i);
             }
             return null;
@@ -9198,8 +8478,7 @@
           _findPluginFor(n) {
             let r = this._eventNameToPlugin.get(n);
             if (r) return r;
-            if (((r = this._plugins.find(i => i.supports(n))), !r))
-              throw new D(5101, !1);
+            if (((r = this._plugins.find(i => i.supports(n))), !r)) throw new D(5101, !1);
             return this._eventNameToPlugin.set(n, r), r;
           }
           static #e = (this.ɵfac = function (r) {
@@ -9224,32 +8503,26 @@
               (this.platformId = i),
               (this.styleRef = new Map()),
               (this.hostNodes = new Set()),
-              (this.styleNodesInDOM =
-                this.collectServerRenderedStyles()),
+              (this.styleNodesInDOM = this.collectServerRenderedStyles()),
               (this.platformIsServer = aS(i)),
               this.resetHostNodes();
           }
           addStyles(n) {
-            for (const r of n)
-              1 === this.changeUsageCount(r, 1) &&
-                this.onStyleAdded(r);
+            for (const r of n) 1 === this.changeUsageCount(r, 1) && this.onStyleAdded(r);
           }
           removeStyles(n) {
             for (const r of n)
-              this.changeUsageCount(r, -1) <= 0 &&
-                this.onStyleRemoved(r);
+              this.changeUsageCount(r, -1) <= 0 && this.onStyleRemoved(r);
           }
           ngOnDestroy() {
             const n = this.styleNodesInDOM;
             n && (n.forEach(r => r.remove()), n.clear());
-            for (const r of this.getAllStyles())
-              this.onStyleRemoved(r);
+            for (const r of this.getAllStyles()) this.onStyleRemoved(r);
             this.resetHostNodes();
           }
           addHost(n) {
             this.hostNodes.add(n);
-            for (const r of this.getAllStyles())
-              this.addStyleToHost(n, r);
+            for (const r of this.getAllStyles()) this.addStyleToHost(n, r);
           }
           removeHost(n) {
             this.hostNodes.delete(n);
@@ -9265,9 +8538,7 @@
             r.get(n)?.elements?.forEach(o => o.remove()), r.delete(n);
           }
           collectServerRenderedStyles() {
-            const n = this.doc.head?.querySelectorAll(
-              `style[${Dg}="${this.appId}"]`,
-            );
+            const n = this.doc.head?.querySelectorAll(`style[${Dg}="${this.appId}"]`);
             if (n?.length) {
               const r = new Map();
               return (
@@ -9290,15 +8561,13 @@
           getStyleElement(n, r) {
             const o = this.styleNodesInDOM,
               i = o?.get(r);
-            if (i?.parentNode === n)
-              return o.delete(r), i.removeAttribute(Dg), i;
+            if (i?.parentNode === n) return o.delete(r), i.removeAttribute(Dg), i;
             {
               const s = this.doc.createElement('style');
               return (
                 this.nonce && s.setAttribute('nonce', this.nonce),
                 (s.textContent = r),
-                this.platformIsServer &&
-                  s.setAttribute(Dg, this.appId),
+                this.platformIsServer && s.setAttribute(Dg, this.appId),
                 n.appendChild(s),
                 s
               );
@@ -9347,12 +8616,7 @@
               (this.nonce = u),
               (this.rendererByCompId = new Map()),
               (this.platformIsServer = aS(a)),
-              (this.defaultRenderer = new bg(
-                n,
-                s,
-                c,
-                this.platformIsServer,
-              ));
+              (this.defaultRenderer = new bg(n, s, c, this.platformIsServer));
           }
           createRenderer(n, r) {
             if (!n || !r) return this.defaultRenderer;
@@ -9361,10 +8625,7 @@
               (r = { ...r, encapsulation: en.Emulated });
             const o = this.getOrCreateRenderer(n, r);
             return (
-              o instanceof wS
-                ? o.applyToHost(n)
-                : o instanceof Ig && o.applyStyles(),
-              o
+              o instanceof wS ? o.applyToHost(n) : o instanceof Ig && o.applyStyles(), o
             );
           }
           getOrCreateRenderer(n, r) {
@@ -9394,16 +8655,7 @@
             this.rendererByCompId.clear();
           }
           static #e = (this.ɵfac = function (r) {
-            return new (r || e)(
-              M(vS),
-              M(yS),
-              M(ds),
-              M(C$),
-              M(Yt),
-              M(Bn),
-              M(se),
-              M(Uf),
-            );
+            return new (r || e)(M(vS), M(yS), M(ds), M(C$), M(Yt), M(Bn), M(se), M(Uf));
           });
           static #t = (this.ɵprov = I({ token: e, factory: e.ɵfac }));
         }
@@ -9421,9 +8673,7 @@
         }
         destroy() {}
         createElement(t, n) {
-          return n
-            ? this.doc.createElementNS(Eg[n] || n, t)
-            : this.doc.createElement(t);
+          return n ? this.doc.createElementNS(Eg[n] || n, t) : this.doc.createElement(t);
         }
         createComment(t) {
           return this.doc.createComment(t);
@@ -9441,8 +8691,7 @@
           n.remove();
         }
         selectRootElement(t, n) {
-          let r =
-            'string' == typeof t ? this.doc.querySelector(t) : t;
+          let r = 'string' == typeof t ? this.doc.querySelector(t) : t;
           if (!r) throw new D(-5104, !1);
           return n || (r.textContent = ''), r;
         }
@@ -9462,9 +8711,7 @@
         removeAttribute(t, n, r) {
           if (r) {
             const o = Eg[r];
-            o
-              ? t.removeAttributeNS(o, n)
-              : t.removeAttribute(`${r}:${n}`);
+            o ? t.removeAttributeNS(o, n) : t.removeAttribute(`${r}:${n}`);
           } else t.removeAttribute(n);
         }
         addClass(t, n) {
@@ -9475,17 +8722,11 @@
         }
         setStyle(t, n, r, o) {
           o & (ar.DashCase | ar.Important)
-            ? t.style.setProperty(
-                n,
-                r,
-                o & ar.Important ? 'important' : '',
-              )
+            ? t.style.setProperty(n, r, o & ar.Important ? 'important' : '')
             : (t.style[n] = r);
         }
         removeStyle(t, n, r) {
-          r & ar.DashCase
-            ? t.style.removeProperty(n)
-            : (t.style[n] = '');
+          r & ar.DashCase ? t.style.removeProperty(n) : (t.style[n] = '');
         }
         setProperty(t, n, r) {
           null != t && (t[n] = r);
@@ -9494,26 +8735,15 @@
           t.nodeValue = n;
         }
         listen(t, n, r) {
-          if (
-            'string' == typeof t &&
-            !(t = vr().getGlobalEventTarget(this.doc, t))
-          )
-            throw new Error(
-              `Unsupported event target ${t} for event ${n}`,
-            );
-          return this.eventManager.addEventListener(
-            t,
-            n,
-            this.decoratePreventDefault(r),
-          );
+          if ('string' == typeof t && !(t = vr().getGlobalEventTarget(this.doc, t)))
+            throw new Error(`Unsupported event target ${t} for event ${n}`);
+          return this.eventManager.addEventListener(t, n, this.decoratePreventDefault(r));
         }
         decoratePreventDefault(t) {
           return n => {
             if ('__ngUnwrap__' === n) return t;
-            !1 ===
-              (this.platformIsServer
-                ? this.ngZone.runGuarded(() => t(n))
-                : t(n)) && n.preventDefault();
+            !1 === (this.platformIsServer ? this.ngZone.runGuarded(() => t(n)) : t(n)) &&
+              n.preventDefault();
           };
         }
       }
@@ -9548,9 +8778,7 @@
           return super.removeChild(null, n);
         }
         parentNode(t) {
-          return this.nodeOrShadowRoot(
-            super.parentNode(this.nodeOrShadowRoot(t)),
-          );
+          return this.nodeOrShadowRoot(super.parentNode(this.nodeOrShadowRoot(t)));
         }
         destroy() {
           this.sharedStylesHost.removeHost(this.shadowRoot);
@@ -9600,8 +8828,7 @@
             }
             addEventListener(n, r, o) {
               return (
-                n.addEventListener(r, o, !1),
-                () => this.removeEventListener(n, r, o)
+                n.addEventListener(r, o, !1), () => this.removeEventListener(n, r, o)
               );
             }
             removeEventListener(n, r, o) {
@@ -9718,25 +8945,15 @@
                 }
                 addEventListener(n, r, o) {
                   const i = e.parseEventName(r),
-                    s = e.eventCallback(
-                      i.fullKey,
-                      o,
-                      this.manager.getZone(),
-                    );
+                    s = e.eventCallback(i.fullKey, o, this.manager.getZone());
                   return this.manager
                     .getZone()
-                    .runOutsideAngular(() =>
-                      vr().onAndCancel(n, i.domEventName, s),
-                    );
+                    .runOutsideAngular(() => vr().onAndCancel(n, i.domEventName, s));
                 }
                 static parseEventName(n) {
                   const r = n.toLowerCase().split('.'),
                     o = r.shift();
-                  if (
-                    0 === r.length ||
-                    ('keydown' !== o && 'keyup' !== o)
-                  )
-                    return null;
+                  if (0 === r.length || ('keydown' !== o && 'keyup' !== o)) return null;
                   const i = e._normalizeKey(r.pop());
                   let s = '',
                     a = r.indexOf('code');
@@ -9757,13 +8974,10 @@
                   let o = M$[n.key] || n.key,
                     i = '';
                   return (
-                    r.indexOf('code.') > -1 &&
-                      ((o = n.code), (i = 'code.')),
+                    r.indexOf('code.') > -1 && ((o = n.code), (i = 'code.')),
                     !(null == o || !o) &&
                       ((o = o.toLowerCase()),
-                      ' ' === o
-                        ? (o = 'space')
-                        : '.' === o && (o = 'dot'),
+                      ' ' === o ? (o = 'space') : '.' === o && (o = 'dot'),
                       bS.forEach(s => {
                         s !== o && (0, T$[s])(n) && (i += s + '.');
                       }),
@@ -9773,8 +8987,7 @@
                 }
                 static eventCallback(n, r, o) {
                   return i => {
-                    e.matchEventFullKeyCode(i, n) &&
-                      o.runGuarded(() => r(i));
+                    e.matchEventFullKeyCode(i, n) && o.runGuarded(() => r(i));
                   };
                 }
                 static _normalizeKey(n) {
@@ -9842,15 +9055,12 @@
                 return {
                   next: function () {
                     return (
-                      e && r >= e.length && (e = void 0),
-                      { value: e && e[r++], done: !e }
+                      e && r >= e.length && (e = void 0), { value: e && e[r++], done: !e }
                     );
                   },
                 };
               throw new TypeError(
-                t
-                  ? 'Object is not iterable.'
-                  : 'Symbol.iterator is not defined.',
+                t ? 'Object is not iterable.' : 'Symbol.iterator is not defined.',
               );
             })(e)),
             (n = {}),
@@ -9876,8 +9086,7 @@
         }
       }
       'function' == typeof SuppressedError && SuppressedError;
-      const xS = e =>
-        e && 'number' == typeof e.length && 'function' != typeof e;
+      const xS = e => e && 'number' == typeof e.length && 'function' != typeof e;
       function OS(e) {
         return Ee(e?.then);
       }
@@ -9890,9 +9099,7 @@
       function kS(e) {
         return new TypeError(
           `You provided ${
-            null !== e && 'object' == typeof e
-              ? 'an invalid object'
-              : `'${e}'`
+            null !== e && 'object' == typeof e ? 'an invalid object' : `'${e}'`
           } where a stream was expected. You can provide an Observable, Promise, ReadableStream, Array, AsyncIterable, or Iterable.`,
         );
       }
@@ -9907,9 +9114,7 @@
       function jS(e) {
         return (function NS(e, t, n) {
           if (!Symbol.asyncIterator)
-            throw new TypeError(
-              'Symbol.asyncIterator is not defined.',
-            );
+            throw new TypeError('Symbol.asyncIterator is not defined.');
           var o,
             r = n.apply(e, t || []),
             i = [];
@@ -9988,8 +9193,7 @@
           if (xS(e))
             return (function dH(e) {
               return new Re(t => {
-                for (let n = 0; n < e.length && !t.closed; n++)
-                  t.next(e[n]);
+                for (let n = 0; n < e.length && !t.closed; n++) t.next(e[n]);
                 t.complete();
               });
             })(e);
@@ -10127,8 +9331,7 @@
                       return t.schedule(function () {
                         r === e.length
                           ? n.complete()
-                          : (n.next(e[r++]),
-                            n.closed || this.schedule());
+                          : (n.next(e[r++]), n.closed || this.schedule());
                       });
                     });
                   })(e, t);
@@ -10250,9 +9453,7 @@
                           Ne(
                             r,
                             d => {
-                              (i[c] = d),
-                                l || ((l = !0), a--),
-                                a || r.next(n(i.slice()));
+                              (i[c] = d), l || ((l = !0), a--), a || r.next(n(i.slice()));
                             },
                             () => {
                               --s || r.complete();
@@ -10351,13 +9552,10 @@
           let n = null;
           e._refCount++;
           const r = Ne(t, void 0, void 0, void 0, () => {
-            if (!e || e._refCount <= 0 || 0 < --e._refCount)
-              return void (n = null);
+            if (!e || e._refCount <= 0 || 0 < --e._refCount) return void (n = null);
             const o = e._connection,
               i = n;
-            (n = null),
-              o && (!i || o === i) && o.unsubscribe(),
-              t.unsubscribe();
+            (n = null), o && (!i || o === i) && o.unsubscribe(), t.unsubscribe();
           });
           e.subscribe(r), r.closed || (n = e.connect());
         });
@@ -10378,9 +9576,7 @@
         getSubject() {
           const t = this._subject;
           return (
-            (!t || t.isStopped) &&
-              (this._subject = this.subjectFactory()),
-            this._subject
+            (!t || t.isStopped) && (this._subject = this.subjectFactory()), this._subject
           );
         }
         _teardown() {
@@ -10516,8 +9712,7 @@
         return Ee(t) ? mt(e, t, 1) : mt(e, 1);
       }
       function vt(e, t, n) {
-        const r =
-          Ee(e) || t || n ? { next: e, error: t, complete: n } : e;
+        const r = Ee(e) || t || n ? { next: e, error: t, complete: n } : e;
         return r
           ? Le((o, i) => {
               var s;
@@ -10528,36 +9723,24 @@
                   i,
                   c => {
                     var u;
-                    null === (u = r.next) ||
-                      void 0 === u ||
-                      u.call(r, c),
-                      i.next(c);
+                    null === (u = r.next) || void 0 === u || u.call(r, c), i.next(c);
                   },
                   () => {
                     var c;
                     (a = !1),
-                      null === (c = r.complete) ||
-                        void 0 === c ||
-                        c.call(r),
+                      null === (c = r.complete) || void 0 === c || c.call(r),
                       i.complete();
                   },
                   c => {
                     var u;
                     (a = !1),
-                      null === (u = r.error) ||
-                        void 0 === u ||
-                        u.call(r, c),
+                      null === (u = r.error) || void 0 === u || u.call(r, c),
                       i.error(c);
                   },
                   () => {
                     var c, u;
-                    a &&
-                      (null === (c = r.unsubscribe) ||
-                        void 0 === c ||
-                        c.call(r)),
-                      null === (u = r.finalize) ||
-                        void 0 === u ||
-                        u.call(r);
+                    a && (null === (c = r.unsubscribe) || void 0 === c || c.call(r)),
+                      null === (u = r.finalize) || void 0 === u || u.call(r);
                   },
                 ),
               );
@@ -10572,9 +9755,7 @@
           (r = t.subscribe(
             Ne(n, void 0, void 0, s => {
               (i = fn(e(s, Ii(e)(t)))),
-                r
-                  ? (r.unsubscribe(), (r = null), i.subscribe(n))
-                  : (o = !0);
+                r ? (r.unsubscribe(), (r = null), i.subscribe(n)) : (o = !0);
             }),
           )),
             o && (r.unsubscribe(), (r = null), i.subscribe(n));
@@ -10592,8 +9773,7 @@
                   s,
                   l => {
                     const d = u++;
-                    (c = a ? e(c, l, d) : ((a = !0), l)),
-                      r && s.next(c);
+                    (c = a ? e(c, l, d) : ((a = !0), l)), r && s.next(c);
                   },
                   o &&
                     (() => {
@@ -10639,8 +9819,7 @@
       }
       function JS(e) {
         return Le((t, n) => {
-          fn(e).subscribe(Ne(n, () => n.complete(), Wa)),
-            !n.closed && t.subscribe(n);
+          fn(e).subscribe(Ne(n, () => n.complete(), Wa)), !n.closed && t.subscribe(n);
         });
       }
       const G = 'primary',
@@ -10677,8 +9856,7 @@
         const r = n.path.split('/');
         if (
           r.length > e.length ||
-          ('full' === n.pathMatch &&
-            (t.hasChildren() || r.length < e.length))
+          ('full' === n.pathMatch && (t.hasChildren() || r.length < e.length))
         )
           return null;
         const o = {};
@@ -10695,15 +9873,11 @@
           r = t ? Vg(t) : void 0;
         if (!n || !r || n.length != r.length) return !1;
         let o;
-        for (let i = 0; i < n.length; i++)
-          if (((o = n[i]), !eM(e[o], t[o]))) return !1;
+        for (let i = 0; i < n.length; i++) if (((o = n[i]), !eM(e[o], t[o]))) return !1;
         return !0;
       }
       function Vg(e) {
-        return [
-          ...Object.keys(e),
-          ...Object.getOwnPropertySymbols(e),
-        ];
+        return [...Object.keys(e), ...Object.getOwnPropertySymbols(e)];
       }
       function eM(e, t) {
         if (Array.isArray(e) && Array.isArray(t)) {
@@ -10719,10 +9893,7 @@
       }
       function Cr(e) {
         return (function B$(e) {
-          return (
-            !!e &&
-            (e instanceof Re || (Ee(e.lift) && Ee(e.subscribe)))
-          );
+          return !!e && (e instanceof Re || (Ee(e.lift) && Ee(e.subscribe)));
         })(e)
           ? e
           : na(e)
@@ -10738,11 +9909,7 @@
             )
               return !1;
             for (const r in t.children)
-              if (
-                !e.children[r] ||
-                !oM(e.children[r], t.children[r], n)
-              )
-                return !1;
+              if (!e.children[r] || !oM(e.children[r], t.children[r], n)) return !1;
             return !0;
           },
           subset: iM,
@@ -10777,41 +9944,27 @@
         if (e.segments.length === n.length) {
           if (!oo(e.segments, n) || !vl(e.segments, n, r)) return !1;
           for (const o in t.children)
-            if (
-              !e.children[o] ||
-              !iM(e.children[o], t.children[o], r)
-            )
-              return !1;
+            if (!e.children[o] || !iM(e.children[o], t.children[o], r)) return !1;
           return !0;
         }
         {
           const o = n.slice(0, e.segments.length),
             i = n.slice(e.segments.length);
           return (
-            !!(
-              oo(e.segments, o) &&
-              vl(e.segments, o, r) &&
-              e.children[G]
-            ) && sM(e.children[G], t, i, r)
+            !!(oo(e.segments, o) && vl(e.segments, o, r) && e.children[G]) &&
+            sM(e.children[G], t, i, r)
           );
         }
       }
       function vl(e, t, n) {
-        return t.every((r, o) =>
-          nM[n](e[o].parameters, r.parameters),
-        );
+        return t.every((r, o) => nM[n](e[o].parameters, r.parameters));
       }
       class ro {
         constructor(t = new he([], {}), n = {}, r = null) {
-          (this.root = t),
-            (this.queryParams = n),
-            (this.fragment = r);
+          (this.root = t), (this.queryParams = n), (this.fragment = r);
         }
         get queryParamMap() {
-          return (
-            (this._queryParamMap ??= Si(this.queryParams)),
-            this._queryParamMap
-          );
+          return (this._queryParamMap ??= Si(this.queryParams)), this._queryParamMap;
         }
         toString() {
           return qH.serialize(this);
@@ -10839,20 +9992,14 @@
           (this.path = t), (this.parameters = n);
         }
         get parameterMap() {
-          return (
-            (this._parameterMap ??= Si(this.parameters)),
-            this._parameterMap
-          );
+          return (this._parameterMap ??= Si(this.parameters)), this._parameterMap;
         }
         toString() {
           return uM(this);
         }
       }
       function oo(e, t) {
-        return (
-          e.length === t.length &&
-          e.every((n, r) => n.path === t[r].path)
-        );
+        return e.length === t.length && e.every((n, r) => n.path === t[r].path);
       }
       let Mi = (() => {
         class e {
@@ -10870,11 +10017,7 @@
       class yl {
         parse(t) {
           const n = new r3(t);
-          return new ro(
-            n.parseRootSegment(),
-            n.parseQueryParams(),
-            n.parseFragment(),
-          );
+          return new ro(n.parseRootSegment(), n.parseQueryParams(), n.parseFragment());
         }
         serialize(t) {
           const n = `/${ma(t.root, !0)}`,
@@ -10925,11 +10068,8 @@
               }),
               n
             );
-          })(e, (r, o) =>
-            o === G ? [ma(e.children[G], !1)] : [`${o}:${ma(r, !1)}`],
-          );
-          return 1 === Object.keys(e.children).length &&
-            null != e.children[G]
+          })(e, (r, o) => (o === G ? [ma(e.children[G], !1)] : [`${o}:${ma(r, !1)}`]));
+          return 1 === Object.keys(e.children).length && null != e.children[G]
             ? `${_l(e)}/${n[0]}`
             : `${_l(e)}/(${n.join('//')})`;
         }
@@ -10945,10 +10085,7 @@
         return aM(e).replace(/%3B/gi, ';');
       }
       function jg(e) {
-        return aM(e)
-          .replace(/\(/g, '%28')
-          .replace(/\)/g, '%29')
-          .replace(/%26/gi, '&');
+        return aM(e).replace(/\(/g, '%28').replace(/\)/g, '%29').replace(/%26/gi, '&');
       }
       function Dl(e) {
         return decodeURIComponent(e);
@@ -10978,9 +10115,7 @@
         parseRootSegment() {
           return (
             this.consumeOptional('/'),
-            '' === this.remaining ||
-            this.peekStartsWith('?') ||
-            this.peekStartsWith('#')
+            '' === this.remaining || this.peekStartsWith('?') || this.peekStartsWith('#')
               ? new he([], {})
               : new he([], this.parseChildren())
           );
@@ -10994,9 +10129,7 @@
           return t;
         }
         parseFragment() {
-          return this.consumeOptional('#')
-            ? decodeURIComponent(this.remaining)
-            : null;
+          return this.consumeOptional('#') ? decodeURIComponent(this.remaining) : null;
         }
         parseChildren() {
           if ('' === this.remaining) return {};
@@ -11011,23 +10144,18 @@
           )
             this.capture('/'), t.push(this.parseSegment());
           let n = {};
-          this.peekStartsWith('/(') &&
-            (this.capture('/'), (n = this.parseParens(!0)));
+          this.peekStartsWith('/(') && (this.capture('/'), (n = this.parseParens(!0)));
           let r = {};
           return (
             this.peekStartsWith('(') && (r = this.parseParens(!1)),
-            (t.length > 0 || Object.keys(n).length > 0) &&
-              (r[G] = new he(t, n)),
+            (t.length > 0 || Object.keys(n).length > 0) && (r[G] = new he(t, n)),
             r
           );
         }
         parseSegment() {
           const t = Ug(this.remaining);
-          if ('' === t && this.peekStartsWith(';'))
-            throw new D(4009, !1);
-          return (
-            this.capture(t), new ga(Dl(t), this.parseMatrixParams())
-          );
+          if ('' === t && this.peekStartsWith(';')) throw new D(4009, !1);
+          return this.capture(t), new ga(Dl(t), this.parseMatrixParams());
         }
         parseMatrixParams() {
           const t = {};
@@ -11079,17 +10207,13 @@
           ) {
             const r = Ug(this.remaining),
               o = this.remaining[r.length];
-            if ('/' !== o && ')' !== o && ';' !== o)
-              throw new D(4010, !1);
+            if ('/' !== o && ')' !== o && ';' !== o) throw new D(4010, !1);
             let i;
             r.indexOf(':') > -1
-              ? ((i = r.slice(0, r.indexOf(':'))),
-                this.capture(i),
-                this.capture(':'))
+              ? ((i = r.slice(0, r.indexOf(':'))), this.capture(i), this.capture(':'))
               : t && (i = G);
             const s = this.parseChildren();
-            (n[i] =
-              1 === Object.keys(s).length ? s[G] : new he([], s)),
+            (n[i] = 1 === Object.keys(s).length ? s[G] : new he([], s)),
               this.consumeOptional('//');
           }
           return n;
@@ -11100,8 +10224,7 @@
         consumeOptional(t) {
           return (
             !!this.peekStartsWith(t) &&
-            ((this.remaining = this.remaining.substring(t.length)),
-            !0)
+            ((this.remaining = this.remaining.substring(t.length)), !0)
           );
         }
         capture(t) {
@@ -11117,8 +10240,7 @@
           const i = dM(o);
           if (r === G && 0 === i.segments.length && i.hasChildren())
             for (const [s, a] of Object.entries(i.children)) t[s] = a;
-          else
-            (i.segments.length > 0 || i.hasChildren()) && (t[r] = i);
+          else (i.segments.length > 0 || i.hasChildren()) && (t[r] = i);
         }
         return (function o3(e) {
           if (1 === e.numberOfChildren && e.children[G]) {
@@ -11151,11 +10273,7 @@
         for (; o.parent; ) o = o.parent;
         if (0 === t.length) return Bg(o, o, o, n, r);
         const i = (function s3(e) {
-          if (
-            'string' == typeof e[0] &&
-            1 === e.length &&
-            '/' === e[0]
-          )
+          if ('string' == typeof e[0] && 1 === e.length && '/' === e[0])
             return new gM(!0, 0, e);
           let t = 0,
             n = !1;
@@ -11199,8 +10317,7 @@
                 o = t,
                 i = n;
               for (; i > o; ) {
-                if (((i -= o), (r = r.parent), !r))
-                  throw new D(4005, !1);
+                if (((i -= o), (r = r.parent), !r)) throw new D(4005, !1);
                 o = r.segments.length;
               }
               return new wl(r, !1, o - i);
@@ -11212,12 +10329,7 @@
         return Bg(o, s.segmentGroup, a, n, r);
       }
       function El(e) {
-        return (
-          'object' == typeof e &&
-          null != e &&
-          !e.outlets &&
-          !e.segmentPath
-        );
+        return 'object' == typeof e && null != e && !e.outlets && !e.segmentPath;
       }
       function va(e) {
         return 'object' == typeof e && null != e && e.outlets;
@@ -11255,25 +10367,16 @@
           if (o && o !== tM(r)) throw new D(4004, !1);
         }
         toRoot() {
-          return (
-            this.isAbsolute &&
-            1 === this.commands.length &&
-            '/' == this.commands[0]
-          );
+          return this.isAbsolute && 1 === this.commands.length && '/' == this.commands[0];
         }
       }
       class wl {
         constructor(t, n, r) {
-          (this.segmentGroup = t),
-            (this.processChildren = n),
-            (this.index = r);
+          (this.segmentGroup = t), (this.processChildren = n), (this.index = r);
         }
       }
       function mM(e, t, n) {
-        if (
-          ((e ??= new he([], {})),
-          0 === e.segments.length && e.hasChildren())
-        )
+        if (((e ??= new he([], {})), 0 === e.segments.length && e.hasChildren()))
           return ya(e, t, n);
         const r = (function l3(e, t, n) {
             let r = 0,
@@ -11287,12 +10390,7 @@
               const c = `${a}`,
                 u = r < n.length - 1 ? n[r + 1] : null;
               if (o > 0 && void 0 === c) break;
-              if (
-                c &&
-                u &&
-                'object' == typeof u &&
-                void 0 === u.outlets
-              ) {
+              if (c && u && 'object' == typeof u && void 0 === u.outlets) {
                 if (!yM(c, u, s)) return i;
                 r += 2;
               } else {
@@ -11307,10 +10405,7 @@
         if (r.match && r.pathIndex < e.segments.length) {
           const i = new he(e.segments.slice(0, r.pathIndex), {});
           return (
-            (i.children[G] = new he(
-              e.segments.slice(r.pathIndex),
-              e.children,
-            )),
+            (i.children[G] = new he(e.segments.slice(r.pathIndex), e.children)),
             ya(i, 0, o)
           );
         }
@@ -11383,9 +10478,7 @@
       }
       function vM(e) {
         const t = {};
-        return (
-          Object.entries(e).forEach(([n, r]) => (t[n] = `${r}`)), t
-        );
+        return Object.entries(e).forEach(([n, r]) => (t[n] = `${r}`)), t;
       }
       function yM(e, t, n) {
         return e == n.path && Nn(t, n.parameters);
@@ -11431,9 +10524,7 @@
       }
       class Dr extends Rn {
         constructor(t, n, r) {
-          super(t, n),
-            (this.urlAfterRedirects = r),
-            (this.type = ee.NavigationEnd);
+          super(t, n), (this.urlAfterRedirects = r), (this.type = ee.NavigationEnd);
         }
         toString() {
           return `NavigationEnd(id: ${this.id}, url: '${this.url}', urlAfterRedirects: '${this.urlAfterRedirects}')`;
@@ -11442,8 +10533,7 @@
       var $t = (function (e) {
           return (
             (e[(e.Redirect = 0)] = 'Redirect'),
-            (e[(e.SupersededByNewNavigation = 1)] =
-              'SupersededByNewNavigation'),
+            (e[(e.SupersededByNewNavigation = 1)] = 'SupersededByNewNavigation'),
             (e[(e.NoDataFromResolver = 2)] = 'NoDataFromResolver'),
             (e[(e.GuardRejected = 3)] = 'GuardRejected'),
             e
@@ -11451,10 +10541,8 @@
         })($t || {}),
         Il = (function (e) {
           return (
-            (e[(e.IgnoredSameUrlNavigation = 0)] =
-              'IgnoredSameUrlNavigation'),
-            (e[(e.IgnoredByUrlHandlingStrategy = 1)] =
-              'IgnoredByUrlHandlingStrategy'),
+            (e[(e.IgnoredSameUrlNavigation = 0)] = 'IgnoredSameUrlNavigation'),
+            (e[(e.IgnoredByUrlHandlingStrategy = 1)] = 'IgnoredByUrlHandlingStrategy'),
             e
           );
         })(Il || {});
@@ -11566,9 +10654,7 @@
         }
         toString() {
           return `ChildActivationStart(path: '${
-            (this.snapshot.routeConfig &&
-              this.snapshot.routeConfig.path) ||
-            ''
+            (this.snapshot.routeConfig && this.snapshot.routeConfig.path) || ''
           }')`;
         }
       }
@@ -11578,9 +10664,7 @@
         }
         toString() {
           return `ChildActivationEnd(path: '${
-            (this.snapshot.routeConfig &&
-              this.snapshot.routeConfig.path) ||
-            ''
+            (this.snapshot.routeConfig && this.snapshot.routeConfig.path) || ''
           }')`;
         }
       }
@@ -11590,9 +10674,7 @@
         }
         toString() {
           return `ActivationStart(path: '${
-            (this.snapshot.routeConfig &&
-              this.snapshot.routeConfig.path) ||
-            ''
+            (this.snapshot.routeConfig && this.snapshot.routeConfig.path) || ''
           }')`;
         }
       }
@@ -11602,9 +10684,7 @@
         }
         toString() {
           return `ActivationEnd(path: '${
-            (this.snapshot.routeConfig &&
-              this.snapshot.routeConfig.path) ||
-            ''
+            (this.snapshot.routeConfig && this.snapshot.routeConfig.path) || ''
           }')`;
         }
       }
@@ -11617,9 +10697,7 @@
         }
         toString() {
           return `Scroll(anchor: '${this.anchor}', position: '${
-            this.position
-              ? `${this.position[0]}, ${this.position[1]}`
-              : null
+            this.position ? `${this.position[0]}, ${this.position[1]}` : null
           }')`;
         }
       }
@@ -11677,12 +10755,7 @@
           }
           getOrCreateContext(n) {
             let r = this.getContext(n);
-            return (
-              r ||
-                ((r = new M3(this.rootInjector)),
-                this.contexts.set(n, r)),
-              r
-            );
+            return r || ((r = new M3(this.rootInjector)), this.contexts.set(n, r)), r;
           }
           getContext(n) {
             return this.contexts.get(n) || null;
@@ -11715,17 +10788,13 @@
         }
         firstChild(t) {
           const n = zg(t, this._root);
-          return n && n.children.length > 0
-            ? n.children[0].value
-            : null;
+          return n && n.children.length > 0 ? n.children[0].value : null;
         }
         siblings(t) {
           const n = qg(t, this._root);
           return n.length < 2
             ? []
-            : n[n.length - 2].children
-                .map(o => o.value)
-                .filter(o => o !== t);
+            : n[n.length - 2].children.map(o => o.value).filter(o => o !== t);
         }
         pathFromRoot(t) {
           return qg(t, this._root).map(n => n.value);
@@ -11757,9 +10826,7 @@
       }
       function Ai(e) {
         const t = {};
-        return (
-          e && e.children.forEach(n => (t[n.value.outlet] = n)), t
-        );
+        return e && e.children.forEach(n => (t[n.value.outlet] = n)), t;
       }
       class EM extends DM {
         constructor(t, n) {
@@ -11792,8 +10859,7 @@
             (this.outlet = s),
             (this.component = a),
             (this._futureSnapshot = c),
-            (this.title =
-              this.dataSubject?.pipe(ne(u => u[pa])) ?? H(void 0)),
+            (this.title = this.dataSubject?.pipe(ne(u => u[pa])) ?? H(void 0)),
             (this.url = t),
             (this.params = n),
             (this.queryParams = r),
@@ -11819,16 +10885,11 @@
           return this._routerState.pathFromRoot(this);
         }
         get paramMap() {
-          return (
-            (this._paramMap ??= this.params.pipe(ne(t => Si(t)))),
-            this._paramMap
-          );
+          return (this._paramMap ??= this.params.pipe(ne(t => Si(t)))), this._paramMap;
         }
         get queryParamMap() {
           return (
-            (this._queryParamMap ??= this.queryParams.pipe(
-              ne(t => Si(t)),
-            )),
+            (this._queryParamMap ??= this.queryParams.pipe(ne(t => Si(t)))),
             this._queryParamMap
           );
         }
@@ -11900,15 +10961,10 @@
           return (this._paramMap ??= Si(this.params)), this._paramMap;
         }
         get queryParamMap() {
-          return (
-            (this._queryParamMap ??= Si(this.queryParams)),
-            this._queryParamMap
-          );
+          return (this._queryParamMap ??= Si(this.queryParams)), this._queryParamMap;
         }
         toString() {
-          return `Route(url:'${this.url
-            .map(r => r.toString())
-            .join('/')}', path:'${
+          return `Route(url:'${this.url.map(r => r.toString()).join('/')}', path:'${
             this.routeConfig ? this.routeConfig.path : ''
           }')`;
         }
@@ -11925,10 +10981,7 @@
         (t.value._routerState = e), t.children.forEach(n => Wg(e, n));
       }
       function IM(e) {
-        const t =
-          e.children.length > 0
-            ? ` { ${e.children.map(IM).join(', ')} } `
-            : '';
+        const t = e.children.length > 0 ? ` { ${e.children.map(IM).join(', ')} } ` : '';
         return `${e.value}${t}`;
       }
       function Zg(e) {
@@ -11936,36 +10989,25 @@
           const t = e.snapshot,
             n = e._futureSnapshot;
           (e.snapshot = n),
-            Nn(t.queryParams, n.queryParams) ||
-              e.queryParamsSubject.next(n.queryParams),
-            t.fragment !== n.fragment &&
-              e.fragmentSubject.next(n.fragment),
+            Nn(t.queryParams, n.queryParams) || e.queryParamsSubject.next(n.queryParams),
+            t.fragment !== n.fragment && e.fragmentSubject.next(n.fragment),
             Nn(t.params, n.params) || e.paramsSubject.next(n.params),
             (function UH(e, t) {
               if (e.length !== t.length) return !1;
-              for (let n = 0; n < e.length; ++n)
-                if (!Nn(e[n], t[n])) return !1;
+              for (let n = 0; n < e.length; ++n) if (!Nn(e[n], t[n])) return !1;
               return !0;
             })(t.url, n.url) || e.urlSubject.next(n.url),
             Nn(t.data, n.data) || e.dataSubject.next(n.data);
         } else
-          (e.snapshot = e._futureSnapshot),
-            e.dataSubject.next(e._futureSnapshot.data);
+          (e.snapshot = e._futureSnapshot), e.dataSubject.next(e._futureSnapshot.data);
       }
       function Yg(e, t) {
         const n =
           Nn(e.params, t.params) &&
           (function GH(e, t) {
-            return (
-              oo(e, t) &&
-              e.every((n, r) => Nn(n.parameters, t[r].parameters))
-            );
+            return oo(e, t) && e.every((n, r) => Nn(n.parameters, t[r].parameters));
           })(e.url, t.url);
-        return (
-          n &&
-          !(!e.parent != !t.parent) &&
-          (!e.parent || Yg(e.parent, t.parent))
-        );
+        return n && !(!e.parent != !t.parent) && (!e.parent || Yg(e.parent, t.parent));
       }
       function SM(e) {
         return 'string' == typeof e.title || null === e.title;
@@ -11994,8 +11036,7 @@
               const { firstChange: r, previousValue: o } = n.name;
               if (r) return;
               this.isTrackedInParentContexts(o) &&
-                (this.deactivate(),
-                this.parentContexts.onChildOutletDestroyed(o)),
+                (this.deactivate(), this.parentContexts.onChildOutletDestroyed(o)),
                 this.initializeOutletWithName();
             }
           }
@@ -12012,11 +11053,7 @@
           }
           initializeOutletWithName() {
             if (
-              (this.parentContexts.onChildOutletCreated(
-                this.name,
-                this,
-              ),
-              this.activated)
+              (this.parentContexts.onChildOutletCreated(this.name, this), this.activated)
             )
               return;
             const n = this.parentContexts.getContext(this.name);
@@ -12037,9 +11074,7 @@
             return this._activatedRoute;
           }
           get activatedRouteData() {
-            return this._activatedRoute
-              ? this._activatedRoute.snapshot.data
-              : {};
+            return this._activatedRoute ? this._activatedRoute.snapshot.data : {};
           }
           detach() {
             if (!this.activated) throw new D(4012, !1);
@@ -12056,9 +11091,7 @@
             (this.activated = n),
               (this._activatedRoute = r),
               this.location.insert(n.hostView),
-              this.inputBinder?.bindActivatedRouteToOutletComponent(
-                this,
-              ),
+              this.inputBinder?.bindActivatedRouteToOutletComponent(this),
               this.attachEvents.emit(n.instance);
           }
           deactivate() {
@@ -12075,9 +11108,7 @@
             this._activatedRoute = n;
             const o = this.location,
               s = n.snapshot.component,
-              a = this.parentContexts.getOrCreateContext(
-                this.name,
-              ).children,
+              a = this.parentContexts.getOrCreateContext(this.name).children,
               c = new Qg(n, a, o.injector);
             (this.activated = o.createComponent(s, {
               index: o.length,
@@ -12085,9 +11116,7 @@
               environmentInjector: r,
             })),
               this.changeDetector.markForCheck(),
-              this.inputBinder?.bindActivatedRouteToOutletComponent(
-                this,
-              ),
+              this.inputBinder?.bindActivatedRouteToOutletComponent(this),
               this.activateEvents.emit(this.activated.instance);
           }
           static #e = (this.ɵfac = function (r) {
@@ -12115,9 +11144,7 @@
           return new Qg(this.route, this.childContexts, t);
         }
         constructor(t, n, r) {
-          (this.route = t),
-            (this.childContexts = n),
-            (this.parent = r);
+          (this.route = t), (this.childContexts = n), (this.parent = r);
         }
         get(t, n) {
           return t === Ni
@@ -12135,8 +11162,7 @@
           const o = (function N3(e, t, n) {
             return t.children.map(r => {
               for (const o of n.children)
-                if (e.shouldReuseRoute(r.value, o.value.snapshot))
-                  return Ea(e, r, o);
+                if (e.shouldReuseRoute(r.value, o.value.snapshot)) return Ea(e, r, o);
               return Ea(e, r);
             });
           })(e, t, n);
@@ -12226,8 +11252,7 @@
           else i && this.deactivateRouteAndItsChildren(n, r);
         }
         deactivateRouteAndItsChildren(t, n) {
-          t.value.component &&
-          this.routeReuseStrategy.shouldDetach(t.value.snapshot)
+          t.value.component && this.routeReuseStrategy.shouldDetach(t.value.snapshot)
             ? this.detachAndStoreRouteSubtree(t, n)
             : this.deactivateRouteAndOutlet(t, n);
         }
@@ -12235,8 +11260,7 @@
           const r = n.getContext(t.value.outlet),
             o = r && t.value.component ? r.children : n,
             i = Ai(t);
-          for (const s of Object.values(i))
-            this.deactivateRouteAndItsChildren(s, o);
+          for (const s of Object.values(i)) this.deactivateRouteAndItsChildren(s, o);
           if (r && r.outlet) {
             const s = r.outlet.detach(),
               a = r.children.onOutletDeactivated();
@@ -12251,12 +11275,9 @@
           const r = n.getContext(t.value.outlet),
             o = r && t.value.component ? r.children : n,
             i = Ai(t);
-          for (const s of Object.values(i))
-            this.deactivateRouteAndItsChildren(s, o);
+          for (const s of Object.values(i)) this.deactivateRouteAndItsChildren(s, o);
           r &&
-            (r.outlet &&
-              (r.outlet.deactivate(),
-              r.children.onOutletDeactivated()),
+            (r.outlet && (r.outlet.deactivate(), r.children.onOutletDeactivated()),
             (r.attachRef = null),
             (r.route = null));
         }
@@ -12266,8 +11287,7 @@
             this.activateRoutes(i, o[i.value.outlet], r),
               this.forwardEvent(new D3(i.value.snapshot));
           }),
-            t.children.length &&
-              this.forwardEvent(new _3(t.value.snapshot));
+            t.children.length && this.forwardEvent(new _3(t.value.snapshot));
         }
         activateRoutes(t, n, r) {
           const o = t.value,
@@ -12285,8 +11305,7 @@
                 s.children.onOutletReAttached(a.contexts),
                 (s.attachRef = a.componentRef),
                 (s.route = a.route.value),
-                s.outlet &&
-                  s.outlet.attach(a.componentRef, a.route.value),
+                s.outlet && s.outlet.attach(a.componentRef, a.route.value),
                 Zg(a.route.value),
                 this.activateChildRoutes(t, null, s.children);
             } else
@@ -12299,8 +11318,7 @@
       }
       class RM {
         constructor(t) {
-          (this.path = t),
-            (this.route = this.path[this.path.length - 1]);
+          (this.path = t), (this.route = this.path[this.path.length - 1]);
         }
       }
       class xl {
@@ -12324,13 +11342,7 @@
             : e
           : r;
       }
-      function wa(
-        e,
-        t,
-        n,
-        r,
-        o = { canDeactivateChecks: [], canActivateChecks: [] },
-      ) {
+      function wa(e, t, n, r, o = { canDeactivateChecks: [], canActivateChecks: [] }) {
         const i = Ai(t);
         return (
           e.children.forEach(s => {
@@ -12351,54 +11363,32 @@
                     case 'pathParamsChange':
                       return !oo(e.url, t.url);
                     case 'pathParamsOrQueryParamsChange':
-                      return (
-                        !oo(e.url, t.url) ||
-                        !Nn(e.queryParams, t.queryParams)
-                      );
+                      return !oo(e.url, t.url) || !Nn(e.queryParams, t.queryParams);
                     case 'always':
                       return !0;
                     case 'paramsOrQueryParamsChange':
-                      return (
-                        !Yg(e, t) || !Nn(e.queryParams, t.queryParams)
-                      );
+                      return !Yg(e, t) || !Nn(e.queryParams, t.queryParams);
                     default:
                       return !Yg(e, t);
                   }
                 })(s, i, i.routeConfig.runGuardsAndResolvers);
                 c
                   ? o.canActivateChecks.push(new RM(r))
-                  : ((i.data = s.data),
-                    (i._resolvedData = s._resolvedData)),
-                  wa(
-                    e,
-                    t,
-                    i.component ? (a ? a.children : null) : n,
-                    r,
-                    o,
-                  ),
+                  : ((i.data = s.data), (i._resolvedData = s._resolvedData)),
+                  wa(e, t, i.component ? (a ? a.children : null) : n, r, o),
                   c &&
                     a &&
                     a.outlet &&
                     a.outlet.isActivated &&
-                    o.canDeactivateChecks.push(
-                      new xl(a.outlet.component, s),
-                    );
+                    o.canDeactivateChecks.push(new xl(a.outlet.component, s));
               } else
                 s && ba(t, a, o),
                   o.canActivateChecks.push(new RM(r)),
-                  wa(
-                    e,
-                    null,
-                    i.component ? (a ? a.children : null) : n,
-                    r,
-                    o,
-                  );
+                  wa(e, null, i.component ? (a ? a.children : null) : n, r, o);
             })(s, i[s.value.outlet], n, r.concat([s.value]), o),
               delete i[s.value.outlet];
           }),
-          Object.entries(i).forEach(([s, a]) =>
-            ba(a, n.getContext(s), o),
-          ),
+          Object.entries(i).forEach(([s, a]) => ba(a, n.getContext(s), o)),
           o
         );
       }
@@ -12406,11 +11396,7 @@
         const r = Ai(e),
           o = e.value;
         Object.entries(r).forEach(([i, s]) => {
-          ba(
-            s,
-            o.component ? (t ? t.children.getContext(i) : null) : t,
-            n,
-          );
+          ba(s, o.component ? (t ? t.children.getContext(i) : null) : t, n);
         }),
           n.canDeactivateChecks.push(
             new xl(
@@ -12478,12 +11464,8 @@
           let r = [],
             o = n.root;
           for (;;) {
-            if (
-              ((r = r.concat(o.segments)), 0 === o.numberOfChildren)
-            )
-              return H(r);
-            if (o.numberOfChildren > 1 || !o.children[G])
-              return pl(new D(4e3, !1));
+            if (((r = r.concat(o.segments)), 0 === o.numberOfChildren)) return H(r);
+            if (o.numberOfChildren > 1 || !o.children[G]) return pl(new D(4e3, !1));
             o = o.children[G];
           }
         }
@@ -12515,12 +11497,7 @@
             if (y instanceof ro) throw new Fl(y);
             n = y;
           }
-          const s = this.applyRedirectCreateUrlTree(
-            n,
-            this.urlSerializer.parse(n),
-            t,
-            r,
-          );
+          const s = this.applyRedirectCreateUrlTree(n, this.urlSerializer.parse(n), t, r);
           if ('/' === n[0]) throw new Fl(s);
           return s;
         }
@@ -12528,10 +11505,7 @@
           const i = this.createSegmentGroup(t, n.root, r, o);
           return new ro(
             i,
-            this.createQueryParams(
-              n.queryParams,
-              this.urlTree.queryParams,
-            ),
+            this.createQueryParams(n.queryParams, this.urlTree.queryParams),
             n.fragment,
           );
         }
@@ -12559,9 +11533,7 @@
         }
         createSegments(t, n, r, o) {
           return n.map(i =>
-            ':' === i.path[0]
-              ? this.findPosParam(t, i, o)
-              : this.findOrReturn(i, r),
+            ':' === i.path[0] ? this.findPosParam(t, i, o) : this.findOrReturn(i, r),
           );
         }
         findPosParam(t, n, r) {
@@ -12592,11 +11564,7 @@
               return (
                 e.providers &&
                   !e._injector &&
-                  (e._injector = rp(
-                    e.providers,
-                    t,
-                    `Route: ${e.path}`,
-                  )),
+                  (e._injector = rp(e.providers, t, `Route: ${e.path}`)),
                 e._injector ?? t
               );
             })(t, r)),
@@ -12631,8 +11599,7 @@
             };
           })(n);
         if ('' === t.path)
-          return 'full' === t.pathMatch &&
-            (e.hasChildren() || n.length > 0)
+          return 'full' === t.pathMatch && (e.hasChildren() || n.length > 0)
             ? { ...Jg }
             : {
                 matched: !0,
@@ -12676,10 +11643,7 @@
               return n.some(r => Pl(e, t, r));
             })(e, n, r)
           ? {
-              segmentGroup: new he(
-                e.segments,
-                aG(e, n, r, e.children),
-              ),
+              segmentGroup: new he(e.segments, aG(e, n, r, e.children)),
               slicedSegments: n,
             }
           : {
@@ -12708,9 +11672,7 @@
       }
       function Pl(e, t, n) {
         return (
-          (!(e.hasChildren() || t.length > 0) ||
-            'full' !== n.pathMatch) &&
-          '' === n.path
+          (!(e.hasChildren() || t.length > 0) || 'full' !== n.pathMatch) && '' === n.path
         );
       }
       class fG {}
@@ -12723,10 +11685,7 @@
             (this.urlTree = i),
             (this.paramsInheritanceStrategy = s),
             (this.urlSerializer = a),
-            (this.applyRedirects = new oG(
-              this.urlSerializer,
-              this.urlTree,
-            )),
+            (this.applyRedirects = new oG(this.urlSerializer, this.urlTree)),
             (this.absoluteRedirectCount = 0),
             (this.allowRedirects = !0);
         }
@@ -12734,24 +11693,14 @@
           return new D(4002, `'${t.segmentGroup}'`);
         }
         recognize() {
-          const t = PM(
-            this.urlTree.root,
-            [],
-            [],
-            this.config,
-          ).segmentGroup;
+          const t = PM(this.urlTree.root, [], [], this.config).segmentGroup;
           return this.match(t).pipe(
             ne(({ children: n, rootSnapshot: r }) => {
               const o = new pn(r, n),
                 i = new bM('', o),
                 s = (function i3(e, t, n = null, r = null) {
                   return hM(fM(e), t, n, r);
-                })(
-                  r,
-                  [],
-                  this.urlTree.queryParams,
-                  this.urlTree.fragment,
-                );
+                })(r, [], this.urlTree.queryParams, this.urlTree.fragment);
               return (
                 (s.queryParams = this.urlTree.queryParams),
                 (i.url = this.urlSerializer.serialize(s)),
@@ -12772,20 +11721,11 @@
             null,
             {},
           );
-          return this.processSegmentGroup(
-            this.injector,
-            this.config,
-            t,
-            G,
-            n,
-          ).pipe(
+          return this.processSegmentGroup(this.injector, this.config, t, G, n).pipe(
             ne(r => ({ children: r, rootSnapshot: n })),
             Ii(r => {
               if (r instanceof Fl)
-                return (
-                  (this.urlTree = r.urlTree),
-                  this.match(r.urlTree.root)
-                );
+                return (this.urlTree = r.urlTree), this.match(r.urlTree.root);
               throw r instanceof Xg ? this.noMatchError(r) : r;
             }),
           );
@@ -12842,16 +11782,7 @@
         processSegment(t, n, r, o, i, s, a) {
           return it(n).pipe(
             ml(c =>
-              this.processSegmentAgainstRoute(
-                c._injector ?? t,
-                n,
-                c,
-                r,
-                o,
-                i,
-                s,
-                a,
-              ).pipe(
+              this.processSegmentAgainstRoute(c._injector ?? t, n, c, r, o, i, s, a).pipe(
                 Ii(u => {
                   if (u instanceof Xg) return H(null);
                   throw u;
@@ -12875,15 +11806,7 @@
             ? void 0 === r.redirectTo
               ? this.matchSegmentAgainstRoute(t, o, r, i, s, c)
               : this.allowRedirects && a
-              ? this.expandSegmentAgainstRouteUsingRedirect(
-                  t,
-                  o,
-                  n,
-                  r,
-                  i,
-                  s,
-                  c,
-                )
+              ? this.expandSegmentAgainstRouteUsingRedirect(t, o, n, r, i, s, c)
               : Oi(o)
             : Oi(o);
         }
@@ -12899,8 +11822,7 @@
           'string' == typeof o.redirectTo &&
             '/' === o.redirectTo[0] &&
             (this.absoluteRedirectCount++,
-            this.absoluteRedirectCount > 31 &&
-              (this.allowRedirects = !1));
+            this.absoluteRedirectCount > 31 && (this.allowRedirects = !1));
           const h = new Tl(
               i,
               u,
@@ -12913,22 +11835,11 @@
               VM(o),
             ),
             p = Ml(h, a, this.paramsInheritanceStrategy);
-          (h.params = Object.freeze(p.params)),
-            (h.data = Object.freeze(p.data));
-          const g = this.applyRedirects.applyRedirectCommands(
-            l,
-            o.redirectTo,
-            d,
-            h,
-            t,
-          );
+          (h.params = Object.freeze(p.params)), (h.data = Object.freeze(p.data));
+          const g = this.applyRedirects.applyRedirectCommands(l, o.redirectTo, d, h, t);
           return this.applyRedirects
             .lineralizeSegments(o, g)
-            .pipe(
-              mt(y =>
-                this.processSegment(t, r, n, y.concat(f), s, !1, a),
-              ),
-            );
+            .pipe(mt(y => this.processSegment(t, r, n, y.concat(f), s, !1, a)));
         }
         matchSegmentAgainstRoute(t, n, r, o, i, s) {
           const a = iG(n, r, o, t);
@@ -12937,11 +11848,7 @@
             a.pipe(
               Qn(c =>
                 c.matched
-                  ? this.getChildConfig(
-                      (t = r._injector ?? t),
-                      r,
-                      o,
-                    ).pipe(
+                  ? this.getChildConfig((t = r._injector ?? t), r, o).pipe(
                       Qn(({ routes: u }) => {
                         const l = r._loadedInjector ?? t,
                           {
@@ -12962,38 +11869,18 @@
                             r,
                             VM(r),
                           ),
-                          g = Ml(
-                            p,
-                            s,
-                            this.paramsInheritanceStrategy,
-                          );
+                          g = Ml(p, s, this.paramsInheritanceStrategy);
                         (p.params = Object.freeze(g.params)),
                           (p.data = Object.freeze(g.data));
-                        const { segmentGroup: y, slicedSegments: C } =
-                          PM(n, f, h, u);
+                        const { segmentGroup: y, slicedSegments: C } = PM(n, f, h, u);
                         if (0 === C.length && y.hasChildren())
-                          return this.processChildren(
-                            l,
-                            u,
-                            y,
-                            p,
-                          ).pipe(ne(A => new pn(p, A)));
-                        if (0 === u.length && 0 === C.length)
-                          return H(new pn(p, []));
+                          return this.processChildren(l, u, y, p).pipe(
+                            ne(A => new pn(p, A)),
+                          );
+                        if (0 === u.length && 0 === C.length) return H(new pn(p, []));
                         const m = hn(r) === i;
-                        return this.processSegment(
-                          l,
-                          u,
-                          y,
-                          C,
-                          m ? G : i,
-                          !0,
-                          p,
-                        ).pipe(
-                          ne(
-                            A =>
-                              new pn(p, A instanceof pn ? [A] : []),
-                          ),
+                        return this.processSegment(l, u, y, C, m ? G : i, !0, p).pipe(
+                          ne(A => new pn(p, A instanceof pn ? [A] : [])),
                         );
                       }),
                     )
@@ -13056,12 +11943,8 @@
             t.push(r);
             continue;
           }
-          const o = t.find(
-            i => r.value.routeConfig === i.value.routeConfig,
-          );
-          void 0 !== o
-            ? (o.children.push(...r.children), n.add(o))
-            : t.push(r);
+          const o = t.find(i => r.value.routeConfig === i.value.routeConfig);
+          void 0 !== o ? (o.children.push(...r.children), n.add(o)) : t.push(r);
         }
         for (const r of n) {
           const o = kM(r.children);
@@ -13176,8 +12059,7 @@
               (this.compiler = _(t2));
           }
           loadComponent(n) {
-            if (this.componentLoaders.get(n))
-              return this.componentLoaders.get(n);
+            if (this.componentLoaders.get(n)) return this.componentLoaders.get(n);
             if (n._loadedComponent) return H(n._loadedComponent);
             this.onLoadStartListener && this.onLoadStartListener(n);
             const r = Cr(n.loadComponent()).pipe(
@@ -13194,8 +12076,7 @@
             return this.componentLoaders.set(n, o), o;
           }
           loadChildren(n, r) {
-            if (this.childrenLoaders.get(r))
-              return this.childrenLoaders.get(r);
+            if (this.childrenLoaders.get(r)) return this.childrenLoaders.get(r);
             if (r._loadedRoutes)
               return H({
                 routes: r._loadedRoutes,
@@ -13219,9 +12100,7 @@
                       Array.isArray(o)
                         ? ((s = o), !0)
                         : ((i = o.create(n).injector),
-                          (s = i
-                            .get(kl, [], { optional: !0, self: !0 })
-                            .flat())),
+                          (s = i.get(kl, [], { optional: !0, self: !0 }).flat())),
                       { routes: s.map(tm), injector: i }
                     );
                   }),
@@ -13305,23 +12184,19 @@
               (this.urlSerializer = _(Mi)),
               (this.rootContexts = _(Da)),
               (this.location = _(ca)),
-              (this.inputBindingEnabled =
-                null !== _(Nl, { optional: !0 })),
+              (this.inputBindingEnabled = null !== _(Nl, { optional: !0 })),
               (this.titleStrategy = _(UM)),
               (this.options = _(Sa, { optional: !0 }) || {}),
               (this.paramsInheritanceStrategy =
-                this.options.paramsInheritanceStrategy ||
-                'emptyOnly'),
+                this.options.paramsInheritanceStrategy || 'emptyOnly'),
               (this.urlHandlingStrategy = _(nm)),
               (this.createViewTransition = _(GM, { optional: !0 })),
               (this.navigationErrorHandler = _(qM, { optional: !0 })),
               (this.navigationId = 0),
               (this.afterPreactivation = () => H(void 0)),
               (this.rootComponentType = null),
-              (this.configLoader.onLoadEndListener = o =>
-                this.events.next(new v3(o))),
-              (this.configLoader.onLoadStartListener = o =>
-                this.events.next(new m3(o)));
+              (this.configLoader.onLoadEndListener = o => this.events.next(new v3(o))),
+              (this.configLoader.onLoadStartListener = o => this.events.next(new m3(o)));
           }
           complete() {
             this.transitions?.complete();
@@ -13341,8 +12216,7 @@
                 currentUrlTree: r,
                 currentRawUrl: r,
                 extractedUrl: this.urlHandlingStrategy.extract(r),
-                urlAfterRedirects:
-                  this.urlHandlingStrategy.extract(r),
+                urlAfterRedirects: this.urlHandlingStrategy.extract(r),
                 rawUrl: r,
                 extras: {},
                 resolve: () => {},
@@ -13364,9 +12238,7 @@
                 _r(i => 0 !== i.id),
                 ne(i => ({
                   ...i,
-                  extractedUrl: this.urlHandlingStrategy.extract(
-                    i.rawUrl,
-                  ),
+                  extractedUrl: this.urlHandlingStrategy.extract(i.rawUrl),
                 })),
                 Qn(i => {
                   let s = !1,
@@ -13389,14 +12261,11 @@
                           extractedUrl: c.extractedUrl,
                           targetBrowserUrl:
                             'string' == typeof c.extras.browserUrl
-                              ? this.urlSerializer.parse(
-                                  c.extras.browserUrl,
-                                )
+                              ? this.urlSerializer.parse(c.extras.browserUrl)
                               : c.extras.browserUrl,
                           trigger: c.source,
                           extras: c.extras,
-                          previousNavigation: this
-                            .lastSuccessfulNavigation
+                          previousNavigation: this.lastSuccessfulNavigation
                             ? {
                                 ...this.lastSuccessfulNavigation,
                                 previousNavigation: null,
@@ -13410,8 +12279,7 @@
                       if (
                         !u &&
                         'reload' !==
-                          (c.extras.onSameUrlNavigation ??
-                            n.onSameUrlNavigation)
+                          (c.extras.onSameUrlNavigation ?? n.onSameUrlNavigation)
                       ) {
                         const d = '';
                         return (
@@ -13427,11 +12295,7 @@
                           An
                         );
                       }
-                      if (
-                        this.urlHandlingStrategy.shouldProcessUrl(
-                          c.rawUrl,
-                        )
-                      )
+                      if (this.urlHandlingStrategy.shouldProcessUrl(c.rawUrl))
                         return H(c).pipe(
                           Qn(d => {
                             const f = this.transitions?.getValue();
@@ -13439,47 +12303,19 @@
                               this.events.next(
                                 new bl(
                                   d.id,
-                                  this.urlSerializer.serialize(
-                                    d.extractedUrl,
-                                  ),
+                                  this.urlSerializer.serialize(d.extractedUrl),
                                   d.source,
                                   d.restoredState,
                                 ),
                               ),
-                              f !== this.transitions?.getValue()
-                                ? An
-                                : Promise.resolve(d)
+                              f !== this.transitions?.getValue() ? An : Promise.resolve(d)
                             );
                           }),
                           (function yG(e, t, n, r, o, i) {
                             return mt(s =>
-                              (function hG(
-                                e,
-                                t,
-                                n,
-                                r,
-                                o,
-                                i,
-                                s = 'emptyOnly',
-                              ) {
-                                return new gG(
-                                  e,
-                                  t,
-                                  n,
-                                  r,
-                                  o,
-                                  s,
-                                  i,
-                                ).recognize();
-                              })(
-                                e,
-                                t,
-                                n,
-                                r,
-                                s.extractedUrl,
-                                o,
-                                i,
-                              ).pipe(
+                              (function hG(e, t, n, r, o, i, s = 'emptyOnly') {
+                                return new gG(e, t, n, r, o, s, i).recognize();
+                              })(e, t, n, r, s.extractedUrl, o, i).pipe(
                                 ne(({ state: a, tree: c }) => ({
                                   ...s,
                                   targetSnapshot: a,
@@ -13497,20 +12333,15 @@
                           ),
                           vt(d => {
                             (i.targetSnapshot = d.targetSnapshot),
-                              (i.urlAfterRedirects =
-                                d.urlAfterRedirects),
+                              (i.urlAfterRedirects = d.urlAfterRedirects),
                               (this.currentNavigation = {
                                 ...this.currentNavigation,
                                 finalUrl: d.urlAfterRedirects,
                               });
                             const f = new _M(
                               d.id,
-                              this.urlSerializer.serialize(
-                                d.extractedUrl,
-                              ),
-                              this.urlSerializer.serialize(
-                                d.urlAfterRedirects,
-                              ),
+                              this.urlSerializer.serialize(d.extractedUrl),
+                              this.urlSerializer.serialize(d.urlAfterRedirects),
                               d.targetSnapshot,
                             );
                             this.events.next(f);
@@ -13518,9 +12349,7 @@
                         );
                       if (
                         u &&
-                        this.urlHandlingStrategy.shouldProcessUrl(
-                          c.currentRawUrl,
-                        )
+                        this.urlHandlingStrategy.shouldProcessUrl(c.currentRawUrl)
                       ) {
                         const {
                             id: d,
@@ -13529,12 +12358,7 @@
                             restoredState: p,
                             extras: g,
                           } = c,
-                          y = new bl(
-                            d,
-                            this.urlSerializer.serialize(f),
-                            h,
-                            p,
-                          );
+                          y = new bl(d, this.urlSerializer.serialize(f), h, p);
                         this.events.next(y);
                         const C = wM(this.rootComponentType).snapshot;
                         return (
@@ -13559,9 +12383,7 @@
                           this.events.next(
                             new Ti(
                               c.id,
-                              this.urlSerializer.serialize(
-                                c.extractedUrl,
-                              ),
+                              this.urlSerializer.serialize(c.extractedUrl),
                               d,
                               Il.IgnoredByUrlHandlingStrategy,
                             ),
@@ -13575,9 +12397,7 @@
                       const u = new f3(
                         c.id,
                         this.urlSerializer.serialize(c.extractedUrl),
-                        this.urlSerializer.serialize(
-                          c.urlAfterRedirects,
-                        ),
+                        this.urlSerializer.serialize(c.urlAfterRedirects),
                         c.targetSnapshot,
                       );
                       this.events.next(u);
@@ -13601,10 +12421,7 @@
                         const {
                           targetSnapshot: r,
                           currentSnapshot: o,
-                          guards: {
-                            canActivateChecks: i,
-                            canDeactivateChecks: s,
-                          },
+                          guards: { canActivateChecks: i, canDeactivateChecks: s },
                         } = n;
                         return 0 === s.length && 0 === i.length
                           ? H({ ...n, guardsResult: !0 })
@@ -13623,20 +12440,10 @@
                                               u = Ri(a, c);
                                             return Cr(
                                               (function H3(e) {
-                                                return (
-                                                  e &&
-                                                  Ia(e.canDeactivate)
-                                                );
+                                                return e && Ia(e.canDeactivate);
                                               })(u)
-                                                ? u.canDeactivate(
-                                                    e,
-                                                    t,
-                                                    n,
-                                                    r,
-                                                  )
-                                                : rr(c, () =>
-                                                    u(e, t, n, r),
-                                                  ),
+                                                ? u.canDeactivate(e, t, n, r)
+                                                : rr(c, () => u(e, t, n, r)),
                                             ).pipe(no());
                                           }),
                                         ).pipe(xi())
@@ -13657,39 +12464,25 @@
                                           hl(
                                             (function Q3(e, t) {
                                               return (
-                                                null !== e &&
-                                                  t &&
-                                                  t(new y3(e)),
-                                                H(!0)
+                                                null !== e && t && t(new y3(e)), H(!0)
                                               );
                                             })(o.route.parent, r),
                                             (function Y3(e, t) {
                                               return (
-                                                null !== e &&
-                                                  t &&
-                                                  t(new C3(e)),
-                                                H(!0)
+                                                null !== e && t && t(new C3(e)), H(!0)
                                               );
                                             })(o.route, r),
                                             (function X3(e, t, n) {
-                                              const r =
-                                                  t[t.length - 1],
+                                              const r = t[t.length - 1],
                                                 i = t
-                                                  .slice(
-                                                    0,
-                                                    t.length - 1,
-                                                  )
+                                                  .slice(0, t.length - 1)
                                                   .reverse()
                                                   .map(s =>
                                                     (function k3(e) {
-                                                      const t =
-                                                        e.routeConfig
-                                                          ? e
-                                                              .routeConfig
-                                                              .canActivateChild
-                                                          : null;
-                                                      return t &&
-                                                        0 !== t.length
+                                                      const t = e.routeConfig
+                                                        ? e.routeConfig.canActivateChild
+                                                        : null;
+                                                      return t && 0 !== t.length
                                                         ? {
                                                             node: e,
                                                             guards: t,
@@ -13697,51 +12490,24 @@
                                                         : null;
                                                     })(s),
                                                   )
-                                                  .filter(
-                                                    s => null !== s,
-                                                  )
+                                                  .filter(s => null !== s)
                                                   .map(s =>
                                                     ZS(() =>
                                                       H(
-                                                        s.guards.map(
-                                                          c => {
-                                                            const u =
-                                                                Ca(
-                                                                  s.node,
-                                                                ) ??
-                                                                n,
-                                                              l = Ri(
-                                                                c,
-                                                                u,
+                                                        s.guards.map(c => {
+                                                          const u = Ca(s.node) ?? n,
+                                                            l = Ri(c, u);
+                                                          return Cr(
+                                                            (function $3(e) {
+                                                              return (
+                                                                e &&
+                                                                Ia(e.canActivateChild)
                                                               );
-                                                            return Cr(
-                                                              (function $3(
-                                                                e,
-                                                              ) {
-                                                                return (
-                                                                  e &&
-                                                                  Ia(
-                                                                    e.canActivateChild,
-                                                                  )
-                                                                );
-                                                              })(l)
-                                                                ? l.canActivateChild(
-                                                                    r,
-                                                                    e,
-                                                                  )
-                                                                : rr(
-                                                                    u,
-                                                                    () =>
-                                                                      l(
-                                                                        r,
-                                                                        e,
-                                                                      ),
-                                                                  ),
-                                                            ).pipe(
-                                                              no(),
-                                                            );
-                                                          },
-                                                        ),
+                                                            })(l)
+                                                              ? l.canActivateChild(r, e)
+                                                              : rr(u, () => l(r, e)),
+                                                          ).pipe(no());
+                                                        }),
                                                       ).pipe(xi()),
                                                     ),
                                                   );
@@ -13749,35 +12515,19 @@
                                             })(e, o.path, n),
                                             (function K3(e, t, n) {
                                               const r = t.routeConfig
-                                                ? t.routeConfig
-                                                    .canActivate
+                                                ? t.routeConfig.canActivate
                                                 : null;
-                                              if (
-                                                !r ||
-                                                0 === r.length
-                                              )
-                                                return H(!0);
+                                              if (!r || 0 === r.length) return H(!0);
                                               const o = r.map(i =>
                                                 ZS(() => {
-                                                  const s =
-                                                      Ca(t) ?? n,
+                                                  const s = Ca(t) ?? n,
                                                     a = Ri(i, s);
                                                   return Cr(
                                                     (function B3(e) {
-                                                      return (
-                                                        e &&
-                                                        Ia(
-                                                          e.canActivate,
-                                                        )
-                                                      );
+                                                      return e && Ia(e.canActivate);
                                                     })(a)
-                                                      ? a.canActivate(
-                                                          t,
-                                                          e,
-                                                        )
-                                                      : rr(s, () =>
-                                                          a(t, e),
-                                                        ),
+                                                      ? a.canActivate(t, e)
+                                                      : rr(s, () => a(t, e)),
                                                   ).pipe(no());
                                                 }),
                                               );
@@ -13793,22 +12543,17 @@
                               ne(a => ({ ...n, guardsResult: a })),
                             );
                       });
-                    })(this.environmentInjector, c =>
-                      this.events.next(c),
-                    ),
+                    })(this.environmentInjector, c => this.events.next(c)),
                     vt(c => {
                       if (
                         ((i.guardsResult = c.guardsResult),
-                        c.guardsResult &&
-                          'boolean' != typeof c.guardsResult)
+                        c.guardsResult && 'boolean' != typeof c.guardsResult)
                       )
                         throw Rl(0, c.guardsResult);
                       const u = new h3(
                         c.id,
                         this.urlSerializer.serialize(c.extractedUrl),
-                        this.urlSerializer.serialize(
-                          c.urlAfterRedirects,
-                        ),
+                        this.urlSerializer.serialize(c.urlAfterRedirects),
                         c.targetSnapshot,
                         !!c.guardsResult,
                       );
@@ -13817,12 +12562,7 @@
                     _r(
                       c =>
                         !!c.guardsResult ||
-                        (this.cancelNavigationTransition(
-                          c,
-                          '',
-                          $t.GuardRejected,
-                        ),
-                        !1),
+                        (this.cancelNavigationTransition(c, '', $t.GuardRejected), !1),
                     ),
                     em(c => {
                       if (c.guards.canActivateChecks.length)
@@ -13830,12 +12570,8 @@
                           vt(u => {
                             const l = new p3(
                               u.id,
-                              this.urlSerializer.serialize(
-                                u.extractedUrl,
-                              ),
-                              this.urlSerializer.serialize(
-                                u.urlAfterRedirects,
-                              ),
+                              this.urlSerializer.serialize(u.extractedUrl),
+                              this.urlSerializer.serialize(u.urlAfterRedirects),
                               u.targetSnapshot,
                             );
                             this.events.next(l);
@@ -13850,13 +12586,10 @@
                                     guards: { canActivateChecks: o },
                                   } = n;
                                   if (!o.length) return H(n);
-                                  const i = new Set(
-                                      o.map(c => c.route),
-                                    ),
+                                  const i = new Set(o.map(c => c.route)),
                                     s = new Set();
                                   for (const c of i)
-                                    if (!s.has(c))
-                                      for (const u of jM(c)) s.add(u);
+                                    if (!s.has(c)) for (const u of jM(c)) s.add(u);
                                   let a = 0;
                                   return it(s).pipe(
                                     ml(c =>
@@ -13868,102 +12601,52 @@
                                               void 0 !== o?.title &&
                                                 !SM(o) &&
                                                 (i[pa] = o.title),
-                                              (function DG(
-                                                e,
-                                                t,
-                                                n,
-                                                r,
-                                              ) {
+                                              (function DG(e, t, n, r) {
                                                 const o = Vg(e);
-                                                if (0 === o.length)
-                                                  return H({});
+                                                if (0 === o.length) return H({});
                                                 const i = {};
                                                 return it(o).pipe(
                                                   mt(s =>
-                                                    (function EG(
-                                                      e,
-                                                      t,
-                                                      n,
-                                                      r,
-                                                    ) {
-                                                      const o =
-                                                          Ca(t) ?? r,
+                                                    (function EG(e, t, n, r) {
+                                                      const o = Ca(t) ?? r,
                                                         i = Ri(e, o);
                                                       return Cr(
                                                         i.resolve
-                                                          ? i.resolve(
-                                                              t,
-                                                              n,
-                                                            )
-                                                          : rr(
-                                                              o,
-                                                              () =>
-                                                                i(
-                                                                  t,
-                                                                  n,
-                                                                ),
-                                                            ),
+                                                          ? i.resolve(t, n)
+                                                          : rr(o, () => i(t, n)),
                                                       );
-                                                    })(
-                                                      e[s],
-                                                      t,
-                                                      n,
-                                                      r,
-                                                    ).pipe(
+                                                    })(e[s], t, n, r).pipe(
                                                       no(),
                                                       vt(a => {
-                                                        if (
-                                                          a instanceof
-                                                          Kg
-                                                        )
-                                                          throw Rl(
-                                                            new yl(),
-                                                            a,
-                                                          );
+                                                        if (a instanceof Kg)
+                                                          throw Rl(new yl(), a);
                                                         i[s] = a;
                                                       }),
                                                     ),
                                                   ),
                                                   kg(1),
                                                   (function LH(e) {
-                                                    return ne(
-                                                      () => e,
-                                                    );
+                                                    return ne(() => e);
                                                   })(i),
-                                                  Ii(s =>
-                                                    xM(s)
-                                                      ? An
-                                                      : pl(s),
-                                                  ),
+                                                  Ii(s => (xM(s) ? An : pl(s))),
                                                 );
                                               })(i, e, t, r).pipe(
                                                 ne(
                                                   s => (
-                                                    (e._resolvedData =
-                                                      s),
-                                                    (e.data = Ml(
-                                                      e,
-                                                      e.parent,
-                                                      n,
-                                                    ).resolve),
+                                                    (e._resolvedData = s),
+                                                    (e.data = Ml(e, e.parent, n).resolve),
                                                     null
                                                   ),
                                                 ),
                                               )
                                             );
                                           })(c, r, e, t)
-                                        : ((c.data = Ml(
-                                            c,
-                                            c.parent,
-                                            e,
-                                          ).resolve),
+                                        : ((c.data = Ml(c, c.parent, e).resolve),
                                           H(void 0)),
                                     ),
                                     vt(() => a++),
                                     kg(1),
-                                    mt(c =>
-                                      a === s.size ? H(n) : An,
-                                    ),
+                                    mt(c => (a === s.size ? H(n) : An)),
                                   );
                                 });
                               })(
@@ -13986,12 +12669,8 @@
                           vt(u => {
                             const l = new g3(
                               u.id,
-                              this.urlSerializer.serialize(
-                                u.extractedUrl,
-                              ),
-                              this.urlSerializer.serialize(
-                                u.urlAfterRedirects,
-                              ),
+                              this.urlSerializer.serialize(u.extractedUrl),
+                              this.urlSerializer.serialize(u.urlAfterRedirects),
                               u.targetSnapshot,
                             );
                             this.events.next(l);
@@ -14004,29 +12683,21 @@
                         l.routeConfig?.loadComponent &&
                           !l.routeConfig._loadedComponent &&
                           d.push(
-                            this.configLoader
-                              .loadComponent(l.routeConfig)
-                              .pipe(
-                                vt(f => {
-                                  l.component = f;
-                                }),
-                                ne(() => {}),
-                              ),
+                            this.configLoader.loadComponent(l.routeConfig).pipe(
+                              vt(f => {
+                                l.component = f;
+                              }),
+                              ne(() => {}),
+                            ),
                           );
                         for (const f of l.children) d.push(...u(f));
                         return d;
                       };
-                      return Og(u(c.targetSnapshot.root)).pipe(
-                        gl(null),
-                        to(1),
-                      );
+                      return Og(u(c.targetSnapshot.root)).pipe(gl(null), to(1));
                     }),
                     em(() => this.afterPreactivation()),
                     Qn(() => {
-                      const {
-                          currentSnapshot: c,
-                          targetSnapshot: u,
-                        } = i,
+                      const { currentSnapshot: c, targetSnapshot: u } = i,
                         l = this.createViewTransition?.(
                           this.environmentInjector,
                           c.root,
@@ -14036,22 +12707,12 @@
                     }),
                     ne(c => {
                       const u = (function A3(e, t, n) {
-                        const r = Ea(
-                          e,
-                          t._root,
-                          n ? n._root : void 0,
-                        );
+                        const r = Ea(e, t._root, n ? n._root : void 0);
                         return new EM(r, t);
-                      })(
-                        n.routeReuseStrategy,
-                        c.targetSnapshot,
-                        c.currentRouterState,
-                      );
+                      })(n.routeReuseStrategy, c.targetSnapshot, c.currentRouterState);
                       return (
-                        (this.currentTransition = i =
-                          { ...c, targetRouterState: u }),
-                        (this.currentNavigation.targetRouterState =
-                          u),
+                        (this.currentTransition = i = { ...c, targetRouterState: u }),
+                        (this.currentNavigation.targetRouterState = u),
                         i
                       );
                     }),
@@ -14080,22 +12741,15 @@
                     vt({
                       next: c => {
                         (s = !0),
-                          (this.lastSuccessfulNavigation =
-                            this.currentNavigation),
+                          (this.lastSuccessfulNavigation = this.currentNavigation),
                           this.events.next(
                             new Dr(
                               c.id,
-                              this.urlSerializer.serialize(
-                                c.extractedUrl,
-                              ),
-                              this.urlSerializer.serialize(
-                                c.urlAfterRedirects,
-                              ),
+                              this.urlSerializer.serialize(c.extractedUrl),
+                              this.urlSerializer.serialize(c.urlAfterRedirects),
                             ),
                           ),
-                          this.titleStrategy?.updateTitle(
-                            c.targetRouterState.snapshot,
-                          ),
+                          this.titleStrategy?.updateTitle(c.targetRouterState.snapshot),
                           c.resolve(!0);
                       },
                       complete: () => {
@@ -14126,9 +12780,7 @@
                         this.events.next(
                           new so(
                             i.id,
-                            this.urlSerializer.serialize(
-                              i.extractedUrl,
-                            ),
+                            this.urlSerializer.serialize(i.extractedUrl),
                             c.message,
                             c.cancellationCode,
                           ),
@@ -14136,19 +12788,12 @@
                           (function x3(e) {
                             return NM(e) && io(e.url);
                           })(c)
-                            ? this.events.next(
-                                new Sl(
-                                  c.url,
-                                  c.navigationBehaviorOptions,
-                                ),
-                              )
+                            ? this.events.next(new Sl(c.url, c.navigationBehaviorOptions))
                             : i.resolve(!1);
                       else {
                         const u = new Hg(
                           i.id,
-                          this.urlSerializer.serialize(
-                            i.extractedUrl,
-                          ),
+                          this.urlSerializer.serialize(i.extractedUrl),
                           c,
                           i.targetSnapshot ?? void 0,
                         );
@@ -14157,25 +12802,17 @@
                             this.navigationErrorHandler?.(u),
                           );
                           if (l instanceof Kg) {
-                            const {
-                              message: d,
-                              cancellationCode: f,
-                            } = Rl(0, l);
+                            const { message: d, cancellationCode: f } = Rl(0, l);
                             this.events.next(
                               new so(
                                 i.id,
-                                this.urlSerializer.serialize(
-                                  i.extractedUrl,
-                                ),
+                                this.urlSerializer.serialize(i.extractedUrl),
                                 d,
                                 f,
                               ),
                             ),
                               this.events.next(
-                                new Sl(
-                                  l.redirectTo,
-                                  l.navigationBehaviorOptions,
-                                ),
+                                new Sl(l.redirectTo, l.navigationBehaviorOptions),
                               );
                           } else {
                             this.events.next(u);
@@ -14196,12 +12833,7 @@
             );
           }
           cancelNavigationTransition(n, r, o) {
-            const i = new so(
-              n.id,
-              this.urlSerializer.serialize(n.extractedUrl),
-              r,
-              o,
-            );
+            const i = new so(n.id, this.urlSerializer.serialize(n.extractedUrl), r, o);
             this.events.next(i), n.resolve(!1);
           }
           isUpdatingInternalState() {
@@ -14301,11 +12933,9 @@
                 (this.urlSerializer = _(Mi)),
                 (this.options = _(Sa, { optional: !0 }) || {}),
                 (this.canceledNavigationResolution =
-                  this.options.canceledNavigationResolution ||
-                  'replace'),
+                  this.options.canceledNavigationResolution || 'replace'),
                 (this.urlHandlingStrategy = _(nm)),
-                (this.urlUpdateStrategy =
-                  this.options.urlUpdateStrategy || 'deferred'),
+                (this.urlUpdateStrategy = this.options.urlUpdateStrategy || 'deferred'),
                 (this.currentUrlTree = new ro()),
                 (this.rawUrlTree = this.currentUrlTree),
                 (this.currentPageId = 0),
@@ -14325,8 +12955,7 @@
             get browserPageId() {
               return 'computed' !== this.canceledNavigationResolution
                 ? this.currentPageId
-                : this.restoredState()?.ɵrouterPageId ??
-                    this.currentPageId;
+                : this.restoredState()?.ɵrouterPageId ?? this.currentPageId;
             }
             getRouterState() {
               return this.routerState;
@@ -14344,19 +12973,11 @@
               });
             }
             handleRouterEvent(n, r) {
-              if (n instanceof bl)
-                this.stateMemento = this.createStateMemento();
-              else if (n instanceof Ti)
-                this.rawUrlTree = r.initialUrl;
+              if (n instanceof bl) this.stateMemento = this.createStateMemento();
+              else if (n instanceof Ti) this.rawUrlTree = r.initialUrl;
               else if (n instanceof _M) {
-                if (
-                  'eager' === this.urlUpdateStrategy &&
-                  !r.extras.skipLocationChange
-                ) {
-                  const o = this.urlHandlingStrategy.merge(
-                    r.finalUrl,
-                    r.initialUrl,
-                  );
+                if ('eager' === this.urlUpdateStrategy && !r.extras.skipLocationChange) {
+                  const o = this.urlHandlingStrategy.merge(r.finalUrl, r.initialUrl);
                   this.setBrowserUrl(r.targetBrowserUrl ?? o, r);
                 }
               } else
@@ -14369,13 +12990,9 @@
                     (this.routerState = r.targetRouterState),
                     'deferred' === this.urlUpdateStrategy &&
                       !r.extras.skipLocationChange &&
-                      this.setBrowserUrl(
-                        r.targetBrowserUrl ?? this.rawUrlTree,
-                        r,
-                      ))
+                      this.setBrowserUrl(r.targetBrowserUrl ?? this.rawUrlTree, r))
                   : n instanceof so &&
-                    (n.code === $t.GuardRejected ||
-                      n.code === $t.NoDataFromResolver)
+                    (n.code === $t.GuardRejected || n.code === $t.NoDataFromResolver)
                   ? this.restoreHistory(r)
                   : n instanceof Hg
                   ? this.restoreHistory(r, !0)
@@ -14384,27 +13001,17 @@
                     (this.currentPageId = this.browserPageId));
             }
             setBrowserUrl(n, r) {
-              const o =
-                n instanceof ro ? this.urlSerializer.serialize(n) : n;
-              if (
-                this.location.isCurrentPathEqualTo(o) ||
-                r.extras.replaceUrl
-              ) {
+              const o = n instanceof ro ? this.urlSerializer.serialize(n) : n;
+              if (this.location.isCurrentPathEqualTo(o) || r.extras.replaceUrl) {
                 const s = {
                   ...r.extras.state,
-                  ...this.generateNgRouterState(
-                    r.id,
-                    this.browserPageId,
-                  ),
+                  ...this.generateNgRouterState(r.id, this.browserPageId),
                 };
                 this.location.replaceState(o, '', s);
               } else {
                 const i = {
                   ...r.extras.state,
-                  ...this.generateNgRouterState(
-                    r.id,
-                    this.browserPageId + 1,
-                  ),
+                  ...this.generateNgRouterState(r.id, this.browserPageId + 1),
                 };
                 this.location.go(o, '', i);
               }
@@ -14416,17 +13023,14 @@
                   ? this.location.historyGo(i)
                   : this.currentUrlTree === n.finalUrl &&
                     0 === i &&
-                    (this.resetState(n),
-                    this.resetUrlToCurrentUrlTree());
+                    (this.resetState(n), this.resetUrlToCurrentUrlTree());
               } else
                 'replace' === this.canceledNavigationResolution &&
-                  (r && this.resetState(n),
-                  this.resetUrlToCurrentUrlTree());
+                  (r && this.resetState(n), this.resetUrlToCurrentUrlTree());
             }
             resetState(n) {
               (this.routerState = this.stateMemento.routerState),
-                (this.currentUrlTree =
-                  this.stateMemento.currentUrlTree),
+                (this.currentUrlTree = this.stateMemento.currentUrlTree),
                 (this.rawUrlTree = this.urlHandlingStrategy.merge(
                   this.currentUrlTree,
                   n.finalUrl ?? this.rawUrlTree,
@@ -14436,10 +13040,7 @@
               this.location.replaceState(
                 this.urlSerializer.serialize(this.rawUrlTree),
                 '',
-                this.generateNgRouterState(
-                  this.lastSuccessfulId,
-                  this.currentPageId,
-                ),
+                this.generateNgRouterState(this.lastSuccessfulId, this.currentPageId),
               );
             }
             generateNgRouterState(n, r) {
@@ -14504,8 +13105,7 @@
                 (this.stateManager = _(WM)),
                 (this.options = _(Sa, { optional: !0 }) || {}),
                 (this.pendingTasks = _(jr)),
-                (this.urlUpdateStrategy =
-                  this.options.urlUpdateStrategy || 'deferred'),
+                (this.urlUpdateStrategy = this.options.urlUpdateStrategy || 'deferred'),
                 (this.navigationTransitions = _(Ll)),
                 (this.urlSerializer = _(Mi)),
                 (this.location = _(ca)),
@@ -14514,8 +13114,7 @@
                 (this.errorHandler = this.options.errorHandler || FG),
                 (this.navigated = !1),
                 (this.routeReuseStrategy = _(NG)),
-                (this.onSameUrlNavigation =
-                  this.options.onSameUrlNavigation || 'ignore'),
+                (this.onSameUrlNavigation = this.options.onSameUrlNavigation || 'ignore'),
                 (this.config = _(kl, { optional: !0 })?.flat() ?? []),
                 (this.componentInputBindingEnabled = !!_(Nl, {
                   optional: !0,
@@ -14523,11 +13122,7 @@
                 (this.eventsSubscription = new tt()),
                 this.resetConfig(this.config),
                 this.navigationTransitions
-                  .setupNavigations(
-                    this,
-                    this.currentUrlTree,
-                    this.routerState,
-                  )
+                  .setupNavigations(this, this.currentUrlTree, this.routerState)
                   .subscribe({
                     error: n => {
                       this.console.warn(n);
@@ -14536,55 +13131,45 @@
                 this.subscribeToNavigationEvents();
             }
             subscribeToNavigationEvents() {
-              const n = this.navigationTransitions.events.subscribe(
-                r => {
-                  try {
-                    const o =
-                        this.navigationTransitions.currentTransition,
-                      i =
-                        this.navigationTransitions.currentNavigation;
-                    if (null !== o && null !== i)
-                      if (
-                        (this.stateManager.handleRouterEvent(r, i),
-                        r instanceof so &&
-                          r.code !== $t.Redirect &&
-                          r.code !== $t.SupersededByNewNavigation)
-                      )
-                        this.navigated = !0;
-                      else if (r instanceof Dr) this.navigated = !0;
-                      else if (r instanceof Sl) {
-                        const s = r.navigationBehaviorOptions,
-                          a = this.urlHandlingStrategy.merge(
-                            r.url,
-                            o.currentRawUrl,
-                          ),
-                          c = {
-                            browserUrl: o.extras.browserUrl,
-                            info: o.extras.info,
-                            skipLocationChange:
-                              o.extras.skipLocationChange,
-                            replaceUrl:
-                              o.extras.replaceUrl ||
-                              'eager' === this.urlUpdateStrategy ||
-                              AG(o.source),
-                            ...s,
-                          };
-                        this.scheduleNavigation(a, _a, null, c, {
-                          resolve: o.resolve,
-                          reject: o.reject,
-                          promise: o.promise,
-                        });
-                      }
-                    (function VG(e) {
-                      return !(e instanceof Gg || e instanceof Sl);
-                    })(r) && this._events.next(r);
-                  } catch (o) {
-                    this.navigationTransitions.transitionAbortSubject.next(
-                      o,
-                    );
-                  }
-                },
-              );
+              const n = this.navigationTransitions.events.subscribe(r => {
+                try {
+                  const o = this.navigationTransitions.currentTransition,
+                    i = this.navigationTransitions.currentNavigation;
+                  if (null !== o && null !== i)
+                    if (
+                      (this.stateManager.handleRouterEvent(r, i),
+                      r instanceof so &&
+                        r.code !== $t.Redirect &&
+                        r.code !== $t.SupersededByNewNavigation)
+                    )
+                      this.navigated = !0;
+                    else if (r instanceof Dr) this.navigated = !0;
+                    else if (r instanceof Sl) {
+                      const s = r.navigationBehaviorOptions,
+                        a = this.urlHandlingStrategy.merge(r.url, o.currentRawUrl),
+                        c = {
+                          browserUrl: o.extras.browserUrl,
+                          info: o.extras.info,
+                          skipLocationChange: o.extras.skipLocationChange,
+                          replaceUrl:
+                            o.extras.replaceUrl ||
+                            'eager' === this.urlUpdateStrategy ||
+                            AG(o.source),
+                          ...s,
+                        };
+                      this.scheduleNavigation(a, _a, null, c, {
+                        resolve: o.resolve,
+                        reject: o.reject,
+                        promise: o.promise,
+                      });
+                    }
+                  (function VG(e) {
+                    return !(e instanceof Gg || e instanceof Sl);
+                  })(r) && this._events.next(r);
+                } catch (o) {
+                  this.navigationTransitions.transitionAbortSubject.next(o);
+                }
+              });
               this.eventsSubscription.add(n);
             }
             resetRootComponentType(n) {
@@ -14602,17 +13187,11 @@
             }
             setUpLocationChangeListener() {
               this.nonRouterCurrentEntryChangeSubscription ??=
-                this.stateManager.registerNonRouterCurrentEntryChangeListener(
-                  (n, r) => {
-                    setTimeout(() => {
-                      this.navigateToSyncWithBrowser(
-                        n,
-                        'popstate',
-                        r,
-                      );
-                    }, 0);
-                  },
-                );
+                this.stateManager.registerNonRouterCurrentEntryChangeListener((n, r) => {
+                  setTimeout(() => {
+                    this.navigateToSyncWithBrowser(n, 'popstate', r);
+                  }, 0);
+                });
             }
             navigateToSyncWithBrowser(n, r, o) {
               const i = { replaceUrl: !0 },
@@ -14633,8 +13212,7 @@
               return this.navigationTransitions.currentNavigation;
             }
             get lastSuccessfulNavigation() {
-              return this.navigationTransitions
-                .lastSuccessfulNavigation;
+              return this.navigationTransitions.lastSuccessfulNavigation;
             }
             resetConfig(n) {
               (this.config = n.map(tm)), (this.navigated = !1);
@@ -14646,8 +13224,7 @@
               this.navigationTransitions.complete(),
                 this.nonRouterCurrentEntryChangeSubscription &&
                   (this.nonRouterCurrentEntryChangeSubscription.unsubscribe(),
-                  (this.nonRouterCurrentEntryChangeSubscription =
-                    void 0)),
+                  (this.nonRouterCurrentEntryChangeSubscription = void 0)),
                 (this.disposed = !0),
                 this.eventsSubscription.unsubscribe();
             }
@@ -14674,22 +13251,16 @@
               }
               null !== l && (l = this.removeEmptyProps(l));
               try {
-                d = fM(
-                  o ? o.snapshot : this.routerState.snapshot.root,
-                );
+                d = fM(o ? o.snapshot : this.routerState.snapshot.root);
               } catch {
-                ('string' != typeof n[0] || '/' !== n[0][0]) &&
-                  (n = []),
+                ('string' != typeof n[0] || '/' !== n[0][0]) && (n = []),
                   (d = this.currentUrlTree.root);
               }
               return hM(d, n, l, u ?? null);
             }
             navigateByUrl(n, r = { skipLocationChange: !1 }) {
               const o = io(n) ? n : this.parseUrl(n),
-                i = this.urlHandlingStrategy.merge(
-                  o,
-                  this.rawUrlTree,
-                );
+                i = this.urlHandlingStrategy.merge(o, this.rawUrlTree);
               return this.scheduleNavigation(i, _a, null, r);
             }
             navigate(n, r = { skipLocationChange: !1 }) {
@@ -14713,11 +13284,7 @@
             }
             isActive(n, r) {
               let o;
-              if (
-                ((o =
-                  !0 === r ? { ...PG } : !1 === r ? { ...kG } : r),
-                io(n))
-              )
+              if (((o = !0 === r ? { ...PG } : !1 === r ? { ...kG } : r), io(n)))
                 return rM(this.currentUrlTree, n, o);
               const i = this.parseUrl(n);
               return rM(this.currentUrlTree, i, o);
@@ -14822,15 +13389,12 @@
                 this.applyAttributeValue('tabindex', n);
             }
             ngOnChanges(n) {
-              this.isAnchorElement && this.updateHref(),
-                this.onChanges.next(this);
+              this.isAnchorElement && this.updateHref(), this.onChanges.next(this);
             }
             set routerLink(n) {
               null == n
-                ? ((this.routerLinkInput = null),
-                  this.setTabIndexIfNotOnNativeEl(null))
-                : ((this.routerLinkInput =
-                    io(n) || Array.isArray(n) ? n : [n]),
+                ? ((this.routerLinkInput = null), this.setTabIndexIfNotOnNativeEl(null))
+                : ((this.routerLinkInput = io(n) || Array.isArray(n) ? n : [n]),
                   this.setTabIndexIfNotOnNativeEl('0'));
             }
             onClick(n, r, o, i, s) {
@@ -14844,8 +13408,7 @@
                       o ||
                       i ||
                       s ||
-                      ('string' == typeof this.target &&
-                        '_self' != this.target)))
+                      ('string' == typeof this.target && '_self' != this.target)))
                 ) ||
                 (this.router.navigateByUrl(a, {
                   skipLocationChange: this.skipLocationChange,
@@ -14863,9 +13426,7 @@
               const n = this.urlTree;
               this.href =
                 null !== n && this.locationStrategy
-                  ? this.locationStrategy?.prepareExternalUrl(
-                      this.router.serializeUrl(n),
-                    )
+                  ? this.locationStrategy?.prepareExternalUrl(this.router.serializeUrl(n))
                   : null;
               const r =
                 null === this.href
@@ -14878,27 +13439,20 @@
                             'iframe' === e ||
                             'media' === e ||
                             'script' === e)) ||
-                          ('href' === t &&
-                            ('base' === e || 'link' === e))
+                          ('href' === t && ('base' === e || 'link' === e))
                           ? oC
                           : oh;
                       })(
                         t,
                         n,
                       )(e);
-                    })(
-                      this.href,
-                      this.el.nativeElement.tagName.toLowerCase(),
-                      'href',
-                    );
+                    })(this.href, this.el.nativeElement.tagName.toLowerCase(), 'href');
               this.applyAttributeValue('href', r);
             }
             applyAttributeValue(n, r) {
               const o = this.renderer,
                 i = this.el.nativeElement;
-              null !== r
-                ? o.setAttribute(i, n, r)
-                : o.removeAttribute(i, n);
+              null !== r ? o.setAttribute(i, n, r) : o.removeAttribute(i, n);
             }
             get urlTree() {
               return null === this.routerLinkInput
@@ -14906,10 +13460,7 @@
                 : io(this.routerLinkInput)
                 ? this.routerLinkInput
                 : this.router.createUrlTree(this.routerLinkInput, {
-                    relativeTo:
-                      void 0 !== this.relativeTo
-                        ? this.relativeTo
-                        : this.route,
+                    relativeTo: void 0 !== this.relativeTo ? this.relativeTo : this.route,
                     queryParams: this.queryParams,
                     fragment: this.fragment,
                     queryParamsHandling: this.queryParamsHandling,
@@ -14933,12 +13484,7 @@
                         if (Yv(i)) break;
                         if (0 === i) o += 2;
                         else if ('number' == typeof i)
-                          for (
-                            o++;
-                            o < r && 'string' == typeof n[o];
-
-                          )
-                            o++;
+                          for (o++; o < r && 'string' == typeof n[o]; ) o++;
                         else {
                           if (i === t) return n[o + 1];
                           o += 2;
@@ -14978,18 +13524,8 @@
                 state: 'state',
                 info: 'info',
                 relativeTo: 'relativeTo',
-                preserveFragment: [
-                  2,
-                  'preserveFragment',
-                  'preserveFragment',
-                  Di,
-                ],
-                skipLocationChange: [
-                  2,
-                  'skipLocationChange',
-                  'skipLocationChange',
-                  Di,
-                ],
+                preserveFragment: [2, 'preserveFragment', 'preserveFragment', Di],
+                skipLocationChange: [2, 'skipLocationChange', 'skipLocationChange', Di],
                 replaceUrl: [2, 'replaceUrl', 'replaceUrl', Di],
                 routerLink: 'routerLink',
               },
@@ -15017,38 +13553,27 @@
           }
           init() {
             'disabled' !== this.options.scrollPositionRestoration &&
-              this.viewportScroller.setHistoryScrollRestoration(
-                'manual',
-              ),
-              (this.routerEventsSubscription =
-                this.createScrollEvents()),
-              (this.scrollEventsSubscription =
-                this.consumeScrollEvents());
+              this.viewportScroller.setHistoryScrollRestoration('manual'),
+              (this.routerEventsSubscription = this.createScrollEvents()),
+              (this.scrollEventsSubscription = this.consumeScrollEvents());
           }
           createScrollEvents() {
             return this.transitions.events.subscribe(n => {
               n instanceof bl
-                ? ((this.store[this.lastId] =
-                    this.viewportScroller.getScrollPosition()),
+                ? ((this.store[this.lastId] = this.viewportScroller.getScrollPosition()),
                   (this.lastSource = n.navigationTrigger),
-                  (this.restoredId = n.restoredState
-                    ? n.restoredState.navigationId
-                    : 0))
+                  (this.restoredId = n.restoredState ? n.restoredState.navigationId : 0))
                 : n instanceof Dr
                 ? ((this.lastId = n.id),
                   this.scheduleScrollEvent(
                     n,
-                    this.urlSerializer.parse(n.urlAfterRedirects)
-                      .fragment,
+                    this.urlSerializer.parse(n.urlAfterRedirects).fragment,
                   ))
                 : n instanceof Ti &&
                   n.code === Il.IgnoredSameUrlNavigation &&
                   ((this.lastSource = void 0),
                   (this.restoredId = 0),
-                  this.scheduleScrollEvent(
-                    n,
-                    this.urlSerializer.parse(n.url).fragment,
-                  ));
+                  this.scheduleScrollEvent(n, this.urlSerializer.parse(n.url).fragment));
             });
           }
           consumeScrollEvents() {
@@ -15057,16 +13582,11 @@
                 (n.position
                   ? 'top' === this.options.scrollPositionRestoration
                     ? this.viewportScroller.scrollToPosition([0, 0])
-                    : 'enabled' ===
-                        this.options.scrollPositionRestoration &&
-                      this.viewportScroller.scrollToPosition(
-                        n.position,
-                      )
-                  : n.anchor &&
-                    'enabled' === this.options.anchorScrolling
+                    : 'enabled' === this.options.scrollPositionRestoration &&
+                      this.viewportScroller.scrollToPosition(n.position)
+                  : n.anchor && 'enabled' === this.options.anchorScrolling
                   ? this.viewportScroller.scrollToAnchor(n.anchor)
-                  : 'disabled' !==
-                      this.options.scrollPositionRestoration &&
+                  : 'disabled' !== this.options.scrollPositionRestoration &&
                     this.viewportScroller.scrollToPosition([0, 0]));
             });
           }
@@ -15077,9 +13597,7 @@
                   this.transitions.events.next(
                     new CM(
                       n,
-                      'popstate' === this.lastSource
-                        ? this.store[this.restoredId]
-                        : null,
+                      'popstate' === this.lastSource ? this.store[this.restoredId] : null,
                       r,
                     ),
                   );
@@ -15177,9 +13695,7 @@
       const Vl = {
         setInterval(e, t, ...n) {
           const { delegate: r } = Vl;
-          return r?.setInterval
-            ? r.setInterval(e, t, ...n)
-            : setInterval(e, t, ...n);
+          return r?.setInterval ? r.setInterval(e, t, ...n) : setInterval(e, t, ...n);
         },
         clearInterval(e) {
           const { delegate: t } = Vl;
@@ -15189,10 +13705,7 @@
       };
       class rT extends XG {
         constructor(t, n) {
-          super(t, n),
-            (this.scheduler = t),
-            (this.work = n),
-            (this.pending = !1);
+          super(t, n), (this.scheduler = t), (this.work = n), (this.pending = !1);
         }
         schedule(t, n = 0) {
           var r;
@@ -15215,23 +13728,17 @@
           return Vl.setInterval(t.flush.bind(t, this), r);
         }
         recycleAsyncId(t, n, r = 0) {
-          if (null != r && this.delay === r && !1 === this.pending)
-            return n;
+          if (null != r && this.delay === r && !1 === this.pending) return n;
           null != n && Vl.clearInterval(n);
         }
         execute(t, n) {
-          if (this.closed)
-            return new Error('executing a cancelled action');
+          if (this.closed) return new Error('executing a cancelled action');
           this.pending = !1;
           const r = this._execute(t, n);
           if (r) return r;
           !1 === this.pending &&
             null != this.id &&
-            (this.id = this.recycleAsyncId(
-              this.scheduler,
-              this.id,
-              null,
-            ));
+            (this.id = this.recycleAsyncId(this.scheduler, this.id, null));
         }
         _execute(t, n) {
           let o,
@@ -15239,9 +13746,7 @@
           try {
             this.work(t);
           } catch (i) {
-            (r = !0),
-              (o =
-                i || new Error('Scheduled action threw falsy error'));
+            (r = !0), (o = i || new Error('Scheduled action threw falsy error'));
           }
           if (r) return this.unsubscribe(), o;
         }
@@ -15252,8 +13757,7 @@
             (this.work = this.state = this.scheduler = null),
               (this.pending = !1),
               za(r, this),
-              null != t &&
-                (this.id = this.recycleAsyncId(n, t, null)),
+              null != t && (this.id = this.recycleAsyncId(n, t, null)),
               (this.delay = null),
               super.unsubscribe();
           }
@@ -15304,12 +13808,9 @@
               (this.isBrowser = this._platformId
                 ? sS(this._platformId)
                 : 'object' == typeof document && !!document),
-              (this.EDGE =
-                this.isBrowser &&
-                /(edge)/i.test(navigator.userAgent)),
+              (this.EDGE = this.isBrowser && /(edge)/i.test(navigator.userAgent)),
               (this.TRIDENT =
-                this.isBrowser &&
-                /(msie|trident)/i.test(navigator.userAgent)),
+                this.isBrowser && /(msie|trident)/i.test(navigator.userAgent)),
               (this.BLINK =
                 this.isBrowser &&
                 !(!window.chrome && !im) &&
@@ -15327,16 +13828,11 @@
                 /iPad|iPhone|iPod/.test(navigator.userAgent) &&
                 !('MSStream' in window)),
               (this.FIREFOX =
-                this.isBrowser &&
-                /(firefox|minefield)/i.test(navigator.userAgent)),
+                this.isBrowser && /(firefox|minefield)/i.test(navigator.userAgent)),
               (this.ANDROID =
-                this.isBrowser &&
-                /android/i.test(navigator.userAgent) &&
-                !this.TRIDENT),
+                this.isBrowser && /android/i.test(navigator.userAgent) && !this.TRIDENT),
               (this.SAFARI =
-                this.isBrowser &&
-                /safari/i.test(navigator.userAgent) &&
-                this.WEBKIT);
+                this.isBrowser && /safari/i.test(navigator.userAgent) && this.WEBKIT);
           }
           static #e = (this.ɵfac = function (r) {
             return new (r || e)(M(Bn));
@@ -15373,11 +13869,7 @@
                           co.setAttribute('type', 'text/css'),
                           document.head.appendChild(co)),
                           co.sheet &&
-                            (co.sheet.insertRule(
-                              `@media ${e} {body{ }}`,
-                              0,
-                            ),
-                            aT.add(e));
+                            (co.sheet.insertRule(`@media ${e} {body{ }}`, 0), aT.add(e));
                       } catch (n) {
                         console.error(n);
                       }
@@ -15413,18 +13905,13 @@
               (this._destroySubject = new at());
           }
           ngOnDestroy() {
-            this._destroySubject.next(),
-              this._destroySubject.complete();
+            this._destroySubject.next(), this._destroySubject.complete();
           }
           isMatched(n) {
-            return cT(nT(n)).some(
-              o => this._registerQuery(o).mql.matches,
-            );
+            return cT(nT(n)).some(o => this._registerQuery(o).mql.matches);
           }
           observe(n) {
-            let i = Og(
-              cT(nT(n)).map(s => this._registerQuery(s).observable),
-            );
+            let i = Og(cT(nT(n)).map(s => this._registerQuery(s).observable));
             return (
               (i = hl(
                 i.pipe(to(1)),
@@ -15448,10 +13935,7 @@
                         const u = s + e,
                           l = t.now();
                         if (l < u)
-                          return (
-                            (o = this.schedule(void 0, u - l)),
-                            void r.add(o)
-                          );
+                          return (o = this.schedule(void 0, u - l)), void r.add(o);
                         a();
                       }
                       n.subscribe(
@@ -15480,8 +13964,7 @@
                   const a = { matches: !1, breakpoints: {} };
                   return (
                     s.forEach(({ matches: c, query: u }) => {
-                      (a.matches = a.matches || c),
-                        (a.breakpoints[u] = c);
+                      (a.matches = a.matches || c), (a.breakpoints[u] = c);
                     }),
                     a
                   );
@@ -15561,8 +14044,7 @@
                 });
             }
             addObserver(n) {
-              if (this.observers.has(n))
-                throw new Error('Object is already registered!');
+              if (this.observers.has(n)) throw new Error('Object is already registered!');
               this.observers.set(n, n),
                 this.getBreakpointsObserve()
                   .subscribe(r => {
@@ -15574,14 +14056,12 @@
                       ? n.update({ breakpoint: _t.Medium })
                       : r.breakpoints[yt_Large]
                       ? n.update({ breakpoint: _t.Large })
-                      : r.breakpoints[yt_XLarge] &&
-                        n.update({ breakpoint: _t.XLarge });
+                      : r.breakpoints[yt_XLarge] && n.update({ breakpoint: _t.XLarge });
                   })
                   .unsubscribe();
             }
             removeObserver(n) {
-              if (!this.observers.has(n))
-                throw new Error('Object is not registered!');
+              if (!this.observers.has(n)) throw new Error('Object is not registered!');
               this.observers.delete(n);
             }
             notifyObservers(n) {
@@ -15618,11 +14098,7 @@
                 (this.onTouched = () => {});
             }
             setProperty(n, r) {
-              this._renderer.setProperty(
-                this._elementRef.nativeElement,
-                n,
-                r,
-              );
+              this._renderer.setProperty(this._elementRef.nativeElement, n, r);
             }
             registerOnTouched(n) {
               this.onTouched = n;
@@ -15671,16 +14147,14 @@
             this.setProperty('value', n ?? '');
           }
           _handleInput(n) {
-            (!this._compositionMode ||
-              (this._compositionMode && !this._composing)) &&
+            (!this._compositionMode || (this._compositionMode && !this._composing)) &&
               this.onChange(n);
           }
           _compositionStart() {
             this._composing = !0;
           }
           _compositionEnd(n) {
-            (this._composing = !1),
-              this._compositionMode && this.onChange(n);
+            (this._composing = !1), this._compositionMode && this.onChange(n);
           }
           static #e = (this.ɵfac = function (r) {
             return new (r || e)(w(zn), w(kt), w(f8, 8));
@@ -15715,9 +14189,7 @@
       })();
       function Er(e) {
         return (
-          null == e ||
-          (('string' == typeof e || Array.isArray(e)) &&
-            0 === e.length)
+          null == e || (('string' == typeof e || Array.isArray(e)) && 0 === e.length)
         );
       }
       function fT(e) {
@@ -15733,9 +14205,7 @@
             return t => {
               if (Er(t.value) || Er(e)) return null;
               const n = parseFloat(t.value);
-              return !isNaN(n) && n < e
-                ? { min: { min: e, actual: t.value } }
-                : null;
+              return !isNaN(n) && n < e ? { min: { min: e, actual: t.value } } : null;
             };
           })(t);
         }
@@ -15744,9 +14214,7 @@
             return t => {
               if (Er(t.value) || Er(e)) return null;
               const n = parseFloat(t.value);
-              return !isNaN(n) && n > e
-                ? { max: { max: e, actual: t.value } }
-                : null;
+              return !isNaN(n) && n > e ? { max: { max: e, actual: t.value } } : null;
             };
           })(t);
         }
@@ -15762,9 +14230,7 @@
         }
         static email(t) {
           return (function vT(e) {
-            return Er(e.value) || h8.test(e.value)
-              ? null
-              : { email: !0 };
+            return Er(e.value) || h8.test(e.value) ? null : { email: !0 };
           })(t);
         }
         static minLength(t) {
@@ -15897,9 +14363,7 @@
                           () => c--,
                           void 0,
                           () => {
-                            (!c || !d) &&
-                              (u || i.next(r ? qS(r, a) : a),
-                              i.complete());
+                            (!c || !d) && (u || i.next(r ? qS(r, a) : a), i.complete());
                           },
                         ),
                       );
@@ -15913,11 +14377,7 @@
         return null != e ? MT(IT(e)) : null;
       }
       function TT(e, t) {
-        return null === e
-          ? [t]
-          : Array.isArray(e)
-          ? [...e, t]
-          : [e, t];
+        return null === e ? [t] : Array.isArray(e) ? [...e, t] : [e, t];
       }
       function AT(e) {
         return e._rawValidators;
@@ -16000,9 +14460,7 @@
         }
         _setAsyncValidators(t) {
           (this._rawAsyncValidators = t || []),
-            (this._composedAsyncValidatorFn = cm(
-              this._rawAsyncValidators,
-            ));
+            (this._composedAsyncValidatorFn = cm(this._rawAsyncValidators));
         }
         get validator() {
           return this._composedValidatorFn || null;
@@ -16014,8 +14472,7 @@
           this._onDestroyCallbacks.push(t);
         }
         _invokeOnDestroyCallbacks() {
-          this._onDestroyCallbacks.forEach(t => t()),
-            (this._onDestroyCallbacks = []);
+          this._onDestroyCallbacks.forEach(t => t()), (this._onDestroyCallbacks = []);
         }
         reset(t = void 0) {
           this.control && this.control.reset(t);
@@ -16048,27 +14505,19 @@
           this._cd = t;
         }
         get isTouched() {
-          return (
-            this._cd?.control?._touched?.(),
-            !!this._cd?.control?.touched
-          );
+          return this._cd?.control?._touched?.(), !!this._cd?.control?.touched;
         }
         get isUntouched() {
           return !!this._cd?.control?.untouched;
         }
         get isPristine() {
-          return (
-            this._cd?.control?._pristine?.(),
-            !!this._cd?.control?.pristine
-          );
+          return this._cd?.control?._pristine?.(), !!this._cd?.control?.pristine;
         }
         get isDirty() {
           return !!this._cd?.control?.dirty;
         }
         get isValid() {
-          return (
-            this._cd?.control?._status?.(), !!this._cd?.control?.valid
-          );
+          return this._cd?.control?._status?.(), !!this._cd?.control?.valid;
         }
         get isInvalid() {
           return !!this._cd?.control?.invalid;
@@ -16098,16 +14547,13 @@
               hostVars: 14,
               hostBindings: function (r, o) {
                 2 & r &&
-                  Eu('ng-untouched', o.isUntouched)(
-                    'ng-touched',
-                    o.isTouched,
-                  )('ng-pristine', o.isPristine)(
-                    'ng-dirty',
-                    o.isDirty,
-                  )('ng-valid', o.isValid)('ng-invalid', o.isInvalid)(
-                    'ng-pending',
-                    o.isPending,
-                  );
+                  Eu('ng-untouched', o.isUntouched)('ng-touched', o.isTouched)(
+                    'ng-pristine',
+                    o.isPristine,
+                  )('ng-dirty', o.isDirty)('ng-valid', o.isValid)(
+                    'ng-invalid',
+                    o.isInvalid,
+                  )('ng-pending', o.isPending);
               },
               features: [de],
             }));
@@ -16135,16 +14581,13 @@
               hostVars: 16,
               hostBindings: function (r, o) {
                 2 & r &&
-                  Eu('ng-untouched', o.isUntouched)(
-                    'ng-touched',
-                    o.isTouched,
-                  )('ng-pristine', o.isPristine)(
-                    'ng-dirty',
-                    o.isDirty,
-                  )('ng-valid', o.isValid)('ng-invalid', o.isInvalid)(
-                    'ng-pending',
-                    o.isPending,
-                  )('ng-submitted', o.isSubmitted);
+                  Eu('ng-untouched', o.isUntouched)('ng-touched', o.isTouched)(
+                    'ng-pristine',
+                    o.isPristine,
+                  )('ng-dirty', o.isDirty)('ng-valid', o.isValid)(
+                    'ng-invalid',
+                    o.isInvalid,
+                  )('ng-pending', o.isPending)('ng-submitted', o.isSubmitted);
               },
               features: [de],
             }));
@@ -16234,8 +14677,7 @@
           return this._composedAsyncValidatorFn;
         }
         set asyncValidator(t) {
-          this._rawAsyncValidators = this._composedAsyncValidatorFn =
-            t;
+          this._rawAsyncValidators = this._composedAsyncValidatorFn = t;
         }
         get parent() {
           return this._parent;
@@ -16323,9 +14765,7 @@
           this._parent &&
             !t.onlySelf &&
             this._parent.markAsTouched({ ...t, sourceControl: r }),
-            n &&
-              !1 !== t.emitEvent &&
-              this._events.next(new hm(!0, r));
+            n && !1 !== t.emitEvent && this._events.next(new hm(!0, r));
         }
         markAllAsTouched(t = {}) {
           this.markAsTouched({
@@ -16346,12 +14786,8 @@
               sourceControl: r,
             });
           }),
-            this._parent &&
-              !t.onlySelf &&
-              this._parent._updateTouched(t, r),
-            n &&
-              !1 !== t.emitEvent &&
-              this._events.next(new hm(!1, r));
+            this._parent && !t.onlySelf && this._parent._updateTouched(t, r),
+            n && !1 !== t.emitEvent && this._events.next(new hm(!1, r));
         }
         markAsDirty(t = {}) {
           const n = !0 === this.pristine;
@@ -16360,9 +14796,7 @@
           this._parent &&
             !t.onlySelf &&
             this._parent.markAsDirty({ ...t, sourceControl: r }),
-            n &&
-              !1 !== t.emitEvent &&
-              this._events.next(new fm(!1, r));
+            n && !1 !== t.emitEvent && this._events.next(new fm(!1, r));
         }
         markAsPristine(t = {}) {
           const n = !1 === this.pristine;
@@ -16374,12 +14808,8 @@
               emitEvent: t.emitEvent,
             });
           }),
-            this._parent &&
-              !t.onlySelf &&
-              this._parent._updatePristine(t, r),
-            n &&
-              !1 !== t.emitEvent &&
-              this._events.next(new fm(!0, r));
+            this._parent && !t.onlySelf && this._parent._updatePristine(t, r),
+            n && !1 !== t.emitEvent && this._events.next(new fm(!0, r));
         }
         markAsPending(t = {}) {
           this.status = Pi;
@@ -16405,10 +14835,7 @@
             this._events.next(new zl(this.status, r)),
             this.valueChanges.emit(this.value),
             this.statusChanges.emit(this.status)),
-            this._updateAncestors(
-              { ...t, skipPristineCheck: n },
-              this,
-            ),
+            this._updateAncestors({ ...t, skipPristineCheck: n }, this),
             this._onDisabledChange.forEach(o => o(!0));
         }
         enable(t = {}) {
@@ -16421,18 +14848,14 @@
               onlySelf: !0,
               emitEvent: t.emitEvent,
             }),
-            this._updateAncestors(
-              { ...t, skipPristineCheck: n },
-              this,
-            ),
+            this._updateAncestors({ ...t, skipPristineCheck: n }, this),
             this._onDisabledChange.forEach(r => r(!1));
         }
         _updateAncestors(t, n) {
           this._parent &&
             !t.onlySelf &&
             (this._parent.updateValueAndValidity(t),
-            t.skipPristineCheck ||
-              this._parent._updatePristine({}, n),
+            t.skipPristineCheck || this._parent._updatePristine({}, n),
             this._parent._updateTouched({}, n));
         }
         setParent(t) {
@@ -16442,11 +14865,7 @@
           return this.value;
         }
         updateValueAndValidity(t = {}) {
-          if (
-            (this._setInitialStatus(),
-            this._updateValue(),
-            this.enabled)
-          ) {
+          if ((this._setInitialStatus(), this._updateValue(), this.enabled)) {
             const r = this._cancelExistingSubscription();
             (this.errors = this._runValidator()),
               (this.status = this._calculateStatus()),
@@ -16498,24 +14917,18 @@
         _cancelExistingSubscription() {
           if (this._asyncValidationSubscription) {
             this._asyncValidationSubscription.unsubscribe();
-            const t =
-              this._hasOwnPendingAsyncValidator?.emitEvent ?? !1;
+            const t = this._hasOwnPendingAsyncValidator?.emitEvent ?? !1;
             return (this._hasOwnPendingAsyncValidator = null), t;
           }
           return !1;
         }
         setErrors(t, n = {}) {
           (this.errors = t),
-            this._updateControlsErrors(
-              !1 !== n.emitEvent,
-              this,
-              n.shouldHaveEmitted,
-            );
+            this._updateControlsErrors(!1 !== n.emitEvent, this, n.shouldHaveEmitted);
         }
         get(t) {
           let n = t;
-          return null == n ||
-            (Array.isArray(n) || (n = n.split('.')), 0 === n.length)
+          return null == n || (Array.isArray(n) || (n = n.split('.')), 0 === n.length)
             ? null
             : n.reduce((r, o) => r && r._find(o), this);
         }
@@ -16535,20 +14948,17 @@
           (this.status = this._calculateStatus()),
             t && this.statusChanges.emit(this.status),
             (t || r) && this._events.next(new zl(this.status, n)),
-            this._parent &&
-              this._parent._updateControlsErrors(t, n, r);
+            this._parent && this._parent._updateControlsErrors(t, n, r);
         }
         _initObservables() {
-          (this.valueChanges = new W()),
-            (this.statusChanges = new W());
+          (this.valueChanges = new W()), (this.statusChanges = new W());
         }
         _calculateStatus() {
           return this._allControlsDisabled()
             ? Oa
             : this.errors
             ? Gl
-            : this._hasOwnPendingAsyncValidator ||
-              this._anyControlsHaveStatus(Pi)
+            : this._hasOwnPendingAsyncValidator || this._anyControlsHaveStatus(Pi)
             ? Pi
             : this._anyControlsHaveStatus(Gl)
             ? Gl
@@ -16567,25 +14977,19 @@
           const r = !this._anyControlsDirty(),
             o = this.pristine !== r;
           (this.pristine = r),
-            this._parent &&
-              !t.onlySelf &&
-              this._parent._updatePristine(t, n),
+            this._parent && !t.onlySelf && this._parent._updatePristine(t, n),
             o && this._events.next(new fm(this.pristine, n));
         }
         _updateTouched(t = {}, n) {
           (this.touched = this._anyControlsTouched()),
             this._events.next(new hm(this.touched, n)),
-            this._parent &&
-              !t.onlySelf &&
-              this._parent._updateTouched(t, n);
+            this._parent && !t.onlySelf && this._parent._updateTouched(t, n);
         }
         _registerOnCollectionChange(t) {
           this._onCollectionChange = t;
         }
         _setUpdateStrategy(t) {
-          ql(t) &&
-            null != t.updateOn &&
-            (this._updateOn = t.updateOn);
+          ql(t) && null != t.updateOn && (this._updateOn = t.updateOn);
         }
         _parentMarkedDirty(t) {
           return (
@@ -16604,9 +15008,7 @@
             })(this._rawValidators));
         }
         _assignAsyncValidators(t) {
-          (this._rawAsyncValidators = Array.isArray(t)
-            ? t.slice()
-            : t),
+          (this._rawAsyncValidators = Array.isArray(t) ? t.slice() : t),
             (this._composedAsyncValidatorFn = (function E8(e) {
               return Array.isArray(e) ? cm(e) : e || null;
             })(this._rawAsyncValidators));
@@ -16638,25 +15040,20 @@
             this._onCollectionChange();
         }
         removeControl(t, n = {}) {
-          this.controls[t] &&
-            this.controls[t]._registerOnCollectionChange(() => {}),
+          this.controls[t] && this.controls[t]._registerOnCollectionChange(() => {}),
             delete this.controls[t],
             this.updateValueAndValidity({ emitEvent: n.emitEvent }),
             this._onCollectionChange();
         }
         setControl(t, n, r = {}) {
-          this.controls[t] &&
-            this.controls[t]._registerOnCollectionChange(() => {}),
+          this.controls[t] && this.controls[t]._registerOnCollectionChange(() => {}),
             delete this.controls[t],
             n && this.registerControl(t, n),
             this.updateValueAndValidity({ emitEvent: r.emitEvent }),
             this._onCollectionChange();
         }
         contains(t) {
-          return (
-            this.controls.hasOwnProperty(t) &&
-            this.controls[t].enabled
-          );
+          return this.controls.hasOwnProperty(t) && this.controls[t].enabled;
         }
         setValue(t, n = {}) {
           UT(this, 0, t),
@@ -16693,19 +15090,11 @@
             this.updateValueAndValidity(n);
         }
         getRawValue() {
-          return this._reduceChildren(
-            {},
-            (t, n, r) => ((t[r] = n.getRawValue()), t),
-          );
+          return this._reduceChildren({}, (t, n, r) => ((t[r] = n.getRawValue()), t));
         }
         _syncPendingControls() {
-          let t = this._reduceChildren(
-            !1,
-            (n, r) => !!r._syncPendingControls() || n,
-          );
-          return (
-            t && this.updateValueAndValidity({ onlySelf: !0 }), t
-          );
+          let t = this._reduceChildren(!1, (n, r) => !!r._syncPendingControls() || n);
+          return t && this.updateValueAndValidity({ onlySelf: !0 }), t;
         }
         _forEachChild(t) {
           Object.keys(this.controls).forEach(n => {
@@ -16715,8 +15104,7 @@
         }
         _setUpControls() {
           this._forEachChild(t => {
-            t.setParent(this),
-              t._registerOnCollectionChange(this._onCollectionChange);
+            t.setParent(this), t._registerOnCollectionChange(this._onCollectionChange);
           });
         }
         _updateValue() {
@@ -16730,9 +15118,7 @@
         _reduceValue() {
           return this._reduceChildren(
             {},
-            (n, r, o) => (
-              (r.enabled || this.disabled) && (n[o] = r.value), n
-            ),
+            (n, r, o) => ((r.enabled || this.disabled) && (n[o] = r.value), n),
           );
         }
         _reduceChildren(t, n) {
@@ -16747,14 +15133,10 @@
         _allControlsDisabled() {
           for (const t of Object.keys(this.controls))
             if (this.controls[t].enabled) return !1;
-          return (
-            Object.keys(this.controls).length > 0 || this.disabled
-          );
+          return Object.keys(this.controls).length > 0 || this.disabled;
         }
         _find(t) {
-          return this.controls.hasOwnProperty(t)
-            ? this.controls[t]
-            : null;
+          return this.controls.hasOwnProperty(t) ? this.controls[t] : null;
         }
       }
       class BT extends Fa {}
@@ -16778,8 +15160,7 @@
           })(e, t),
           (function S8(e, t) {
             const n = (r, o) => {
-              t.valueAccessor.writeValue(r),
-                o && t.viewToModelUpdate(r);
+              t.valueAccessor.writeValue(r), o && t.viewToModelUpdate(r);
             };
             e.registerOnChange(n),
               t._registerOnDestroy(() => {
@@ -16808,17 +15189,13 @@
       function Ql(e, t, n = !0) {
         const r = () => {};
         t.valueAccessor &&
-          (t.valueAccessor.registerOnChange(r),
-          t.valueAccessor.registerOnTouched(r)),
+          (t.valueAccessor.registerOnChange(r), t.valueAccessor.registerOnTouched(r)),
           Xl(e, t),
-          e &&
-            (t._invokeOnDestroyCallbacks(),
-            e._registerOnCollectionChange(() => {}));
+          e && (t._invokeOnDestroyCallbacks(), e._registerOnCollectionChange(() => {}));
       }
       function Kl(e, t) {
         e.forEach(n => {
-          n.registerOnValidatorChange &&
-            n.registerOnValidatorChange(t);
+          n.registerOnValidatorChange && n.registerOnValidatorChange(t);
         });
       }
       function mm(e, t) {
@@ -16847,15 +15224,12 @@
             const o = NT(e);
             if (Array.isArray(o) && o.length > 0) {
               const i = o.filter(s => s !== t.asyncValidator);
-              i.length !== o.length &&
-                ((n = !0), e.setAsyncValidators(i));
+              i.length !== o.length && ((n = !0), e.setAsyncValidators(i));
             }
           }
         }
         const r = () => {};
-        return (
-          Kl(t._rawValidators, r), Kl(t._rawAsyncValidators, r), n
-        );
+        return Kl(t._rawValidators, r), Kl(t._rawAsyncValidators, r), n;
       }
       function $T(e, t) {
         e._pendingDirty && e.markAsDirty(),
@@ -16898,9 +15272,7 @@
           (this.value = this._pendingValue = t),
             this._onChange.length &&
               !1 !== n.emitModelToViewChange &&
-              this._onChange.forEach(r =>
-                r(this.value, !1 !== n.emitViewToModelChange),
-              ),
+              this._onChange.forEach(r => r(this.value, !1 !== n.emitViewToModelChange)),
             this.updateValueAndValidity(n);
         }
         patchValue(t, n = {}) {
@@ -16963,9 +15335,7 @@
           });
           static #t = (this.ɵdir = V({
             type: e,
-            selectors: [
-              ['form', 3, 'ngNoForm', '', 3, 'ngNativeValidate', ''],
-            ],
+            selectors: [['form', 3, 'ngNoForm', '', 3, 'ngNativeValidate', '']],
             hostAttrs: ['novalidate', ''],
           }));
         }
@@ -16994,10 +15364,7 @@
                     i.constructor === Ul
                       ? (n = i)
                       : (function A8(e) {
-                          return (
-                            Object.getPrototypeOf(e.constructor) ===
-                            uo
-                          );
+                          return Object.getPrototypeOf(e.constructor) === uo;
                         })(i)
                       ? (r = i)
                       : (o = i);
@@ -17016,12 +15383,9 @@
             (function ym(e, t) {
               if (!e.hasOwnProperty('model')) return !1;
               const n = e.model;
-              return (
-                !!n.isFirstChange() || !Object.is(t, n.currentValue)
-              );
+              return !!n.isFirstChange() || !Object.is(t, n.currentValue);
             })(n, this.viewModel) &&
-              (this.form.setValue(this.model),
-              (this.viewModel = this.model));
+              (this.form.setValue(this.model), (this.viewModel = this.model));
           }
           ngOnDestroy() {
             this.form && Ql(this.form, this, !1);
@@ -17039,13 +15403,7 @@
             return n.hasOwnProperty('form');
           }
           static #t = (this.ɵfac = function (r) {
-            return new (r || e)(
-              w(st, 10),
-              w(wr, 10),
-              w(On, 10),
-              w(Dm, 8),
-              w(Li, 8),
-            );
+            return new (r || e)(w(st, 10), w(wr, 10), w(On, 10), w(Dm, 8), w(Li, 8));
           });
           static #n = (this.ɵdir = V({
             type: e,
@@ -17074,12 +15432,9 @@
             constructor(n, r, o) {
               super(),
                 (this.callSetDisabledState = o),
-                (this._submitted = Jr(() =>
-                  this._submittedReactive(),
-                )),
+                (this._submitted = Jr(() => this._submittedReactive())),
                 (this._submittedReactive = lr(!1)),
-                (this._onCollectionChange = () =>
-                  this._updateDomValue()),
+                (this._onCollectionChange = () => this._updateDomValue()),
                 (this.directives = []),
                 (this.form = null),
                 (this.ngSubmit = new W()),
@@ -17097,8 +15452,7 @@
             ngOnDestroy() {
               this.form &&
                 (Xl(this.form, this),
-                this.form._onCollectionChange ===
-                  this._onCollectionChange &&
+                this.form._onCollectionChange === this._onCollectionChange &&
                   this.form._registerOnCollectionChange(() => {}));
             }
             get formDirective() {
@@ -17159,8 +15513,7 @@
                       const r = n.control;
                       'submit' === r.updateOn &&
                         r._pendingChange &&
-                        (n.viewToModelUpdate(r._pendingValue),
-                        (r._pendingChange = !1));
+                        (n.viewToModelUpdate(r._pendingValue), (r._pendingChange = !1));
                     });
                 })(this.form, this.directives),
                 this.ngSubmit.emit(n),
@@ -17183,8 +15536,7 @@
                 r !== o &&
                   (Ql(r || null, n),
                   (e => e instanceof Ir)(o) &&
-                    (Pa(o, n, this.callSetDisabledState),
-                    (n.control = o)));
+                    (Pa(o, n, this.callSetDisabledState), (n.control = o)));
               }),
                 this.form._updateTreeValidity({ emitEvent: !1 });
             }
@@ -17206,15 +15558,11 @@
               }
             }
             _updateRegistrations() {
-              this.form._registerOnCollectionChange(
-                this._onCollectionChange,
-              ),
-                this._oldForm &&
-                  this._oldForm._registerOnCollectionChange(() => {});
+              this.form._registerOnCollectionChange(this._onCollectionChange),
+                this._oldForm && this._oldForm._registerOnCollectionChange(() => {});
             }
             _updateValidators() {
-              mm(this.form, this),
-                this._oldForm && Xl(this._oldForm, this);
+              mm(this.form, this), this._oldForm && Xl(this._oldForm, this);
             }
             _checkFormPresent() {}
             static #e = (this.ɵfac = function (r) {
@@ -17278,20 +15626,16 @@
         removeAt(t, n = {}) {
           let r = this._adjustIndex(t);
           r < 0 && (r = 0),
-            this.controls[r] &&
-              this.controls[r]._registerOnCollectionChange(() => {}),
+            this.controls[r] && this.controls[r]._registerOnCollectionChange(() => {}),
             this.controls.splice(r, 1),
             this.updateValueAndValidity({ emitEvent: n.emitEvent });
         }
         setControl(t, n, r = {}) {
           let o = this._adjustIndex(t);
           o < 0 && (o = 0),
-            this.controls[o] &&
-              this.controls[o]._registerOnCollectionChange(() => {}),
+            this.controls[o] && this.controls[o]._registerOnCollectionChange(() => {}),
             this.controls.splice(o, 1),
-            n &&
-              (this.controls.splice(o, 0, n),
-              this._registerControl(n)),
+            n && (this.controls.splice(o, 0, n), this._registerControl(n)),
             this.updateValueAndValidity({ emitEvent: r.emitEvent }),
             this._onCollectionChange();
         }
@@ -17333,9 +15677,7 @@
         }
         clear(t = {}) {
           this.controls.length < 1 ||
-            (this._forEachChild(n =>
-              n._registerOnCollectionChange(() => {}),
-            ),
+            (this._forEachChild(n => n._registerOnCollectionChange(() => {})),
             this.controls.splice(0),
             this.updateValueAndValidity({ emitEvent: t.emitEvent }));
         }
@@ -17343,13 +15685,8 @@
           return t < 0 ? t + this.length : t;
         }
         _syncPendingControls() {
-          let t = this.controls.reduce(
-            (n, r) => !!r._syncPendingControls() || n,
-            !1,
-          );
-          return (
-            t && this.updateValueAndValidity({ onlySelf: !0 }), t
-          );
+          let t = this.controls.reduce((n, r) => !!r._syncPendingControls() || n, !1);
+          return t && this.updateValueAndValidity({ onlySelf: !0 }), t;
         }
         _forEachChild(t) {
           this.controls.forEach((n, r) => {
@@ -17372,8 +15709,7 @@
           return this.controls.length > 0 || this.disabled;
         }
         _registerControl(t) {
-          t.setParent(this),
-            t._registerOnCollectionChange(this._onCollectionChange);
+          t.setParent(this), t._registerOnCollectionChange(this._onCollectionChange);
         }
         _find(t) {
           return this.at(t) ?? null;
@@ -17415,9 +15751,7 @@
             control(n, r, o) {
               let i = {};
               return this.useNonNullable
-                ? (m0(r)
-                    ? (i = r)
-                    : ((i.validators = r), (i.asyncValidators = o)),
+                ? (m0(r) ? (i = r) : ((i.validators = r), (i.asyncValidators = o)),
                   new Ir(n, { ...i, nonNullable: !0 }))
                 : new Ir(n, r, o);
             }
@@ -17464,8 +15798,7 @@
                 providers: [
                   {
                     provide: Dm,
-                    useValue:
-                      n.warnOnNgModelWithFormControl ?? 'always',
+                    useValue: n.warnOnNgModelWithFormControl ?? 'always',
                   },
                   {
                     provide: Li,
@@ -17669,21 +16002,14 @@
             template: function (r, o) {
               1 & r &&
                 (be(0, 0),
-                Zt(1, az, 3, 4, 'ng-container', 1)(
-                  2,
-                  cz,
+                Zt(1, az, 3, 4, 'ng-container', 1)(2, cz, 3, 4, 'ng-container', 1)(
+                  3,
+                  uz,
                   3,
                   4,
                   'ng-container',
                   1,
-                )(3, uz, 3, 4, 'ng-container', 1)(
-                  4,
-                  lz,
-                  3,
-                  4,
-                  'ng-container',
-                  1,
-                )(5, dz, 3, 4, 'ng-container', 1),
+                )(4, lz, 3, 4, 'ng-container', 1)(5, dz, 3, 4, 'ng-container', 1),
                 Ie()),
                 2 & r &&
                   (S('ngSwitch', o.type),
@@ -17720,11 +16046,7 @@
         }
         if (2 & e) {
           const n = K();
-          R(),
-            S('value', n.control.label.value)(
-              'textColor',
-              n.textColor,
-            );
+          R(), S('value', n.control.label.value)('textColor', n.textColor);
         }
       }
       let pz = (() => {
@@ -17789,13 +16111,10 @@
               2 & r &&
                 (S('ngIf', o.control.label.isVisible),
                 R(),
-                S('value', o.control.input.defaultValue)(
-                  'type',
-                  o.control.input.type,
-                )('placeholder', o.control.input.placeholder)(
-                  'formControl',
-                  o.form,
-                ));
+                S('value', o.control.input.defaultValue)('type', o.control.input.type)(
+                  'placeholder',
+                  o.control.input.placeholder,
+                )('formControl', o.form));
             },
             dependencies: [il, la, v0, Ul, PT, Em, Ht],
             styles: [
@@ -17815,8 +16134,7 @@
                 (this.mouseLeaveEvent = new W());
             }
             onClick() {
-              this.control.setValue(!0),
-                !this.isSubmit && this.clickEvent.emit();
+              this.control.setValue(!0), !this.isSubmit && this.clickEvent.emit();
             }
             onMouseEnter() {
               this.mouseEnterEvent.emit();
@@ -17841,17 +16159,7 @@
               ngContentSelectors: gz,
               decls: 2,
               vars: 1,
-              consts: [
-                [
-                  1,
-                  'button',
-                  3,
-                  'click',
-                  'mouseenter',
-                  'mouseleave',
-                  'type',
-                ],
-              ],
+              consts: [[1, 'button', 3, 'click', 'mouseenter', 'mouseleave', 'type']],
               template: function (r, o) {
                 1 & r &&
                   (pi(),
@@ -17865,8 +16173,7 @@
                   }),
                   gi(1),
                   L()),
-                  2 & r &&
-                    S('type', o.isSubmit ? 'submit' : 'button');
+                  2 & r && S('type', o.isSubmit ? 'submit' : 'button');
               },
               styles: [
                 '@import"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap";*[_ngcontent-%COMP%]{padding:0;margin:0;box-sizing:border-box}body[_ngcontent-%COMP%]{background-color:#4e31aa;min-width:300px}.button[_ngcontent-%COMP%]{padding:.75rem;border-radius:.25rem;border:1px solid #4e31aa;background-color:#4e31aa;cursor:pointer;outline:none;width:100%}.button[_ngcontent-%COMP%]:focus{outline-offset:3px;outline:1px solid #4e31aa}',
@@ -17897,14 +16204,7 @@
               vars: 3,
               consts: [
                 [3, 'clickEvent', 'control', 'isSubmit'],
-                [
-                  'textColor',
-                  'text__primary',
-                  'type',
-                  'header3',
-                  3,
-                  'value',
-                ],
+                ['textColor', 'text__primary', 'type', 'header3', 3, 'value'],
               ],
               template: function (r, o) {
                 1 & r &&
@@ -17915,10 +16215,7 @@
                   fe(1, 'lib-text', 1),
                   L()),
                   2 & r &&
-                    (S('control', o.form)(
-                      'isSubmit',
-                      o.control.isSubmit,
-                    ),
+                    (S('control', o.form)('isSubmit', o.control.isSubmit),
                     R(),
                     S('value', o.control.label));
               },
@@ -17943,8 +16240,7 @@
               vars: 2,
               consts: [[1, 'icon', 3, 'src', 'alt']],
               template: function (r, o) {
-                1 & r && fe(0, 'img', 0),
-                  2 & r && S('src', o.src, oh)('alt', o.alt);
+                1 & r && fe(0, 'img', 0), 2 & r && S('src', o.src, oh)('alt', o.alt);
               },
               styles: [
                 '[_nghost-%COMP%]{display:contents}.icon[_ngcontent-%COMP%]{display:block;height:100%}',
@@ -18006,10 +16302,7 @@
                   fe(1, 'lib-icon', 1),
                   L()),
                   2 & r &&
-                    (S('control', o.form)(
-                      'isSubmit',
-                      o.control.isSubmit,
-                    ),
+                    (S('control', o.form)('isSubmit', o.control.isSubmit),
                     R(),
                     S('src', o.control.icon)('alt', o.control.alt));
               },
@@ -18042,22 +16335,8 @@
                 ['flexDirection', 'row', 'gap', '0.25rem'],
                 [4, 'ngIf'],
                 [1, 'link', 3, 'routerLink'],
-                [
-                  'type',
-                  'tiny',
-                  'textColor',
-                  'text__accent',
-                  3,
-                  'value',
-                ],
-                [
-                  'type',
-                  'tiny',
-                  'textColor',
-                  'text__info',
-                  3,
-                  'value',
-                ],
+                ['type', 'tiny', 'textColor', 'text__accent', 3, 'value'],
+                ['type', 'tiny', 'textColor', 'text__info', 3, 'value'],
               ],
               template: function (r, o) {
                 1 & r &&
@@ -18097,14 +16376,7 @@
               vars: 1,
               consts: [
                 [1, 'error'],
-                [
-                  'type',
-                  'tiny',
-                  'textColor',
-                  'text__error',
-                  3,
-                  'value',
-                ],
+                ['type', 'tiny', 'textColor', 'text__error', 3, 'value'],
               ],
               template: function (r, o) {
                 1 & r && (j(0, 'div', 0), fe(1, 'lib-text', 1), L()),
@@ -18144,14 +16416,7 @@
               vars: 1,
               consts: [
                 [1, 'success'],
-                [
-                  'type',
-                  'tiny',
-                  'textColor',
-                  'text__success',
-                  3,
-                  'value',
-                ],
+                ['type', 'tiny', 'textColor', 'text__success', 3, 'value'],
               ],
               template: function (r, o) {
                 1 & r && (j(0, 'div', 0), fe(1, 'lib-text', 1), L()),
@@ -18188,14 +16453,7 @@
               consts: [
                 [3, 'routerLink'],
                 [3, 'clickEvent', 'control'],
-                [
-                  'textColor',
-                  'text__primary',
-                  'type',
-                  'header3',
-                  3,
-                  'value',
-                ],
+                ['textColor', 'text__primary', 'type', 'header3', 3, 'value'],
               ],
               template: function (r, o) {
                 1 & r &&
@@ -18297,10 +16555,7 @@
         }
       }
       function Nz(e, t) {
-        if (
-          (1 & e && (be(0), Zt(1, Az, 2, 1, 'ng-container', 4), Ie()),
-          2 & e)
-        ) {
+        if ((1 & e && (be(0), Zt(1, Az, 2, 1, 'ng-container', 4), Ie()), 2 & e)) {
           const n = K().$implicit,
             r = K();
           R(), S('ngIf', r.formControlInvalid(n.id));
@@ -18311,21 +16566,14 @@
           (1 & e &&
             (be(0),
             j(1, 'lib-flex', 5),
-            Zt(2, wz, 2, 2, 'ng-container', 4)(
-              3,
-              bz,
+            Zt(2, wz, 2, 2, 'ng-container', 4)(3, bz, 2, 2, 'ng-container', 4)(
+              4,
+              Iz,
               2,
               2,
               'ng-container',
               4,
-            )(4, Iz, 2, 2, 'ng-container', 4)(
-              5,
-              Sz,
-              2,
-              2,
-              'ng-container',
-              4,
-            )(6, Mz, 2, 2, 'ng-container', 4)(
+            )(5, Sz, 2, 2, 'ng-container', 4)(6, Mz, 2, 2, 'ng-container', 4)(
               7,
               Tz,
               2,
@@ -18357,9 +16605,7 @@
         }
       }
       function xz(e, t) {
-        if (
-          (1 & e && (be(0), fe(1, 'lib-success', 9), Ie()), 2 & e)
-        ) {
+        if ((1 & e && (be(0), fe(1, 'lib-success', 9), Ie()), 2 & e)) {
           const n = K(2);
           R(), S('value', n.formSuccessMessage);
         }
@@ -18374,22 +16620,12 @@
         if (
           (1 & e &&
             (be(0),
-            Zt(1, xz, 2, 1, 'ng-container', 4)(
-              2,
-              Oz,
-              2,
-              1,
-              'ng-container',
-              4,
-            ),
+            Zt(1, xz, 2, 1, 'ng-container', 4)(2, Oz, 2, 1, 'ng-container', 4),
             Ie()),
           2 & e)
         ) {
           const n = K();
-          R(),
-            S('ngIf', n.formGroupValid),
-            R(),
-            S('ngIf', n.formGroupInvalid);
+          R(), S('ngIf', n.formGroupValid), R(), S('ngIf', n.formGroupInvalid);
         }
       }
       let Vi = (() => {
@@ -18398,10 +16634,8 @@
               (this.fb = n),
                 (this.flexDirection = 'column'),
                 (this.resetIfError = !1),
-                (this.formErrorMessage =
-                  'The form was not completed correctly.'),
-                (this.formSuccessMessage =
-                  'The form was completed correctly.'),
+                (this.formErrorMessage = 'The form was not completed correctly.'),
+                (this.formSuccessMessage = 'The form was completed correctly.'),
                 (this.formValidation = !0),
                 (this.baseFormEvent = new W()),
                 (this.formGroupInvalid = !1),
@@ -18412,10 +16646,7 @@
               this.baseForm.controls.forEach(n => {
                 const { id: r } = n;
                 this.formControlNotExist(r),
-                  this.formGroup.addControl(
-                    r,
-                    this.buildFormControl(n),
-                  );
+                  this.formGroup.addControl(r, this.buildFormControl(n));
               });
             }
             onSubmit() {
@@ -18457,10 +16688,7 @@
             buildFormControl(n) {
               switch (n.kind) {
                 case pe.input:
-                  return new Ir(
-                    n.input.defaultValue,
-                    n.validation.validators,
-                  );
+                  return new Ir(n.input.defaultValue, n.validation.validators);
                 case pe.buttonText:
                 case pe.buttonIcon:
                 case pe.buttonLink:
@@ -18475,10 +16703,7 @@
             resetFormGroup() {
               this.baseForm.controls.forEach(n => {
                 const { id: r } = n;
-                this.formGroup.setControl(
-                  r,
-                  this.buildFormControl(n),
-                );
+                this.formGroup.setControl(r, this.buildFormControl(n));
               }),
                 this.formGroup.markAsUntouched();
             }
@@ -18507,25 +16732,10 @@
                 ['gap', '0.5rem', 3, 'flexDirection'],
                 [4, 'ngFor', 'ngForOf'],
                 [4, 'ngIf'],
-                [
-                  'flexDirection',
-                  'column',
-                  'gap',
-                  '0.25rem',
-                  3,
-                  'alignItems',
-                ],
+                ['flexDirection', 'column', 'gap', '0.25rem', 3, 'alignItems'],
                 [3, 'form', 'control'],
                 [3, 'clickEvent', 'form', 'control'],
-                [
-                  'textColor',
-                  'text__tertiary',
-                  'type',
-                  'tiny',
-                  3,
-                  'value',
-                  'margin',
-                ],
+                ['textColor', 'text__tertiary', 'type', 'tiny', 3, 'value', 'margin'],
                 [3, 'value'],
               ],
               template: function (r, o) {
@@ -18671,8 +16881,7 @@
                     return o.onBaseFormEvent(s);
                   }),
                   L()),
-                  2 & r &&
-                    S('baseForm', o.loginForm)('resetIfError', !0);
+                  2 & r && S('baseForm', o.loginForm)('resetIfError', !0);
               },
               dependencies: [Vi],
               encapsulation: 2,
@@ -18752,11 +16961,7 @@
                     return o.onBaseFormEvent(s);
                   }),
                   L()),
-                  2 & r &&
-                    S('baseForm', o.forgotPasswordForm)(
-                      'resetIfError',
-                      !1,
-                    );
+                  2 & r && S('baseForm', o.forgotPasswordForm)('resetIfError', !1);
               },
               dependencies: [Vi],
               encapsulation: 2,
@@ -18877,11 +17082,7 @@
                     return o.onBaseFormEvent(s);
                   }),
                   L()),
-                  2 & r &&
-                    S('baseForm', o.registrationForm)(
-                      'resetIfError',
-                      !0,
-                    );
+                  2 & r && S('baseForm', o.registrationForm)('resetIfError', !0);
               },
               dependencies: [Vi],
               encapsulation: 2,
@@ -18970,11 +17171,7 @@
                     return o.onBaseFormEvent(s);
                   }),
                   L()),
-                  2 & r &&
-                    S('baseForm', o.changePasswordForm)(
-                      'resetIfError',
-                      !0,
-                    );
+                  2 & r && S('baseForm', o.changePasswordForm)('resetIfError', !0);
               },
               dependencies: [Vi],
               encapsulation: 2,
@@ -19015,9 +17212,7 @@
             consts: [[1, 'card', 3, 'ngClass']],
             template: function (r, o) {
               1 & r && (pi(), j(0, 'div', 0), gi(1), L()),
-                2 & r &&
-                  (hr('width', o.width),
-                  S('ngClass', o.getCardType()));
+                2 & r && (hr('width', o.width), S('ngClass', o.getCardType()));
             },
             dependencies: [fg],
             styles: [
@@ -19052,14 +17247,7 @@
                 'calc(100svh - 2rem)',
               ],
               ['width', '350px'],
-              [
-                'alignItems',
-                'stretch',
-                'flexDirection',
-                'column',
-                'gap',
-                '1rem',
-              ],
+              ['alignItems', 'stretch', 'flexDirection', 'column', 'gap', '1rem'],
               ['justifyContent', 'center'],
               [
                 'value',
@@ -19073,11 +17261,11 @@
             template: function (r, o) {
               1 & r &&
                 (pi(),
-                j(0, 'div', 0)(1, 'lib-flex', 1)(2, 'lib-card', 2)(
-                  3,
+                j(0, 'div', 0)(1, 'lib-flex', 1)(2, 'lib-card', 2)(3, 'lib-flex', 3)(
+                  4,
                   'lib-flex',
-                  3,
-                )(4, 'lib-flex', 4),
+                  4,
+                ),
                 fe(5, 'lib-text', 5),
                 L(),
                 gi(6),
@@ -19153,9 +17341,7 @@
               features: [J],
               decls: 1,
               vars: 2,
-              consts: [
-                [3, 'baseFormEvent', 'baseForm', 'formValidation'],
-              ],
+              consts: [[3, 'baseFormEvent', 'baseForm', 'formValidation']],
               template: function (r, o) {
                 1 & r &&
                   (j(0, 'lib-base-form', 0),
@@ -19163,11 +17349,7 @@
                     return o.onEvent(s);
                   }),
                   L()),
-                  2 & r &&
-                    S('baseForm', o.hamburgerForm)(
-                      'formValidation',
-                      !1,
-                    );
+                  2 & r && S('baseForm', o.hamburgerForm)('formValidation', !1);
               },
               dependencies: [Vi],
               encapsulation: 2,
@@ -19220,8 +17402,7 @@
                 this.breakpoint.addObserver(this);
             }
             update(n) {
-              this.flexDirection =
-                n.breakpoint === _t.XSmall ? 'column' : 'row';
+              this.flexDirection = n.breakpoint === _t.XSmall ? 'column' : 'row';
             }
             onEvent(n) {
               this.mainNavFormEvent.emit(n);
@@ -19238,13 +17419,7 @@
               decls: 1,
               vars: 3,
               consts: [
-                [
-                  3,
-                  'baseFormEvent',
-                  'flexDirection',
-                  'baseForm',
-                  'formValidation',
-                ],
+                [3, 'baseFormEvent', 'flexDirection', 'baseForm', 'formValidation'],
               ],
               template: function (r, o) {
                 1 & r &&
@@ -19254,10 +17429,10 @@
                   }),
                   L()),
                   2 & r &&
-                    S('flexDirection', o.flexDirection)(
-                      'baseForm',
-                      o.mainNavForm,
-                    )('formValidation', !1);
+                    S('flexDirection', o.flexDirection)('baseForm', o.mainNavForm)(
+                      'formValidation',
+                      !1,
+                    );
               },
               dependencies: [Vi],
               encapsulation: 2,
@@ -19286,11 +17461,7 @@
         if (1 & e) {
           const n = Ut();
           be(0),
-            j(1, 'lib-wrapper', null, 2)(3, 'lib-card', 10)(
-              4,
-              'lib-main-nav-form',
-              11,
-            ),
+            j(1, 'lib-wrapper', null, 2)(3, 'lib-card', 10)(4, 'lib-main-nav-form', 11),
             Y('mainNavFormEvent', function () {
               return bt(n), It(K().onEvent());
             }),
@@ -19313,9 +17484,7 @@
                 ? (this.isMobile = !0)
                 : ((this.isMobile = !1), (this.isMenuVisible = !1)),
                 (this.mainNavJustifyContent =
-                  r === _t.Large || r === _t.XLarge
-                    ? 'space-around'
-                    : 'space-between');
+                  r === _t.Large || r === _t.XLarge ? 'space-around' : 'space-between');
             }
             onEvent() {
               this.isMenuVisible = !this.isMenuVisible;
@@ -19344,12 +17513,7 @@
                 ['flexDirection', 'column'],
                 ['type', 'main-nav'],
                 ['alignItems', 'center', 3, 'justifyContent'],
-                [
-                  'src',
-                  'icon/main-nav-logo.svg',
-                  'alt',
-                  'Logo School Icon',
-                ],
+                ['src', 'icon/main-nav-logo.svg', 'alt', 'Logo School Icon'],
                 [4, 'ngIf', 'ngIfElse'],
                 [4, 'ngIf'],
                 [3, 'hamburgerFormEvent'],
@@ -19359,11 +17523,7 @@
               template: function (r, o) {
                 if (
                   (1 & r &&
-                    (j(0, 'lib-flex', 3)(1, 'lib-card', 4)(
-                      2,
-                      'lib-flex',
-                      5,
-                    ),
+                    (j(0, 'lib-flex', 3)(1, 'lib-card', 4)(2, 'lib-flex', 5),
                     fe(3, 'lib-icon', 6),
                     Zt(4, Zz, 4, 0, 'ng-container', 7)(
                       5,
@@ -19546,10 +17706,7 @@
               consts: [[1, 'dashboard']],
               template: function (r, o) {
                 1 & r &&
-                  (fe(0, 'lib-main-nav'),
-                  j(1, 'main', 0),
-                  fe(2, 'router-outlet'),
-                  L());
+                  (fe(0, 'lib-main-nav'), j(1, 'main', 0), fe(2, 'router-outlet'), L());
               },
               dependencies: [Kz, Al],
               styles: [
@@ -19573,8 +17730,7 @@
               vars: 0,
               consts: [['value', 'Statistics']],
               template: function (r, o) {
-                1 & r &&
-                  (j(0, 'lib-card'), fe(1, 'lib-text', 0), L());
+                1 & r && (j(0, 'lib-card'), fe(1, 'lib-text', 0), L());
               },
               dependencies: [fo, Ht],
               encapsulation: 2,
@@ -19596,8 +17752,7 @@
               vars: 0,
               consts: [['value', 'Courses']],
               template: function (r, o) {
-                1 & r &&
-                  (j(0, 'lib-card'), fe(1, 'lib-text', 0), L());
+                1 & r && (j(0, 'lib-card'), fe(1, 'lib-text', 0), L());
               },
               dependencies: [fo, Ht],
               encapsulation: 2,
@@ -19619,8 +17774,7 @@
               vars: 0,
               consts: [['value', 'Account']],
               template: function (r, o) {
-                1 & r &&
-                  (j(0, 'lib-card'), fe(1, 'lib-text', 0), L());
+                1 & r && (j(0, 'lib-card'), fe(1, 'lib-text', 0), L());
               },
               dependencies: [fo, Ht],
               encapsulation: 2,
@@ -19694,10 +17848,7 @@
                             vars: 0,
                             consts: [['value', 'Course']],
                             template: function (r, o) {
-                              1 & r &&
-                                (j(0, 'lib-card'),
-                                fe(1, 'lib-text', 0),
-                                L());
+                              1 & r && (j(0, 'lib-card'), fe(1, 'lib-text', 0), L());
                             },
                             dependencies: [fo, Ht],
                             encapsulation: 2,
@@ -19726,10 +17877,7 @@
                         vars: 0,
                         consts: [['value', 'http-404']],
                         template: function (r, o) {
-                          1 & r &&
-                            (j(0, 'lib-card'),
-                            fe(1, 'lib-text', 0),
-                            L());
+                          1 & r && (j(0, 'lib-card'), fe(1, 'lib-text', 0), L());
                         },
                         dependencies: [fo, Ht],
                         encapsulation: 2,
@@ -19770,19 +17918,13 @@
             schedule(t, n = 0) {
               return n > 0
                 ? super.schedule(t, n)
-                : ((this.delay = n),
-                  (this.state = t),
-                  this.scheduler.flush(this),
-                  this);
+                : ((this.delay = n), (this.state = t), this.scheduler.flush(this), this);
             }
             execute(t, n) {
-              return n > 0 || this.closed
-                ? super.execute(t, n)
-                : this._execute(t, n);
+              return n > 0 || this.closed ? super.execute(t, n) : this._execute(t, n);
             }
             requestAsyncId(t, n, r = 0) {
-              return (null != r && r > 0) ||
-                (null == r && this.delay > 0)
+              return (null != r && r > 0) || (null == r && this.delay > 0)
                 ? super.requestAsyncId(t, n, r)
                 : (t.flush(this), 0);
             }
@@ -19800,16 +17942,12 @@
           })();
         const r = n ? t?.injector?.get(Vr) ?? _(Vr) : null,
           o = (function w4(e = Object.is) {
-            return (t, n) =>
-              1 === t.kind && 1 === n.kind && e(t.value, n.value);
+            return (t, n) => 1 === t.kind && 1 === n.kind && e(t.value, n.value);
           })(t?.equal);
         let i;
-        i = lr(
-          t?.requireSync
-            ? { kind: 0 }
-            : { kind: 1, value: t?.initialValue },
-          { equal: o },
-        );
+        i = lr(t?.requireSync ? { kind: 0 } : { kind: 1, value: t?.initialValue }, {
+          equal: o,
+        });
         const s = e.subscribe({
           next: a => i.set({ kind: 1, value: a }),
           error: a => {
@@ -19854,12 +17992,9 @@
               throw new TypeError(
                 "\n        Dispatch expected an object, instead it received a function.\n        If you're using the createAction function, make sure to invoke the function\n        before dispatching the action. For example, someAction should be someAction().",
               );
-            if (typeof n > 'u')
-              throw new TypeError('Actions must be objects');
+            if (typeof n > 'u') throw new TypeError('Actions must be objects');
             if (typeof n.type > 'u')
-              throw new TypeError(
-                'Actions must have a type property',
-              );
+              throw new TypeError('Actions must have a type property');
             super.next(n);
           }
           complete() {}
@@ -19928,9 +18063,7 @@
       }
       function U0(e, t) {
         return (
-          Array.isArray(t) &&
-            t.length > 0 &&
-            (e = j0.apply(null, [...t, e])),
+          Array.isArray(t) && t.length > 0 && (e = j0.apply(null, [...t, e])),
           (n, r) => {
             const o = e(n);
             return (i, s) => o((i = void 0 === i ? r : i), s);
@@ -19970,13 +18103,9 @@
                 const l =
                   'function' == typeof i
                     ? (function N4(e) {
-                        const t =
-                          Array.isArray(e) && e.length > 0
-                            ? j0(...e)
-                            : n => n;
+                        const t = Array.isArray(e) && e.length > 0 ? j0(...e) : n => n;
                         return (n, r) => (
-                          (n = t(n)),
-                          (o, i) => n((o = void 0 === o ? r : o), i)
+                          (n = t(n)), (o, i) => n((o = void 0 === o ? r : o), i)
                         );
                       })(a)(i, c)
                     : U0(s, a)(i, c);
@@ -20007,18 +18136,13 @@
               this.reducers = (function A4(e, t) {
                 return Object.keys(e)
                   .filter(n => n !== t)
-                  .reduce(
-                    (n, r) => Object.assign(n, { [r]: e[r] }),
-                    {},
-                  );
+                  .reduce((n, r) => Object.assign(n, { [r]: e[r] }), {});
               })(this.reducers, r);
             }),
               this.updateReducers(n);
           }
           updateReducers(n) {
-            this.next(
-              this.reducerFactory(this.reducers, this.initialState),
-            ),
+            this.next(this.reducerFactory(this.reducers, this.initialState)),
               this.dispatcher.next({
                 type: '@ngrx/store/update-reducers',
                 features: n,
@@ -20034,11 +18158,7 @@
         }
         return e;
       })();
-      const x4 = [
-        rd,
-        { provide: Lm, useExisting: rd },
-        { provide: B0, useExisting: ji },
-      ];
+      const x4 = [rd, { provide: Lm, useExisting: rd }, { provide: B0, useExisting: ji }];
       let Vm = (() => {
         class e extends at {
           ngOnDestroy() {
@@ -20077,8 +18197,7 @@
                             (i[c] = u),
                               !a &&
                                 !s[c] &&
-                                ((s[c] = !0),
-                                (a = s.every(Fn)) && (s = null));
+                                ((s[c] = !0), (a = s.every(Fn)) && (s = null));
                           },
                           Wa,
                         ),
@@ -20095,11 +18214,9 @@
                 })(r),
               ),
               u = a.pipe(XS(F4, { state: i }));
-            (this.stateSubscription = u.subscribe(
-              ({ state: l, action: d }) => {
-                this.next(l), o.next(d);
-              },
-            )),
+            (this.stateSubscription = u.subscribe(({ state: l, action: d }) => {
+              this.next(l), o.next(d);
+            })),
               (this.state = C0(this, {
                 manualCleanup: !0,
                 requireSync: !0,
@@ -20136,11 +18253,7 @@
             return Jr(() => n(this.state()), r);
           }
           lift(n) {
-            const r = new e(
-              this,
-              this.actionsObserver,
-              this.reducerManager,
-            );
+            const r = new e(this, this.actionsObserver, this.reducerManager);
             return (r.operator = n), r;
           }
           dispatch(n) {
@@ -20177,10 +18290,7 @@
             i = o.pipe(
               (function y4(...e) {
                 const t = e.length;
-                if (0 === t)
-                  throw new Error(
-                    'list of properties cannot be empty.',
-                  );
+                if (0 === t) throw new Error('list of properties cannot be empty.');
                 return ne(n => {
                   let r = n;
                   for (let o = 0; o < t; o++) {
@@ -20209,8 +18319,7 @@
                   n.subscribe(
                     Ne(r, s => {
                       const a = t(s);
-                      (i || !e(o, a)) &&
-                        ((i = !1), (o = a), r.next(s));
+                      (i || !e(o, a)) && ((i = !1), (o = a), r.next(s));
                     }),
                   );
                 })
@@ -20219,8 +18328,7 @@
           );
         };
       }
-      const Um =
-        'https://ngrx.io/guide/store/configuration/runtime-checks';
+      const Um = 'https://ngrx.io/guide/store/configuration/runtime-checks';
       function G0(e) {
         return void 0 === e;
       }
@@ -20262,10 +18370,7 @@
               (function H4(e, t) {
                 return Object.prototype.hasOwnProperty.call(e, t);
               })(e, n) &&
-              (!t ||
-                ('caller' !== n &&
-                  'callee' !== n &&
-                  'arguments' !== n))
+              (!t || ('caller' !== n && 'callee' !== n && 'arguments' !== n))
             ) {
               const r = e[n];
               (W0(r) || Bm(r)) && !Object.isFrozen(r) && Gm(r);
@@ -20330,10 +18435,7 @@
           strictActionTypeUniqueness: !1,
         };
       }
-      function cq({
-        strictActionSerializability: e,
-        strictStateSerializability: t,
-      }) {
+      function cq({ strictActionSerializability: e, strictStateSerializability: t }) {
         return n =>
           e || t
             ? (function iq(e, t) {
@@ -20345,10 +18447,7 @@
               })(n, { action: r => e && !qm(r), state: () => t })
             : n;
       }
-      function uq({
-        strictActionImmutability: e,
-        strictStateImmutability: t,
-      }) {
+      function uq({ strictActionImmutability: e, strictStateImmutability: t }) {
         return n =>
           e || t
             ? (function oq(e, t) {
@@ -20453,10 +18552,7 @@
                 for (const r of t)
                   for (const o of r.types) {
                     const i = n.get(o);
-                    n.set(
-                      o,
-                      i ? (a, c) => r.reducer(i(a, c), c) : r.reducer,
-                    );
+                    n.set(o, i ? (a, c) => r.reducer(i(a, c), c) : r.reducer);
                   }
                 return function (r = e, o) {
                   const i = n.get(o.type);
@@ -20487,10 +18583,7 @@
                   };
                 })(
                   (function D0(e, t) {
-                    if (
-                      ((La[e] = (La[e] || 0) + 1),
-                      'function' == typeof t)
-                    )
+                    if (((La[e] = (La[e] || 0) + 1), 'function' == typeof t))
                       return Am(e, (...r) => ({
                         ...t(...r),
                         type: e,
@@ -20512,11 +18605,9 @@
         };
       (function N$(e, t) {
         return $2({ rootComponent: e, ...IS(t) });
-      })(YG, { providers: [...h4.providers, ...Iq.providers] }).catch(
-        e => {
-          throw new Error(e);
-        },
-      );
+      })(YG, { providers: [...h4.providers, ...Iq.providers] }).catch(e => {
+        throw new Error(e);
+      });
     },
   },
   Bi => {

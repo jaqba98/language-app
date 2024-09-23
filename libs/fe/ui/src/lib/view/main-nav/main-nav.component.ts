@@ -29,9 +29,7 @@ import { MainNavFormComponent } from '../../form/main-nav-form/main-nav-form.com
   ],
   templateUrl: './main-nav.component.html',
 })
-export class MainNavComponent
-  implements ObserverModel<BreakpointModel>
-{
+export class MainNavComponent implements ObserverModel<BreakpointModel> {
   @ViewChild('hamburgerForm') hamburgerForm!: WrapperComponent;
 
   @ViewChild('mainNavForm') mainNavForm!: WrapperComponent;
@@ -40,8 +38,7 @@ export class MainNavComponent
 
   isMenuVisible = false;
 
-  mainNavJustifyContent: Properties['justifyContent'] =
-    'space-between';
+  mainNavJustifyContent: Properties['justifyContent'] = 'space-between';
 
   constructor(private readonly breakpoint: BreakpointService) {
     this.breakpoint.addObserver(this);
@@ -55,10 +52,7 @@ export class MainNavComponent
       this.isMobile = false;
       this.isMenuVisible = false;
     }
-    if (
-      breakpoint === BreakpointEnum.Large ||
-      breakpoint === BreakpointEnum.XLarge
-    ) {
+    if (breakpoint === BreakpointEnum.Large || breakpoint === BreakpointEnum.XLarge) {
       this.mainNavJustifyContent = 'space-around';
     } else {
       this.mainNavJustifyContent = 'space-between';

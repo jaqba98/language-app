@@ -1,8 +1,4 @@
-import {
-  moduleMetadata,
-  type Meta,
-  type StoryObj,
-} from '@storybook/angular';
+import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
 import { ActivatedRoute } from '@angular/router';
 
 import { MainNavFormComponent } from './main-nav-form.component';

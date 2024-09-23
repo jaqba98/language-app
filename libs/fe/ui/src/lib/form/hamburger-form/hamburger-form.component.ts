@@ -13,8 +13,7 @@ import { ControlKindEnum } from '../../enum/control-kind.enum';
   templateUrl: './hamburger-form.component.html',
 })
 export class HamburgerFormComponent {
-  @Output() hamburgerFormEvent =
-    new EventEmitter<HamburgerFormModel>();
+  @Output() hamburgerFormEvent = new EventEmitter<HamburgerFormModel>();
 
   hamburgerForm: BaseFormModel = {
     controls: [

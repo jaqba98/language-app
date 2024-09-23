@@ -1,9 +1,3 @@
-<lib-button
-  [control]="form"
-  [isSubmit]="control.isSubmit"
-  (clickEvent)="onClickEvent()">
-  <lib-text
-    [value]="control.label"
-    textColor="text__primary"
-    type="header3"></lib-text>
+<lib-button [control]="form" [isSubmit]="control.isSubmit" (clickEvent)="onClickEvent()">
+  <lib-text [value]="control.label" textColor="text__primary" type="header3"></lib-text>
 </lib-button>
