@@ -2,7 +2,7 @@ import { NgClass } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { FontAwesomeModule, SizeProp } from '@fortawesome/angular-fontawesome';
 import { IconProp } from '@fortawesome/angular-fontawesome/types';
-import { faEdit, faLock } from '@fortawesome/free-solid-svg-icons';
+import { faLock, faPlay, faStar } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeColorType, FontAwesomeType } from './font-awesome.type';
 import { BemService } from '../../service/bem.service';
@@ -33,8 +33,10 @@ export class FontAwesomeComponent implements OnInit {
     switch (this.type) {
       case 'lock':
         return faLock;
-      case 'edit':
-        return faEdit;
+      case 'play':
+        return faPlay;
+      case 'star':
+        return faStar;
       default:
         throw new Error('Not supported font awesome type!');
     }

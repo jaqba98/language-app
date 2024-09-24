@@ -19,7 +19,7 @@ export const LockGray: Story = {
 
 export const LockGreen: Story = {
   args: {
-    type: 'lock',
+    type: 'play',
     size: '4x',
     colorType: 'green',
   },
@@ -27,7 +27,7 @@ export const LockGreen: Story = {
 
 export const LockGold: Story = {
   args: {
-    type: 'lock',
+    type: 'star',
     size: '4x',
     colorType: 'gold',
   },

@@ -4,7 +4,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { RoadmapMarkerType } from './roadmap-marker.type';
 import { BemService } from '../../../service/bem.service';
 import { FontAwesomeComponent } from '../../../infrastructure/font-awesome/font-awesome.component';
-import { FontAwesomeColorType } from '../../../infrastructure/font-awesome/font-awesome.type';
+import {
+  FontAwesomeColorType,
+  FontAwesomeType,
+} from '../../../infrastructure/font-awesome/font-awesome.type';
 
 @Component({
   selector: 'lib-roadmap-marker',
@@ -16,15 +19,17 @@ import { FontAwesomeColorType } from '../../../infrastructure/font-awesome/font-
 export class RoadmapMarkerComponent implements OnInit {
   @Input() type: RoadmapMarkerType = 'blocked';
 
+  @Input() fontAwesomeType: FontAwesomeType = 'lock';
+
   element = '';
 
-  colorType: FontAwesomeColorType = 'gray';
+  fontAwesomeColorType: FontAwesomeColorType = 'gray';
 
   constructor(private readonly bem: BemService) {}
 
   ngOnInit() {
     this.element = this.bem.buildBem('roadmap-marker', this.type);
-    this.colorType = this.convertRoadmapMarkerType();
+    this.fontAwesomeColorType = this.convertRoadmapMarkerType();
   }
 
   private convertRoadmapMarkerType(): FontAwesomeColorType {
