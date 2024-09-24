@@ -1,18 +1,19 @@
-@use '../../abstract/variables/general';
-@use '../../abstract/variables/palette';
+// @use '../../abstract/variables/general';
+// @use '../../abstract/variables/palette';
 
 @mixin input {
-  padding: general.$component-padding-small;
-  border-radius: general.$component-radius-small;
-  border: general.$component-border palette.$border;
-  color: palette.$text-normal;
-  font-size: general.$font-size-small;
-  background-color: transparent;
-  outline: none;
-  width: 100%;
+  display: block;
 
-  &:focus {
-    border: general.$component-border palette.$focus;
-    color: palette.$text-focus;
-  }
+  // padding: general.$component-padding-small;
+  // border-radius: general.$component-radius-small;
+  // border: general.$component-border palette.$border;
+  // color: palette.$text-normal;
+  // font-size: general.$font-size-small;
+  // background-color: transparent;
+  // outline: none;
+  // width: 100%;
+  // &:focus {
+  //   border: general.$component-border palette.$focus;
+  //   color: palette.$text-focus;
+  // }
 }

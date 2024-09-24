@@ -1,0 +1,25 @@
+@use '@english-learning/fe-styles/src/lib/main';
+
+$classes: (
+  font-awesome: (
+    elements: (
+      gray: (
+        styles: (
+          color: main.$roadmap-marker-blocked-primary,
+        ),
+      ),
+      green: (
+        styles: (
+          color: main.$roadmap-marker-active-primary,
+        ),
+      ),
+      gold: (
+        styles: (
+          color: main.$roadmap-marker-done-primary,
+        ),
+      ),
+    ),
+  ),
+);
+
+@include main.build-classes($classes);

@@ -1,8 +1,5 @@
 @use '@english-learning/fe-styles/src/lib/main';
 
-$blocked: main.get-map-element(main.$roadmap-marker, blocked);
-$active: main.get-map-element(main.$roadmap-marker, active);
-$done: main.get-map-element(main.$roadmap-marker, done);
 $classes: (
   roadmap-marker: (
     styles: (
@@ -17,23 +14,23 @@ $classes: (
     elements: (
       blocked: (
         styles: (
-          background-color: main.get-map-element($blocked, background-color),
-          box-shadow: main.get-map-element($blocked, box-shadow),
-          border: 0.5rem solid main.get-map-element($blocked, border),
+          background-color: main.$roadmap-marker-blocked-secondary,
+          box-shadow: 0 0.5rem main.$roadmap-marker-blocked-secondary,
+          border: 0.5rem solid main.$roadmap-marker-blocked-primary,
         ),
       ),
       active: (
         styles: (
-          background-color: main.get-map-element($active, background-color),
-          box-shadow: main.get-map-element($active, box-shadow),
-          border: 0.5rem solid main.get-map-element($active, border),
+          background-color: main.$roadmap-marker-active-secondary,
+          box-shadow: 0 0.5rem main.$roadmap-marker-active-secondary,
+          border: 0.5rem solid main.$roadmap-marker-active-primary,
         ),
       ),
       done: (
         styles: (
-          background-color: main.get-map-element($done, background-color),
-          box-shadow: main.get-map-element($done, box-shadow),
-          border: 0.5rem solid main.get-map-element($done, border),
+          background-color: main.$roadmap-marker-done-secondary,
+          box-shadow: 0 0.5rem main.$roadmap-marker-done-secondary,
+          border: 0.5rem solid main.$roadmap-marker-done-primary,
         ),
       ),
     ),

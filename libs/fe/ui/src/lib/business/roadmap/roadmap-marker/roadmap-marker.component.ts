@@ -4,6 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { RoadmapMarkerType } from './roadmap-marker.type';
 import { BemService } from '../../../service/bem.service';
 import { FontAwesomeComponent } from '../../../infrastructure/font-awesome/font-awesome.component';
+import { FontAwesomeColorType } from '../../../infrastructure/font-awesome/font-awesome.type';
 
 @Component({
   selector: 'lib-roadmap-marker',
@@ -17,9 +18,25 @@ export class RoadmapMarkerComponent implements OnInit {
 
   element = '';
 
+  colorType: FontAwesomeColorType = 'gray';
+
   constructor(private readonly bem: BemService) {}
 
   ngOnInit() {
     this.element = this.bem.buildBem('roadmap-marker', this.type);
+    this.colorType = this.convertRoadmapMarkerType();
+  }
+
+  private convertRoadmapMarkerType(): FontAwesomeColorType {
+    switch (this.type) {
+      case 'blocked':
+        return 'gray';
+      case 'active':
+        return 'green';
+      case 'done':
+        return 'gold';
+      default:
+        throw new Error('Not supported color type!');
+    }
   }
 }
