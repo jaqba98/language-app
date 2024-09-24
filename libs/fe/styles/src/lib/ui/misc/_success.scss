@@ -1,9 +1,11 @@
-@use '../../abstract/variables/general';
-@use '../../abstract/variables/palette';
+// @use '../../abstract/variables/general';
+// @use '../../abstract/variables/palette';
 
 @mixin success {
-  padding: general.$component-padding-tiny;
-  border-radius: general.$component-radius-small;
-  border: general.$component-border palette.$success-background;
-  background-color: palette.$success-background;
+  display: block;
+
+  // padding: general.$component-padding-tiny;
+  // border-radius: general.$component-radius-small;
+  // border: general.$component-border palette.$success-background;
+  // background-color: palette.$success-background;
 }

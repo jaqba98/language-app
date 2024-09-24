@@ -1,5 +1,5 @@
-@use '../../abstract/variables/general';
-@use '../../abstract/variables/palette';
+// @use '../../abstract/variables/general';
+// @use '../../abstract/variables/palette';
 @import 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap';
 
 @mixin text {
@@ -7,61 +7,48 @@
   font-style: normal;
   margin: 0;
 
-  &__default {
-    color: palette.$text-normal;
-  }
-
-  &__primary {
-    color: palette.$primary;
-  }
-
-  &__secondary {
-    color: palette.$secondary;
-  }
-
-  &__tertiary {
-    color: palette.$tertiary;
-  }
-
-  &__accent {
-    color: palette.$text-focus;
-  }
-
-  &__error {
-    color: palette.$error;
-  }
-
-  &__warning {
-    color: palette.$warning;
-  }
-
-  &__success {
-    color: palette.$success;
-  }
-
-  &__info {
-    color: palette.$info;
-  }
-
-  &__tiny {
-    font-size: general.$font-size-tiny;
-  }
-
-  &__paragraph {
-    font-size: general.$font-size-small;
-  }
-
-  &__header {
-    &1 {
-      font-size: general.$font-size-large;
-    }
-
-    &2 {
-      font-size: general.$font-size-medium;
-    }
-
-    &3 {
-      font-size: general.$font-size-small;
-    }
-  }
+  // &__default {
+  //   color: palette.$text-normal;
+  // }
+  // &__primary {
+  //   color: palette.$primary;
+  // }
+  // &__secondary {
+  //   color: palette.$secondary;
+  // }
+  // &__tertiary {
+  //   color: palette.$tertiary;
+  // }
+  // &__accent {
+  //   color: palette.$text-focus;
+  // }
+  // &__error {
+  //   color: palette.$error;
+  // }
+  // &__warning {
+  //   color: palette.$warning;
+  // }
+  // &__success {
+  //   color: palette.$success;
+  // }
+  // &__info {
+  //   color: palette.$info;
+  // }
+  // &__tiny {
+  //   font-size: general.$font-size-tiny;
+  // }
+  // &__paragraph {
+  //   font-size: general.$font-size-small;
+  // }
+  // &__header {
+  //   &1 {
+  //     font-size: general.$font-size-large;
+  //   }
+  //   &2 {
+  //     font-size: general.$font-size-medium;
+  //   }
+  //   &3 {
+  //     font-size: general.$font-size-small;
+  //   }
+  // }
 }

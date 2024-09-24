@@ -1,0 +1,8 @@
+@use '../../basic/basic';
+
+$roadmap-marker-blocked-primary: basic.$gray;
+$roadmap-marker-blocked-secondary: basic.$gray-darken;
+$roadmap-marker-active-primary: basic.$green;
+$roadmap-marker-active-secondary: basic.$green-darken;
+$roadmap-marker-done-primary: basic.$gold;
+$roadmap-marker-done-secondary: basic.$gold-darken;

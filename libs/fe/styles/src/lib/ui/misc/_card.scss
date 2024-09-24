@@ -1,20 +1,19 @@
-@use '../../abstract/variables/general';
-@use '../../abstract/variables/palette';
+// @use '../../abstract/variables/general';
+// @use '../../abstract/variables/palette';
 
 @mixin card {
-  background-color: palette.$card;
+  display: block;
 
-  &--default {
-    padding: general.$component-padding-large;
-    border-radius: general.$component-radius-small;
-  }
-
-  &--main-nav {
-    padding: general.$component-padding-medium;
-  }
-
-  &--main-nav-options {
-    border-top: general.$component-border palette.$border;
-    padding: general.$component-padding-big general.$component-padding-medium;
-  }
+  // background-color: palette.$card;
+  // &--default {
+  //   padding: general.$component-padding-large;
+  //   border-radius: general.$component-radius-small;
+  // }
+  // &--main-nav {
+  //   padding: general.$component-padding-medium;
+  // }
+  // &--main-nav-options {
+  //   border-top: general.$component-border palette.$border;
+  //   padding: general.$component-padding-big general.$component-padding-medium;
+  // }
 }

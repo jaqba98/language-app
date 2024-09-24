@@ -9,16 +9,26 @@ const meta: Meta<FontAwesomeComponent> = {
 export default meta;
 type Story = StoryObj<FontAwesomeComponent>;
 
-export const Lock: Story = {
+export const LockGray: Story = {
   args: {
     type: 'lock',
     size: '4x',
+    colorType: 'gray',
   },
 };
 
-export const Edit: Story = {
+export const LockGreen: Story = {
   args: {
-    type: 'edit',
+    type: 'lock',
     size: '4x',
+    colorType: 'green',
+  },
+};
+
+export const LockGold: Story = {
+  args: {
+    type: 'lock',
+    size: '4x',
+    colorType: 'gold',
   },
 };

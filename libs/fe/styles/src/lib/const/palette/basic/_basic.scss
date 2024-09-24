@@ -1,0 +1,8 @@
+@use '../../../utils/color';
+
+$gray: #b2b2b2;
+$gray-darken: color.get-darkened-color($gray);
+$green: #22b24c;
+$green-darken: color.get-darkened-color($green);
+$gold: #ffb22c;
+$gold-darken: color.get-darkened-color($gold);
