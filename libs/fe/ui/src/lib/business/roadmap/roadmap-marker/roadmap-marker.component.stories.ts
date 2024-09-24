@@ -18,11 +18,13 @@ export const Blocked: Story = {
 export const Active: Story = {
   args: {
     type: 'active',
+    fontAwesomeType: 'play',
   },
 };
 
 export const Done: Story = {
   args: {
     type: 'done',
+    fontAwesomeType: 'star',
   },
 };
