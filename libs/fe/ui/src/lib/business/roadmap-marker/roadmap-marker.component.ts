@@ -2,12 +2,12 @@ import { NgClass } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 
 import { RoadmapMarkerType } from './roadmap-marker.type';
-import { BemService } from '../../../service/bem.service';
-import { FontAwesomeComponent } from '../../../infrastructure/font-awesome/font-awesome.component';
+import { BemService } from '../../service/bem.service';
+import { FontAwesomeComponent } from '../../infrastructure/font-awesome/font-awesome.component';
 import {
   FontAwesomeColorType,
   FontAwesomeType,
-} from '../../../infrastructure/font-awesome/font-awesome.type';
+} from '../../infrastructure/font-awesome/font-awesome.type';
 
 @Component({
   selector: 'lib-roadmap-marker',
