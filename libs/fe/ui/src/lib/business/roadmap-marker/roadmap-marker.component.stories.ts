@@ -4,7 +4,7 @@ import { RoadmapMarkerComponent } from './roadmap-marker.component';
 
 const meta: Meta<RoadmapMarkerComponent> = {
   component: RoadmapMarkerComponent,
-  title: 'fe/ui/business/roadmap/roadmap-marker',
+  title: 'fe/ui/business/roadmap-marker',
 };
 export default meta;
 type Story = StoryObj<RoadmapMarkerComponent>;
