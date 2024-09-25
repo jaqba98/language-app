@@ -1,0 +1,5 @@
+@mixin build-styles($styles) {
+  @each $property, $value in $styles {
+    #{$property}: $value;
+  }
+}

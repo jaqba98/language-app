@@ -1,0 +1,34 @@
+@use '@english-learning/fe-styles/src/lib/main';
+
+$classes: (
+  grid: (
+    styles: (
+      display: grid,
+      grid-template-columns: repeat(12, 1fr),
+    ),
+    elements: (
+      none: (
+        styles: (
+          gap: main.$gap-none,
+        ),
+      ),
+      small: (
+        styles: (
+          gap: main.$gap-small,
+        ),
+      ),
+      medium: (
+        styles: (
+          gap: main.$gap-medium,
+        ),
+      ),
+      large: (
+        styles: (
+          gap: main.$gap-large,
+        ),
+      ),
+    ),
+  ),
+);
+
+@include main.build-classes($classes);

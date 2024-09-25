@@ -1,0 +1,29 @@
+@use '@english-learning/fe-styles/src/lib/main';
+
+$host: (
+  display: contents,
+);
+$classes: (
+  grid-item: (
+    elements: (
+      left: (
+        styles: (
+          justify-self: flex-start,
+        ),
+      ),
+      center: (
+        styles: (
+          justify-self: center,
+        ),
+      ),
+      right: (
+        styles: (
+          justify-self: flex-end,
+        ),
+      ),
+    ),
+  ),
+);
+
+@include main.build-host($host);
+@include main.build-classes($classes);

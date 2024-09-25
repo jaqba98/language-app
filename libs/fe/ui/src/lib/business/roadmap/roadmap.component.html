@@ -1,3 +1,9 @@
-<lib-roadmap-marker></lib-roadmap-marker>
-<lib-roadmap-marker type="active"></lib-roadmap-marker>
-<lib-roadmap-marker type="done"></lib-roadmap-marker>
+<lib-grid gapType="small">
+  <ng-container *ngFor="let marker of model.markers; let i = index">
+    <lib-grid-item [rowStart]="i" [rowEnd]="i + 1" positionType="center">
+      <lib-roadmap-marker
+        [type]="marker.type"
+        [fontAwesomeType]="marker.fontAwesomeType"></lib-roadmap-marker>
+    </lib-grid-item>
+  </ng-container>
+</lib-grid>

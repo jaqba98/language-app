@@ -1,8 +1,9 @@
+import { FontAwesomeType } from '../../infrastructure/font-awesome/font-awesome.type';
 import { RoadmapMarkerType } from '../roadmap-marker/roadmap-marker.type';
 
 export interface RoadmapMarkerModel {
   type: RoadmapMarkerType;
-  // TODO: I am here
+  fontAwesomeType: FontAwesomeType;
 }
 
 export interface RoadmapModel {

@@ -1,3 +1,4 @@
+@use 'styles-builder';
 @use '../utils/bem';
 @use '../utils/map';
 
@@ -13,7 +14,7 @@
     $modifiers: map.get-map-element($block-values, 'modifiers', (), false);
 
     #{$bem-block} {
-      @include -build-styles($styles);
+      @include styles-builder.build-styles($styles);
       @include -build-elements($elements);
       @include -build-modifiers($modifiers);
     }
@@ -27,7 +28,7 @@
     $modifiers: map.get-map-element($element-values, 'modifiers', (), false);
 
     &#{$bem-element} {
-      @include -build-styles($styles);
+      @include styles-builder.build-styles($styles);
       @include -build-modifiers($modifiers);
     }
   }
@@ -38,13 +39,7 @@
     $bem-modifier: bem.build-bem-modifier($modifier);
 
     &#{$bem-modifier} {
-      @include -build-styles($styles);
+      @include styles-builder.build-styles($styles);
     }
-  }
-}
-
-@mixin -build-styles($styles) {
-  @each $property, $value in $styles {
-    #{$property}: $value;
   }
 }
