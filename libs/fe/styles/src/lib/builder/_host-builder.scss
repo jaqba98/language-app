@@ -1,0 +1,7 @@
+@use 'styles-builder';
+
+@mixin build-host($styles) {
+  :host {
+    @include styles-builder.build-styles($styles);
+  }
+}
