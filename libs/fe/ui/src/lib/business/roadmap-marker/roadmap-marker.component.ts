@@ -1,46 +1,54 @@
-// TODO: I am here
-import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
-import { RoadmapMarkerType } from './roadmap-marker.type';
+import { ComponentDirective } from '../../base/component.directive';
 import { FontAwesomeComponent } from '../../infrastructure/font-awesome/font-awesome.component';
 import {
-  FontAwesomeColorType,
   FontAwesomeType,
+  FontAwesomeColorType,
 } from '../../infrastructure/font-awesome/font-awesome.type';
-import { ComponentDirective } from '../../base/component.directive';
+import { RoadmapMarkerType } from './roadmap-marker.type';
 
 @Component({
   selector: 'lib-roadmap-marker',
   standalone: true,
-  imports: [CommonModule, FontAwesomeComponent],
+  imports: [...ComponentDirective.buildImports(), FontAwesomeComponent],
   templateUrl: './roadmap-marker.component.html',
   styleUrl: './roadmap-marker.component.scss',
 })
-export class RoadmapMarkerComponent extends ComponentDirective {
-  @Input() type: RoadmapMarkerType = 'blocked';
+export class RoadmapMarkerComponent extends ComponentDirective<boolean> {
+  @Input() markerType: RoadmapMarkerType = 'blocked';
 
-  @Input() fontAwesomeType: FontAwesomeType = 'lock';
+  fontAwesomeType: FontAwesomeType = 'lock';
 
   fontAwesomeColorType: FontAwesomeColorType = 'gray';
 
-  element = '';
-
-  override onAfterInit() {
-    this.addClassToComponent('roadmap-marker', this.type);
-    this.fontAwesomeColorType = this.convertRoadmapMarkerType();
+  protected override onAfterInit() {
+    this.addClassToComponent('roadmap-marker', this.markerType);
+    this.getRoadmapMarkerIcon();
   }
 
-  private convertRoadmapMarkerType(): FontAwesomeColorType {
-    switch (this.type) {
+  protected override onClick() {
+    this.event.emit(true);
+  }
+
+  private getRoadmapMarkerIcon() {
+    switch (this.markerType) {
       case 'blocked':
-        return 'gray';
+        this.setFontAwesome('lock', 'gray');
+        break;
       case 'active':
-        return 'green';
+        this.setFontAwesome('play', 'green');
+        break;
       case 'done':
-        return 'gold';
+        this.setFontAwesome('star', 'gold');
+        break;
       default:
-        throw new Error('Not supported color type!');
+        throw new Error('Not supported marker type!');
     }
+  }
+
+  private setFontAwesome(type: FontAwesomeType, colorType: FontAwesomeColorType) {
+    this.fontAwesomeType = type;
+    this.fontAwesomeColorType = colorType;
   }
 }

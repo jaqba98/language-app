@@ -1,24 +1,29 @@
-import { Directive, OnInit } from '@angular/core';
+import { Directive, EventEmitter, OnInit, Output } from '@angular/core';
 
+import { CommonModule } from '@angular/common';
 import { BemService } from '../service/bem.service';
 
-@Directive({
-  selector: '[libComponentDirective]',
-})
-export class ComponentDirective implements OnInit {
+@Directive()
+export class ComponentDirective<TEventType> implements OnInit {
+  @Output() event = new EventEmitter<TEventType>();
+
   classNames: string[] = [];
 
   constructor(private readonly bem: BemService) {}
+
+  static buildImports() {
+    return [CommonModule];
+  }
 
   ngOnInit() {
     this.onAfterInit();
   }
 
-  onAfterInit() {
+  protected onAfterInit() {
     throw new Error('Method not implemented.');
   }
 
-  onClick() {
+  protected onClick() {
     throw new Error('Method not implemented.');
   }
 

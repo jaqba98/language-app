@@ -12,11 +12,13 @@
     $styles: map.get-map-element($block-values, 'styles', (), false);
     $elements: map.get-map-element($block-values, 'elements', (), false);
     $modifiers: map.get-map-element($block-values, 'modifiers', (), false);
+    $pseudo-classes: map.get-map-element($block-values, 'pseudo-classes', (), false);
 
     #{$bem-block} {
       @include styles-builder.build-styles($styles);
       @include -build-elements($elements);
       @include -build-modifiers($modifiers);
+      @include -build-pseudo-classes($pseudo-classes);
     }
   }
 }
@@ -26,10 +28,12 @@
     $bem-element: bem.build-bem-element($element);
     $styles: map.get-map-element($element-values, 'styles', (), false);
     $modifiers: map.get-map-element($element-values, 'modifiers', (), false);
+    $pseudo-classes: map.get-map-element($element-values, 'pseudo-classes', (), false);
 
     &#{$bem-element} {
       @include styles-builder.build-styles($styles);
       @include -build-modifiers($modifiers);
+      @include -build-pseudo-classes($pseudo-classes);
     }
   }
 }
@@ -37,8 +41,18 @@
 @mixin -build-modifiers($modifiers) {
   @each $modifier, $styles in $modifiers {
     $bem-modifier: bem.build-bem-modifier($modifier);
+    $pseudo-classes: map.get-map-element($modifier-values, 'pseudo-classes', (), false);
 
     &#{$bem-modifier} {
+      @include styles-builder.build-styles($styles);
+      @include -build-pseudo-classes($pseudo-classes);
+    }
+  }
+}
+
+@mixin -build-pseudo-classes($pseudo-classes) {
+  @each $pseudo-class, $styles in $pseudo-classes {
+    &:#{$pseudo-class} {
       @include styles-builder.build-styles($styles);
     }
   }
