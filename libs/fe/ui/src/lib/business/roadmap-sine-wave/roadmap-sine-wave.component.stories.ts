@@ -5,6 +5,11 @@ import { RoadmapSineWaveComponent } from './roadmap-sine-wave.component';
 const meta: Meta<RoadmapSineWaveComponent> = {
   component: RoadmapSineWaveComponent,
   title: 'fe/ui/business/roadmap-sine-wave',
+  argTypes: {
+    event: {
+      action: 'event',
+    },
+  },
 };
 export default meta;
 type Story = StoryObj<RoadmapSineWaveComponent>;

@@ -5,6 +5,11 @@ import { RoadmapComponent } from './roadmap.component';
 const meta: Meta<RoadmapComponent> = {
   component: RoadmapComponent,
   title: 'fe/ui/business/roadmap',
+  argTypes: {
+    event: {
+      action: 'event',
+    },
+  },
 };
 export default meta;
 type Story = StoryObj<RoadmapComponent>;
