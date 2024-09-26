@@ -5,6 +5,11 @@ import { RoadmapMarkerComponent } from './roadmap-marker.component';
 const meta: Meta<RoadmapMarkerComponent> = {
   component: RoadmapMarkerComponent,
   title: 'fe/ui/business/roadmap-marker',
+  // argTypes: {
+  //   event: {
+  //     action: 'event',
+  //   },
+  // },
 };
 export default meta;
 type Story = StoryObj<RoadmapMarkerComponent>;
