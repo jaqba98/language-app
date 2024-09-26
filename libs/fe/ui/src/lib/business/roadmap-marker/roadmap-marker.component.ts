@@ -1,34 +1,33 @@
-import { NgClass } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+// TODO: I am here
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 import { RoadmapMarkerType } from './roadmap-marker.type';
-import { BemService } from '../../service/bem.service';
 import { FontAwesomeComponent } from '../../infrastructure/font-awesome/font-awesome.component';
 import {
   FontAwesomeColorType,
   FontAwesomeType,
 } from '../../infrastructure/font-awesome/font-awesome.type';
+import { ComponentDirective } from '../../base/component.directive';
 
 @Component({
   selector: 'lib-roadmap-marker',
   standalone: true,
-  imports: [NgClass, FontAwesomeComponent],
+  imports: [CommonModule, FontAwesomeComponent],
   templateUrl: './roadmap-marker.component.html',
   styleUrl: './roadmap-marker.component.scss',
 })
-export class RoadmapMarkerComponent implements OnInit {
+export class RoadmapMarkerComponent extends ComponentDirective {
   @Input() type: RoadmapMarkerType = 'blocked';
 
   @Input() fontAwesomeType: FontAwesomeType = 'lock';
 
-  element = '';
-
   fontAwesomeColorType: FontAwesomeColorType = 'gray';
 
-  constructor(private readonly bem: BemService) {}
+  element = '';
 
-  ngOnInit() {
-    this.element = this.bem.buildBem('roadmap-marker', this.type);
+  override onAfterInit() {
+    this.addClassToComponent('roadmap-marker', this.type);
     this.fontAwesomeColorType = this.convertRoadmapMarkerType();
   }
 
