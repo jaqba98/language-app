@@ -1,6 +1,8 @@
-import { Directive, EventEmitter, OnInit, Output } from '@angular/core';
-
+import { Directive, EventEmitter, Injector, OnInit, Output } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { CommonModule } from '@angular/common';
+
+import { StoreModel } from '@english-learning/fe-store';
 import { BemService } from '../service/bem.service';
 
 @Directive()
@@ -9,7 +11,14 @@ export class ComponentDirective<TEventType> implements OnInit {
 
   classNames: string[] = [];
 
-  constructor(private readonly bem: BemService) {}
+  bem: BemService;
+
+  store: Store<StoreModel>;
+
+  constructor(protected readonly injector: Injector) {
+    this.bem = this.injector.get(BemService);
+    this.store = this.injector.get(Store<StoreModel>);
+  }
 
   static buildImports() {
     return [CommonModule];

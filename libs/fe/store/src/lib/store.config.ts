@@ -1,8 +1,8 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideStore } from '@ngrx/store';
 
-import { grammarReducer } from './grammar/grammar.reducer';
+import { courseReducer } from './course/course.reducer';
 
 export const storeConfig: ApplicationConfig = {
-  providers: [provideStore({ grammar: grammarReducer })],
+  providers: [provideStore({ course: courseReducer })],
 };
