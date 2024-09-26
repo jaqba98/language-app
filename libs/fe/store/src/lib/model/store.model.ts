@@ -1,7 +1,5 @@
-import { SectionStoreModel } from './section-store.model';
+import { CourseStoreModel } from './course-store.model';
 
 export interface StoreModel {
-  grammar: SectionStoreModel;
+  course: CourseStoreModel;
 }
-
-export type StoreType = keyof StoreModel;

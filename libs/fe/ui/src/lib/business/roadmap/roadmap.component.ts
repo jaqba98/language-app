@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 
 import { RoadmapSineWaveComponent } from '../roadmap-sine-wave/roadmap-sine-wave.component';
 import { RoadmapSineWaveModel } from '../roadmap-sine-wave/roadmap-sine-wave.model';
@@ -13,9 +13,20 @@ import { ComponentDirective } from '../../base/component.directive';
   styleUrl: './roadmap.component.scss',
 })
 export class RoadmapComponent extends ComponentDirective<boolean> {
-  @Input() model: RoadmapSineWaveModel = {
-    markers: [],
-  };
+  model!: RoadmapSineWaveModel;
+
+  constructor(protected override readonly injector: Injector) {
+    super(injector);
+
+    this.store.select('course').subscribe(course => {
+      this.model = {
+        markers: course.tasks.map(task => ({
+          type: task.type,
+          fontAwesomeType: 'lock',
+        })),
+      };
+    });
+  }
 
   protected override onClick() {
     this.event.emit(true);
