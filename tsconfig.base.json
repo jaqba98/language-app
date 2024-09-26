@@ -21,7 +21,8 @@
       "@english-learning/fe-route": ["libs/fe/route/src/index.ts"],
       "@english-learning/fe-store": ["libs/fe/store/src/index.ts"],
       "@english-learning/fe-system": ["libs/fe/system/src/index.ts"],
-      "@english-learning/fe-ui": ["libs/fe/ui/src/index.ts"]
+      "@english-learning/fe-ui": ["libs/fe/ui/src/index.ts"],
+      "@english-learning/fe-utils": ["libs/fe/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
