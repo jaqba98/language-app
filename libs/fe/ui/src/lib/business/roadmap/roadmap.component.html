@@ -1,9 +1,14 @@
 <lib-grid gapType="small">
-  <ng-container *ngFor="let marker of model.markers; let i = index">
-    <lib-grid-item [rowStart]="i" [rowEnd]="i + 1" positionType="center">
+  <ng-container *ngFor="let markerView of markersView">
+    <lib-grid-item
+      [columnStart]="markerView.colStart"
+      [columnEnd]="markerView.colEnd"
+      [rowStart]="markerView.rowStart"
+      [rowEnd]="markerView.rowEnd"
+      positionType="center">
       <lib-roadmap-marker
-        [type]="marker.type"
-        [fontAwesomeType]="marker.fontAwesomeType"></lib-roadmap-marker>
+        [type]="markerView.type"
+        [fontAwesomeType]="markerView.fontAwesomeType"></lib-roadmap-marker>
     </lib-grid-item>
   </ng-container>
 </lib-grid>

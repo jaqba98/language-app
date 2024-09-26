@@ -9,3 +9,10 @@ export interface RoadmapMarkerModel {
 export interface RoadmapModel {
   markers: RoadmapMarkerModel[];
 }
+
+export interface RoadmapMarkerViewModel extends RoadmapMarkerModel {
+  colStart: number;
+  colEnd: number;
+  rowStart: number;
+  rowEnd: number;
+}
