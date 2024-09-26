@@ -1,4 +1,4 @@
-@use '../abstract/variables';
+@use '../const/variables/core';
 
 * {
   padding: 0;
@@ -7,6 +7,5 @@
 }
 
 body {
-  background-color: variables.$body;
-  min-width: variables.$body-min-width;
+  min-width: core.$body-min-width;
 }
