@@ -1,4 +1,4 @@
-<lib-grid gapType="small">
+<lib-grid gapType="medium">
   <ng-container *ngFor="let markerView of markersView">
     <lib-grid-item
       [columnStart]="markerView.colStart"
@@ -6,7 +6,9 @@
       [rowStart]="markerView.rowStart"
       [rowEnd]="markerView.rowEnd"
       [positionType]="markerView.positionType">
-      <lib-roadmap-marker [markerType]="markerView.type"></lib-roadmap-marker>
+      <lib-roadmap-marker
+        [markerType]="markerView.type"
+        (event)="onClick()"></lib-roadmap-marker>
     </lib-grid-item>
   </ng-container>
 </lib-grid>

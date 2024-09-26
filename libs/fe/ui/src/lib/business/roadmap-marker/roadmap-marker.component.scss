@@ -1,4 +1,3 @@
-// TODO: I am here
 @use '@english-learning/fe-styles/src/lib/main';
 
 $classes: (
@@ -20,9 +19,9 @@ $classes: (
           border: 0.5rem solid main.$roadmap-marker-blocked-primary,
         ),
         pseudo-classes: (
-          hover: (
-            transform: translateY(-0.25rem),
-            box-shadow: 0 0.75rem main.$roadmap-marker-blocked-secondary,
+          active: (
+            transform: translateY(0.25rem),
+            box-shadow: 0 0.25rem main.$roadmap-marker-blocked-secondary,
           ),
         ),
       ),
@@ -33,9 +32,9 @@ $classes: (
           border: 0.5rem solid main.$roadmap-marker-active-primary,
         ),
         pseudo-classes: (
-          hover: (
-            transform: translateY(-0.25rem),
-            box-shadow: 0 0.75rem main.$roadmap-marker-active-secondary,
+          active: (
+            transform: translateY(0.25rem),
+            box-shadow: 0 0.25rem main.$roadmap-marker-active-secondary,
           ),
         ),
       ),
@@ -46,9 +45,9 @@ $classes: (
           border: 0.5rem solid main.$roadmap-marker-done-primary,
         ),
         pseudo-classes: (
-          hover: (
-            transform: translateY(-0.25rem),
-            box-shadow: 0 0.75rem main.$roadmap-marker-done-secondary,
+          active: (
+            transform: translateY(0.25rem),
+            box-shadow: 0 0.25rem main.$roadmap-marker-done-secondary,
           ),
         ),
       ),

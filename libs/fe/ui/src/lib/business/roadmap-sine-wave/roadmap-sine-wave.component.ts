@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { RoadmapMarkerComponent } from '../roadmap-marker/roadmap-marker.component';
@@ -9,6 +9,7 @@ import {
 import { GridComponent } from '../../layout/grid/grid.component';
 import { GridItemComponent } from '../../layout/grid-item/grid-item.component';
 import { GridItemPositionType } from '../../layout/grid-item/grid-item.type';
+import { ComponentDirective } from '../../base/component.directive';
 
 @Component({
   selector: 'lib-roadmap-sine-wave',
@@ -16,14 +17,14 @@ import { GridItemPositionType } from '../../layout/grid-item/grid-item.type';
   imports: [CommonModule, GridComponent, GridItemComponent, RoadmapMarkerComponent],
   templateUrl: './roadmap-sine-wave.component.html',
 })
-export class RoadmapSineWaveComponent implements OnInit {
+export class RoadmapSineWaveComponent extends ComponentDirective<boolean> {
   @Input() model: RoadmapSineWaveModel = {
     markers: [],
   };
 
   markersView: RoadmapSineWaveMarkerViewModel[] = [];
 
-  ngOnInit() {
+  protected override onAfterInit() {
     let direction: 'left' | 'right' = 'left';
     let position = 6;
     const size = 2;
@@ -37,6 +38,10 @@ export class RoadmapSineWaveComponent implements OnInit {
       if (position >= 12 - size) direction = 'left';
       else if (position <= size) direction = 'right';
     }
+  }
+
+  protected override onClick() {
+    this.event.emit(true);
   }
 
   private buildMarkerView(
