@@ -1,3 +1,3 @@
 import { createAction } from '@ngrx/store';
 
-export const getCourse = createAction('[Learning App] Get Course');
+export const getCourse = createAction('[Course] Get Course');

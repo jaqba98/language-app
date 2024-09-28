@@ -1,9 +1,9 @@
 import { createReducer, on } from '@ngrx/store';
 
-import { getCourse } from './course.actions';
 import { CourseStoreModel } from '../model/course-store.model';
+import { getCourse } from './course.actions';
 
-export const initialCourseState: CourseStoreModel = {
+const initialCourseState: CourseStoreModel = {
   tasks: [],
 };
 
