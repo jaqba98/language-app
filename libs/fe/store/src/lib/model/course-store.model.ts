@@ -1,9 +1,3 @@
-type CourseStoreTaskType = 'blocked' | 'active' | 'done';
+import { TasksDomainModel } from '@english-learning/fe-domain';
 
-interface CourseStoreTaskModel {
-  type: CourseStoreTaskType;
-}
-
-export interface CourseStoreModel {
-  tasks: CourseStoreTaskModel[];
-}
+export type CourseStoreModel = TasksDomainModel;
