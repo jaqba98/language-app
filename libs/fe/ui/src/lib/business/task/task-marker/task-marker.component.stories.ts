@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 
-import { RoadmapMarkerComponent } from './roadmap-marker.component';
+import { RoadmapMarkerComponent } from './task-marker.component';
 
 const meta: Meta<RoadmapMarkerComponent> = {
   component: RoadmapMarkerComponent,
-  title: 'fe/ui/business/roadmap-marker',
+  title: 'fe/ui/business/task/task-marker',
   argTypes: {
     event: {
       action: 'event',

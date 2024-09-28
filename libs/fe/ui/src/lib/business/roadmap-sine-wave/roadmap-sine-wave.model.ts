@@ -1,9 +1,8 @@
 import { FontAwesomeType } from '../../infrastructure/font-awesome/font-awesome.type';
 import { GridItemPositionType } from '../../layout/grid-item/grid-item.type';
-import { RoadmapMarkerType } from '../roadmap-marker/roadmap-marker.type';
 
 export interface RoadmapSineWaveMarkerModel {
-  type: RoadmapMarkerType;
+  type: string;
   fontAwesomeType: FontAwesomeType;
 }
 
