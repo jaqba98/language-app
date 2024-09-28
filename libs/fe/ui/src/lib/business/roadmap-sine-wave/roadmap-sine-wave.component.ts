@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { RoadmapMarkerComponent } from '../roadmap-marker/roadmap-marker.component';
+import { RoadmapMarkerComponent } from '../task/task-marker/task-marker.component';
 import {
   RoadmapSineWaveMarkerViewModel,
   RoadmapSineWaveModel,

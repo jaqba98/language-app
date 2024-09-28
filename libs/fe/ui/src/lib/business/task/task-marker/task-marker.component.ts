@@ -1,22 +1,21 @@
 import { Component, Input } from '@angular/core';
 
-import { ComponentDirective } from '../../base/component.directive';
-import { FontAwesomeComponent } from '../../infrastructure/font-awesome/font-awesome.component';
+import { ComponentDirective } from '../../../base/component.directive';
+import { FontAwesomeComponent } from '../../../infrastructure/font-awesome/font-awesome.component';
 import {
   FontAwesomeType,
   FontAwesomeColorType,
-} from '../../infrastructure/font-awesome/font-awesome.type';
-import { RoadmapMarkerType } from './roadmap-marker.type';
+} from '../../../infrastructure/font-awesome/font-awesome.type';
 
 @Component({
   selector: 'lib-roadmap-marker',
   standalone: true,
   imports: [...ComponentDirective.buildImports(), FontAwesomeComponent],
-  templateUrl: './roadmap-marker.component.html',
-  styleUrl: './roadmap-marker.component.scss',
+  templateUrl: './task-marker.component.html',
+  styleUrl: './task-marker.component.scss',
 })
 export class RoadmapMarkerComponent extends ComponentDirective<boolean> {
-  @Input() markerType: RoadmapMarkerType = 'blocked';
+  @Input() markerType = 'blocked';
 
   fontAwesomeType: FontAwesomeType = 'lock';
 
