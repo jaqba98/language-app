@@ -6,7 +6,10 @@ import { StoreModel } from '@english-learning/fe-store';
 import { ComponentDirective } from './component.directive';
 
 @Directive()
-export class BusinessDirective<T extends keyof StoreModel> extends ComponentDirective {
+export class BusinessDirective<
+  T extends keyof StoreModel,
+  TEvent,
+> extends ComponentDirective<TEvent> {
   private readonly store: Store<StoreModel>;
 
   private sub?: Subscription;
