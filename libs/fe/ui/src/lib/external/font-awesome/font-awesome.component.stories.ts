@@ -4,7 +4,7 @@ import { FontAwesomeComponent } from './font-awesome.component';
 
 const meta: Meta<FontAwesomeComponent> = {
   component: FontAwesomeComponent,
-  title: 'fe/ui/infrastructure/font-awesome',
+  title: 'fe/ui/external/font-awesome',
 };
 export default meta;
 type Story = StoryObj<FontAwesomeComponent>;
@@ -12,23 +12,23 @@ type Story = StoryObj<FontAwesomeComponent>;
 export const LockGray: Story = {
   args: {
     type: 'lock',
-    size: '4x',
-    colorType: 'gray',
+    color: 'gray',
+    size: '3x',
   },
 };
 
-export const LockGreen: Story = {
+export const PlayGreen: Story = {
   args: {
     type: 'play',
-    size: '4x',
-    colorType: 'green',
+    color: 'green',
+    size: '5x',
   },
 };
 
-export const LockGold: Story = {
+export const StarGold: Story = {
   args: {
     type: 'star',
-    size: '4x',
-    colorType: 'gold',
+    color: 'gold',
+    size: '7x',
   },
 };

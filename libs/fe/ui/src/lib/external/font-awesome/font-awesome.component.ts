@@ -1,35 +1,35 @@
-import { NgClass } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Injector, Input } from '@angular/core';
 import { FontAwesomeModule, SizeProp } from '@fortawesome/angular-fontawesome';
 import { IconProp } from '@fortawesome/angular-fontawesome/types';
 import { faLock, faPlay, faStar } from '@fortawesome/free-solid-svg-icons';
 
+import { notSupportedType } from '@english-learning/fe-domain';
+import { ComponentDirective } from '../../base/component.directive';
 import { FontAwesomeColorType, FontAwesomeType } from './font-awesome.type';
-import { BemService } from '../../service/bem.service';
 
 @Component({
   selector: 'lib-font-awesome',
   standalone: true,
-  imports: [NgClass, FontAwesomeModule],
+  imports: [...ComponentDirective.buildImports(), FontAwesomeModule],
   templateUrl: './font-awesome.component.html',
   styleUrl: './font-awesome.component.scss',
 })
-export class FontAwesomeComponent implements OnInit {
+export class FontAwesomeComponent extends ComponentDirective<boolean> {
   @Input() type: FontAwesomeType = 'lock';
+
+  @Input() color: FontAwesomeColorType = 'gray';
 
   @Input() size: SizeProp = '1x';
 
-  @Input() colorType: FontAwesomeColorType = 'gray';
-
-  className = '';
-
-  constructor(private readonly bem: BemService) {}
-
-  ngOnInit() {
-    this.className = this.bem.buildBem('font-awesome', this.colorType);
+  constructor(protected override readonly injector: Injector) {
+    super(injector);
   }
 
-  getIcon(): IconProp {
+  protected override afterInit() {
+    this.addClass('font-awesome', this.color);
+  }
+
+  getFontAwesomeIcon(): IconProp {
     switch (this.type) {
       case 'lock':
         return faLock;
@@ -38,7 +38,7 @@ export class FontAwesomeComponent implements OnInit {
       case 'star':
         return faStar;
       default:
-        throw new Error('Not supported font awesome type!');
+        throw new Error(notSupportedType('font awesome'));
     }
   }
 }

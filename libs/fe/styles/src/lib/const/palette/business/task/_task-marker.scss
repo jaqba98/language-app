@@ -1,0 +1,8 @@
+@use '../../basic/basic';
+
+$task-marker-blocked-primary: basic.$gray;
+$task-marker-blocked-secondary: basic.$gray-darken;
+$task-marker-active-primary: basic.$green;
+$task-marker-active-secondary: basic.$green-darken;
+$task-marker-done-primary: basic.$gold;
+$task-marker-done-secondary: basic.$gold-darken;
