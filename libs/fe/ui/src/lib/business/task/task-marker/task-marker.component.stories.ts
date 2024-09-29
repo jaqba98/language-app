@@ -1,33 +1,34 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
 
-import { RoadmapMarkerComponent } from './task-marker.component';
+import { storeMock } from '@english-learning/fe-store';
+import { TaskMarkerComponent } from './task-marker.component';
 
-const meta: Meta<RoadmapMarkerComponent> = {
-  component: RoadmapMarkerComponent,
+const meta: Meta<TaskMarkerComponent> = {
+  component: TaskMarkerComponent,
   title: 'fe/ui/business/task/task-marker',
-  argTypes: {
-    event: {
-      action: 'event',
-    },
-  },
+  decorators: [
+    moduleMetadata({
+      providers: [storeMock],
+    }),
+  ],
 };
 export default meta;
-type Story = StoryObj<RoadmapMarkerComponent>;
+type Story = StoryObj<TaskMarkerComponent>;
 
 export const Blocked: Story = {
   args: {
-    markerType: 'blocked',
+    taskId: '1',
   },
 };
 
 export const Active: Story = {
   args: {
-    markerType: 'active',
+    taskId: '2',
   },
 };
 
 export const Done: Story = {
   args: {
-    markerType: 'done',
+    taskId: '3',
   },
 };

@@ -1,23 +1,16 @@
-import { Directive, EventEmitter, Injector, OnInit, Output } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Directive, Injector, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { StoreModel } from '@english-learning/fe-store';
 import { BemService } from '../service/bem.service';
 
 @Directive()
-export class ComponentDirective<TEventType> implements OnInit {
-  @Output() event = new EventEmitter<TEventType>();
+export class ComponentDirective implements OnInit, OnDestroy {
+  private readonly bem: BemService;
 
-  classNames: string[] = [];
-
-  bem: BemService;
-
-  store: Store<StoreModel>;
+  protected readonly classNames: string[] = [];
 
   constructor(protected readonly injector: Injector) {
     this.bem = this.injector.get(BemService);
-    this.store = this.injector.get(Store<StoreModel>);
   }
 
   static buildImports() {
@@ -25,18 +18,18 @@ export class ComponentDirective<TEventType> implements OnInit {
   }
 
   ngOnInit() {
-    this.onAfterInit();
+    this.afterInit();
   }
 
-  protected onAfterInit() {
-    throw new Error('Method not implemented.');
+  ngOnDestroy() {
+    this.afterDestroy();
   }
 
-  protected onClick() {
-    throw new Error('Method not implemented.');
-  }
+  protected afterInit() {}
 
-  protected addClassToComponent(block = '', element = '', modifier = '') {
+  protected afterDestroy() {}
+
+  protected addClass(block = '', element = '', modifier = '') {
     const bemClassName = this.bem.buildBem(block, element, modifier);
     this.classNames.push(bemClassName);
   }
