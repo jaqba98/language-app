@@ -1,18 +1,32 @@
 import { Component, Injector, Input } from '@angular/core';
 
-import { notFoundInTheStore, TaskModel, TasksModel } from '@english-learning/fe-domain';
+import {
+  notFoundInTheStore,
+  notSupportedType,
+  TaskModel,
+  TasksModel,
+} from '@english-learning/fe-domain';
 import { BusinessDirective } from '../../../base/business.directive';
 import { ComponentDirective } from '../../../base/component.directive';
+import { FontAwesomeComponent } from '../../../external/font-awesome/font-awesome.component';
+import {
+  FontAwesomeColorType,
+  FontAwesomeType,
+} from '../../../external/font-awesome/font-awesome.type';
 
 @Component({
   selector: 'lib-task-marker',
   standalone: true,
-  imports: [...ComponentDirective.buildImports()],
+  imports: [...ComponentDirective.buildImports(), FontAwesomeComponent],
   templateUrl: './task-marker.component.html',
   styleUrl: './task-marker.component.scss',
 })
 export class TaskMarkerComponent extends BusinessDirective<'course', TaskModel['id']> {
   @Input({ required: true }) taskId: TaskModel['id'] = '';
+
+  type: FontAwesomeType = 'lock';
+
+  color: FontAwesomeColorType = 'gray';
 
   constructor(protected override readonly injector: Injector) {
     super(injector, 'course');
@@ -22,9 +36,29 @@ export class TaskMarkerComponent extends BusinessDirective<'course', TaskModel['
     const task = store.tasks.get(this.taskId);
     if (!task) throw new Error(notFoundInTheStore(this.taskId, 'course'));
     this.addClass('task-marker', task.type);
+    this.setFontAwesome(task.type);
   }
 
   protected override onClickAction() {
     return this.taskId;
+  }
+
+  private setFontAwesome(type: TaskModel['type']) {
+    switch (type) {
+      case 'blocked':
+        this.type = 'lock';
+        this.color = 'gray';
+        return;
+      case 'active':
+        this.type = 'play';
+        this.color = 'green';
+        return;
+      case 'done':
+        this.type = 'star';
+        this.color = 'gold';
+        return;
+      default:
+        throw new Error(notSupportedType('font awesome'));
+    }
   }
 }
