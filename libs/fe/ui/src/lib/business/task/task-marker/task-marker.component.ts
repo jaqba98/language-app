@@ -11,7 +11,7 @@ import { ComponentDirective } from '../../../base/component.directive';
   templateUrl: './task-marker.component.html',
   styleUrl: './task-marker.component.scss',
 })
-export class TaskMarkerComponent extends BusinessDirective<'course'> {
+export class TaskMarkerComponent extends BusinessDirective<'course', TaskModel['id']> {
   @Input({ required: true }) taskId: TaskModel['id'] = '';
 
   constructor(protected override readonly injector: Injector) {
@@ -22,5 +22,9 @@ export class TaskMarkerComponent extends BusinessDirective<'course'> {
     const task = store.tasks.get(this.taskId);
     if (!task) throw new Error(notFoundInTheStore(this.taskId, 'course'));
     this.addClass('task-marker', task.type);
+  }
+
+  protected override onClickAction() {
+    return this.taskId;
   }
 }

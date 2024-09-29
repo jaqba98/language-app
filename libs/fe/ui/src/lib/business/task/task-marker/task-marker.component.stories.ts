@@ -11,6 +11,11 @@ const meta: Meta<TaskMarkerComponent> = {
       providers: [storeMock],
     }),
   ],
+  argTypes: {
+    event: {
+      action: 'event',
+    },
+  },
 };
 export default meta;
 type Story = StoryObj<TaskMarkerComponent>;

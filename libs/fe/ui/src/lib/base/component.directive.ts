@@ -1,10 +1,19 @@
-import { Directive, Injector, OnDestroy, OnInit } from '@angular/core';
+import {
+  Directive,
+  EventEmitter,
+  Injector,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { BemService } from '../service/bem.service';
 
 @Directive()
-export class ComponentDirective implements OnInit, OnDestroy {
+export class ComponentDirective<TEvent> implements OnInit, OnDestroy {
+  @Output() event = new EventEmitter<TEvent>();
+
   private readonly bem: BemService;
 
   protected readonly classNames: string[] = [];
@@ -25,9 +34,17 @@ export class ComponentDirective implements OnInit, OnDestroy {
     this.afterDestroy();
   }
 
+  protected onClick() {
+    this.event.emit(this.onClickAction());
+  }
+
   protected afterInit() {}
 
   protected afterDestroy() {}
+
+  protected onClickAction(): TEvent {
+    throw new Error('Method not implemented.');
+  }
 
   protected addClass(block = '', element = '', modifier = '') {
     const bemClassName = this.bem.buildBem(block, element, modifier);
