@@ -4,7 +4,7 @@ import { CourseStoreModel } from '../model/course-store.model';
 import { getCourse } from './course.actions';
 
 const initialCourseState: CourseStoreModel = {
-  tasks: [],
+  tasks: new Map(),
 };
 
 export const courseReducer = createReducer(

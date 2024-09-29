@@ -1,10 +1,10 @@
 import { TaskType } from '../../type/task.type';
 import { IdModel, TypeModel } from '../base/base.model';
 
-interface TaskModel extends IdModel, TypeModel<TaskType> {}
+export interface TaskModel extends IdModel, TypeModel<TaskType> {}
 
-interface TasksModel {
-  tasks: TaskModel[];
+export interface TasksModel {
+  tasks: Map<TaskModel['id'], TaskModel>;
 }
 
 export type TasksDomainModel = TasksModel;

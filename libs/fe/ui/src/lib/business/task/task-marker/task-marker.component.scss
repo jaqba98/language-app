@@ -1,15 +1,11 @@
 @use '@english-learning/fe-styles/src/lib/main';
 
 $classes: (
-  roadmap-marker: (
+  task-marker: (
     styles: (
       width: 100px,
       height: 100px,
       border-radius: 100%,
-      display: flex,
-      align-items: center,
-      justify-content: center,
-      cursor: pointer,
     ),
     elements: (
       blocked: (
@@ -18,12 +14,6 @@ $classes: (
           box-shadow: 0 0.5rem main.$roadmap-marker-blocked-secondary,
           border: 0.5rem solid main.$roadmap-marker-blocked-primary,
         ),
-        pseudo-classes: (
-          active: (
-            transform: translateY(0.25rem),
-            box-shadow: 0 0.25rem main.$roadmap-marker-blocked-secondary,
-          ),
-        ),
       ),
       active: (
         styles: (
@@ -31,24 +21,12 @@ $classes: (
           box-shadow: 0 0.5rem main.$roadmap-marker-active-secondary,
           border: 0.5rem solid main.$roadmap-marker-active-primary,
         ),
-        pseudo-classes: (
-          active: (
-            transform: translateY(0.25rem),
-            box-shadow: 0 0.25rem main.$roadmap-marker-active-secondary,
-          ),
-        ),
       ),
       done: (
         styles: (
           background-color: main.$roadmap-marker-done-secondary,
           box-shadow: 0 0.5rem main.$roadmap-marker-done-secondary,
           border: 0.5rem solid main.$roadmap-marker-done-primary,
-        ),
-        pseudo-classes: (
-          active: (
-            transform: translateY(0.25rem),
-            box-shadow: 0 0.25rem main.$roadmap-marker-done-secondary,
-          ),
         ),
       ),
     ),

@@ -1,53 +1,26 @@
-import { Component, Input } from '@angular/core';
+import { Component, Injector, Input } from '@angular/core';
 
+import { notFoundInTheStore, TaskModel, TasksModel } from '@english-learning/fe-domain';
+import { BusinessDirective } from '../../../base/business.directive';
 import { ComponentDirective } from '../../../base/component.directive';
-import { FontAwesomeComponent } from '../../../infrastructure/font-awesome/font-awesome.component';
-import {
-  FontAwesomeType,
-  FontAwesomeColorType,
-} from '../../../infrastructure/font-awesome/font-awesome.type';
 
 @Component({
-  selector: 'lib-roadmap-marker',
+  selector: 'lib-task-marker',
   standalone: true,
-  imports: [...ComponentDirective.buildImports(), FontAwesomeComponent],
+  imports: [...ComponentDirective.buildImports()],
   templateUrl: './task-marker.component.html',
   styleUrl: './task-marker.component.scss',
 })
-export class RoadmapMarkerComponent extends ComponentDirective<boolean> {
-  @Input() markerType = 'blocked';
+export class TaskMarkerComponent extends BusinessDirective<'course'> {
+  @Input({ required: true }) taskId: TaskModel['id'] = '';
 
-  fontAwesomeType: FontAwesomeType = 'lock';
-
-  fontAwesomeColorType: FontAwesomeColorType = 'gray';
-
-  protected override onAfterInit() {
-    this.addClassToComponent('roadmap-marker', this.markerType);
-    this.getRoadmapMarkerIcon();
+  constructor(protected override readonly injector: Injector) {
+    super(injector, 'course');
   }
 
-  protected override onClick() {
-    this.event.emit(true);
-  }
-
-  private getRoadmapMarkerIcon() {
-    switch (this.markerType) {
-      case 'blocked':
-        this.setFontAwesome('lock', 'gray');
-        break;
-      case 'active':
-        this.setFontAwesome('play', 'green');
-        break;
-      case 'done':
-        this.setFontAwesome('star', 'gold');
-        break;
-      default:
-        throw new Error('Not supported marker type!');
-    }
-  }
-
-  private setFontAwesome(type: FontAwesomeType, colorType: FontAwesomeColorType) {
-    this.fontAwesomeType = type;
-    this.fontAwesomeColorType = colorType;
+  protected override onStoreAction(store: TasksModel) {
+    const task = store.tasks.get(this.taskId);
+    if (!task) throw new Error(notFoundInTheStore(this.taskId, 'course'));
+    this.addClass('task-marker', task.type);
   }
 }
