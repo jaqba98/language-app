@@ -1,5 +1,23 @@
 @use '@english-learning/fe-styles/src/lib/main';
 
+@function build-task-marker-element($element) {
+  $primary: main.get-map-element(main.$task-marker, #{$element}-primary);
+  $secondary: main.get-map-element(main.$task-marker, #{$element}-secondary);
+  $styles: (
+    background-color: $secondary,
+    box-shadow: 0 0.5rem $secondary,
+    border: 0.5rem solid $primary,
+  );
+  $pseudo-classes: (
+    active: (
+      transform: translateY(0.25rem),
+      box-shadow: 0 0.25rem $secondary,
+    ),
+  );
+
+  @return (styles: $styles, pseudo-classes: $pseudo-classes);
+}
+
 $classes: (
   task-marker: (
     styles: (
@@ -12,45 +30,9 @@ $classes: (
       justify-content: center,
     ),
     elements: (
-      blocked: (
-        styles: (
-          background-color: main.$task-marker-blocked-secondary,
-          box-shadow: 0 0.5rem main.$task-marker-blocked-secondary,
-          border: 0.5rem solid main.$task-marker-blocked-primary,
-        ),
-        pseudo-classes: (
-          active: (
-            transform: translateY(0.25rem),
-            box-shadow: 0 0.25rem main.$task-marker-blocked-secondary,
-          ),
-        ),
-      ),
-      active: (
-        styles: (
-          background-color: main.$task-marker-active-secondary,
-          box-shadow: 0 0.5rem main.$task-marker-active-secondary,
-          border: 0.5rem solid main.$task-marker-active-primary,
-        ),
-        pseudo-classes: (
-          active: (
-            transform: translateY(0.25rem),
-            box-shadow: 0 0.25rem main.$task-marker-active-secondary,
-          ),
-        ),
-      ),
-      done: (
-        styles: (
-          background-color: main.$task-marker-done-secondary,
-          box-shadow: 0 0.5rem main.$task-marker-done-secondary,
-          border: 0.5rem solid main.$task-marker-done-primary,
-        ),
-        pseudo-classes: (
-          active: (
-            transform: translateY(0.25rem),
-            box-shadow: 0 0.25rem main.$task-marker-done-secondary,
-          ),
-        ),
-      ),
+      blocked: build-task-marker-element('blocked'),
+      active: build-task-marker-element('active'),
+      done: build-task-marker-element('done'),
     ),
   ),
 );

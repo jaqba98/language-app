@@ -1,10 +1,10 @@
 import { Component, Injector, Input } from '@angular/core';
 
+import { StoreModel, StoreType } from '@english-learning/fe-store';
 import {
   notFoundInTheStore,
   notSupportedType,
   TaskModel,
-  TasksModel,
 } from '@english-learning/fe-domain';
 import { BusinessDirective } from '../../../base/business.directive';
 import { ComponentDirective } from '../../../base/component.directive';
@@ -21,7 +21,7 @@ import {
   templateUrl: './task-marker.component.html',
   styleUrl: './task-marker.component.scss',
 })
-export class TaskMarkerComponent extends BusinessDirective<'course', TaskModel['id']> {
+export class TaskMarkerComponent extends BusinessDirective<TaskModel['id']> {
   @Input({ required: true }) taskId: TaskModel['id'] = '';
 
   type: FontAwesomeType = 'lock';
@@ -32,15 +32,15 @@ export class TaskMarkerComponent extends BusinessDirective<'course', TaskModel['
     super(injector, 'course');
   }
 
-  protected override onStoreAction(store: TasksModel) {
-    const task = store.tasks.get(this.taskId);
-    if (!task) throw new Error(notFoundInTheStore(this.taskId, 'course'));
-    this.addClass('task-marker', task.type);
-    this.setFontAwesome(task.type);
+  onClick() {
+    this.onEvent(this.taskId);
   }
 
-  protected override onClickAction() {
-    return this.taskId;
+  protected override onStoreChange(store: StoreModel[StoreType]): void {
+    const task = store.tasks.get(this.taskId);
+    if (!task) throw new Error(notFoundInTheStore(this.taskId, 'course'));
+    this.addClassName('task-marker', task.type);
+    this.setFontAwesome(task.type);
   }
 
   private setFontAwesome(type: TaskModel['type']) {
