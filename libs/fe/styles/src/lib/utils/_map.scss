@@ -6,7 +6,7 @@
   }
 
   @if $throw {
-    @error 'The map does not have element by key!';
+    @error 'The map does not have element by key: #{$key}!';
   }
 
   @return $default;

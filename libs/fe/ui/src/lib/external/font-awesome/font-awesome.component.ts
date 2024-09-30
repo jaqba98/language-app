@@ -26,7 +26,7 @@ export class FontAwesomeComponent extends ComponentDirective<boolean> {
   }
 
   protected override afterInit() {
-    this.addClass('font-awesome', this.color);
+    this.addClassName('font-awesome', this.color);
   }
 
   getFontAwesomeIcon(): IconProp {

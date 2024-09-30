@@ -14,9 +14,9 @@ import { BemService } from '../service/bem.service';
 export class ComponentDirective<TEvent> implements OnInit, OnDestroy {
   @Output() event = new EventEmitter<TEvent>();
 
-  private readonly bem: BemService;
-
   protected readonly classNames: string[] = [];
+
+  private readonly bem: BemService;
 
   constructor(protected readonly injector: Injector) {
     this.bem = this.injector.get(BemService);
@@ -34,20 +34,16 @@ export class ComponentDirective<TEvent> implements OnInit, OnDestroy {
     this.afterDestroy();
   }
 
-  protected onClick() {
-    this.event.emit(this.onClickAction());
-  }
-
   protected afterInit() {}
 
   protected afterDestroy() {}
 
-  protected onClickAction(): TEvent {
-    throw new Error('Method not implemented.');
+  protected onEvent(eventData: TEvent) {
+    this.event.emit(eventData);
   }
 
-  protected addClass(block = '', element = '', modifier = '') {
-    const bemClassName = this.bem.buildBem(block, element, modifier);
-    this.classNames.push(bemClassName);
+  protected addClassName(block = '', element = '', modifier = '') {
+    const className = this.bem.buildBem(block, element, modifier);
+    this.classNames.push(className);
   }
 }
