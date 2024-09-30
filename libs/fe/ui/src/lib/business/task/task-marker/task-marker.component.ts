@@ -13,11 +13,12 @@ import {
   FontAwesomeColorType,
   FontAwesomeType,
 } from '../../../external/font-awesome/font-awesome.type';
+import { FlexComponent } from '../../../layout/flex/flex.component';
 
 @Component({
   selector: 'lib-task-marker',
   standalone: true,
-  imports: [...ComponentDirective.buildImports(), FontAwesomeComponent],
+  imports: [...ComponentDirective.buildImports(), FlexComponent, FontAwesomeComponent],
   templateUrl: './task-marker.component.html',
   styleUrl: './task-marker.component.scss',
 })

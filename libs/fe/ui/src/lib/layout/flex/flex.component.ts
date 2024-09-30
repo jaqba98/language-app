@@ -1,15 +1,16 @@
-import { NgStyle } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Properties } from 'csstype';
+
+import { ComponentDirective } from '../../base/component.directive';
 
 @Component({
   selector: 'lib-flex',
   standalone: true,
-  imports: [NgStyle],
+  imports: [...ComponentDirective.buildImports()],
   templateUrl: './flex.component.html',
   styleUrl: './flex.component.scss',
 })
-export class FlexComponent {
+export class FlexComponent extends ComponentDirective<boolean> {
   @Input() flexDirection: Properties['flexDirection'];
 
   @Input() alignItems: Properties['alignItems'];
@@ -18,15 +19,12 @@ export class FlexComponent {
 
   @Input() gap: Properties['gap'];
 
-  @Input() minHeight: Properties['minHeight'];
-
   buildStyles(): Properties {
     return {
       flexDirection: this.flexDirection,
       alignItems: this.alignItems,
       justifyContent: this.justifyContent,
       gap: this.gap,
-      minHeight: this.minHeight,
     };
   }
 }

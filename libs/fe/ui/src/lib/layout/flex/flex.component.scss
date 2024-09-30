@@ -1,5 +1,12 @@
 @use '@english-learning/fe-styles/src/lib/main';
 
-.flex {
-  @include main.flex;
-}
+$classes: (
+  flex: (
+    styles: (
+      display: flex,
+      height: 100%,
+    ),
+  ),
+);
+
+@include main.build-classes($classes);
