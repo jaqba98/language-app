@@ -17,11 +17,11 @@ import { FlexComponent } from '../../../layout/flex/flex.component';
 export class TaskRoadmapComponent extends BusinessDirective<TaskModel['id']> {
   taskIds: TaskModel['id'][] = [];
 
-  constructor(
-    protected override readonly injector: Injector,
-    private readonly typeConverter: TypeConverterService,
-  ) {
+  private readonly typeConverter: TypeConverterService;
+
+  constructor(protected override readonly injector: Injector) {
     super(injector, 'course');
+    this.typeConverter = this.injector.get(TypeConverterService);
   }
 
   protected override onStoreChange(store: StoreModel[StoreType]) {
