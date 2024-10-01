@@ -1,0 +1,5 @@
+<lib-flex flexDirection="column" gap="medium">
+  <ng-container *ngFor="let taskId of taskIds">
+    <lib-task-marker [taskId]="taskId" (event)="onClick($event)"></lib-task-marker>
+  </ng-container>
+</lib-flex>

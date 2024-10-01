@@ -39,8 +39,9 @@
 }
 
 @mixin -build-modifiers($modifiers) {
-  @each $modifier, $styles in $modifiers {
+  @each $modifier, $modifier-values in $modifiers {
     $bem-modifier: bem.build-bem-modifier($modifier);
+    $styles: map.get-map-element($modifier-values, 'styles', (), false);
     $pseudo-classes: map.get-map-element($modifier-values, 'pseudo-classes', (), false);
 
     &#{$bem-modifier} {

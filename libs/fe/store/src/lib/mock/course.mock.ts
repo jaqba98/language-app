@@ -2,8 +2,8 @@ import { CourseStoreModel } from '../model/course-store.model';
 
 export const courseMock: CourseStoreModel = {
   tasks: new Map([
-    ['1', { id: '1', type: 'done' }],
-    ['2', { id: '2', type: 'active' }],
-    ['3', { id: '3', type: 'blocked' }],
+    ['task1', { id: 'task1', order: 0, type: 'done' }],
+    ['task2', { id: 'task2', order: 1, type: 'active' }],
+    ['task3', { id: 'task3', order: 2, type: 'blocked' }],
   ]),
 };
