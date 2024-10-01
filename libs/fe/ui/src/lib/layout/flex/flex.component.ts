@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Properties } from 'csstype';
 
 import { ComponentDirective } from '../../base/component.directive';
+import { FlexGapType } from './flex.type';
 
 @Component({
   selector: 'lib-flex',
@@ -17,14 +18,17 @@ export class FlexComponent extends ComponentDirective<boolean> {
 
   @Input() justifyContent: Properties['justifyContent'];
 
-  @Input() gap: Properties['gap'];
+  @Input() gap: FlexGapType = 'none';
+
+  protected override afterInit() {
+    this.addClassName('flex', 'gap', this.gap);
+  }
 
   buildStyles(): Properties {
     return {
       flexDirection: this.flexDirection,
       alignItems: this.alignItems,
       justifyContent: this.justifyContent,
-      gap: this.gap,
     };
   }
 }

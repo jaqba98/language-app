@@ -15,13 +15,13 @@ export default meta;
 type Story = StoryObj<TaskMarkerComponent>;
 
 export const Blocked: Story = {
-  args: { taskId: '1' },
+  args: { taskId: 'task1' },
 };
 
 export const Active: Story = {
-  args: { taskId: '2' },
+  args: { taskId: 'task2' },
 };
 
 export const Done: Story = {
-  args: { taskId: '3' },
+  args: { taskId: 'task3' },
 };
