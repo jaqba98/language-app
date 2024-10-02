@@ -1,0 +1,3 @@
+<ng-container *ngFor="let taskId of taskIds">
+  <lib-task-marker [taskId]="taskId" (event)="onClick($event)"></lib-task-marker>
+</ng-container>
