@@ -1,3 +1,4 @@
+// TODO: 5) refactor the file
 @use '@english-learning/fe-styles/src/lib/main';
 
 $classes: (
@@ -5,3 +6,11 @@ $classes: (
 );
 
 @include main.build-classes($classes);
+
+.wave-container {
+  position: relative;
+}
+
+.child-container {
+  position: absolute;
+}
