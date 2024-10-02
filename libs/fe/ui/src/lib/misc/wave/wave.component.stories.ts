@@ -9,4 +9,13 @@ const meta: Meta<WaveComponent> = {
 export default meta;
 type Story = StoryObj<WaveComponent>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  render: args => ({
+    props: args,
+    template: `
+      <lib-wave>
+        <p>wave works!</p>
+      </lib-wave>
+    `,
+  }),
+};
