@@ -1,9 +1,20 @@
+// TODO: 1) refactor the file
+import { TaskModel } from '@english-learning/fe-domain';
 import { CourseStoreModel } from '../model/course-store.model';
 
 export const courseMock: CourseStoreModel = {
-  tasks: new Map([
-    ['task1', { id: 'task1', order: 0, type: 'done' }],
-    ['task2', { id: 'task2', order: 1, type: 'active' }],
-    ['task3', { id: 'task3', order: 2, type: 'blocked' }],
-  ]),
+  tasks: new Map(),
 };
+
+const addTasks = (quantity: number, type: TaskModel['type']) => {
+  for (let i = 0; i < quantity; i += 1) {
+    const order = courseMock.tasks.size;
+    const id = `task${order}`;
+    const task: TaskModel = { id, order, type };
+    courseMock.tasks.set(task.id, task);
+  }
+};
+
+addTasks(50, 'done');
+addTasks(1, 'active');
+addTasks(150, 'blocked');

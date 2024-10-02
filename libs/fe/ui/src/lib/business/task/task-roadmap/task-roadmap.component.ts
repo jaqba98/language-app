@@ -1,3 +1,4 @@
+// TODO: 2) refactor the file
 import { Component, Injector } from '@angular/core';
 
 import { TaskModel } from '@english-learning/fe-domain';
@@ -6,11 +7,12 @@ import { TypeConverterService } from '@english-learning/fe-utils';
 import { BusinessDirective } from '../../../base/business.directive';
 import { ComponentDirective } from '../../../base/component.directive';
 import { TaskWaveComponent } from '../task-wave/task-wave.component';
+import { FlexComponent } from '../../../layout/flex/flex.component';
 
 @Component({
   selector: 'lib-task-roadmap',
   standalone: true,
-  imports: [...ComponentDirective.buildImports(), TaskWaveComponent],
+  imports: [...ComponentDirective.buildImports(), FlexComponent, TaskWaveComponent],
   templateUrl: './task-roadmap.component.html',
 })
 export class TaskRoadmapComponent extends BusinessDirective<TaskModel['id']> {
