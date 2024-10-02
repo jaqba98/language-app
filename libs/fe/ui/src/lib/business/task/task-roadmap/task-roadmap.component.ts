@@ -29,4 +29,8 @@ export class TaskRoadmapComponent extends BusinessDirective<TaskModel['id']> {
       .sort((taskPrev, taskNext) => taskPrev.order - taskNext.order)
       .map(task => task.id);
   }
+
+  onClick(taskId: TaskModel['id']) {
+    this.onEvent(taskId);
+  }
 }
