@@ -6,12 +6,12 @@ import { TypeConverterService } from '@english-learning/fe-utils';
 import { BusinessDirective } from '../../../base/business.directive';
 import { ComponentDirective } from '../../../base/component.directive';
 import { TaskMarkerComponent } from '../task-marker/task-marker.component';
-import { FlexComponent } from '../../../layout/flex/flex.component';
+import { WaveComponent } from '../../../misc/wave/wave.component';
 
 @Component({
   selector: 'lib-task-roadmap',
   standalone: true,
-  imports: [...ComponentDirective.buildImports(), FlexComponent, TaskMarkerComponent],
+  imports: [...ComponentDirective.buildImports(), WaveComponent, TaskMarkerComponent],
   templateUrl: './task-roadmap.component.html',
 })
 export class TaskRoadmapComponent extends BusinessDirective<TaskModel['id']> {
