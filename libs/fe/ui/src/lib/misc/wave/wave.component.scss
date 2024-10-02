@@ -1,0 +1,7 @@
+@use '@english-learning/fe-styles/src/lib/main';
+
+$classes: (
+  wave: (),
+);
+
+@include main.build-classes($classes);
