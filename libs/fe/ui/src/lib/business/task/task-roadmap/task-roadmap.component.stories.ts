@@ -1,6 +1,6 @@
 import { type Meta, moduleMetadata, type StoryObj } from '@storybook/angular';
 
-import { storeMock } from '@english-learning/fe-store';
+import { storeMock } from '@english-learning/fe-mock';
 import { TaskRoadmapComponent } from './task-roadmap.component';
 
 const meta: Meta<TaskRoadmapComponent> = {
