@@ -1,13 +1,13 @@
 {
   "extends": ["../../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*", "storybook-static"],
+  "ignorePatterns": ["!**/*"],
   "overrides": [
     {
       "files": ["*.ts"],
       "parserOptions": {
         "project": [
           "./libs/fe/page/tsconfig.lint.json",
-          "libs\\fe\\page\\.storybook\\tsconfig.json"
+          "./libs/fe/page/.storybook/tsconfig.json"
         ]
       },
       "extends": [
@@ -29,12 +29,6 @@
             "type": "element",
             "prefix": "lib",
             "style": "kebab-case"
-          }
-        ],
-        "import/no-extraneous-dependencies": [
-          "error",
-          {
-            "devDependencies": ["**/*.stories.js", "**/*.stories.ts"]
           }
         ]
       }

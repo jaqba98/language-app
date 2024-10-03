@@ -20,9 +20,6 @@
     },
     {
       "path": "./tsconfig.lint.json"
-    },
-    {
-      "path": "./.storybook/tsconfig.json"
     }
   ],
   "extends": "../../../tsconfig.base.json",
