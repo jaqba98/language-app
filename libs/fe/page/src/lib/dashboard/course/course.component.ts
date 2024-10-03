@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-
-import { CardComponent, TextComponent } from '@english-learning/fe-ui';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'lib-course',
   standalone: true,
-  imports: [CardComponent, TextComponent],
+  imports: [RouterOutlet],
   templateUrl: './course.component.html',
 })
 export class CourseComponent {}

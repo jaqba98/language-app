@@ -954,11 +954,7 @@
                 return this._zone;
               }
               constructor(d, e, o) {
-                (this._taskCounts = {
-                  microTask: 0,
-                  macroTask: 0,
-                  eventTask: 0,
-                }),
+                (this._taskCounts = { microTask: 0, macroTask: 0, eventTask: 0 }),
                   (this._zone = d),
                   (this._parentDelegate = e),
                   (this._forkZS = o && (o && o.onFork ? o : e._forkZS)),
@@ -1553,14 +1549,8 @@
                 return (this && this.prototype instanceof A ? this : A).allWithCallback(
                   a,
                   {
-                    thenCallback: l => ({
-                      status: 'fulfilled',
-                      value: l,
-                    }),
-                    errorCallback: l => ({
-                      status: 'rejected',
-                      reason: l,
-                    }),
+                    thenCallback: l => ({ status: 'fulfilled', value: l }),
+                    errorCallback: l => ({ status: 'rejected', reason: l }),
                   },
                 );
               }
@@ -1996,10 +1986,7 @@
                   rt(r, i).forEach(E => {
                     const p = r.PromiseRejectionEvent;
                     if (p) {
-                      const C = new p(i, {
-                        promise: u.promise,
-                        reason: u.rejection,
-                      });
+                      const C = new p(i, { promise: u.promise, reason: u.rejection });
                       E.invoke(C);
                     }
                   });

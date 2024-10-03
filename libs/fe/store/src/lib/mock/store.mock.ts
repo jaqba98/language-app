@@ -1,7 +1,7 @@
 import { provideMockStore } from '@ngrx/store/testing';
 
-import { StoreModel } from '@english-learning/fe-store';
 import { courseMock } from './course.mock';
+import { StoreModel } from '../model/store.model';
 
 export const storeMock = provideMockStore<StoreModel>({
   initialState: {

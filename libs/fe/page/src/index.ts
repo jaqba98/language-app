@@ -8,4 +8,5 @@ export * from './lib/dashboard/courses/courses.component';
 export * from './lib/dashboard/account/account.component';
 export * from './lib/dashboard/logout/logout.component';
 export * from './lib/dashboard/course/course.component';
+export * from './lib/dashboard/course/tasks/tasks.component';
 export * from './lib/http-404/http-404.component';

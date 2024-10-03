@@ -1,17 +1,17 @@
 import { type Meta, moduleMetadata, type StoryObj } from '@storybook/angular';
 
 import { storeMock } from '@english-learning/fe-store';
-import { TaskRoadmapComponent } from './task-roadmap.component';
+import { TasksComponent } from './tasks.component';
 
-const meta: Meta<TaskRoadmapComponent> = {
-  component: TaskRoadmapComponent,
-  title: 'fe/ui/business/task/task-roadmap',
+const meta: Meta<TasksComponent> = {
+  component: TasksComponent,
+  title: 'fe/page/dashboard/course/tasks',
   decorators: [moduleMetadata({ providers: [storeMock] })],
   argTypes: {
     event: { action: 'event' },
   },
 };
 export default meta;
-type Story = StoryObj<TaskRoadmapComponent>;
+type Story = StoryObj<TasksComponent>;
 
 export const Default: Story = {};
