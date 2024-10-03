@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
 import { StoreModel, StoreType } from '@english-learning/fe-store';
-import { methodNotImplemented, notDefined } from '@english-learning/fe-domain';
+import { notDefined } from '@english-learning/fe-domain';
 import { ComponentDirective } from './component.directive';
 
 @Directive()
@@ -24,9 +24,7 @@ export class BusinessDirective<TEvent> extends ComponentDirective<TEvent> {
     this.sub = this.store.select('course').subscribe(store => this.onStoreChange(store));
   }
 
-  protected onStoreChange(_store: StoreModel[StoreType]) {
-    throw new Error(methodNotImplemented());
-  }
+  protected onStoreChange(_store: StoreModel[StoreType]) {}
 
   protected override afterDestroy() {
     if (!this.sub) throw new Error(notDefined('sub'));

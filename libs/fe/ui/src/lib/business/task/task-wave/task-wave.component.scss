@@ -1,16 +1,7 @@
-// TODO: 5) refactor the file
 @use '@english-learning/fe-styles/src/lib/main';
 
-$classes: (
-  task-wave: (),
+$host: (
+  display: contents,
 );
 
-@include main.build-classes($classes);
-
-.wave-container {
-  position: relative;
-}
-
-.child-container {
-  position: absolute;
-}
+@include main.build-host($host);

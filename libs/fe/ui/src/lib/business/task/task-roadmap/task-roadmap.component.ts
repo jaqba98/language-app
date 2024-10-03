@@ -1,4 +1,3 @@
-// TODO: 2) refactor the file
 import { Component, Injector } from '@angular/core';
 
 import { TaskModel } from '@english-learning/fe-domain';
