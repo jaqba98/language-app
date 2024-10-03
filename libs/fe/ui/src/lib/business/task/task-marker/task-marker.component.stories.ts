@@ -1,6 +1,6 @@
 import { type Meta, moduleMetadata, type StoryObj } from '@storybook/angular';
 
-import { storeMock } from '@english-learning/fe-mock';
+import { storeMock } from '@english-learning/fe-store';
 import { TaskMarkerComponent } from './task-marker.component';
 
 const meta: Meta<TaskMarkerComponent> = {

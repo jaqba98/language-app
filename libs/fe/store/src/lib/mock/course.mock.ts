@@ -1,5 +1,5 @@
 import { TaskModel } from '@english-learning/fe-domain';
-import { CourseStoreModel } from '@english-learning/fe-store';
+import { CourseStoreModel } from '../model/course-store.model';
 
 export const courseMock: CourseStoreModel = {
   tasks: new Map(),

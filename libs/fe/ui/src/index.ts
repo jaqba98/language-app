@@ -1,3 +1,5 @@
+export * from './lib/base/business.directive';
+export * from './lib/business/task/task-roadmap/task-roadmap.component';
 export * from './lib/form/login-form/login-form.component';
 export * from './lib/form/login-form/login-form.model';
 export * from './lib/form/forgot-password-form/forgot-password-form.component';
