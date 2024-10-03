@@ -1,12 +1,5 @@
-<!-- TODO: 6) refactor the file -->
-<div class="wave-container">
-  <div
-    *ngFor="let taskId of taskIds; let i = index"
-    class="child-container"
-    [ngStyle]="{ transform: 'translate(' + getX(i) + 'px,' + getY(i) + 'px)' }">
+<ng-container *ngFor="let taskId of taskIds; let i = index">
+  <div [ngStyle]="getWaveMarkerPosX(i)">
     <lib-task-marker [taskId]="taskId" (event)="onClick($event)"></lib-task-marker>
   </div>
-  <!-- <ng-container *ngFor="let taskId of taskIds; let i = index">
-    <lib-task-marker [taskId]="taskId" (event)="onClick($event)"></lib-task-marker>
-  </ng-container> -->
-</div>
+</ng-container>
