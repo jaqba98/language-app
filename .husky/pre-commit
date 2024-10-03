@@ -1,6 +1,6 @@
-pnpm run lint
-pnpm run format:check
-nx run-many --target=stylelint
-nx run-many --target=test
-nx run-many --target=build
-nx run-many --target=build-storybook
+pnpm run nx:lint-all
+pnpm run prettier:lint-all
+pnpm run stylelint:lint-all
+pnpm run nx:test-all
+pnpm run nx:build-all
+pnpm run nx:build-storybook-all

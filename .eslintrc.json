@@ -44,6 +44,12 @@
             "varsIgnorePattern": "^_",
             "ignoreRestSiblings": true
           }
+        ],
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": ["**/*.stories.js", "**/*.stories.ts"]
+          }
         ]
       }
     },

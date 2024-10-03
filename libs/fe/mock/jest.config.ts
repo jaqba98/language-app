@@ -1,8 +1,8 @@
 export default {
-  displayName: 'fe-ui',
+  displayName: 'fe-mock',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/libs/fe/ui',
+  coverageDirectory: '../../../coverage/libs/fe/mock',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

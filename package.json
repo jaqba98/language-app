@@ -7,10 +7,13 @@
     "english-learning:serve": "nx run english-learning-fe:serve",
     "english-learning:storybook": "nx run english-learning-storybook:storybook",
     "prepare": "husky",
-    "lint": "nx run-many --target=lint",
-    "lint:fix": "nx run-many --target=lint --fix",
-    "format": "prettier --write \"**/*.{ts,js,json,css,scss,html,md}\"",
-    "format:check": "prettier --check \"**/*.{ts,js,json,css,scss,html,md}\""
+    "nx:lint-all": "nx run-many --target=lint",
+    "prettier:lint-all": "prettier --check \"**/*.{ts,js,json,css,scss,html,md}\"",
+    "prettier:fix-all": "prettier --write \"**/*.{ts,js,json,css,scss,html,md}\"",
+    "stylelint:lint-all": "nx run-many --target=stylelint",
+    "nx:test-all": "nx run-many --target=test",
+    "nx:build-all": "nx run-many --target=build",
+    "nx:build-storybook-all": "nx run-many --target=build-storybook"
   },
   "private": true,
   "dependencies": {
