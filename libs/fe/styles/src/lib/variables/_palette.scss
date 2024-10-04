@@ -1,0 +1,28 @@
+$palette: (
+  primary: (
+    content: #fefefe,
+    light: #a868c8,
+    dark: #753694,
+  ),
+  secondary: (
+    content: #fefefe,
+    light: #c868bf,
+    dark: #94368c,
+  ),
+  neutrals: (
+    foreground: #fbfbfb,
+    background: #f0eff1,
+    border: #e0dde2,
+    copy: #272329,
+    copy-light: #695e6e,
+    copy-lighter: #8f8495,
+  ),
+  utility: (
+    success: #44b944,
+    warning: #b9b944,
+    error: #b94444,
+    success-content: #000,
+    warning-content: #000,
+    error-content: #fefefe,
+  ),
+);
