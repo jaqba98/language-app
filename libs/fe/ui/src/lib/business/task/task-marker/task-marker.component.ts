@@ -39,7 +39,7 @@ export class TaskMarkerComponent extends BusinessDirective<TaskModel['id']> {
 
   protected override onStoreChange(store: StoreModel[StoreType]): void {
     const task = store.tasks.get(this.taskId);
-    if (!task) throw new Error(notFoundInTheStore(this.taskId, 'course'));
+    if (!task) throw new Error(notFoundInTheStore(this.taskId));
     this.addClassName('task-marker', task.type);
     this.setFontAwesome(task.type);
   }
@@ -59,7 +59,7 @@ export class TaskMarkerComponent extends BusinessDirective<TaskModel['id']> {
         this.color = 'gold';
         return;
       default:
-        throw new Error(notSupportedType('font awesome'));
+        throw new Error(notSupportedType());
     }
   }
 }

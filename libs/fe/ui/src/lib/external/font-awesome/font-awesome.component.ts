@@ -38,7 +38,7 @@ export class FontAwesomeComponent extends ComponentDirective {
       case 'star':
         return faStar;
       default:
-        throw new Error(notSupportedType('font awesome'));
+        throw new Error(notSupportedType());
     }
   }
 }
