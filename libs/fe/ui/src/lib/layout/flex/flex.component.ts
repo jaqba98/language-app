@@ -11,7 +11,7 @@ import { FlexGapType } from './flex.type';
   templateUrl: './flex.component.html',
   styleUrl: './flex.component.scss',
 })
-export class FlexComponent extends ComponentDirective<boolean> {
+export class FlexComponent extends ComponentDirective {
   @Input() flexDirection: Properties['flexDirection'];
 
   @Input() alignItems: Properties['alignItems'];

@@ -3,14 +3,13 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
 import { StoreModel, StoreType } from '@english-learning/fe-store';
-import { notDefined } from '@english-learning/fe-domain';
-import { ComponentDirective } from './component.directive';
+import { EventEmitterDirective } from './event-emitter.directive';
 
 @Directive()
-export class BusinessDirective<TEvent> extends ComponentDirective<TEvent> {
-  private readonly store: Store<StoreModel>;
-
+export class BusinessDirective<TEvent> extends EventEmitterDirective<TEvent> {
   private sub?: Subscription;
+
+  private readonly store: Store<StoreModel>;
 
   constructor(
     protected override readonly injector: Injector,
@@ -21,13 +20,16 @@ export class BusinessDirective<TEvent> extends ComponentDirective<TEvent> {
   }
 
   protected override afterInit() {
-    this.sub = this.store.select('course').subscribe(store => this.onStoreChange(store));
+    this.sub = this.store
+      .select(this.select)
+      .subscribe(store => this.onStoreChange(store));
   }
 
   protected onStoreChange(_store: StoreModel[StoreType]) {}
 
   protected override afterDestroy() {
-    if (!this.sub) throw new Error(notDefined('sub'));
-    this.sub.unsubscribe();
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
   }
 }

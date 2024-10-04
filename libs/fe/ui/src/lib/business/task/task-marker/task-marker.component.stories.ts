@@ -19,9 +19,9 @@ export const Blocked: Story = {
 };
 
 export const Active: Story = {
-  args: { taskId: 'task2' },
+  args: { taskId: 'task50' },
 };
 
 export const Done: Story = {
-  args: { taskId: 'task3' },
+  args: { taskId: 'task51' },
 };
