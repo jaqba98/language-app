@@ -14,7 +14,7 @@ import { FontAwesomeColorType, FontAwesomeType } from './font-awesome.type';
   templateUrl: './font-awesome.component.html',
   styleUrl: './font-awesome.component.scss',
 })
-export class FontAwesomeComponent extends ComponentDirective<boolean> {
+export class FontAwesomeComponent extends ComponentDirective {
   @Input() type: FontAwesomeType = 'lock';
 
   @Input() color: FontAwesomeColorType = 'gray';

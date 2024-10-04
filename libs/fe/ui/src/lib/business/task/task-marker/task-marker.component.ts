@@ -34,7 +34,7 @@ export class TaskMarkerComponent extends BusinessDirective<TaskModel['id']> {
   }
 
   onClick() {
-    this.onEvent(this.taskId);
+    this.emit(this.taskId);
   }
 
   protected override onStoreChange(store: StoreModel[StoreType]): void {

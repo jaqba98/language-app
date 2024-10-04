@@ -46,7 +46,7 @@ export class TaskWaveComponent
   }
 
   onClick(taskId: TaskModel['id']) {
-    this.onEvent(taskId);
+    this.emit(taskId);
   }
 
   getWaveMarkerPosX(index: number) {

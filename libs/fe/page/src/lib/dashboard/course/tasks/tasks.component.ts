@@ -15,6 +15,6 @@ export class TasksComponent extends BusinessDirective<TaskModel['id']> {
   }
 
   onClick(taskId: TaskModel['id']) {
-    this.onEvent(taskId);
+    this.emit(taskId);
   }
 }

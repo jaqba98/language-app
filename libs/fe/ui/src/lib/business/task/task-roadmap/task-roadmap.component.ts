@@ -32,6 +32,6 @@ export class TaskRoadmapComponent extends BusinessDirective<TaskModel['id']> {
   }
 
   onClick(taskId: TaskModel['id']) {
-    this.onEvent(taskId);
+    this.emit(taskId);
   }
 }
