@@ -1,0 +1,85 @@
+@use '../variables/palette';
+@use '../utils/map';
+
+// Primary
+@function pick-primary-content() {
+  @return -pick-color('primary', 'content');
+}
+
+@function pick-primary-light() {
+  @return -pick-color('primary', 'light');
+}
+
+@function pick-primary-dark() {
+  @return -pick-color('primary', 'dark');
+}
+
+// Secondary
+@function pick-secondary-content() {
+  @return -pick-color('secondary', 'content');
+}
+
+@function pick-secondary-light() {
+  @return -pick-color('secondary', 'light');
+}
+
+@function pick-secondary-dark() {
+  @return -pick-color('secondary', 'dark');
+}
+
+// Neutrals
+@function pick-neutrals-foreground() {
+  @return -pick-color('neutrals', 'foreground');
+}
+
+@function pick-neutrals-background() {
+  @return -pick-color('neutrals', 'background');
+}
+
+@function pick-neutrals-border() {
+  @return -pick-color('neutrals', 'border');
+}
+
+@function pick-neutrals-copy() {
+  @return -pick-color('neutrals', 'copy');
+}
+
+@function pick-neutrals-copy-light() {
+  @return -pick-color('neutrals', 'copy-light');
+}
+
+@function pick-neutrals-copy-lighter() {
+  @return -pick-color('neutrals', 'copy-lighter');
+}
+
+// Utility
+@function pick-utility-success() {
+  @return -pick-color('utility', 'success');
+}
+
+@function pick-utility-warning() {
+  @return -pick-color('utility', 'warning');
+}
+
+@function pick-utility-error() {
+  @return -pick-color('utility', 'error');
+}
+
+@function pick-utility-success-content() {
+  @return -pick-color('utility', 'success-content');
+}
+
+@function pick-utility-warning-content() {
+  @return -pick-color('utility', 'warning-content');
+}
+
+@function pick-utility-error-content() {
+  @return -pick-color('utility', 'error-content');
+}
+
+// Private
+@function -pick-color($section, $value) {
+  $palette-section: map.get-map-element(palette.$palette, $section);
+
+  @return map.get-map-element($palette-section, $value);
+}
