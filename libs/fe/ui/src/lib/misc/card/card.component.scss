@@ -1,7 +1,18 @@
-// @use '@english-learning/fe-styles/src/lib/main';
-// :host {
-//   display: contents;
-// }
-// .card {
-//   @include main.card;
-// }
+@use '@english-learning/fe-styles/src/lib/main';
+
+$classes: (
+  card: (
+    styles: (
+      width: 100%,
+      padding: 2rem,
+      border-radius: 1rem,
+      background-color: white,
+      border: 1px solid lightgray,
+    ),
+    elements: (
+      default: (),
+    ),
+  ),
+);
+
+@include main.build-classes($classes);

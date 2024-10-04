@@ -9,4 +9,8 @@ const meta: Meta<CardComponent> = {
 export default meta;
 type Story = StoryObj<CardComponent>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    type: 'default',
+  },
+};
