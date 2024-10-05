@@ -11,7 +11,7 @@ import { CardType } from './card.type';
   styleUrl: './card.component.scss',
 })
 export class CardComponent extends ComponentDirective {
-  @Input() type: CardType = 'default';
+  @Input() type: CardType = 'default-light';
 
   protected override afterInit() {
     this.addClassName('card', this.type);
