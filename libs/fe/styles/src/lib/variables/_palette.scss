@@ -1,28 +1,56 @@
+// Primary
+// Primary brand color, used for main
+// call to action, logos, etc.
+$-primary: (
+  content: auto,
+  light: auto,
+  dark: auto,
+);
+
+// Secondary
+// Secondary brand color, used for
+// tertiary actions.
+$-secondary: (
+  content: auto,
+  light: auto,
+  dark: auto,
+);
+
+// Neutrals
+// Base colors are for backgrounds
+// and borderts. Copy colors are for
+// text.
+$-neutrals: (
+  foreground: auto,
+  background: auto,
+  border: auto,
+  copy: auto,
+  copy-light: auto,
+  copy-lighter: auto,
+);
+
+// Utility
+// Utility colors denote intention, such
+// as deleting an account.
+$-utility: (
+  success: auto,
+  warning: auto,
+  error: auto,
+  success-content: auto,
+  warning-content: auto,
+  error-content: auto,
+);
+
+// Business
+// Extra business colors
+// not matching to the remaining
+$-business: ();
+
+// Main color palette
 $palette: (
-  primary: (
-    content: #fefefe,
-    light: #a868c8,
-    dark: #753694,
-  ),
-  secondary: (
-    content: #fefefe,
-    light: #c868bf,
-    dark: #94368c,
-  ),
-  neutrals: (
-    foreground: #fbfbfb,
-    background: #f0eff1,
-    border: #e0dde2,
-    copy: #272329,
-    copy-light: #695e6e,
-    copy-lighter: #8f8495,
-  ),
-  utility: (
-    success: #44b944,
-    warning: #b9b944,
-    error: #b94444,
-    success-content: #000,
-    warning-content: #000,
-    error-content: #fefefe,
-  ),
+  primary: $primary,
+  secondary: $secondary,
+  neutrals: $neutrals,
+  utility: $utility,
+  business: $-business,
 );
