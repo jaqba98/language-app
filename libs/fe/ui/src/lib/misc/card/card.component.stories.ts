@@ -9,8 +9,19 @@ const meta: Meta<CardComponent> = {
 export default meta;
 type Story = StoryObj<CardComponent>;
 
-export const Default: Story = {
+export const DefaultLight: Story = {
   args: {
-    type: 'default',
+    type: 'default-light',
+  },
+};
+
+export const DefaultDark: Story = {
+  args: {
+    type: 'default-dark',
+  },
+  parameters: {
+    backgrounds: {
+      default: 'background-dark',
+    },
   },
 };

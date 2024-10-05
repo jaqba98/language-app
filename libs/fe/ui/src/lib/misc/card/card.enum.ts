@@ -1,3 +1,4 @@
 export enum CardEnum {
-  default = 'default',
+  'default-light' = 'default-light',
+  'default-dark' = 'default-dark',
 }
