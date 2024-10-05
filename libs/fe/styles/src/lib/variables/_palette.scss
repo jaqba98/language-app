@@ -61,10 +61,10 @@ $-business: ();
 
 // Main color palette
 $palette: (
-  primary: $primary,
-  secondary: $secondary,
-  neutrals-light: $neutrals-light,
-  neutrals-dark: $neutrals-dark,
-  utility: $utility,
+  primary: $-primary,
+  secondary: $-secondary,
+  neutrals-light: $-neutrals-light,
+  neutrals-dark: $-neutrals-dark,
+  utility: $-utility,
   business: $-business,
 );
