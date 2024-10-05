@@ -1,85 +1,109 @@
 @use '../variables/palette';
 @use '../utils/map';
 
-// Primary
-@function pick-primary-content() {
+@function -pick-color($section, $variable) {
+  $palette-section: map.get-map-element(palette.$palette, $section);
+
+  @return map.get-map-element($palette-section, $variable);
+}
+
+// Primary color picker
+@function pick-primary-content-color() {
   @return -pick-color('primary', 'content');
 }
 
-@function pick-primary-light() {
+@function pick-primary-light-color() {
   @return -pick-color('primary', 'light');
 }
 
-@function pick-primary-dark() {
+@function pick-primary-dark-color() {
   @return -pick-color('primary', 'dark');
 }
 
-// Secondary
-@function pick-secondary-content() {
+// Secondary color picker
+@function pick-secondary-content-color() {
   @return -pick-color('secondary', 'content');
 }
 
-@function pick-secondary-light() {
+@function pick-secondary-light-color() {
   @return -pick-color('secondary', 'light');
 }
 
-@function pick-secondary-dark() {
+@function pick-secondary-dark-color() {
   @return -pick-color('secondary', 'dark');
 }
 
-// Neutrals
-@function pick-neutrals-foreground() {
-  @return -pick-color('neutrals', 'foreground');
+// Neutrals light
+@function pick-neutrals-light-foreground-color() {
+  @return -pick-color('neutrals-light', 'foreground');
 }
 
-@function pick-neutrals-background() {
-  @return -pick-color('neutrals', 'background');
+@function pick-neutrals-light-background-color() {
+  @return -pick-color('neutrals-light', 'background');
 }
 
-@function pick-neutrals-border() {
-  @return -pick-color('neutrals', 'border');
+@function pick-neutrals-light-border-color() {
+  @return -pick-color('neutrals-light', 'border');
 }
 
-@function pick-neutrals-copy() {
-  @return -pick-color('neutrals', 'copy');
+@function pick-neutrals-light-copy-color() {
+  @return -pick-color('neutrals-light', 'copy');
 }
 
-@function pick-neutrals-copy-light() {
-  @return -pick-color('neutrals', 'copy-light');
+@function pick-neutrals-light-copy-light-color() {
+  @return -pick-color('neutrals-light', 'copy-light');
 }
 
-@function pick-neutrals-copy-lighter() {
-  @return -pick-color('neutrals', 'copy-lighter');
+@function pick-neutrals-light-copy-lighter-color() {
+  @return -pick-color('neutrals-light', 'copy-lighter');
+}
+
+// Neutrals dark
+@function pick-neutrals-dark-foreground-color() {
+  @return -pick-color('neutrals-dark', 'foreground');
+}
+
+@function pick-neutrals-dark-background-color() {
+  @return -pick-color('neutrals-dark', 'background');
+}
+
+@function pick-neutrals-dark-border-color() {
+  @return -pick-color('neutrals-dark', 'border');
+}
+
+@function pick-neutrals-dark-copy-color() {
+  @return -pick-color('neutrals-dark', 'copy');
+}
+
+@function pick-neutrals-dark-copy-light-color() {
+  @return -pick-color('neutrals-dark', 'copy-light');
+}
+
+@function pick-neutrals-dark-copy-lighter-color() {
+  @return -pick-color('neutrals-dark', 'copy-lighter');
 }
 
 // Utility
-@function pick-utility-success() {
+@function pick-utility-success-color() {
   @return -pick-color('utility', 'success');
 }
 
-@function pick-utility-warning() {
+@function pick-utility-warning-color() {
   @return -pick-color('utility', 'warning');
 }
 
-@function pick-utility-error() {
+@function pick-utility-error-color() {
   @return -pick-color('utility', 'error');
 }
 
-@function pick-utility-success-content() {
+@function pick-utility-success-content-color() {
   @return -pick-color('utility', 'success-content');
 }
 
-@function pick-utility-warning-content() {
+@function pick-utility-warning-content-color() {
   @return -pick-color('utility', 'warning-content');
 }
 
-@function pick-utility-error-content() {
+@function pick-utility-error-content-color() {
   @return -pick-color('utility', 'error-content');
-}
-
-// Private
-@function -pick-color($section, $value) {
-  $palette-section: map.get-map-element(palette.$palette, $section);
-
-  @return map.get-map-element($palette-section, $value);
 }
