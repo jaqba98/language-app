@@ -11,17 +11,17 @@ type Story = StoryObj<CardComponent>;
 
 export const DefaultLight: Story = {
   args: {
-    type: 'default-light',
+    type: 'default',
   },
 };
 
 export const DefaultDark: Story = {
   args: {
-    type: 'default-dark',
+    type: 'default',
   },
   parameters: {
     backgrounds: {
-      default: 'background-dark',
+      default: 'dark-mode',
     },
   },
 };
