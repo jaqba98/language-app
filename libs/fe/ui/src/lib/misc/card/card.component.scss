@@ -1,3 +1,4 @@
+// TODO: I am here
 @use '@english-learning/fe-styles/src/lib/main';
 
 $classes: (
@@ -8,16 +9,10 @@ $classes: (
       border-radius: 1rem,
     ),
     elements: (
-      default-light: (
+      default: (
         styles: (
           background-color: main.pick-neutrals-light-foreground-color(),
           border: 1px solid main.pick-neutrals-light-border-color(),
-        ),
-      ),
-      default-dark: (
-        styles: (
-          background-color: main.pick-neutrals-dark-foreground-color(),
-          border: 1px solid main.pick-neutrals-dark-border-color(),
         ),
       ),
     ),
