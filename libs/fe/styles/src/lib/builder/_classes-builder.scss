@@ -2,8 +2,24 @@
 @use '../utils/bem';
 @use '../utils/map';
 
-@mixin build-classes($blocks) {
-  @include -build-blocks($blocks);
+@mixin build-classes($scopes) {
+  @include -build-scopes($scopes);
+}
+
+@mixin -build-scopes($scopes) {
+  $root: map.get-map-element($scopes, 'root', (), false);
+  $light-mode: map.get-map-element($scopes, 'light-mode', (), false);
+  $dark-mode: map.get-map-element($scopes, 'dark-mode', (), false);
+
+  @include -build-blocks($root);
+  @include -build-scope('light-mode', $light-mode);
+  @include -build-scope('dark-mode', $dark-mode);
+}
+
+@mixin -build-scope($key, $scope) {
+  :host-context(.#{$key}) {
+    @include -build-blocks($scope);
+  }
 }
 
 @mixin -build-blocks($blocks) {

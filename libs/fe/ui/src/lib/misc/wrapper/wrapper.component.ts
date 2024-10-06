@@ -1,4 +1,3 @@
-// todo: refactor it
 import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({

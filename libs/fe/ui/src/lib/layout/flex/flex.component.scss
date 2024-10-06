@@ -1,32 +1,34 @@
 @use '@english-learning/fe-styles/src/lib/main';
 
 $classes: (
-  flex: (
-    styles: (
-      display: flex,
-      height: 100%,
-    ),
-    elements: (
-      gap: (
-        modifiers: (
-          none: (
-            styles: (
-              gap: main.$gap-none,
+  root: (
+    flex: (
+      styles: (
+        display: flex,
+        height: 100%,
+      ),
+      elements: (
+        gap: (
+          modifiers: (
+            none: (
+              styles: (
+                gap: main.$gap-none,
+              ),
             ),
-          ),
-          small: (
-            styles: (
-              gap: main.$gap-small,
+            small: (
+              styles: (
+                gap: main.$gap-small,
+              ),
             ),
-          ),
-          medium: (
-            styles: (
-              gap: main.$gap-medium,
+            medium: (
+              styles: (
+                gap: main.$gap-medium,
+              ),
             ),
-          ),
-          large: (
-            styles: (
-              gap: main.$gap-large,
+            large: (
+              styles: (
+                gap: main.$gap-large,
+              ),
             ),
           ),
         ),

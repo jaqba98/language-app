@@ -1,4 +1,3 @@
-// todo: refactor it
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Properties } from 'csstype';
