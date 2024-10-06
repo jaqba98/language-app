@@ -4,21 +4,23 @@ $host: (
   display: contents,
 );
 $classes: (
-  grid-item: (
-    elements: (
-      left: (
-        styles: (
-          justify-self: flex-start,
+  root: (
+    grid-item: (
+      elements: (
+        left: (
+          styles: (
+            justify-self: flex-start,
+          ),
         ),
-      ),
-      center: (
-        styles: (
-          justify-self: center,
+        center: (
+          styles: (
+            justify-self: center,
+          ),
         ),
-      ),
-      right: (
-        styles: (
-          justify-self: flex-end,
+        right: (
+          styles: (
+            justify-self: flex-end,
+          ),
         ),
       ),
     ),

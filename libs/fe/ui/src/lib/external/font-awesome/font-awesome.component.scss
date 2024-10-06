@@ -1,21 +1,23 @@
 @use '@english-learning/fe-styles/src/lib/main';
 
 $classes: (
-  font-awesome: (
-    elements: (
-      gray: (
-        styles: (
-          color: main.$gray,
+  root: (
+    font-awesome: (
+      elements: (
+        gray: (
+          styles: (
+            color: main.$gray,
+          ),
         ),
-      ),
-      green: (
-        styles: (
-          color: main.$green,
+        green: (
+          styles: (
+            color: main.$green,
+          ),
         ),
-      ),
-      gold: (
-        styles: (
-          color: main.$gold,
+        gold: (
+          styles: (
+            color: main.$gold,
+          ),
         ),
       ),
     ),

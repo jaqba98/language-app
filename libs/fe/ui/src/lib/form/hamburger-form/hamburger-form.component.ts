@@ -1,4 +1,3 @@
-// todo: refactor it
 import { Component, EventEmitter, Output } from '@angular/core';
 
 import { BaseFormComponent } from '../base-form/base-form.component';
