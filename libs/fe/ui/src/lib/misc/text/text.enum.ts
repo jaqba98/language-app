@@ -5,3 +5,9 @@ export enum TextTypeEnum {
   header2 = 'header2',
   header3 = 'header3',
 }
+
+export enum TextColorEnum {
+  default = 'default',
+  light = 'light',
+  lighter = 'lighter',
+}

@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
 import { ComponentDirective } from '../../base/component.directive';
-import { TextType } from './text.type';
+import { TextColorType, TextType } from './text.type';
 
 @Component({
   selector: 'lib-text',
@@ -16,8 +16,11 @@ export class TextComponent extends EventEmitterDirective<boolean> {
 
   @Input() type: TextType = 'paragraph';
 
+  @Input() color: TextColorType = 'default';
+
   protected override afterInit() {
     this.addClassName('text', this.type);
+    this.addClassName('text', this.color);
   }
 
   onClick() {
