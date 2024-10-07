@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 
+import { TextComponent } from '../../misc/text/text.component';
+
 @Component({
   selector: 'lib-input',
   standalone: true,
+  imports: [TextComponent],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })

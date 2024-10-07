@@ -1,47 +1,19 @@
-<ng-container [ngSwitch]="type">
-  <ng-container *ngSwitchCase="'tiny'">
-    <p
-      class="text text__tiny"
-      [style.margin]="margin"
-      [ngClass]="textColor"
-      (click)="onClick()">
-      {{ value }}
-    </p>
+<div class="text" (click)="onClick()">
+  <ng-container [ngSwitch]="type">
+    <ng-container *ngSwitchCase="'tiny'">
+      <small [ngClass]="classNames">{{ value }}</small>
+    </ng-container>
+    <ng-container *ngSwitchCase="'paragraph'">
+      <p [ngClass]="classNames">{{ value }}</p>
+    </ng-container>
+    <ng-container *ngSwitchCase="'header1'">
+      <h1 [ngClass]="classNames">{{ value }}</h1>
+    </ng-container>
+    <ng-container *ngSwitchCase="'header2'">
+      <h2 [ngClass]="classNames">{{ value }}</h2>
+    </ng-container>
+    <ng-container *ngSwitchCase="'header3'">
+      <h3 [ngClass]="classNames">{{ value }}</h3>
+    </ng-container>
   </ng-container>
-  <ng-container *ngSwitchCase="'paragraph'">
-    <p
-      class="text text__paragraph"
-      [ngClass]="textColor"
-      [style.margin]="margin"
-      (click)="onClick()">
-      {{ value }}
-    </p>
-  </ng-container>
-  <ng-container *ngSwitchCase="'header1'">
-    <h1
-      class="text text__header1"
-      [ngClass]="textColor"
-      [style.margin]="margin"
-      (click)="onClick()">
-      {{ value }}
-    </h1>
-  </ng-container>
-  <ng-container *ngSwitchCase="'header2'">
-    <h2
-      class="text text__header2"
-      [ngClass]="textColor"
-      [style.margin]="margin"
-      (click)="onClick()">
-      {{ value }}
-    </h2>
-  </ng-container>
-  <ng-container *ngSwitchCase="'header3'">
-    <h3
-      class="text text__header3"
-      [ngClass]="textColor"
-      [style.margin]="margin"
-      (click)="onClick()">
-      {{ value }}
-    </h3>
-  </ng-container>
-</ng-container>
+</div>
