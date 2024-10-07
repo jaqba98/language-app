@@ -1,3 +1,1 @@
-import { CardEnum } from './card.enum';
-
-export type CardType = keyof typeof CardEnum;
+export type CardType = 'default' | 'nav';
