@@ -37,15 +37,43 @@ $classes: (
   ),
   light-mode: (
     text: (
-      styles: (
-        color: main.pick-neutrals-light-copy-color(),
+      elements: (
+        default: (
+          styles: (
+            color: main.pick-neutrals-light-copy-color(),
+          ),
+        ),
+        light: (
+          styles: (
+            color: main.pick-neutrals-light-copy-light-color(),
+          ),
+        ),
+        lighter: (
+          styles: (
+            color: main.pick-neutrals-light-copy-lighter-color(),
+          ),
+        ),
       ),
     ),
   ),
   dark-mode: (
     text: (
-      styles: (
-        color: main.pick-neutrals-dark-copy-color(),
+      elements: (
+        default: (
+          styles: (
+            color: main.pick-neutrals-dark-copy-color(),
+          ),
+        ),
+        light: (
+          styles: (
+            color: main.pick-neutrals-dark-copy-light-color(),
+          ),
+        ),
+        lighter: (
+          styles: (
+            color: main.pick-neutrals-dark-copy-lighter-color(),
+          ),
+        ),
       ),
     ),
   ),

@@ -1,19 +1,18 @@
-<lib-text value="Login" type="paragraph"></lib-text>
-<input type="text" />
-
-<!-- <ng-container *ngIf="control.label.isVisible">
-  <lib-text
-    type="tiny"
-    (clickEvent)="onClick()"
-    [value]="control.label.value"
-    [textColor]="textColor"></lib-text>
-</ng-container>
-<input
-  #self
-  class="input"
-  [value]="control.input.defaultValue"
-  [type]="control.input.type"
-  [placeholder]="control.input.placeholder"
-  [formControl]="form"
-  (focus)="onFocus()"
-  (blur)="onBlur()" /> -->
+<lib-flex flexDirection="column" gap="small">
+  <!-- Label -->
+  <ng-container *ngIf="control.label.isVisible">
+    <lib-text
+      color="light"
+      [value]="control.label.value"
+      type="paragraph"
+      (event)="onClick()"></lib-text>
+  </ng-container>
+  <!-- Input -->
+  <input
+    #self
+    class="input"
+    [formControl]="form"
+    [value]="control.input.defaultValue"
+    [type]="control.input.type"
+    [placeholder]="control.input.placeholder" />
+</lib-flex>
