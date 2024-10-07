@@ -25,3 +25,20 @@ export const DefaultDark: Story = {
     },
   },
 };
+
+export const NavLight: Story = {
+  args: {
+    type: 'nav',
+  },
+};
+
+export const NavDark: Story = {
+  args: {
+    type: 'nav',
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark-mode',
+    },
+  },
+};

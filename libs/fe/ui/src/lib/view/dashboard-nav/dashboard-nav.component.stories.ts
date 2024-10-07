@@ -5,11 +5,22 @@ import { DashboardNavComponent } from './dashboard-nav.component';
 const meta: Meta<DashboardNavComponent> = {
   component: DashboardNavComponent,
   title: 'fe/ui/view/dashboard-nav',
+  parameters: {
+    layout: 'fullscreen',
+  },
 };
 export default meta;
 type Story = StoryObj<DashboardNavComponent>;
 
-export const Default: Story = {};
+export const DefaultLight: Story = {};
+
+export const DefaultDark: Story = {
+  parameters: {
+    backgrounds: {
+      default: 'dark-mode',
+    },
+  },
+};
 
 // import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
 // import { ActivatedRoute } from '@angular/router';
