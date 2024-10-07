@@ -1,18 +1,24 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Properties } from 'csstype';
 
 import { BaseFormModel } from '../../model/form/base-form.model';
+import { EventEmitterDirective } from '../../base/event-emitter.directive';
 
 @Component({
   selector: 'lib-base-form',
   standalone: true,
   templateUrl: './base-form.component.html',
 })
-export class BaseFormComponent {
+// TODO: change the any type to real type
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export class BaseFormComponent extends EventEmitterDirective<any> {
   @Input({ required: true }) baseForm!: BaseFormModel;
+
+  @Input() flexDirection: Properties['flexDirection'] = 'column';
 
   @Input() resetIfError = false;
 
-  @Output() baseFormEvent = new EventEmitter();
+  @Input() formValidation = true;
 }
 
 // import { CommonModule } from '@angular/common';
