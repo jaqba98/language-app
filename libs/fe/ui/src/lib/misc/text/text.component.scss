@@ -1,5 +1,54 @@
 @use '@english-learning/fe-styles/src/lib/main';
 
-.text {
-  @include main.text;
-}
+$classes: (
+  root: (
+    text: (
+      styles: (
+        font-family: main.$font-family,
+      ),
+      elements: (
+        tiny: (
+          styles: (
+            font-size: main.$font-tiny-size,
+          ),
+        ),
+        paragraph: (
+          styles: (
+            font-size: main.$font-paragraph-size,
+          ),
+        ),
+        header1: (
+          styles: (
+            font-size: main.$font-header1-size,
+          ),
+        ),
+        header2: (
+          styles: (
+            font-size: main.$font-header2-size,
+          ),
+        ),
+        header3: (
+          styles: (
+            font-size: main.$font-header3-size,
+          ),
+        ),
+      ),
+    ),
+  ),
+  light-mode: (
+    text: (
+      styles: (
+        color: main.pick-neutrals-light-copy-color(),
+      ),
+    ),
+  ),
+  dark-mode: (
+    text: (
+      styles: (
+        color: main.pick-neutrals-dark-copy-color(),
+      ),
+    ),
+  ),
+);
+
+@include main.build-classes($classes);

@@ -1,28 +1,26 @@
-import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Properties } from 'csstype';
+import { Component, Input } from '@angular/core';
 
-import { TextType, TextColorType } from './text.type';
+import { EventEmitterDirective } from '../../base/event-emitter.directive';
+import { ComponentDirective } from '../../base/component.directive';
+import { TextType } from './text.type';
 
 @Component({
   selector: 'lib-text',
   standalone: true,
-  imports: [CommonModule],
+  imports: [...ComponentDirective.buildImports()],
   templateUrl: './text.component.html',
   styleUrl: './text.component.scss',
 })
-export class TextComponent {
+export class TextComponent extends EventEmitterDirective<boolean> {
   @Input({ required: true }) value!: string;
 
   @Input() type: TextType = 'paragraph';
 
-  @Input() textColor: TextColorType = 'text__default';
-
-  @Input() margin: Properties['margin'];
-
-  @Output() clickEvent = new EventEmitter();
+  protected override afterInit() {
+    this.addClassName('text', this.type);
+  }
 
   onClick() {
-    this.clickEvent.emit();
+    this.emit(true);
   }
 }
