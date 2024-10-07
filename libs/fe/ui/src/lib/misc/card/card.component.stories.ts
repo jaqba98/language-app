@@ -1,44 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 
+import { buildMeta, buildStory } from '@english-learning/fe-utils';
 import { CardComponent } from './card.component';
 
 const meta: Meta<CardComponent> = {
   component: CardComponent,
   title: 'fe/ui/misc/card',
+  ...buildMeta(false),
 };
 export default meta;
 type Story = StoryObj<CardComponent>;
 
-export const DefaultLight: Story = {
-  args: {
-    type: 'default',
-  },
-};
+const buildStoryArgs = (type: CardComponent['type']): Story['args'] => ({
+  type,
+});
 
-export const DefaultDark: Story = {
-  args: {
-    type: 'default',
-  },
-  parameters: {
-    backgrounds: {
-      default: 'dark-mode',
-    },
-  },
-};
+export const DefaultLight = buildStory<CardComponent>(buildStoryArgs('default'), false);
 
-export const NavLight: Story = {
-  args: {
-    type: 'nav',
-  },
-};
+export const DefaultDark = buildStory<CardComponent>(buildStoryArgs('default'), true);
 
-export const NavDark: Story = {
-  args: {
-    type: 'nav',
-  },
-  parameters: {
-    backgrounds: {
-      default: 'dark-mode',
-    },
-  },
-};
+export const NavLight = buildStory<CardComponent>(buildStoryArgs('nav'), false);
+
+export const NavDark = buildStory<CardComponent>(buildStoryArgs('nav'), true);
