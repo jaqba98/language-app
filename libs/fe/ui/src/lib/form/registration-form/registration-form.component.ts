@@ -30,7 +30,7 @@ export class RegistrationFormComponent {
           isVisible: true,
         },
         input: {
-          defaultValue: '',
+          value: '',
           placeholder: '',
           type: 'text',
         },
@@ -48,7 +48,7 @@ export class RegistrationFormComponent {
           isVisible: true,
         },
         input: {
-          defaultValue: '',
+          value: '',
           placeholder: '',
           type: 'text',
         },
@@ -66,7 +66,7 @@ export class RegistrationFormComponent {
           isVisible: true,
         },
         input: {
-          defaultValue: '',
+          value: '',
           placeholder: '',
           type: 'password',
         },
@@ -84,7 +84,7 @@ export class RegistrationFormComponent {
           isVisible: true,
         },
         input: {
-          defaultValue: '',
+          value: '',
           placeholder: '',
           type: 'password',
         },

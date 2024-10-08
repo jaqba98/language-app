@@ -42,7 +42,7 @@ export class ForgotPasswordFormComponent {
           isVisible: true,
         },
         input: {
-          defaultValue: '',
+          value: '',
           placeholder: '',
           type: 'text',
         },

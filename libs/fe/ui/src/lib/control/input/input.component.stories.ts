@@ -14,11 +14,11 @@ export default meta;
 type Story = StoryObj<InputComponent>;
 
 const buildStoryArgs = (): Story['args'] => ({
-  form: new FormControl(''),
+  form: new FormControl('admin'),
   control: {
     kind: ControlKindEnum.input,
-    id: 'input',
-    alignItems: 'flex-start',
+    id: 'login',
+    alignItems: 'stretch',
     validation: {
       validators: [],
       isVisible: true,
@@ -28,8 +28,8 @@ const buildStoryArgs = (): Story['args'] => ({
       isVisible: true,
     },
     input: {
-      defaultValue: '',
-      placeholder: '',
+      value: 'admin',
+      placeholder: 'Enter your login',
       type: 'text',
     },
   },

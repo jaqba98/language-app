@@ -30,7 +30,7 @@ export class LoginFormComponent {
           isVisible: true,
         },
         input: {
-          defaultValue: '',
+          value: '',
           placeholder: '',
           type: 'text',
         },
@@ -48,7 +48,7 @@ export class LoginFormComponent {
           isVisible: true,
         },
         input: {
-          defaultValue: '',
+          value: '',
           placeholder: '',
           type: 'password',
         },

@@ -30,7 +30,7 @@ export class ChangePasswordFormComponent {
           isVisible: true,
         },
         input: {
-          defaultValue: '',
+          value: '',
           placeholder: '',
           type: 'password',
         },
@@ -48,7 +48,7 @@ export class ChangePasswordFormComponent {
           isVisible: true,
         },
         input: {
-          defaultValue: '',
+          value: '',
           placeholder: '',
           type: 'password',
         },

@@ -9,7 +9,7 @@ export interface ControlInputModel extends ControlBaseModel {
     isVisible: boolean;
   };
   input: {
-    defaultValue: string;
+    value: string;
     placeholder: string;
     type: InputType;
   };

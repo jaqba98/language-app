@@ -1,18 +1,18 @@
-<lib-flex flexDirection="column" gap="small">
-  <!-- Label -->
+<lib-flex flexDirection="column" [alignItems]="control.alignItems" gap="small">
   <ng-container *ngIf="control.label.isVisible">
-    <lib-text
-      color="light"
-      [value]="control.label.value"
-      type="paragraph"
-      (event)="onClick()"></lib-text>
+    <div>
+      <lib-text
+        [inlineBlock]="true"
+        [value]="control.label.value"
+        color="lighter"
+        (event)="onClick()"></lib-text>
+    </div>
   </ng-container>
-  <!-- Input -->
   <input
     #self
     class="input"
     [formControl]="form"
-    [value]="control.input.defaultValue"
-    [type]="control.input.type"
-    [placeholder]="control.input.placeholder" />
+    [value]="control.input.value"
+    [placeholder]="control.input.placeholder"
+    [type]="control.input.type" />
 </lib-flex>

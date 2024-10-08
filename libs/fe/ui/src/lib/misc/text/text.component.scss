@@ -7,6 +7,11 @@ $classes: (
         font-family: main.$font-family,
       ),
       elements: (
+        inline-block: (
+          styles: (
+            display: inline-block,
+          ),
+        ),
         tiny: (
           styles: (
             font-size: main.$font-tiny-size,
