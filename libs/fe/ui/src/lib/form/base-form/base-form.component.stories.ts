@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 
 import { buildMeta, buildStory } from '@english-learning/fe-utils';
 import { BaseFormComponent } from './base-form.component';
-import { storyInputControl } from '../../control/input/input.component.stories';
+import { inputControlStory } from '../../control/input/input-control-story.service';
 
 const meta: Meta<BaseFormComponent> = {
   component: BaseFormComponent,
@@ -14,7 +14,7 @@ type Story = StoryObj<BaseFormComponent>;
 
 const buildStoryArgs = (): Story['args'] => ({
   baseForm: {
-    controls: [storyInputControl],
+    controls: [inputControlStory],
   },
 });
 
