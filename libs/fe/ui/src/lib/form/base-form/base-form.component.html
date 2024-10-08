@@ -1,4 +1,8 @@
-<p>base-form works!</p>
+<ng-container *ngFor="let control of baseForm.controls">
+  <ng-container *ngIf="control.kind === 'input'">
+    <lib-input [form]="getFormControl(control.id)" [control]="control"></lib-input>
+  </ng-container>
+</ng-container>
 
 <!-- <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
   <lib-flex [flexDirection]="flexDirection" gap="medium">

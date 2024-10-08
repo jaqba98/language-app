@@ -1,12 +1,22 @@
-import { Component, Input } from '@angular/core';
+import { Component, Injector, Input } from '@angular/core';
 import { Properties } from 'csstype';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
-import { BaseFormModel } from '../../model/form/base-form.model';
+import {
+  elementByIdExistError,
+  elementByIdNotExistError,
+  unsupportedTypeError,
+} from '@english-learning/fe-domain';
+import { BaseFormModel, ControlType } from '../../model/form/base-form.model';
+import { ComponentDirective } from '../../base/component.directive';
+import { InputComponent } from '../../control/input/input.component';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
 
 @Component({
   selector: 'lib-base-form',
   standalone: true,
+  imports: [...ComponentDirective.buildImports(), InputComponent],
   templateUrl: './base-form.component.html',
 })
 // TODO: change the any type to real type
@@ -19,6 +29,41 @@ export class BaseFormComponent extends EventEmitterDirective<any> {
   @Input() resetIfError = false;
 
   @Input() formValidation = true;
+
+  formGroup: FormGroup;
+
+  constructor(
+    protected override readonly injector: Injector,
+    private readonly fb: FormBuilder,
+  ) {
+    super(injector);
+    this.formGroup = this.fb.group({});
+  }
+
+  protected override afterInit() {
+    this.baseForm.controls.forEach(control => {
+      const { id } = control;
+      if (this.formGroup.get(id)) {
+        throw new Error(elementByIdExistError('Form control', id));
+      }
+      this.formGroup.addControl(id, this.buildFormControl(control));
+    });
+  }
+
+  getFormControl(id: string) {
+    const formControl = this.formGroup.get(id);
+    if (formControl) return formControl as FormControl;
+    throw new Error(elementByIdNotExistError('Form control', id));
+  }
+
+  private buildFormControl(control: ControlType) {
+    switch (control.kind) {
+      case ControlKindEnum.input:
+        return new FormControl(control.input.value, control.validation.validators);
+      default:
+        throw new Error(unsupportedTypeError('form control', control.kind));
+    }
+  }
 }
 
 // import { CommonModule } from '@angular/common';
