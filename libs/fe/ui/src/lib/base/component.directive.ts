@@ -1,10 +1,19 @@
 import { CommonModule } from '@angular/common';
-import { Directive, OnInit, OnDestroy, Injector } from '@angular/core';
+import {
+  Directive,
+  OnInit,
+  OnDestroy,
+  Injector,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 
 import { BemService } from '../service/bem.service';
 
 @Directive()
 export class ComponentDirective implements OnInit, OnDestroy {
+  @ViewChild('self') self!: ElementRef;
+
   protected readonly classNames: string[] = [];
 
   private readonly bem: BemService;

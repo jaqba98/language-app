@@ -18,6 +18,8 @@ export class TextComponent extends EventEmitterDirective<boolean> {
 
   @Input() color: TextColorType = 'default';
 
+  @Input() inlineBlock = false;
+
   protected override afterInit() {
     this.addClassName('text', this.type);
     this.addClassName('text', this.color);

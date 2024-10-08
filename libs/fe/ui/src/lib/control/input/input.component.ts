@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TextComponent } from '../../misc/text/text.component';
@@ -12,15 +12,13 @@ import { FlexComponent } from '../../layout/flex/flex.component';
   imports: [
     ...ComponentDirective.buildImports(),
     ReactiveFormsModule,
-    TextComponent,
     FlexComponent,
+    TextComponent,
   ],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })
-export class InputComponent {
-  @ViewChild('self') self!: ElementRef;
-
+export class InputComponent extends ComponentDirective {
   @Input({ required: true }) form!: FormControl;
 
   @Input({ required: true }) control!: ControlInputModel;
