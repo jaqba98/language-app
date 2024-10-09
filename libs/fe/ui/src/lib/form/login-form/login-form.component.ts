@@ -74,7 +74,7 @@ export class LoginFormComponent {
           isVisible: false,
         },
         label: 'Log in',
-        isSubmit: true,
+        type: 'submit',
       },
       {
         kind: ControlKindEnum.link,

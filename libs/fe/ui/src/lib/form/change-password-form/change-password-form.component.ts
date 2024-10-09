@@ -62,7 +62,7 @@ export class ChangePasswordFormComponent {
           isVisible: false,
         },
         label: 'Change password',
-        isSubmit: true,
+        type: 'submit',
       },
     ],
   };

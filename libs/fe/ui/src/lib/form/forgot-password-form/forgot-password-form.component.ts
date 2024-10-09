@@ -56,7 +56,7 @@ export class ForgotPasswordFormComponent {
           isVisible: false,
         },
         label: 'Reset password',
-        isSubmit: true,
+        type: 'submit',
       },
     ],
   };

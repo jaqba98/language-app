@@ -12,11 +12,18 @@ import { ComponentDirective } from '../../base/component.directive';
 import { InputComponent } from '../../control/input/input.component';
 import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
+import { ButtonTextComponent } from '../../control/button-text/button-text.component';
+import { FlexComponent } from '../../layout/flex/flex.component';
 
 @Component({
   selector: 'lib-base-form',
   standalone: true,
-  imports: [...ComponentDirective.buildImports(), InputComponent],
+  imports: [
+    ...ComponentDirective.buildImports(),
+    FlexComponent,
+    InputComponent,
+    ButtonTextComponent,
+  ],
   templateUrl: './base-form.component.html',
 })
 // TODO: change the any type to real type
@@ -60,6 +67,8 @@ export class BaseFormComponent extends EventEmitterDirective<any> {
     switch (control.kind) {
       case ControlKindEnum.input:
         return new FormControl(control.input.value, control.validation.validators);
+      case ControlKindEnum.buttonText:
+        return new FormControl(false, control.validation.validators);
       default:
         throw new Error(unsupportedTypeError('form control', control.kind));
     }

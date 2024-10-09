@@ -1,5 +1,8 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
+
+import { EventEmitterDirective } from '../../base/event-emitter.directive';
+import { ButtonType } from './button.type';
 
 @Component({
   selector: 'lib-button',
@@ -7,28 +10,14 @@ import { FormControl } from '@angular/forms';
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
 })
-export class ButtonComponent {
+export class ButtonComponent extends EventEmitterDirective<boolean> {
   @Input({ required: true }) control!: FormControl;
 
-  @Input() isSubmit = false;
-
-  @Output() clickEvent = new EventEmitter();
-
-  @Output() mouseEnterEvent = new EventEmitter();
-
-  @Output() mouseLeaveEvent = new EventEmitter();
+  @Input() type: ButtonType = 'button';
 
   onClick() {
     this.control.setValue(true);
-    if (this.isSubmit) return;
-    this.clickEvent.emit();
-  }
-
-  onMouseEnter() {
-    this.mouseEnterEvent.emit();
-  }
-
-  onMouseLeave() {
-    this.mouseLeaveEvent.emit();
+    if (this.type === 'submit') return;
+    this.emit(true);
   }
 }
