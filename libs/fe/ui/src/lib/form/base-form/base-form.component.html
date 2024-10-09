@@ -3,12 +3,12 @@
     <ng-container *ngFor="let control of baseForm.controls">
       <ng-container *ngIf="control.kind === 'input'">
         <lib-input
-          [formControl]="getFormControl(control.id)"
+          [controlForm]="getFormControl(control.id)"
           [control]="control"></lib-input>
       </ng-container>
       <ng-container *ngIf="control.kind === 'buttonText'">
         <lib-button-text
-          [formControl]="getFormControl(control.id)"
+          [controlForm]="getFormControl(control.id)"
           [control]="control"></lib-button-text>
       </ng-container>
     </ng-container>

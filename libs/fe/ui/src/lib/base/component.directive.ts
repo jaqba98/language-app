@@ -16,7 +16,7 @@ import { BemService } from '../service/bem.service';
 export class ComponentDirective implements OnInit, OnDestroy {
   @ViewChild('self') self!: ElementRef;
 
-  @Input() formControl!: FormControl;
+  @Input() controlForm!: FormControl;
 
   protected readonly classNames: string[] = [];
 
