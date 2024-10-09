@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { buildMeta, buildStory } from '@english-learning/fe-utils';
 import { BaseFormComponent } from './base-form.component';
 import { inputControlStory } from '../../control/input/input-control-story.service';
+import { textControlStory } from '../../control/button-text/text-control-story.service';
 
 const meta: Meta<BaseFormComponent> = {
   component: BaseFormComponent,
@@ -14,7 +15,7 @@ type Story = StoryObj<BaseFormComponent>;
 
 const buildStoryArgs = (): Story['args'] => ({
   baseForm: {
-    controls: [inputControlStory],
+    controls: [inputControlStory, textControlStory],
   },
 });
 
@@ -67,7 +68,7 @@ export const DefaultDark = buildStory<BaseFormComponent>(buildStoryArgs(), false
 //             isVisible: false,
 //           },
 //           label: 'ButtonText',
-//           isSubmit: true,
+//           type: 'submit',
 //         },
 //         {
 //           kind: ControlKindEnum.buttonIcon,
@@ -79,7 +80,7 @@ export const DefaultDark = buildStory<BaseFormComponent>(buildStoryArgs(), false
 //           },
 //           icon: 'icon/main-nav-logo.svg',
 //           alt: 'School',
-//           isSubmit: true,
+//           type: 'submit',
 //         },
 //         {
 //           kind: ControlKindEnum.link,

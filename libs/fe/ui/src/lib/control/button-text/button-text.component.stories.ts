@@ -1,39 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { FormControl } from '@angular/forms';
 
+import { buildMeta, buildStory } from '@english-learning/fe-utils';
 import { ButtonTextComponent } from './button-text.component';
-import { ControlKindEnum } from '../../enum/control-kind.enum';
+import { textControlStory } from './text-control-story.service';
 
 const meta: Meta<ButtonTextComponent> = {
   component: ButtonTextComponent,
   title: 'fe/ui/control/button-text',
-  argTypes: {
-    clickEvent: {
-      action: 'clickEvent',
-    },
-  },
-  parameters: {
-    backgrounds: {
-      default: 'primary',
-    },
-  },
+  ...buildMeta(false),
 };
 export default meta;
 type Story = StoryObj<ButtonTextComponent>;
 
-export const Primary: Story = {
-  args: {
-    form: new FormControl(false),
-    control: {
-      kind: ControlKindEnum.buttonText,
-      id: 'submit',
-      alignItems: 'flex-start',
-      validation: {
-        validators: [],
-        isVisible: false,
-      },
-      label: 'Submit',
-      isSubmit: true,
-    },
-  },
-};
+const buildStoryArgs = (): Story['args'] => ({
+  form: new FormControl(false),
+  control: textControlStory,
+});
+
+export const ButtonTextLight = buildStory<ButtonTextComponent>(buildStoryArgs(), true);
+
+export const ButtonTextDark = buildStory<ButtonTextComponent>(buildStoryArgs(), false);

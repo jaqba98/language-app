@@ -98,7 +98,7 @@ export class RegistrationFormComponent {
           isVisible: false,
         },
         label: 'Register',
-        isSubmit: true,
+        type: 'submit',
       },
     ],
   };

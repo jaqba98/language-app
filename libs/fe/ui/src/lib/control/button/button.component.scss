@@ -1,5 +1,31 @@
 @use '@english-learning/fe-styles/src/lib/main';
 
-.button {
-  @include main.button;
-}
+$classes: (
+  root: (
+    button: (
+      styles: (
+        padding: 1rem,
+        border-radius: 0.25rem,
+        cursor: pointer,
+      ),
+    ),
+  ),
+  light-mode: (
+    button: (
+      styles: (
+        background-color: main.pick-neutrals-light-foreground-color(),
+        border: 1px solid main.pick-neutrals-light-border-color(),
+      ),
+    ),
+  ),
+  dark-mode: (
+    button: (
+      styles: (
+        background-color: main.pick-neutrals-dark-foreground-color(),
+        border: 1px solid main.pick-neutrals-dark-border-color(),
+      ),
+    ),
+  ),
+);
+
+@include main.build-classes($classes);
