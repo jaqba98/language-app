@@ -2,11 +2,13 @@
   <lib-flex flexDirection="column" gap="small">
     <ng-container *ngFor="let control of baseForm.controls">
       <ng-container *ngIf="control.kind === 'input'">
-        <lib-input [form]="getFormControl(control.id)" [control]="control"></lib-input>
+        <lib-input
+          [formControl]="getFormControl(control.id)"
+          [control]="control"></lib-input>
       </ng-container>
       <ng-container *ngIf="control.kind === 'buttonText'">
         <lib-button-text
-          [form]="getFormControl(control.id)"
+          [formControl]="getFormControl(control.id)"
           [control]="control"></lib-button-text>
       </ng-container>
     </ng-container>

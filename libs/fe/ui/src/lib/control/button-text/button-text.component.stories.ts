@@ -14,7 +14,7 @@ export default meta;
 type Story = StoryObj<ButtonTextComponent>;
 
 const buildStoryArgs = (): Story['args'] => ({
-  form: new FormControl(false),
+  formControl: new FormControl(false),
   control: textControlStory('button'),
 });
 

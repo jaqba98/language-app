@@ -14,7 +14,7 @@ export default meta;
 type Story = StoryObj<InputComponent>;
 
 const buildStoryArgs = (): Story['args'] => ({
-  form: new FormControl('admin'),
+  formControl: new FormControl('admin'),
   control: inputControlStory,
 });
 
