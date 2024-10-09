@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { TextComponent } from '../../misc/text/text.component';
 import { ControlInputModel } from '../../model/control/control-input.model';
 import { ComponentDirective } from '../../base/component.directive';
@@ -19,8 +19,6 @@ import { FlexComponent } from '../../layout/flex/flex.component';
   styleUrl: './input.component.scss',
 })
 export class InputComponent extends ComponentDirective {
-  @Input({ required: true }) form!: FormControl;
-
   @Input({ required: true }) control!: ControlInputModel;
 
   onClick() {

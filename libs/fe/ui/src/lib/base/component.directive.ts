@@ -6,13 +6,17 @@ import {
   Injector,
   ViewChild,
   ElementRef,
+  Input,
 } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 import { BemService } from '../service/bem.service';
 
 @Directive()
 export class ComponentDirective implements OnInit, OnDestroy {
   @ViewChild('self') self!: ElementRef;
+
+  @Input() formControl!: FormControl;
 
   protected readonly classNames: string[] = [];
 
