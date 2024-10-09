@@ -1,6 +1,6 @@
 import { Component, Injector, Input } from '@angular/core';
 import { Properties } from 'csstype';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import {
   elementByIdExistError,
@@ -20,15 +20,14 @@ import { FlexComponent } from '../../layout/flex/flex.component';
   standalone: true,
   imports: [
     ...ComponentDirective.buildImports(),
+    ReactiveFormsModule,
     FlexComponent,
     InputComponent,
     ButtonTextComponent,
   ],
   templateUrl: './base-form.component.html',
 })
-// TODO: change the any type to real type
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export class BaseFormComponent extends EventEmitterDirective<any> {
+export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']> {
   @Input({ required: true }) baseForm!: BaseFormModel;
 
   @Input() flexDirection: Properties['flexDirection'] = 'column';
@@ -38,6 +37,10 @@ export class BaseFormComponent extends EventEmitterDirective<any> {
   @Input() formValidation = true;
 
   formGroup: FormGroup;
+
+  formGroupInvalid = false;
+
+  formGroupValid = false;
 
   constructor(
     protected override readonly injector: Injector,
@@ -57,6 +60,19 @@ export class BaseFormComponent extends EventEmitterDirective<any> {
     });
   }
 
+  onSubmit() {
+    this.resetFormGroup();
+    const { invalid, touched } = this.formGroup;
+    if (invalid && touched) {
+      this.formGroupInvalid = true;
+      if (this.resetIfError) this.resetFormControls();
+      return;
+    }
+    this.formGroupValid = true;
+    this.emit(this.formGroup.value);
+    this.resetFormControls();
+  }
+
   getFormControl(id: string) {
     const formControl = this.formGroup.get(id);
     if (formControl) return formControl as FormControl;
@@ -72,6 +88,19 @@ export class BaseFormComponent extends EventEmitterDirective<any> {
       default:
         throw new Error(unsupportedTypeError('form control', control.kind));
     }
+  }
+
+  private resetFormGroup() {
+    this.formGroupInvalid = false;
+    this.formGroupValid = false;
+    this.formGroup.markAllAsTouched();
+  }
+
+  private resetFormControls() {
+    this.baseForm.controls.forEach(control => {
+      this.formGroup.setControl(control.id, this.buildFormControl(control));
+    });
+    this.formGroup.markAsUntouched();
   }
 }
 

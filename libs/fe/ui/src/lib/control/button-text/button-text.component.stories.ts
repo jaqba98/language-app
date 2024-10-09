@@ -15,7 +15,7 @@ type Story = StoryObj<ButtonTextComponent>;
 
 const buildStoryArgs = (): Story['args'] => ({
   form: new FormControl(false),
-  control: textControlStory,
+  control: textControlStory('button'),
 });
 
 export const ButtonTextLight = buildStory<ButtonTextComponent>(buildStoryArgs(), true);
