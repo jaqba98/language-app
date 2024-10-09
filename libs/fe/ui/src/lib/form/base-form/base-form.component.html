@@ -9,7 +9,8 @@
       <ng-container *ngIf="control.kind === 'buttonText'">
         <lib-button-text
           [controlForm]="getFormControl(control.id)"
-          [control]="control"></lib-button-text>
+          [control]="control"
+          (event)="onSubmit()"></lib-button-text>
       </ng-container>
     </ng-container>
   </lib-flex>
