@@ -13,7 +13,7 @@ export class ButtonComponent extends EventEmitterDirective<boolean> {
   @Input() type: ButtonType = 'button';
 
   onClick() {
-    this.formControl.setValue(true);
+    this.controlForm.setValue(true);
     if (this.type === 'submit') return;
     this.emit(true);
   }
