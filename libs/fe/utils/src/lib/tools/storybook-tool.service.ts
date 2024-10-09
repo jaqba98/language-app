@@ -5,9 +5,14 @@ const buildFullscreen = (fullscreen: boolean) => (fullscreen ? 'fullscreen' : 'p
 const buildStyleMode = (isLightMode: boolean) =>
   isLightMode ? 'light-mode' : 'dark-mode';
 
-export const buildMeta = <T>(fullscreen: boolean): Meta<T> => ({
+export const buildMeta = (fullscreen: boolean): Meta => ({
   parameters: {
     layout: buildFullscreen(fullscreen),
+  },
+  argTypes: {
+    event: {
+      action: 'event',
+    },
   },
 });
 
