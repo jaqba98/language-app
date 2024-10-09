@@ -1,7 +1,8 @@
 import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { ControlButtonTextModel } from '../../model/control/control-button-text.model';
+import { ButtonType } from '../button/button.type';
 
-export const textControlStory: ControlButtonTextModel = {
+export const textControlStory = (type: ButtonType): ControlButtonTextModel => ({
   kind: ControlKindEnum.buttonText,
   id: 'button-text',
   alignItems: 'stretch',
@@ -10,5 +11,5 @@ export const textControlStory: ControlButtonTextModel = {
     isVisible: true,
   },
   label: 'Click me!',
-  type: 'button',
-};
+  type,
+});
