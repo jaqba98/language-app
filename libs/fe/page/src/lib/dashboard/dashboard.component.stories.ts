@@ -1,15 +1,28 @@
-import type { Meta } from '@storybook/angular';
+import type { Meta, StoryObj } from '@storybook/angular';
 
-import { buildMeta, buildStory } from '@english-learning/fe-utils';
+import { RouterOutlet } from '@angular/router';
+import {
+  buildActivatedRouteProvider,
+  buildMetaFullScreen,
+  buildMetaModuleMetaData,
+  buildStoryDarkMode,
+  buildStoryLightMode,
+} from '@english-learning/fe-utils';
 import { DashboardComponent } from './dashboard.component';
 
 const meta: Meta<DashboardComponent> = {
   component: DashboardComponent,
   title: 'fe/page/dashboard',
-  ...buildMeta(true),
+  ...buildMetaFullScreen(),
+  ...buildMetaModuleMetaData([RouterOutlet], [buildActivatedRouteProvider()]),
 };
 export default meta;
+type Story = StoryObj<DashboardComponent>;
 
-export const DefaultLight = buildStory<DashboardComponent>({}, true);
+export const DashboardLight: Story = {
+  ...buildStoryLightMode(),
+};
 
-export const DefaultDark = buildStory<DashboardComponent>({}, false);
+export const DashboardDark: Story = {
+  ...buildStoryDarkMode(),
+};
