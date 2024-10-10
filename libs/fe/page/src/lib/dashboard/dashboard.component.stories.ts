@@ -10,6 +10,6 @@ const meta: Meta<DashboardComponent> = {
 };
 export default meta;
 
-export const DefaultLight = buildStory<DashboardComponent>({}, false);
+export const DefaultLight = buildStory<DashboardComponent>({}, true);
 
-export const DefaultDark = buildStory<DashboardComponent>({}, true);
+export const DefaultDark = buildStory<DashboardComponent>({}, false);

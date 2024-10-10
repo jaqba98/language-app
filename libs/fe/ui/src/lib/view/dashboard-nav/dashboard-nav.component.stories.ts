@@ -10,6 +10,6 @@ const meta: Meta<DashboardNavComponent> = {
 };
 export default meta;
 
-export const DefaultLight = buildStory<DashboardNavComponent>({}, false);
+export const DefaultLight = buildStory<DashboardNavComponent>({}, true);
 
-export const DefaultDark = buildStory<DashboardNavComponent>({}, true);
+export const DefaultDark = buildStory<DashboardNavComponent>({}, false);
