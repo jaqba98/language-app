@@ -5,12 +5,17 @@ $classes: (
     card: (
       styles: (
         width: 100%,
-        padding: 2rem,
       ),
       elements: (
         default: (
           styles: (
             border-radius: 1rem,
+            padding: 2rem,
+          ),
+        ),
+        nav: (
+          styles: (
+            padding: 1rem,
           ),
         ),
       ),

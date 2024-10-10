@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 
 import { CardComponent } from '../../misc/card/card.component';
+import { DashboardNavFormComponent } from '../../form/dashboard-nav-form/dashboard-nav-form.component';
 
 @Component({
   selector: 'lib-dashboard-nav',
   standalone: true,
-  imports: [CardComponent],
+  imports: [CardComponent, DashboardNavFormComponent],
   templateUrl: './dashboard-nav.component.html',
 })
 export class DashboardNavComponent {}
