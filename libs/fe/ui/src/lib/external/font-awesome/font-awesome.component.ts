@@ -1,9 +1,9 @@
 import { Component, Injector, Input } from '@angular/core';
 import { FontAwesomeModule, SizeProp } from '@fortawesome/angular-fontawesome';
 import { IconProp } from '@fortawesome/angular-fontawesome/types';
-import { faLock, faPlay, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faLock, faPlay, faSchool, faStar } from '@fortawesome/free-solid-svg-icons';
 
-import { notSupportedType } from '@english-learning/fe-domain';
+import { notValueInEnum } from '@english-learning/fe-domain';
 import { ComponentDirective } from '../../base/component.directive';
 import { FontAwesomeColorType, FontAwesomeType } from './font-awesome.type';
 
@@ -17,7 +17,7 @@ import { FontAwesomeColorType, FontAwesomeType } from './font-awesome.type';
 export class FontAwesomeComponent extends ComponentDirective {
   @Input() type: FontAwesomeType = 'lock';
 
-  @Input() color: FontAwesomeColorType = 'gray';
+  @Input() color: FontAwesomeColorType = 'default';
 
   @Input() size: SizeProp = '1x';
 
@@ -31,6 +31,8 @@ export class FontAwesomeComponent extends ComponentDirective {
 
   getFontAwesomeIcon(): IconProp {
     switch (this.type) {
+      case 'school':
+        return faSchool;
       case 'lock':
         return faLock;
       case 'play':
@@ -38,7 +40,7 @@ export class FontAwesomeComponent extends ComponentDirective {
       case 'star':
         return faStar;
       default:
-        throw new Error(notSupportedType());
+        throw new Error(notValueInEnum(this.type, 'IconProp'));
     }
   }
 }

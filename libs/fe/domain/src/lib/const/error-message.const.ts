@@ -4,8 +4,8 @@ import { TaskModel } from '../model/domain/tasks-domain.model';
 export const notFoundInTheStore = (taskId: TaskModel['id']) =>
   `Not found ${taskId} in the store!`;
 
-// TODO: Bad error message
-export const notSupportedType = () => 'Not supported type!';
+export const notValueInEnum = (type: string, enumName: string) =>
+  `The value ${type} is not exist in the ${enumName} enum.`;
 
 export const elementByIdExistError = (element: string, id: string) =>
   `${element} by id: ${id} already exists!`;

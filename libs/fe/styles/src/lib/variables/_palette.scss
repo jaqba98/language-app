@@ -1,3 +1,5 @@
+@use '../utils/color';
+
 // Primary
 // Primary brand color, used for main
 // call to action, logos, etc.
@@ -57,7 +59,14 @@ $-utility: (
 // Business
 // Extra business colors
 // not matching to the remaining.
-$-business: ();
+$-business: (
+  blocked-primary: #b2b2b2,
+  blocked-secondary: color.get-darkened-color(#b2b2b2),
+  active-primary: #22b24c,
+  active-secondary: color.get-darkened-color(#22b24c),
+  done-primary: #ffb22c,
+  done-secondary: color.get-darkened-color(#ffb22c),
+);
 
 // Main color palette
 $palette: (
