@@ -1,40 +1,23 @@
-import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
+import type { Meta, StoryObj } from '@storybook/angular';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
 
+import { buildMeta, buildStory } from '@english-learning/fe-utils';
 import { ButtonLinkComponent } from './button-link.component';
-import { ControlKindEnum } from '../../enum/control-kind.enum';
+import { buttonLinkControlStory } from './button-link-control-story.service';
 
 const meta: Meta<ButtonLinkComponent> = {
   component: ButtonLinkComponent,
   title: 'fe/ui/control/button-link',
-  decorators: [
-    moduleMetadata({
-      providers: [{ provide: ActivatedRoute, useValue: [] }],
-    }),
-  ],
-  parameters: {
-    backgrounds: {
-      default: 'primary',
-    },
-  },
+  ...buildMeta(false),
 };
 export default meta;
 type Story = StoryObj<ButtonLinkComponent>;
 
-export const Primary: Story = {
-  args: {
-    form: new FormControl(false),
-    control: {
-      kind: ControlKindEnum.buttonLink,
-      id: 'submit',
-      alignItems: 'flex-start',
-      validation: {
-        validators: [],
-        isVisible: false,
-      },
-      label: 'Submit',
-      path: '',
-    },
-  },
-};
+const buildStoryArgs = (): Story['args'] => ({
+  controlForm: new FormControl(false),
+  control: buttonLinkControlStory,
+});
+
+export const ButtonTextLight = buildStory<ButtonLinkComponent>(buildStoryArgs(), true);
+
+export const ButtonTextDark = buildStory<ButtonLinkComponent>(buildStoryArgs(), false);

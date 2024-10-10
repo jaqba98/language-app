@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
+import { ActivatedRoute } from '@angular/router';
 
 const buildFullscreen = (fullscreen: boolean) => (fullscreen ? 'fullscreen' : 'padded');
 
@@ -9,6 +10,11 @@ export const buildMeta = (fullscreen: boolean): Meta => ({
   parameters: {
     layout: buildFullscreen(fullscreen),
   },
+  decorators: [
+    moduleMetadata({
+      providers: [{ provide: ActivatedRoute, useValue: [] }],
+    }),
+  ],
   argTypes: {
     event: {
       action: 'event',

@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 
 import { buildMeta, buildStory } from '@english-learning/fe-utils';
 import { ButtonTextComponent } from './button-text.component';
-import { textControlStory } from './text-control-story.service';
+import { buttonTextControlButtonStory } from './button-text-control-story.service';
 
 const meta: Meta<ButtonTextComponent> = {
   component: ButtonTextComponent,
@@ -15,7 +15,7 @@ type Story = StoryObj<ButtonTextComponent>;
 
 const buildStoryArgs = (): Story['args'] => ({
   controlForm: new FormControl(false),
-  control: textControlStory('button'),
+  control: buttonTextControlButtonStory,
 });
 
 export const ButtonTextLight = buildStory<ButtonTextComponent>(buildStoryArgs(), true);

@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { TextComponent } from '../../misc/text/text.component';
-import { ButtonComponent } from '../button/button.component';
+import { EventEmitterDirective } from '../../base/event-emitter.directive';
 import { ControlButtonLinkModel } from '../../model/control/control-button-link.model';
+import { ButtonComponent } from '../button/button.component';
+import { TextComponent } from '../../misc/text/text.component';
 
 @Component({
   selector: 'lib-button-link',
@@ -12,14 +12,6 @@ import { ControlButtonLinkModel } from '../../model/control/control-button-link.
   imports: [RouterLink, ButtonComponent, TextComponent],
   templateUrl: './button-link.component.html',
 })
-export class ButtonLinkComponent {
-  @Input({ required: true }) form!: FormControl;
-
+export class ButtonLinkComponent extends EventEmitterDirective<boolean> {
   @Input({ required: true }) control!: ControlButtonLinkModel;
-
-  @Output() clickEvent = new EventEmitter();
-
-  onClickEvent() {
-    this.clickEvent.emit();
-  }
 }
