@@ -8,6 +8,5 @@ import { DashboardNavComponent } from '@english-learning/fe-ui';
   standalone: true,
   imports: [DashboardNavComponent, RouterOutlet],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {}

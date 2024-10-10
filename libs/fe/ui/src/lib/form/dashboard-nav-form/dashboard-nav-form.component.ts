@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { BaseFormModel } from '../../model/form/base-form.model';
-import { DashboardNavFormModel } from './dashboard-nav-form.model';
-import { EventEmitterDirective } from '../../base/event-emitter.directive';
 import { ControlKindEnum } from '../../enum/control-kind.enum';
 
 @Component({
@@ -12,11 +10,11 @@ import { ControlKindEnum } from '../../enum/control-kind.enum';
   imports: [BaseFormComponent],
   templateUrl: './dashboard-nav-form.component.html',
 })
-export class DashboardNavFormComponent extends EventEmitterDirective<DashboardNavFormModel> {
+export class DashboardNavFormComponent {
   form: BaseFormModel = {
     controls: [
       {
-        kind: ControlKindEnum.buttonText,
+        kind: ControlKindEnum.buttonLink,
         id: 'link1',
         alignItems: 'stretch',
         validation: {
@@ -24,10 +22,10 @@ export class DashboardNavFormComponent extends EventEmitterDirective<DashboardNa
           isVisible: true,
         },
         label: 'Link1',
-        type: 'button',
+        path: '/link1',
       },
       {
-        kind: ControlKindEnum.buttonText,
+        kind: ControlKindEnum.buttonLink,
         id: 'link2',
         alignItems: 'stretch',
         validation: {
@@ -35,10 +33,10 @@ export class DashboardNavFormComponent extends EventEmitterDirective<DashboardNa
           isVisible: true,
         },
         label: 'Link2',
-        type: 'button',
+        path: '/link2',
       },
       {
-        kind: ControlKindEnum.buttonText,
+        kind: ControlKindEnum.buttonLink,
         id: 'link3',
         alignItems: 'stretch',
         validation: {
@@ -46,10 +44,10 @@ export class DashboardNavFormComponent extends EventEmitterDirective<DashboardNa
           isVisible: true,
         },
         label: 'Link3',
-        type: 'button',
+        path: '/link3',
       },
       {
-        kind: ControlKindEnum.buttonText,
+        kind: ControlKindEnum.buttonLink,
         id: 'link4',
         alignItems: 'stretch',
         validation: {
@@ -57,12 +55,8 @@ export class DashboardNavFormComponent extends EventEmitterDirective<DashboardNa
           isVisible: true,
         },
         label: 'Link4',
-        type: 'button',
+        path: '/link4',
       },
     ],
   };
-
-  onSubmit(event: DashboardNavFormModel) {
-    this.emit(event);
-  }
 }
