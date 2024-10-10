@@ -8,6 +8,11 @@ $classes: (
         border-radius: 0.25rem,
         cursor: pointer,
       ),
+      pseudo-classes: (
+        active: (
+          transform: scale(0.9),
+        ),
+      ),
     ),
   ),
   light-mode: (
@@ -16,6 +21,11 @@ $classes: (
         background-color: main.pick-neutrals-light-foreground-color(),
         border: 1px solid main.pick-neutrals-light-border-color(),
       ),
+      pseudo-classes: (
+        hover: (
+          background-color: main.pick-neutrals-light-border-color(),
+        ),
+      ),
     ),
   ),
   dark-mode: (
@@ -23,6 +33,11 @@ $classes: (
       styles: (
         background-color: main.pick-neutrals-dark-foreground-color(),
         border: 1px solid main.pick-neutrals-dark-border-color(),
+      ),
+      pseudo-classes: (
+        hover: (
+          background-color: main.pick-neutrals-dark-border-color(),
+        ),
       ),
     ),
   ),

@@ -38,6 +38,8 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
 
   @Input() formValidation = true;
 
+  @Input() formDirection: Properties['flexDirection'] = 'column';
+
   formGroup: FormGroup;
 
   formGroupInvalid = false;

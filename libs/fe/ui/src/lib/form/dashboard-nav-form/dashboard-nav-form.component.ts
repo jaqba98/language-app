@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Properties } from 'csstype';
 
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { BaseFormModel } from '../../model/form/base-form.model';
@@ -11,6 +12,8 @@ import { ControlKindEnum } from '../../enum/control-kind.enum';
   templateUrl: './dashboard-nav-form.component.html',
 })
 export class DashboardNavFormComponent {
+  @Input() formDirection: Properties['flexDirection'] = 'column';
+
   form: BaseFormModel = {
     controls: [
       {
