@@ -107,3 +107,28 @@
 @function pick-utility-error-content-color() {
   @return -pick-color('utility', 'error-content');
 }
+
+// Business
+@function pick-business-blocked-primary-color() {
+  @return -pick-color('business', 'blocked-primary');
+}
+
+@function pick-business-blocked-secondary-color() {
+  @return -pick-color('business', 'blocked-secondary');
+}
+
+@function pick-business-active-primary-color() {
+  @return -pick-color('business', 'active-primary');
+}
+
+@function pick-business-active-secondary-color() {
+  @return -pick-color('business', 'active-secondary');
+}
+
+@function pick-business-done-primary-color() {
+  @return -pick-color('business', 'done-primary');
+}
+
+@function pick-business-done-secondary-color() {
+  @return -pick-color('business', 'done-secondary');
+}

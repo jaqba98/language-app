@@ -3,7 +3,7 @@ import { Component, Injector, Input } from '@angular/core';
 import { StoreModel, StoreType } from '@english-learning/fe-store';
 import {
   notFoundInTheStore,
-  notSupportedType,
+  notValueInEnum,
   TaskModel,
 } from '@english-learning/fe-domain';
 import { BusinessDirective } from '../../../base/business.directive';
@@ -59,7 +59,7 @@ export class TaskMarkerComponent extends BusinessDirective<TaskModel['id']> {
         this.color = 'gold';
         return;
       default:
-        throw new Error(notSupportedType());
+        throw new Error(notValueInEnum(type, 'TaskModel["type"]'));
     }
   }
 }

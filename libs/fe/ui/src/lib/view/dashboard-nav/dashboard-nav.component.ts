@@ -1,15 +1,44 @@
 import { Component } from '@angular/core';
+import { Properties } from 'csstype';
 
+import {
+  BreakpointEnum,
+  BreakpointModel,
+  BreakpointService,
+  ObserverModel,
+} from '@english-learning/fe-system';
 import { CardComponent } from '../../misc/card/card.component';
 import { DashboardNavFormComponent } from '../../form/dashboard-nav-form/dashboard-nav-form.component';
+import { FontAwesomeComponent } from '../../external/font-awesome/font-awesome.component';
+import { FlexComponent } from '../../layout/flex/flex.component';
 
 @Component({
   selector: 'lib-dashboard-nav',
   standalone: true,
-  imports: [CardComponent, DashboardNavFormComponent],
+  imports: [
+    CardComponent,
+    FlexComponent,
+    FontAwesomeComponent,
+    DashboardNavFormComponent,
+  ],
   templateUrl: './dashboard-nav.component.html',
 })
-export class DashboardNavComponent {}
+export class DashboardNavComponent implements ObserverModel<BreakpointModel> {
+  justifyContent: Properties['justifyContent'] = 'space-around';
+
+  constructor(private readonly breakpoint: BreakpointService) {
+    this.breakpoint.addObserver(this);
+  }
+
+  update(data: BreakpointModel) {
+    const { breakpoint } = data;
+    if (breakpoint === BreakpointEnum.Large || breakpoint === BreakpointEnum.XLarge) {
+      this.justifyContent = 'space-around';
+    } else {
+      this.justifyContent = 'space-between';
+    }
+  }
+}
 
 // import { Component, ViewChild } from '@angular/core';
 // import { Properties } from 'csstype';
