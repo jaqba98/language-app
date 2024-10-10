@@ -2,7 +2,7 @@ import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { ControlButtonTextModel } from '../../model/control/control-button-text.model';
 import { ButtonType } from '../button/button.type';
 
-export const textControlStory = (type: ButtonType): ControlButtonTextModel => ({
+const buttonTextControlStory = (type: ButtonType): ControlButtonTextModel => ({
   kind: ControlKindEnum.buttonText,
   id: 'button-text',
   alignItems: 'stretch',
@@ -13,3 +13,7 @@ export const textControlStory = (type: ButtonType): ControlButtonTextModel => ({
   label: 'Click me!',
   type,
 });
+
+export const buttonTextControlButtonStory = buttonTextControlStory('button');
+
+export const buttonTextControlSubmitStory = buttonTextControlStory('submit');
