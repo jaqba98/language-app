@@ -24,7 +24,8 @@
       <ng-container *ngIf="control.kind === 'buttonIcon'">
         <lib-button-icon
           [controlForm]="getFormControl(control.id)"
-          [control]="control"></lib-button-icon>
+          [control]="control"
+          (event)="onSubmit()"></lib-button-icon>
       </ng-container>
     </ng-container>
   </lib-flex>
