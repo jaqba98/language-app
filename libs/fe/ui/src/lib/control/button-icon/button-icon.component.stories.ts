@@ -1,35 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { FormControl } from '@angular/forms';
 
+import {
+  buildMetaEventAction,
+  buildStoryArgs,
+  buildStoryDarkMode,
+  buildStoryLightMode,
+} from '@english-learning/fe-utils';
 import { ButtonIconComponent } from './button-icon.component';
-import { ControlKindEnum } from '../../enum/control-kind.enum';
+import { buttonIconControlStory } from './button-icon-control-story.service';
 
 const meta: Meta<ButtonIconComponent> = {
   component: ButtonIconComponent,
   title: 'fe/ui/control/button-icon',
-  argTypes: {
-    clickEvent: {
-      action: 'clickEvent',
-    },
-  },
+  ...buildMetaEventAction(),
 };
 export default meta;
 type Story = StoryObj<ButtonIconComponent>;
 
-export const Primary: Story = {
-  args: {
-    form: new FormControl(false),
-    control: {
-      kind: ControlKindEnum.buttonIcon,
-      id: 'icon',
-      alignItems: 'flex-start',
-      validation: {
-        validators: [],
-        isVisible: false,
-      },
-      icon: 'icon/menu.svg',
-      alt: '',
-      isSubmit: true,
-    },
-  },
+const buildButtonIconStoryArgs = (): Story['args'] => ({
+  controlForm: new FormControl(false),
+  control: buttonIconControlStory,
+});
+
+export const ButtonIconLight: Story = {
+  ...buildStoryArgs(buildButtonIconStoryArgs()),
+  ...buildStoryLightMode(),
+};
+
+export const ButtonIconDark: Story = {
+  ...buildStoryArgs(buildButtonIconStoryArgs()),
+  ...buildStoryDarkMode(),
 };

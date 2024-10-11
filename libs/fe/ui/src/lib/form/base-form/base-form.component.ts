@@ -15,6 +15,7 @@ import { EventEmitterDirective } from '../../base/event-emitter.directive';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
 import { FlexComponent } from '../../layout/flex/flex.component';
 import { ButtonLinkComponent } from '../../control/button-link/button-link.component';
+import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
 
 @Component({
   selector: 'lib-base-form',
@@ -26,6 +27,7 @@ import { ButtonLinkComponent } from '../../control/button-link/button-link.compo
     InputComponent,
     ButtonTextComponent,
     ButtonLinkComponent,
+    ButtonIconComponent,
   ],
   templateUrl: './base-form.component.html',
 })
@@ -89,6 +91,7 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
         return new FormControl(control.input.value, control.validation.validators);
       case ControlKindEnum.buttonText:
       case ControlKindEnum.buttonLink:
+      case ControlKindEnum.buttonIcon:
         return new FormControl(false, control.validation.validators);
       default:
         throw new Error(unsupportedTypeError('form control', control.kind));

@@ -24,9 +24,9 @@ export class HamburgerFormComponent {
           validators: [],
           isVisible: false,
         },
-        icon: 'icon/menu.svg',
-        alt: 'hamburger icon',
-        isSubmit: false,
+        icon: 'bars',
+        color: 'default',
+        type: 'button',
       },
     ],
   };
