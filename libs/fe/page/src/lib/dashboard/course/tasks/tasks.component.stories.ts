@@ -1,17 +1,33 @@
-import { type Meta, moduleMetadata, type StoryObj } from '@storybook/angular';
+import type { Meta, StoryObj } from '@storybook/angular';
 
-import { storeMock } from '@english-learning/fe-store';
+import {
+  buildMetaFullScreen,
+  buildMetaModuleMetaData,
+  buildStoryDarkMode,
+  buildStoryLightMode,
+  buildStoryTemplate,
+} from '@english-learning/fe-utils';
 import { TasksComponent } from './tasks.component';
+import { TasksService } from './tasks.service';
 
 const meta: Meta<TasksComponent> = {
   component: TasksComponent,
   title: 'fe/page/dashboard/course/tasks',
-  decorators: [moduleMetadata({ providers: [storeMock] })],
-  argTypes: {
-    event: { action: 'event' },
-  },
+  ...buildMetaFullScreen(),
+  ...buildMetaModuleMetaData(
+    TasksService.getStorybookImports(),
+    TasksService.getStorybookProviders(),
+  ),
 };
 export default meta;
 type Story = StoryObj<TasksComponent>;
 
-export const Default: Story = {};
+export const DashboardLight: Story = {
+  ...buildStoryLightMode(),
+  ...buildStoryTemplate(TasksService.getTemplate()),
+};
+
+export const DashboardDark: Story = {
+  ...buildStoryDarkMode(),
+  ...buildStoryTemplate(TasksService.getTemplate()),
+};
