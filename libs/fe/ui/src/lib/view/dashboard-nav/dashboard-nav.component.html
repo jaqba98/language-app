@@ -1,32 +1,16 @@
 <lib-card type="nav">
   <lib-flex alignItems="center" [justifyContent]="justifyContent">
     <lib-font-awesome type="school" size="2x"></lib-font-awesome>
-    <lib-dashboard-nav-form formDirection="row"></lib-dashboard-nav-form>
+    <ng-container *ngIf="isMobile; else pc">
+      <lib-hamburger-form (event)="onHamburger()"></lib-hamburger-form>
+    </ng-container>
+    <ng-template #pc>
+      <lib-dashboard-nav-form formDirection="row"></lib-dashboard-nav-form>
+    </ng-template>
   </lib-flex>
 </lib-card>
-<lib-card type="nav">
-  <lib-dashboard-nav-form></lib-dashboard-nav-form>
-</lib-card>
-
-<!-- <lib-flex flexDirection="column">
-  <lib-card type="main-nav">
-    <lib-flex alignItems="center" [justifyContent]="mainNavJustifyContent">
-      <lib-icon src="icon/main-nav-logo.svg" alt="Logo School Icon"></lib-icon>
-      <ng-container *ngIf="isMobile; else pc">
-        <lib-wrapper #hamburgerForm>
-          <lib-hamburger-form (hamburgerFormEvent)="onEvent()"></lib-hamburger-form>
-        </lib-wrapper>
-      </ng-container>
-      <ng-template #pc>
-        <lib-main-nav-form></lib-main-nav-form>
-      </ng-template>
-    </lib-flex>
+<ng-container *ngIf="isMobile && isMenuVisible">
+  <lib-card type="nav">
+    <lib-dashboard-nav-form></lib-dashboard-nav-form>
   </lib-card>
-  <ng-container *ngIf="isMobile && isMenuVisible">
-    <lib-wrapper #mainNavForm>
-      <lib-card type="main-nav-options">
-        <lib-main-nav-form (mainNavFormEvent)="onEvent()"></lib-main-nav-form>
-      </lib-card>
-    </lib-wrapper>
-  </ng-container>
-</lib-flex> -->
+</ng-container>
