@@ -1,20 +1,20 @@
 import { Component, Injector } from '@angular/core';
-import { TaskModel } from '@english-learning/fe-domain';
 
-import { BusinessDirective, TaskRoadmapComponent } from '@english-learning/fe-ui';
+import { EventEmitterDirective } from '@english-learning/fe-ui';
+import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'lib-tasks',
   standalone: true,
-  imports: [TaskRoadmapComponent],
+  imports: TasksService.getImports(),
   templateUrl: './tasks.component.html',
 })
-export class TasksComponent extends BusinessDirective<TaskModel['id']> {
+export class TasksComponent extends EventEmitterDirective<string> {
   constructor(protected override readonly injector: Injector) {
-    super(injector, 'course');
+    super(injector);
   }
 
-  onClick(taskId: TaskModel['id']) {
-    this.emit(taskId);
+  onClick(event: string) {
+    this.emit(event);
   }
 }

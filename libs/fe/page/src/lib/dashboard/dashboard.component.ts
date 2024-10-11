@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
-import { DashboardNavComponent } from '@english-learning/fe-ui';
+import { DashboardService } from './dashboard.service';
 
 @Component({
   selector: 'lib-dashboard',
   standalone: true,
-  imports: [DashboardNavComponent, RouterOutlet],
+  imports: DashboardService.getImports(),
   templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent {}

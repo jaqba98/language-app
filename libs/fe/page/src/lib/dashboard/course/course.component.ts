@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+
+import { CourseService } from './course.service';
 
 @Component({
   selector: 'lib-course',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: CourseService.getImports(),
   templateUrl: './course.component.html',
 })
 export class CourseComponent {}
