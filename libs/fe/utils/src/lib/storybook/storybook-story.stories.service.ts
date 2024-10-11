@@ -21,8 +21,13 @@ export const buildStoryDarkMode = <T>(): StoryObj<T> => ({
 });
 
 export const buildStoryTemplate = <T>(template: string): StoryObj<T> => ({
-  render: args => ({
-    props: args,
+  // TODO: Fix the any type!
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  render: (args: any) => ({
+    props: {
+      args,
+      onClick: args.event,
+    },
     template,
   }),
 });

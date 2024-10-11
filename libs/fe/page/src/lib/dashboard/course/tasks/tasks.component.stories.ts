@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 
 import {
+  buildMetaEventAction,
   buildMetaFullScreen,
   buildMetaModuleMetaData,
   buildStoryDarkMode,
@@ -25,9 +26,11 @@ type Story = StoryObj<TasksComponent>;
 export const DashboardLight: Story = {
   ...buildStoryLightMode(),
   ...buildStoryTemplate(TasksService.getTemplate()),
+  ...buildMetaEventAction(),
 };
 
 export const DashboardDark: Story = {
   ...buildStoryDarkMode(),
   ...buildStoryTemplate(TasksService.getTemplate()),
+  ...buildMetaEventAction(),
 };
