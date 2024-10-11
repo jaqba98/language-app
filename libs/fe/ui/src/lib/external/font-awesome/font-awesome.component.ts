@@ -1,7 +1,13 @@
 import { Component, Injector, Input } from '@angular/core';
 import { FontAwesomeModule, SizeProp } from '@fortawesome/angular-fontawesome';
 import { IconProp } from '@fortawesome/angular-fontawesome/types';
-import { faLock, faPlay, faSchool, faStar } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBars,
+  faLock,
+  faPlay,
+  faSchool,
+  faStar,
+} from '@fortawesome/free-solid-svg-icons';
 
 import { notValueInEnum } from '@english-learning/fe-domain';
 import { ComponentDirective } from '../../base/component.directive';
@@ -39,6 +45,8 @@ export class FontAwesomeComponent extends ComponentDirective {
         return faPlay;
       case 'star':
         return faStar;
+      case 'bars':
+        return faBars;
       default:
         throw new Error(notValueInEnum(this.type, 'IconProp'));
     }

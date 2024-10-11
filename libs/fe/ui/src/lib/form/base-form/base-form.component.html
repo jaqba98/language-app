@@ -20,6 +20,12 @@
           [controlForm]="getFormControl(control.id)"
           [control]="control"></lib-button-link>
       </ng-container>
+      <!-- Button Icon -->
+      <ng-container *ngIf="control.kind === 'buttonIcon'">
+        <lib-button-icon
+          [controlForm]="getFormControl(control.id)"
+          [control]="control"></lib-button-icon>
+      </ng-container>
     </ng-container>
   </lib-flex>
 </form>

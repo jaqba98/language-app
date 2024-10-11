@@ -57,3 +57,12 @@ export const StarDark: Story = {
   ...buildStoryArgs(buildFontAwesomeStoryArgs('star', 'gold', '10x')),
   ...buildStoryDarkMode(),
 };
+
+export const BarsLight: Story = {
+  ...buildStoryArgs(buildFontAwesomeStoryArgs('bars', 'default', '10x')),
+  ...buildStoryLightMode(),
+};
+export const BarsDark: Story = {
+  ...buildStoryArgs(buildFontAwesomeStoryArgs('bars', 'default', '10x')),
+  ...buildStoryDarkMode(),
+};

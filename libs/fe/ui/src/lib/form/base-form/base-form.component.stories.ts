@@ -12,6 +12,7 @@ import { BaseFormComponent } from './base-form.component';
 import { inputControlStory } from '../../control/input/input-control-story.service';
 import { buttonTextControlSubmitStory } from '../../control/button-text/button-text-control-story.service';
 import { buttonLinkControlStory } from '../../control/button-link/button-link-control-story.service';
+import { buttonIconControlStory } from '../../control/button-icon/button-icon-control-story.service';
 
 const meta: Meta<BaseFormComponent> = {
   component: BaseFormComponent,
@@ -24,7 +25,12 @@ type Story = StoryObj<BaseFormComponent>;
 
 const buildBaseFormStoryArgs = (): Story['args'] => ({
   baseForm: {
-    controls: [inputControlStory, buttonTextControlSubmitStory, buttonLinkControlStory],
+    controls: [
+      inputControlStory,
+      buttonTextControlSubmitStory,
+      buttonLinkControlStory,
+      buttonIconControlStory,
+    ],
   },
 });
 

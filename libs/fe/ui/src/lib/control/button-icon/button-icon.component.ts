@@ -1,38 +1,20 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, Input } from '@angular/core';
 
-import { IconComponent } from '../../misc/icon/icon.component';
+import { EventEmitterDirective } from '../../base/event-emitter.directive';
 import { ButtonComponent } from '../button/button.component';
+import { FontAwesomeComponent } from '../../external/font-awesome/font-awesome.component';
 import { ControlButtonIconModel } from '../../model/control/control-button-icon.model';
 
 @Component({
   selector: 'lib-button-icon',
   standalone: true,
-  imports: [ButtonComponent, IconComponent],
+  imports: [ButtonComponent, FontAwesomeComponent],
   templateUrl: './button-icon.component.html',
 })
-export class ButtonIconComponent implements OnInit {
-  @Input({ required: true }) form!: FormControl;
-
+export class ButtonIconComponent extends EventEmitterDirective<boolean> {
   @Input({ required: true }) control!: ControlButtonIconModel;
 
-  @Output() clickEvent = new EventEmitter();
-
-  icon!: string;
-
-  ngOnInit() {
-    this.icon = this.control.icon;
-  }
-
-  onClickEvent() {
-    this.clickEvent.emit();
-  }
-
-  onMouseEnterEvent() {
-    this.icon = this.control.icon;
-  }
-
-  onMouseLeaveEvent() {
-    this.icon = this.control.icon;
+  onClick(event: boolean) {
+    this.emit(event);
   }
 }

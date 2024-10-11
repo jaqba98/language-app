@@ -1,8 +1,6 @@
-<lib-button
-  [control]="form"
-  [isSubmit]="control.isSubmit"
-  (clickEvent)="onClickEvent()"
-  (mouseEnterEvent)="onMouseEnterEvent()"
-  (mouseLeaveEvent)="onMouseLeaveEvent()">
-  <lib-icon [src]="control.icon" [alt]="control.alt"></lib-icon>
+<lib-button [controlForm]="controlForm" [type]="control.type" (event)="onClick($event)">
+  <lib-font-awesome
+    [type]="control.icon"
+    [color]="control.color"
+    size="2x"></lib-font-awesome>
 </lib-button>
