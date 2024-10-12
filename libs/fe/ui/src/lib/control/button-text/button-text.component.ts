@@ -11,6 +11,9 @@ import { ControlButtonTextModel } from '../../model/control/control-button-text.
   imports: [ButtonComponent, TextComponent],
   templateUrl: './button-text.component.html',
 })
+/**
+ * Button Text Component
+ */
 export class ButtonTextComponent extends EventEmitterDirective<boolean> {
   @Input({ required: true }) control!: ControlButtonTextModel;
 

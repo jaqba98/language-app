@@ -6,6 +6,9 @@ import { EventEmitterDirective } from '../base/event-emitter.directive';
   selector: '[libClickAction]',
   standalone: true,
 })
+/**
+ * Click Action Directive
+ */
 export class ClickActionDirective<TEvent> extends EventEmitterDirective<TEvent> {
   @Input('libClickAction') eventData!: TEvent;
 

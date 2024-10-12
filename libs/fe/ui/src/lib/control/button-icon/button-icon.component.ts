@@ -11,6 +11,9 @@ import { ControlButtonIconModel } from '../../model/control/control-button-icon.
   imports: [ButtonComponent, FontAwesomeComponent],
   templateUrl: './button-icon.component.html',
 })
+/**
+ * Button Icon Component
+ */
 export class ButtonIconComponent extends EventEmitterDirective<boolean> {
   @Input({ required: true }) control!: ControlButtonIconModel;
 

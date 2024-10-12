@@ -13,6 +13,9 @@ import { FlexComponent } from '../../layout/flex/flex.component';
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
 })
+/**
+ * Button Component
+ */
 export class ButtonComponent extends EventEmitterDirective<boolean> {
   @Input() type: ButtonType = 'button';
 
