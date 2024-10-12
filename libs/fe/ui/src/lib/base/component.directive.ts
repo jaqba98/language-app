@@ -13,6 +13,9 @@ import { FormControl } from '@angular/forms';
 import { BemService } from '../service/bem.service';
 
 @Directive()
+/**
+ * Component Directive
+ */
 export class ComponentDirective implements OnInit, OnDestroy {
   @ViewChild('self') self!: ElementRef;
 

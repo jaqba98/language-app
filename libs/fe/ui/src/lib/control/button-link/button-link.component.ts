@@ -12,6 +12,9 @@ import { EventEmitterDirective } from '../../base/event-emitter.directive';
   imports: [RouterLink, ButtonComponent, TextComponent],
   templateUrl: './button-link.component.html',
 })
+/**
+ * Button Link Component
+ */
 export class ButtonLinkComponent extends EventEmitterDirective<boolean> {
   @Input({ required: true }) control!: ControlButtonLinkModel;
 }

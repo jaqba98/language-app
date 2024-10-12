@@ -6,6 +6,9 @@ import { StoreModel, StoreType } from '@english-learning/fe-store';
 import { EventEmitterDirective } from './event-emitter.directive';
 
 @Directive()
+/**
+ * Business Directive
+ */
 export class BusinessDirective<TEvent = undefined> extends EventEmitterDirective<TEvent> {
   private readonly store: Store<StoreModel>;
 
