@@ -2,7 +2,9 @@
   <lib-flex alignItems="center" [justifyContent]="justifyContent">
     <lib-font-awesome type="school" size="3x"></lib-font-awesome>
     <ng-container *ngIf="isMobile; else pc">
-      <lib-hamburger-form (event)="onHamburger()"></lib-hamburger-form>
+      <div #hamburgerMobile>
+        <lib-hamburger-form #hamburger (event)="onHamburger()"></lib-hamburger-form>
+      </div>
     </ng-container>
     <ng-template #pc>
       <lib-dashboard-nav-form></lib-dashboard-nav-form>
@@ -10,7 +12,9 @@
   </lib-flex>
 </lib-card>
 <ng-container *ngIf="isMobile && isMenuVisible">
-  <lib-card type="nav">
-    <lib-dashboard-nav-form flexDirection="column"></lib-dashboard-nav-form>
-  </lib-card>
+  <div #navMobile>
+    <lib-card type="nav">
+      <lib-dashboard-nav-form flexDirection="column"></lib-dashboard-nav-form>
+    </lib-card>
+  </div>
 </ng-container>
