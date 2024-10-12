@@ -6,10 +6,10 @@ import { StoreModel, StoreType } from '@english-learning/fe-store';
 import { EventEmitterDirective } from './event-emitter.directive';
 
 @Directive()
-export class BusinessDirective<TEvent> extends EventEmitterDirective<TEvent> {
-  private sub?: Subscription;
-
+export class BusinessDirective<TEvent = undefined> extends EventEmitterDirective<TEvent> {
   private readonly store: Store<StoreModel>;
+
+  private sub?: Subscription;
 
   constructor(
     protected override readonly injector: Injector,
@@ -25,11 +25,13 @@ export class BusinessDirective<TEvent> extends EventEmitterDirective<TEvent> {
       .subscribe(store => this.onStoreChange(store));
   }
 
-  protected onStoreChange(_store: StoreModel[StoreType]) {}
-
   protected override afterDestroy() {
     if (this.sub) {
       this.sub.unsubscribe();
     }
+  }
+
+  protected onStoreChange(_store: StoreModel[StoreType]) {
+    // TODO: Add throw error if the metod is not implemented!
   }
 }

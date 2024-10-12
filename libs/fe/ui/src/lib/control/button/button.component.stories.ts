@@ -1,13 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { FormControl } from '@angular/forms';
 
-import {
-  buildMetaEventAction,
-  buildStoryArgs,
-  buildStoryDarkMode,
-  buildStoryLightMode,
-} from '@english-learning/fe-utils';
+import { buildBaseStory, buildMetaEventAction } from '@english-learning/fe-utils';
 import { ButtonComponent } from './button.component';
+import { ButtonShapeType } from './button.type';
 
 const meta: Meta<ButtonComponent> = {
   component: ButtonComponent,
@@ -17,17 +13,16 @@ const meta: Meta<ButtonComponent> = {
 export default meta;
 type Story = StoryObj<ButtonComponent>;
 
-const buildButtonStoryArgs = (): Story['args'] => ({
+const buildButtonArgs = (shape: ButtonShapeType): Story['args'] => ({
   controlForm: new FormControl(false),
   type: 'button',
+  shape,
 });
 
-export const ButtonLight: Story = {
-  ...buildStoryArgs(buildButtonStoryArgs()),
-  ...buildStoryLightMode(),
-};
+export const ButtonSquareLight = buildBaseStory(true, buildButtonArgs('square'));
 
-export const ButtonDark: Story = {
-  ...buildStoryArgs(buildButtonStoryArgs()),
-  ...buildStoryDarkMode(),
-};
+export const ButtonSquareDark = buildBaseStory(false, buildButtonArgs('square'));
+
+export const ButtonRectangleLight = buildBaseStory(true, buildButtonArgs('rectangle'));
+
+export const ButtonRectangleDark = buildBaseStory(false, buildButtonArgs('rectangle'));
