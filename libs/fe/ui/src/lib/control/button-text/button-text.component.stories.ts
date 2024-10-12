@@ -1,14 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { FormControl } from '@angular/forms';
 
-import {
-  buildMetaEventAction,
-  buildStoryArgs,
-  buildStoryDarkMode,
-  buildStoryLightMode,
-} from '@english-learning/fe-utils';
+import { buildBaseStory, buildMetaEventAction } from '@english-learning/fe-utils';
 import { ButtonTextComponent } from './button-text.component';
-import { buttonTextControlButtonStory } from './button-text-control-story.service';
+import { buttonTextControlStory } from './button-text-control-story.service';
+import { ButtonType } from '../button/button.type';
 
 const meta: Meta<ButtonTextComponent> = {
   component: ButtonTextComponent,
@@ -18,17 +14,11 @@ const meta: Meta<ButtonTextComponent> = {
 export default meta;
 type Story = StoryObj<ButtonTextComponent>;
 
-const buildButtonTextStoryArgs = (): Story['args'] => ({
+const buildButtonTextArgs = (type: ButtonType): Story['args'] => ({
   controlForm: new FormControl(false),
-  control: buttonTextControlButtonStory,
+  control: buttonTextControlStory(type),
 });
 
-export const ButtonTextLight: Story = {
-  ...buildStoryArgs(buildButtonTextStoryArgs()),
-  ...buildStoryLightMode(),
-};
+export const ButtonTextLight = buildBaseStory(true, buildButtonTextArgs('button'));
 
-export const ButtonTextDark: Story = {
-  ...buildStoryArgs(buildButtonTextStoryArgs()),
-  ...buildStoryDarkMode(),
-};
+export const ButtonTextDark = buildBaseStory(false, buildButtonTextArgs('button'));
