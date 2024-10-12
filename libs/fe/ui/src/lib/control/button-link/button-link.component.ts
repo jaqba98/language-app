@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { EventEmitterDirective } from '../../base/event-emitter.directive';
+import { TextComponent } from '../../misc/text/text.component';
 import { ControlButtonLinkModel } from '../../model/control/control-button-link.model';
 import { ButtonComponent } from '../button/button.component';
-import { TextComponent } from '../../misc/text/text.component';
+import { EventEmitterDirective } from '../../base/event-emitter.directive';
 
 @Component({
   selector: 'lib-button-link',
