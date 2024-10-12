@@ -3,10 +3,10 @@ import {
   Directive,
   OnInit,
   OnDestroy,
-  Injector,
   ViewChild,
   ElementRef,
   Input,
+  Injector,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
@@ -18,14 +18,15 @@ export class ComponentDirective implements OnInit, OnDestroy {
 
   @Input() controlForm!: FormControl;
 
-  protected readonly classNames: string[] = [];
-
   private readonly bem: BemService;
+
+  protected readonly classNames: string[] = [];
 
   constructor(protected readonly injector: Injector) {
     this.bem = this.injector.get(BemService);
   }
 
+  // TODO: Remove it in the future
   static buildImports() {
     return [CommonModule];
   }

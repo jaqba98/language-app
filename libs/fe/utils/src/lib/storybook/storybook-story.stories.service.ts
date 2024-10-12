@@ -31,3 +31,14 @@ export const buildStoryTemplate = <T>(template: string): StoryObj<T> => ({
     template,
   }),
 });
+
+export const buildBaseStory = <T>(
+  lightMode: boolean,
+  args: StoryObj<T>['args'],
+): StoryObj<T> => {
+  const styleMode = lightMode ? buildStoryLightMode() : buildStoryDarkMode();
+  return {
+    ...buildStoryArgs<T>(args),
+    ...styleMode,
+  };
+};

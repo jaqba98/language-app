@@ -1,12 +1,29 @@
 @use '@english-learning/fe-styles/src/lib/main';
 
+$-button-height: 45px;
+$-button-border: 1px solid;
+$-offset: 2px;
 $classes: (
   root: (
     button: (
       styles: (
         padding: 1rem,
         border-radius: 0.25rem,
+        height: $-button-height,
         cursor: pointer,
+      ),
+      elements: (
+        square: (
+          styles: (
+            width: $-button-height,
+          ),
+        ),
+        rectangle: (
+          styles: (
+            min-width: $-button-height,
+            padding: 1rem 1.25rem,
+          ),
+        ),
       ),
     ),
   ),
@@ -14,11 +31,12 @@ $classes: (
     button: (
       styles: (
         background-color: main.pick-neutrals-light-foreground-color(),
-        border: 1px solid main.pick-neutrals-light-border-color(),
+        border: $-button-border main.pick-neutrals-light-border-color(),
       ),
       pseudo-classes: (
-        hover: (
-          background-color: main.pick-neutrals-light-border-color(),
+        active: (
+          outline: $-button-border main.pick-neutrals-light-border-color(),
+          outline-offset: $-offset,
         ),
       ),
     ),
@@ -27,11 +45,12 @@ $classes: (
     button: (
       styles: (
         background-color: main.pick-neutrals-dark-foreground-color(),
-        border: 1px solid main.pick-neutrals-dark-border-color(),
+        border: $-button-border main.pick-neutrals-dark-border-color(),
       ),
       pseudo-classes: (
-        hover: (
-          background-color: main.pick-neutrals-dark-border-color(),
+        active: (
+          outline: $-button-border main.pick-neutrals-dark-border-color(),
+          outline-offset: $-offset,
         ),
       ),
     ),

@@ -1,20 +1,28 @@
 import { Component, Input } from '@angular/core';
+import { NgClass } from '@angular/common';
 
+import { ClickActionDirective } from '../../action/click-action.directive';
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
-import { ButtonType } from './button.type';
+import { ButtonType, ButtonShapeType } from './button.type';
 
 @Component({
   selector: 'lib-button',
   standalone: true,
+  imports: [NgClass, ClickActionDirective],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent extends EventEmitterDirective<boolean> {
   @Input() type: ButtonType = 'button';
 
-  onClick() {
-    this.controlForm.setValue(true);
-    if (this.type === 'submit') return;
-    this.emit(true);
+  @Input() shape: ButtonShapeType = 'rectangle';
+
+  protected override afterInit() {
+    this.addClassName('button');
+    this.addClassName('button', this.shape);
+  }
+
+  onEvent(eventData: boolean) {
+    this.emit(eventData);
   }
 }

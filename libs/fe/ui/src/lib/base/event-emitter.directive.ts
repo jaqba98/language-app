@@ -1,4 +1,4 @@
-import { Directive, EventEmitter, Injector, Output } from '@angular/core';
+import { Directive, Output, Injector, EventEmitter } from '@angular/core';
 
 import { ComponentDirective } from './component.directive';
 
@@ -10,13 +10,7 @@ export class EventEmitterDirective<TEvent> extends ComponentDirective {
     super(injector);
   }
 
-  protected emit(data: TEvent) {
-    this.beforeEmit();
-    this.event.emit(data);
-    this.afterEmit();
+  protected emit(eventData: TEvent) {
+    this.event.emit(eventData);
   }
-
-  protected beforeEmit() {}
-
-  protected afterEmit() {}
 }

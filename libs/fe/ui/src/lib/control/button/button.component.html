@@ -1,3 +1,7 @@
-<button class="button" [type]="type" (click)="onClick()">
+<button
+  [ngClass]="classNames"
+  [type]="type"
+  [libClickAction]="true"
+  (event)="onEvent($event)">
   <ng-content></ng-content>
 </button>
