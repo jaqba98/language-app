@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { Properties } from 'csstype';
 
-import { BaseFormComponent } from '../base-form/base-form.component';
-import { BaseFormModel } from '../../model/form/base-form.model';
 import { ControlKindEnum } from '../../enum/control-kind.enum';
+import { BaseFormModel } from '../../model/form/base-form.model';
+import { BaseFormComponent } from '../base-form/base-form.component';
 
 @Component({
   selector: 'lib-dashboard-nav-form',
@@ -11,54 +11,57 @@ import { ControlKindEnum } from '../../enum/control-kind.enum';
   imports: [BaseFormComponent],
   templateUrl: './dashboard-nav-form.component.html',
 })
+/**
+ * Dashboard Nav Form
+ */
 export class DashboardNavFormComponent {
-  @Input() formDirection: Properties['flexDirection'] = 'column';
+  @Input() flexDirection: Properties['flexDirection'] = 'row';
 
   form: BaseFormModel = {
     controls: [
       {
         kind: ControlKindEnum.buttonLink,
-        id: 'link1',
+        id: 'statistics',
         alignItems: 'stretch',
         validation: {
           validators: [],
-          isVisible: true,
+          isVisible: false,
         },
-        label: 'Link1',
-        path: '/link1',
+        label: 'Statistics',
+        path: '/statistics',
       },
       {
         kind: ControlKindEnum.buttonLink,
-        id: 'link2',
+        id: 'courses',
         alignItems: 'stretch',
         validation: {
           validators: [],
-          isVisible: true,
+          isVisible: false,
         },
-        label: 'Link2',
-        path: '/link2',
+        label: 'Courses',
+        path: '/courses',
       },
       {
         kind: ControlKindEnum.buttonLink,
-        id: 'link3',
+        id: 'account',
         alignItems: 'stretch',
         validation: {
           validators: [],
-          isVisible: true,
+          isVisible: false,
         },
-        label: 'Link3',
-        path: '/link3',
+        label: 'Account',
+        path: '/account',
       },
       {
         kind: ControlKindEnum.buttonLink,
-        id: 'link4',
+        id: 'logout',
         alignItems: 'stretch',
         validation: {
           validators: [],
-          isVisible: true,
+          isVisible: false,
         },
-        label: 'Link4',
-        path: '/link4',
+        label: 'logout',
+        path: '/logout',
       },
     ],
   };
