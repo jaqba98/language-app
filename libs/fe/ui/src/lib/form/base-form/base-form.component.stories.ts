@@ -10,9 +10,9 @@ import {
 } from '@english-learning/fe-utils';
 import { BaseFormComponent } from './base-form.component';
 import { inputControlStory } from '../../control/input/input-control-story.service';
-import { buttonTextControlSubmitStory } from '../../control/button-text/button-text-control-story.service';
 import { buttonLinkControlStory } from '../../control/button-link/button-link-control-story.service';
 import { buttonIconControlStory } from '../../control/button-icon/button-icon-control-story.service';
+import { buttonTextControlStory } from '../../control/button-text/button-text-control-story.service';
 
 const meta: Meta<BaseFormComponent> = {
   component: BaseFormComponent,
@@ -27,7 +27,7 @@ const buildBaseFormStoryArgs = (): Story['args'] => ({
   baseForm: {
     controls: [
       inputControlStory,
-      buttonTextControlSubmitStory,
+      buttonTextControlStory('submit'),
       buttonLinkControlStory,
       buttonIconControlStory,
     ],

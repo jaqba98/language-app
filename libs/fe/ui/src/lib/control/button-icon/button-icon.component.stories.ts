@@ -13,11 +13,11 @@ const meta: Meta<ButtonIconComponent> = {
 export default meta;
 type Story = StoryObj<ButtonIconComponent>;
 
-const buildButtonArgs = (): Story['args'] => ({
+const buildButtonIconArgs = (): Story['args'] => ({
   controlForm: new FormControl(false),
   control: buttonIconControlStory,
 });
 
-export const ButtonIconLight = buildBaseStory(true, buildButtonArgs());
+export const ButtonIconLight = buildBaseStory(true, buildButtonIconArgs());
 
-export const ButtonIconDark = buildBaseStory(false, buildButtonArgs());
+export const ButtonIconDark = buildBaseStory(false, buildButtonIconArgs());

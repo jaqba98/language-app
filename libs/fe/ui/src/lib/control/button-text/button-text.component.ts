@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
 
-import { TextComponent } from '../../misc/text/text.component';
-import { ControlButtonTextModel } from '../../model/control/control-button-text.model';
 import { ButtonComponent } from '../button/button.component';
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
+import { TextComponent } from '../../misc/text/text.component';
+import { ControlButtonTextModel } from '../../model/control/control-button-text.model';
 
 @Component({
   selector: 'lib-button-text',
@@ -14,7 +14,7 @@ import { EventEmitterDirective } from '../../base/event-emitter.directive';
 export class ButtonTextComponent extends EventEmitterDirective<boolean> {
   @Input({ required: true }) control!: ControlButtonTextModel;
 
-  onClick(event: boolean) {
-    this.emit(event);
+  onEvent(eventData: boolean) {
+    this.emit(eventData);
   }
 }
