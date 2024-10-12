@@ -1,27 +1,23 @@
 @use '@english-learning/fe-styles/src/lib/main';
 
-$-button-height: 55px;
-$-button-border: 1px solid;
-$-offset: 2px;
 $classes: (
   root: (
     button: (
       styles: (
-        padding: 1rem,
-        border-radius: 0.25rem,
-        height: $-button-height,
+        padding: main.$control-padding,
+        border-radius: main.$control-radius,
+        height: main.$control-height,
         cursor: pointer,
       ),
       elements: (
         square: (
           styles: (
-            width: $-button-height,
+            width: main.$control-height,
           ),
         ),
         rectangle: (
           styles: (
-            min-width: $-button-height,
-            padding: 1rem 1.25rem,
+            min-width: main.$control-height,
           ),
         ),
       ),
@@ -31,12 +27,12 @@ $classes: (
     button: (
       styles: (
         background-color: main.pick-neutrals-light-foreground-color(),
-        border: $-button-border main.pick-neutrals-light-border-color(),
+        border: main.$control-border main.pick-neutrals-light-border-color(),
       ),
       pseudo-classes: (
         active: (
-          outline: $-button-border main.pick-neutrals-light-border-color(),
-          outline-offset: $-offset,
+          outline: main.$control-border main.pick-neutrals-light-border-color(),
+          outline-offset: main.$control-offset,
         ),
       ),
     ),
@@ -45,12 +41,12 @@ $classes: (
     button: (
       styles: (
         background-color: main.pick-neutrals-dark-foreground-color(),
-        border: $-button-border main.pick-neutrals-dark-border-color(),
+        border: main.$control-border main.pick-neutrals-dark-border-color(),
       ),
       pseudo-classes: (
         active: (
-          outline: $-button-border main.pick-neutrals-dark-border-color(),
-          outline-offset: $-offset,
+          outline: main.$control-border main.pick-neutrals-dark-border-color(),
+          outline-offset: main.$control-offset,
         ),
       ),
     ),

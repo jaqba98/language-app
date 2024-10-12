@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { FormControl } from '@angular/forms';
 
-import {
-  buildStoryArgs,
-  buildStoryDarkMode,
-  buildStoryLightMode,
-} from '@english-learning/fe-utils';
+import { buildBaseStory } from '@english-learning/fe-utils';
 import { InputComponent } from './input.component';
 import { inputControlStory } from './input-control-story.service';
 
@@ -16,17 +12,11 @@ const meta: Meta<InputComponent> = {
 export default meta;
 type Story = StoryObj<InputComponent>;
 
-const buildInputStoryArgs = (): Story['args'] => ({
+const buildInputArgs = (): Story['args'] => ({
   controlForm: new FormControl('admin'),
   control: inputControlStory,
 });
 
-export const InputLight: Story = {
-  ...buildStoryArgs(buildInputStoryArgs()),
-  ...buildStoryLightMode(),
-};
+export const InputLight = buildBaseStory(true, buildInputArgs());
 
-export const InputDark: Story = {
-  ...buildStoryArgs(buildInputStoryArgs()),
-  ...buildStoryDarkMode(),
-};
+export const InputDark = buildBaseStory(false, buildInputArgs());
