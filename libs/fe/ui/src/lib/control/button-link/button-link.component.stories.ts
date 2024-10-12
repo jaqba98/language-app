@@ -3,10 +3,8 @@ import { FormControl } from '@angular/forms';
 
 import {
   buildActivatedRouteProvider,
+  buildBaseStory,
   buildMetaModuleMetaData,
-  buildStoryArgs,
-  buildStoryDarkMode,
-  buildStoryLightMode,
 } from '@english-learning/fe-utils';
 import { ButtonLinkComponent } from './button-link.component';
 import { buttonLinkControlStory } from './button-link-control-story.service';
@@ -19,17 +17,11 @@ const meta: Meta<ButtonLinkComponent> = {
 export default meta;
 type Story = StoryObj<ButtonLinkComponent>;
 
-const buildButtonLinkStoryArgs = (): Story['args'] => ({
+const buildButtonLinkArgs = (): Story['args'] => ({
   controlForm: new FormControl(false),
   control: buttonLinkControlStory,
 });
 
-export const ButtonTextLight: Story = {
-  ...buildStoryArgs(buildButtonLinkStoryArgs()),
-  ...buildStoryLightMode(),
-};
+export const ButtonLinkLight = buildBaseStory(true, buildButtonLinkArgs());
 
-export const ButtonTextDark: Story = {
-  ...buildStoryArgs(buildButtonLinkStoryArgs()),
-  ...buildStoryDarkMode(),
-};
+export const ButtonLinkDark = buildBaseStory(false, buildButtonLinkArgs());

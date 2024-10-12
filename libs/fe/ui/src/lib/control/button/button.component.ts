@@ -4,11 +4,12 @@ import { NgClass } from '@angular/common';
 import { ClickActionDirective } from '../../action/click-action.directive';
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
 import { ButtonType, ButtonShapeType } from './button.type';
+import { FlexComponent } from '../../layout/flex/flex.component';
 
 @Component({
   selector: 'lib-button',
   standalone: true,
-  imports: [NgClass, ClickActionDirective],
+  imports: [NgClass, ClickActionDirective, FlexComponent],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
 })
