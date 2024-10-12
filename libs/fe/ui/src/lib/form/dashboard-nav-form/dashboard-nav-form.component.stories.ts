@@ -1,27 +1,20 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import type { Meta } from '@storybook/angular';
 
 import {
   buildActivatedRouteProvider,
-  buildMetaEventAction,
+  buildBaseStory,
   buildMetaModuleMetaData,
-  buildStoryDarkMode,
-  buildStoryLightMode,
 } from '@english-learning/fe-utils';
 import { DashboardNavFormComponent } from './dashboard-nav-form.component';
+import { HamburgerFormComponent } from '../hamburger-form/hamburger-form.component';
 
 const meta: Meta<DashboardNavFormComponent> = {
   component: DashboardNavFormComponent,
   title: 'fe/ui/form/dashboard-nav-form',
-  ...buildMetaEventAction(),
   ...buildMetaModuleMetaData([], [buildActivatedRouteProvider()]),
 };
 export default meta;
-type Story = StoryObj<DashboardNavFormComponent>;
 
-export const DashboardNavFormLight: Story = {
-  ...buildStoryLightMode(),
-};
+export const DashboardNavFormLight = buildBaseStory<HamburgerFormComponent>(true, {});
 
-export const DashboardNavFormDark: Story = {
-  ...buildStoryDarkMode(),
-};
+export const DashboardNavFormDark = buildBaseStory<HamburgerFormComponent>(false, {});
