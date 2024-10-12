@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
-import { BaseFormComponent } from '../base-form/base-form.component';
-import { BaseFormModel } from '../../model/form/base-form.model';
-import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
+import { BaseFormModel } from '../../model/form/base-form.model';
+import { BaseFormComponent } from '../base-form/base-form.component';
 
 @Component({
   selector: 'lib-hamburger-form',
@@ -11,6 +11,9 @@ import { EventEmitterDirective } from '../../base/event-emitter.directive';
   imports: [BaseFormComponent],
   templateUrl: './hamburger-form.component.html',
 })
+/**
+ * Hamburger Form Component
+ */
 export class HamburgerFormComponent extends EventEmitterDirective<boolean> {
   form: BaseFormModel = {
     controls: [
@@ -29,7 +32,7 @@ export class HamburgerFormComponent extends EventEmitterDirective<boolean> {
     ],
   };
 
-  onSubmit() {
+  onEvent() {
     this.emit(true);
   }
 }

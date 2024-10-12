@@ -1,11 +1,17 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-  <lib-flex [flexDirection]="formDirection" gap="small">
+  <lib-flex [flexDirection]="flexDirection" gap="small">
     <ng-container *ngFor="let control of baseForm.controls">
       <!-- Input -->
       <ng-container *ngIf="control.kind === 'input'">
         <lib-input
           [controlForm]="getFormControl(control.id)"
           [control]="control"></lib-input>
+      </ng-container>
+      <!-- Button Link -->
+      <ng-container *ngIf="control.kind === 'buttonLink'">
+        <lib-button-link
+          [controlForm]="getFormControl(control.id)"
+          [control]="control"></lib-button-link>
       </ng-container>
       <!-- Button Text -->
       <ng-container *ngIf="control.kind === 'buttonText'">
@@ -14,13 +20,7 @@
           [control]="control"
           (event)="onSubmit()"></lib-button-text>
       </ng-container>
-      <!-- Button Link -->
-      <ng-container *ngIf="control.kind === 'buttonLink'">
-        <lib-button-link
-          [controlForm]="getFormControl(control.id)"
-          [control]="control"></lib-button-link>
-      </ng-container>
-      <!-- Button Icon -->
+      <!-- Button Text -->
       <ng-container *ngIf="control.kind === 'buttonIcon'">
         <lib-button-icon
           [controlForm]="getFormControl(control.id)"

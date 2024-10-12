@@ -2,17 +2,15 @@ import type { Meta, StoryObj } from '@storybook/angular';
 
 import {
   buildActivatedRouteProvider,
+  buildBaseStory,
   buildMetaEventAction,
   buildMetaModuleMetaData,
-  buildStoryArgs,
-  buildStoryDarkMode,
-  buildStoryLightMode,
 } from '@english-learning/fe-utils';
 import { BaseFormComponent } from './base-form.component';
-import { inputControlStory } from '../../control/input/input-control-story.service';
-import { buttonLinkControlStory } from '../../control/button-link/button-link-control-story.service';
 import { buttonIconControlStory } from '../../control/button-icon/button-icon-control-story.service';
+import { buttonLinkControlStory } from '../../control/button-link/button-link-control-story.service';
 import { buttonTextControlStory } from '../../control/button-text/button-text-control-story.service';
+import { inputControlStory } from '../../control/input/input-control-story.service';
 
 const meta: Meta<BaseFormComponent> = {
   component: BaseFormComponent,
@@ -23,7 +21,7 @@ const meta: Meta<BaseFormComponent> = {
 export default meta;
 type Story = StoryObj<BaseFormComponent>;
 
-const buildBaseFormStoryArgs = (): Story['args'] => ({
+const buildBaseFormArgs = (): Story['args'] => ({
   baseForm: {
     controls: [
       inputControlStory,
@@ -34,12 +32,6 @@ const buildBaseFormStoryArgs = (): Story['args'] => ({
   },
 });
 
-export const BaseFormLight: Story = {
-  ...buildStoryArgs(buildBaseFormStoryArgs()),
-  ...buildStoryLightMode(),
-};
+export const BaseFormLight = buildBaseStory(true, buildBaseFormArgs());
 
-export const BaseFormDark: Story = {
-  ...buildStoryArgs(buildBaseFormStoryArgs()),
-  ...buildStoryDarkMode(),
-};
+export const BaseFormDark = buildBaseStory(false, buildBaseFormArgs());
