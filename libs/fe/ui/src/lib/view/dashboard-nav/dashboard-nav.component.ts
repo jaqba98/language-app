@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Properties } from 'csstype';
 import { NgIf } from '@angular/common';
 
@@ -31,6 +31,10 @@ import { DashboardNavFormComponent } from '../../form/dashboard-nav-form/dashboa
  * Dashboard Nav Component
  */
 export class DashboardNavComponent implements ObserverModel<BreakpointModel> {
+  @ViewChild('navMobile') navMobile!: ElementRef;
+
+  @ViewChild('hamburgerMobile') hamburgerMobile!: ElementRef;
+
   justifyContent: Properties['justifyContent'] = 'space-between';
 
   isMobile = true;
@@ -39,6 +43,17 @@ export class DashboardNavComponent implements ObserverModel<BreakpointModel> {
 
   constructor(private readonly breakpoint: BreakpointService) {
     this.breakpoint.addObserver(this);
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    if (!this.isMenuVisible) return;
+    const navMobileInside = this.navMobile.nativeElement.contains(event.target);
+    const hamburgerMobileInside = this.hamburgerMobile.nativeElement.contains(
+      event.target,
+    );
+    if (navMobileInside || hamburgerMobileInside) return;
+    this.isMenuVisible = false;
   }
 
   update(data: BreakpointModel) {
