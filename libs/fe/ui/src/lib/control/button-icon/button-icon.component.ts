@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
-import { EventEmitterDirective } from '../../base/event-emitter.directive';
 import { ButtonComponent } from '../button/button.component';
+import { EventEmitterDirective } from '../../base/event-emitter.directive';
 import { FontAwesomeComponent } from '../../external/font-awesome/font-awesome.component';
 import { ControlButtonIconModel } from '../../model/control/control-button-icon.model';
 
@@ -14,7 +14,7 @@ import { ControlButtonIconModel } from '../../model/control/control-button-icon.
 export class ButtonIconComponent extends EventEmitterDirective<boolean> {
   @Input({ required: true }) control!: ControlButtonIconModel;
 
-  onClick(event: boolean) {
-    this.emit(event);
+  onEvent(eventData: boolean) {
+    this.emit(eventData);
   }
 }

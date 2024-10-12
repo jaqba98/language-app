@@ -1,4 +1,8 @@
-<lib-button [controlForm]="controlForm" [type]="control.type" (event)="onClick($event)">
+<lib-button
+  [controlForm]="controlForm"
+  [type]="control.type"
+  shape="square"
+  (event)="onEvent($event)">
   <lib-font-awesome
     [type]="control.icon"
     [color]="control.color"
