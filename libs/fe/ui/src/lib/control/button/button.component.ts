@@ -27,6 +27,8 @@ export class ButtonComponent extends EventEmitterDirective<boolean> {
   }
 
   onEvent(eventData: boolean) {
+    this.controlForm.setValue(true);
+    if (this.type === 'submit') return;
     this.emit(eventData);
   }
 }

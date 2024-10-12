@@ -1,32 +1,33 @@
-import { Component, Injector, Input } from '@angular/core';
+import { Component, Input, Injector } from '@angular/core';
+import { FormGroup, FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Properties } from 'csstype';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { NgFor, NgIf } from '@angular/common';
 
 import {
   elementByIdExistError,
   elementByIdNotExistError,
   unsupportedTypeError,
 } from '@english-learning/fe-domain';
-import { BaseFormModel, ControlType } from '../../model/form/base-form.model';
-import { ComponentDirective } from '../../base/component.directive';
-import { InputComponent } from '../../control/input/input.component';
-import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
-import { ButtonTextComponent } from '../../control/button-text/button-text.component';
+import { ControlKindEnum } from '../../enum/control-kind.enum';
+import { BaseFormModel, ControlType } from '../../model/form/base-form.model';
 import { FlexComponent } from '../../layout/flex/flex.component';
+import { InputComponent } from '../../control/input/input.component';
 import { ButtonLinkComponent } from '../../control/button-link/button-link.component';
+import { ButtonTextComponent } from '../../control/button-text/button-text.component';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
 
 @Component({
   selector: 'lib-base-form',
   standalone: true,
   imports: [
-    ...ComponentDirective.buildImports(),
+    NgFor,
+    NgIf,
     ReactiveFormsModule,
     FlexComponent,
     InputComponent,
-    ButtonTextComponent,
     ButtonLinkComponent,
+    ButtonTextComponent,
     ButtonIconComponent,
   ],
   templateUrl: './base-form.component.html',
@@ -39,8 +40,6 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
   @Input() resetIfError = false;
 
   @Input() formValidation = true;
-
-  @Input() formDirection: Properties['flexDirection'] = 'column';
 
   formGroup: FormGroup;
 
@@ -112,39 +111,6 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
   }
 }
 
-// import { CommonModule } from '@angular/common';
-// import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-// import { ReactiveFormsModule, FormGroup, FormBuilder, FormControl } from '@angular/forms';
-// import { Properties } from 'csstype';
-// import { FlexComponent } from '../../layout/flex/flex.component';
-// import { BaseFormModel, ControlType } from '../../model/form/base-form.model';
-// import { InputComponent } from '../../control/input/input.component';
-// import { ButtonTextComponent } from '../../control/button-text/button-text.component';
-// import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
-// import { LinkComponent } from '../../control/link/link.component';
-// import { ErrorComponent } from '../../misc/error/error.component';
-// import { ControlKindEnum } from '../../enum/control-kind.enum';
-// import { SuccessComponent } from '../../misc/success/success.component';
-// import { TextComponent } from '../../misc/text/text.component';
-// import { ButtonLinkComponent } from '../../control/button-link/button-link.component';
-// @Component({
-//   selector: 'lib-base-form',
-//   standalone: true,
-//   imports: [
-//     CommonModule,
-//     ReactiveFormsModule,
-//     FlexComponent,
-//     InputComponent,
-//     ButtonTextComponent,
-//     ButtonIconComponent,
-//     LinkComponent,
-//     ErrorComponent,
-//     SuccessComponent,
-//     TextComponent,
-//     ButtonLinkComponent,
-//   ],
-//   templateUrl: './base-form.component.html',
-// })
 // export class BaseFormComponent implements OnInit {
 //   @Input({ required: true }) baseForm!: BaseFormModel;
 //   @Input() flexDirection: Properties['flexDirection'] = 'column';
