@@ -12,7 +12,7 @@ import { BaseFormComponent } from '../base-form/base-form.component';
   templateUrl: './dashboard-nav-form.component.html',
 })
 /**
- * Dashboard Nav Form
+ * Dashboard Nav Form Component
  */
 export class DashboardNavFormComponent {
   @Input() flexDirection: Properties['flexDirection'] = 'row';

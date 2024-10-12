@@ -1,11 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import type { Meta } from '@storybook/angular';
 
 import {
   buildActivatedRouteProvider,
+  buildBaseStory,
   buildMetaEventAction,
   buildMetaModuleMetaData,
-  buildStoryDarkMode,
-  buildStoryLightMode,
 } from '@english-learning/fe-utils';
 import { DashboardNavComponent } from './dashboard-nav.component';
 
@@ -16,12 +15,7 @@ const meta: Meta<DashboardNavComponent> = {
   ...buildMetaModuleMetaData([], [buildActivatedRouteProvider()]),
 };
 export default meta;
-type Story = StoryObj<DashboardNavComponent>;
 
-export const DashboardNavLight: Story = {
-  ...buildStoryLightMode(),
-};
+export const DashboardNavFormLight = buildBaseStory<DashboardNavComponent>(true, {});
 
-export const DashboardNavDark: Story = {
-  ...buildStoryDarkMode(),
-};
+export const DashboardNavFormDark = buildBaseStory<DashboardNavComponent>(false, {});

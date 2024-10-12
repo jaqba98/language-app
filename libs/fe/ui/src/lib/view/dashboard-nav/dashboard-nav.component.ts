@@ -1,34 +1,35 @@
 import { Component } from '@angular/core';
 import { Properties } from 'csstype';
+import { NgIf } from '@angular/common';
 
 import {
-  BreakpointEnum,
+  ObserverModel,
   BreakpointModel,
   BreakpointService,
-  ObserverModel,
+  BreakpointEnum,
 } from '@english-learning/fe-system';
 import { CardComponent } from '../../misc/card/card.component';
-import { DashboardNavFormComponent } from '../../form/dashboard-nav-form/dashboard-nav-form.component';
-import { FontAwesomeComponent } from '../../external/font-awesome/font-awesome.component';
 import { FlexComponent } from '../../layout/flex/flex.component';
-import { ComponentDirective } from '../../base/component.directive';
-import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
+import { FontAwesomeComponent } from '../../external/font-awesome/font-awesome.component';
 import { HamburgerFormComponent } from '../../form/hamburger-form/hamburger-form.component';
+import { DashboardNavFormComponent } from '../../form/dashboard-nav-form/dashboard-nav-form.component';
 
 @Component({
   selector: 'lib-dashboard-nav',
   standalone: true,
   imports: [
-    ...ComponentDirective.buildImports(),
-    ButtonIconComponent,
+    NgIf,
     CardComponent,
     FlexComponent,
     FontAwesomeComponent,
-    DashboardNavFormComponent,
     HamburgerFormComponent,
+    DashboardNavFormComponent,
   ],
   templateUrl: './dashboard-nav.component.html',
 })
+/**
+ * Dashboard Nav Component
+ */
 export class DashboardNavComponent implements ObserverModel<BreakpointModel> {
   justifyContent: Properties['justifyContent'] = 'space-between';
 
