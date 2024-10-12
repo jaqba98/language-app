@@ -1,16 +1,16 @@
 <lib-card type="nav">
   <lib-flex alignItems="center" [justifyContent]="justifyContent">
-    <lib-font-awesome type="school" size="2x"></lib-font-awesome>
+    <lib-font-awesome type="school" size="3x"></lib-font-awesome>
     <ng-container *ngIf="isMobile; else pc">
       <lib-hamburger-form (event)="onHamburger()"></lib-hamburger-form>
     </ng-container>
     <ng-template #pc>
-      <lib-dashboard-nav-form formDirection="row"></lib-dashboard-nav-form>
+      <lib-dashboard-nav-form></lib-dashboard-nav-form>
     </ng-template>
   </lib-flex>
 </lib-card>
 <ng-container *ngIf="isMobile && isMenuVisible">
   <lib-card type="nav">
-    <lib-dashboard-nav-form></lib-dashboard-nav-form>
+    <lib-dashboard-nav-form flexDirection="column"></lib-dashboard-nav-form>
   </lib-card>
 </ng-container>
