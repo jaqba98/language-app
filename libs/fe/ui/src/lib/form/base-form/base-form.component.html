@@ -1,6 +1,6 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
   <lib-flex [flexDirection]="flexDirection" gap="small">
-    <ng-container *ngFor="let control of baseForm.controls">
+    <ng-container *ngFor="let control of getControls()">
       <!-- Input -->
       <ng-container *ngIf="control.kind === 'input'">
         <lib-input

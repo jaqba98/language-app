@@ -16,8 +16,8 @@ export class ForgotPasswordFormComponent {
   @Output() event = new EventEmitter<ForgotPasswordFormModel>();
 
   forgotPasswordForm: BaseFormModel = {
-    controls: [
-      {
+    controls: {
+      tip: {
         kind: ControlKindEnum.text,
         id: 'tip',
         alignItems: 'stretch',
@@ -29,7 +29,7 @@ export class ForgotPasswordFormComponent {
           'Lost your password? Please enter your email address. You will receive a link to create a new password via email.',
         margin: '1rem 0',
       },
-      {
+      email: {
         kind: ControlKindEnum.input,
         id: 'email',
         alignItems: 'stretch',
@@ -47,7 +47,7 @@ export class ForgotPasswordFormComponent {
           type: 'text',
         },
       },
-      {
+      submit: {
         kind: ControlKindEnum.buttonText,
         id: 'submit',
         alignItems: 'flex-start',
@@ -58,7 +58,7 @@ export class ForgotPasswordFormComponent {
         label: 'Reset password',
         type: 'submit',
       },
-    ],
+    },
   };
 
   onBaseFormEvent(model: ForgotPasswordFormModel) {

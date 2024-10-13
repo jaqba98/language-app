@@ -16,8 +16,8 @@ export class RegistrationFormComponent {
   @Output() event = new EventEmitter<RegistrationFormModel>();
 
   registrationForm: BaseFormModel = {
-    controls: [
-      {
+    controls: {
+      email: {
         kind: ControlKindEnum.input,
         id: 'email',
         alignItems: 'stretch',
@@ -35,7 +35,7 @@ export class RegistrationFormComponent {
           type: 'text',
         },
       },
-      {
+      name: {
         kind: ControlKindEnum.input,
         id: 'name',
         alignItems: 'stretch',
@@ -53,7 +53,7 @@ export class RegistrationFormComponent {
           type: 'text',
         },
       },
-      {
+      password: {
         kind: ControlKindEnum.input,
         id: 'password',
         alignItems: 'stretch',
@@ -71,7 +71,7 @@ export class RegistrationFormComponent {
           type: 'password',
         },
       },
-      {
+      repeatPassword: {
         kind: ControlKindEnum.input,
         id: 'repeatPassword',
         alignItems: 'stretch',
@@ -89,7 +89,7 @@ export class RegistrationFormComponent {
           type: 'password',
         },
       },
-      {
+      submit: {
         kind: ControlKindEnum.buttonText,
         id: 'submit',
         alignItems: 'flex-start',
@@ -100,7 +100,7 @@ export class RegistrationFormComponent {
         label: 'Register',
         type: 'submit',
       },
-    ],
+    },
   };
 
   onBaseFormEvent(model: RegistrationFormModel) {

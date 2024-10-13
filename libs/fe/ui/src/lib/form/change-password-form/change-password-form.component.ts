@@ -16,8 +16,8 @@ export class ChangePasswordFormComponent {
   @Output() event = new EventEmitter<ChangePasswordFormModel>();
 
   changePasswordForm: BaseFormModel = {
-    controls: [
-      {
+    controls: {
+      password: {
         kind: ControlKindEnum.input,
         id: 'password',
         alignItems: 'stretch',
@@ -35,7 +35,7 @@ export class ChangePasswordFormComponent {
           type: 'password',
         },
       },
-      {
+      repeatPassword: {
         kind: ControlKindEnum.input,
         id: 'repeatPassword',
         alignItems: 'stretch',
@@ -53,7 +53,7 @@ export class ChangePasswordFormComponent {
           type: 'password',
         },
       },
-      {
+      submit: {
         kind: ControlKindEnum.buttonText,
         id: 'submit',
         alignItems: 'flex-start',
@@ -64,7 +64,7 @@ export class ChangePasswordFormComponent {
         label: 'Change password',
         type: 'submit',
       },
-    ],
+    },
   };
 
   onBaseFormEvent(model: ChangePasswordFormModel) {

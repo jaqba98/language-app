@@ -16,8 +16,8 @@ export class LoginFormComponent {
   @Output() event = new EventEmitter<LoginFormModel>();
 
   loginForm: BaseFormModel = {
-    controls: [
-      {
+    controls: {
+      email: {
         kind: ControlKindEnum.input,
         id: 'email',
         alignItems: 'stretch',
@@ -35,7 +35,7 @@ export class LoginFormComponent {
           type: 'text',
         },
       },
-      {
+      password: {
         kind: ControlKindEnum.input,
         id: 'password',
         alignItems: 'stretch',
@@ -53,7 +53,7 @@ export class LoginFormComponent {
           type: 'password',
         },
       },
-      {
+      forgotPassword: {
         kind: ControlKindEnum.link,
         id: 'forgotPassword',
         alignItems: 'flex-end',
@@ -65,7 +65,7 @@ export class LoginFormComponent {
         path: '/forgot-password',
         tip: '',
       },
-      {
+      submit: {
         kind: ControlKindEnum.buttonText,
         id: 'submit',
         alignItems: 'flex-start',
@@ -76,7 +76,7 @@ export class LoginFormComponent {
         label: 'Log in',
         type: 'submit',
       },
-      {
+      registration: {
         kind: ControlKindEnum.link,
         id: 'registration',
         alignItems: 'flex-start',
@@ -88,7 +88,7 @@ export class LoginFormComponent {
         path: '/registration',
         tip: "Don't have an account?",
       },
-    ],
+    },
   };
 
   onBaseFormEvent(model: LoginFormModel) {

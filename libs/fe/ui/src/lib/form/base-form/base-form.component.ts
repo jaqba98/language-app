@@ -56,7 +56,7 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
   }
 
   protected override afterInit() {
-    this.baseForm.controls.forEach(control => {
+    Object.values(this.baseForm.controls).forEach(control => {
       const { id } = control;
       if (this.formGroup.get(id)) {
         throw new Error(elementByIdExistError('Form control', id));
@@ -84,6 +84,10 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
     throw new Error(elementByIdNotExistError('Form control', id));
   }
 
+  getControls() {
+    return Object.values(this.baseForm.controls);
+  }
+
   private buildFormControl(control: ControlType) {
     switch (control.kind) {
       case ControlKindEnum.input:
@@ -104,7 +108,7 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
   }
 
   private resetFormControls() {
-    this.baseForm.controls.forEach(control => {
+    Object.values(this.baseForm.controls).forEach(control => {
       this.formGroup.setControl(control.id, this.buildFormControl(control));
     });
     this.formGroup.markAsUntouched();
