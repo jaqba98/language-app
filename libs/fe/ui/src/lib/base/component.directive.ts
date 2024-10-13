@@ -7,6 +7,8 @@ import {
   ElementRef,
   Input,
   Injector,
+  OnChanges,
+  SimpleChanges,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
@@ -16,7 +18,7 @@ import { BemService } from '../service/bem.service';
 /**
  * Component Directive
  */
-export class ComponentDirective implements OnInit, OnDestroy {
+export class ComponentDirective implements OnInit, OnDestroy, OnChanges {
   @ViewChild('self') self!: ElementRef;
 
   @Input() controlForm!: FormControl;
@@ -42,9 +44,15 @@ export class ComponentDirective implements OnInit, OnDestroy {
     this.afterDestroy();
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    this.afterChanges(changes);
+  }
+
   protected afterInit() {}
 
   protected afterDestroy() {}
+
+  protected afterChanges<T>(_changes: T) {}
 
   protected addClassName(block = '', element = '', modifier = '') {
     const className = this.bem.buildBem(block, element, modifier);
