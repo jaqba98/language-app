@@ -63,6 +63,7 @@ export class ChangePasswordFormComponent {
         },
         label: 'Change password',
         type: 'submit',
+        fullWidth: false,
       },
     },
   };

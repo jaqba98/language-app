@@ -75,6 +75,7 @@ export class LoginFormComponent {
         },
         label: 'Log in',
         type: 'submit',
+        fullWidth: false,
       },
       registration: {
         kind: ControlKindEnum.link,

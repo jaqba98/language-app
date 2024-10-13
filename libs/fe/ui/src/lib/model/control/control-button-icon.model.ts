@@ -11,4 +11,5 @@ export interface ControlButtonIconModel extends ControlBaseModel {
   icon: FontAwesomeType;
   color: FontAwesomeColorType;
   type: ButtonType;
+  fullWidth: boolean;
 }

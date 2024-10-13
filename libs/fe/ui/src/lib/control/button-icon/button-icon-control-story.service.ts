@@ -12,4 +12,5 @@ export const buttonIconControlStory: ControlButtonIconModel = {
   icon: 'bars',
   color: 'default',
   type: 'button',
+  fullWidth: false,
 };

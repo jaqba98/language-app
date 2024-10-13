@@ -21,9 +21,14 @@ export class ButtonComponent extends EventEmitterDirective<boolean> {
 
   @Input() shape: ButtonShapeType = 'rectangle';
 
+  @Input() fullWidth = false;
+
   protected override afterInit() {
     this.addClassName('button');
     this.addClassName('button', this.shape);
+    if (this.fullWidth) {
+      this.addClassName('button', 'full-width');
+    }
   }
 
   onEvent(eventData: boolean) {
