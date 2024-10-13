@@ -23,12 +23,12 @@ type Story = StoryObj<BaseFormComponent>;
 
 const buildBaseFormArgs = (): Story['args'] => ({
   baseForm: {
-    controls: [
-      inputControlStory,
-      buttonTextControlStory('submit'),
-      buttonLinkControlStory,
-      buttonIconControlStory,
-    ],
+    controls: {
+      input: inputControlStory,
+      butonText: buttonTextControlStory('submit'),
+      buttonLink: buttonLinkControlStory,
+      buttonIcon: buttonIconControlStory,
+    },
   },
 });
 

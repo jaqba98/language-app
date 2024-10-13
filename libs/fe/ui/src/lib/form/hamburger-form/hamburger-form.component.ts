@@ -16,8 +16,8 @@ import { BaseFormComponent } from '../base-form/base-form.component';
  */
 export class HamburgerFormComponent extends EventEmitterDirective<boolean> {
   form: BaseFormModel = {
-    controls: [
-      {
+    controls: {
+      submit: {
         kind: ControlKindEnum.buttonIcon,
         id: 'submit',
         alignItems: 'stretch',
@@ -29,7 +29,7 @@ export class HamburgerFormComponent extends EventEmitterDirective<boolean> {
         color: 'default',
         type: 'button',
       },
-    ],
+    },
   };
 
   onEvent() {

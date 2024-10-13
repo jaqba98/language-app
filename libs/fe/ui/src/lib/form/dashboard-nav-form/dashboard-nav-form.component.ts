@@ -18,8 +18,8 @@ export class DashboardNavFormComponent {
   @Input() flexDirection: Properties['flexDirection'] = 'row';
 
   form: BaseFormModel = {
-    controls: [
-      {
+    controls: {
+      statistics: {
         kind: ControlKindEnum.buttonLink,
         id: 'statistics',
         alignItems: 'stretch',
@@ -30,7 +30,7 @@ export class DashboardNavFormComponent {
         label: 'Statistics',
         path: '/statistics',
       },
-      {
+      courses: {
         kind: ControlKindEnum.buttonLink,
         id: 'courses',
         alignItems: 'stretch',
@@ -41,7 +41,7 @@ export class DashboardNavFormComponent {
         label: 'Courses',
         path: '/courses',
       },
-      {
+      account: {
         kind: ControlKindEnum.buttonLink,
         id: 'account',
         alignItems: 'stretch',
@@ -52,7 +52,7 @@ export class DashboardNavFormComponent {
         label: 'Account',
         path: '/account',
       },
-      {
+      logout: {
         kind: ControlKindEnum.buttonLink,
         id: 'logout',
         alignItems: 'stretch',
@@ -63,6 +63,6 @@ export class DashboardNavFormComponent {
         label: 'logout',
         path: '/logout',
       },
-    ],
+    },
   };
 }

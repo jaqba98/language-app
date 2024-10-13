@@ -14,5 +14,5 @@ export type ControlType =
   | ControlTextModel;
 
 export interface BaseFormModel {
-  controls: ControlType[];
+  controls: Record<string, ControlType>;
 }
