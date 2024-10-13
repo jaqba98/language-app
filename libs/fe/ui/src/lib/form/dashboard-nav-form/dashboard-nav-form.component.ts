@@ -33,7 +33,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
             isVisible: false,
           },
           label: 'Statistics',
-          path: '/statistics',
+          path: '/dashboard/statistics',
           fullWidth: this.flexDirection === 'column',
         },
         courses: {
@@ -45,7 +45,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
             isVisible: false,
           },
           label: 'Courses',
-          path: '/courses',
+          path: '/dashboard/courses',
           fullWidth: this.flexDirection === 'column',
         },
         account: {
@@ -57,7 +57,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
             isVisible: false,
           },
           label: 'Account',
-          path: '/account',
+          path: '/dashboard/account',
           fullWidth: this.flexDirection === 'column',
         },
         logout: {
@@ -69,7 +69,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
             isVisible: false,
           },
           label: 'logout',
-          path: '/logout',
+          path: '/',
           fullWidth: this.flexDirection === 'column',
         },
       },
