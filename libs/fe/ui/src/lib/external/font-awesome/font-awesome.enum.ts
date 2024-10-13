@@ -4,6 +4,7 @@ export enum FontAwesomeTypeEnum {
   play = 'play',
   star = 'star',
   bars = 'bard',
+  xmark = 'xmark',
 }
 
 export enum FontAwesomeColorEnum {

@@ -66,3 +66,12 @@ export const BarsDark: Story = {
   ...buildStoryArgs(buildFontAwesomeStoryArgs('bars', 'default', '10x')),
   ...buildStoryDarkMode(),
 };
+
+export const XMarkLight: Story = {
+  ...buildStoryArgs(buildFontAwesomeStoryArgs('xmark', 'default', '10x')),
+  ...buildStoryLightMode(),
+};
+export const XMarkDark: Story = {
+  ...buildStoryArgs(buildFontAwesomeStoryArgs('xmark', 'default', '10x')),
+  ...buildStoryDarkMode(),
+};
