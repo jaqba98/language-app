@@ -7,6 +7,7 @@ import {
   faPlay,
   faSchool,
   faStar,
+  faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { notValueInEnum } from '@english-learning/fe-domain';
@@ -47,6 +48,8 @@ export class FontAwesomeComponent extends ComponentDirective {
         return faStar;
       case 'bars':
         return faBars;
+      case 'xmark':
+        return faXmark;
       default:
         throw new Error(notValueInEnum(this.type, 'IconProp'));
     }
