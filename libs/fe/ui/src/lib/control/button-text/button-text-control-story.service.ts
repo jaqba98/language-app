@@ -12,4 +12,5 @@ export const buttonTextControlStory = (type: ButtonType): ControlButtonTextModel
   },
   label: 'Click me!',
   type,
+  fullWidth: false,
 });

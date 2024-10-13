@@ -20,6 +20,11 @@ $classes: (
             min-width: main.$control-height,
           ),
         ),
+        full-width: (
+          styles: (
+            width: 100%,
+          ),
+        ),
       ),
     ),
   ),

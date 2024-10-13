@@ -11,4 +11,5 @@ export const buttonLinkControlStory: ControlButtonLinkModel = {
   },
   label: 'Link1',
   path: '/',
+  fullWidth: false,
 };

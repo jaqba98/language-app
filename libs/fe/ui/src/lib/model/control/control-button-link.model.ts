@@ -5,4 +5,5 @@ export interface ControlButtonLinkModel extends ControlBaseModel {
   kind: ControlKindEnum.buttonLink;
   label: string;
   path: string;
+  fullWidth: boolean;
 }

@@ -6,4 +6,5 @@ export interface ControlButtonTextModel extends ControlBaseModel {
   kind: ControlKindEnum.buttonText;
   label: string;
   type: ButtonType;
+  fullWidth: boolean;
 }

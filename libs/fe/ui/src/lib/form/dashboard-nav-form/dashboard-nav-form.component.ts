@@ -5,6 +5,7 @@ import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { BaseFormModel } from '../../model/form/base-form.model';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { DashboardNavFormModel } from './dashboard-nav-form.model';
+import { ComponentDirective } from '../../base/component.directive';
 
 @Component({
   selector: 'lib-dashboard-nav-form',
@@ -15,55 +16,63 @@ import { DashboardNavFormModel } from './dashboard-nav-form.model';
 /**
  * Dashboard Nav Form Component
  */
-export class DashboardNavFormComponent {
+export class DashboardNavFormComponent extends ComponentDirective {
   @Input() flexDirection: Properties['flexDirection'] = 'row';
 
-  form: BaseFormModel<DashboardNavFormModel> = {
-    controls: {
-      statistics: {
-        kind: ControlKindEnum.buttonLink,
-        id: 'statistics',
-        alignItems: 'stretch',
-        validation: {
-          validators: [],
-          isVisible: false,
+  form!: BaseFormModel<DashboardNavFormModel>;
+
+  protected override afterInit() {
+    this.form = {
+      controls: {
+        statistics: {
+          kind: ControlKindEnum.buttonLink,
+          id: 'statistics',
+          alignItems: 'stretch',
+          validation: {
+            validators: [],
+            isVisible: false,
+          },
+          label: 'Statistics',
+          path: '/statistics',
+          fullWidth: this.flexDirection === 'column',
         },
-        label: 'Statistics',
-        path: '/statistics',
-      },
-      courses: {
-        kind: ControlKindEnum.buttonLink,
-        id: 'courses',
-        alignItems: 'stretch',
-        validation: {
-          validators: [],
-          isVisible: false,
+        courses: {
+          kind: ControlKindEnum.buttonLink,
+          id: 'courses',
+          alignItems: 'stretch',
+          validation: {
+            validators: [],
+            isVisible: false,
+          },
+          label: 'Courses',
+          path: '/courses',
+          fullWidth: this.flexDirection === 'column',
         },
-        label: 'Courses',
-        path: '/courses',
-      },
-      account: {
-        kind: ControlKindEnum.buttonLink,
-        id: 'account',
-        alignItems: 'stretch',
-        validation: {
-          validators: [],
-          isVisible: false,
+        account: {
+          kind: ControlKindEnum.buttonLink,
+          id: 'account',
+          alignItems: 'stretch',
+          validation: {
+            validators: [],
+            isVisible: false,
+          },
+          label: 'Account',
+          path: '/account',
+          fullWidth: this.flexDirection === 'column',
         },
-        label: 'Account',
-        path: '/account',
-      },
-      logout: {
-        kind: ControlKindEnum.buttonLink,
-        id: 'logout',
-        alignItems: 'stretch',
-        validation: {
-          validators: [],
-          isVisible: false,
+        logout: {
+          kind: ControlKindEnum.buttonLink,
+          id: 'logout',
+          alignItems: 'stretch',
+          validation: {
+            validators: [],
+            isVisible: false,
+          },
+          label: 'logout',
+          path: '/logout',
+          fullWidth: this.flexDirection === 'column',
         },
-        label: 'logout',
-        path: '/logout',
       },
-    },
-  };
+    };
+  }
 }
