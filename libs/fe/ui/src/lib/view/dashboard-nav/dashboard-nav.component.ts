@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Properties } from 'csstype';
 import { NgIf } from '@angular/common';
 
@@ -31,10 +31,6 @@ import { DashboardNavFormComponent } from '../../form/dashboard-nav-form/dashboa
  * Dashboard Nav Component
  */
 export class DashboardNavComponent implements ObserverModel<BreakpointModel> {
-  @ViewChild('navMobile', { static: true }) navMobile!: ElementRef;
-
-  @ViewChild('hamburgerMobile', { static: true }) hamburgerMobile!: ElementRef;
-
   justifyContent: Properties['justifyContent'] = 'space-between';
 
   isMobile = true;
@@ -48,9 +44,11 @@ export class DashboardNavComponent implements ObserverModel<BreakpointModel> {
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
     if (!this.menuIsOpen) return;
-    const navMobileInside = this.navMobile.nativeElement.contains(event.target);
-    const hamburgerMobileInside = this.hamburgerMobile.nativeElement.contains(
-      event.target,
+    const navMobileInside = (event.target as HTMLElement).closest(
+      'lib-dashboard-nav-form',
+    );
+    const hamburgerMobileInside = (event.target as HTMLElement).closest(
+      'lib-hamburger-form',
     );
     if (navMobileInside || hamburgerMobileInside) return;
     this.menuIsOpen = false;
