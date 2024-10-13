@@ -3,7 +3,10 @@
     <lib-font-awesome type="school" size="2x"></lib-font-awesome>
     <ng-container *ngIf="isMobile; else pc">
       <div #hamburgerMobile>
-        <lib-hamburger-form #hamburger (event)="onHamburger()"></lib-hamburger-form>
+        <lib-hamburger-form
+          #hamburger
+          (event)="onHamburger()"
+          [menuIsOpen]="menuIsOpen"></lib-hamburger-form>
       </div>
     </ng-container>
     <ng-template #pc>
@@ -11,7 +14,7 @@
     </ng-template>
   </lib-flex>
 </lib-card>
-<ng-container *ngIf="isMobile && isMenuVisible">
+<ng-container *ngIf="isMobile && menuIsOpen">
   <div #navMobile>
     <lib-card type="nav">
       <lib-dashboard-nav-form flexDirection="column"></lib-dashboard-nav-form>

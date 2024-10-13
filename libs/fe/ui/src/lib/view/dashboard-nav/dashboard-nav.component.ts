@@ -31,15 +31,15 @@ import { DashboardNavFormComponent } from '../../form/dashboard-nav-form/dashboa
  * Dashboard Nav Component
  */
 export class DashboardNavComponent implements ObserverModel<BreakpointModel> {
-  @ViewChild('navMobile') navMobile!: ElementRef;
+  @ViewChild('navMobile', { static: true }) navMobile!: ElementRef;
 
-  @ViewChild('hamburgerMobile') hamburgerMobile!: ElementRef;
+  @ViewChild('hamburgerMobile', { static: true }) hamburgerMobile!: ElementRef;
 
   justifyContent: Properties['justifyContent'] = 'space-between';
 
   isMobile = true;
 
-  isMenuVisible = false;
+  menuIsOpen = false;
 
   constructor(private readonly breakpoint: BreakpointService) {
     this.breakpoint.addObserver(this);
@@ -47,13 +47,13 @@ export class DashboardNavComponent implements ObserverModel<BreakpointModel> {
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
-    if (!this.isMenuVisible) return;
+    if (!this.menuIsOpen) return;
     const navMobileInside = this.navMobile.nativeElement.contains(event.target);
     const hamburgerMobileInside = this.hamburgerMobile.nativeElement.contains(
       event.target,
     );
     if (navMobileInside || hamburgerMobileInside) return;
-    this.isMenuVisible = false;
+    this.menuIsOpen = false;
   }
 
   update(data: BreakpointModel) {
@@ -62,7 +62,7 @@ export class DashboardNavComponent implements ObserverModel<BreakpointModel> {
       this.isMobile = true;
     } else {
       this.isMobile = false;
-      this.isMenuVisible = false;
+      this.menuIsOpen = false;
     }
     if (breakpoint === BreakpointEnum.Large || breakpoint === BreakpointEnum.XLarge) {
       this.justifyContent = 'space-around';
@@ -72,6 +72,6 @@ export class DashboardNavComponent implements ObserverModel<BreakpointModel> {
   }
 
   onHamburger() {
-    this.isMenuVisible = !this.isMenuVisible;
+    this.menuIsOpen = !this.menuIsOpen;
   }
 }
