@@ -15,7 +15,7 @@ import { ControlKindEnum } from '../../enum/control-kind.enum';
 export class LoginFormComponent {
   @Output() event = new EventEmitter<LoginFormModel>();
 
-  loginForm: BaseFormModel = {
+  loginForm: BaseFormModel<LoginFormModel> = {
     controls: {
       email: {
         kind: ControlKindEnum.input,

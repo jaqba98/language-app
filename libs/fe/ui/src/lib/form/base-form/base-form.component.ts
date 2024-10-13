@@ -10,7 +10,11 @@ import {
 } from '@english-learning/fe-domain';
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
 import { ControlKindEnum } from '../../enum/control-kind.enum';
-import { BaseFormModel, ControlType } from '../../model/form/base-form.model';
+import {
+  BaseFormControlsModel,
+  BaseFormModel,
+  ControlType,
+} from '../../model/form/base-form.model';
 import { FlexComponent } from '../../layout/flex/flex.component';
 import { InputComponent } from '../../control/input/input.component';
 import { ButtonLinkComponent } from '../../control/button-link/button-link.component';
@@ -33,7 +37,7 @@ import { ButtonIconComponent } from '../../control/button-icon/button-icon.compo
   templateUrl: './base-form.component.html',
 })
 export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']> {
-  @Input({ required: true }) baseForm!: BaseFormModel;
+  @Input({ required: true }) baseForm!: BaseFormModel<BaseFormControlsModel>;
 
   @Input() flexDirection: Properties['flexDirection'] = 'column';
 

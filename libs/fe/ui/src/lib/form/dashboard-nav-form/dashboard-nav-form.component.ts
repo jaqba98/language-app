@@ -4,6 +4,7 @@ import { Properties } from 'csstype';
 import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { BaseFormModel } from '../../model/form/base-form.model';
 import { BaseFormComponent } from '../base-form/base-form.component';
+import { DashboardNavFormModel } from './dashboard-nav-form.model';
 
 @Component({
   selector: 'lib-dashboard-nav-form',
@@ -17,7 +18,7 @@ import { BaseFormComponent } from '../base-form/base-form.component';
 export class DashboardNavFormComponent {
   @Input() flexDirection: Properties['flexDirection'] = 'row';
 
-  form: BaseFormModel = {
+  form: BaseFormModel<DashboardNavFormModel> = {
     controls: {
       statistics: {
         kind: ControlKindEnum.buttonLink,

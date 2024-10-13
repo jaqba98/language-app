@@ -15,7 +15,7 @@ import { ChangePasswordFormModel } from './change-password-form.model';
 export class ChangePasswordFormComponent {
   @Output() event = new EventEmitter<ChangePasswordFormModel>();
 
-  changePasswordForm: BaseFormModel = {
+  changePasswordForm: BaseFormModel<ChangePasswordFormModel> = {
     controls: {
       password: {
         kind: ControlKindEnum.input,
