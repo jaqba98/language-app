@@ -23,7 +23,9 @@ type Story = StoryObj<BaseFormComponent>;
 
 const buildBaseFormArgs = (): Story['args'] => ({
   baseForm: {
-    controls: {
+    // TODO: Fix the any type!
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    controls: <any>{
       input: inputControlStory,
       butonText: buttonTextControlStory('submit'),
       buttonLink: buttonLinkControlStory,

@@ -15,7 +15,7 @@ import { ForgotPasswordFormModel } from './forgot-password-form.model';
 export class ForgotPasswordFormComponent {
   @Output() event = new EventEmitter<ForgotPasswordFormModel>();
 
-  forgotPasswordForm: BaseFormModel = {
+  forgotPasswordForm: BaseFormModel<ForgotPasswordFormModel> = {
     controls: {
       tip: {
         kind: ControlKindEnum.text,
