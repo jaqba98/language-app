@@ -2,12 +2,10 @@
   <lib-flex alignItems="center" [justifyContent]="justifyContent">
     <lib-font-awesome type="school" size="2x"></lib-font-awesome>
     <ng-container *ngIf="isMobile; else pc">
-      <div #hamburgerMobile>
-        <lib-hamburger-form
-          #hamburger
-          (event)="onHamburger()"
-          [menuIsOpen]="menuIsOpen"></lib-hamburger-form>
-      </div>
+      <lib-hamburger-form
+        #hamburger
+        (event)="onHamburger()"
+        [menuIsOpen]="menuIsOpen"></lib-hamburger-form>
     </ng-container>
     <ng-template #pc>
       <lib-dashboard-nav-form></lib-dashboard-nav-form>
