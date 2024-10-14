@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import {
   buildBaseStory,
   buildMetaEventAction,
+  buildMetaFullScreen,
   buildMetaModuleMetaData,
   buildStoryTemplate,
 } from '@english-learning/fe-utils';
@@ -12,10 +13,11 @@ import { TasksService } from './tasks.service';
 const meta: Meta<TasksComponent> = {
   component: TasksComponent,
   title: 'fe/page/dashboard/course/tasks',
+  ...buildMetaFullScreen(),
   ...buildMetaEventAction(),
   ...buildMetaModuleMetaData(
-    [],
-    [TasksService.getStorybookImports(), TasksService.getStorybookProviders()],
+    TasksService.getStorybookImports(),
+    TasksService.getStorybookProviders(),
   ),
 };
 export default meta;
