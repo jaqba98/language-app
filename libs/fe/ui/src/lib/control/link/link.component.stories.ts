@@ -17,7 +17,7 @@ export const Primary: Story = {
     control: {
       kind: ControlKindEnum.link,
       id: 'link',
-      alignItems: 'flex-start',
+      alignItems: 'left',
       validation: {
         validators: [],
         isVisible: false,

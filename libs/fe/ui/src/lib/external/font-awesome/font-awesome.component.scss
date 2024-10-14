@@ -1,14 +1,9 @@
 @use '@english-learning/fe-styles/src/lib/main';
 
 $classes: (
-  light-mode: (
+  root: (
     font-awesome: (
       elements: (
-        default: (
-          styles: (
-            color: main.pick-neutrals-light-copy-lighter-color(),
-          ),
-        ),
         gray: (
           styles: (
             color: main.pick-business-blocked-primary-color(),
@@ -27,27 +22,23 @@ $classes: (
       ),
     ),
   ),
+  light-mode: (
+    font-awesome: (
+      elements: (
+        default: (
+          styles: (
+            color: main.pick-neutrals-light-copy-lighter-color(),
+          ),
+        ),
+      ),
+    ),
+  ),
   dark-mode: (
     font-awesome: (
       elements: (
         default: (
           styles: (
             color: main.pick-neutrals-dark-copy-lighter-color(),
-          ),
-        ),
-        gray: (
-          styles: (
-            color: main.pick-business-blocked-primary-color(),
-          ),
-        ),
-        green: (
-          styles: (
-            color: main.pick-business-active-primary-color(),
-          ),
-        ),
-        gold: (
-          styles: (
-            color: main.pick-business-done-primary-color(),
           ),
         ),
       ),

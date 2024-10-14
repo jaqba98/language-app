@@ -4,7 +4,7 @@ import { ControlButtonLinkModel } from '../../model/control/control-button-link.
 export const buttonLinkControlStory: ControlButtonLinkModel = {
   kind: ControlKindEnum.buttonLink,
   id: 'button-link',
-  alignItems: 'stretch',
+  alignItems: 'left',
   validation: {
     validators: [],
     isVisible: true,

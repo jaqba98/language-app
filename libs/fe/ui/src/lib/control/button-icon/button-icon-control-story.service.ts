@@ -4,7 +4,7 @@ import { ControlButtonIconModel } from '../../model/control/control-button-icon.
 export const buttonIconControlStory: ControlButtonIconModel = {
   kind: ControlKindEnum.buttonIcon,
   id: 'button-icon',
-  alignItems: 'stretch',
+  alignItems: 'left',
   validation: {
     validators: [],
     isVisible: true,

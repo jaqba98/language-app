@@ -1,5 +1,4 @@
 import { Component, HostListener } from '@angular/core';
-import { Properties } from 'csstype';
 import { NgIf } from '@angular/common';
 
 import {
@@ -8,6 +7,7 @@ import {
   BreakpointService,
   BreakpointEnum,
 } from '@english-learning/fe-system';
+import { SpaceType } from '@english-learning/shared-type';
 import { CardComponent } from '../../misc/card/card.component';
 import { FlexComponent } from '../../layout/flex/flex.component';
 import { FontAwesomeComponent } from '../../external/font-awesome/font-awesome.component';
@@ -31,7 +31,7 @@ import { DashboardNavFormComponent } from '../../form/dashboard-nav-form/dashboa
  * Dashboard Nav Component
  */
 export class DashboardNavComponent implements ObserverModel<BreakpointModel> {
-  justifyContent: Properties['justifyContent'] = 'space-between';
+  justifyContent: SpaceType = 'none';
 
   isMobile = true;
 
@@ -63,9 +63,9 @@ export class DashboardNavComponent implements ObserverModel<BreakpointModel> {
       this.menuIsOpen = false;
     }
     if (breakpoint === BreakpointEnum.Large || breakpoint === BreakpointEnum.XLarge) {
-      this.justifyContent = 'space-around';
+      this.justifyContent = 'around';
     } else {
-      this.justifyContent = 'space-between';
+      this.justifyContent = 'between';
     }
   }
 

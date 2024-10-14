@@ -1,23 +1,5 @@
 @use '@english-learning/fe-styles/src/lib/main';
 
-@function build-task-marker-element($element) {
-  $primary: main.get-map-element(main.$task-marker, #{$element}-primary);
-  $secondary: main.get-map-element(main.$task-marker, #{$element}-secondary);
-  $styles: (
-    background-color: $secondary,
-    box-shadow: 0 0.5rem $secondary,
-    border: 0.5rem solid $primary,
-  );
-  $pseudo-classes: (
-    active: (
-      transform: translateY(0.25rem),
-      box-shadow: 0 0.25rem $secondary,
-    ),
-  );
-
-  @return (styles: $styles, pseudo-classes: $pseudo-classes);
-}
-
 $classes: (
   root: (
     task-marker: (
@@ -28,9 +10,45 @@ $classes: (
         cursor: pointer,
       ),
       elements: (
-        blocked: build-task-marker-element('blocked'),
-        active: build-task-marker-element('active'),
-        done: build-task-marker-element('done'),
+        blocked: (
+          styles: (
+            background-color: main.pick-business-blocked-secondary-color(),
+            box-shadow: 0 0.5rem main.pick-business-blocked-secondary-color(),
+            border: 0.5rem solid main.pick-business-blocked-primary-color(),
+          ),
+          pseudo-classes: (
+            active: (
+              transform: translateY(0.25rem),
+              box-shadow: 0 0.25rem main.pick-business-blocked-secondary-color(),
+            ),
+          ),
+        ),
+        active: (
+          styles: (
+            background-color: main.pick-business-active-secondary-color(),
+            box-shadow: 0 0.5rem main.pick-business-active-secondary-color(),
+            border: 0.5rem solid main.pick-business-active-primary-color(),
+          ),
+          pseudo-classes: (
+            active: (
+              transform: translateY(0.25rem),
+              box-shadow: 0 0.25rem main.pick-business-active-secondary-color(),
+            ),
+          ),
+        ),
+        done: (
+          styles: (
+            background-color: main.pick-business-done-secondary-color(),
+            box-shadow: 0 0.5rem main.pick-business-done-secondary-color(),
+            border: 0.5rem solid main.pick-business-done-primary-color(),
+          ),
+          pseudo-classes: (
+            active: (
+              transform: translateY(0.25rem),
+              box-shadow: 0 0.25rem main.pick-business-done-secondary-color(),
+            ),
+          ),
+        ),
       ),
     ),
   ),

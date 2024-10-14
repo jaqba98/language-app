@@ -23,10 +23,13 @@ export class BusinessDirective<TEvent = undefined> extends EventEmitterDirective
   }
 
   protected override afterInit() {
+    this.beforeBusinessInit();
     this.sub = this.store
       .select(this.select)
       .subscribe(store => this.onStoreChange(store));
   }
+
+  protected beforeBusinessInit() {}
 
   protected override afterDestroy() {
     if (this.sub) {

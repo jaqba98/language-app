@@ -1,13 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { SizeProp } from '@fortawesome/angular-fontawesome';
 
-import {
-  buildStoryArgs,
-  buildStoryDarkMode,
-  buildStoryLightMode,
-} from '@english-learning/fe-utils';
+import { buildBaseStory } from '@english-learning/fe-utils';
 import { FontAwesomeComponent } from './font-awesome.component';
-import { FontAwesomeColorType, FontAwesomeType } from './font-awesome.type';
+import { FontAwesomeType, FontAwesomeColorType } from './font-awesome.type';
 
 const meta: Meta<FontAwesomeComponent> = {
   component: FontAwesomeComponent,
@@ -16,62 +12,26 @@ const meta: Meta<FontAwesomeComponent> = {
 export default meta;
 type Story = StoryObj<FontAwesomeComponent>;
 
-const buildFontAwesomeStoryArgs = (
+const buildArgs = (
   type: FontAwesomeType,
   color: FontAwesomeColorType,
   size: SizeProp,
 ): Story['args'] => ({ type, color, size });
 
-export const SchoolLight: Story = {
-  ...buildStoryArgs(buildFontAwesomeStoryArgs('school', 'default', '4x')),
-  ...buildStoryLightMode(),
-};
-export const SchoolDark: Story = {
-  ...buildStoryArgs(buildFontAwesomeStoryArgs('school', 'default', '4x')),
-  ...buildStoryDarkMode(),
-};
+export const SchoolLight = buildBaseStory(true, buildArgs('school', 'default', '4x'));
+export const SchoolDark = buildBaseStory(false, buildArgs('school', 'default', '4x'));
 
-export const LockLight: Story = {
-  ...buildStoryArgs(buildFontAwesomeStoryArgs('lock', 'gray', '6x')),
-  ...buildStoryLightMode(),
-};
-export const LockDark: Story = {
-  ...buildStoryArgs(buildFontAwesomeStoryArgs('lock', 'gray', '6x')),
-  ...buildStoryDarkMode(),
-};
+export const LockLight = buildBaseStory(true, buildArgs('lock', 'gray', '6x'));
+export const LockDark = buildBaseStory(false, buildArgs('lock', 'gray', '6x'));
 
-export const PlayLight: Story = {
-  ...buildStoryArgs(buildFontAwesomeStoryArgs('play', 'green', '8x')),
-  ...buildStoryLightMode(),
-};
-export const PlayDark: Story = {
-  ...buildStoryArgs(buildFontAwesomeStoryArgs('play', 'green', '8x')),
-  ...buildStoryDarkMode(),
-};
+export const PlayLight = buildBaseStory(true, buildArgs('play', 'green', '8x'));
+export const PlayDark = buildBaseStory(false, buildArgs('play', 'green', '8x'));
 
-export const StarLight: Story = {
-  ...buildStoryArgs(buildFontAwesomeStoryArgs('star', 'gold', '10x')),
-  ...buildStoryLightMode(),
-};
-export const StarDark: Story = {
-  ...buildStoryArgs(buildFontAwesomeStoryArgs('star', 'gold', '10x')),
-  ...buildStoryDarkMode(),
-};
+export const StarLight = buildBaseStory(true, buildArgs('star', 'gold', '10x'));
+export const StarDark = buildBaseStory(false, buildArgs('star', 'gold', '10x'));
 
-export const BarsLight: Story = {
-  ...buildStoryArgs(buildFontAwesomeStoryArgs('bars', 'default', '10x')),
-  ...buildStoryLightMode(),
-};
-export const BarsDark: Story = {
-  ...buildStoryArgs(buildFontAwesomeStoryArgs('bars', 'default', '10x')),
-  ...buildStoryDarkMode(),
-};
+export const BarsLight = buildBaseStory(true, buildArgs('bars', 'default', '10x'));
+export const BarsDark = buildBaseStory(false, buildArgs('bars', 'default', '10x'));
 
-export const XMarkLight: Story = {
-  ...buildStoryArgs(buildFontAwesomeStoryArgs('xmark', 'default', '10x')),
-  ...buildStoryLightMode(),
-};
-export const XMarkDark: Story = {
-  ...buildStoryArgs(buildFontAwesomeStoryArgs('xmark', 'default', '10x')),
-  ...buildStoryDarkMode(),
-};
+export const XMarkLight = buildBaseStory(true, buildArgs('xmark', 'default', '10x'));
+export const XMarkDark = buildBaseStory(false, buildArgs('xmark', 'default', '10x'));
