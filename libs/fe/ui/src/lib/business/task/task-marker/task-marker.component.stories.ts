@@ -1,27 +1,29 @@
-import { type Meta, moduleMetadata, type StoryObj } from '@storybook/angular';
+import type { Meta, StoryObj } from '@storybook/angular';
 
+import {
+  buildBaseStory,
+  buildMetaEventAction,
+  buildMetaModuleMetaData,
+} from '@english-learning/fe-utils';
 import { storeMock } from '@english-learning/fe-store';
 import { TaskMarkerComponent } from './task-marker.component';
 
 const meta: Meta<TaskMarkerComponent> = {
   component: TaskMarkerComponent,
   title: 'fe/ui/business/task/task-marker',
-  decorators: [moduleMetadata({ providers: [storeMock] })],
-  argTypes: {
-    event: { action: 'event' },
-  },
+  ...buildMetaEventAction(),
+  ...buildMetaModuleMetaData([], [storeMock]),
 };
 export default meta;
 type Story = StoryObj<TaskMarkerComponent>;
 
-export const Blocked: Story = {
-  args: { taskId: 'task1' },
-};
+const buildArgs = (taskId: string): Story['args'] => ({ taskId });
 
-export const Active: Story = {
-  args: { taskId: 'task50' },
-};
+export const DoneLight = buildBaseStory(true, buildArgs('task1'));
+export const DoneDark = buildBaseStory(false, buildArgs('task1'));
 
-export const Done: Story = {
-  args: { taskId: 'task51' },
-};
+export const ActiveLight = buildBaseStory(true, buildArgs('task50'));
+export const ActiveDark = buildBaseStory(false, buildArgs('task50'));
+
+export const BlockedLight = buildBaseStory(true, buildArgs('task51'));
+export const BlockedDark = buildBaseStory(false, buildArgs('task51'));

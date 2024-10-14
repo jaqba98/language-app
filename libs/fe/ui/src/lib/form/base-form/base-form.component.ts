@@ -1,6 +1,5 @@
 import { Component, Input, Injector } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Properties } from 'csstype';
 import { NgFor, NgIf } from '@angular/common';
 
 import {
@@ -8,6 +7,7 @@ import {
   elementByIdNotExistError,
   unsupportedTypeError,
 } from '@english-learning/fe-domain';
+import { DirectionType } from '@english-learning/shared-type';
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
 import { ControlKindEnum } from '../../enum/control-kind.enum';
 import {
@@ -39,7 +39,7 @@ import { ButtonIconComponent } from '../../control/button-icon/button-icon.compo
 export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']> {
   @Input({ required: true }) baseForm!: BaseFormModel<BaseFormControlsModel>;
 
-  @Input() flexDirection: Properties['flexDirection'] = 'column';
+  @Input() flexDirection: DirectionType = 'column';
 
   @Input() resetIfError = false;
 

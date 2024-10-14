@@ -20,7 +20,7 @@ export class LoginFormComponent {
       email: {
         kind: ControlKindEnum.input,
         id: 'email',
-        alignItems: 'stretch',
+        alignItems: 'left',
         validation: {
           validators: [Validators.required, Validators.email],
           isVisible: false,
@@ -38,7 +38,7 @@ export class LoginFormComponent {
       password: {
         kind: ControlKindEnum.input,
         id: 'password',
-        alignItems: 'stretch',
+        alignItems: 'left',
         validation: {
           validators: [Validators.required],
           isVisible: false,
@@ -56,7 +56,7 @@ export class LoginFormComponent {
       forgotPassword: {
         kind: ControlKindEnum.link,
         id: 'forgotPassword',
-        alignItems: 'flex-end',
+        alignItems: 'right',
         validation: {
           validators: [],
           isVisible: false,
@@ -68,7 +68,7 @@ export class LoginFormComponent {
       submit: {
         kind: ControlKindEnum.buttonText,
         id: 'submit',
-        alignItems: 'flex-start',
+        alignItems: 'left',
         validation: {
           validators: [],
           isVisible: false,
@@ -80,7 +80,7 @@ export class LoginFormComponent {
       registration: {
         kind: ControlKindEnum.link,
         id: 'registration',
-        alignItems: 'flex-start',
+        alignItems: 'left',
         validation: {
           validators: [],
           isVisible: false,

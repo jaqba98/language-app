@@ -1,34 +1,44 @@
 import { Component, Input } from '@angular/core';
-import { Properties } from 'csstype';
+import { NgClass } from '@angular/common';
 
+import {
+  DirectionType,
+  PositionType,
+  SizeType,
+  SpaceType,
+} from '@english-learning/shared-type';
 import { ComponentDirective } from '../../base/component.directive';
-import { FlexGapType } from './flex.type';
 
 @Component({
   selector: 'lib-flex',
   standalone: true,
-  imports: [...ComponentDirective.buildImports()],
+  imports: [NgClass],
   templateUrl: './flex.component.html',
   styleUrl: './flex.component.scss',
 })
+/**
+ * Flex Component
+ */
 export class FlexComponent extends ComponentDirective {
-  @Input() flexDirection: Properties['flexDirection'];
+  @Input() flexDirection: DirectionType = 'column';
 
-  @Input() alignItems: Properties['alignItems'];
+  @Input() alignItems: PositionType = 'left';
 
-  @Input() justifyContent: Properties['justifyContent'];
+  @Input() justifyContent: PositionType = 'left';
 
-  @Input() gap: FlexGapType = 'none';
+  @Input() space: SpaceType = 'none';
+
+  @Input() gap: SizeType = 'none';
 
   protected override afterInit() {
+    this.addClassName('flex');
+    this.addClassName('flex', 'flex-direction', this.flexDirection);
+    this.addClassName('flex', 'align-items', this.alignItems);
+    if (this.space === 'none') {
+      this.addClassName('flex', 'justify-content', this.justifyContent);
+    } else {
+      this.addClassName('flex', 'justify-content', this.space);
+    }
     this.addClassName('flex', 'gap', this.gap);
-  }
-
-  buildStyles(): Properties {
-    return {
-      flexDirection: this.flexDirection,
-      alignItems: this.alignItems,
-      justifyContent: this.justifyContent,
-    };
   }
 }

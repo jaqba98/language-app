@@ -1,4 +1,5 @@
-import { Component, Injector, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { FontAwesomeModule, SizeProp } from '@fortawesome/angular-fontawesome';
 import { IconProp } from '@fortawesome/angular-fontawesome/types';
 import {
@@ -10,27 +11,26 @@ import {
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 
-import { notValueInEnum } from '@english-learning/fe-domain';
+import { notValueInType } from '@english-learning/fe-domain';
 import { ComponentDirective } from '../../base/component.directive';
 import { FontAwesomeColorType, FontAwesomeType } from './font-awesome.type';
 
 @Component({
   selector: 'lib-font-awesome',
   standalone: true,
-  imports: [...ComponentDirective.buildImports(), FontAwesomeModule],
+  imports: [NgClass, FontAwesomeModule],
   templateUrl: './font-awesome.component.html',
   styleUrl: './font-awesome.component.scss',
 })
+/**
+ * Font Awesome Component
+ */
 export class FontAwesomeComponent extends ComponentDirective {
   @Input() type: FontAwesomeType = 'lock';
 
   @Input() color: FontAwesomeColorType = 'default';
 
   @Input() size: SizeProp = '1x';
-
-  constructor(protected override readonly injector: Injector) {
-    super(injector);
-  }
 
   protected override afterInit() {
     this.addClassName('font-awesome', this.color);
@@ -51,7 +51,7 @@ export class FontAwesomeComponent extends ComponentDirective {
       case 'xmark':
         return faXmark;
       default:
-        throw new Error(notValueInEnum(this.type, 'IconProp'));
+        throw new Error(notValueInType(this.type, 'FontAwesomeType'));
     }
   }
 }

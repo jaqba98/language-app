@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Properties } from 'csstype';
 
+import { DirectionType } from '@english-learning/shared-type';
 import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { BaseFormModel } from '../../model/form/base-form.model';
 import { BaseFormComponent } from '../base-form/base-form.component';
@@ -17,7 +17,7 @@ import { ComponentDirective } from '../../base/component.directive';
  * Dashboard Nav Form Component
  */
 export class DashboardNavFormComponent extends ComponentDirective {
-  @Input() flexDirection: Properties['flexDirection'] = 'row';
+  @Input() flexDirection: DirectionType = 'row';
 
   form!: BaseFormModel<DashboardNavFormModel>;
 
@@ -27,7 +27,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
         statistics: {
           kind: ControlKindEnum.buttonLink,
           id: 'statistics',
-          alignItems: 'stretch',
+          alignItems: 'left',
           validation: {
             validators: [],
             isVisible: false,
@@ -39,7 +39,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
         courses: {
           kind: ControlKindEnum.buttonLink,
           id: 'courses',
-          alignItems: 'stretch',
+          alignItems: 'left',
           validation: {
             validators: [],
             isVisible: false,
@@ -51,7 +51,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
         account: {
           kind: ControlKindEnum.buttonLink,
           id: 'account',
-          alignItems: 'stretch',
+          alignItems: 'left',
           validation: {
             validators: [],
             isVisible: false,
@@ -63,7 +63,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
         logout: {
           kind: ControlKindEnum.buttonLink,
           id: 'logout',
-          alignItems: 'stretch',
+          alignItems: 'left',
           validation: {
             validators: [],
             isVisible: false,
