@@ -1,5 +1,16 @@
 @use '@english-learning/fe-styles/src/lib/main';
 
-.error {
-  @include main.error;
-}
+$classes: (
+  root: (
+    error: (
+      styles: (
+        padding: main.$control-padding,
+        border-radius: main.$control-radius,
+        height: main.$control-height,
+        background-color: main.pick-utility-error-color(),
+      ),
+    ),
+  ),
+);
+
+@include main.build-classes($classes);
