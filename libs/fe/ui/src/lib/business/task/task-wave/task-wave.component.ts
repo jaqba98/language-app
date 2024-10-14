@@ -1,23 +1,27 @@
-import { Component, Injector, Input } from '@angular/core';
+import { Component, Input, Injector } from '@angular/core';
+import { NgFor, NgStyle } from '@angular/common';
 
+import { TaskModel } from '@english-learning/fe-domain';
 import {
-  BreakpointEnum,
+  ObserverModel,
   BreakpointModel,
   BreakpointService,
-  ObserverModel,
+  BreakpointEnum,
 } from '@english-learning/fe-system';
-import { TaskModel } from '@english-learning/fe-domain';
-import { ComponentDirective } from '../../../base/component.directive';
 import { BusinessDirective } from '../../../base/business.directive';
 import { TaskMarkerComponent } from '../task-marker/task-marker.component';
+import { ClickActionDirective } from '../../../action/click-action.directive';
 
 @Component({
   selector: 'lib-task-wave',
   standalone: true,
-  imports: [...ComponentDirective.buildImports(), TaskMarkerComponent],
+  imports: [NgFor, NgStyle, TaskMarkerComponent, ClickActionDirective],
   templateUrl: './task-wave.component.html',
   styleUrl: './task-wave.component.scss',
 })
+/**
+ * Task Wave Component
+ */
 export class TaskWaveComponent
   extends BusinessDirective<TaskModel['id']>
   implements ObserverModel<BreakpointModel>
@@ -38,14 +42,10 @@ export class TaskWaveComponent
 
   update(data: BreakpointModel) {
     const { breakpoint } = data;
-    if (breakpoint === BreakpointEnum.XSmall) {
-      this.amplitude = 80;
-    } else {
-      this.amplitude = 200;
-    }
+    this.amplitude = breakpoint === BreakpointEnum.XSmall ? 80 : 100;
   }
 
-  onClick(taskId: TaskModel['id']) {
+  onEvent(taskId: TaskModel['id']) {
     this.emit(taskId);
   }
 
