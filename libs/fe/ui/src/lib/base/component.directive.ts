@@ -25,7 +25,7 @@ export class ComponentDirective implements OnInit, OnDestroy, OnChanges {
 
   private readonly bem: BemService;
 
-  protected readonly classNames: string[] = [];
+  protected classNames: string[] = [];
 
   constructor(protected readonly injector: Injector) {
     this.bem = this.injector.get(BemService);
@@ -57,5 +57,9 @@ export class ComponentDirective implements OnInit, OnDestroy, OnChanges {
   protected addClassName(block = '', element = '', modifier = '') {
     const className = this.bem.buildBem(block, element, modifier);
     this.classNames.push(className);
+  }
+
+  protected removeClassNames() {
+    this.classNames = [];
   }
 }
