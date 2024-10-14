@@ -9,12 +9,15 @@ import { TasksService } from './tasks.service';
   imports: TasksService.getImports(),
   templateUrl: './tasks.component.html',
 })
+/**
+ * Tasks Component
+ */
 export class TasksComponent extends EventEmitterDirective<string> {
   constructor(protected override readonly injector: Injector) {
     super(injector);
   }
 
-  onClick(event: string) {
+  onEvent(event: string) {
     this.emit(event);
   }
 }

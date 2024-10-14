@@ -15,6 +15,7 @@ export * from './lib/misc/text/text.type';
 export * from './lib/view/auth/auth.component';
 export * from './lib/control/input/input.component';
 export * from './lib/misc/text/text.component';
+export * from './lib/misc/padding/padding.component';
 export * from './lib/view/dashboard-nav/dashboard-nav.component';
 export * from './lib/misc/wrapper/wrapper.component';
 export * from './lib/layout/flex-item/flex-item.component';

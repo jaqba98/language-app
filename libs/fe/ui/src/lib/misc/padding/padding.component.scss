@@ -1,0 +1,37 @@
+@use '@english-learning/fe-styles/src/lib/main';
+
+$classes: (
+  root: (
+    padding: (
+      elements: (
+        none: (
+          styles: (
+            padding: main.$gap-none,
+          ),
+        ),
+        tiny: (
+          styles: (
+            padding: main.$gap-tiny,
+          ),
+        ),
+        small: (
+          styles: (
+            padding: main.$gap-small,
+          ),
+        ),
+        medium: (
+          styles: (
+            padding: main.$gap-medium,
+          ),
+        ),
+        large: (
+          styles: (
+            padding: main.$gap-large,
+          ),
+        ),
+      ),
+    ),
+  ),
+);
+
+@include main.build-classes($classes);
