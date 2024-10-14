@@ -1,11 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 
 import {
+  buildBaseStory,
   buildMetaEventAction,
-  buildMetaFullScreen,
   buildMetaModuleMetaData,
-  buildStoryDarkMode,
-  buildStoryLightMode,
   buildStoryTemplate,
 } from '@english-learning/fe-utils';
 import { TasksComponent } from './tasks.component';
@@ -14,23 +12,20 @@ import { TasksService } from './tasks.service';
 const meta: Meta<TasksComponent> = {
   component: TasksComponent,
   title: 'fe/page/dashboard/course/tasks',
-  ...buildMetaFullScreen(),
+  ...buildMetaEventAction(),
   ...buildMetaModuleMetaData(
-    TasksService.getStorybookImports(),
-    TasksService.getStorybookProviders(),
+    [],
+    [TasksService.getStorybookImports(), TasksService.getStorybookProviders()],
   ),
 };
 export default meta;
 type Story = StoryObj<TasksComponent>;
 
-export const DashboardLight: Story = {
-  ...buildStoryLightMode(),
+export const TaskRoadmapLight: Story = {
+  ...buildBaseStory(true, {}),
   ...buildStoryTemplate(TasksService.getTemplate()),
-  ...buildMetaEventAction(),
 };
-
-export const DashboardDark: Story = {
-  ...buildStoryDarkMode(),
+export const TaskRoadmapDark: Story = {
+  ...buildBaseStory(false, {}),
   ...buildStoryTemplate(TasksService.getTemplate()),
-  ...buildMetaEventAction(),
 };

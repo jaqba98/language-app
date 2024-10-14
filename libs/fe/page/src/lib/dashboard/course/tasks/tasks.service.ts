@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 
 import { storeMock } from '@english-learning/fe-store';
-import { TaskRoadmapComponent } from '@english-learning/fe-ui';
+import { PaddingComponent, TaskRoadmapComponent } from '@english-learning/fe-ui';
 import { CourseService } from '../course.service';
 
 @Injectable({ providedIn: 'root' })
 export class TasksService {
   static getImports() {
-    return [TaskRoadmapComponent];
+    return [TaskRoadmapComponent, PaddingComponent];
   }
 
   static getStorybookImports() {
@@ -20,7 +20,11 @@ export class TasksService {
 
   static getTemplate() {
     return CourseService.getTemplate().concat(
-      '<lib-task-roadmap (event)="onClick($event)"></lib-task-roadmap>',
+      `
+        <lib-padding padding="large">
+          <lib-task-roadmap (event)="onClick($event)"></lib-task-roadmap>
+        </lib-padding>
+      `,
     );
   }
 }
