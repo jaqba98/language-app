@@ -5,6 +5,7 @@ import { ClickActionDirective } from '../../action/click-action.directive';
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
 import { ButtonType, ButtonShapeType } from './button.type';
 import { FlexComponent } from '../../layout/flex/flex.component';
+import { DisplayContentsDirective } from '../../base/display-contents.directive';
 
 @Component({
   selector: 'lib-button',
@@ -12,6 +13,7 @@ import { FlexComponent } from '../../layout/flex/flex.component';
   imports: [NgClass, ClickActionDirective, FlexComponent],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
+  hostDirectives: [DisplayContentsDirective],
 })
 /**
  * Button Component
