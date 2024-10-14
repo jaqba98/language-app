@@ -30,7 +30,8 @@ export class FlexComponent extends ComponentDirective {
 
   @Input() gap: SizeType = 'none';
 
-  protected override afterInit() {
+  protected override afterChanges() {
+    this.removeClassNames();
     this.addClassName('flex');
     this.addClassName('flex', 'flex-direction', this.flexDirection);
     this.addClassName('flex', 'align-items', this.alignItems);
