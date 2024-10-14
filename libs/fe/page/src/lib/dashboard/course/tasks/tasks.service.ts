@@ -22,7 +22,7 @@ export class TasksService {
     return CourseService.getTemplate().concat(
       `
         <lib-padding padding="large">
-          <lib-task-roadmap (event)="onClick($event)"></lib-task-roadmap>
+          <lib-task-roadmap (event)="onEvent($event)"></lib-task-roadmap>
         </lib-padding>
       `,
     );
