@@ -1,5 +1,8 @@
 <ng-container *ngFor="let taskId of taskIds; let i = index">
   <div [ngStyle]="getWaveMarkerPosX(i)">
-    <lib-task-marker [taskId]="taskId" (event)="onClick($event)"></lib-task-marker>
+    <lib-task-marker
+      [taskId]="taskId"
+      [libClickAction]="taskId"
+      (event)="onEvent($event)"></lib-task-marker>
   </div>
 </ng-container>
