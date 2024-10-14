@@ -1,71 +1,46 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 
-import {
-  buildStoryArgs,
-  buildStoryDarkMode,
-  buildStoryLightMode,
-} from '@english-learning/fe-utils';
+import { buildBaseStory, buildMetaEventAction } from '@english-learning/fe-utils';
 import { TextComponent } from './text.component';
-import { TextType } from './text.type';
+import { TextColorType, TextType } from './text.type';
 
 const meta: Meta<TextComponent> = {
   component: TextComponent,
   title: 'fe/ui/misc/text',
+  ...buildMetaEventAction(),
 };
 export default meta;
 type Story = StoryObj<TextComponent>;
 
-const buildTextStoryArgs = (type: TextType): Story['args'] => ({
+const buildTextArgs = (
+  type: TextType,
+  color: TextColorType = 'default',
+): Story['args'] => ({
   type,
+  color,
   value: 'Hello world',
 });
 
-export const TinyTextLight: Story = {
-  ...buildStoryArgs(buildTextStoryArgs('tiny')),
-  ...buildStoryLightMode(),
-};
+export const TinyTextLight = buildBaseStory(true, buildTextArgs('tiny'));
+export const TinyTextDark = buildBaseStory(false, buildTextArgs('tiny'));
 
-export const ParagraphTextLight: Story = {
-  ...buildStoryArgs(buildTextStoryArgs('paragraph')),
-  ...buildStoryLightMode(),
-};
+export const ParagraphTextLight = buildBaseStory(true, buildTextArgs('paragraph'));
+export const ParagraphTextDark = buildBaseStory(false, buildTextArgs('paragraph'));
 
-export const Header1TextLight: Story = {
-  ...buildStoryArgs(buildTextStoryArgs('header1')),
-  ...buildStoryLightMode(),
-};
+export const Header1TextLight = buildBaseStory(true, buildTextArgs('header1'));
+export const Header1TextDark = buildBaseStory(false, buildTextArgs('header1'));
 
-export const Header2TextLight: Story = {
-  ...buildStoryArgs(buildTextStoryArgs('header2')),
-  ...buildStoryLightMode(),
-};
+export const Header2TextLight = buildBaseStory(true, buildTextArgs('header2'));
+export const Header2TextDark = buildBaseStory(false, buildTextArgs('header2'));
 
-export const Header3TextLight: Story = {
-  ...buildStoryArgs(buildTextStoryArgs('header3')),
-  ...buildStoryLightMode(),
-};
+export const Header3TextLight = buildBaseStory(true, buildTextArgs('header3'));
+export const Header3TextDark = buildBaseStory(false, buildTextArgs('header3'));
 
-export const TinyTextDark: Story = {
-  ...buildStoryArgs(buildTextStoryArgs('tiny')),
-  ...buildStoryDarkMode(),
-};
+export const ErrorLight = buildBaseStory(true, buildTextArgs('paragraph', 'error'));
+export const ErrorDark = buildBaseStory(false, buildTextArgs('paragraph', 'error'));
 
-export const ParagraphTextDark: Story = {
-  ...buildStoryArgs(buildTextStoryArgs('paragraph')),
-  ...buildStoryDarkMode(),
-};
+export const WarningLight = buildBaseStory(true, buildTextArgs('paragraph', 'warning'));
+export const WarningDark = buildBaseStory(false, buildTextArgs('paragraph', 'warning'));
 
-export const Header1TextDark: Story = {
-  ...buildStoryArgs(buildTextStoryArgs('header1')),
-  ...buildStoryDarkMode(),
-};
-
-export const Header2TextDark: Story = {
-  ...buildStoryArgs(buildTextStoryArgs('header2')),
-  ...buildStoryDarkMode(),
-};
-
-export const Header3TextDark: Story = {
-  ...buildStoryArgs(buildTextStoryArgs('header3')),
-  ...buildStoryDarkMode(),
-};
+export const SuccessLight = buildBaseStory(true, buildTextArgs('paragraph', 'success'));
+export const SuccessDark = buildBaseStory(false, buildTextArgs('paragraph', 'success'));

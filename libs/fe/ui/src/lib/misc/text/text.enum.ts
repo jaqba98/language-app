@@ -10,4 +10,7 @@ export enum TextColorEnum {
   default = 'default',
   light = 'light',
   lighter = 'lighter',
+  error = 'error',
+  warning = 'warning',
+  success = 'success',
 }

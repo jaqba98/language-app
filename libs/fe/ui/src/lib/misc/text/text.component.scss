@@ -4,14 +4,10 @@ $classes: (
   root: (
     text: (
       styles: (
+        display: inline-block,
         font-family: main.$font-family,
       ),
       elements: (
-        inline-block: (
-          styles: (
-            display: inline-block,
-          ),
-        ),
         tiny: (
           styles: (
             font-size: main.$font-tiny-size,
@@ -35,6 +31,21 @@ $classes: (
         header3: (
           styles: (
             font-size: main.$font-header3-size,
+          ),
+        ),
+        error: (
+          styles: (
+            color: main.pick-utility-error-content-color(),
+          ),
+        ),
+        warning: (
+          styles: (
+            color: main.pick-utility-warning-content-color(),
+          ),
+        ),
+        success: (
+          styles: (
+            color: main.pick-utility-success-content-color(),
           ),
         ),
       ),

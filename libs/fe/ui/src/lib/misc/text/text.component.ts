@@ -1,16 +1,20 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
-import { ComponentDirective } from '../../base/component.directive';
 import { TextColorType, TextType } from './text.type';
+import { ClickActionDirective } from '../../action/click-action.directive';
 
 @Component({
   selector: 'lib-text',
   standalone: true,
-  imports: [...ComponentDirective.buildImports()],
+  imports: [CommonModule, ClickActionDirective],
   templateUrl: './text.component.html',
   styleUrl: './text.component.scss',
 })
+/**
+ * Text Component
+ */
 export class TextComponent extends EventEmitterDirective<boolean> {
   @Input({ required: true }) value!: string;
 
@@ -18,14 +22,15 @@ export class TextComponent extends EventEmitterDirective<boolean> {
 
   @Input() color: TextColorType = 'default';
 
-  @Input() inlineBlock = false;
+  protected readonly block = 'text';
 
   protected override afterInit() {
-    this.addClassName('text', this.type);
-    this.addClassName('text', this.color);
+    this.addClassName(this.block);
+    this.addClassName(this.block, this.type);
+    this.addClassName(this.block, this.color);
   }
 
-  onClick() {
-    this.emit(true);
+  onEvent(eventData: boolean) {
+    this.emit(eventData);
   }
 }

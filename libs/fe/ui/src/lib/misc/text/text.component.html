@@ -1,4 +1,8 @@
-<div class="text text__inline-block" (click)="onClick()">
+<div
+  [class]="block"
+  [ngClass]="classNames"
+  [libClickAction]="true"
+  (event)="onEvent($event)">
   <ng-container [ngSwitch]="type">
     <ng-container *ngSwitchCase="'tiny'">
       <small [ngClass]="classNames">{{ value }}</small>
