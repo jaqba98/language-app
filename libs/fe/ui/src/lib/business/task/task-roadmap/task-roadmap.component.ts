@@ -4,16 +4,18 @@ import { TaskModel } from '@english-learning/fe-domain';
 import { StoreModel, StoreType } from '@english-learning/fe-store';
 import { TypeConverterService } from '@english-learning/fe-utils';
 import { BusinessDirective } from '../../../base/business.directive';
-import { ComponentDirective } from '../../../base/component.directive';
-import { TaskWaveComponent } from '../task-wave/task-wave.component';
 import { FlexComponent } from '../../../layout/flex/flex.component';
+import { TaskWaveComponent } from '../task-wave/task-wave.component';
 
 @Component({
   selector: 'lib-task-roadmap',
   standalone: true,
-  imports: [...ComponentDirective.buildImports(), FlexComponent, TaskWaveComponent],
+  imports: [FlexComponent, TaskWaveComponent],
   templateUrl: './task-roadmap.component.html',
 })
+/**
+ * Task Roadmap Component
+ */
 export class TaskRoadmapComponent extends BusinessDirective<TaskModel['id']> {
   taskIds: TaskModel['id'][] = [];
 
@@ -31,7 +33,7 @@ export class TaskRoadmapComponent extends BusinessDirective<TaskModel['id']> {
       .map(task => task.id);
   }
 
-  onClick(taskId: TaskModel['id']) {
+  onEvent(taskId: TaskModel['id']) {
     this.emit(taskId);
   }
 }
