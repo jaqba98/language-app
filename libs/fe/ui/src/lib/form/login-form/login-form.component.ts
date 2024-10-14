@@ -54,7 +54,7 @@ export class LoginFormComponent {
         },
       },
       forgotPassword: {
-        kind: ControlKindEnum.link,
+        kind: ControlKindEnum.buttonLink,
         id: 'forgotPassword',
         alignItems: 'right',
         validation: {
@@ -63,7 +63,7 @@ export class LoginFormComponent {
         },
         label: 'Forgot password?',
         path: '/forgot-password',
-        tip: '',
+        fullWidth: false,
       },
       submit: {
         kind: ControlKindEnum.buttonText,
@@ -78,7 +78,7 @@ export class LoginFormComponent {
         fullWidth: false,
       },
       registration: {
-        kind: ControlKindEnum.link,
+        kind: ControlKindEnum.buttonLink,
         id: 'registration',
         alignItems: 'left',
         validation: {
@@ -87,7 +87,7 @@ export class LoginFormComponent {
         },
         label: 'Registration',
         path: '/registration',
-        tip: "Don't have an account?",
+        fullWidth: false,
       },
     },
   };
