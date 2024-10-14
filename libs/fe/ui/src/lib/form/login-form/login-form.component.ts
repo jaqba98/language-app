@@ -23,7 +23,7 @@ export class LoginFormComponent {
         alignItems: 'left',
         validation: {
           validators: [Validators.required, Validators.email],
-          isVisible: false,
+          isVisible: true,
         },
         label: {
           value: 'Email',
@@ -41,7 +41,7 @@ export class LoginFormComponent {
         alignItems: 'left',
         validation: {
           validators: [Validators.required],
-          isVisible: false,
+          isVisible: true,
         },
         label: {
           value: 'Password',

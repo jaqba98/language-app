@@ -5,6 +5,9 @@ import { NgFor, NgIf } from '@angular/common';
 import {
   elementByIdExistError,
   elementByIdNotExistError,
+  fieldIsRequiredError,
+  invalidInputError,
+  notCorrectEmailError,
   unsupportedTypeError,
 } from '@english-learning/fe-domain';
 import { DirectionType } from '@english-learning/shared-type';
@@ -20,6 +23,7 @@ import { InputComponent } from '../../control/input/input.component';
 import { ButtonLinkComponent } from '../../control/button-link/button-link.component';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
+import { ErrorComponent } from '../../misc/error/error.component';
 
 @Component({
   selector: 'lib-base-form',
@@ -33,6 +37,7 @@ import { ButtonIconComponent } from '../../control/button-icon/button-icon.compo
     ButtonLinkComponent,
     ButtonTextComponent,
     ButtonIconComponent,
+    ErrorComponent,
   ],
   templateUrl: './base-form.component.html',
 })
@@ -92,6 +97,22 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
     return Object.values(this.baseForm.controls);
   }
 
+  formControlInvalid(id: string) {
+    const formControl = this.getFormControl(id);
+    return formControl.invalid && formControl.touched;
+  }
+
+  getFormControlError(id: string) {
+    const formControl = this.getFormControl(id);
+    if (formControl.errors && formControl.errors['required']) {
+      return fieldIsRequiredError();
+    }
+    if (formControl.errors && formControl.errors['email']) {
+      return notCorrectEmailError();
+    }
+    return invalidInputError();
+  }
+
   private buildFormControl(control: ControlType) {
     switch (control.kind) {
       case ControlKindEnum.input:
@@ -130,16 +151,6 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
 //   formGroup: FormGroup;
 //   formGroupInvalid = false;
 //   formGroupValid = false;
-//   constructor(private readonly fb: FormBuilder) {
-//     this.formGroup = this.fb.group({});
-//   }
-//   ngOnInit() {
-//     this.baseForm.controls.forEach(control => {
-//       const { id } = control;
-//       this.formControlNotExist(id);
-//       this.formGroup.addControl(id, this.buildFormControl(control));
-//     });
-//   }
 //   onSubmit() {
 //     this.formGroupInvalid = false;
 //     this.formGroupValid = false;
@@ -161,10 +172,6 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
 //     const formControl = this.formGroup.get(id);
 //     if (formControl) return formControl as FormControl;
 //     throw new Error(`Form control: ${id} does not exists!`);
-//   }
-//   formControlInvalid(id: string) {
-//     const formControl = this.getFormControl(id);
-//     return formControl.invalid && formControl.touched;
 //   }
 //   getFormControlError(id: string) {
 //     const formControl = this.getFormControl(id);
