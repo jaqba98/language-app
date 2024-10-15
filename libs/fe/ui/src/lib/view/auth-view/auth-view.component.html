@@ -1,24 +1,10 @@
-<lib-flex alignItems="center" justifyContent="center" [minHeight100svh]="true">
-  <lib-card>
-    <lib-flex gap="medium">
-      <lib-text value="Language App" type="header3"></lib-text>
-      <ng-content></ng-content>
-    </lib-flex>
-  </lib-card>
-</lib-flex>
-
-<!-- <div class="auth">
-  <lib-flex alignItems="center" justifyContent="center" minHeight="calc(100svh - 2rem)">
-    <lib-card width="350px">
-      <lib-flex alignItems="center" flexDirection="column" gap="medium">
-        <lib-flex justifyContent="center">
-          <lib-text
-            value="English Learning"
-            type="header2"
-            textColor="text__accent"></lib-text>
-        </lib-flex>
+<div class="auth-view">
+  <lib-flex alignItems="center" justifyContent="center" [minHeight100svh]="true">
+    <lib-card [type]="cardType">
+      <lib-flex alignItems="center" gap="large">
+        <lib-text value="Language App" type="header3"></lib-text>
         <ng-content></ng-content>
       </lib-flex>
     </lib-card>
   </lib-flex>
-</div> -->
+</div>

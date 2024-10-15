@@ -19,7 +19,8 @@ export class CardComponent extends ComponentDirective {
 
   private readonly block = 'card';
 
-  protected override afterInit() {
+  protected override afterChanges() {
+    this.removeClassNames();
     this.addClassName(this.block);
     this.addClassName(this.block, this.type);
   }

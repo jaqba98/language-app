@@ -17,3 +17,6 @@ export const DefaultDark = buildBaseStory(false, buildCardArgs('default'));
 
 export const NavLight = buildBaseStory(true, buildCardArgs('nav'));
 export const NavDark = buildBaseStory(false, buildCardArgs('nav'));
+
+export const NoneLight = buildBaseStory(true, buildCardArgs('none'));
+export const NoneDark = buildBaseStory(false, buildCardArgs('none'));

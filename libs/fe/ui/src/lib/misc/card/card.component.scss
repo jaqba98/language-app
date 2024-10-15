@@ -9,6 +9,7 @@ $classes: (
       elements: (
         default: (
           styles: (
+            margin: main.$control-padding,
             padding: calc(main.$control-padding * 2),
             border-radius: main.$control-radius,
           ),
@@ -23,17 +24,17 @@ $classes: (
   ),
   light-mode: (
     card: (
-      styles: (
-        background-color: main.pick-neutrals-light-foreground-color(),
-      ),
       elements: (
         default: (
           styles: (
+            background-color: main.pick-neutrals-light-foreground-color(),
             border: main.$control-border main.pick-neutrals-light-border-color(),
+            box-shadow: 0 0 1rem main.pick-neutrals-light-border-color(),
           ),
         ),
         nav: (
           styles: (
+            background-color: main.pick-neutrals-light-foreground-color(),
             border-bottom: main.$control-border main.pick-neutrals-light-border-color(),
           ),
         ),
@@ -42,17 +43,17 @@ $classes: (
   ),
   dark-mode: (
     card: (
-      styles: (
-        background-color: main.pick-neutrals-dark-foreground-color(),
-      ),
       elements: (
         default: (
           styles: (
+            background-color: main.pick-neutrals-dark-foreground-color(),
             border: main.$control-border main.pick-neutrals-dark-border-color(),
+            box-shadow: 0 0 1rem main.pick-neutrals-dark-border-color(),
           ),
         ),
         nav: (
           styles: (
+            background-color: main.pick-neutrals-dark-foreground-color(),
             border-bottom: main.$control-border main.pick-neutrals-dark-border-color(),
           ),
         ),
