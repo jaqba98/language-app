@@ -9,7 +9,6 @@ import { TextComponent } from '../../misc/text/text.component';
   standalone: true,
   imports: [FlexComponent, CardComponent, TextComponent],
   templateUrl: './auth-view.component.html',
-  styleUrl: './auth-view.component.scss',
 })
 /**
  * Auth View Component

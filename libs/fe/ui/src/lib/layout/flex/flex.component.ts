@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
+import { Properties } from 'csstype';
 
 import {
   DirectionType,
@@ -12,7 +13,7 @@ import { ComponentDirective } from '../../base/component.directive';
 @Component({
   selector: 'lib-flex',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, NgStyle],
   templateUrl: './flex.component.html',
   styleUrl: './flex.component.scss',
 })
@@ -30,16 +31,19 @@ export class FlexComponent extends ComponentDirective {
 
   @Input() gap: SizeType = 'none';
 
-  protected override afterChanges() {
-    this.removeClassNames();
-    this.addClassName('flex');
-    this.addClassName('flex', 'flex-direction', this.flexDirection);
+  @Input() minHeight100svh = false;
+
+  protected override afterInit() {
     this.addClassName('flex', 'align-items', this.alignItems);
-    if (this.space === 'none') {
-      this.addClassName('flex', 'justify-content', this.justifyContent);
-    } else {
-      this.addClassName('flex', 'justify-content', this.space);
-    }
+    const justifyContent = this.space === 'none' ? this.justifyContent : this.space;
+    this.addClassName('flex', 'justify-content', justifyContent);
     this.addClassName('flex', 'gap', this.gap);
+  }
+
+  getStyles(): Properties {
+    return {
+      flexDirection: this.flexDirection,
+      minHeight: this.buildStyle(this.minHeight100svh, '100svh'),
+    };
   }
 }

@@ -56,4 +56,8 @@ export class ComponentDirective implements OnInit, OnDestroy, OnChanges {
   protected removeClassNames() {
     this.classNames = [];
   }
+
+  protected buildStyle<T>(condition: boolean, valueTrue: T, valueFalse?: T) {
+    return condition ? valueTrue : valueFalse;
+  }
 }

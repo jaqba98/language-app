@@ -9,5 +9,5 @@ const meta: Meta<AuthViewComponent> = {
 };
 export default meta;
 
-export const ErrorLight = buildBaseStory<AuthViewComponent>(true);
-export const ErrorDark = buildBaseStory<AuthViewComponent>(false);
+export const AuthViewLight = buildBaseStory<AuthViewComponent>(true);
+export const AuthViewDark = buildBaseStory<AuthViewComponent>(false);
