@@ -9,13 +9,13 @@ $classes: (
       elements: (
         default: (
           styles: (
-            border-radius: 1rem,
-            padding: 2rem,
+            padding: calc(main.$control-padding * 2),
+            border-radius: main.$control-radius,
           ),
         ),
         nav: (
           styles: (
-            padding: 1rem,
+            padding: main.$control-padding,
           ),
         ),
       ),
@@ -29,12 +29,12 @@ $classes: (
       elements: (
         default: (
           styles: (
-            border: 1px solid main.pick-neutrals-light-border-color(),
+            border: main.$control-border main.pick-neutrals-light-border-color(),
           ),
         ),
         nav: (
           styles: (
-            border-bottom: 1px solid main.pick-neutrals-light-border-color(),
+            border-bottom: main.$control-border main.pick-neutrals-light-border-color(),
           ),
         ),
       ),
@@ -48,12 +48,12 @@ $classes: (
       elements: (
         default: (
           styles: (
-            border: 1px solid main.pick-neutrals-dark-border-color(),
+            border: main.$control-border main.pick-neutrals-dark-border-color(),
           ),
         ),
         nav: (
           styles: (
-            border-bottom: 1px solid main.pick-neutrals-dark-border-color(),
+            border-bottom: main.$control-border main.pick-neutrals-dark-border-color(),
           ),
         ),
       ),

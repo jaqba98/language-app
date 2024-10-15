@@ -2,7 +2,7 @@ import { Component, Injector } from '@angular/core';
 
 import { RouteNavigationService } from '@english-learning/fe-system';
 import {
-  AuthComponent,
+  AuthViewComponent,
   EventEmitterDirective,
   LoginFormComponent,
   LoginFormModel,
@@ -11,7 +11,7 @@ import {
 @Component({
   selector: 'lib-login',
   standalone: true,
-  imports: [AuthComponent, LoginFormComponent],
+  imports: [AuthViewComponent, LoginFormComponent],
   templateUrl: './login.component.html',
 })
 /**

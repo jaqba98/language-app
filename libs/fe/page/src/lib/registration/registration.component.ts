@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 import {
-  AuthComponent,
+  AuthViewComponent,
   RegistrationFormComponent,
   RegistrationFormModel,
 } from '@english-learning/fe-ui';
@@ -9,7 +9,7 @@ import {
 @Component({
   selector: 'lib-registration',
   standalone: true,
-  imports: [AuthComponent, RegistrationFormComponent],
+  imports: [AuthViewComponent, RegistrationFormComponent],
   templateUrl: './registration.component.html',
 })
 export class RegistrationComponent {

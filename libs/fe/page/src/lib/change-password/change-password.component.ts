@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 import {
-  AuthComponent,
+  AuthViewComponent,
   ChangePasswordFormComponent,
   ChangePasswordFormModel,
 } from '@english-learning/fe-ui';
@@ -9,7 +9,7 @@ import {
 @Component({
   selector: 'lib-change-password',
   standalone: true,
-  imports: [AuthComponent, ChangePasswordFormComponent],
+  imports: [AuthViewComponent, ChangePasswordFormComponent],
   templateUrl: './change-password.component.html',
 })
 export class ChangePasswordComponent {

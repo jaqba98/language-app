@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
   Directive,
   OnInit,
@@ -29,11 +28,6 @@ export class ComponentDirective implements OnInit, OnDestroy, OnChanges {
 
   constructor(protected readonly injector: Injector) {
     this.bem = this.injector.get(BemService);
-  }
-
-  // TODO: Remove it in the future
-  static buildImports() {
-    return [CommonModule];
   }
 
   ngOnInit() {

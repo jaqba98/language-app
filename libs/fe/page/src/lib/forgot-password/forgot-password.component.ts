@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 import {
-  AuthComponent,
+  AuthViewComponent,
   ForgotPasswordFormComponent,
   ForgotPasswordFormModel,
 } from '@english-learning/fe-ui';
@@ -9,7 +9,7 @@ import {
 @Component({
   selector: 'lib-forgot-password',
   standalone: true,
-  imports: [AuthComponent, ForgotPasswordFormComponent],
+  imports: [AuthViewComponent, ForgotPasswordFormComponent],
   templateUrl: './forgot-password.component.html',
 })
 export class ForgotPasswordComponent {
