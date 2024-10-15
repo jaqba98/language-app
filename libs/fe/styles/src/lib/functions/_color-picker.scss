@@ -46,6 +46,10 @@
   @return -pick-color('neutrals-light', 'border');
 }
 
+@function pick-neutrals-light-shadow-color() {
+  @return -pick-color('neutrals-light', 'shadow');
+}
+
 @function pick-neutrals-light-copy-color() {
   @return -pick-color('neutrals-light', 'copy');
 }
@@ -69,6 +73,10 @@
 
 @function pick-neutrals-dark-border-color() {
   @return -pick-color('neutrals-dark', 'border');
+}
+
+@function pick-neutrals-dark-shadow-color() {
+  @return -pick-color('neutrals-dark', 'shadow');
 }
 
 @function pick-neutrals-dark-copy-color() {

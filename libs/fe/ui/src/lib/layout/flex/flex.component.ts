@@ -9,6 +9,7 @@ import {
   SpaceType,
 } from '@english-learning/shared-type';
 import { ComponentDirective } from '../../base/component.directive';
+import { DisplayContentsDirective } from '../../base/display-contents.directive';
 
 @Component({
   selector: 'lib-flex',
@@ -16,6 +17,7 @@ import { ComponentDirective } from '../../base/component.directive';
   imports: [NgClass, NgStyle],
   templateUrl: './flex.component.html',
   styleUrl: './flex.component.scss',
+  hostDirectives: [DisplayContentsDirective],
 })
 /**
  * Flex Component

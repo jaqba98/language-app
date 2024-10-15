@@ -29,7 +29,7 @@ $classes: (
           styles: (
             background-color: main.pick-neutrals-light-foreground-color(),
             border: main.$control-border main.pick-neutrals-light-border-color(),
-            box-shadow: 0 0 1rem main.pick-neutrals-light-border-color(),
+            box-shadow: main.$control-shadow main.pick-neutrals-light-shadow-color(),
           ),
         ),
         nav: (
@@ -48,7 +48,7 @@ $classes: (
           styles: (
             background-color: main.pick-neutrals-dark-foreground-color(),
             border: main.$control-border main.pick-neutrals-dark-border-color(),
-            box-shadow: 0 0 1rem main.pick-neutrals-dark-border-color(),
+            box-shadow: main.$control-shadow main.pick-neutrals-dark-shadow-color(),
           ),
         ),
         nav: (

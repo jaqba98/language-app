@@ -1,0 +1,30 @@
+@use '@english-learning/fe-styles/src/lib/main';
+
+$classes: (
+  light-mode: (
+    foreground: (
+      styles: (
+        background-color: main.pick-neutrals-light-foreground-color(),
+      ),
+    ),
+    background: (
+      styles: (
+        background-color: main.pick-neutrals-light-background-color(),
+      ),
+    ),
+  ),
+  dark-mode: (
+    foreground: (
+      styles: (
+        background-color: main.pick-neutrals-dark-foreground-color(),
+      ),
+    ),
+    background: (
+      styles: (
+        background-color: main.pick-neutrals-dark-background-color(),
+      ),
+    ),
+  ),
+);
+
+@include main.build-classes($classes);

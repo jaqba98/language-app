@@ -20,7 +20,7 @@ export class LoginFormComponent {
       email: {
         kind: ControlKindEnum.input,
         id: 'email',
-        alignItems: 'left',
+        alignItems: 'stretch',
         validation: {
           validators: [Validators.required, Validators.email],
           isVisible: true,
@@ -38,7 +38,7 @@ export class LoginFormComponent {
       password: {
         kind: ControlKindEnum.input,
         id: 'password',
-        alignItems: 'left',
+        alignItems: 'stretch',
         validation: {
           validators: [Validators.required],
           isVisible: true,
