@@ -1,8 +1,11 @@
-<lib-flex flexDirection="row" gap="medium">
-  <ng-container *ngIf="control.tip !== ''">
-    <lib-text [value]="control.tip" type="tiny" textColor="text__info"></lib-text>
+<lib-flex flexDirection="row" gap="tiny">
+  <ng-container *ngIf="control.leftTip !== ''">
+    <lib-text [value]="control.leftTip" color="light"></lib-text>
   </ng-container>
-  <a class="link" [routerLink]="control.path">
-    <lib-text [value]="control.label" type="tiny" textColor="text__accent"></lib-text>
+  <a [routerLink]="control.path" libDisplayContents>
+    <lib-text [value]="control.label" color="light"></lib-text>
   </a>
+  <ng-container *ngIf="control.rightTip !== ''">
+    <lib-text [value]="control.rightTip" color="light"></lib-text>
+  </ng-container>
 </lib-flex>
