@@ -24,7 +24,8 @@ export const Primary: Story = {
       },
       label: '',
       path: '',
-      tip: '',
+      leftTip: '',
+      rightTip: '',
     },
   },
 };
