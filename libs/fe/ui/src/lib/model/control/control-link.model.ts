@@ -5,5 +5,6 @@ export interface ControlLinkModel extends ControlBaseModel {
   kind: ControlKindEnum.link;
   label: string;
   path: string;
-  tip: string;
+  leftTip: string;
+  rightTip: string;
 }

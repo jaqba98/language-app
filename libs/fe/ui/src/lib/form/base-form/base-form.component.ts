@@ -50,6 +50,10 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
 
   @Input() formValidation = true;
 
+  @Input() formErrorMessage = 'The form was not completed correctly.';
+
+  @Input() formSuccessMessage = 'The form was completed correctly.';
+
   formGroup: FormGroup;
 
   formGroupInvalid = false;
@@ -144,8 +148,6 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
 //   @Input({ required: true }) baseForm!: BaseFormModel;
 //   @Input() flexDirection: Properties['flexDirection'] = 'column';
 //   @Input() resetIfError = false;
-//   @Input() formErrorMessage = 'The form was not completed correctly.';
-//   @Input() formSuccessMessage = 'The form was completed correctly.';
 //   @Input() formValidation = true;
 //   @Output() baseFormEvent = new EventEmitter();
 //   formGroup: FormGroup;

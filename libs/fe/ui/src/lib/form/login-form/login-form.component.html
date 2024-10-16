@@ -1,6 +1,6 @@
 <lib-base-form
-  [baseForm]="loginForm"
+  [baseForm]="form"
   [resetIfError]="true"
-  formSuccessMessage="You have logged in successfully"
-  formErrorMessage="Incorrect login or password"
-  (event)="onBaseFormEvent($event)"></lib-base-form>
+  formSuccessMessage="Login successful."
+  formErrorMessage="Incorrect email or password."
+  (event)="onEvent($event)"></lib-base-form>
