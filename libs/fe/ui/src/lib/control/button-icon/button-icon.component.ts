@@ -1,8 +1,7 @@
 import { Component, Injector, Input } from '@angular/core';
 
-import { ButtonComponent } from '@english-learning/fe-component';
+import { ButtonComponent, FontAwesomeComponent } from '@english-learning/fe-component';
 import { EventEmitterDirective } from '@english-learning/fe-system';
-import { FontAwesomeComponent } from '../../external/font-awesome/font-awesome.component';
 import { ControlButtonIconModel } from '../../model/control/control-button-icon.model';
 import { DisplayContentsDirective } from '../../base/display-contents.directive';
 

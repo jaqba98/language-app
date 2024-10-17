@@ -10,8 +10,8 @@ export const notCorrectEmailError = () => 'Please enter a valid email address.';
 
 export const invalidInputError = () => 'Invalid input.';
 
-export const notValueInType = (value: string, typeName: string) =>
-  `The value ${value} is not exist in the ${typeName} type.`;
+export const notValueInType = (value: string) =>
+  `The value ${value} is not exist in the type.`;
 
 export const notValueInEnum = (value: string, enumName: string) =>
   `The value ${value} is not exist in the ${enumName} enum.`;

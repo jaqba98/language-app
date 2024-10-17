@@ -2,18 +2,18 @@ import { Component, Input, Injector } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 import {
+  FontAwesomeColorType,
+  FontAwesomeComponent,
+  FontAwesomeKindType,
+} from '@english-learning/fe-component';
+import {
   TaskModel,
   notFoundInTheStore,
   notValueInEnum,
 } from '@english-learning/fe-domain';
 import { StoreModel, StoreType } from '@english-learning/fe-store';
 import { BusinessDirective } from '../../../base/business.directive';
-import {
-  FontAwesomeType,
-  FontAwesomeColorType,
-} from '../../../external/font-awesome/font-awesome.type';
 import { FlexComponent } from '../../../layout/flex/flex.component';
-import { FontAwesomeComponent } from '../../../external/font-awesome/font-awesome.component';
 import { ClickActionDirective } from '../../../action/click-action.directive';
 
 @Component({
@@ -29,7 +29,7 @@ import { ClickActionDirective } from '../../../action/click-action.directive';
 export class TaskMarkerComponent extends BusinessDirective<TaskModel['id']> {
   @Input({ required: true }) taskId!: TaskModel['id'];
 
-  type: FontAwesomeType = 'lock';
+  type: FontAwesomeKindType = 'lock';
 
   color: FontAwesomeColorType = 'gray';
 

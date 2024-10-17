@@ -7,10 +7,10 @@ import {
   BreakpointService,
   BreakpointEnum,
 } from '@english-learning/fe-system';
+import { FontAwesomeComponent } from '@english-learning/fe-component';
 import { SpaceType } from '@english-learning/shared-type';
 import { CardComponent } from '../../misc/card/card.component';
 import { FlexComponent } from '../../layout/flex/flex.component';
-import { FontAwesomeComponent } from '../../external/font-awesome/font-awesome.component';
 import { HamburgerFormComponent } from '../../form/hamburger-form/hamburger-form.component';
 import { DashboardNavFormComponent } from '../../form/dashboard-nav-form/dashboard-nav-form.component';
 

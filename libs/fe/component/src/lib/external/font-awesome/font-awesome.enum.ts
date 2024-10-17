@@ -1,4 +1,4 @@
-export enum FontAwesomeTypeEnum {
+export enum FontAwesomeKindEnum {
   school = 'school',
   lock = 'lock',
   play = 'play',

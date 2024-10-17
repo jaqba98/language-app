@@ -7,4 +7,6 @@ export * from './lib/control/enum/control.enum';
 export * from './lib/control/model/control-base.model';
 export * from './lib/control/model/control-button-link.model';
 export * from './lib/control/model/control-link.model';
+export * from './lib/external/font-awesome/font-awesome.component';
+export * from './lib/external/font-awesome/font-awesome.type';
 export * from './lib/misc/text/text.component';

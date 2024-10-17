@@ -3,20 +3,20 @@ import { SizeProp } from '@fortawesome/angular-fontawesome';
 
 import { buildBaseStory } from '@english-learning/fe-utils';
 import { FontAwesomeComponent } from './font-awesome.component';
-import { FontAwesomeType, FontAwesomeColorType } from './font-awesome.type';
+import { FontAwesomeKindType, FontAwesomeColorType } from './font-awesome.type';
 
 const meta: Meta<FontAwesomeComponent> = {
   component: FontAwesomeComponent,
-  title: 'fe/ui/external/font-awesome',
+  title: 'fe/component/external/font-awesome',
 };
 export default meta;
 type Story = StoryObj<FontAwesomeComponent>;
 
 const buildArgs = (
-  type: FontAwesomeType,
+  kind: FontAwesomeKindType,
   color: FontAwesomeColorType,
   size: SizeProp,
-): Story['args'] => ({ type, color, size });
+): Story['args'] => ({ kind, color, size });
 
 export const SchoolLight = buildBaseStory(true, buildArgs('school', 'default', '4x'));
 export const SchoolDark = buildBaseStory(false, buildArgs('school', 'default', '4x'));
