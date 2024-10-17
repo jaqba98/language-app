@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormControl, ReactiveFormsModule } from '@angul
 import { NgFor, NgIf } from '@angular/common';
 
 import {
+  ButtonIconComponent,
   ButtonLinkComponent,
   ButtonTextComponent,
   ControlEnum,
@@ -25,7 +26,6 @@ import {
 } from '../../model/form/base-form.model';
 import { FlexComponent } from '../../layout/flex/flex.component';
 import { InputComponent } from '../../control/input/input.component';
-import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
 import { ErrorComponent } from '../../misc/error/error.component';
 
 @Component({

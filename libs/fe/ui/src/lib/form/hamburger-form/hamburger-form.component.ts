@@ -31,7 +31,6 @@ export class HamburgerFormComponent extends EventEmitterDirective<boolean> {
         icon: 'bars',
         color: 'default',
         type: 'button',
-        fullWidth: false,
       },
     },
   };

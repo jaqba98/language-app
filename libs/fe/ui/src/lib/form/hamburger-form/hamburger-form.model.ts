@@ -1,4 +1,4 @@
-import { ControlButtonIconModel } from '../../model/control/control-button-icon.model';
+import { ControlButtonIconModel } from '@english-learning/fe-component';
 
 export interface HamburgerFormModel {
   submit: ControlButtonIconModel;

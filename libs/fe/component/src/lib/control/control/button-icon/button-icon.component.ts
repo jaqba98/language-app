@@ -1,20 +1,16 @@
-import { Component, Injector, Input } from '@angular/core';
+import { Component, Input, Injector } from '@angular/core';
 
-import { ButtonComponent, FontAwesomeComponent } from '@english-learning/fe-component';
 import { EventEmitterDirective } from '@english-learning/fe-system';
-import { ControlButtonIconModel } from '../../model/control/control-button-icon.model';
-import { DisplayContentsDirective } from '../../base/display-contents.directive';
+import { FontAwesomeComponent } from '../../../external/font-awesome/font-awesome.component';
+import { ButtonComponent } from '../../base/button/button.component';
+import { ControlButtonIconModel } from '../../model/control-button-icon.model';
 
 @Component({
   selector: 'lib-button-icon',
   standalone: true,
   imports: [ButtonComponent, FontAwesomeComponent],
   templateUrl: './button-icon.component.html',
-  hostDirectives: [DisplayContentsDirective],
 })
-/**
- * Button Icon Component
- */
 export class ButtonIconComponent extends EventEmitterDirective<boolean> {
   @Input({ required: true }) control!: ControlButtonIconModel;
 
@@ -22,7 +18,7 @@ export class ButtonIconComponent extends EventEmitterDirective<boolean> {
     super(injector, 'button-icon');
   }
 
-  onEvent(eventData: boolean) {
-    this.emit(eventData);
+  onClick() {
+    this.emit(true);
   }
 }

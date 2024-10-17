@@ -7,17 +7,16 @@ import { buttonIconControlStory } from './button-icon-control-story.service';
 
 const meta: Meta<ButtonIconComponent> = {
   component: ButtonIconComponent,
-  title: 'fe/ui/control/button-icon',
+  title: 'fe/component/control/button-icon',
   ...buildMetaEventAction(),
 };
 export default meta;
 type Story = StoryObj<ButtonIconComponent>;
 
-const buildButtonIconArgs = (): Story['args'] => ({
+const buildArgs = (): Story['args'] => ({
   controlForm: new FormControl(false),
   control: buttonIconControlStory,
 });
 
-export const ButtonIconLight = buildBaseStory(true, buildButtonIconArgs());
-
-export const ButtonIconDark = buildBaseStory(false, buildButtonIconArgs());
+export const ButtonIconLight = buildBaseStory(true, buildArgs());
+export const ButtonIconDark = buildBaseStory(false, buildArgs());
