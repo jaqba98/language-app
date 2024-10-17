@@ -1,8 +1,8 @@
-import { ControlKindEnum } from '../../enum/control-kind.enum';
+import { ControlEnum } from '@english-learning/fe-component';
 import { ControlInputModel } from '../../model/control/control-input.model';
 
 export const inputControlStory: ControlInputModel = {
-  kind: ControlKindEnum.input,
+  kind: ControlEnum.input,
   id: 'login',
   alignItems: 'left',
   validation: {

@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Validators } from '@angular/forms';
 
+import { ControlEnum } from '@english-learning/fe-component';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { BaseFormModel } from '../../model/form/base-form.model';
-import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { ChangePasswordFormModel } from './change-password-form.model';
 
 @Component({
@@ -18,7 +18,7 @@ export class ChangePasswordFormComponent {
   changePasswordForm: BaseFormModel<ChangePasswordFormModel> = {
     controls: {
       password: {
-        kind: ControlKindEnum.input,
+        kind: ControlEnum.input,
         id: 'password',
         alignItems: 'left',
         validation: {
@@ -36,7 +36,7 @@ export class ChangePasswordFormComponent {
         },
       },
       repeatPassword: {
-        kind: ControlKindEnum.input,
+        kind: ControlEnum.input,
         id: 'repeatPassword',
         alignItems: 'left',
         validation: {
@@ -54,7 +54,7 @@ export class ChangePasswordFormComponent {
         },
       },
       submit: {
-        kind: ControlKindEnum.buttonText,
+        kind: ControlEnum.buttonText,
         id: 'submit',
         alignItems: 'left',
         validation: {

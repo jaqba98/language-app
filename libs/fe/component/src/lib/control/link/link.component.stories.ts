@@ -10,16 +10,15 @@ import { linkControlStory } from './link-control-story.service';
 
 const meta: Meta<LinkComponent> = {
   component: LinkComponent,
-  title: 'fe/ui/control/link',
+  title: 'fe/component/control/link',
   ...buildMetaModuleMetaData([], [buildActivatedRouteProvider()]),
 };
 export default meta;
 type Story = StoryObj<LinkComponent>;
 
-const buildLinkArgs = (): Story['args'] => ({
+const buildArgs = (): Story['args'] => ({
   control: linkControlStory,
 });
 
-export const LinkLight = buildBaseStory(true, buildLinkArgs());
-
-export const LinkDark = buildBaseStory(false, buildLinkArgs());
+export const LinkLight = buildBaseStory(true, buildArgs());
+export const LinkDark = buildBaseStory(false, buildArgs());

@@ -28,6 +28,10 @@
             [control]="control"
             (event)="onSubmit()"></lib-button-icon>
         </ng-container>
+        <!-- Link -->
+        <ng-container *ngIf="control.kind === 'link'">
+          <lib-link [control]="control"></lib-link>
+        </ng-container>
         <!-- Validation -->
         <ng-container *ngIf="control.validation.isVisible">
           <ng-container *ngIf="formControlInvalid(control.id)">
@@ -44,9 +48,6 @@
     <lib-flex [flexDirection]="flexDirection" gap="medium">
       <ng-container *ngFor="let control of baseForm.controls">
         <lib-flex [alignItems]="control.alignItems" flexDirection="column" gap="medium">
-          <ng-container *ngIf="control.kind === 'link'">
-            <lib-link [form]="getFormControl(control.id)" [control]="control"></lib-link>
-          </ng-container>
           <ng-container *ngIf="control.kind === 'text'">
             <lib-text
               textColor="text__tertiary"

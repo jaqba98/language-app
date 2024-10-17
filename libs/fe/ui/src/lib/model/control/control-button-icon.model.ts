@@ -1,15 +1,10 @@
-import { ButtonType } from '../../control/button/button.type';
-import { ControlKindEnum } from '../../enum/control-kind.enum';
-import {
-  FontAwesomeColorType,
-  FontAwesomeType,
-} from '../../external/font-awesome/font-awesome.type';
-import { ControlBaseModel } from './control-base.model';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ControlBaseModel, ControlEnum } from '@english-learning/fe-component';
 
 export interface ControlButtonIconModel extends ControlBaseModel {
-  kind: ControlKindEnum.buttonIcon;
-  icon: FontAwesomeType;
-  color: FontAwesomeColorType;
-  type: ButtonType;
+  kind: ControlEnum.buttonIcon;
+  icon: any;
+  color: any;
+  type: any;
   fullWidth: boolean;
 }

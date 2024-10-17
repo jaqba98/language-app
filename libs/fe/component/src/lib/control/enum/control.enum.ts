@@ -1,8 +1,8 @@
-export enum ControlKindEnum {
+export enum ControlEnum {
+  link = 'link',
   input = 'input',
   buttonText = 'buttonText',
   buttonIcon = 'buttonIcon',
   buttonLink = 'buttonLink',
-  link = 'link',
   text = 'text',
 }

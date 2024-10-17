@@ -1,3 +1,4 @@
+import { ControlLinkModel } from '@english-learning/fe-component';
 import { ChangePasswordFormModel } from '../../form/change-password-form/change-password-form.model';
 import { DashboardNavFormModel } from '../../form/dashboard-nav-form/dashboard-nav-form.model';
 import { ForgotPasswordFormModel } from '../../form/forgot-password-form/forgot-password-form.model';
@@ -8,7 +9,6 @@ import { ControlButtonIconModel } from '../control/control-button-icon.model';
 import { ControlButtonLinkModel } from '../control/control-button-link.model';
 import { ControlButtonTextModel } from '../control/control-button-text.model';
 import { ControlInputModel } from '../control/control-input.model';
-import { ControlLinkModel } from '../control/control-link.model';
 import { ControlTextModel } from '../control/control-text.model';
 
 export type ControlType =

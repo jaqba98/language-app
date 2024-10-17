@@ -2,6 +2,7 @@ import { Component, Input, Injector } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NgFor, NgIf } from '@angular/common';
 
+import { ControlEnum, LinkComponent } from '@english-learning/fe-component';
 import {
   elementByIdExistError,
   elementByIdNotExistError,
@@ -12,7 +13,6 @@ import {
 } from '@english-learning/fe-domain';
 import { DirectionType } from '@english-learning/shared-type';
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
-import { ControlKindEnum } from '../../enum/control-kind.enum';
 import {
   BaseFormControlsModel,
   BaseFormModel,
@@ -38,6 +38,7 @@ import { ErrorComponent } from '../../misc/error/error.component';
     ButtonTextComponent,
     ButtonIconComponent,
     ErrorComponent,
+    LinkComponent,
   ],
   templateUrl: './base-form.component.html',
 })
@@ -119,11 +120,12 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
 
   private buildFormControl(control: ControlType) {
     switch (control.kind) {
-      case ControlKindEnum.input:
+      case ControlEnum.input:
         return new FormControl(control.input.value, control.validation.validators);
-      case ControlKindEnum.buttonText:
-      case ControlKindEnum.buttonLink:
-      case ControlKindEnum.buttonIcon:
+      case ControlEnum.buttonText:
+      case ControlEnum.buttonLink:
+      case ControlEnum.buttonIcon:
+      case ControlEnum.link:
         return new FormControl(false, control.validation.validators);
       default:
         throw new Error(unsupportedTypeError('form control', control.kind));

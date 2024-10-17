@@ -1,7 +1,7 @@
 import { Component, Injector, Input } from '@angular/core';
 
+import { ControlEnum } from '@english-learning/fe-component';
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
-import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { BaseFormModel } from '../../model/form/base-form.model';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { HamburgerFormModel } from './hamburger-form.model';
@@ -21,7 +21,7 @@ export class HamburgerFormComponent extends EventEmitterDirective<boolean> {
   form: BaseFormModel<HamburgerFormModel> = {
     controls: {
       submit: {
-        kind: ControlKindEnum.buttonIcon,
+        kind: ControlEnum.buttonIcon,
         id: 'submit',
         alignItems: 'left',
         validation: {

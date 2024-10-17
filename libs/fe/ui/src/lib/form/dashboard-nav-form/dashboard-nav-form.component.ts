@@ -1,8 +1,8 @@
 import { Component, Injector, Input } from '@angular/core';
 
+import { ControlEnum } from '@english-learning/fe-component';
 import { ComponentDirective } from '@english-learning/fe-system';
 import { DirectionType } from '@english-learning/shared-type';
-import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { BaseFormModel } from '../../model/form/base-form.model';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { DashboardNavFormModel } from './dashboard-nav-form.model';
@@ -29,7 +29,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
     this.form = {
       controls: {
         statistics: {
-          kind: ControlKindEnum.buttonLink,
+          kind: ControlEnum.buttonLink,
           id: 'statistics',
           alignItems: 'left',
           validation: {
@@ -41,7 +41,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
           fullWidth: this.flexDirection === 'column',
         },
         courses: {
-          kind: ControlKindEnum.buttonLink,
+          kind: ControlEnum.buttonLink,
           id: 'courses',
           alignItems: 'left',
           validation: {
@@ -53,7 +53,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
           fullWidth: this.flexDirection === 'column',
         },
         account: {
-          kind: ControlKindEnum.buttonLink,
+          kind: ControlEnum.buttonLink,
           id: 'account',
           alignItems: 'left',
           validation: {
@@ -65,7 +65,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
           fullWidth: this.flexDirection === 'column',
         },
         logout: {
-          kind: ControlKindEnum.buttonLink,
+          kind: ControlEnum.buttonLink,
           id: 'logout',
           alignItems: 'left',
           validation: {

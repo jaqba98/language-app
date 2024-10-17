@@ -1,9 +1,7 @@
-import { InputType } from '../../control/input/input.type';
-import { ControlKindEnum } from '../../enum/control-kind.enum';
-import { ControlBaseModel } from './control-base.model';
+import { ControlBaseModel, ControlEnum } from '@english-learning/fe-component';
 
 export interface ControlInputModel extends ControlBaseModel {
-  kind: ControlKindEnum.input;
+  kind: ControlEnum.input;
   label: {
     value: string;
     isVisible: boolean;
@@ -11,6 +9,7 @@ export interface ControlInputModel extends ControlBaseModel {
   input: {
     value: string;
     placeholder: string;
-    type: InputType;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    type: any;
   };
 }

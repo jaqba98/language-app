@@ -1,8 +1,7 @@
-import { ControlKindEnum } from '../../enum/control-kind.enum';
-import { ControlBaseModel } from './control-base.model';
+import { ControlBaseModel, ControlEnum } from '@english-learning/fe-component';
 
 export interface ControlButtonLinkModel extends ControlBaseModel {
-  kind: ControlKindEnum.buttonLink;
+  kind: ControlEnum.buttonLink;
   label: string;
   path: string;
   fullWidth: boolean;

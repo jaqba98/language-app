@@ -1,8 +1,8 @@
-import { ControlKindEnum } from '../../enum/control-kind.enum';
+import { ControlEnum } from '@english-learning/fe-component';
 import { ControlButtonIconModel } from '../../model/control/control-button-icon.model';
 
 export const buttonIconControlStory: ControlButtonIconModel = {
-  kind: ControlKindEnum.buttonIcon,
+  kind: ControlEnum.buttonIcon,
   id: 'button-icon',
   alignItems: 'left',
   validation: {

@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Validators } from '@angular/forms';
 
+import { ControlEnum } from '@english-learning/fe-component';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { BaseFormModel } from '../../model/form/base-form.model';
 import { RegistrationFormModel } from './registration-form.model';
-import { ControlKindEnum } from '../../enum/control-kind.enum';
 
 @Component({
   selector: 'lib-registration-form',
@@ -18,7 +18,7 @@ export class RegistrationFormComponent {
   registrationForm: BaseFormModel<RegistrationFormModel> = {
     controls: {
       email: {
-        kind: ControlKindEnum.input,
+        kind: ControlEnum.input,
         id: 'email',
         alignItems: 'left',
         validation: {
@@ -36,7 +36,7 @@ export class RegistrationFormComponent {
         },
       },
       name: {
-        kind: ControlKindEnum.input,
+        kind: ControlEnum.input,
         id: 'name',
         alignItems: 'left',
         validation: {
@@ -54,7 +54,7 @@ export class RegistrationFormComponent {
         },
       },
       password: {
-        kind: ControlKindEnum.input,
+        kind: ControlEnum.input,
         id: 'password',
         alignItems: 'left',
         validation: {
@@ -72,7 +72,7 @@ export class RegistrationFormComponent {
         },
       },
       repeatPassword: {
-        kind: ControlKindEnum.input,
+        kind: ControlEnum.input,
         id: 'repeatPassword',
         alignItems: 'left',
         validation: {
@@ -90,7 +90,7 @@ export class RegistrationFormComponent {
         },
       },
       submit: {
-        kind: ControlKindEnum.buttonText,
+        kind: ControlEnum.buttonText,
         id: 'submit',
         alignItems: 'left',
         validation: {

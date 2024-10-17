@@ -1,9 +1,9 @@
 import { PositionType } from '@english-learning/shared-type';
-import { ControlKindEnum } from '../../enum/control-kind.enum';
+import { ControlEnum } from '../enum/control.enum';
 import { ControlValidationModel } from './control-validation.model';
 
 export interface ControlBaseModel extends ControlValidationModel {
-  kind: ControlKindEnum;
+  kind: ControlEnum;
   id: string;
   alignItems: PositionType;
 }

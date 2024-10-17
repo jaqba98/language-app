@@ -1,4 +1,4 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts", "../component/src/lib/control/model/control-validation.model.ts"]
 }

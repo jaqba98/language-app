@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Validators } from '@angular/forms';
 
+import { ControlEnum } from '@english-learning/fe-component';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { BaseFormModel } from '../../model/form/base-form.model';
-import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { ForgotPasswordFormModel } from './forgot-password-form.model';
 
 @Component({
@@ -18,7 +18,7 @@ export class ForgotPasswordFormComponent {
   forgotPasswordForm: BaseFormModel<ForgotPasswordFormModel> = {
     controls: {
       tip: {
-        kind: ControlKindEnum.text,
+        kind: ControlEnum.text,
         id: 'tip',
         alignItems: 'left',
         validation: {
@@ -30,7 +30,7 @@ export class ForgotPasswordFormComponent {
         margin: '1rem 0',
       },
       email: {
-        kind: ControlKindEnum.input,
+        kind: ControlEnum.input,
         id: 'email',
         alignItems: 'left',
         validation: {
@@ -48,7 +48,7 @@ export class ForgotPasswordFormComponent {
         },
       },
       submit: {
-        kind: ControlKindEnum.buttonText,
+        kind: ControlEnum.buttonText,
         id: 'submit',
         alignItems: 'left',
         validation: {

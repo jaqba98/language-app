@@ -1,10 +1,9 @@
-import { ButtonType } from '../../control/button/button.type';
-import { ControlKindEnum } from '../../enum/control-kind.enum';
-import { ControlBaseModel } from './control-base.model';
+import { ControlBaseModel, ControlEnum } from '@english-learning/fe-component';
 
 export interface ControlButtonTextModel extends ControlBaseModel {
-  kind: ControlKindEnum.buttonText;
+  kind: ControlEnum.buttonText;
   label: string;
-  type: ButtonType;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  type: any;
   fullWidth: boolean;
 }

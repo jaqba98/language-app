@@ -1,0 +1,36 @@
+@use '@english-learning/fe-styles/src/lib/main';
+
+@function -build-link-mode-color($dark-mode: false) {
+  $default: main.pick-neutrals-light-copy-color();
+
+  @if $dark-mode {
+    $default: main.pick-neutrals-dark-copy-color();
+  }
+
+  @return (
+    link: (
+      styles: (
+        text-decoration-color: $default,
+      ),
+    )
+  );
+}
+
+$classes: (
+  root: (
+    link: (
+      styles: (
+        text-decoration: underline,
+      ),
+      pseudo-classes: (
+        active: (
+          text-decoration: none,
+        ),
+      ),
+    ),
+  ),
+  light-mode: -build-link-mode-color(),
+  dark-mode: -build-link-mode-color(true),
+);
+
+@include main.build-classes($classes);

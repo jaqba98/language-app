@@ -1,10 +1,8 @@
-import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { ControlBaseModel } from './control-base.model';
+import { ControlEnum } from '../enum/control.enum';
 
 export interface ControlLinkModel extends ControlBaseModel {
-  kind: ControlKindEnum.link;
+  kind: ControlEnum.link;
   label: string;
   path: string;
-  leftTip: string;
-  rightTip: string;
 }

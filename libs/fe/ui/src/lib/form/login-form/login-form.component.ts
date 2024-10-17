@@ -1,6 +1,6 @@
 import { Component, Injector } from '@angular/core';
 
-import { ControlKindEnum } from '../../enum/control-kind.enum';
+import { ControlEnum } from '@english-learning/fe-component';
 import { BaseFormModel } from '../../model/form/base-form.model';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { LoginFormModel } from './login-form.model';
@@ -19,7 +19,7 @@ export class LoginFormComponent extends EventEmitterDirective<LoginFormModel> {
   form: BaseFormModel<LoginFormModel> = {
     controls: {
       email: {
-        kind: ControlKindEnum.input,
+        kind: ControlEnum.input,
         id: 'email',
         alignItems: 'stretch',
         validation: {
@@ -37,7 +37,7 @@ export class LoginFormComponent extends EventEmitterDirective<LoginFormModel> {
         },
       },
       password: {
-        kind: ControlKindEnum.input,
+        kind: ControlEnum.input,
         id: 'password',
         alignItems: 'stretch',
         validation: {
@@ -55,7 +55,7 @@ export class LoginFormComponent extends EventEmitterDirective<LoginFormModel> {
         },
       },
       forgotPassword: {
-        kind: ControlKindEnum.link,
+        kind: ControlEnum.link,
         id: 'forgotPassword',
         alignItems: 'right',
         validation: {
@@ -64,11 +64,9 @@ export class LoginFormComponent extends EventEmitterDirective<LoginFormModel> {
         },
         label: 'Forgot password?',
         path: '/forgot-password',
-        leftTip: '',
-        rightTip: '',
       },
       submit: {
-        kind: ControlKindEnum.buttonText,
+        kind: ControlEnum.buttonText,
         id: 'submit',
         alignItems: 'left',
         validation: {
@@ -80,7 +78,7 @@ export class LoginFormComponent extends EventEmitterDirective<LoginFormModel> {
         fullWidth: false,
       },
       registration: {
-        kind: ControlKindEnum.link,
+        kind: ControlEnum.link,
         id: 'registration',
         alignItems: 'left',
         validation: {
@@ -89,8 +87,6 @@ export class LoginFormComponent extends EventEmitterDirective<LoginFormModel> {
         },
         label: 'Sign up',
         path: '/registration',
-        leftTip: 'Do not have an account?',
-        rightTip: '',
       },
     },
   };
