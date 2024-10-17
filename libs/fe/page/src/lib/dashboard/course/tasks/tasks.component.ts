@@ -14,7 +14,7 @@ import { TasksService } from './tasks.service';
  */
 export class TasksComponent extends EventEmitterDirective<string> {
   constructor(protected override readonly injector: Injector) {
-    super(injector);
+    super(injector, 'tasks');
   }
 
   onEvent(event: string) {

@@ -1,6 +1,6 @@
 import { Directive, Output, Injector, EventEmitter } from '@angular/core';
 
-import { ComponentDirective } from './component.directive';
+import { ComponentDirective } from '@english-learning/fe-system';
 
 @Directive()
 /**
@@ -9,8 +9,11 @@ import { ComponentDirective } from './component.directive';
 export class EventEmitterDirective<TEvent> extends ComponentDirective {
   @Output() event = new EventEmitter<TEvent>();
 
-  constructor(protected override readonly injector: Injector) {
-    super(injector);
+  constructor(
+    protected override readonly injector: Injector,
+    protected override readonly blockName: string,
+  ) {
+    super(injector, blockName);
   }
 
   protected emit(eventData: TEvent) {

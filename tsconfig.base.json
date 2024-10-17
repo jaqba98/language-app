@@ -25,7 +25,8 @@
       "@english-learning/fe-system": ["libs/fe/system/src/index.ts"],
       "@english-learning/fe-ui": ["libs/fe/ui/src/index.ts"],
       "@english-learning/fe-utils": ["libs/fe/utils/src/index.ts"],
-      "@english-learning/shared-type": ["libs/shared/type/src/index.ts"]
+      "@english-learning/shared-type": ["libs/shared/type/src/index.ts"],
+      "@english-learning/shared-utils": ["libs/shared/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

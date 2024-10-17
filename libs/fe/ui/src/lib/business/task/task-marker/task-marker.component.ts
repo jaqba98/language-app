@@ -34,15 +34,11 @@ export class TaskMarkerComponent extends BusinessDirective<TaskModel['id']> {
   color: FontAwesomeColorType = 'gray';
 
   constructor(protected override readonly injector: Injector) {
-    super(injector, 'course');
+    super(injector, 'task-marker', 'course');
   }
 
   onEvent(eventData: TaskModel['id']) {
     this.emit(eventData);
-  }
-
-  protected override beforeBusinessInit() {
-    this.addClassName('task-marker');
   }
 
   protected override onStoreChange(store: StoreModel[StoreType]) {
@@ -50,6 +46,7 @@ export class TaskMarkerComponent extends BusinessDirective<TaskModel['id']> {
     if (!task) throw new Error(notFoundInTheStore(this.taskId));
     this.addClassName('task-marker', task.type);
     this.setFontAwesome(task.type);
+    this.addClassName(task.type);
   }
 
   private setFontAwesome(type: TaskModel['type']) {

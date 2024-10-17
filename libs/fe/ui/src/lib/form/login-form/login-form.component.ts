@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 
 import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { BaseFormModel } from '../../model/form/base-form.model';
@@ -94,6 +94,10 @@ export class LoginFormComponent extends EventEmitterDirective<LoginFormModel> {
       },
     },
   };
+
+  constructor(protected override readonly injector: Injector) {
+    super(injector, 'login-form');
+  }
 
   onEvent(eventData: LoginFormModel) {
     this.emit(eventData);

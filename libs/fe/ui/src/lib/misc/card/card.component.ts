@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Injector, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
-import { ComponentDirective } from '../../base/component.directive';
+import { ComponentDirective } from '@english-learning/fe-system';
 import { CardType } from './card.type';
 
 @Component({
@@ -17,11 +17,12 @@ import { CardType } from './card.type';
 export class CardComponent extends ComponentDirective {
   @Input() type: CardType = 'default';
 
-  private readonly block = 'card';
+  constructor(protected override readonly injector: Injector) {
+    super(injector, 'card');
+  }
 
   protected override afterChanges() {
     this.removeClassNames();
-    this.addClassName(this.block);
-    this.addClassName(this.block, this.type);
+    this.addClassName(this.type);
   }
 }

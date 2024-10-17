@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Injector, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 import { ClickActionDirective } from '../../action/click-action.directive';
@@ -25,11 +25,14 @@ export class ButtonComponent extends EventEmitterDirective<boolean> {
 
   @Input() fullWidth = false;
 
+  constructor(protected override readonly injector: Injector) {
+    super(injector, 'button');
+  }
+
   protected override afterInit() {
-    this.addClassName('button');
-    this.addClassName('button', this.shape);
+    this.addClassName(this.shape);
     if (this.fullWidth) {
-      this.addClassName('button', 'full-width');
+      this.addClassName('full-width');
     }
   }
 

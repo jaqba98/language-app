@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Injector, Input } from '@angular/core';
 import { Properties } from 'csstype';
 
-import { BemService } from '../../service/bem.service';
+import { ComponentDirective } from '@english-learning/fe-system';
 import { GridItemPositionType } from './grid-item.type';
 
 @Component({
@@ -12,7 +12,7 @@ import { GridItemPositionType } from './grid-item.type';
   templateUrl: './grid-item.component.html',
   styleUrl: './grid-item.component.scss',
 })
-export class GridItemComponent implements OnInit {
+export class GridItemComponent extends ComponentDirective {
   @Input() columnStart: Properties['gridColumnStart'] = 1;
 
   @Input() columnEnd: Properties['gridColumnEnd'] = 13;
@@ -23,12 +23,12 @@ export class GridItemComponent implements OnInit {
 
   @Input() positionType: GridItemPositionType = 'left';
 
-  element = '';
+  constructor(protected override readonly injector: Injector) {
+    super(injector, 'grid-item');
+  }
 
-  constructor(private readonly bem: BemService) {}
-
-  ngOnInit() {
-    this.element = this.bem.buildBem('grid-item', this.positionType);
+  protected override afterInit() {
+    this.addClassName(this.positionType);
   }
 
   buildGridItemStyles(): Properties {

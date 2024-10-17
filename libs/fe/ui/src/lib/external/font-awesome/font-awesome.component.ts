@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Injector, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { FontAwesomeModule, SizeProp } from '@fortawesome/angular-fontawesome';
 import { IconProp } from '@fortawesome/angular-fontawesome/types';
@@ -11,8 +11,8 @@ import {
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 
+import { ComponentDirective } from '@english-learning/fe-system';
 import { notValueInType } from '@english-learning/fe-domain';
-import { ComponentDirective } from '../../base/component.directive';
 import { FontAwesomeColorType, FontAwesomeType } from './font-awesome.type';
 
 @Component({
@@ -32,8 +32,12 @@ export class FontAwesomeComponent extends ComponentDirective {
 
   @Input() size: SizeProp = '1x';
 
+  constructor(protected override readonly injector: Injector) {
+    super(injector, 'font-awesome');
+  }
+
   protected override afterInit() {
-    this.addClassName('font-awesome', this.color);
+    this.addClassName(this.color);
   }
 
   getFontAwesomeIcon(): IconProp {

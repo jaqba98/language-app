@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { TextComponent } from '../text/text.component';
+import { TextComponent } from '@english-learning/fe-component';
 
 @Component({
   selector: 'lib-error',

@@ -16,9 +16,10 @@ export class BusinessDirective<TEvent = undefined> extends EventEmitterDirective
 
   constructor(
     protected override readonly injector: Injector,
+    protected override readonly blockName: string,
     protected readonly select: StoreType,
   ) {
-    super(injector);
+    super(injector, blockName);
     this.store = this.injector.get(Store<StoreModel>);
   }
 

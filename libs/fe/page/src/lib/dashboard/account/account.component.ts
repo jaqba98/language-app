@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-import { CardComponent, TextComponent } from '@english-learning/fe-ui';
+import { TextComponent } from '@english-learning/fe-component';
+import { CardComponent } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-account',

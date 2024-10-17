@@ -1,4 +1,4 @@
-import { Directive, Input, HostListener } from '@angular/core';
+import { Directive, Input, HostListener, Injector } from '@angular/core';
 
 import { EventEmitterDirective } from '../base/event-emitter.directive';
 
@@ -11,6 +11,10 @@ import { EventEmitterDirective } from '../base/event-emitter.directive';
  */
 export class ClickActionDirective<TEvent> extends EventEmitterDirective<TEvent> {
   @Input('libClickAction') eventData!: TEvent;
+
+  constructor(protected override readonly injector: Injector) {
+    super(injector, '');
+  }
 
   @HostListener('click') onClick() {
     this.emit(this.eventData);

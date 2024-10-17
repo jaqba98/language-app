@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Injector, Input } from '@angular/core';
 
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
 import { ControlKindEnum } from '../../enum/control-kind.enum';
@@ -35,6 +35,10 @@ export class HamburgerFormComponent extends EventEmitterDirective<boolean> {
       },
     },
   };
+
+  constructor(protected override readonly injector: Injector) {
+    super(injector, 'hamburger-form');
+  }
 
   protected override afterChanges() {
     this.form.controls.submit.icon = this.menuIsOpen ? 'xmark' : 'bars';

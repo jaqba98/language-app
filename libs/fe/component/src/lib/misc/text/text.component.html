@@ -1,0 +1,17 @@
+<ng-container [ngSwitch]="kind">
+  <ng-container *ngSwitchCase="'small'">
+    <small [ngClass]="classNames">{{ value }}</small>
+  </ng-container>
+  <ng-container *ngSwitchCase="'paragraph'">
+    <p [ngClass]="classNames">{{ value }}</p>
+  </ng-container>
+  <ng-container *ngSwitchCase="'header1'">
+    <h1 [ngClass]="classNames">{{ value }}</h1>
+  </ng-container>
+  <ng-container *ngSwitchCase="'header2'">
+    <h2 [ngClass]="classNames">{{ value }}</h2>
+  </ng-container>
+  <ng-container *ngSwitchCase="'header3'">
+    <h3 [ngClass]="classNames">{{ value }}</h3>
+  </ng-container>
+</ng-container>

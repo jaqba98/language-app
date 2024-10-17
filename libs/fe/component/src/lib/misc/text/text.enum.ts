@@ -1,5 +1,5 @@
-export enum TextTypeEnum {
-  tiny = 'tiny',
+export enum TextKindEnum {
+  small = 'small',
   paragraph = 'paragraph',
   header1 = 'header1',
   header2 = 'header2',
@@ -10,7 +10,7 @@ export enum TextColorEnum {
   default = 'default',
   light = 'light',
   lighter = 'lighter',
-  error = 'error',
-  warning = 'warning',
   success = 'success',
+  warning = 'warning',
+  error = 'error',
 }

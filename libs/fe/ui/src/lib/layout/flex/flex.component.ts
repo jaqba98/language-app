@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Injector, Input } from '@angular/core';
 import { NgClass, NgStyle } from '@angular/common';
 import { Properties } from 'csstype';
 
@@ -8,7 +8,7 @@ import {
   SizeType,
   SpaceType,
 } from '@english-learning/shared-type';
-import { ComponentDirective } from '../../base/component.directive';
+import { ComponentDirective } from '@english-learning/fe-system';
 import { DisplayContentsDirective } from '../../base/display-contents.directive';
 
 @Component({
@@ -35,17 +35,21 @@ export class FlexComponent extends ComponentDirective {
 
   @Input() minHeight100svh = false;
 
+  constructor(protected override readonly injector: Injector) {
+    super(injector, 'flex');
+  }
+
   protected override afterInit() {
-    this.addClassName('flex', 'align-items', this.alignItems);
+    this.addClassName('align-items', this.alignItems);
     const justifyContent = this.space === 'none' ? this.justifyContent : this.space;
-    this.addClassName('flex', 'justify-content', justifyContent);
-    this.addClassName('flex', 'gap', this.gap);
+    this.addClassName('justify-content', justifyContent);
+    this.addClassName('gap', this.gap);
   }
 
   getStyles(): Properties {
     return {
       flexDirection: this.flexDirection,
-      minHeight: this.buildStyle(this.minHeight100svh, '100svh'),
+      minHeight: this.assignStyle(this.minHeight100svh, '100svh'),
     };
   }
 }

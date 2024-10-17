@@ -22,7 +22,7 @@ export class TaskRoadmapComponent extends BusinessDirective<TaskModel['id']> {
   private readonly typeConverter: TypeConverterService;
 
   constructor(protected override readonly injector: Injector) {
-    super(injector, 'course');
+    super(injector, 'task-roadmap', 'course');
     this.typeConverter = this.injector.get(TypeConverterService);
   }
 

@@ -1,11 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Injector, Input } from '@angular/core';
 
+import { ComponentDirective } from '@english-learning/fe-system';
 import { DirectionType } from '@english-learning/shared-type';
 import { ControlKindEnum } from '../../enum/control-kind.enum';
 import { BaseFormModel } from '../../model/form/base-form.model';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { DashboardNavFormModel } from './dashboard-nav-form.model';
-import { ComponentDirective } from '../../base/component.directive';
 
 @Component({
   selector: 'lib-dashboard-nav-form',
@@ -20,6 +20,10 @@ export class DashboardNavFormComponent extends ComponentDirective {
   @Input() flexDirection: DirectionType = 'row';
 
   form!: BaseFormModel<DashboardNavFormModel>;
+
+  constructor(protected override readonly injector: Injector) {
+    super(injector, 'dashboard-form');
+  }
 
   protected override afterInit() {
     this.form = {

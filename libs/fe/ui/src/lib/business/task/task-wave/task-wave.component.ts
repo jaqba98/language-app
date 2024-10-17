@@ -36,7 +36,7 @@ export class TaskWaveComponent
     protected override readonly injector: Injector,
     private readonly breakpoint: BreakpointService,
   ) {
-    super(injector, 'course');
+    super(injector, 'task-wave', 'course');
     this.breakpoint.addObserver(this);
   }
 

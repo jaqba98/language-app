@@ -1,16 +1,49 @@
 @use '@english-learning/fe-styles/src/lib/main';
 
+@function -build-text-mode-color($dark-mode: false) {
+  $default: main.pick-neutrals-light-copy-color();
+  $light: main.pick-neutrals-light-copy-light-color();
+  $lighter: main.pick-neutrals-light-copy-lighter-color();
+
+  @if $dark-mode {
+    $default: main.pick-neutrals-dark-copy-color();
+    $light: main.pick-neutrals-dark-copy-light-color();
+    $lighter: main.pick-neutrals-dark-copy-lighter-color();
+  }
+
+  @return (
+    text: (
+      elements: (
+        default: (
+          styles: (
+            color: $default,
+          ),
+        ),
+        light: (
+          styles: (
+            color: $light,
+          ),
+        ),
+        lighter: (
+          styles: (
+            color: $lighter,
+          ),
+        ),
+      ),
+    )
+  );
+}
+
 $classes: (
   root: (
     text: (
       styles: (
-        display: inline-block,
         font-family: main.$font-family,
       ),
       elements: (
-        tiny: (
+        small: (
           styles: (
-            font-size: main.$font-tiny-size,
+            font-size: main.$font-small-size,
           ),
         ),
         paragraph: (
@@ -51,48 +84,8 @@ $classes: (
       ),
     ),
   ),
-  light-mode: (
-    text: (
-      elements: (
-        default: (
-          styles: (
-            color: main.pick-neutrals-light-copy-color(),
-          ),
-        ),
-        light: (
-          styles: (
-            color: main.pick-neutrals-light-copy-light-color(),
-          ),
-        ),
-        lighter: (
-          styles: (
-            color: main.pick-neutrals-light-copy-lighter-color(),
-          ),
-        ),
-      ),
-    ),
-  ),
-  dark-mode: (
-    text: (
-      elements: (
-        default: (
-          styles: (
-            color: main.pick-neutrals-dark-copy-color(),
-          ),
-        ),
-        light: (
-          styles: (
-            color: main.pick-neutrals-dark-copy-light-color(),
-          ),
-        ),
-        lighter: (
-          styles: (
-            color: main.pick-neutrals-dark-copy-lighter-color(),
-          ),
-        ),
-      ),
-    ),
-  ),
+  light-mode: -build-text-mode-color(),
+  dark-mode: -build-text-mode-color(true),
 );
 
 @include main.build-classes($classes);

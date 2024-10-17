@@ -1,8 +1,8 @@
 import { NgClass } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Injector, Input } from '@angular/core';
 
+import { ComponentDirective } from '@english-learning/fe-system';
 import { GridGapType } from './grid.type';
-import { BemService } from '../../service/bem.service';
 
 @Component({
   selector: 'lib-grid',
@@ -11,14 +11,14 @@ import { BemService } from '../../service/bem.service';
   templateUrl: './grid.component.html',
   styleUrl: './grid.component.scss',
 })
-export class GridComponent implements OnInit {
+export class GridComponent extends ComponentDirective {
   @Input() gapType: GridGapType = 'none';
 
-  element = '';
+  constructor(protected override readonly injector: Injector) {
+    super(injector, 'grid');
+  }
 
-  constructor(private readonly bem: BemService) {}
-
-  ngOnInit() {
-    this.element = this.bem.buildBem('grid', this.gapType);
+  protected override afterInit() {
+    this.addClassName(this.gapType);
   }
 }

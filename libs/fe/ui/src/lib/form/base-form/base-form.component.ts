@@ -64,7 +64,7 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
     protected override readonly injector: Injector,
     private readonly fb: FormBuilder,
   ) {
-    super(injector);
+    super(injector, 'base-form');
     this.formGroup = this.fb.group({});
   }
 

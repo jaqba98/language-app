@@ -22,7 +22,7 @@ export class LoginComponent extends EventEmitterDirective<LoginFormModel> {
     protected override readonly injector: Injector,
     private readonly route: RouteNavigationService,
   ) {
-    super(injector);
+    super(injector, 'login');
   }
 
   onEvent(event: LoginFormModel) {

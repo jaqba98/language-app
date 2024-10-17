@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Injector, Input } from '@angular/core';
 
 import { ButtonComponent } from '../button/button.component';
 import { EventEmitterDirective } from '../../base/event-emitter.directive';
@@ -18,6 +18,10 @@ import { DisplayContentsDirective } from '../../base/display-contents.directive'
  */
 export class ButtonIconComponent extends EventEmitterDirective<boolean> {
   @Input({ required: true }) control!: ControlButtonIconModel;
+
+  constructor(protected override readonly injector: Injector) {
+    super(injector, 'button-icon');
+  }
 
   onEvent(eventData: boolean) {
     this.emit(eventData);
