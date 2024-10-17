@@ -38,7 +38,6 @@ export class DashboardNavFormComponent extends ComponentDirective {
           },
           label: 'Statistics',
           path: '/dashboard/statistics',
-          fullWidth: this.flexDirection === 'column',
         },
         courses: {
           kind: ControlEnum.buttonLink,
@@ -50,7 +49,6 @@ export class DashboardNavFormComponent extends ComponentDirective {
           },
           label: 'Courses',
           path: '/dashboard/courses',
-          fullWidth: this.flexDirection === 'column',
         },
         account: {
           kind: ControlEnum.buttonLink,
@@ -62,7 +60,6 @@ export class DashboardNavFormComponent extends ComponentDirective {
           },
           label: 'Account',
           path: '/dashboard/account',
-          fullWidth: this.flexDirection === 'column',
         },
         logout: {
           kind: ControlEnum.buttonLink,
@@ -74,7 +71,6 @@ export class DashboardNavFormComponent extends ComponentDirective {
           },
           label: 'logout',
           path: '/',
-          fullWidth: this.flexDirection === 'column',
         },
       },
     };

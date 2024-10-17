@@ -11,17 +11,16 @@ import { buttonLinkControlStory } from './button-link-control-story.service';
 
 const meta: Meta<ButtonLinkComponent> = {
   component: ButtonLinkComponent,
-  title: 'fe/ui/control/button-link',
+  title: 'fe/component/control/button-link',
   ...buildMetaModuleMetaData([], [buildActivatedRouteProvider()]),
 };
 export default meta;
 type Story = StoryObj<ButtonLinkComponent>;
 
-const buildButtonLinkArgs = (): Story['args'] => ({
+const buildArgs = (): Story['args'] => ({
   controlForm: new FormControl(false),
   control: buttonLinkControlStory,
 });
 
-export const ButtonLinkLight = buildBaseStory(true, buildButtonLinkArgs());
-
-export const ButtonLinkDark = buildBaseStory(false, buildButtonLinkArgs());
+export const ButtonLinkLight = buildBaseStory(true, buildArgs());
+export const ButtonLinkDark = buildBaseStory(false, buildArgs());

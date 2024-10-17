@@ -1,5 +1,5 @@
-import { ControlEnum } from '@english-learning/fe-component';
-import { ControlButtonLinkModel } from '../../model/control/control-button-link.model';
+import { ControlEnum } from '../../enum/control.enum';
+import { ControlButtonLinkModel } from '../../model/control-button-link.model';
 
 export const buttonLinkControlStory: ControlButtonLinkModel = {
   kind: ControlEnum.buttonLink,
@@ -7,9 +7,8 @@ export const buttonLinkControlStory: ControlButtonLinkModel = {
   alignItems: 'left',
   validation: {
     validators: [],
-    isVisible: true,
+    isVisible: false,
   },
   label: 'Link1',
   path: '/',
-  fullWidth: false,
 };

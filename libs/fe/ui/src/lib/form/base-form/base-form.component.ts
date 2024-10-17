@@ -2,7 +2,11 @@ import { Component, Input, Injector } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NgFor, NgIf } from '@angular/common';
 
-import { ControlEnum, LinkComponent } from '@english-learning/fe-component';
+import {
+  ButtonLinkComponent,
+  ControlEnum,
+  LinkComponent,
+} from '@english-learning/fe-component';
 import {
   elementByIdExistError,
   elementByIdNotExistError,
@@ -20,7 +24,6 @@ import {
 } from '../../model/form/base-form.model';
 import { FlexComponent } from '../../layout/flex/flex.component';
 import { InputComponent } from '../../control/input/input.component';
-import { ButtonLinkComponent } from '../../control/button-link/button-link.component';
 import { ButtonTextComponent } from '../../control/button-text/button-text.component';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
 import { ErrorComponent } from '../../misc/error/error.component';

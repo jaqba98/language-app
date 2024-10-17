@@ -1,21 +1,18 @@
 import { Component, Injector, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 import { EventEmitterDirective } from '@english-learning/fe-system';
-import { ButtonComponent, TextComponent } from '@english-learning/fe-component';
-import { ControlButtonLinkModel } from '../../model/control/control-button-link.model';
-import { DisplayContentsDirective } from '../../base/display-contents.directive';
+import { ButtonComponent } from '../../base/button/button.component';
+import { TextComponent } from '../../../misc/text/text.component';
+import { ControlButtonLinkModel } from '../../model/control-button-link.model';
 
 @Component({
   selector: 'lib-button-link',
   standalone: true,
-  imports: [RouterLink, ButtonComponent, TextComponent, DisplayContentsDirective],
+  imports: [CommonModule, RouterLink, ButtonComponent, TextComponent],
   templateUrl: './button-link.component.html',
-  hostDirectives: [DisplayContentsDirective],
 })
-/**
- * Button Link Component
- */
 export class ButtonLinkComponent extends EventEmitterDirective<boolean> {
   @Input({ required: true }) control!: ControlButtonLinkModel;
 

@@ -3,7 +3,7 @@
   "include": [
     "**/*.ts",
     "../ui/src/lib/model/control/control-button-icon.model.ts",
-    "../ui/src/lib/model/control/control-button-link.model.ts",
+    "src/lib/control/model/control-button-link.model.ts",
     "../ui/src/lib/model/control/control-button-text.model.ts",
     "../ui/src/lib/model/control/control-input.model.ts",
     "../ui/src/lib/model/control/control-text.model.ts",

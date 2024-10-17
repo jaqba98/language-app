@@ -1,4 +1,4 @@
-import { ControlButtonLinkModel } from '../../model/control/control-button-link.model';
+import { ControlButtonLinkModel } from '@english-learning/fe-component';
 
 export interface DashboardNavFormModel {
   statistics: ControlButtonLinkModel;
