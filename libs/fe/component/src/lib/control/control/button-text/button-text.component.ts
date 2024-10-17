@@ -1,20 +1,16 @@
-import { Component, Injector, Input } from '@angular/core';
+import { Component, Input, Injector } from '@angular/core';
 
-import { ButtonComponent, TextComponent } from '@english-learning/fe-component';
 import { EventEmitterDirective } from '@english-learning/fe-system';
-import { ControlButtonTextModel } from '../../model/control/control-button-text.model';
-import { DisplayContentsDirective } from '../../base/display-contents.directive';
+import { TextComponent } from '../../../misc/text/text.component';
+import { ButtonComponent } from '../../base/button/button.component';
+import { ControlButtonTextModel } from '../../model/control-button-text.model';
 
 @Component({
   selector: 'lib-button-text',
   standalone: true,
   imports: [ButtonComponent, TextComponent],
   templateUrl: './button-text.component.html',
-  hostDirectives: [DisplayContentsDirective],
 })
-/**
- * Button Text Component
- */
 export class ButtonTextComponent extends EventEmitterDirective<boolean> {
   @Input({ required: true }) control!: ControlButtonTextModel;
 
@@ -22,7 +18,7 @@ export class ButtonTextComponent extends EventEmitterDirective<boolean> {
     super(injector, 'button-text');
   }
 
-  onEvent(eventData: boolean) {
-    this.emit(eventData);
+  onClick() {
+    this.emit(true);
   }
 }

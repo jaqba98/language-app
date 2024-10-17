@@ -4,6 +4,7 @@ import { NgFor, NgIf } from '@angular/common';
 
 import {
   ButtonLinkComponent,
+  ButtonTextComponent,
   ControlEnum,
   LinkComponent,
 } from '@english-learning/fe-component';
@@ -24,7 +25,6 @@ import {
 } from '../../model/form/base-form.model';
 import { FlexComponent } from '../../layout/flex/flex.component';
 import { InputComponent } from '../../control/input/input.component';
-import { ButtonTextComponent } from '../../control/button-text/button-text.component';
 import { ButtonIconComponent } from '../../control/button-icon/button-icon.component';
 import { ErrorComponent } from '../../misc/error/error.component';
 
