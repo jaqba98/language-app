@@ -1,6 +1,6 @@
 import { Component, Injector } from '@angular/core';
 
-import { EventEmitterDirective } from '@english-learning/fe-ui';
+import { EventEmitterDirective } from '@english-learning/fe-system';
 import { TasksService } from './tasks.service';
 
 @Component({

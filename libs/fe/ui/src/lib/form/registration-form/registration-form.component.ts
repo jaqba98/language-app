@@ -99,7 +99,6 @@ export class RegistrationFormComponent {
         },
         label: 'Register',
         type: 'submit',
-        fullWidth: false,
       },
     },
   };

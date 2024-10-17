@@ -1,4 +1,4 @@
-export enum ButtonEnum {
+export enum ButtonKindEnum {
   submit = 'submit',
   button = 'button',
 }

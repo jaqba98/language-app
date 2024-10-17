@@ -1,8 +1,7 @@
 import { Component, Injector, Input } from '@angular/core';
 
-import { TextComponent } from '@english-learning/fe-component';
-import { ButtonComponent } from '../button/button.component';
-import { EventEmitterDirective } from '../../base/event-emitter.directive';
+import { ButtonComponent, TextComponent } from '@english-learning/fe-component';
+import { EventEmitterDirective } from '@english-learning/fe-system';
 import { ControlButtonTextModel } from '../../model/control/control-button-text.model';
 import { DisplayContentsDirective } from '../../base/display-contents.directive';
 

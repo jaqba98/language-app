@@ -1,10 +1,9 @@
 import { Component, Injector, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { TextComponent } from '@english-learning/fe-component';
+import { EventEmitterDirective } from '@english-learning/fe-system';
+import { ButtonComponent, TextComponent } from '@english-learning/fe-component';
 import { ControlButtonLinkModel } from '../../model/control/control-button-link.model';
-import { ButtonComponent } from '../button/button.component';
-import { EventEmitterDirective } from '../../base/event-emitter.directive';
 import { DisplayContentsDirective } from '../../base/display-contents.directive';
 
 @Component({

@@ -1,6 +1,5 @@
 import { Directive, Input, HostListener, Injector } from '@angular/core';
-
-import { EventEmitterDirective } from '../base/event-emitter.directive';
+import { EventEmitterDirective } from '@english-learning/fe-system';
 
 @Directive({
   selector: '[libClickAction]',

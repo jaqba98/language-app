@@ -1,10 +1,10 @@
 import { Component, Injector } from '@angular/core';
 
+import { EventEmitterDirective } from '@english-learning/fe-system';
 import { ControlEnum } from '@english-learning/fe-component';
 import { BaseFormModel } from '../../model/form/base-form.model';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { LoginFormModel } from './login-form.model';
-import { EventEmitterDirective } from '../../base/event-emitter.directive';
 
 @Component({
   selector: 'lib-login-form',
@@ -75,7 +75,6 @@ export class LoginFormComponent extends EventEmitterDirective<LoginFormModel> {
         },
         label: 'Log In',
         type: 'submit',
-        fullWidth: false,
       },
       registration: {
         kind: ControlEnum.link,

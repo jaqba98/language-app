@@ -57,7 +57,6 @@ export class ForgotPasswordFormComponent {
         },
         label: 'Reset password',
         type: 'submit',
-        fullWidth: false,
       },
     },
   };

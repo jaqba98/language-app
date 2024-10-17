@@ -1,9 +1,11 @@
 import { Component, Injector } from '@angular/core';
 
-import { RouteNavigationService } from '@english-learning/fe-system';
+import {
+  EventEmitterDirective,
+  RouteNavigationService,
+} from '@english-learning/fe-system';
 import {
   AuthViewComponent,
-  EventEmitterDirective,
   LoginFormComponent,
   LoginFormModel,
 } from '@english-learning/fe-ui';

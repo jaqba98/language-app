@@ -1,7 +1,7 @@
 import { Component, Injector, Input } from '@angular/core';
 
 import { ControlEnum } from '@english-learning/fe-component';
-import { EventEmitterDirective } from '../../base/event-emitter.directive';
+import { EventEmitterDirective } from '@english-learning/fe-system';
 import { BaseFormModel } from '../../model/form/base-form.model';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { HamburgerFormModel } from './hamburger-form.model';

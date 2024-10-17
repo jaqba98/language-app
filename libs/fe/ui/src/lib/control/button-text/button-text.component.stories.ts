@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { FormControl } from '@angular/forms';
 
+import { ButtonKindType } from '@english-learning/fe-component';
 import { buildBaseStory, buildMetaEventAction } from '@english-learning/fe-utils';
 import { ButtonTextComponent } from './button-text.component';
 import { buttonTextControlStory } from './button-text-control-story.service';
-import { ButtonType } from '../button/button.type';
 
 const meta: Meta<ButtonTextComponent> = {
   component: ButtonTextComponent,
@@ -14,7 +14,7 @@ const meta: Meta<ButtonTextComponent> = {
 export default meta;
 type Story = StoryObj<ButtonTextComponent>;
 
-const buildButtonTextArgs = (type: ButtonType): Story['args'] => ({
+const buildButtonTextArgs = (type: ButtonKindType): Story['args'] => ({
   controlForm: new FormControl(false),
   control: buttonTextControlStory(type),
 });

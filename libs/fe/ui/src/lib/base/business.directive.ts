@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
 import { StoreModel, StoreType } from '@english-learning/fe-store';
-import { EventEmitterDirective } from './event-emitter.directive';
+import { EventEmitterDirective } from '@english-learning/fe-system';
 
 @Directive()
 /**

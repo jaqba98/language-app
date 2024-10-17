@@ -1,3 +1,5 @@
+export * from './lib/control/base/button/button.component';
+export * from './lib/control/base/button/button.type';
 export * from './lib/control/control/link/link.component';
 export * from './lib/control/enum/control.enum';
 export * from './lib/control/model/control-base.model';

@@ -12,7 +12,7 @@ import {
   unsupportedTypeError,
 } from '@english-learning/fe-domain';
 import { DirectionType } from '@english-learning/shared-type';
-import { EventEmitterDirective } from '../../base/event-emitter.directive';
+import { EventEmitterDirective } from '@english-learning/fe-system';
 import {
   BaseFormControlsModel,
   BaseFormModel,

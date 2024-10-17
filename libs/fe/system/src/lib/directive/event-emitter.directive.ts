@@ -1,11 +1,8 @@
 import { Directive, Output, Injector, EventEmitter } from '@angular/core';
 
-import { ComponentDirective } from '@english-learning/fe-system';
+import { ComponentDirective } from './component.directive';
 
 @Directive()
-/**
- * Event Emitter Directive
- */
 export class EventEmitterDirective<TEvent> extends ComponentDirective {
   @Output() event = new EventEmitter<TEvent>();
 
