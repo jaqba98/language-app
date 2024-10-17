@@ -3,8 +3,8 @@ import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { ComponentDirective } from '@english-learning/fe-system';
-import { TextComponent } from '../../misc/text/text.component';
-import { ControlLinkModel } from '../model/control-link.model';
+import { TextComponent } from '../../../misc/text/text.component';
+import { ControlLinkModel } from '../../model/control-link.model';
 
 @Component({
   selector: 'lib-link',

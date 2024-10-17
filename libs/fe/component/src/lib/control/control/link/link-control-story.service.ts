@@ -1,5 +1,5 @@
-import { ControlLinkModel } from '../model/control-link.model';
-import { ControlEnum } from '../enum/control.enum';
+import { ControlEnum } from '../../enum/control.enum';
+import { ControlLinkModel } from '../../model/control-link.model';
 
 export const linkControlStory: ControlLinkModel = {
   kind: ControlEnum.link,
