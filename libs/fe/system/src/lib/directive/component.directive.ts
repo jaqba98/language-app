@@ -7,6 +7,7 @@ import {
   ElementRef,
   Input,
   Injector,
+  SimpleChanges,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
@@ -38,7 +39,7 @@ export class ComponentDirective implements OnInit, OnDestroy, OnChanges {
     this.afterDestroy();
   }
 
-  ngOnChanges<TChanges>(changes: TChanges) {
+  ngOnChanges(changes: SimpleChanges): void {
     this.afterChanges(changes);
   }
 
@@ -46,12 +47,19 @@ export class ComponentDirective implements OnInit, OnDestroy, OnChanges {
 
   protected afterDestroy() {}
 
-  protected afterChanges<TChanges>(_changes: TChanges) {}
+  protected afterChanges(_changes: SimpleChanges) {}
 
   protected addClassName(element = '', modifier = '') {
     const className = this.bemBuilder.build(this.blockName, element, modifier);
     if (this.classNames.includes(className)) return;
     this.classNames.push(className);
+  }
+
+  protected removeClassName(element = '', modifier = '') {
+    const className = this.bemBuilder.build(this.blockName, element, modifier);
+    this.classNames = this.classNames.filter(
+      currClassName => currClassName !== className,
+    );
   }
 
   protected removeClassNames() {

@@ -16,4 +16,6 @@ export * from './lib/external/font-awesome/font-awesome.component';
 export * from './lib/external/font-awesome/font-awesome.type';
 export * from './lib/layout/flex/flex.component';
 export * from './lib/layout/flex/flex.type';
+export * from './lib/misc/card/card.component';
+export * from './lib/misc/card/card.type';
 export * from './lib/misc/text/text.component';

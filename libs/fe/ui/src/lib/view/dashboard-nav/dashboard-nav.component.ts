@@ -8,11 +8,11 @@ import {
   BreakpointEnum,
 } from '@english-learning/fe-system';
 import {
+  CardComponent,
   FlexComponent,
   FlexJustifyContentType,
   FontAwesomeComponent,
 } from '@english-learning/fe-component';
-import { CardComponent } from '../../misc/card/card.component';
 import { HamburgerFormComponent } from '../../form/hamburger-form/hamburger-form.component';
 import { DashboardNavFormComponent } from '../../form/dashboard-nav-form/dashboard-nav-form.component';
 

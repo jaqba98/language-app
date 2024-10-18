@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
-import { TextComponent } from '@english-learning/fe-component';
-import { CardComponent } from '@english-learning/fe-ui';
+import { CardComponent, TextComponent } from '@english-learning/fe-component';
 
 @Component({
   selector: 'lib-http-404',
