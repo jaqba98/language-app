@@ -9,6 +9,7 @@ import {
   ControlEnum,
   FlexComponent,
   FlexDirectionType,
+  InputComponent,
   LinkComponent,
 } from '@english-learning/fe-component';
 import {
@@ -25,7 +26,6 @@ import {
   BaseFormModel,
   ControlType,
 } from '../../model/form/base-form.model';
-import { InputComponent } from '../../control/input/input.component';
 import { ErrorComponent } from '../../misc/error/error.component';
 
 @Component({

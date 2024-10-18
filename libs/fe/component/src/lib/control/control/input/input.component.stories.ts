@@ -7,16 +7,15 @@ import { inputControlStory } from './input-control-story.service';
 
 const meta: Meta<InputComponent> = {
   component: InputComponent,
-  title: 'fe/ui/control/input',
+  title: 'fe/component/control/input',
 };
 export default meta;
 type Story = StoryObj<InputComponent>;
 
-const buildInputArgs = (): Story['args'] => ({
+const buildArgs = (): Story['args'] => ({
   controlForm: new FormControl('admin'),
   control: inputControlStory,
 });
 
-export const InputLight = buildBaseStory(true, buildInputArgs());
-
-export const InputDark = buildBaseStory(false, buildInputArgs());
+export const InputLight = buildBaseStory(true, buildArgs());
+export const InputDark = buildBaseStory(false, buildArgs());

@@ -1,5 +1,5 @@
-import { ControlEnum } from '@english-learning/fe-component';
-import { ControlInputModel } from '../../model/control/control-input.model';
+import { ControlEnum } from '../../enum/control.enum';
+import { ControlInputModel } from '../../model/control-input.model';
 
 export const inputControlStory: ControlInputModel = {
   kind: ControlEnum.input,
@@ -7,7 +7,7 @@ export const inputControlStory: ControlInputModel = {
   alignItems: 'flexStart',
   validation: {
     validators: [],
-    isVisible: true,
+    isVisible: false,
   },
   label: {
     value: 'Login',

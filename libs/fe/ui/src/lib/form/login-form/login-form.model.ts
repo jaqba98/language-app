@@ -1,5 +1,8 @@
-import { ControlButtonTextModel, ControlLinkModel } from '@english-learning/fe-component';
-import { ControlInputModel } from '../../model/control/control-input.model';
+import {
+  ControlButtonTextModel,
+  ControlInputModel,
+  ControlLinkModel,
+} from '@english-learning/fe-component';
 
 export interface LoginFormModel {
   email: ControlInputModel;

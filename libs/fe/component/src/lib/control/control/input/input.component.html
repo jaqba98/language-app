@@ -4,12 +4,12 @@
       <lib-text
         [value]="control.label.value"
         color="lighter"
-        (event)="onClick()"></lib-text>
+        (click)="onClick()"></lib-text>
     </div>
   </ng-container>
   <input
     #self
-    class="input"
+    [ngClass]="classNames"
     [formControl]="controlForm"
     [value]="control.input.value"
     [placeholder]="control.input.placeholder"
