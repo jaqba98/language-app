@@ -5,7 +5,7 @@ import { ErrorComponent } from './error.component';
 
 const meta: Meta<ErrorComponent> = {
   component: ErrorComponent,
-  title: 'fe/ui/misc/error',
+  title: 'fe/component/misc/error',
 };
 export default meta;
 type Story = StoryObj<ErrorComponent>;

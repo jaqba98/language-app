@@ -9,6 +9,7 @@ import {
   ButtonTextComponent,
   ControlEnum,
   ControlType,
+  ErrorComponent,
   FlexComponent,
   FlexDirectionType,
   InputComponent,
@@ -23,7 +24,6 @@ import {
   unsupportedTypeError,
 } from '@english-learning/fe-domain';
 import { EventEmitterDirective } from '@english-learning/fe-system';
-import { ErrorComponent } from '../../misc/error/error.component';
 
 @Component({
   selector: 'lib-base-form',
