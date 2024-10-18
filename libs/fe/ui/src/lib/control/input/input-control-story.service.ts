@@ -4,7 +4,7 @@ import { ControlInputModel } from '../../model/control/control-input.model';
 export const inputControlStory: ControlInputModel = {
   kind: ControlEnum.input,
   id: 'login',
-  alignItems: 'left',
+  alignItems: 'flexStart',
   validation: {
     validators: [],
     isVisible: true,

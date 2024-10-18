@@ -5,7 +5,7 @@ import { ControlButtonTextModel } from '../../model/control-button-text.model';
 export const buttonTextControlStory = (type: ButtonKindType): ControlButtonTextModel => ({
   kind: ControlEnum.buttonText,
   id: 'button-text',
-  alignItems: 'left',
+  alignItems: 'flexStart',
   validation: {
     validators: [],
     isVisible: false,
