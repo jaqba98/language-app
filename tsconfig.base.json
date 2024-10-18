@@ -18,6 +18,7 @@
     "paths": {
       "@english-learning/fe-component": ["libs/fe/component/src/index.ts"],
       "@english-learning/fe-domain": ["libs/fe/domain/src/index.ts"],
+      "@english-learning/fe-form": ["libs/fe/form/src/index.ts"],
       "@english-learning/fe-main": ["libs/fe/main/src/index.ts"],
       "@english-learning/fe-page": ["libs/fe/page/src/index.ts"],
       "@english-learning/fe-route": ["libs/fe/route/src/index.ts"],
