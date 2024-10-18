@@ -1,9 +1,8 @@
 import { Component, Injector } from '@angular/core';
 
-import { LoginFormModel } from '@english-learning/fe-form';
+import { BaseFormModel, LoginFormModel } from '@english-learning/fe-form';
 import { EventEmitterDirective } from '@english-learning/fe-system';
 import { ControlEnum } from '@english-learning/fe-component';
-import { BaseFormModel } from '../../model/form/base-form.model';
 import { BaseFormComponent } from '../base-form/base-form.component';
 
 @Component({

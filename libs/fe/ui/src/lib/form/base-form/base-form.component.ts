@@ -2,11 +2,13 @@ import { Component, Input, Injector } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NgFor, NgIf } from '@angular/common';
 
+import { BaseFormModel, BaseFormControlsModel } from '@english-learning/fe-form';
 import {
   ButtonIconComponent,
   ButtonLinkComponent,
   ButtonTextComponent,
   ControlEnum,
+  ControlType,
   FlexComponent,
   FlexDirectionType,
   InputComponent,
@@ -21,11 +23,6 @@ import {
   unsupportedTypeError,
 } from '@english-learning/fe-domain';
 import { EventEmitterDirective } from '@english-learning/fe-system';
-import {
-  BaseFormControlsModel,
-  BaseFormModel,
-  ControlType,
-} from '../../model/form/base-form.model';
 import { ErrorComponent } from '../../misc/error/error.component';
 
 @Component({

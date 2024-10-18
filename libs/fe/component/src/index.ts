@@ -13,6 +13,7 @@ export * from './lib/control/model/control-button-text.model';
 export * from './lib/control/model/control-input.model';
 export * from './lib/control/model/control-link.model';
 export * from './lib/control/model/control-text.model';
+export * from './lib/control/type/control.type';
 export * from './lib/external/font-awesome/font-awesome.component';
 export * from './lib/external/font-awesome/font-awesome.type';
 export * from './lib/layout/flex/flex.component';

@@ -1,10 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Validators } from '@angular/forms';
 
-import { ForgotPasswordFormModel } from '@english-learning/fe-form';
+import { BaseFormModel, ForgotPasswordFormModel } from '@english-learning/fe-form';
 import { ControlEnum } from '@english-learning/fe-component';
 import { BaseFormComponent } from '../base-form/base-form.component';
-import { BaseFormModel } from '../../model/form/base-form.model';
 
 @Component({
   selector: 'lib-forgot-password-form',

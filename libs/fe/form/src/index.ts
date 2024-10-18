@@ -1,3 +1,4 @@
+export * from './lib/model/base-form.model';
 export * from './lib/model/change-password-form.model';
 export * from './lib/model/dashboard-nav-form.model';
 export * from './lib/model/forgot-password-form.model';

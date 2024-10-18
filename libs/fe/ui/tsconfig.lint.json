@@ -1,13 +1,4 @@
 {
   "extends": "./tsconfig.json",
-  "include": [
-    "**/*.ts",
-    "../component/src/lib/control/model/control-validation.model.ts",
-    "../form/src/lib/model/change-password-form.model.ts",
-    "../form/src/lib/model/dashboard-nav-form.model.ts",
-    "../form/src/lib/model/forgot-password-form.model.ts",
-    "../form/src/lib/model/hamburger-form.model.ts",
-    "../form/src/lib/model/login-form.model.ts",
-    "../form/src/lib/model/registration-form.model.ts"
-  ]
+  "include": ["**/*.ts"]
 }
