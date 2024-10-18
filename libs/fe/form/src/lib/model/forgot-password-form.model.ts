@@ -1,8 +1,8 @@
 import {
   ControlButtonTextModel,
   ControlInputModel,
+  ControlTextModel,
 } from '@english-learning/fe-component';
-import { ControlTextModel } from '../../model/control/control-text.model';
 
 export interface ForgotPasswordFormModel {
   tip: ControlTextModel;

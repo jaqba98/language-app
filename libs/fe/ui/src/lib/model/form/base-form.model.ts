@@ -4,14 +4,16 @@ import {
   ControlButtonTextModel,
   ControlButtonIconModel,
   ControlInputModel,
+  ControlTextModel,
 } from '@english-learning/fe-component';
-import { ChangePasswordFormModel } from '../../form/change-password-form/change-password-form.model';
-import { DashboardNavFormModel } from '../../form/dashboard-nav-form/dashboard-nav-form.model';
-import { ForgotPasswordFormModel } from '../../form/forgot-password-form/forgot-password-form.model';
-import { HamburgerFormModel } from '../../form/hamburger-form/hamburger-form.model';
-import { LoginFormModel } from '../../form/login-form/login-form.model';
-import { RegistrationFormModel } from '../../form/registration-form/registration-form.model';
-import { ControlTextModel } from '../control/control-text.model';
+import {
+  ChangePasswordFormModel,
+  DashboardNavFormModel,
+  ForgotPasswordFormModel,
+  HamburgerFormModel,
+  LoginFormModel,
+  RegistrationFormModel,
+} from '@english-learning/fe-form';
 
 export type ControlType =
   | ControlInputModel

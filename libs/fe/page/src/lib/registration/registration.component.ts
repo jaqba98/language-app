@@ -1,10 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
-import {
-  AuthViewComponent,
-  RegistrationFormComponent,
-  RegistrationFormModel,
-} from '@english-learning/fe-ui';
+import { RegistrationFormModel } from '@english-learning/fe-form';
+import { AuthViewComponent, RegistrationFormComponent } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-registration',

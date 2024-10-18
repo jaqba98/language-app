@@ -1,10 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
-import {
-  AuthViewComponent,
-  ForgotPasswordFormComponent,
-  ForgotPasswordFormModel,
-} from '@english-learning/fe-ui';
+import { ForgotPasswordFormModel } from '@english-learning/fe-form';
+import { AuthViewComponent, ForgotPasswordFormComponent } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-forgot-password',

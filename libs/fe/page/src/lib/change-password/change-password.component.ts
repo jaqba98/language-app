@@ -1,10 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
-import {
-  AuthViewComponent,
-  ChangePasswordFormComponent,
-  ChangePasswordFormModel,
-} from '@english-learning/fe-ui';
+import { ChangePasswordFormModel } from '@english-learning/fe-form';
+import { AuthViewComponent, ChangePasswordFormComponent } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-change-password',

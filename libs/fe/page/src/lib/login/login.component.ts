@@ -1,14 +1,11 @@
 import { Component, Injector } from '@angular/core';
 
+import { LoginFormModel } from '@english-learning/fe-form';
 import {
   EventEmitterDirective,
   RouteNavigationService,
 } from '@english-learning/fe-system';
-import {
-  AuthViewComponent,
-  LoginFormComponent,
-  LoginFormModel,
-} from '@english-learning/fe-ui';
+import { AuthViewComponent, LoginFormComponent } from '@english-learning/fe-ui';
 
 @Component({
   selector: 'lib-login',

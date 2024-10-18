@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Validators } from '@angular/forms';
 
+import { RegistrationFormModel } from '@english-learning/fe-form';
 import { ControlEnum } from '@english-learning/fe-component';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { BaseFormModel } from '../../model/form/base-form.model';
-import { RegistrationFormModel } from './registration-form.model';
 
 @Component({
   selector: 'lib-registration-form',
