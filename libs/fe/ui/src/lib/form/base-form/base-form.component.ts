@@ -7,6 +7,8 @@ import {
   ButtonLinkComponent,
   ButtonTextComponent,
   ControlEnum,
+  FlexComponent,
+  FlexDirectionType,
   LinkComponent,
 } from '@english-learning/fe-component';
 import {
@@ -17,14 +19,12 @@ import {
   notCorrectEmailError,
   unsupportedTypeError,
 } from '@english-learning/fe-domain';
-import { DirectionType } from '@english-learning/shared-type';
 import { EventEmitterDirective } from '@english-learning/fe-system';
 import {
   BaseFormControlsModel,
   BaseFormModel,
   ControlType,
 } from '../../model/form/base-form.model';
-import { FlexComponent } from '../../layout/flex/flex.component';
 import { InputComponent } from '../../control/input/input.component';
 import { ErrorComponent } from '../../misc/error/error.component';
 
@@ -48,7 +48,7 @@ import { ErrorComponent } from '../../misc/error/error.component';
 export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']> {
   @Input({ required: true }) baseForm!: BaseFormModel<BaseFormControlsModel>;
 
-  @Input() flexDirection: DirectionType = 'column';
+  @Input() flexDirection: FlexDirectionType = 'column';
 
   @Input() resetIfError = false;
 

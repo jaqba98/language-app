@@ -3,9 +3,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
 
 import { ComponentDirective } from '@english-learning/fe-system';
-import { TextComponent } from '@english-learning/fe-component';
+import { FlexComponent, TextComponent } from '@english-learning/fe-component';
 import { ControlInputModel } from '../../model/control/control-input.model';
-import { FlexComponent } from '../../layout/flex/flex.component';
 
 @Component({
   selector: 'lib-input',

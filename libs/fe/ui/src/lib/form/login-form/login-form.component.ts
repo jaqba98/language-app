@@ -57,7 +57,7 @@ export class LoginFormComponent extends EventEmitterDirective<LoginFormModel> {
       forgotPassword: {
         kind: ControlEnum.link,
         id: 'forgotPassword',
-        alignItems: 'right',
+        alignItems: 'flexEnd',
         validation: {
           validators: [],
           isVisible: false,
@@ -68,7 +68,7 @@ export class LoginFormComponent extends EventEmitterDirective<LoginFormModel> {
       submit: {
         kind: ControlEnum.buttonText,
         id: 'submit',
-        alignItems: 'left',
+        alignItems: 'flexStart',
         validation: {
           validators: [],
           isVisible: false,
@@ -79,7 +79,7 @@ export class LoginFormComponent extends EventEmitterDirective<LoginFormModel> {
       registration: {
         kind: ControlEnum.link,
         id: 'registration',
-        alignItems: 'left',
+        alignItems: 'flexStart',
         validation: {
           validators: [],
           isVisible: false,

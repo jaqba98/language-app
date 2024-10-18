@@ -1,8 +1,7 @@
 import { Component, Injector, Input } from '@angular/core';
 
-import { ControlEnum } from '@english-learning/fe-component';
+import { ControlEnum, FlexDirectionType } from '@english-learning/fe-component';
 import { ComponentDirective } from '@english-learning/fe-system';
-import { DirectionType } from '@english-learning/shared-type';
 import { BaseFormModel } from '../../model/form/base-form.model';
 import { BaseFormComponent } from '../base-form/base-form.component';
 import { DashboardNavFormModel } from './dashboard-nav-form.model';
@@ -17,7 +16,7 @@ import { DashboardNavFormModel } from './dashboard-nav-form.model';
  * Dashboard Nav Form Component
  */
 export class DashboardNavFormComponent extends ComponentDirective {
-  @Input() flexDirection: DirectionType = 'row';
+  @Input() flexDirection: FlexDirectionType = 'row';
 
   form!: BaseFormModel<DashboardNavFormModel>;
 
@@ -31,7 +30,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
         statistics: {
           kind: ControlEnum.buttonLink,
           id: 'statistics',
-          alignItems: 'left',
+          alignItems: 'flexStart',
           validation: {
             validators: [],
             isVisible: false,
@@ -42,7 +41,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
         courses: {
           kind: ControlEnum.buttonLink,
           id: 'courses',
-          alignItems: 'left',
+          alignItems: 'flexStart',
           validation: {
             validators: [],
             isVisible: false,
@@ -53,7 +52,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
         account: {
           kind: ControlEnum.buttonLink,
           id: 'account',
-          alignItems: 'left',
+          alignItems: 'flexStart',
           validation: {
             validators: [],
             isVisible: false,
@@ -64,7 +63,7 @@ export class DashboardNavFormComponent extends ComponentDirective {
         logout: {
           kind: ControlEnum.buttonLink,
           id: 'logout',
-          alignItems: 'left',
+          alignItems: 'flexStart',
           validation: {
             validators: [],
             isVisible: false,

@@ -23,7 +23,7 @@ export class HamburgerFormComponent extends EventEmitterDirective<boolean> {
       submit: {
         kind: ControlEnum.buttonIcon,
         id: 'submit',
-        alignItems: 'left',
+        alignItems: 'flexStart',
         validation: {
           validators: [],
           isVisible: false,

@@ -13,4 +13,8 @@ export class TextUtils {
   addPrefix(prefix: string, text: string) {
     return `${prefix}${text}`;
   }
+
+  camelToSnakeCase(text: string) {
+    return text.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+  }
 }

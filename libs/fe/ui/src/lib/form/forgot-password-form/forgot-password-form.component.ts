@@ -20,7 +20,7 @@ export class ForgotPasswordFormComponent {
       tip: {
         kind: ControlEnum.text,
         id: 'tip',
-        alignItems: 'left',
+        alignItems: 'flexStart',
         validation: {
           validators: [],
           isVisible: true,
@@ -32,7 +32,7 @@ export class ForgotPasswordFormComponent {
       email: {
         kind: ControlEnum.input,
         id: 'email',
-        alignItems: 'left',
+        alignItems: 'flexStart',
         validation: {
           validators: [Validators.required, Validators.email],
           isVisible: true,
@@ -50,7 +50,7 @@ export class ForgotPasswordFormComponent {
       submit: {
         kind: ControlEnum.buttonText,
         id: 'submit',
-        alignItems: 'left',
+        alignItems: 'flexStart',
         validation: {
           validators: [],
           isVisible: false,

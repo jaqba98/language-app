@@ -7,10 +7,12 @@ import {
   BreakpointService,
   BreakpointEnum,
 } from '@english-learning/fe-system';
-import { FontAwesomeComponent } from '@english-learning/fe-component';
-import { SpaceType } from '@english-learning/shared-type';
+import {
+  FlexComponent,
+  FlexJustifyContentType,
+  FontAwesomeComponent,
+} from '@english-learning/fe-component';
 import { CardComponent } from '../../misc/card/card.component';
-import { FlexComponent } from '../../layout/flex/flex.component';
 import { HamburgerFormComponent } from '../../form/hamburger-form/hamburger-form.component';
 import { DashboardNavFormComponent } from '../../form/dashboard-nav-form/dashboard-nav-form.component';
 
@@ -31,7 +33,7 @@ import { DashboardNavFormComponent } from '../../form/dashboard-nav-form/dashboa
  * Dashboard Nav Component
  */
 export class DashboardNavComponent implements ObserverModel<BreakpointModel> {
-  justifyContent: SpaceType = 'none';
+  justifyContent: FlexJustifyContentType = 'flexStart';
 
   isMobile = true;
 
@@ -63,9 +65,9 @@ export class DashboardNavComponent implements ObserverModel<BreakpointModel> {
       this.menuIsOpen = false;
     }
     if (breakpoint === BreakpointEnum.Large || breakpoint === BreakpointEnum.XLarge) {
-      this.justifyContent = 'around';
+      this.justifyContent = 'spaceAround';
     } else {
-      this.justifyContent = 'between';
+      this.justifyContent = 'spaceBetween';
     }
   }
 

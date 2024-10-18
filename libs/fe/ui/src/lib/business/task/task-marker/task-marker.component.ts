@@ -2,6 +2,7 @@ import { Component, Input, Injector } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 import {
+  FlexComponent,
   FontAwesomeColorType,
   FontAwesomeComponent,
   FontAwesomeKindType,
@@ -13,7 +14,6 @@ import {
 } from '@english-learning/fe-domain';
 import { StoreModel, StoreType } from '@english-learning/fe-store';
 import { BusinessDirective } from '../../../base/business.directive';
-import { FlexComponent } from '../../../layout/flex/flex.component';
 import { ClickActionDirective } from '../../../action/click-action.directive';
 
 @Component({

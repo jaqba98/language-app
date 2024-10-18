@@ -1,10 +1,10 @@
 import { Component, Injector } from '@angular/core';
 
+import { FlexComponent } from '@english-learning/fe-component';
 import { TaskModel } from '@english-learning/fe-domain';
 import { StoreModel, StoreType } from '@english-learning/fe-store';
 import { TypeConverterService } from '@english-learning/fe-utils';
 import { BusinessDirective } from '../../../base/business.directive';
-import { FlexComponent } from '../../../layout/flex/flex.component';
 import { TaskWaveComponent } from '../task-wave/task-wave.component';
 
 @Component({

@@ -7,8 +7,7 @@ import {
   BreakpointService,
   BreakpointEnum,
 } from '@english-learning/fe-system';
-import { TextComponent } from '@english-learning/fe-component';
-import { FlexComponent } from '../../layout/flex/flex.component';
+import { FlexComponent, TextComponent } from '@english-learning/fe-component';
 import { CardComponent } from '../../misc/card/card.component';
 import { CardType } from '../../misc/card/card.type';
 import { AuthViewType } from './auth-view.type';
