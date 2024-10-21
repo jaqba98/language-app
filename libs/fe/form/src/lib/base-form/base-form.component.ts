@@ -1,50 +1,52 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, Injector } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
-import { NgFor, NgIf } from '@angular/common';
+import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 
 import {
-  ButtonIconComponent,
+  FlexComponent,
+  InputComponent,
   ButtonLinkComponent,
   ButtonTextComponent,
-  ControlEnum,
-  ControlType,
+  ButtonIconComponent,
   ErrorComponent,
-  FlexComponent,
-  FlexDirectionType,
-  InputComponent,
   LinkComponent,
   SuccessComponent,
+  FlexDirectionType,
+  ControlType,
+  ControlEnum,
 } from '@english-learning/fe-component';
 import {
   elementByIdExistError,
   elementByIdNotExistError,
   fieldIsRequiredError,
-  invalidInputError,
   notCorrectEmailError,
+  invalidInputError,
   unsupportedTypeError,
 } from '@english-learning/fe-domain';
 import { EventEmitterDirective } from '@english-learning/fe-system';
-import { BaseFormControlsModel, BaseFormModel } from '../model/base-form.model';
+import { BaseFormModel, BaseFormControlsModel } from '../model/base-form.model';
+import { FormGroupService } from '../service/form-group.service';
 
 @Component({
   selector: 'lib-base-form',
   standalone: true,
   imports: [
-    NgFor,
-    NgIf,
+    CommonModule,
     ReactiveFormsModule,
     FlexComponent,
     InputComponent,
     ButtonLinkComponent,
     ButtonTextComponent,
     ButtonIconComponent,
-    ErrorComponent,
     LinkComponent,
+    ErrorComponent,
     SuccessComponent,
   ],
+  providers: [FormGroupService],
   templateUrl: './base-form.component.html',
 })
 export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']> {
+  // I am here
   @Input({ required: true }) baseForm!: BaseFormModel<BaseFormControlsModel>;
 
   @Input() flexDirection: FlexDirectionType = 'column';
@@ -57,45 +59,42 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
 
   @Input() formSuccessMessage = 'The form was completed correctly.';
 
-  formGroup: FormGroup;
-
   formGroupInvalid = false;
 
   formGroupValid = false;
 
   constructor(
     protected override readonly injector: Injector,
-    private readonly fb: FormBuilder,
+    protected readonly formGroup: FormGroupService,
   ) {
     super(injector, 'base-form');
-    this.formGroup = this.fb.group({});
   }
 
   protected override afterInit() {
     Object.values(this.baseForm.controls).forEach(control => {
       const { id } = control;
-      if (this.formGroup.get(id)) {
+      if (this.formGroup.getFormGroup().get(id)) {
         throw new Error(elementByIdExistError('Form control', id));
       }
-      this.formGroup.addControl(id, this.buildFormControl(control));
+      this.formGroup.getFormGroup().addControl(id, this.buildFormControl(control));
     });
   }
 
   onSubmit() {
     this.resetFormGroup();
-    const { invalid, touched } = this.formGroup;
+    const { invalid, touched } = this.formGroup.getFormGroup();
     if (invalid && touched) {
       this.formGroupInvalid = true;
       if (this.resetIfError) this.resetFormControls();
       return;
     }
     this.formGroupValid = true;
-    this.emit(this.formGroup.value);
+    this.emit(this.formGroup.getFormGroup().value);
     this.resetFormControls();
   }
 
   getFormControl(id: string) {
-    const formControl = this.formGroup.get(id);
+    const formControl = this.formGroup.getFormGroup().get(id);
     if (formControl) return formControl as FormControl;
     throw new Error(elementByIdNotExistError('Form control', id));
   }
@@ -137,14 +136,16 @@ export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']>
   private resetFormGroup() {
     this.formGroupInvalid = false;
     this.formGroupValid = false;
-    this.formGroup.markAllAsTouched();
+    this.formGroup.getFormGroup().markAllAsTouched();
   }
 
   private resetFormControls() {
     Object.values(this.baseForm.controls).forEach(control => {
-      this.formGroup.setControl(control.id, this.buildFormControl(control));
+      this.formGroup
+        .getFormGroup()
+        .setControl(control.id, this.buildFormControl(control));
     });
-    this.formGroup.markAsUntouched();
+    this.formGroup.getFormGroup().markAsUntouched();
   }
 }
 

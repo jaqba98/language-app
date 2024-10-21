@@ -19,18 +19,18 @@ export class ForgotPasswordFormComponent {
 
   forgotPasswordForm: BaseFormModel<ForgotPasswordFormModel> = {
     controls: {
-      tip: {
-        kind: ControlEnum.text,
-        id: 'tip',
-        alignItems: 'flexStart',
-        validation: {
-          validators: [],
-          isVisible: true,
-        },
-        value:
-          'Lost your password? Please enter your email address. You will receive a link to create a new password via email.',
-        margin: '1rem 0',
-      },
+      // tip: {
+      //   kind: ControlEnum.text,
+      //   id: 'tip',
+      //   alignItems: 'flexStart',
+      //   validation: {
+      //     validators: [],
+      //     isVisible: true,
+      //   },
+      //   value:
+      //     'Lost your password? Please enter your email address. You will receive a link to create a new password via email.',
+      //   margin: '1rem 0',
+      // },
       email: {
         kind: ControlEnum.input,
         id: 'email',

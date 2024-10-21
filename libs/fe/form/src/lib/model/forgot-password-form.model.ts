@@ -1,11 +1,10 @@
 import {
   ControlButtonTextModel,
   ControlInputModel,
-  ControlTextModel,
 } from '@english-learning/fe-component';
 
 export interface ForgotPasswordFormModel {
-  tip: ControlTextModel;
+  // tip: ControlTextModel;
   email: ControlInputModel;
   submit: ControlButtonTextModel;
 }
