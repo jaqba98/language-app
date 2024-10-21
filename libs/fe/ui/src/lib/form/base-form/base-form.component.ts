@@ -14,6 +14,7 @@ import {
   FlexDirectionType,
   InputComponent,
   LinkComponent,
+  SuccessComponent,
 } from '@english-learning/fe-component';
 import {
   elementByIdExistError,
@@ -39,6 +40,7 @@ import { EventEmitterDirective } from '@english-learning/fe-system';
     ButtonIconComponent,
     ErrorComponent,
     LinkComponent,
+    SuccessComponent,
   ],
   templateUrl: './base-form.component.html',
 })

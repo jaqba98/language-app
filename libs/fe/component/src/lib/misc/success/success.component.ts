@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { TextComponent } from '@english-learning/fe-component';
+import { TextComponent } from '../text/text.component';
 
 @Component({
   selector: 'lib-success',

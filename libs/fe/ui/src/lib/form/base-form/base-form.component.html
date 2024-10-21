@@ -40,6 +40,14 @@
         </ng-container>
       </lib-flex>
     </ng-container>
+    <ng-container *ngIf="formValidation">
+      <ng-container *ngIf="formGroupValid">
+        <lib-success [value]="formSuccessMessage"></lib-success>
+      </ng-container>
+      <ng-container *ngIf="formGroupInvalid">
+        <lib-error [value]="formErrorMessage"></lib-error>
+      </ng-container>
+    </ng-container>
   </lib-flex>
 </form>
 
@@ -58,13 +66,5 @@
         </lib-flex>
       </ng-container>
     </lib-flex>
-    <ng-container *ngIf="formValidation">
-      <ng-container *ngIf="formGroupValid">
-        <lib-success [value]="formSuccessMessage"></lib-success>
-      </ng-container>
-      <ng-container *ngIf="formGroupInvalid">
-        <lib-error [value]="formErrorMessage"></lib-error>
-      </ng-container>
-    </ng-container>
   </lib-flex>
 </form> -->

@@ -10,9 +10,9 @@ const meta: Meta<ErrorComponent> = {
 export default meta;
 type Story = StoryObj<ErrorComponent>;
 
-const buildErrorArgs = (): Story['args'] => ({
+const buildArgs = (): Story['args'] => ({
   value: 'Lorem ipsum...',
 });
 
-export const ErrorLight = buildBaseStory(true, buildErrorArgs());
-export const ErrorDark = buildBaseStory(false, buildErrorArgs());
+export const ErrorLight = buildBaseStory(true, buildArgs());
+export const ErrorDark = buildBaseStory(false, buildArgs());
