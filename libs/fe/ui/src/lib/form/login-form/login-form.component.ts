@@ -1,9 +1,12 @@
 import { Component, Injector } from '@angular/core';
 
-import { BaseFormModel, LoginFormModel } from '@english-learning/fe-form';
+import {
+  BaseFormComponent,
+  BaseFormModel,
+  LoginFormModel,
+} from '@english-learning/fe-form';
 import { EventEmitterDirective } from '@english-learning/fe-system';
 import { ControlEnum } from '@english-learning/fe-component';
-import { BaseFormComponent } from '../base-form/base-form.component';
 
 @Component({
   selector: 'lib-login-form',

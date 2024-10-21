@@ -1,9 +1,12 @@
 import { Component, Injector, Input } from '@angular/core';
 
-import { BaseFormModel, DashboardNavFormModel } from '@english-learning/fe-form';
+import {
+  BaseFormComponent,
+  BaseFormModel,
+  DashboardNavFormModel,
+} from '@english-learning/fe-form';
 import { ControlEnum, FlexDirectionType } from '@english-learning/fe-component';
 import { ComponentDirective } from '@english-learning/fe-system';
-import { BaseFormComponent } from '../base-form/base-form.component';
 
 @Component({
   selector: 'lib-dashboard-nav-form',

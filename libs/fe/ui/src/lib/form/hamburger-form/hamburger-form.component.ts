@@ -1,9 +1,12 @@
 import { Component, Injector, Input } from '@angular/core';
 
-import { BaseFormModel, HamburgerFormModel } from '@english-learning/fe-form';
+import {
+  BaseFormComponent,
+  BaseFormModel,
+  HamburgerFormModel,
+} from '@english-learning/fe-form';
 import { ControlEnum } from '@english-learning/fe-component';
 import { EventEmitterDirective } from '@english-learning/fe-system';
-import { BaseFormComponent } from '../base-form/base-form.component';
 
 @Component({
   selector: 'lib-hamburger-form',

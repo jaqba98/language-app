@@ -1,9 +1,12 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Validators } from '@angular/forms';
 
-import { BaseFormModel, ChangePasswordFormModel } from '@english-learning/fe-form';
+import {
+  BaseFormComponent,
+  BaseFormModel,
+  ChangePasswordFormModel,
+} from '@english-learning/fe-form';
 import { ControlEnum } from '@english-learning/fe-component';
-import { BaseFormComponent } from '../base-form/base-form.component';
 
 @Component({
   selector: 'lib-change-password-form',

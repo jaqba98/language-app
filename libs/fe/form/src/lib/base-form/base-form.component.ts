@@ -2,7 +2,6 @@ import { Component, Input, Injector } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NgFor, NgIf } from '@angular/common';
 
-import { BaseFormModel, BaseFormControlsModel } from '@english-learning/fe-form';
 import {
   ButtonIconComponent,
   ButtonLinkComponent,
@@ -25,6 +24,7 @@ import {
   unsupportedTypeError,
 } from '@english-learning/fe-domain';
 import { EventEmitterDirective } from '@english-learning/fe-system';
+import { BaseFormControlsModel, BaseFormModel } from '../model/base-form.model';
 
 @Component({
   selector: 'lib-base-form',
