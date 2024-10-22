@@ -3,6 +3,7 @@ export * from './lib/control/base/button/button.type';
 export * from './lib/control/control/button-icon/button-icon.component';
 export * from './lib/control/control/button-link/button-link.component';
 export * from './lib/control/control/button-text/button-text.component';
+export * from './lib/control/control/input/input-control-story.service';
 export * from './lib/control/control/input/input.component';
 export * from './lib/control/control/link/link.component';
 export * from './lib/control/enum/control.enum';

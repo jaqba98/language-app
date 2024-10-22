@@ -13,16 +13,16 @@ const meta: Meta<ButtonComponent> = {
 export default meta;
 type Story = StoryObj<ButtonComponent>;
 
-const buildButtonArgs = (shape: ButtonShapeType): Story['args'] => ({
+const buildArgs = (shape: ButtonShapeType): Story['args'] => ({
   controlForm: new FormControl(false),
   kind: 'button',
   shape,
 });
 
-export const ButtonSquareLight = buildBaseStory(true, buildButtonArgs('square'));
+export const ButtonSquareLight = buildBaseStory(true, buildArgs('square'));
 
-export const ButtonSquareDark = buildBaseStory(false, buildButtonArgs('square'));
+export const ButtonSquareDark = buildBaseStory(false, buildArgs('square'));
 
-export const ButtonRectangleLight = buildBaseStory(true, buildButtonArgs('rectangle'));
+export const ButtonRectangleLight = buildBaseStory(true, buildArgs('rectangle'));
 
-export const ButtonRectangleDark = buildBaseStory(false, buildButtonArgs('rectangle'));
+export const ButtonRectangleDark = buildBaseStory(false, buildArgs('rectangle'));

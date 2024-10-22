@@ -19,7 +19,7 @@ import {
   unsupportedTypeError,
 } from '@english-learning/fe-domain';
 import { EventEmitterDirective } from '@english-learning/fe-system';
-import { BaseFormModel, BaseFormControlsModel } from '../model/base-form.model';
+import { BaseFormControlsModel, BaseFormModel } from '../model/base-form.model';
 
 @Component({
   selector: 'lib-base-form',
@@ -36,8 +36,10 @@ import { BaseFormModel, BaseFormControlsModel } from '../model/base-form.model';
   ],
   templateUrl: './base-form.component.html',
 })
-export class BaseFormComponent extends EventEmitterDirective<FormGroup['value']> {
-  @Input({ required: true }) baseForm!: BaseFormModel<BaseFormControlsModel>;
+export class BaseFormComponent<
+  TForm extends object = BaseFormControlsModel,
+> extends EventEmitterDirective<FormGroup['value']> {
+  @Input({ required: true }) baseForm!: BaseFormModel<TForm>;
 
   @Input() flexDirection: FlexDirectionType = 'column';
 
