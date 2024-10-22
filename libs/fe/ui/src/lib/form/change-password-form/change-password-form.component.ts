@@ -22,7 +22,7 @@ export class ChangePasswordFormComponent {
       password: {
         kind: ControlEnum.input,
         id: 'password',
-        alignItems: 'flexStart',
+        alignItems: 'stretch',
         validation: {
           validators: [Validators.required],
           isVisible: true,
@@ -40,7 +40,7 @@ export class ChangePasswordFormComponent {
       repeatPassword: {
         kind: ControlEnum.input,
         id: 'repeatPassword',
-        alignItems: 'flexStart',
+        alignItems: 'stretch',
         validation: {
           validators: [Validators.required],
           isVisible: true,

@@ -22,7 +22,7 @@ export class RegistrationFormComponent {
       email: {
         kind: ControlEnum.input,
         id: 'email',
-        alignItems: 'flexStart',
+        alignItems: 'stretch',
         validation: {
           validators: [Validators.required, Validators.email],
           isVisible: true,
@@ -40,7 +40,7 @@ export class RegistrationFormComponent {
       name: {
         kind: ControlEnum.input,
         id: 'name',
-        alignItems: 'flexStart',
+        alignItems: 'stretch',
         validation: {
           validators: [Validators.required],
           isVisible: true,
@@ -58,7 +58,7 @@ export class RegistrationFormComponent {
       password: {
         kind: ControlEnum.input,
         id: 'password',
-        alignItems: 'flexStart',
+        alignItems: 'stretch',
         validation: {
           validators: [Validators.required],
           isVisible: true,
@@ -76,7 +76,7 @@ export class RegistrationFormComponent {
       repeatPassword: {
         kind: ControlEnum.input,
         id: 'repeatPassword',
-        alignItems: 'flexStart',
+        alignItems: 'stretch',
         validation: {
           validators: [Validators.required],
           isVisible: true,

@@ -1,70 +1,30 @@
-<form [formGroup]="formGroup.getFormGroup()" (ngSubmit)="onSubmit()">
-  <lib-flex [flexDirection]="flexDirection" gap="small">
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <lib-flex [flexDirection]="flexDirection" alignItems="stretch" gap="small">
     <ng-container *ngFor="let control of getControls()">
-      <lib-flex [alignItems]="control.alignItems" gap="tiny">
-        <!-- Input -->
-        <ng-container *ngIf="control.kind === 'input'">
-          <lib-input
-            [controlForm]="getFormControl(control.id)"
-            [control]="control"></lib-input>
-        </ng-container>
-        <!-- Button Link -->
-        <ng-container *ngIf="control.kind === 'buttonLink'">
-          <lib-button-link
-            [controlForm]="getFormControl(control.id)"
-            [control]="control"></lib-button-link>
-        </ng-container>
-        <!-- Button Text -->
-        <ng-container *ngIf="control.kind === 'buttonText'">
-          <lib-button-text
-            [controlForm]="getFormControl(control.id)"
-            [control]="control"
-            (event)="onSubmit()"></lib-button-text>
-        </ng-container>
-        <!-- Button Icon -->
-        <ng-container *ngIf="control.kind === 'buttonIcon'">
-          <lib-button-icon
-            [controlForm]="getFormControl(control.id)"
-            [control]="control"
-            (event)="onSubmit()"></lib-button-icon>
-        </ng-container>
-        <!-- Link -->
-        <ng-container *ngIf="control.kind === 'link'">
-          <lib-link [control]="control"></lib-link>
-        </ng-container>
-        <!-- Validation -->
-        <ng-container *ngIf="control.validation.isVisible">
-          <ng-container *ngIf="formControlInvalid(control.id)">
-            <lib-error [value]="getFormControlError(control.id)"></lib-error>
-          </ng-container>
-        </ng-container>
+      <lib-flex [alignItems]="control.alignItems">
+        <lib-input
+          *ngIf="control.kind === 'input'"
+          [controlForm]="getControl(control.id)"
+          [control]="control"></lib-input>
+        <lib-button-link
+          *ngIf="control.kind === 'buttonLink'"
+          [controlForm]="getControl(control.id)"
+          [control]="control"></lib-button-link>
+        <lib-button-text
+          *ngIf="control.kind === 'buttonText'"
+          [controlForm]="getControl(control.id)"
+          [control]="control"
+          (event)="onSubmit()"></lib-button-text>
+        <lib-button-icon
+          *ngIf="control.kind === 'buttonIcon'"
+          [controlForm]="getControl(control.id)"
+          [control]="control"
+          (event)="onSubmit()"></lib-button-icon>
+        <lib-link
+          *ngIf="control.kind === 'link'"
+          [controlForm]="getControl(control.id)"
+          [control]="control"></lib-link>
       </lib-flex>
-    </ng-container>
-    <ng-container *ngIf="formValidation">
-      <ng-container *ngIf="formGroupValid">
-        <lib-success [value]="formSuccessMessage"></lib-success>
-      </ng-container>
-      <ng-container *ngIf="formGroupInvalid">
-        <lib-error [value]="formErrorMessage"></lib-error>
-      </ng-container>
     </ng-container>
   </lib-flex>
 </form>
-
-<!-- <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-  <lib-flex [flexDirection]="flexDirection" gap="medium">
-    <lib-flex [flexDirection]="flexDirection" gap="medium">
-      <ng-container *ngFor="let control of baseForm.controls">
-        <lib-flex [alignItems]="control.alignItems" flexDirection="column" gap="medium">
-          <ng-container *ngIf="control.kind === 'text'">
-            <lib-text
-              textColor="text__tertiary"
-              type="tiny"
-              [value]="control.value"
-              [margin]="control.margin"></lib-text>
-          </ng-container>
-        </lib-flex>
-      </ng-container>
-    </lib-flex>
-  </lib-flex>
-</form> -->

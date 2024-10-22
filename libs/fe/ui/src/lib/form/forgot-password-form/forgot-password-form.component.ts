@@ -34,7 +34,7 @@ export class ForgotPasswordFormComponent {
       email: {
         kind: ControlEnum.input,
         id: 'email',
-        alignItems: 'flexStart',
+        alignItems: 'stretch',
         validation: {
           validators: [Validators.required, Validators.email],
           isVisible: true,

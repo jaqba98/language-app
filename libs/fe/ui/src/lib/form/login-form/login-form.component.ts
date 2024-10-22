@@ -81,7 +81,7 @@ export class LoginFormComponent extends EventEmitterDirective<LoginFormModel> {
       registration: {
         kind: ControlEnum.link,
         id: 'registration',
-        alignItems: 'flexStart',
+        alignItems: 'center',
         validation: {
           validators: [],
           isVisible: false,

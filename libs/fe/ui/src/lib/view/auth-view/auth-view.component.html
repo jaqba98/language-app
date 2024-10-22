@@ -1,10 +1,15 @@
 <div class="auth-view" [ngClass]="style">
   <lib-flex alignItems="center" justifyContent="center" [minHeight100svh]="true">
     <lib-card [type]="cardType">
-      <lib-flex alignItems="center" gap="large">
-        <lib-text value="Language App" type="header3"></lib-text>
+      <lib-flex alignItems="stretch" gap="large">
+        <lib-text value="Language App" kind="header3"></lib-text>
         <ng-content></ng-content>
       </lib-flex>
     </lib-card>
   </lib-flex>
 </div>
+
+<!-- <div class="auth-view" [ngClass]="style">
+  <lib-flex alignItems="center" justifyContent="center" [minHeight100svh]="true">
+  </lib-flex>
+</div> -->
