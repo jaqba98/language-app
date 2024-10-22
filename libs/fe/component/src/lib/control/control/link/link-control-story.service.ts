@@ -4,7 +4,7 @@ import { ControlLinkModel } from '../../model/control-link.model';
 export const linkControlStory: ControlLinkModel = {
   kind: ControlEnum.link,
   id: 'link',
-  alignItems: 'flexStart',
+  alignItems: 'flexEnd',
   validation: {
     validators: [],
     isVisible: false,
