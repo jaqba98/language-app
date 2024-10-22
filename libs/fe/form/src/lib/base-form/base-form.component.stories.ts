@@ -12,7 +12,12 @@ import {
   inputControlStory,
   linkControlStory,
 } from '@english-learning/fe-component';
-import { buildBaseStory } from '@english-learning/fe-utils';
+import {
+  buildActivatedRouteProvider,
+  buildBaseStory,
+  buildMetaEventAction,
+  buildMetaModuleMetaData,
+} from '@english-learning/fe-utils';
 import { BaseFormComponent } from './base-form.component';
 
 interface BaseFormStoriesModel {
@@ -26,6 +31,8 @@ interface BaseFormStoriesModel {
 const meta: Meta<BaseFormComponent<BaseFormStoriesModel>> = {
   component: BaseFormComponent,
   title: 'fe/form/base-form',
+  ...buildMetaEventAction(),
+  ...buildMetaModuleMetaData([], [buildActivatedRouteProvider()]),
 };
 export default meta;
 type Story = StoryObj<BaseFormComponent<BaseFormStoriesModel>>;
