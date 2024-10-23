@@ -1,6 +1,6 @@
 import { Component, Input, Injector } from '@angular/core';
 
-import { EventEmitterDirective } from '@english-learning/fe-system';
+import { ComponentDirective } from '@english-learning/fe-system';
 import { FontAwesomeComponent } from '../../../external/font-awesome/font-awesome.component';
 import { ButtonComponent } from '../../base/button/button.component';
 import { ControlButtonIconModel } from '../../model/control-button-icon.model';
@@ -11,14 +11,10 @@ import { ControlButtonIconModel } from '../../model/control-button-icon.model';
   imports: [ButtonComponent, FontAwesomeComponent],
   templateUrl: './button-icon.component.html',
 })
-export class ButtonIconComponent extends EventEmitterDirective<boolean> {
+export class ButtonIconComponent extends ComponentDirective {
   @Input({ required: true }) control!: ControlButtonIconModel;
 
   constructor(protected override readonly injector: Injector) {
     super(injector, 'button-icon');
-  }
-
-  onClick() {
-    this.emit(true);
   }
 }

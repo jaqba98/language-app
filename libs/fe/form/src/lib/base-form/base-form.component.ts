@@ -12,10 +12,15 @@ import {
   FlexDirectionType,
   ControlType,
   ControlEnum,
+  ErrorComponent,
+  SuccessComponent,
 } from '@english-learning/fe-component';
 import {
   elementByIdExistError,
   elementByIdNotExistError,
+  fieldIsRequiredError,
+  invalidInputError,
+  notCorrectEmailError,
   unsupportedTypeError,
 } from '@english-learning/fe-domain';
 import { EventEmitterDirective } from '@english-learning/fe-system';
@@ -33,6 +38,8 @@ import { BaseFormControlsModel, BaseFormModel } from '../model/base-form.model';
     ButtonTextComponent,
     ButtonIconComponent,
     LinkComponent,
+    ErrorComponent,
+    SuccessComponent,
   ],
   templateUrl: './base-form.component.html',
 })
@@ -42,6 +49,12 @@ export class BaseFormComponent<
   @Input({ required: true }) baseForm!: BaseFormModel<TForm>;
 
   @Input() flexDirection: FlexDirectionType = 'column';
+
+  @Input() formErrorMessage = 'The form was not completed correctly!';
+
+  @Input() formValidation = true;
+
+  @Input() resetIfError = true;
 
   formGroup: FormGroup;
 
@@ -65,6 +78,7 @@ export class BaseFormComponent<
 
   onSubmit() {
     this.emit(this.formGroup.value);
+    if (this.resetIfError) this.resetControls();
   }
 
   getControls() {
@@ -75,6 +89,34 @@ export class BaseFormComponent<
     const control = this.formGroup.get(id);
     if (control) return control as FormControl;
     throw new Error(elementByIdNotExistError('Form control', id));
+  }
+
+  getControlError(id: string) {
+    const control = this.getControl(id);
+    if (control.errors && control.errors['required']) {
+      return fieldIsRequiredError();
+    }
+    if (control.errors && control.errors['email']) {
+      return notCorrectEmailError();
+    }
+    return invalidInputError();
+  }
+
+  controlInvalid(control: ControlType) {
+    if (!control.validation.isVisible) return false;
+    const formControl = this.getControl(control.id);
+    return formControl.invalid;
+  }
+
+  formInvalid() {
+    return this.formValidation && this.formGroup.invalid;
+  }
+
+  private resetControls() {
+    this.getControls().forEach(control => {
+      this.formGroup.setControl(control.id, this.buildControl(control));
+    });
+    this.formGroup.markAsUntouched();
   }
 
   private controlExist(id: string) {

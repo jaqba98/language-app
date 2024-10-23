@@ -1,6 +1,6 @@
 import { Component, Input, Injector } from '@angular/core';
 
-import { EventEmitterDirective } from '@english-learning/fe-system';
+import { ComponentDirective } from '@english-learning/fe-system';
 import { TextComponent } from '../../../misc/text/text.component';
 import { ButtonComponent } from '../../base/button/button.component';
 import { ControlButtonTextModel } from '../../model/control-button-text.model';
@@ -11,14 +11,10 @@ import { ControlButtonTextModel } from '../../model/control-button-text.model';
   imports: [ButtonComponent, TextComponent],
   templateUrl: './button-text.component.html',
 })
-export class ButtonTextComponent extends EventEmitterDirective<boolean> {
+export class ButtonTextComponent extends ComponentDirective {
   @Input({ required: true }) control!: ControlButtonTextModel;
 
   constructor(protected override readonly injector: Injector) {
     super(injector, 'button-text');
-  }
-
-  onClick() {
-    this.emit(true);
   }
 }

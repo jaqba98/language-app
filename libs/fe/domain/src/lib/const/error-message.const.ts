@@ -4,8 +4,6 @@ import { TaskModel } from '../model/domain/tasks-domain.model';
 export const notFoundInTheStore = (taskId: TaskModel['id']) =>
   `Not found ${taskId} in the store!`;
 
-export const fieldIsRequiredError = () => 'This field is required.';
-
 export const notCorrectEmailError = () => 'Please enter a valid email address.';
 
 export const invalidInputError = () => 'Invalid input.';
@@ -24,3 +22,5 @@ export const elementByIdNotExistError = (element: string, id: string) =>
 
 export const unsupportedTypeError = (element: string, type: string) =>
   `Unsupported ${element} type: ${type}!`;
+
+export const fieldIsRequiredError = () => 'This field is required!';

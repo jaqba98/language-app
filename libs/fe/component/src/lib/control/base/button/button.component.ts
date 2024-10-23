@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Injector, Input } from '@angular/core';
 
-import { EventEmitterDirective } from '@english-learning/fe-system';
+import { ComponentDirective } from '@english-learning/fe-system';
 import { ButtonKindType, ButtonShapeType } from './button.type';
 
 @Component({
@@ -11,7 +11,7 @@ import { ButtonKindType, ButtonShapeType } from './button.type';
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
 })
-export class ButtonComponent extends EventEmitterDirective<boolean> {
+export class ButtonComponent extends ComponentDirective {
   @Input() kind: ButtonKindType = 'button';
 
   @Input() shape: ButtonShapeType = 'rectangle';
@@ -26,7 +26,5 @@ export class ButtonComponent extends EventEmitterDirective<boolean> {
 
   onClick() {
     this.controlForm.setValue(true);
-    if (this.kind === 'submit') return;
-    this.emit(true);
   }
 }
