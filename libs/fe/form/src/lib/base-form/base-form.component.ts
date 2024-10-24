@@ -9,18 +9,18 @@ import {
   ButtonTextComponent,
   ButtonIconComponent,
   LinkComponent,
+  ErrorComponent,
+  SuccessComponent,
   FlexDirectionType,
   ControlType,
   ControlEnum,
-  ErrorComponent,
-  SuccessComponent,
 } from '@english-learning/fe-component';
 import {
   elementByIdExistError,
   elementByIdNotExistError,
   fieldIsRequiredError,
-  invalidInputError,
   notCorrectEmailError,
+  invalidInputError,
   unsupportedTypeError,
 } from '@english-learning/fe-domain';
 import { EventEmitterDirective } from '@english-learning/fe-system';
@@ -46,17 +46,24 @@ import { BaseFormControlsModel, BaseFormModel } from '../model/base-form.model';
 export class BaseFormComponent<
   TForm extends object = BaseFormControlsModel,
 > extends EventEmitterDirective<FormGroup['value']> {
+  // I am here
   @Input({ required: true }) baseForm!: BaseFormModel<TForm>;
 
   @Input() flexDirection: FlexDirectionType = 'column';
 
   @Input() formErrorMessage = 'The form was not completed correctly!';
 
+  @Input() formSuccessMessage = 'The form was completed correctly.';
+
   @Input() formValidation = true;
 
   @Input() resetIfError = true;
 
   formGroup: FormGroup;
+
+  formGroupInvalid = false;
+
+  formGroupValid = false;
 
   constructor(
     protected override readonly injector: Injector,
@@ -77,8 +84,24 @@ export class BaseFormComponent<
   }
 
   onSubmit() {
+    this.formGroupValid = false;
+    this.formGroupInvalid = false;
+    this.formGroup.markAllAsTouched();
+    const { valid, invalid, touched } = this.formGroup;
+    if (invalid && touched) {
+      this.formGroupInvalid = true;
+      if (this.resetIfError) this.resetControls();
+      return;
+    }
+    if (valid && touched) {
+      this.formGroupValid = true;
+      if (this.resetIfError) this.resetControls();
+      return;
+    }
     this.emit(this.formGroup.value);
     if (this.resetIfError) this.resetControls();
+    this.formGroupValid = false;
+    this.formGroupInvalid = false;
   }
 
   getControls() {
@@ -105,11 +128,15 @@ export class BaseFormComponent<
   controlInvalid(control: ControlType) {
     if (!control.validation.isVisible) return false;
     const formControl = this.getControl(control.id);
-    return formControl.invalid;
+    return formControl.invalid && formControl.touched;
+  }
+
+  formValid() {
+    return this.formValidation && this.formGroupValid;
   }
 
   formInvalid() {
-    return this.formValidation && this.formGroup.invalid;
+    return this.formValidation && this.formGroupInvalid;
   }
 
   private resetControls() {

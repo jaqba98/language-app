@@ -27,6 +27,7 @@
           [value]="getControlError(control.id)"></lib-error>
       </lib-flex>
     </ng-container>
+    <lib-success *ngIf="formValid()" [value]="formSuccessMessage"></lib-success>
     <lib-error *ngIf="formInvalid()" [value]="formErrorMessage"></lib-error>
   </lib-flex>
 </form>
